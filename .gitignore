@@ -33,3 +33,4 @@
 
 # IDE stuff
 .idea
+.DS_Store
