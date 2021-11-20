@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>288</y>
+      <w>160</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>Token
+--
+-value: String
+-expiry: Date
+-
++public
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>408</x>
+      <y>288</y>
+      <w>160</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>User
+--
+-id: int
+-username: String
+-token: String
+-friends: User
+-
++public
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>232</x>
+      <y>344</y>
+      <w>192</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+r1=*
+r2=getTokens()
+m2=1
+m1=getUser()</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+</diagram>
