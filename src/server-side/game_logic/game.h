@@ -2,11 +2,10 @@
 // Created by Anton Romanova on 09/12/2021.
 //
 
-#ifndef INFO_F209_HEADERS_SERVER_SIDE_GAME_H_
-#define INFO_F209_HEADERS_SERVER_SIDE_GAME_H_
+#ifndef QUORIDOR_SERVER_SIDE_GAME_LOGIC_GAME_H_
+#define QUORIDOR_SERVER_SIDE_GAME_LOGIC_GAME_H_
 
 #include "board.h"
-#include "../platform/user.h"
 #include <memory>
 
 class User;
@@ -17,8 +16,8 @@ class Game {
 
   [[nodiscard]] const std::vector<std::shared_ptr<User>> &GetParticipants() const;
 
-  bool IsActionValid()
-
+ public:
+  const Board &GetBoard() const;
 
  protected:
 
@@ -32,4 +31,4 @@ class Game {
   std::vector<std::shared_ptr<User>> participants_;
 };
 
-#endif //INFO_F209_HEADERS_SERVER_SIDE_GAME_H_
+#endif //QUORIDOR_SERVER_SIDE_GAME_LOGIC_GAME_H_

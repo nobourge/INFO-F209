@@ -2,8 +2,8 @@
 // Created by Anton Romanova on 09/12/2021.
 //
 
-#ifndef INFO_F209_HEADERS_SERVER_SIDE_USER_H_
-#define INFO_F209_HEADERS_SERVER_SIDE_USER_H_
+#ifndef QUORIDOR_HEADERS_SERVER_SIDE_PLATFORM_USER_H_
+#define QUORIDOR_HEADERS_SERVER_SIDE_PLATFORM_USER_H_
 
 #include <string>
 #include <ctime>
@@ -16,13 +16,13 @@ class User {
 
 
   std::string &GetUsername() const;
-  SetUsername();
 
+  // whether the user has had any interaction with the server in some fixed interval of secs
   bool IsUserConnected() const;
 
  protected:
   time_t GetLastConnectionTime() const;
-  time_t SetLastConnectionTime
+  void SetLastConnectionTimeToNow();
 
  private:
   std::string username_;
@@ -30,4 +30,4 @@ class User {
 
 };
 
-#endif //INFO_F209_HEADERS_SERVER_SIDE_USER_H_
+#endif //QUORIDOR_HEADERS_SERVER_SIDE_PLATFORM_USER_H_

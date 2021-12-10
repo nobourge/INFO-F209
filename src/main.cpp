@@ -1,6 +1,6 @@
 #include <iostream>
+#include "server-side/game_logic/board.h"
 
 int main() {
-  std::cout << "Hello, World!" << std::endl;
   return 0;
 }
