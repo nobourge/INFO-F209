@@ -9,7 +9,6 @@
 #include <ctime>
 
 class User {
-
   bool IsTempAccessTokenValid(const std::string &access_token);
   std::unique_ptr<std::string> GetTempAccessToken(const std::string &password);
   bool IsPasswordValid(const std::string &password);
@@ -23,11 +22,6 @@ class User {
  protected:
   time_t GetLastConnectionTime() const;
   void SetLastConnectionTimeToNow();
-
- private:
-  std::string username_;
-  time_t last_connection_time_;
-
 };
 
 #endif //QUORIDOR_HEADERS_SERVER_SIDE_PLATFORM_USER_H_

@@ -5,7 +5,7 @@
 #ifndef QUORIDOR_SERVER_SIDE_GAME_LOGIC_BOARD_POSITION_H_
 #define QUORIDOR_SERVER_SIDE_GAME_LOGIC_BOARD_POSITION_H_
 
-struct BoardPosition {
+struct Point {
   unsigned x, y;
 };
 

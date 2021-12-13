@@ -11,12 +11,12 @@
 class User;
 
 class Game {
+ public:
   [[nodiscard]] bool HasGameStarted() const;
   [[nodiscard]] bool IsGameOver() const;
 
   [[nodiscard]] const std::vector<std::shared_ptr<User>> &GetParticipants() const;
 
- public:
   const Board &GetBoard() const;
 
  protected:

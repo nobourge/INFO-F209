@@ -16,12 +16,17 @@ class Pawn;
 
 class Board {
  public:
-  friend std::ostream &operator<<(std::ostream &os, const Board &board);
+  Piece operator[](const Point &position) const;
 
-  Piece operator[](const BoardPosition &position) const;
+
+  friend std::ostream &operator<<(std::ostream &os, const Board &board);
+  operator std::string();
 
   friend class Wall;
   friend class Pawn;
+
+  bool IsMovePossible(const Point &from_pos, const Point &to_pos) const;
+  bool IsWallPossible(const Point &to_pos);
 
  protected:
   const std::vector<std::vector<std::optional<std::shared_ptr<Wall>>>> &GetWallsGrid() const;

@@ -9,12 +9,15 @@
 #include "board_position.h"
 
 class Piece {
-  virtual bool Place(const BoardPosition &at_pos, const Board &board) = 0;
+ public:
+  virtual bool Place(const Point &at_pos, const Board &board) = 0;
+  virtual ~Piece() = default;
 };
 
 class Pawn : public Piece {
-  bool Place(const BoardPosition &at_pos, const Board &board) override;
-  bool Move(const BoardPosition &from_pos, const BoardPosition &to_pos, const Board &board);
+ public:
+  bool Place(const Point &at_pos, const Board &board) override;
+  bool Move(const Point &from_pos, const Point &to_pos, const Board &board);
 };
 
 class Wall : public Piece {
@@ -25,7 +28,7 @@ class Wall : public Piece {
 
   void SetOrientation(const Orientation &orientation);
 
-  bool Place(const BoardPosition &at_pos, const Board &board) override;
+  bool Place(const Point &at_pos, const Board &board) override;
 };
 
 #endif //QUORIDOR_SERVER_SIDE_GAME_LOGIC_PIECE_H_

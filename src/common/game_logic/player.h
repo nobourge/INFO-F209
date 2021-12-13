@@ -12,14 +12,16 @@
 
 class Player {
  public:
-  bool CanMovePawn(const BoardPosition &to_pos);
-  bool CanPlaceWall(const BoardPosition &to_pos)
+  bool CanMovePawn(const Point &to_pos);
+  bool CanPlaceWall(const Point &to_pos);
 
   // these throw exceptions if an error occurs if the move is invalid
-  void MovePawn(const BoardPosition &to_pos);
-  void PlaceWall(const BoardPosition &to_pos);
+  void MovePawn(const Point &to_pos);
+  void PlaceWall(const Point &to_pos);
 
  private:
+  std::weak_ptr<User> controlling_user_;
+
   unsigned              available_walls_;
 
   std::weak_ptr<Game>   game_;
