@@ -6,7 +6,7 @@
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_POSITION_H_
 
 struct Position {
-  int x, y;
+  int col, row;
 };
 
 #endif //QUORIDOR_SRC_SERVER_SIDE_MODELS_POSITION_H_
