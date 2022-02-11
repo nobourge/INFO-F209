@@ -1,0 +1,12 @@
+//
+// Created by Anton Romanova on 11/02/2022.
+//
+
+#ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_CELL_H_
+#define QUORIDOR_SRC_SERVER_SIDE_MODELS_CELL_H_
+
+class Cell {
+
+};
+
+#endif //QUORIDOR_SRC_SERVER_SIDE_MODELS_CELL_H_
