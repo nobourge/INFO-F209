@@ -1,39 +1,53 @@
-//
-// Created by Anton Romanova on 11/02/2022.
-//
+/*
+ board.h
+ TODO: Add Description.
+*/
 
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_BOARD_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_BOARD_H_
 
+#include<iostream>
 #include "cell.h"
 #include "wall.h"
 #include "position.h"
 #include <vector>
+#include<array>
 #include <variant>
+#include <memory>
 #include <ostream>
 #include <optional>
+
 
 class Board: public std::enable_shared_from_this<Board> {
  public:
 
-  std::shared_ptr<Board> Create(unsigned size_);
+  Board();
+  std::shared_ptr<Board> Create();
 
 //  std::variant<Cell, Wall> operator [](const Position &) const;
 
-  std::optional<Wall> GetWallBetween(const Cell &c1, const Cell &c2) const;
+  bool GetWallBetween(const Cell&, const Cell&) const;
 
   Cell GetCellAtPosition(const Position &) const;
 
-  friend std::ostream &operator<<(std::ostream &os, const Board &board);
+  bool isWallPossible() const;
+  bool isMovePossible() const;
+
+  
+
+  friend std::ostream &operator<<(std::ostream &, const Board &);
 
  private:
 
-  Board() = default;
+  //Board() = default;
 
   unsigned size_;
 
   std::vector<std::vector<Cell>> cells_;
   std::vector<std::vector<Wall>> walls_;
+  std::shared_ptr<std::array<std::array<Cell,boardSize>,boardSize>> board;
+
+
 };
 
 

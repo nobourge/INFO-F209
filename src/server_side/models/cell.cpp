@@ -1,5 +1,5 @@
 //
-// Created by Anton Romanova on 11/02/2022.
+// Cell.h
 //
 
 #include "cell.h"
