@@ -6,15 +6,21 @@
 #include"board.h"
 
 class Player{
-    int nbWalls;
+    int nbWalls=10;
     Position finishLine;
+    Position playerPos;
+    Board* board;
     // std::shared_ptr board=make_shared<Board>();
 
 
 public:
-    Player();
+    Player(Position,Position,Board*);
+    ~Player(){delete board;}
     bool isTurnOver();
     bool hasWon();
+    void playCoup();
+    Position getPlayerPos();
+    void setPlayerPosition(Position);
     std::string getMessage();
 };
 
