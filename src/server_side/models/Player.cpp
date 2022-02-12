@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Player::Player(Position playerPos,Position finishLine):playerPos(playerPos),finishLine(finishLine){
+Player::Player(Position playerPos,Position finishLine,DIRECTION dr):playerPos(playerPos),finishLine(finishLine),dr(dr){
   
 }
 
@@ -41,14 +41,13 @@ Position Player::playCoup(){
             cin>>enter;
             //TODO Forward movement is different for each player normally
             if(enter=='F'){
-                    return Position{playerPos.col,playerPos.row-1};
+                    return calculateDirection('F');
                     
             }else if(enter=='R'){
-        
-                    return Position{playerPos.col+1,playerPos.row};
+                    return calculateDirection('R');
                 
             }else if(enter=='L'){
-                    return Position{playerPos.col-1,playerPos.row};
+                    return calculateDirection('L');
                        
             }else{
                 cout<<"Coup Invalid"<<endl;
@@ -61,6 +60,52 @@ Position Player::playCoup(){
     }
     
     isTurnOver();
+}
+
+Position Player::calculateDirection(char c){
+    Position coup;
+    if(c =='F'){
+        if(dr==NORTH){
+            coup=Position{playerPos.col,playerPos.row-1};
+        }
+        else if(dr==EAST){
+            coup=Position{playerPos.col+1,playerPos.row};
+        }
+        else if(dr==SOUTH){
+            coup=Position{playerPos.col,playerPos.row+1};
+        }
+        else{
+            coup=Position{playerPos.col-1,playerPos.row};
+        }
+    }
+    else if(c =='R'){
+        if(dr==NORTH){
+            coup=Position{playerPos.col+1,playerPos.row};
+        }
+        else if(dr==EAST){
+            coup=Position{playerPos.col,playerPos.row+1};
+        }
+        else if(dr==SOUTH){
+            coup=Position{playerPos.col-1,playerPos.row};
+        }
+        else{
+            coup=Position{playerPos.col,playerPos.row-1};
+        }
+    }else{
+        if(dr==NORTH){
+            coup=Position{playerPos.col-1,playerPos.row};
+        }
+        else if(dr==EAST){
+            coup=Position{playerPos.col,playerPos.row-1};
+        }
+        else if(dr==SOUTH){
+            coup=Position{playerPos.col+1,playerPos.row};
+        }
+        else{
+            coup=Position{playerPos.col,playerPos.row+1};
+        }
+    }
+    return coup;
 }
 
 void Player::setPlayerPosition(Position newPos){
