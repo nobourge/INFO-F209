@@ -6,12 +6,12 @@
 
 int main() {
 
-  Game gameOn=Game(); //Normally this gets turned on by the server when the user wants to begin a game.
+  Game gameOn = Game(); //Normally this gets turned on by the server when the user wants to begin a game.
   //Server has to start the game and manage the players connection etc.
   //TODO server stuff
-  gameOn.StartTheGame(); 
-  while(gameOn.gameOnGoing()){
-    
+  gameOn.StartTheGame();
+  while (gameOn.gameOnGoing()) {
+
   }
 
 
@@ -19,8 +19,8 @@ int main() {
   // std::vector<Position> pawn {Position{1,2}};
   // std::vector<Position> walls{Position{0,1}};
   // Board test (pawn, walls);
-  // std::cout<<test.getBoardString()<<std::endl;
+  // std::cout<<test.GetBoardString()<<std::endl;
 
-  
+
   return 0;
 }
