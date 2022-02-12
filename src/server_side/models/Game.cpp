@@ -7,7 +7,7 @@ using namespace std;
 
 
 Game::Game(){
-    
+
 }
 
 
@@ -16,7 +16,7 @@ void Game::StartTheGame(){
     //if (players.size>=2) We need at least 2 players to begin the game.
     gameOn=true;
     //When player connects from the server ... TODO
-    
+
     players.push_back(make_shared<Player>(Position{4,0},Position{8,8},SOUTH));
     //For now we have only 1 player
     currentPlayer=players[0];
@@ -24,9 +24,9 @@ void Game::StartTheGame(){
     vector<Position> walls{Position{0,1}};
     board=new Board({currentPlayer->getPlayerPos()}, walls);
 
-    cout<<board->getBoardString()<<endl;
-      
-      
+    cout<<board->GetBoardString()<<endl;
+
+
 }
 
 void Game::SwitchCurrentPlayer(){
@@ -37,7 +37,7 @@ void Game::SwitchCurrentPlayer(){
     //currentPlayer=next player from the vector
     cout<<currentPlayer->getPlayerPos().row<<" "<<currentPlayer->getPlayerPos().col<<endl;
     cout<<endl;
-    cout<<board->getBoardString()<<std::endl;
+    cout<<board->GetBoardString()<<std::endl;
     cout<<endl;
 
 }
@@ -49,7 +49,7 @@ bool Game::hasCurrentPlayerWon(){
 
 void Game::joinGame(){
     //if (players.size<4) Then the player can connect to the game.
-    
+
 }
 
 int Game::getScore(){
@@ -72,7 +72,7 @@ void Game::playCoup(){
     bool on=false;
     while(!on){
         Position coup=currentPlayer->playCoup();
-        if(board->isMovePossible(currentPlayer->getPlayerPos(),coup)){
+        if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
             board->Movement(currentPlayer->getPlayerPos(),false);
             currentPlayer->setPlayerPosition(coup);
             board->Movement(coup,true);
@@ -80,7 +80,7 @@ void Game::playCoup(){
          }
     }
     SwitchCurrentPlayer();
-    
+
 }
 
 std::shared_ptr<Player> Game::getCurrentPlayer(){

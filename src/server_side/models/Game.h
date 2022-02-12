@@ -2,10 +2,10 @@
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_Game_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_Game_H_
 
-#include"board.h"
-#include"Player.h"
-#include"position.h"
-#include"memory"
+#include "board.h"
+#include "Player.h"
+#include "position.h"
+#include "memory"
 
 class Game{
     Board* board;

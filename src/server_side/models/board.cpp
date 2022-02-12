@@ -3,7 +3,7 @@ board.cpp
 TODO do the description
 */
 #include "board.h"
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
