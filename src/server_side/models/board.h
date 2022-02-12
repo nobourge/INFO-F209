@@ -31,9 +31,7 @@ public:
 
   Board(std::vector<Position>, std::vector<Position>);
 
-  Cell operator[](const Position& pos) const {
-    return cells_[pos.row][pos.col];
-  };
+  
 
   bool GetWallBetween(const Cell&, const Cell&) const;
 
@@ -41,6 +39,8 @@ public:
 
   bool isWallPossible(Position) const;
   bool isMovePossible(Position, Position) const;
+
+  void Movement(Position,bool);
 
   friend std::ostream &operator<<(std::ostream &, const Board &);
   // replacing the overlaod by a string is easier if we use ncurses

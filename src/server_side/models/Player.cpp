@@ -4,7 +4,9 @@
 
 using namespace std;
 
-Player::Player(Position playerPos,Position finishLine,Board* board):playerPos(playerPos),finishLine(finishLine),board(board){}
+Player::Player(Position playerPos,Position finishLine):playerPos(playerPos),finishLine(finishLine){
+  
+}
 
 bool Player::isTurnOver(){
     return true;
@@ -15,9 +17,10 @@ bool Player::hasWon(){
     return false;
 }
 
-void Player::playCoup(){
+Position Player::playCoup(){
 
     int x,y;
+    
 
     bool coupValid=false;
 
@@ -36,26 +39,17 @@ void Player::playCoup(){
             cout<<"You have chosen to move your player"<<endl;
             cout<<"To move your player forward write F , right side R and left side L"<<endl;
             cin>>enter;
-            //TODO
+            //TODO Forward movement is different for each player normally
             if(enter=='F'){
-                if(board->isMovePossible(playerPos,Position{playerPos.row-1,playerPos.col})){
+                    return Position{playerPos.col,playerPos.row-1};
                     
-                    setPlayerPosition(Position{playerPos.row-1,playerPos.col});
-                    cout<<playerPos.col<<endl;
-                    cout<<playerPos.row<<endl;
-                   
-                    coupValid=true;
-                }
             }else if(enter=='R'){
-                if(board->isMovePossible(playerPos,Position{playerPos.row,playerPos.col+1})){
-                    setPlayerPosition(Position{playerPos.row,playerPos.col+1});
-                    coupValid=true;
-                }
+        
+                    return Position{playerPos.col+1,playerPos.row};
+                
             }else if(enter=='L'){
-                  if(board->isMovePossible(playerPos,Position{playerPos.row,playerPos.col-1})){
-                    setPlayerPosition(Position{playerPos.row,playerPos.col});
-                    coupValid=true;
-                  }
+                    return Position{playerPos.col-1,playerPos.row};
+                       
             }else{
                 cout<<"Coup Invalid"<<endl;
             }

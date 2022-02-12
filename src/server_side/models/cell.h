@@ -25,7 +25,7 @@ public:
   Cell();
 
   bool isPawn() const;
-  void setPawn();
+  void setPawn(bool);
   void removePawn();
 
   bool checkDirection(DIRECTION) const;

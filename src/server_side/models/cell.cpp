@@ -28,7 +28,7 @@ void Cell::removePawn(){
   pawn_ = nullptr;
 }
 
-void Cell::setPawn(){
-  temp = true; // temp way to test display
+void Cell::setPawn(bool pw){
+  temp = pw; // temp way to test display
   // TODO
 }

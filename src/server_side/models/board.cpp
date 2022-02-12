@@ -3,6 +3,9 @@ board.cpp
 TODO do the description
 */
 #include "board.h"
+#include<iostream>
+
+using namespace std;
 
 Board::Board(std::vector<Position> pawnsPosition, std::vector<Position> wallsPosition) {
   // setting up the board by trusting the positions to be possible
@@ -15,7 +18,7 @@ Board::Board(std::vector<Position> pawnsPosition, std::vector<Position> wallsPos
   }
 
   for (Position pos : pawnsPosition) {
-    cells_[pos.row][pos.col].setPawn();
+    cells_[pos.row][pos.col].setPawn(true);
   }
 
   for (Position pos : wallsPosition) {
@@ -76,12 +79,21 @@ bool Board::isWallPossible(Position pos) const {
 }
 
 bool Board::isMovePossible(Position start, Position end) const {
-  if (!(0<start.row<kBoardSize && 0<start.col<kBoardSize && 0<end.row<kBoardSize
-    && 0<end.col<kBoardSize)) return false;
+  if (!(0<start.col<kBoardSize && 0<start.row<kBoardSize && 0<end.col<kBoardSize
+    && 0<end.row<kBoardSize)) return false;
     for (int i=-1;i<=1;i++) {
       for (int j=-1;j<=1;j++) {
-        if (end == Position{start.row+i, start.col+j}) return true;
+        if (end == Position{start.col+i, start.row+j}) return true;
       }
     }
     return false;
   }
+
+void Board::Movement(Position p , bool pw){
+    if(pw){
+        cells_[p.row][p.col].setPawn(true);
+    }else{
+        cells_[p.row][p.col].removePawn();
+        cells_[p.row][p.col]=Cell{};
+    }
+}
