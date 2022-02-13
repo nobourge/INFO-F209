@@ -37,7 +37,7 @@ Position Player::playCoup(){
             coupValid=true;
         }else if(enter=='M'){
             cout<<"You have chosen to move your player"<<endl;
-            cout<<"To move your player forward write F , right side R and left side L"<<endl;
+            cout<<"To move your player forward write F , backwards B , right side R and left side L"<<endl;
             cin>>enter;
             //TODO Forward movement is different for each player normally
             if(enter=='F'){
@@ -48,8 +48,11 @@ Position Player::playCoup(){
                 
             }else if(enter=='L'){
                     return calculateDirection('L');
-                       
-            }else{
+            }
+            else if(enter=='B'){
+                    return calculateDirection('B');
+            } 
+            else{
                 cout<<"Coup Invalid"<<endl;
             }
             
@@ -91,7 +94,7 @@ Position Player::calculateDirection(char c){
         else{
             coup=Position{playerPos.col,playerPos.row-1};
         }
-    }else{
+    }else if(c=='L'){
         if(dr==NORTH){
             coup=Position{playerPos.col-1,playerPos.row};
         }
@@ -103,6 +106,19 @@ Position Player::calculateDirection(char c){
         }
         else{
             coup=Position{playerPos.col,playerPos.row+1};
+        }
+    }else{
+        if(dr==NORTH){
+            coup=Position{playerPos.col,playerPos.row+1};
+        }
+        else if(dr==EAST){
+            coup=Position{playerPos.col-1,playerPos.row};
+        }
+        else if(dr==SOUTH){
+            coup=Position{playerPos.col,playerPos.row-1};
+        }
+        else{
+            coup=Position{playerPos.col+1,playerPos.row};
         }
     }
     return coup;
