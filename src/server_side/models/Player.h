@@ -8,13 +8,12 @@
 
 class Player{
     int nbWalls=10;
-    Position finishLine;
     Position playerPos;
     DIRECTION dr;
-
+    
 
 public:
-    Player(Position,Position,DIRECTION);
+    Player(Position,DIRECTION);
     bool isTurnOver();
     bool hasWon();
     Position playCoup();

@@ -17,7 +17,7 @@ void Game::StartTheGame(){
     gameOn=true;
     //When player connects from the server ... TODO
 
-    players.push_back(make_shared<Player>(Position{4,0},Position{8,8},SOUTH));
+    players.push_back(make_shared<Player>(Position{4,8},NORTH));
     //For now we have only 1 player
     currentPlayer=players[0];
     cout<<endl;

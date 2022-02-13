@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Player::Player(Position playerPos,Position finishLine,DIRECTION dr):playerPos(playerPos),finishLine(finishLine),dr(dr){
+Player::Player(Position playerPos,DIRECTION dr):playerPos(playerPos),dr(dr){
   
 }
 
@@ -14,6 +14,28 @@ bool Player::isTurnOver(){
 
 //TODO
 bool Player::hasWon(){
+    if(dr==NORTH){
+        if(playerPos.row==0){
+            cout<<"Game Won"<<endl;
+            return true;
+        }
+    }else if(dr==SOUTH){
+        if(playerPos.row==8){
+            cout<<"Game Won"<<endl;
+            return true;
+        }
+    }else if(dr==EAST){
+        if(playerPos.col==8){
+            cout<<"Game Won"<<endl;
+            return true;
+        }
+    }else{
+        if(playerPos.col==0){
+            cout<<"Game Won"<<endl;
+            return true;
+        }
+    }
+
     return false;
 }
 
