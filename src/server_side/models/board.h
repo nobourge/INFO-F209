@@ -29,16 +29,20 @@ class Board : public std::enable_shared_from_this<Board> {
   Board(std::vector<Position>, std::vector<Position>);
 
   bool GetWallBetween(const Cell &, const Cell &) const;
+  bool GetWallBetween(const Cell &, const DIRECTION &) const; // might be faster in some cases
 
   Cell GetCellAtPosition(const Position &) const;
 
-  bool IsWallPossible(const Position &) const;
-  bool IsMovePossible(const Position &start, const Position &end) const;
+  // replacing the pair by a wall class might be intrestring but as for now
+  // it is easier this way
+
+  bool IsWallPossible(const Cell &, const DIRECTION &) const;
+  bool IsMovePossible(const Position &, const Position &) const;
 
   void Movement(const Position &, bool);
 
   friend std::ostream &operator<<(std::ostream &, const Board &);
-  // replacing the overlaod by a string is easier if we use ncurses
+  // replacing the overload by a string is easier if we use ncurses
 
   std::string GetBoardString() const;
 
@@ -46,8 +50,9 @@ class Board : public std::enable_shared_from_this<Board> {
 
  private:
 
+  std::vector<Position> pawns_;
   std::array<std::array<Cell, kBoardSize>, kBoardSize> cells_;
-  std::array<std::array<bool, kBoardSize * 2>, kBoardSize * 2> walls_;  // same problem as in cell.h no need
+  std::array<std::array<bool, kBoardSize * 2 - 1>, kBoardSize * 2 - 1> walls_;  // same problem as in cell.h no need
   // for a class
 };
 

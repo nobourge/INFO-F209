@@ -10,19 +10,28 @@ using namespace std;
 Board::Board(std::vector<Position> pawnsPosition, std::vector<Position> wallsPosition) {
   // setting up the board by trusting the positions to be possible
 
-  for (int row = 0; row < kBoardSize * 2; row++) { // initializing the two arrays
-    for (int col = 0; col < kBoardSize * 2; col++) {
-      if (row < kBoardSize && col < kBoardSize) cells_[row][col] = Cell{};
-      walls_[row][col] = false;
-    }
-  }
+  // for (int row = 0; row < kBoardSize * 2; row++) { // initializing the two arrays
+  //   for (int col = 0; col < kBoardSize * 2; col++) {
+  //     if (row < kBoardSize && col < kBoardSize) cells_[row][col] = Cell{};
+  //     walls_[row][col] = false;
+  //   }
+  // }
+
 
   for (Position pos : pawnsPosition) {
-    cells_[pos.row][pos.col].setPawn(true);
+    cells_[pos.row][pos.col].setPawn();
+    pawns_.push_back(pos);
   }
 
   for (Position pos : wallsPosition) {
     walls_[pos.row][pos.col] = true;
+    if (pos.row % 2 != 0) {
+      cells_[pos.row/2][pos.col/2].setWall(SOUTH);
+      cells_[pos.row/2+1][pos.col/2].setWall(NORTH);
+    } else {
+      cells_[pos.row/2][pos.col/2].setWall(EAST);
+      cells_[pos.row/2][pos.col/2 + 1].setWall(WEST);
+    }
   }
 }
 
@@ -42,11 +51,15 @@ std::string Board::GetBoardString() const {
         }
       }
 
-      if (col == 0 && row % 2 != 0) { // inter cell space
+      if (col == 0 && row % 2 != 0) { // cell space
         boardString += "  "; // adding space to align with alphabet
       }
       if (walls_[row][col]) {
-        boardString += "━━━"; // wall
+        if (col % 2 != 0) {
+          boardString += "┃"; // wall
+        } else {
+          boardString += "━━━"; // wall
+        }
       } else {
         if (row % 2 != 0) {
           if (col % 2 == 0) {
@@ -74,8 +87,24 @@ std::string Board::GetBoardString() const {
 
 }
 
-bool Board::IsWallPossible(const Position &) const {
-  return true;  // placeholder for now
+bool Board::GetWallBetween(const Cell &firstCell, const Cell &secondCell) const {
+  if (! firstCell.isNeighbour(secondCell)) return false;
+  std::pair<int, int> deltas = firstCell.getPos().diff(secondCell.getPos());  // first is col
+  if (deltas.first != 0) {
+    if (deltas.first > 0) return firstCell.checkDirection(WEST);
+    return firstCell.checkDirection(EAST);
+  } else {
+    if (deltas.second > 0) return firstCell.checkDirection(NORTH);
+    return firstCell.checkDirection(SOUTH);
+  }
+}
+
+bool Board::GetWallBetween(const Cell &cell, const DIRECTION &direction) const {
+  return cell.checkDirection(direction);
+}
+
+bool Board::IsWallPossible(const Cell &cell, const DIRECTION &direction) const {
+
 }
 
 bool Board::IsMovePossible(const Position &start, const Position &end) const {
@@ -92,7 +121,7 @@ bool Board::IsMovePossible(const Position &start, const Position &end) const {
 
 void Board::Movement(const Position &p, bool pw) {
   if (pw) {
-    cells_[p.row][p.col].setPawn(true);
+    cells_[p.row][p.col].setPawn();
   } else {
     cells_[p.row][p.col].removePawn();
     cells_[p.row][p.col] = Cell{};

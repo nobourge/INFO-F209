@@ -13,7 +13,7 @@ Game::Game(){
 
 void Game::StartTheGame(){
 
-    //if (players.size>=2) We need at least 2 players to begin the game.
+    // if (players.size>=2) We need at least 2 players to begin the game.
     gameOn=true;
     //When player connects from the server ... TODO
 
@@ -21,8 +21,11 @@ void Game::StartTheGame(){
     //For now we have only 1 player
     currentPlayer=players[0];
     cout<<endl;
+
     vector<Position> walls{Position{0,1}};
-    board=new Board({currentPlayer->getPlayerPos()}, walls);
+    vector<Position> pawns {currentPlayer->getPlayerPos()};
+
+    board = new Board (pawns, walls);
 
     cout<<board->GetBoardString()<<endl;
 
@@ -53,7 +56,6 @@ void Game::joinGame(){
 }
 
 int Game::getScore(){
-
     //The score for each player when the game is finished
     return 0;
 }
