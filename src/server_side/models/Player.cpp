@@ -12,7 +12,7 @@ bool Player::isTurnOver(){
     return true;
 }
 
-//TODO
+
 bool Player::hasWon(){
     if(dr==NORTH){
         if(playerPos.row==0){
@@ -39,7 +39,26 @@ bool Player::hasWon(){
     return false;
 }
 
-Position Player::playCoup(){
+
+pair<Position,Position> Player::placeWall(string placement){
+    //Cut the a1->a2->N in a1 , a2 and N;
+    std::string delimiter = "->";
+	translator translate;
+	std::string case1 = placement.substr(0, placement.find(delimiter));
+	
+	placement.erase(0, placement.find(delimiter) + delimiter.length());
+	string case2 = placement.substr(0, placement.find(delimiter));
+	
+
+    //Translate the move a1 in Position;
+    Position move1=translate.translateMove(case1);
+    Position move2=translate.translateMove(case2);
+
+    pair<Position,Position> ret{move1,move2};
+    return ret;
+}
+
+Position Player::playMove(){
 
     int x,y;
     
@@ -47,17 +66,7 @@ Position Player::playCoup(){
     bool coupValid=false;
 
     while(!coupValid){
-        char enter;
-        cout<<"Do you want to move your player or place a wall?"<<endl<<"To make your choice please write W (place wall) or M (move player)"<<endl;
-        cin>>enter;
-        if(enter=='W'){
-            //TODO
-            cout<<"You have chosen to place a wall"<<endl;
-            cout<<"Please chose were to place the wall and the direction (N,S,E,W)"<<endl;
-
-            nbWalls--;
-            coupValid=true;
-        }else if(enter=='M'){
+            char enter;        
             cout<<"You have chosen to move your player"<<endl;
             cout<<"To move your player forward write F , backwards B , right side R and left side L"<<endl;
             cin>>enter;
@@ -76,14 +85,8 @@ Position Player::playCoup(){
             } 
             else{
                 cout<<"Coup Invalid"<<endl;
-            }
-            
-        }else{
-            cout<<"Coup Invalid"<<endl;
-        }
-        
-    }
-    
+            }   
+    }   
     isTurnOver();
 }
 
