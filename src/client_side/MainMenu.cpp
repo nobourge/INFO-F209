@@ -7,9 +7,9 @@ vector <bool> MainMenu::getButtonState() const{
 }
 
 void MainMenu::ReceiveMessage(string message){
-    if (message == "z"){
+    if (message == "122"){
         current_index-=1;
-    }else if (message == "s"){
+    }else if (message == "115"){
         current_index+=1;
     }
     buttons = {false, false, false, false, false};

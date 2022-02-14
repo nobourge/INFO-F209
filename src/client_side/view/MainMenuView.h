@@ -14,7 +14,7 @@ private:
 
 public:
   MainMenuView( std::vector<bool> toselect);
-    void Display() const;
+    void Display(WINDOW* menu) const;
     void OpenMenu(){NULL;};
     void settoSelect(std::vector<bool> toselect);
 };

@@ -18,6 +18,6 @@ public:
     virtual void OpenMenu() = 0;
     const int decalage = 4;
     const char* name;
-  virtual void Display() const=0;
+  virtual void Display(WINDOW* menu) const=0;
   virtual void settoSelect(std::vector<bool> toselect)=0;
 };

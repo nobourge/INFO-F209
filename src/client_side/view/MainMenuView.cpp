@@ -5,14 +5,17 @@
 #include "MainMenuView.h"
 
 
-void MainMenuView::Display() const{
-        system("clear");
+void MainMenuView::Display(WINDOW* menu) const{
+        //system("clear");
         for (unsigned long int i = 0; i<words.size(); i++){
+          wrefresh(menu);
             if (toSelect[i]){
-                std::cout << ">";
+              mvwprintw(menu,i, 0, "%s",">");
             }
-            std::cout << words[i] << std::endl;
+            mvwprintw(menu,i, 1, "%s",words[i].c_str());
+
         }
+
 };
 MainMenuView::MainMenuView(std::vector<bool> toSelect) :toSelect(toSelect){}
 
