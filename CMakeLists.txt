@@ -3,7 +3,8 @@ project(Quoridor)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(QuoridorClient src/client_side/main.cpp)
+add_subdirectory(src)
+
 add_executable(QuoridorServer src/server_side/main.cpp src/server_side/models/board.cpp src/server_side/models/board.h src/server_side/models/cell.cpp src/server_side/models/cell.h src/server_side/models/wall.cpp src/server_side/models/wall.h src/server_side/models/position.cpp src/server_side/models/position.h src/server_side/models/Pawn.h src/server_side/models/Pawn.cpp src/server_side/models/Player.h src/server_side/models/Player.cpp src/server_side/models/Game.h src/server_side/models/Game.cpp)
 
 set(CMAKE_BINARY_DIR ${PROJECT_BINARY_DIR}/cmake-bin)

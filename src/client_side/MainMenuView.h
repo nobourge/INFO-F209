@@ -7,8 +7,8 @@
 class MainMenuView : public MenuView{
 private:
     std::vector<bool> toBright = {false, false, true, false, false};
-    std::vector<const char*> words = {"Play", "Friend List" , "Ranking", "Help", "Quit"};
-    const char* name = "Main Menu";
+    std::vector<std::string> words = {"Play", "Friend List" , "Ranking", "Help", "Quit"};
+    std::string name = "Main Menu";
     const int decalage = 4;
 
 public:

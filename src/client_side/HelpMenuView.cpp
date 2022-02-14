@@ -26,8 +26,3 @@ void HelpMenuView::DisplayHelp() const{
         free(boite);
 
 }
-
-int main(){
-    HelpMenuView help;
-    help.DisplayHelp();
-}

@@ -9,32 +9,23 @@
 #include <string>
 #include <vector>
 using namespace std;
-class Answer{
+
+class AbstractAnswer{
   string key;
 
  public:
-  Answer(){
+  AbstractAnswer(){
   }
   virtual operator string(){
   }
   virtual operator vector<bool>(){
   }
 };
-class AnswerString:public Answer{
-  string answer;
-    public:
-    AnswerString(){
-    }
-    operator string(){
-      return answer;
-    }
-};
-class AnswerBool:public Answer{
-  vector<bool> answer;
+
+template <typename T>
+class Answer : public AbstractAnswer{
+  T answer;
  public:
-  AnswerBool(){
-  }
-  operator vector<bool>(){
-    return answer;
-  }
+  Answer(T answer) : answer(answer) {}
+  operator T() { return answer; }
 };
