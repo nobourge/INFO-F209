@@ -72,14 +72,54 @@ bool Game::gameOnGoing(){
 
 void Game::playCoup(){
     bool on=false;
+
     while(!on){
-        Position coup=currentPlayer->playCoup();
-        if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
-            board->Movement(currentPlayer->getPlayerPos(),false);
-            currentPlayer->setPlayerPosition(coup);
-            board->Movement(coup,true);
+        char enter;
+        cout<<"Do you want to move your player or place a wall?"<<endl<<"To make your choice please write W (place wall) or M (move player)"<<endl;
+        cin>>enter;
+        if(enter=='W'){
+            //TODO
+            cout<<"You have chosen to place a wall"<<endl;
+            cout<<"Please chose were to place the wall example on case a1->a2->N"<<endl;
+            string placement;
+            DIRECTION direct;
+            cin>>placement;
+            pair<Position,Position> wall=currentPlayer->placeWall(placement);
+            char direction=placement[8];
+            cout<<wall.first.col<<" "<<wall.first.row<<endl;
+            cout<<wall.second.col<<" "<<wall.second.row<<endl;
+            cout<<direction<<endl;
+            switch (direction){
+                case 'N':
+                    direct=NORTH;
+                    break;
+                case 'S':
+                    direct=SOUTH;
+                    break;
+                case 'E':
+                    direct=EAST;
+                    break;
+                case 'W':
+                    direct=WEST;
+                    break;
+            }
+            
+            //Check is the placement is possible with isWallPossible();
+            board->PlaceWall(wall.first,wall.second,direct);
             on=true;
-         }
+
+        }else if(enter=='M'){
+                Position coup=currentPlayer->playMove();
+                if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
+                    board->Movement(currentPlayer->getPlayerPos(),false);
+                    currentPlayer->setPlayerPosition(coup);
+                    board->Movement(coup,true);
+                    on=true;
+                 }
+
+        }else{
+            cout<<"Move invalid"<<endl;
+        }
     }
     SwitchCurrentPlayer();
 

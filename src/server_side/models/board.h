@@ -40,6 +40,7 @@ class Board : public std::enable_shared_from_this<Board> {
   bool IsMovePossible(const Position &, const Position &) const;
 
   void Movement(const Position &, bool);
+  void PlaceWall(Position,Position,DIRECTION);
 
   friend std::ostream &operator<<(std::ostream &, const Board &);
   // replacing the overload by a string is easier if we use ncurses

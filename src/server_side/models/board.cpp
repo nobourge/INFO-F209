@@ -119,6 +119,13 @@ bool Board::IsMovePossible(const Position &start, const Position &end) const {
   return false;
 }
 
+void Board::PlaceWall(Position case1,Position case2,DIRECTION dir){
+    cells_[case1.row][case1.col].setWall(dir);
+    cells_[case1.row][case1.col].setWall(dir);
+    walls_[case1.row*2+1][case1.col*2]=true;
+    walls_[case2.row*2+1][case2.col*2]=true;
+}
+
 void Board::Movement(const Position &p, bool pw) {
   if (pw) {
     cells_[p.row][p.col].setPawn();
