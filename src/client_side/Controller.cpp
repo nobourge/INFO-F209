@@ -1,6 +1,3 @@
-//
-// Created by guest on 14/02/2022.
-//
 #include <cstring>
 #include "Controller.h"
 #include "view/SelectionMenuView.h"
@@ -14,19 +11,18 @@ void Controller ::Control(){
   MainMenu mn;
   WINDOW* menu;
   initscr();
+  attron(A_STANDOUT);
   clear();
   noecho();
-  cbreak();
   while(true){
-    toSelect=mn.getButtonState();
-    menu=newwin(150,150,0,0);
+    toSelect = mn.getButtonState();
+    menu = newwin(150,150,0,0);
     Menu.Display(toSelect,menu);
-    //std::string x;
-    //std::cin>>x;
-    int x;
     keypad(menu,true);
-    x=wgetch(menu);
+    int x;
+    x = wgetch(menu);
     std::string y=std::to_string(x);
+    std::cout << y << std::endl;
     mn.ReceiveMessage(y);
   }
   endwin();
