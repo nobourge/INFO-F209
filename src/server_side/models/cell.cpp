@@ -36,10 +36,21 @@ Position Cell::getPos() const {
   return pos_;
 }
 
+void Cell::setPos(const Position &position) {
+  pos_ = position;
+}
+
 bool Cell::isNeighbour(const Cell &cell) const {
   std::pair<int, int> deltas = this->getPos().diff(cell.getPos());  // <deltaRow, deltaCol>
   if (!(-1<= deltas.first <= 1) ||
       !(-1<= deltas.second <= 1) ||
       std::abs(deltas.first)==std::abs(deltas.second)) return false;
   return true;
+}
+
+bool Cell::isNeighbour(const Position &position) const {
+  std::pair<int, int> deltas = this->getPos().diff(position);  // <deltaRow, deltaCol>
+  return (!(-1<= deltas.first <= 1) ||
+          !(-1<= deltas.second <= 1) ||
+          std::abs(deltas.first)==std::abs(deltas.second)) ? false : true;
 }

@@ -10,12 +10,12 @@ using namespace std;
 Board::Board(std::vector<Position> pawnsPosition, std::vector<Position> wallsPosition) {
   // setting up the board by trusting the positions to be possible
 
-  // for (int row = 0; row < kBoardSize * 2; row++) { // initializing the two arrays
-  //   for (int col = 0; col < kBoardSize * 2; col++) {
-  //     if (row < kBoardSize && col < kBoardSize) cells_[row][col] = Cell{};
-  //     walls_[row][col] = false;
-  //   }
-  // }
+  for (int row = 0; row < kBoardSize * 2 - 1; row++) { // initializing the two arrays
+    for (int col = 0; col < kBoardSize * 2 - 1; col++) {
+      if (row < kBoardSize && col < kBoardSize) cells_[row][col].setPos({col, row});
+      walls_[row][col] = false;
+    }
+  }
 
 
   for (Position pos : pawnsPosition) {
@@ -103,20 +103,17 @@ bool Board::GetWallBetween(const Cell &cell, const DIRECTION &direction) const {
   return cell.checkDirection(direction);
 }
 
+Cell Board::GetCellAtPosition(const Position &position) const {
+  return cells_[position.row][position.col];
+}
+
 bool Board::IsWallPossible(const Cell &cell, const DIRECTION &direction) const {
 
 }
 
 bool Board::IsMovePossible(const Position &start, const Position &end) const {
-  if (!(0 < start.col < kBoardSize && 0 < start.row < kBoardSize && 0 < end.col < kBoardSize
-      && 0 < end.row < kBoardSize))
-    return false;
-  for (int i = -1; i <= 1; i++) {
-    for (int j = -1; j <= 1; j++) {
-      if (end == Position{start.col + i, start.row + j}) return true;
-    }
-  }
-  return false;
+  if (end.IsOutOfBoundaries()) return false;
+  return (GetCellAtPosition(start).isNeighbour(end)) ? true : false;
 }
 
 void Board::PlaceWall(Position case1,Position case2,DIRECTION dir){

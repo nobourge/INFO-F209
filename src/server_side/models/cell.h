@@ -5,7 +5,6 @@
 #include <iostream>
 #include "position.h"
 #include "wall.h"
-#include "common.h"
 #include "Pawn.h"
 #include <memory>
 #include <array>
@@ -33,7 +32,10 @@ public:
   void setWall(DIRECTION);
 
   Position getPos() const;
+  void setPos(const Position &);
+
   bool isNeighbour(const Cell &) const;
+  bool isNeighbour(const Position &) const;
 };
 
 #endif //QUORIDOR_SRC_SERVER_SIDE_MODELS_CELL_H_
