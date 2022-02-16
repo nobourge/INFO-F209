@@ -1,11 +1,12 @@
-//
-// Created by guest on 16/02/2022.
-//
-
+#include <string>
 #include "client_mvc_factory.h"
-AbstractController* ClientMVCFactory:: getController(string mvcname){
+#include "controller.h"
+#include "abstract_controller.h"
+
+
+AbstractController* ClientMVCFactory::getController(SelectionableMenu mvcname){
   switch(mvcname){
-    case "Main":
+    case Main:
       return new ControllerMainMenu;
       break;
   }

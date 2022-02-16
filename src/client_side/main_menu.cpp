@@ -1,12 +1,10 @@
 #include "main_menu.hpp"
 
-
-
-vector <bool> MainMenu::getButtonState() const{
+std::vector <bool> MainMenu::getButtonState() const{
     return buttons;
 }
 
-void MainMenu::ReceiveMessage(string message){
+void MainMenu::ReceiveMessage(std::string message){
     if (message == "259"){
         current_index-=1;
     }else if (message == "258"){

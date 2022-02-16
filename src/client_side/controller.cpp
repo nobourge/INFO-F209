@@ -1,3 +1,4 @@
+#include <string>
 #include <cstring>
 #include "controller.h"
 #include "view/SelectionMenuView.h"
@@ -5,7 +6,7 @@
 #include "ncurses.h"
 
 
-string ControllerMainMenu ::Control(){
+std::string ControllerMainMenu ::Control(){
   std::vector<bool> toSelect = {false, true, false, false, false};
   SelectionMenuView Menu;
   MainMenu mn;
@@ -26,5 +27,5 @@ string ControllerMainMenu ::Control(){
     mn.ReceiveMessage(y);
   }
   endwin();
-  return null;
+  return NULL;
 }

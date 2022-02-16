@@ -1,13 +1,10 @@
 #include <iostream>
 #include <vector>
 
-using namespace std ;
-
-
 class MainMenu{
-    vector<bool> buttons = {false, false, true, false, false};
+    std::vector<bool> buttons = {false, false, true, false, false};
     int current_index = 2;
 public:
-    vector <bool> getButtonState() const ;
-    void ReceiveMessage(string message);
+    std::vector <bool> getButtonState() const ;
+    void ReceiveMessage(std::string message);
 };
