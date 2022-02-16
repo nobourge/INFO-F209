@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Answer.h"
-#include "Controller.h"
+#include "answer.h"
+#include "controller.h"
 int main() {
   Controller control;
   control.Control();

@@ -1,7 +1,7 @@
 #include <cstring>
-#include "Controller.h"
+#include "controller.h"
 #include "view/SelectionMenuView.h"
-#include "MainMenu.hpp"
+#include "main_menu.hpp"
 #include "ncurses.h"
 
 

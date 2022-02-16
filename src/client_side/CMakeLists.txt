@@ -1,19 +1,19 @@
 set(HEADERS
-        Answer.h
+        answer.h
         view/HelpMenuView.h
         view/MainMenuView.h
         view/SelectionMenuView.h
-        MainMenu.hpp
+        main_menu.hpp
 )
 
 set(SOURCES
-        Answer.cpp
+        answer.cpp
         view/HelpMenuView.cpp
         view/MainMenuView.cpp
         view/SelectionMenuView.cpp
-        MainMenu.cpp
+        main_menu.cpp
         main.cpp
-        Controller.cpp Controller.h)
+        controller.cpp controller.h)
 
 add_executable(ClientSide ${HEADERS} ${SOURCES})
 target_link_libraries(ClientSide ncurses)

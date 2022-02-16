@@ -13,3 +13,13 @@
 //
 //
 //}
+//void V1Api::SetupRoutes() {
+//  BaseQuoridorApi::SetupRoutes();
+//
+//}
+
+
+template<class... Middlewares>
+unsigned int V1Api<Middlewares...>::GetVersion() const {
+  return version_;
+}

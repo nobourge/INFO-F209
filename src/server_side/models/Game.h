@@ -7,26 +7,26 @@
 #include "position.h"
 #include "memory"
 
-class Game{
-    Board* board;
-    std::vector<std::shared_ptr<Player>> players;
-    std::shared_ptr<Player> currentPlayer;
-    bool gameOn;
+class Game {
+ public:
+  Game();
+  ~Game() { delete board; }
+  void SwitchCurrentPlayer();
+  void StartTheGame();
+  int getScore();
+  bool gameOnGoing();
+  bool hasCurrentPlayerWon();
+  void joinGame();
+  void endGame();
+  void playCoup();
+  std::shared_ptr<Player> getCurrentPlayer();
+  Board *getBoard() { return board; }
 
-public:
-    Game();
-    ~Game(){delete board;}
-    void SwitchCurrentPlayer();
-    void StartTheGame();
-    int getScore();
-    bool gameOnGoing();
-    bool hasCurrentPlayerWon();
-    void joinGame();
-    void endGame();
-    void playCoup();
-    std::shared_ptr<Player> getCurrentPlayer();
-    Board* getBoard(){return board;}
+ private:
+  Board *board;
+  std::vector<std::shared_ptr<Player>> players;
+  std::shared_ptr<Player> currentPlayer;
+  bool gameOn;
 };
-
 
 #endif
