@@ -1,7 +1,7 @@
 #define CROW_MAIN
 
 #include <iostream>
-#include "views/api/quoridor_api.h"
+#include "view_controllers/api/base_quoridor_api.h"
 #include "models/board.h"
 #include "models/position.h"
 #include "models/Game.h"
@@ -10,7 +10,7 @@
 
 int main() {
 
-  QuoridorAPI api;
+  BaseQuoridorApi api;
 
   api.Run();
 

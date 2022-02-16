@@ -51,10 +51,10 @@ pair<Position,Position> Player::placeWall(string placement){
 	
 
     //Translate the move a1 in Position;
-    Position move1=translate.translateMove(case1);
-    Position move2=translate.translateMove(case2);
+//    Position move1=translate.translateMove(case1);
+//    Position move2=translate.translateMove(case2);
 
-    pair<Position,Position> ret{move1,move2};
+    pair<Position,Position> ret{{}, {}};
     return ret;
 }
 
