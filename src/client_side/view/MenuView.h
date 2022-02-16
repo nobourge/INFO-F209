@@ -1,7 +1,3 @@
-//
-// Created by guest on 12/02/2022.
-//
-
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_MENUVIEW_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_MENUVIEW_H_
 

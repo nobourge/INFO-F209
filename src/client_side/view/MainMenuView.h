@@ -7,7 +7,7 @@
 
 class MainMenuView : public MenuView{
 private:
-    std::vector<bool> toSelect ;//= {false, false, true, false, false};
+    std::vector<bool> toSelect ;
     std::vector<std::string> words = {"Play", "Friend List" , "Ranking", "Help", "Quit"};
     const char* name = "Main Menu";
     const int decalage = 4;
