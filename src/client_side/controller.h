@@ -4,10 +4,10 @@
 
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_CONTROLLER_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_CONTROLLER_H_
-
-class Controller {
+#include "abstract_controller.h"
+class ControllerMainMenu:public AbstractController{
  public:
-  void Control();
+  string Control();
 };
 
 #endif //QUORIDOR_SRC_CLIENT_SIDE_CONTROLLER_H_

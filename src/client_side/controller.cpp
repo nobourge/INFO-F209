@@ -5,7 +5,7 @@
 #include "ncurses.h"
 
 
-void Controller ::Control(){
+string ControllerMainMenu ::Control(){
   std::vector<bool> toSelect = {false, true, false, false, false};
   SelectionMenuView Menu;
   MainMenu mn;
@@ -26,4 +26,5 @@ void Controller ::Control(){
     mn.ReceiveMessage(y);
   }
   endwin();
+  return null;
 }
