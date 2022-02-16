@@ -37,11 +37,15 @@ void Game::SwitchCurrentPlayer(){
     if(hasCurrentPlayerWon()){
         endGame();
     }
+
+    system("clear"); //clears the terminal.
+    
     //currentPlayer=next player from the vector
     cout<<currentPlayer->getPlayerPos().row<<" "<<currentPlayer->getPlayerPos().col<<endl;
     cout<<endl;
     cout<<board->GetBoardString()<<std::endl;
     cout<<endl;
+    
 
 }
 
@@ -74,16 +78,12 @@ void Game::playCoup(){
     bool on=false;
 
     while(!on){
-        char enter;
+        Input input;
         cout<<"Do you want to move your player or place a wall?"<<endl<<"To make your choice please write W (place wall) or M (move player)"<<endl;
-        cin>>enter;
+        char enter=input.getInput();
         if(enter=='W'){
-            //TODO
-            cout<<"You have chosen to place a wall"<<endl;
-            cout<<"Please chose were to place the wall example on case a1->a2->N"<<endl;
-            string placement;
+            string placement=input.getInputWall();
             DIRECTION direct;
-            cin>>placement;
             pair<Position,Position> wall=currentPlayer->placeWall(placement);
             char direction=placement[8];
             cout<<wall.first.col<<" "<<wall.first.row<<endl;
@@ -109,7 +109,8 @@ void Game::playCoup(){
             on=true;
 
         }else if(enter=='M'){
-                Position coup=currentPlayer->playMove();
+                DIRECTION direction=input.getInputMovement();
+                Position coup=currentPlayer->playMove(direction);
                 if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
                     board->Movement(currentPlayer->getPlayerPos(),false);
                     currentPlayer->setPlayerPosition(coup);

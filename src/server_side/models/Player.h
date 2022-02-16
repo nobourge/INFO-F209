@@ -18,7 +18,7 @@ public:
     Player(Position,DIRECTION);
     bool isTurnOver();
     bool hasWon();
-    Position playMove();
+    Position playMove(DIRECTION);
     Position getPlayerPos();
     void setPlayerPosition(Position);
     Position calculateDirection(char);

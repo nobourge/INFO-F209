@@ -10,9 +10,9 @@
 
 int main() {
 
-  BaseQuoridorApi api;
+   BaseQuoridorApi api;
 
-  api.Run();
+   api.Run();
 
 
 
@@ -25,12 +25,6 @@ int main() {
   }
 
 
-   std::cout<<std::endl;
-   std::vector<Position> pawn {Position{1,2}};
-   std::vector<Position> walls{Position{0,1}};
-   Board test (pawn, walls);
-   std::cout<<test.GetBoardString()<<std::endl;
-
-
+  
   return 0;
 }
