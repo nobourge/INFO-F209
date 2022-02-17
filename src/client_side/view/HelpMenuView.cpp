@@ -1,5 +1,4 @@
 #include <ncurses.h>
-#include <iostream>
 #include <cstring>
 #include <vector>
 #include "HelpMenuView.h"

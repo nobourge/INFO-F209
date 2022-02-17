@@ -1,9 +1,11 @@
 #include <iostream>
 #include "answer.h"
-#include "controller.h"
-int main() {
-  Controller control;
-  control.Control();
+#include "client_mvc_factory.h"
 
+int main() {
+  AbstractController* control;
+  ClientMVCFactory mvc;
+  control = mvc.getController(ClientMVCFactory::Login);
+  control->Control();
   return 0;
 }

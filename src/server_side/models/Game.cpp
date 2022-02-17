@@ -17,15 +17,15 @@ void Game::StartTheGame(){
     gameOn=true;
     //When player connects from the server ... TODO
 
-    players.push_back(make_shared<Player>(Position{4,8},NORTH));
+    players.push_back(make_shared<Player>(Position{0,2},NORTH));
     //For now we have only 1 player
     currentPlayer=players[0];
     cout<<endl;
 
-    vector<Position> walls{Position{0,1}};
-    vector<Position> pawns {currentPlayer->getPlayerPos()};
+    vector<Position> walls{{0,3},{6,3},{8,3},{10,3},{12,3},{14,3},{16,3}};
+    // vector<Position> walls{{0,3},{2,3},{4,3},{6,3},{8,3},{10,3},{12,3},{14,3},{16,3}};
 
-    board = new Board (pawns, walls);
+    board = new Board (players, walls);
 
     cout<<board->GetBoardString()<<endl;
 
@@ -37,11 +37,15 @@ void Game::SwitchCurrentPlayer(){
     if(hasCurrentPlayerWon()){
         endGame();
     }
+
+    // system("clear"); //clears the terminal.
+
     //currentPlayer=next player from the vector
     cout<<currentPlayer->getPlayerPos().row<<" "<<currentPlayer->getPlayerPos().col<<endl;
     cout<<endl;
     cout<<board->GetBoardString()<<std::endl;
     cout<<endl;
+
 
 }
 
@@ -74,16 +78,12 @@ void Game::playCoup(){
     bool on=false;
 
     while(!on){
-        char enter;
+        Input input;
         cout<<"Do you want to move your player or place a wall?"<<endl<<"To make your choice please write W (place wall) or M (move player)"<<endl;
-        cin>>enter;
+        char enter=input.getInput();
         if(enter=='W'){
-            //TODO
-            cout<<"You have chosen to place a wall"<<endl;
-            cout<<"Please chose were to place the wall example on case a1->a2->N"<<endl;
-            string placement;
+            string placement=input.getInputWall();
             DIRECTION direct;
-            cin>>placement;
             pair<Position,Position> wall=currentPlayer->placeWall(placement);
             char direction=placement[8];
             cout<<wall.first.col<<" "<<wall.first.row<<endl;
@@ -103,17 +103,19 @@ void Game::playCoup(){
                     direct=WEST;
                     break;
             }
-            
+
             //Check is the placement is possible with isWallPossible();
             board->PlaceWall(wall.first,wall.second,direct);
             on=true;
 
         }else if(enter=='M'){
-                Position coup=currentPlayer->playMove();
+                DIRECTION direction=input.getInputMovement();
+                Position coup=currentPlayer->playMove(direction);
                 if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
-                    board->Movement(currentPlayer->getPlayerPos(),false);
+                    // board->Movement(currentPlayer->getPlayerPos(),false);
+                    board->Movement(currentPlayer->getPlayerPos(),coup);
                     currentPlayer->setPlayerPosition(coup);
-                    board->Movement(coup,true);
+                    // board->Movement(coup,true);
                     on=true;
                  }
 

@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "position.h"
 #include "memory"
+#include "input.h"
 
 class Game {
  public:

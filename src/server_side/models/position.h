@@ -17,6 +17,9 @@ struct Position: public Serializable{
                                                     // and deltaCol
 
   bool IsOutOfBoundaries(const int &low=0, const int &high=kBoardSize) const;
+
+  Position operator+(const DIRECTION);
+
 };
 
 #endif //QUORIDOR_SRC_SERVER_SIDE_MODELS_POSITION_H_

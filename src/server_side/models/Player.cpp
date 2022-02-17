@@ -5,7 +5,7 @@
 using namespace std;
 
 Player::Player(Position playerPos,DIRECTION dr):playerPos(playerPos),dr(dr){
-  
+
 }
 
 bool Player::isTurnOver(){
@@ -45,48 +45,34 @@ pair<Position,Position> Player::placeWall(string placement){
     std::string delimiter = "->";
 	translator translate;
 	std::string case1 = placement.substr(0, placement.find(delimiter));
-	
+
 	placement.erase(0, placement.find(delimiter) + delimiter.length());
 	string case2 = placement.substr(0, placement.find(delimiter));
-	
+
 
     //Translate the move a1 in Position;
-//    Position move1=translate.translateMove(case1);
-//    Position move2=translate.translateMove(case2);
+    Position move1=translate.translateMove(case1);
+    Position move2=translate.translateMove(case2);
 
-    pair<Position,Position> ret{{}, {}};
+    pair<Position,Position> ret={move1, move2};
     return ret;
 }
 
-Position Player::playMove(){
+Position Player::playMove(DIRECTION direction){
 
-    int x,y;
-    
 
-    bool coupValid=false;
+    if(direction==NORTH){
+            return calculateDirection('F');
 
-    while(!coupValid){
-            char enter;        
-            cout<<"You have chosen to move your player"<<endl;
-            cout<<"To move your player forward write F , backwards B , right side R and left side L"<<endl;
-            cin>>enter;
-            //TODO Forward movement is different for each player normally
-            if(enter=='F'){
-                    return calculateDirection('F');
-                    
-            }else if(enter=='R'){
+    }else if(direction==EAST){
                     return calculateDirection('R');
-                
-            }else if(enter=='L'){
-                    return calculateDirection('L');
+
+    }else if(direction==WEST){
+            return calculateDirection('L');
             }
-            else if(enter=='B'){
+    else if(direction==SOUTH){
                     return calculateDirection('B');
-            } 
-            else{
-                cout<<"Coup Invalid"<<endl;
-            }   
-    }   
+            }
     isTurnOver();
 }
 
@@ -155,4 +141,8 @@ void Player::setPlayerPosition(Position newPos){
 
 Position Player::getPlayerPos(){
     return playerPos;
+}
+
+DIRECTION Player::getGoal() const {
+  return dr;
 }

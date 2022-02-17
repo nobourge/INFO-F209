@@ -13,7 +13,7 @@ set(SOURCES
         view/SelectionMenuView.cpp
         main_menu.cpp
         main.cpp
-        controller.cpp controller.h)
+        client_main_controller.cpp client_main_controller.h)
 
 add_executable(ClientSide ${HEADERS} ${SOURCES})
 target_link_libraries(ClientSide ncurses)

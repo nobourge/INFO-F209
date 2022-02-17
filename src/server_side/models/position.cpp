@@ -21,6 +21,23 @@ bool Position::IsOutOfBoundaries(const int &low, const int &high) const {
   return (this->col < low || this->col > high - 1 || this->row < low || this->row > high - 1) ? true : false;
 }
 
+Position Position::operator+(const DIRECTION direction) {
+  switch (direction) {
+    case NORTH:
+      return Position{this->col, this->row-1};
+      break;
+    case EAST:
+      return Position{this->col+1, this->row};
+      break;
+    case SOUTH:
+      return Position{this->col, this->row+1};
+      break;
+    case WEST:
+      return Position{this->col-1, this->row};
+      break;
+  }
+}
+
 
 std::unique_ptr<crow::json::wvalue> Position::Serialize() {
   std::unique_ptr<crow::json::wvalue> output;
