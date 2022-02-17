@@ -1,4 +1,5 @@
 #include "main_menu.hpp"
+#include "enum_factory.h"
 
 
 std::vector <bool> MainMenu::getButtonState() const{
@@ -30,12 +31,12 @@ void Login::setPassword(std::string password){
 }
 int Login::ReceiveEnterMessage(){
   if(current_index==0)
-  return ClientMVCFactory::Pseudo;
+  return EnumFactory::Pseudo;
   if(current_index==1)
-    return ClientMVCFactory::MDP;
+    return EnumFactory::MDP;
   if(current_index==2){
     if(data[0] != "" &&  data[1] != "")
-    return ClientMVCFactory::Main;
+    return EnumFactory::Main;
 
     return 0;
 

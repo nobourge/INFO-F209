@@ -3,6 +3,8 @@
 #include "ncurses.h"
 #include <string>
 #include "abstract_controller.h"
+#include "enum_factory.h"
+
 
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_CONTROLLER_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_CONTROLLER_H_

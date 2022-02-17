@@ -49,14 +49,14 @@ int ControllerLoginClient::Control(){
     std::string y=std::to_string(x);
     if (y=="10") {
       int next=lg.ReceiveEnterMessage();
-      if(next==ClientMVCFactory::Pseudo){
+      if(next==EnumFactory::SelectionableMenu::Pseudo){
         char pseudo[80];
         echo();
         mvwgetstr(menu,4,70,pseudo);
         lg.SetUsername(pseudo);
         lv.setchamp(pseudo,0);
 
-      }else if(next==ClientMVCFactory::MDP){
+      }else if(next==EnumFactory::SelectionableMenu::MDP){
         char mdp[80];
         echo();
         mvwgetstr(menu,6,70,mdp);
@@ -64,7 +64,7 @@ int ControllerLoginClient::Control(){
         lv.setchamp(mdp,1);
 
       }
-      else if(next==ClientMVCFactory::Main){
+      else if(next==EnumFactory::SelectionableMenu::Main){
         return next;
       }
     }else{

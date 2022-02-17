@@ -2,12 +2,12 @@
 #include "client_mvc_factory.h"
 
 
-AbstractController* ClientMVCFactory::getController(SelectionableMenu mvcname){
+AbstractController* ClientMVCFactory::getController(EnumFactory::SelectionableMenu  mvcname){
   switch(mvcname){
-    case Main:
+    case EnumFactory::Main:
       return new ControllerMainMenu;
       break;
-    case Login:
+    case EnumFactory::Login:
       return new ControllerLoginClient;
       break;
   }

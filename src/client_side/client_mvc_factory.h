@@ -11,8 +11,7 @@
 
 class ClientMVCFactory {
  public:
-  enum SelectionableMenu{Main, Login,Pseudo,MDP};
-  AbstractController* getController(SelectionableMenu mvcname);
+  AbstractController* getController(EnumFactory::SelectionableMenu mvcname);
 };
 
 #endif //INFO_F209_SRC_CLIENT_SIDE_CLIENT_MVC_FACTORY_H_
