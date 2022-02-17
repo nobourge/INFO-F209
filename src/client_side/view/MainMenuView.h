@@ -23,11 +23,12 @@ public:
 class LoginView : public MenuView{
     std::vector<bool> toSelect;
     std::vector<std::string> words = {"Pseudo", "Password" , "Confirm"};
-    std::vector<std::string> champ = {"champ1", "champ2", "champ3"};
+    std::vector<std::string> champ = {"", "", ""};
     const char* name = "Login Menu";
 public:
   LoginView(std::vector<bool> toselect);
   void Display(WINDOW* menu) const override;
   void OpenMenu(){NULL;};
   void settoSelect(std::vector<bool> toselect);
+  void setchamp(std::string newstr,int index);
 };

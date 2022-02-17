@@ -4,7 +4,7 @@
 int main() {
   AbstractController* control;
   ClientMVCFactory mvc;
-  control = mvc.getController(ClientMVCFactory::Login);
+  control = mvc.getController(SelectionableMenu::Login);
   control->Control();
   return 0;
 }

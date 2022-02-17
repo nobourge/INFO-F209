@@ -11,7 +11,7 @@
 
 class ClientMVCFactory {
  public:
-  enum SelectionableMenu{Main, Login};
+  enum SelectionableMenu{Main, Login,Pseudo,MDP};
   AbstractController* getController(SelectionableMenu mvcname);
 };
 
