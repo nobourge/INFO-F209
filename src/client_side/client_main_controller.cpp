@@ -5,7 +5,7 @@
 
 
 
-int ControllerMainMenu::Control(){
+EnumFactory::SelectionableMenu ControllerMainMenu::Control(){
   std::vector<bool> toSelect;
   MainMenuView mv ({true, false, false});
   MainMenu mn;
@@ -26,10 +26,10 @@ int ControllerMainMenu::Control(){
     mn.ReceiveMessage(y);
   }
   endwin();
-  return NULL;
+  return EnumFactory::null;
 }
 
-int ControllerLoginClient::Control(){
+EnumFactory::SelectionableMenu ControllerLoginClient::Control(){
   std::vector<bool> toSelect;
   LoginView lv({true, false, false});
   Login lg;
@@ -48,7 +48,7 @@ int ControllerLoginClient::Control(){
     x = wgetch(menu);
     std::string y=std::to_string(x);
     if (y=="10") {
-      int next=lg.ReceiveEnterMessage();
+      EnumFactory::SelectionableMenu next=lg.ReceiveEnterMessage();
       if(next==EnumFactory::SelectionableMenu::Pseudo){
         char pseudo[80];
         echo();
@@ -71,5 +71,5 @@ int ControllerLoginClient::Control(){
     lg.ReceiveMessage(y);}
   }
   endwin();
-  return NULL;
+  return EnumFactory::null;
 }
