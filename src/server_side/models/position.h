@@ -9,6 +9,8 @@
 struct Position: public Serializable{
   int col, row;
 
+  Position(int col, int row);
+
   std::unique_ptr<crow::json::wvalue> Serialize() override;
 
   bool operator==(const Position &pos) const;
