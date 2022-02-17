@@ -26,7 +26,7 @@ class Board : public std::enable_shared_from_this<Board> {
   // also a wall is not placed on top of a Cell but on it's side so I think that
   // return a Cell and dealing with walls elsewhere is easier
 
-  Board(std::vector<Position>, std::vector<Position>);
+  Board(std::vector<std::shared_ptr<Player>>, std::vector<Position>);
 
   bool GetWallBetween(const Cell &, const Cell &) const;
   bool GetWallBetween(const Cell &, const DIRECTION &) const; // might be faster in some cases
@@ -36,10 +36,11 @@ class Board : public std::enable_shared_from_this<Board> {
   // replacing the pair by a wall class might be intrestring but as for now
   // it is easier this way
 
-  bool IsWallPossible(const Cell &, const DIRECTION &) const;
+  bool IsWallPossible(std::vector<Position>, const DIRECTION ) const;
   bool IsMovePossible(const Position &, const Position &) const;
 
-  void Movement(const Position &, bool);
+  void Movement(const Position, const Position);
+  // void Movement(const Position &, bool);
   void PlaceWall(Position,Position,DIRECTION);
 
   friend std::ostream &operator<<(std::ostream &, const Board &);
@@ -51,7 +52,7 @@ class Board : public std::enable_shared_from_this<Board> {
 
  private:
 
-  std::vector<Position> pawns_;
+  std::vector<std::shared_ptr<Player>> pawns_;
   std::array<std::array<Cell, kBoardSize>, kBoardSize> cells_;
   std::array<std::array<bool, kBoardSize * 2 - 1>, kBoardSize * 2 - 1> walls_;  // same problem as in cell.h no need
   // for a class

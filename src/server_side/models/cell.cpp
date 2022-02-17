@@ -12,6 +12,10 @@ void Cell::setWall(DIRECTION direction) {
   walls_[direction] = true;
 }
 
+void Cell::unsetWall(DIRECTION direction) {
+  walls_[direction] = false;
+}
+
 bool Cell::checkDirection(DIRECTION direction) const {
   return walls_[direction];
 }
@@ -25,11 +29,16 @@ bool Cell::isPawn() const {
 }
 
 void Cell::removePawn(){
+  std::cout<<"removed"<<std::endl;
   pawn_ = nullptr;
 }
 
-void Cell::setPawn(){
-  pawn_ = std::make_shared<Pawn> ();
+void Cell::setPawn(std::shared_ptr<Player> pawn){
+  pawn_ = pawn;
+}
+
+std::shared_ptr<Player> Cell::getPawn() const {
+  return pawn_;
 }
 
 Position Cell::getPos() const {

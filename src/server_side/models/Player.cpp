@@ -5,7 +5,7 @@
 using namespace std;
 
 Player::Player(Position playerPos,DIRECTION dr):playerPos(playerPos),dr(dr){
-  
+
 }
 
 bool Player::isTurnOver(){
@@ -45,10 +45,10 @@ pair<Position,Position> Player::placeWall(string placement){
     std::string delimiter = "->";
 	translator translate;
 	std::string case1 = placement.substr(0, placement.find(delimiter));
-	
+
 	placement.erase(0, placement.find(delimiter) + delimiter.length());
 	string case2 = placement.substr(0, placement.find(delimiter));
-	
+
 
     //Translate the move a1 in Position;
     Position move1=translate.translateMove(case1);
@@ -63,16 +63,16 @@ Position Player::playMove(DIRECTION direction){
 
     if(direction==NORTH){
             return calculateDirection('F');
-                    
+
     }else if(direction==EAST){
                     return calculateDirection('R');
-                
+
     }else if(direction==WEST){
             return calculateDirection('L');
             }
     else if(direction==SOUTH){
                     return calculateDirection('B');
-            }    
+            }
     isTurnOver();
 }
 
@@ -141,4 +141,8 @@ void Player::setPlayerPosition(Position newPos){
 
 Position Player::getPlayerPos(){
     return playerPos;
+}
+
+DIRECTION Player::getGoal() const {
+  return dr;
 }

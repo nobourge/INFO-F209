@@ -3,7 +3,6 @@
 
 #include"position.h"
 #include"memory.h"
-#include"board.h"
 #include"common.h"
 #include<iostream>
 #include"translator.h"
@@ -12,7 +11,7 @@ class Player{
     int nbWalls=10;
     Position playerPos;
     DIRECTION dr;
-    
+
 
 public:
     Player(Position,DIRECTION);
@@ -24,6 +23,7 @@ public:
     Position calculateDirection(char);
     pair<Position,Position> placeWall(std::string);
     std::string getMessage();
+    DIRECTION getGoal() const;
 };
 
 #endif

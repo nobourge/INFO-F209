@@ -5,7 +5,7 @@
 #include <iostream>
 #include "position.h"
 #include "wall.h"
-#include "Pawn.h"
+#include "Player.h"
 #include <memory>
 #include <array>
 #include <cmath>
@@ -18,18 +18,20 @@ class Cell {
   std::array<bool, kNumberOfDirections> walls_; // using a boolean instead of a Wall class should be easier in this case
                                                 // because there is no action that might need a wall
 
-  std::shared_ptr<Pawn> pawn_;
+  std::shared_ptr<Player> pawn_;
   Position pos_;
 
 public:
   Cell();
 
   bool isPawn() const;
-  void setPawn();
+  void setPawn(std::shared_ptr<Player>);
+  std::shared_ptr<Player> getPawn() const;
   void removePawn();
 
   bool checkDirection(DIRECTION) const;
   void setWall(DIRECTION);
+  void unsetWall(DIRECTION);
 
   Position getPos() const;
   void setPos(const Position &);
