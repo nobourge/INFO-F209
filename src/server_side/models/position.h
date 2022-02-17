@@ -9,6 +9,7 @@
 struct Position: public Serializable{
   int col, row;
 
+  Position() : col(0), row(0) {}
   Position(int col, int row);
 
   std::unique_ptr<crow::json::wvalue> Serialize() override;
