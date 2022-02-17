@@ -1,5 +1,5 @@
 #include "main_menu.hpp"
-#include "enum_factory.h"
+
 
 
 std::vector <bool> MainMenu::getButtonState() const{
@@ -29,7 +29,7 @@ void Login::setPassword(std::string password){
     //vérification
     data[1] = password ;
 }
-int Login::ReceiveEnterMessage(){
+EnumFactory::SelectionableMenu Login::ReceiveEnterMessage(){
   if(current_index==0)
   return EnumFactory::Pseudo;
   if(current_index==1)
@@ -38,7 +38,7 @@ int Login::ReceiveEnterMessage(){
     if(data[0] != "" &&  data[1] != "")
     return EnumFactory::Main;
 
-    return 0;
+    return EnumFactory::null;
 
   }
 }
