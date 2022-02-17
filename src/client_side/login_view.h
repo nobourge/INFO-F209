@@ -7,7 +7,7 @@
 
 class LoginView : public MenuView{
     std::vector<bool> toSelect;
-    std::vector<std::string> words = {"Pseudo", "Password"};
+    std::vector<std::string> words = {"Pseudo", "Password","Confirmer"};
     const char* name = "Login Menu";
 public:
     LoginView(std::vector<bool> toselect);

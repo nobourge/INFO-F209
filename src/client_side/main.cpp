@@ -5,7 +5,7 @@
 int main() {
   AbstractController* control;
   ClientMVCFactory mvc;
-  control = mvc.getController(ClientMVCFactory::Main);
+  control = mvc.getController(ClientMVCFactory::Login);
   control->Control();
   return 0;
 }

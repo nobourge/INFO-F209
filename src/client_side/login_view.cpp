@@ -17,5 +17,5 @@ void LoginView::Display(WINDOW* menu) const{
             wattr_off(menu, A_UNDERLINE, 0);
         }
 };
-
+LoginView::LoginView(std::vector<bool> toSelect) :toSelect(toSelect){}
 void LoginView::settoSelect(std::vector<bool> toselect){toSelect=toselect;}
