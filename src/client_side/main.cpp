@@ -3,9 +3,11 @@
 
 int main() {
   EnumFactory::SelectionableMenu enumf =EnumFactory::Login;
+  while(true){
   AbstractController* control;
   ClientMVCFactory mvc;
   control = mvc.getController(enumf);
   enumf = control->Control();
+  }
   return 0;
 }

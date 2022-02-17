@@ -1,6 +1,5 @@
 #include <string>
 #include <cstring>
-#include <string>
 #include "client_main_controller.h"
 
 
@@ -65,6 +64,7 @@ EnumFactory::SelectionableMenu ControllerLoginClient::Control(){
 
       }
       else if(next==EnumFactory::SelectionableMenu::Main){
+        endwin();
         return next;
       }
     }else{
