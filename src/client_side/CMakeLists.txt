@@ -5,8 +5,8 @@ set(HEADERS
         main_menu.hpp
         client_main_controller.h
         abstract_controller.h
-        client_login_controller.h
-        client_login_model.hpp
+#        client_login_controller.h
+#        client_login_model.hpp
         client_mvc_factory.h
 
 )
@@ -19,8 +19,8 @@ set(SOURCES
         main.cpp
         client_main_controller.cpp
         abstract_controller.cpp
-        client_login_controller.cpp
-        client_login_model.cpp
+#        client_login_controller.cpp
+#        client_login_model.cpp
         client_mvc_factory.cpp
 
         )
