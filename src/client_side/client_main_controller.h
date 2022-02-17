@@ -9,12 +9,12 @@
 
 class ControllerMainMenu:public AbstractController{
  public:
-  std::string Control();
+  int Control();
 };
 
 class ControllerLoginClient :public AbstractController{
  public:
-  std::string Control();
+  int Control();
 };
 
 

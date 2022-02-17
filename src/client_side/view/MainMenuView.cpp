@@ -47,3 +47,4 @@ void LoginView::Display(WINDOW* menu) const{
 };
 LoginView::LoginView(std::vector<bool> toSelect) :toSelect(toSelect){}
 void LoginView::settoSelect(std::vector<bool> toselect){toSelect=toselect;}
+void LoginView:: setchamp(std::string newstr,int index){champ[index]=newstr;}

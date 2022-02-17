@@ -1,5 +1,6 @@
 #include "main_menu.hpp"
 
+
 std::vector <bool> MainMenu::getButtonState() const{
     return buttons;
 }
@@ -28,11 +29,17 @@ void Login::setPassword(std::string password){
     data[1] = password ;
 }
 int Login::ReceiveEnterMessage(){
-    //10 == enter (normalement)
-    // fonction doit : verifier enter en fonction de où est le bouton et renvoyer enum
-//    if (message == "10"){
-//        return ClientMVCFactory::Login;
-//    }
+  if(current_index==0)
+  return ClientMVCFactory::Pseudo;
+  if(current_index==1)
+    return ClientMVCFactory::MDP;
+  if(current_index==2){
+    if(data[0] != "" &&  data[1] != "")
+    return ClientMVCFactory::Main;
+
+    return 0;
+
+  }
 }
 
 
