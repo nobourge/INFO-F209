@@ -1,6 +1,7 @@
 #include "main_menu.hpp"
 
 
+
 std::vector <bool> MainMenu::getButtonState() const{
     return buttons;
 }
@@ -28,16 +29,16 @@ void Login::setPassword(std::string password){
     //vérification
     data[1] = password ;
 }
-int Login::ReceiveEnterMessage(){
+EnumFactory::SelectionableMenu Login::ReceiveEnterMessage(){
   if(current_index==0)
-  return ClientMVCFactory::Pseudo;
+  return EnumFactory::Pseudo;
   if(current_index==1)
-    return ClientMVCFactory::MDP;
+    return EnumFactory::MDP;
   if(current_index==2){
     if(data[0] != "" &&  data[1] != "")
-    return ClientMVCFactory::Main;
+    return EnumFactory::Main;
 
-    return 0;
+    return EnumFactory::null;
 
   }
 }

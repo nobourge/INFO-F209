@@ -136,27 +136,75 @@ bool Board::IsMovePossible(const Position &start, const Position &end) const {
   return (GetCellAtPosition(start).isNeighbour(end)) ? true : false;
 }
 
-void Board::PlaceWall(Position case1, Position case2, DIRECTION dir) {
-      cells_[case1.row][case1.col].setWall(dir);
-      cells_[case1.row][case1.col].setWall(dir);
-      walls_[case1.row*2+1][case1.col*2]=true;
-      walls_[case2.row*2+1][case2.col*2]=true;
+void Board::randomWallPlacement(){
+  //Method used for our first game mode.
+  int x=0+(rand()%kBoardSize);
+  int y=0+(rand()%kBoardSize);
+  DIRECTION dr=static_cast<DIRECTION>(rand()%4);
+  Position cell1;
+  Position cell2;
+  if(dr==NORTH || dr==SOUTH){
+    cell1={x,y};
+    cell2={x+1,y};
+  }else{
+    cell1={x,y};
+    cell2={x,y-1};
+  }
+  PlaceWall(cell1,cell2,dr);
+
 }
 
-// void Board::PlaceWall(Position case1,Position case2,DIRECTION dir){
-//     cells_[case1.row][case1.col].setWall(dir);
-//     cells_[case1.row][case1.col].setWall(dir);
-//     for (shared_ptr<Player> pawn : pawns_ ) {
-//       if (! IsWallPossible({pawn->getPlayerPos()}, pawn->getGoal())) {
-//         cells_[case1.row][case1.col].unsetWall(dir);
-//         cells_[case1.row][case1.col].unsetWall(dir);
-//         std::cout<<"impossible to place a wall"<<std::endl;
-//         return;
-//       }
-//     }
-//     walls_[case1.row*2+1][case1.col*2]=true;
-//     walls_[case2.row*2+1][case2.col*2]=true;
-// }
+void Board::PlaceWall(Position case1, Position case2, DIRECTION dir) {
+      cells_[case1.row][case1.col].setWall(dir);
+      cells_[case2.row][case2.col].setWall(dir);
+      Position case3=getOppositeCell(case1,dir);
+      Position case4=getOppositeCell(case2,dir);
+      cells_[case3.row][case3.col].setWall(getOpposite(dir));
+      cells_[case4.row][case4.col].setWall(getOpposite(dir));
+      if(dir==SOUTH){
+        walls_[case1.row*2+1][case1.col*2]=true;
+        walls_[case2.row*2+1][case2.col*2]=true;
+      }else if(dir==NORTH){
+        walls_[case1.row*2-1][case1.col*2]=true;
+        walls_[case2.row*2-1][case2.col*2]=true;
+      }
+      else if(dir==EAST){
+        walls_[case1.row*2][case1.col*2+1]=true;
+        walls_[case2.row*2][case2.col*2+1]=true;
+      }else{
+        walls_[case1.row*2][case1.col*2-1]=true;
+        walls_[case2.row*2][case2.col*2-1]=true;
+      }
+}
+
+Position Board::getOppositeCell(Position pos,DIRECTION dr){
+    Position newPos;
+    if(dr==NORTH){
+      newPos={pos.col,pos.row-1};
+    }else if(dr==SOUTH){
+      newPos={pos.col,pos.row+1};
+    }else if(dr==EAST){
+      newPos={pos.col+1,pos.row};
+    }else{
+      newPos={pos.col-1,pos.row};
+    }
+    return newPos;
+}
+
+DIRECTION Board::getOpposite(DIRECTION dr){
+  DIRECTION newdr;
+  if(dr==NORTH){
+    newdr=SOUTH;
+  }else if(dr==SOUTH){
+    newdr=NORTH;
+  }else if(dr==EAST){
+    newdr=WEST;
+  }else{
+    newdr=EAST;
+  }
+  return newdr;
+}
+
 
 void Board::Movement(const Position start, const Position end) {
   cells_[end.row][end.col].setPawn(GetCellAtPosition(start).getPawn());

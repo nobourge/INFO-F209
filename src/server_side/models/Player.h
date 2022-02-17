@@ -11,7 +11,7 @@ class Player{
     int nbWalls=10;
     Position playerPos;
     DIRECTION dr;
-
+       
 
 public:
     Player(Position,DIRECTION);

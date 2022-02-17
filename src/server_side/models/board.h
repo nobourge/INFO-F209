@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include "cell.h"
-#include "wall.h"
 #include "position.h"
 #include <vector>
 #include <variant>
@@ -16,6 +15,7 @@
 #include <ostream>
 #include <optional>
 #include <string>
+#include<random>
 
 class Board : public std::enable_shared_from_this<Board> {
  public:
@@ -47,8 +47,12 @@ class Board : public std::enable_shared_from_this<Board> {
   // replacing the overload by a string is easier if we use ncurses
 
   std::string GetBoardString() const;
+  
+  void randomWallPlacement();
+  DIRECTION getOpposite(DIRECTION);
+  Position getOppositeCell(Position,DIRECTION);
 
-  explicit operator std::string() const;;
+  explicit operator std::string() const;
 
  private:
 

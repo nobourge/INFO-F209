@@ -1,11 +1,10 @@
 #include <string>
 #include <cstring>
-#include <string>
 #include "client_main_controller.h"
 
 
 
-int ControllerMainMenu::Control(){
+EnumFactory::SelectionableMenu ControllerMainMenu::Control(){
   std::vector<bool> toSelect;
   MainMenuView mv ({true, false, false});
   MainMenu mn;
@@ -26,10 +25,10 @@ int ControllerMainMenu::Control(){
     mn.ReceiveMessage(y);
   }
   endwin();
-  return NULL;
+  return EnumFactory::null;
 }
 
-int ControllerLoginClient::Control(){
+EnumFactory::SelectionableMenu ControllerLoginClient::Control(){
   std::vector<bool> toSelect;
   LoginView lv({true, false, false});
   Login lg;
@@ -48,15 +47,15 @@ int ControllerLoginClient::Control(){
     x = wgetch(menu);
     std::string y=std::to_string(x);
     if (y=="10") {
-      int next=lg.ReceiveEnterMessage();
-      if(next==ClientMVCFactory::Pseudo){
+      EnumFactory::SelectionableMenu next=lg.ReceiveEnterMessage();
+      if(next==EnumFactory::SelectionableMenu::Pseudo){
         char pseudo[80];
         echo();
         mvwgetstr(menu,4,70,pseudo);
         lg.SetUsername(pseudo);
         lv.setchamp(pseudo,0);
 
-      }else if(next==ClientMVCFactory::MDP){
+      }else if(next==EnumFactory::SelectionableMenu::MDP){
         char mdp[80];
         echo();
         mvwgetstr(menu,6,70,mdp);
@@ -64,12 +63,13 @@ int ControllerLoginClient::Control(){
         lv.setchamp(mdp,1);
 
       }
-      else if(next==ClientMVCFactory::Main){
+      else if(next==EnumFactory::SelectionableMenu::Main){
+        endwin();
         return next;
       }
     }else{
     lg.ReceiveMessage(y);}
   }
   endwin();
-  return NULL;
+  return EnumFactory::null;
 }

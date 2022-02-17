@@ -28,6 +28,7 @@ class Game {
   std::vector<std::shared_ptr<Player>> players;
   std::shared_ptr<Player> currentPlayer;
   bool gameOn;
+  GameMode gameMode=Normal;
 };
 
 #endif

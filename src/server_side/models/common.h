@@ -14,6 +14,11 @@ enum DIRECTION{
     WEST
 };
 
+enum GameMode{
+    Normal,
+    IA,
+    RandomWall
+};
 
 
 #endif

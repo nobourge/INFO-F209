@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include "position.h"
-#include "wall.h"
 #include "Player.h"
 #include <memory>
 #include <array>

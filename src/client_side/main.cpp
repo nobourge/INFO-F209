@@ -2,9 +2,12 @@
 #include "client_mvc_factory.h"
 
 int main() {
+  EnumFactory::SelectionableMenu enumf =EnumFactory::Login;
+  while(true){
   AbstractController* control;
   ClientMVCFactory mvc;
-  control = mvc.getController(SelectionableMenu::Login);
-  control->Control();
+  control = mvc.getController(enumf);
+  enumf = control->Control();
+  }
   return 0;
 }
