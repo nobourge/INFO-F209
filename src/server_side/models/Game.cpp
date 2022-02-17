@@ -17,12 +17,12 @@ void Game::StartTheGame(){
     gameOn=true;
     //When player connects from the server ... TODO
 
-    players.push_back(make_shared<Player>(Position{0,2},NORTH));
+    players.push_back(make_shared<Player>(Position{4,8},NORTH));
     //For now we have only 1 player
     currentPlayer=players[0];
     cout<<endl;
 
-    vector<Position> walls{{0,3},{6,3},{8,3},{10,3},{12,3},{14,3},{16,3}};
+    vector<Position> walls{{0,3}};
     // vector<Position> walls{{0,3},{2,3},{4,3},{6,3},{8,3},{10,3},{12,3},{14,3},{16,3}};
 
     board = new Board (players, walls);
@@ -38,7 +38,13 @@ void Game::SwitchCurrentPlayer(){
         endGame();
     }
 
-    // system("clear"); //clears the terminal.
+    system("clear"); //clears the terminal.
+
+    if(gameMode==IA){
+        
+    }else if(gameMode==RandomWall){
+        board->randomWallPlacement();
+    }
 
     //currentPlayer=next player from the vector
     cout<<currentPlayer->getPlayerPos().row<<" "<<currentPlayer->getPlayerPos().col<<endl;
