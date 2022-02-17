@@ -45,3 +45,5 @@ std::unique_ptr<crow::json::wvalue> Position::Serialize() {
   (*output)["y"] = row;
   return output;
 }
+
+Position::Position(int col, int row) : col(col), row(row) {}
