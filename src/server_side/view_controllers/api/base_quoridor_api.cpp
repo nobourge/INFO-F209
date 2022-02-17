@@ -3,6 +3,7 @@
 //
 
 #include "base_quoridor_api.h"
+#include "../../../common/constants.h"
 
 const unsigned BaseQuoridorApi::kQuoridorApiVersion = 0;
 
@@ -10,9 +11,7 @@ crow::SimpleApp &BaseQuoridorApi::GetApp() {
   return app;
 }
 
-BaseQuoridorApi::BaseQuoridorApi() {
-  SetupRoutes();
-}
+BaseQuoridorApi::BaseQuoridorApi() {}
 
 void BaseQuoridorApi::SetupRoutes() {
   CROW_ROUTE(GetApp(), "/")([] () {
@@ -22,5 +21,5 @@ void BaseQuoridorApi::SetupRoutes() {
 }
 
 void BaseQuoridorApi::Run() {
-  app.port(PORT).multithreaded().run();
+  app.port(SERVER_PORT).multithreaded().run();
 }

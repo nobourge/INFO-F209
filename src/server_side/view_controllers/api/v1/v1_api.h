@@ -6,28 +6,45 @@
 #define QUORIDOR_SRC_SERVER_SIDE_VIEWS_API_V1_API_H_
 
 #include "../base_quoridor_api.h"
-#include "../base_api_module.h"
+#include "../../../models/user/user.h"
+
+#define V1_API_PREFIX "/api/v1/"
+#define API_ROUTE(app, url) app.template route<crow::black_magic::get_parameter_tag(url)>(url)
 
 template<class ...Middlewares>
-class V1Api : public BaseQuoridorApi, public BaseApiModule<Middlewares...> {
+class V1Api : public BaseQuoridorApi {
  public:
- protected:
- public:
-  void SetupRoutes(const std::string &base_url, crow::Crow<Middlewares...> &app) override {
-    BaseApiModule<Middlewares...>::SetupRoutes(base_url, app);
-  }
+
+  V1Api() {
+    SetupRoutes();
+  };
+
+  [[nodiscard]] unsigned int GetVersion() const;
  protected:
   void SetupRoutes() override {
     BaseQuoridorApi::SetupRoutes();
-//    SetupRoutes()
+
+    API_ROUTE(GetApp(), "/api/v1/users") ([] () {
+      crow::json::wvalue users;
+      std::vector<std::string> dummy_usernames = {"User1", "User2", "User3"};
+      for (int i = 0; i < dummy_usernames.size(); i++) {
+        users[i] = std::move(*User(Username{dummy_usernames[i]}).Serialize());
+      }
+      crow::json::wvalue output;
+      output["users"] = std::move(users);
+      return output;
+    });
+
+    API_ROUTE(GetApp(), "/api/v1/users/<string>") ([] (const std::string &username) {
+      User user{Username{username}};
+      return *user.Serialize();
+    });
+
   }
  private:
- public:
-  [[nodiscard]] unsigned int GetVersion() const;
- private:
-  const unsigned version_ = 0;
+  static constexpr const unsigned version_ = 0;
 };
 
-
+#undef V1_API_PREFIX
 
 #endif //QUORIDOR_SRC_SERVER_SIDE_VIEWS_API_V1_API_H_

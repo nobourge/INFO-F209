@@ -1,20 +1,15 @@
 #define CROW_MAIN
+#define CROW_JSON_USE_MAP
 
 #include <iostream>
-#include "view_controllers/api/base_quoridor_api.h"
+#include "view_controllers/api/v1/v1_api.h"
 #include "models/board.h"
 #include "models/position.h"
 #include "models/Game.h"
 
-
-
 int main() {
-
-   BaseQuoridorApi api;
-
-   api.Run();
-
-
+  V1Api api;
+  api.Run();
 
   Game gameOn = Game(); //Normally this gets turned on by the server when the user wants to begin a game.
   //Server has to start the game and manage the players connection etc.
@@ -24,7 +19,5 @@ int main() {
 
   }
 
-
-  
   return 0;
 }

@@ -41,12 +41,8 @@ add_executable(QuoridorServer
         src/server_side/view_controllers/api/base_quoridor_api.h
         src/server_side/view_controllers/api/v1/v1_api.cpp
         src/server_side/view_controllers/api/v1/v1_api.h
-        src/server_side/view_controllers/api/base_api_module.cpp
-        src/server_side/view_controllers/api/base_api_module.h
-        src/server_side/view_controllers/api/v1/user.cpp
-        src/server_side/view_controllers/api/v1/user.h
         src/server_side/models/serializable.h
-        )
+        src/server_side/models/user/user.cpp src/server_side/models/user/user.h src/server_side/models/user/abstract_validator.cpp src/server_side/models/user/abstract_validator.h src/server_side/models/user/username.cpp src/server_side/models/user/username.h src/common/constants.h src/server_side/models/user/password.cpp src/server_side/models/user/password.h)
 
 
 target_include_directories(QuoridorServer PUBLIC ${Boost_INCLUDE_DIRS})

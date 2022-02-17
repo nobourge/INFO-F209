@@ -6,7 +6,7 @@
 #define QUORIDOR_SRC_SERVER_SIDE_VIEWS_API_BASE_QUORIDOR_API_H_
 
 #include "../../../includes/crow_all.hpp"
-#include "constants.h"
+#include "../../../common/constants.h"
 #include <functional>
 
 class BaseQuoridorApi {

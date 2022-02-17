@@ -31,7 +31,7 @@ _-kMaxLen : int_
 _-kAcceptedChars : [char]_
 --
 Username(username: String)
-IsValid(): bool</panel_attributes>
+Validate(): bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
