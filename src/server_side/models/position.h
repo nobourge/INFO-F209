@@ -3,10 +3,13 @@
 
 #include <utility>
 #include "common.h"
+#include "serializable.h"
 #include <iostream>
 
-struct Position {
+struct Position: public Serializable{
   int col, row;
+
+  std::unique_ptr<crow::json::wvalue> Serialize() override;
 
   bool operator==(const Position &pos) const;
 

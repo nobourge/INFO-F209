@@ -20,3 +20,11 @@ std::pair<int, int> Position::diff(const Position &position) const {
 bool Position::IsOutOfBoundaries(const int &low, const int &high) const {
   return (this->col < low || this->col > high - 1 || this->row < low || this->row > high - 1) ? true : false;
 }
+
+
+std::unique_ptr<crow::json::wvalue> Position::Serialize() {
+  std::unique_ptr<crow::json::wvalue> output;
+  (*output)["x"] = col;
+  (*output)["y"] = row;
+  return output;
+}
