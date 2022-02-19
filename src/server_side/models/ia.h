@@ -9,15 +9,10 @@ using namespace std;
 
 class Ia:public Player{
     int nrOfWalls=10;
-    Position IAPos;
-    DIRECTION dr=SOUTH; //by default the IA will be going in SOUTH
 public:
-    Ia(Position,DIRECTION);
+    Ia(Position,DIRECTION=SOUTH);
     Position playIAMove(bool=true) override;
-    Position getPlayerPos();
-    void setPlayerPosition(Position);
-    bool hasWon();
-
-};
+    bool hasWon() override;
+  };
 
 #endif
