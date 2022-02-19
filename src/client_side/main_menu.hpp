@@ -8,7 +8,6 @@ class MainMenu{
 public:
     std::vector <bool> getButtonState() const ;
     void ReceiveMessage(std::string message);
-    EnumFactory::SelectionableMenu ReceiveEnterMessage();
 };
 
 class Login{

@@ -6,12 +6,9 @@
 
 
 class MainMenuView : public MenuView{
-private:
     std::vector<bool> toSelect ;
     std::vector<std::string> words = {"Play", "Friend List" , "Ranking", "Help", "Quit"};
     const char* name = "Main Menu";
-    const int decalage = 4;
-
 public:
   MainMenuView(std::vector<bool> toselect);
   void Display(WINDOW* menu) const;
@@ -31,4 +28,13 @@ public:
   void OpenMenu(){NULL;};
   void settoSelect(std::vector<bool> toselect);
   void setchamp(std::string newstr,int index);
+};
+
+class HelpView : public MenuView{
+    std::vector<bool> toSelect;
+    std::vector<std::string> words = {"Quit"};
+    const char* name = "Help";
+public:
+    void OpenMenu(){NULL;};
+    void Display(WINDOW* menu) const override;
 };
