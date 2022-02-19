@@ -83,7 +83,8 @@ void StartScreenView::Display(WINDOW* menu) const{
 
 TypeOfGameSelectView::TypeOfGameSelectView(std::vector<bool> toSelect):toSelect(toSelect){}
 void TypeOfGameSelectView::settoSelect(std::vector<bool> toselect) {toSelect=toselect;}
-void StartScreenView::Display(WINDOW* menu) const{
+
+void TypeOfGameSelectView::Display(WINDOW* menu) const{
   wrefresh(menu);
   wattr_on(menu, A_BOLD, 0);
   int center_y = COLS/2;

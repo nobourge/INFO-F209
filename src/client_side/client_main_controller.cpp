@@ -106,3 +106,68 @@ EnumFactory::SelectionableMenu ControllerHelpClient::Control(){
   endwin();
   return EnumFactory::null;
 }
+
+
+
+EnumFactory::SelectionableMenu ControllerStartScreenClient::Control(){
+  std::vector<bool> toSelect;
+  StartScreenView mv ({true, false, false});
+  StartScreen mn;
+  WINDOW* menu;
+  initscr();
+  attron(A_STANDOUT);
+  clear();
+  noecho();
+  while(true){
+    toSelect = mn.getButtonState();
+    mv.settoSelect(toSelect);
+    menu = newwin(150,150,0,0);
+    mv.Display(menu);
+    keypad(menu,true);
+    int x;
+    x = wgetch(menu);
+    std::string y=std::to_string(x);
+    if (y=="10") {
+      EnumFactory::SelectionableMenu next=mn.ReceiveEnterMessage();
+      if(next!=EnumFactory::null){
+        endwin();
+        return next;
+      }
+    }else{
+      mn.ReceiveMessage(y);}
+  }
+  endwin();
+  return EnumFactory::null;
+}
+
+
+EnumFactory::SelectionableMenu ControllerTypeOfGameSelectClient::Control(){
+  std::vector<bool> toSelect;
+  TypeOfGameSelectView mv ({true, false, false,false});
+  TypeOfGameSelect mn;
+  WINDOW* menu;
+  initscr();
+  attron(A_STANDOUT);
+  clear();
+  noecho();
+  while(true){
+    toSelect = mn.getButtonState();
+    mv.settoSelect(toSelect);
+    menu = newwin(150,150,0,0);
+    mv.Display(menu);
+    keypad(menu,true);
+    int x;
+    x = wgetch(menu);
+    std::string y=std::to_string(x);
+    if (y=="10") {
+      EnumFactory::SelectionableMenu next=mn.ReceiveEnterMessage();
+      if(next!=EnumFactory::null){
+        endwin();
+        return next;
+      }
+    }else{
+      mn.ReceiveMessage(y);}
+  }
+  endwin();
+  return EnumFactory::null;
+}

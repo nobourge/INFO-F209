@@ -23,6 +23,14 @@ class ControllerHelpClient :public AbstractController{
   EnumFactory::SelectionableMenu  Control();
 };
 
+class ControllerStartScreenClient :public AbstractController{
+ public:
+  EnumFactory::SelectionableMenu  Control();
+};
 
+class ControllerTypeOfGameSelectClient :public AbstractController{
+ public:
+  EnumFactory::SelectionableMenu  Control();
+};
 
 #endif //QUORIDOR_SRC_CLIENT_SIDE_CONTROLLER_H_

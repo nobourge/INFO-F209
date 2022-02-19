@@ -10,5 +10,9 @@ AbstractController* ClientMVCFactory::getController(EnumFactory::SelectionableMe
       return new ControllerLoginClient;
     case  EnumFactory::Help:
       return new ControllerHelpClient;
+    case  EnumFactory::StartScreen:
+      return new ControllerStartScreenClient;
+    case  EnumFactory::TypeOfGameSelect:
+      return new ControllerTypeOfGameSelectClient;
   }
 }
