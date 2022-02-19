@@ -5,7 +5,6 @@
 
 class MenuView{
 public:
-  virtual void OpenMenu() = 0;
   const int decalage = 4;
   const char* name;
   virtual void Display(WINDOW* menu) const=0;

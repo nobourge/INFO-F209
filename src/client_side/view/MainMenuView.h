@@ -12,9 +12,9 @@ class MainMenuView : public MenuView{
 public:
   MainMenuView(std::vector<bool> toselect);
   void Display(WINDOW* menu) const;
-  void OpenMenu(){NULL;};
   void settoSelect(std::vector<bool> toselect);
 };
+
 
 
 class LoginView : public MenuView{
@@ -25,7 +25,6 @@ class LoginView : public MenuView{
 public:
   LoginView(std::vector<bool> toselect);
   void Display(WINDOW* menu) const override;
-  void OpenMenu(){NULL;};
   void settoSelect(std::vector<bool> toselect);
   void setchamp(std::string newstr,int index);
 };
@@ -34,7 +33,26 @@ class HelpView : public MenuView{
     std::vector<std::string> words = {"Quit"};
     const char* name = "Help";
 public:
-    void OpenMenu(){NULL;};
-    void Display(WINDOW* menu) const override;
+  void Display(WINDOW* menu) const override;
   void settoSelect(std::vector<bool> toselect){NULL;}
+};
+
+class StartScreenView : public MenuView{
+    std::vector<std::string> words = {"Login", "Sign up", "Exit"};
+    const char* name = "Quoridor";
+    std::vector<bool> toSelect;
+  public:
+    StartScreenView(std::vector<bool> toselect);
+    void Display(WINDOW* menu) const override;
+    void settoSelect(std::vector<bool> toselect);
+};
+
+class TypeOfGameSelectView : public MenuView{
+  std::vector<std::string> words = {"Matchmaking Online", "Matchmaking with friends", "Quit"};
+  const char* name = "Online";
+  std::vector<bool> toSelect;
+public:
+  TypeOfGameSelectView(std::vector<bool> toselect);
+  void Display(WINDOW* menu) const;
+  void settoSelect(std::vector<bool> toselect);
 };
