@@ -4,7 +4,7 @@
 #include "abstract_controller.h"
 class MainMenu{
     std::vector<bool> buttons = {false, false, true, false, false};
-    int current_index = 2;
+    int current_index = 0;
 public:
     std::vector <bool> getButtonState() const ;
     void ReceiveMessage(std::string message);
@@ -14,7 +14,7 @@ public:
 class Login{
     std::vector <std::string> data={"",""};
   std::vector<bool> buttons = {false, false, true, false, false};
-  int current_index = 2;
+  int current_index = 0;
 public:
     std::vector <bool> getButtonState() const ;
     void ReceiveMessage(std::string message);

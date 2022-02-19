@@ -31,7 +31,6 @@ public:
 };
 
 class HelpView : public MenuView{
-    std::vector<bool> toSelect;
     std::vector<std::string> words = {"Quit"};
     const char* name = "Help";
 public:

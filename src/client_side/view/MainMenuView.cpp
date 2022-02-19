@@ -62,9 +62,7 @@ void HelpView::Display(WINDOW* menu) const{
 
   mvwprintw(menu, decalage, 0, "Quoridor is played on a game board of 81 square spaces (9x9). Each player is represented by a pawn which begins at the center space of one edge of the board (in a two-player game, the pawns begin opposite each other)." );
 
-  if (toSelect[0]){
     wattr_on(menu, A_UNDERLINE, 0);
     mvwprintw(menu, decalage + 6, center_y - (strlen(words[0].c_str()) / 2) ,words[0].c_str());
     wattr_off(menu, A_UNDERLINE, 0);
-  }
 }
