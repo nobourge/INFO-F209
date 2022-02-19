@@ -56,3 +56,15 @@ public:
   void Display(WINDOW* menu) const;
   void settoSelect(std::vector<bool> toselect);
 };
+
+class SignUpView : public MenuView{
+  std::vector<bool> toSelect;
+  std::vector<std::string> words = {"Isert a new pseudo", "Password" , "Confirm password","Confirm", "Quit"};
+  std::vector<std::string> champ = {"", "", "", "", ""};
+  const char* name = "Sign up";
+public:
+  SignUpView(std::vector<bool> toselect);
+  void Display(WINDOW* menu) const override;
+  void settoSelect(std::vector<bool> toselect);
+  void setchamp(std::string newstr,int index);
+};
