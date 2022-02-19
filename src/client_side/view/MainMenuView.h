@@ -37,4 +37,5 @@ class HelpView : public MenuView{
 public:
     void OpenMenu(){NULL;};
     void Display(WINDOW* menu) const override;
+  void settoSelect(std::vector<bool> toselect){NULL;}
 };

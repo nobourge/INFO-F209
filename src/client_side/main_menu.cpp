@@ -17,6 +17,15 @@ void MainMenu::ReceiveMessage(std::string message){
     if(current_index>buttons.size()-1)current_index=buttons.size()-1;
     buttons[current_index]=true;
 }
+EnumFactory::SelectionableMenu MainMenu::ReceiveEnterMessage(){
+if (current_index==4){
+  return EnumFactory::Login;
+}
+  if (current_index==3){
+    return EnumFactory::Help;
+  }
+return EnumFactory::null;
+}
 
 std::vector <bool> Login::getButtonState() const{
   return buttons;
@@ -59,4 +68,7 @@ void Login::ReceiveMessage(std::string message){
   if(current_index<0)current_index=0;
   if(current_index>buttons.size()-1)current_index=buttons.size()-1;
   buttons[current_index]=true;
+}
+EnumFactory::SelectionableMenu Help::ReceiveEnterMessage(){
+    return EnumFactory::Main;
 }

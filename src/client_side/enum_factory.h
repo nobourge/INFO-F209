@@ -1,3 +1,3 @@
 struct EnumFactory{
-      enum SelectionableMenu{Main, Login,Pseudo,MDP,null};
+      enum SelectionableMenu{Main, Login,Pseudo,MDP,Help,null};
 };

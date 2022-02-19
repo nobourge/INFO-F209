@@ -22,7 +22,14 @@ EnumFactory::SelectionableMenu ControllerMainMenu::Control(){
     int x;
     x = wgetch(menu);
     std::string y=std::to_string(x);
-    mn.ReceiveMessage(y);
+    if (y=="10") {
+      EnumFactory::SelectionableMenu next=mn.ReceiveEnterMessage();
+      if(next!=EnumFactory::null){
+        endwin();
+        return next;
+      }
+    }else{
+    mn.ReceiveMessage(y);}
   }
   endwin();
   return EnumFactory::null;
@@ -69,6 +76,32 @@ EnumFactory::SelectionableMenu ControllerLoginClient::Control(){
       }
     }else{
     lg.ReceiveMessage(y);}
+  }
+  endwin();
+  return EnumFactory::null;
+}
+
+
+EnumFactory::SelectionableMenu ControllerHelpClient::Control(){
+  HelpView hv;
+  Help hp;
+  WINDOW* menu;
+  initscr();
+  attron(A_STANDOUT);
+  clear();
+  noecho();
+  while(true){
+    menu = newwin(150,150,0,0);
+    hv.Display(menu);
+    keypad(menu,true);
+    int x;
+    x = wgetch(menu);
+    std::string y=std::to_string(x);
+    if (y=="10") {
+      EnumFactory::SelectionableMenu next=hp.ReceiveEnterMessage();
+        endwin();
+        return next;
+      }
   }
   endwin();
   return EnumFactory::null;

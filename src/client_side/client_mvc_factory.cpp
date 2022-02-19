@@ -6,9 +6,9 @@ AbstractController* ClientMVCFactory::getController(EnumFactory::SelectionableMe
   switch(mvcname){
     case EnumFactory::Main:
       return new ControllerMainMenu;
-      break;
     case EnumFactory::Login:
       return new ControllerLoginClient;
-      break;
+    case  EnumFactory::Help:
+      return new ControllerHelpClient;
   }
 }
