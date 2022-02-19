@@ -22,7 +22,13 @@ EnumFactory::SelectionableMenu ControllerMainMenu::Control(){
     int x;
     x = wgetch(menu);
     std::string y=std::to_string(x);
-    mn.ReceiveMessage(y);
+    if (y=="10") {
+      EnumFactory::SelectionableMenu next=mn.ReceiveEnterMessage();
+      if(next!=EnumFactory::null){
+        return next;
+      }
+    }else{
+    mn.ReceiveMessage(y);}
   }
   endwin();
   return EnumFactory::null;
