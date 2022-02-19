@@ -4,6 +4,7 @@
 
 #include "board.h"
 #include "Player.h"
+#include "ia.h"
 #include "position.h"
 #include "memory"
 #include "input.h"
@@ -20,6 +21,7 @@ class Game {
   void joinGame();
   void endGame();
   void playCoup();
+  void playIaMove();
   std::shared_ptr<Player> getCurrentPlayer();
   Board *getBoard() { return board; }
 
@@ -28,6 +30,7 @@ class Game {
   std::vector<std::shared_ptr<Player>> players;
   std::shared_ptr<Player> currentPlayer;
   bool gameOn;
+  bool IaPlayer=false;
   GameMode gameMode=Normal;
 };
 

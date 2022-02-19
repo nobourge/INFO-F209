@@ -1,5 +1,5 @@
-go : main.cpp board.o cell.o Game.o Player.o position.o translator.o input.o
-	g++ main.cpp board.o cell.o Game.o Player.o position.o translator.o input.o -Wall -Wextra -o go
+go : main.cpp board.o cell.o Game.o Player.o position.o translator.o input.o ia.o
+	g++ main.cpp board.o cell.o Game.o Player.o position.o translator.o input.o ia.o -Wall -Wextra -o go
 
 board.o : models/board.cpp models/board.h
 	g++ -c models/board.cpp
@@ -21,6 +21,9 @@ translator.o : models/translator.cpp models/translator.h
 
 input.o : models/input.cpp models/input.h
 	g++ -c models/input.cpp
+
+ia.o: models/ia.cpp models/ia.h
+	g++ -c models/ia.cpp
 
 clean:
 	rm *.o go

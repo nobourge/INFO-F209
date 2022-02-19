@@ -14,14 +14,16 @@ class Player{
        
 
 public:
+    Player(){}
     Player(Position,DIRECTION);
     bool isTurnOver();
-    bool hasWon();
+    virtual bool hasWon();
     Position playMove(DIRECTION);
-    Position getPlayerPos();
-    void setPlayerPosition(Position);
-    Position calculateDirection(char);
+    virtual Position getPlayerPos();
+    virtual void setPlayerPosition(Position);
+    Position calculateDirection(char,Position,DIRECTION);
     pair<Position,Position> placeWall(std::string);
+    virtual Position playIAMove(bool=true){return {0,0};};
     std::string getMessage();
     DIRECTION getGoal() const;
 };
