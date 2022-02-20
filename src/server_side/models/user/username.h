@@ -10,6 +10,8 @@
 
 struct InvalidUsername : public std::exception {
   [[nodiscard]] const char *what() const _NOEXCEPT override;
+  ///
+  /// \param validation_error_description
   InvalidUsername(std::string validation_error_description);
  private:
   std::string error_message_;
@@ -18,18 +20,28 @@ struct InvalidUsername : public std::exception {
 
 struct UsernameValidator : public AbstractValidator {
  public:
+    ///
+    /// \param value
+    /// \return
   ValidatorResult Validate(const std::string &value) override;
 };
 
 class Username {
  public:
-  static bool IsValid(const std::string &username);
+    ///
+    /// \param username
+    /// \return
+    static bool IsValid(const std::string &username);
 
-  explicit Username(std::string value);
-  [[nodiscard]] const std::string &GetValue() const;
+    ///
+    /// \param value
+    explicit Username(std::string value);
+    ///
+    /// \return
+    [[nodiscard]] const std::string &GetValue() const;
 
  private:
-  std::string value_;
+    std::string value_;
 };
 
 #endif //QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_USERNAME_H_

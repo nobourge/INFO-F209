@@ -10,8 +10,14 @@
 class User : public Serializable {
  public:
   User(const Username &username);
+  ///
+  /// \return
   std::unique_ptr<crow::json::wvalue> Serialize() override;
+  ///
+  /// \return
   [[nodiscard]] const Username &GetUsername() const;
+  ///
+  /// \return
   [[nodiscard]] int64_t GetCreationTimestamp() const;
  private:
   Username username_;

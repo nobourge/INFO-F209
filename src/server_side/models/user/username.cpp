@@ -8,6 +8,9 @@
 #include <utility>
 #include <vector>
 
+/// checks input username conformity
+/// \param value
+/// \return
 ValidatorResult UsernameValidator::Validate(const std::string &value) {
   if (value.size() < MIN_USERNAME_SIZE) {
     return ValidatorResult{"Username too short"};
@@ -24,14 +27,21 @@ ValidatorResult UsernameValidator::Validate(const std::string &value) {
   return {};
 }
 
+/// validates input username conformity
+/// \param username
+/// \return
 bool Username::IsValid(const std::string &username) {
   return UsernameValidator().Validate(username).IsValid();
 }
 
+///
+/// \return
 const std::string &Username::GetValue() const {
   return value_;
 }
 
+///
+/// \param value
 Username::Username(std::string value) {
   auto username_validation_res = UsernameValidator().Validate(value);
   if (!username_validation_res.IsValid()) {
@@ -40,10 +50,14 @@ Username::Username(std::string value) {
   value_ = std::move(value);
 }
 
+///
+/// \return
 const char *InvalidUsername::what() const noexcept {
   return error_message_.c_str();
 }
 
 InvalidUsername::InvalidUsername(std::string validation_error_description) : error_message_(
     "Uncaught invalid username usage" + std::move(validation_error_description)
-) {}
+) {
+
+}

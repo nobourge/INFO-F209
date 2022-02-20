@@ -5,6 +5,9 @@
 #include "password.h"
 #include "../../../common/constants.h"
 
+/// check input password conformity
+/// \param value
+/// \return
 ValidatorResult PasswordValidator::Validate(const std::string &value) {
   if (value.size() < MIN_PASSWORD_LENGTH) {
     return ValidatorResult{"Password too short"};

@@ -18,24 +18,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42ab3e6f-55e7-42ce-ad9d-31bd2df60faf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="42ab3e6f-55e7-42ce-ad9d-31bd2df60faf" name="Changes" comment="Doxygen comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/Player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/cell.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/common.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/common.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/ia.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/ia.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/input.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/input.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/position.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/position.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/serializable.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/serializable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/translator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/translator.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/translator.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/translator.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/view_controllers/api/base_quoridor_api.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/view_controllers/api/base_quoridor_api.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/view_controllers/api/base_quoridor_api.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/view_controllers/api/base_quoridor_api.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/view_controllers/api/v1/v1_api.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/view_controllers/api/v1/v1_api.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/view_controllers/api/v1/v1_api.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/view_controllers/api/v1/v1_api.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_side/client_main_controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_side/client_main_controller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/board.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +36,13 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/CMakeLists.txt" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/server_side/models/board.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CMakeLists.txt" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/idea.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/server_side/models/board.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -73,7 +62,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
@@ -84,7 +72,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+    <property name="structure.view.defaults.are.configured" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -127,12 +116,45 @@
       <workItem from="1645181523405" duration="172000" />
       <workItem from="1645182816374" duration="8618000" />
       <workItem from="1645278054486" duration="2047000" />
-      <workItem from="1645389048480" duration="2974000" />
+      <workItem from="1645360511685" duration="8613000" />
+      <workItem from="1645374382897" duration="1272000" />
+      <workItem from="1645375685658" duration="1898000" />
     </task>
+    <task id="LOCAL-00001" summary="login menu quit button">
+      <created>1645372453447</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645372453447</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Doxygen comments">
+      <created>1645376759354</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645376759354</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="login menu quit button" />
+    <MESSAGE value="Doxygen comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Doxygen comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

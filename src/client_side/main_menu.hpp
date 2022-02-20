@@ -13,8 +13,8 @@ public:
 
 class Login{
     std::vector <std::string> data={"",""};
-  std::vector<bool> buttons = {true, false, false, false, false};
-  int current_index = 0;
+    std::vector<bool> buttons = {true, false, false, false};
+    int current_index = 0;
 public:
     std::vector <bool> getButtonState() const ;
     void ReceiveMessage(std::string message);
@@ -27,6 +27,7 @@ class Help{
  public:
   EnumFactory::SelectionableMenu ReceiveEnterMessage();
 };
+
 class StartScreen{
   std::vector<bool> buttons = {true, false, false};
   int current_index = 0;
@@ -47,7 +48,7 @@ class TypeOfGameSelect{
 
 class SignUp{
   std::vector <std::string> data={"","",""};
-  std::vector<bool> buttons = {true, false, false,false,false};
+  std::vector<bool> buttons = {true, false, false, false, false};
   int current_index = 0;
  public:
   std::vector <bool> getButtonState() const ;

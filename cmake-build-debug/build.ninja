@@ -39,61 +39,61 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/bourg/Documents/GitHub/INFO-F209/cmake-build-debug/
-
-#############################################
-# Utility command for edit_cache
-
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build edit_cache: phony CMakeFiles/edit_cache.util
-
+cmake_ninja_workdir = /home/noe/CLionProjects/INFO-F209/cmake-build-debug/
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\bourg\Documents\GitHub\INFO-F209 -BC:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug"
+  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug && /snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/noe/CLionProjects/INFO-F209 -B/home/noe/CLionProjects/INFO-F209/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# C:/Users/bourg/Documents/GitHub/INFO-F209/CMakeLists.txt
-# =============================================================================
-
 
 #############################################
 # Utility command for edit_cache
 
-build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug && /snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/noe/CLionProjects/INFO-F209/CMakeLists.txt
+# =============================================================================
 
 
 #############################################
 # Utility command for rebuild_cache
 
 build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\bourg\Documents\GitHub\INFO-F209 -BC:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug"
+  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src && /snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/noe/CLionProjects/INFO-F209 -B/home/noe/CLionProjects/INFO-F209/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
 build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for edit_cache
+
+build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src && /snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/bourg/Documents/GitHub/INFO-F209/src/CMakeLists.txt
+# /home/noe/CLionProjects/INFO-F209/src/CMakeLists.txt
 # =============================================================================
 
 
@@ -101,12 +101,23 @@ build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 # Utility command for rebuild_cache
 
 build src/client_side/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug\src\client_side && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\bourg\Documents\GitHub\INFO-F209 -BC:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug"
+  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src/client_side && /snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/noe/CLionProjects/INFO-F209 -B/home/noe/CLionProjects/INFO-F209/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
 build src/client_side/rebuild_cache: phony src/client_side/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/client_side/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src/client_side && /snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/client_side/edit_cache: phony src/client_side/CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Object build statements for EXECUTABLE target ClientSide
@@ -117,47 +128,47 @@ build src/client_side/rebuild_cache: phony src/client_side/CMakeFiles/rebuild_ca
 
 build cmake_object_order_depends_target_ClientSide: phony || src/client_side/CMakeFiles/ClientSide.dir
 
-build src/client_side/CMakeFiles/ClientSide.dir/view/MainMenuView.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view/MainMenuView.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view\MainMenuView.cpp.obj.d
-  FLAGS = -g -std=gnu++1y
-  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
-  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view
+build src/client_side/CMakeFiles/ClientSide.dir/view/MainMenuView.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view/MainMenuView.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view/MainMenuView.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view
 
-build src/client_side/CMakeFiles/ClientSide.dir/view/MenuView.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view/MenuView.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view\MenuView.cpp.obj.d
-  FLAGS = -g -std=gnu++1y
-  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
-  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view
+build src/client_side/CMakeFiles/ClientSide.dir/view/MenuView.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view/MenuView.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view/MenuView.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view
 
-build src/client_side/CMakeFiles/ClientSide.dir/main_menu.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/main_menu.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\main_menu.cpp.obj.d
-  FLAGS = -g -std=gnu++1y
-  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
-  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir
+build src/client_side/CMakeFiles/ClientSide.dir/main_menu.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/main_menu.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/main_menu.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
 
-build src/client_side/CMakeFiles/ClientSide.dir/main.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/main.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++1y
-  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
-  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir
+build src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/main.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
 
-build src/client_side/CMakeFiles/ClientSide.dir/client_main_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/client_main_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\client_main_controller.cpp.obj.d
-  FLAGS = -g -std=gnu++1y
-  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
-  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir
+build src/client_side/CMakeFiles/ClientSide.dir/client_main_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/client_main_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/client_main_controller.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
 
-build src/client_side/CMakeFiles/ClientSide.dir/abstract_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/abstract_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\abstract_controller.cpp.obj.d
-  FLAGS = -g -std=gnu++1y
-  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
-  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir
+build src/client_side/CMakeFiles/ClientSide.dir/abstract_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/abstract_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/abstract_controller.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
 
-build src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/client_mvc_factory.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\client_mvc_factory.cpp.obj.d
-  FLAGS = -g -std=gnu++1y
-  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
-  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir
+build src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/client_mvc_factory.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
 
 
 # =============================================================================
@@ -165,35 +176,21 @@ build src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.obj: CXX_
 
 
 #############################################
-# Link the executable src\client_side\ClientSide.exe
+# Link the executable src/client_side/ClientSide
 
-build src/client_side/ClientSide.exe: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/view/MainMenuView.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view/MenuView.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/main_menu.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/main.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/client_main_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/abstract_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.obj
+build src/client_side/ClientSide: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/view/MainMenuView.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view/MenuView.cpp.o src/client_side/CMakeFiles/ClientSide.dir/main_menu.cpp.o src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o src/client_side/CMakeFiles/ClientSide.dir/client_main_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/abstract_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o
   FLAGS = -g
-  LINK_LIBRARIES = -lncurses  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = src\client_side\ClientSide.exe
-  TARGET_IMPLIB = src\client_side\libClientSide.dll.a
-  TARGET_PDB = ClientSide.exe.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/client_side/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug\src\client_side && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build src/client_side/edit_cache: phony src/client_side/CMakeFiles/edit_cache.util
+  LINK_LIBRARIES = -lncurses
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/client_side/ClientSide
+  TARGET_PDB = ClientSide.dbg
 
 # =============================================================================
 # Target aliases.
 
-build ClientSide: phony src/client_side/ClientSide.exe
-
-build ClientSide.exe: phony src/client_side/ClientSide.exe
+build ClientSide: phony src/client_side/ClientSide
 
 # =============================================================================
 # Folder targets.
@@ -201,23 +198,23 @@ build ClientSide.exe: phony src/client_side/ClientSide.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/bourg/Documents/GitHub/INFO-F209/cmake-build-debug
+# Folder: /home/noe/CLionProjects/INFO-F209/cmake-build-debug
 
 build all: phony src/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/bourg/Documents/GitHub/INFO-F209/cmake-build-debug/src
+# Folder: /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src
 
 build src/all: phony src/client_side/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/bourg/Documents/GitHub/INFO-F209/cmake-build-debug/src/client_side
+# Folder: /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src/client_side
 
-build src/client_side/all: phony src/client_side/ClientSide.exe
+build src/client_side/all: phony src/client_side/ClientSide
 
 # =============================================================================
 # Built-in targets
@@ -226,14 +223,14 @@ build src/client_side/all: phony src/client_side/ClientSide.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindOpenSSL.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindOpenSSL.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################
