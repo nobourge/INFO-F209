@@ -28,6 +28,7 @@ void DataBase::createTables(){
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
     //Create second table BOARD
     sql="CREATE TABLE IF NOT EXISTS BOARD("
+                      "ID PRIMARY KEY NOT NULL, "
                       "PAWNS           INT    NOT NULL, "
                       "WALLS        INT NOT NULL)";
 
@@ -35,6 +36,8 @@ void DataBase::createTables(){
     
     //Create third table RANKING
     sql="CREATE TABLE IF NOT EXISTS RANKING("
+                      "ID  INT PRIMARY KEY NOT NULL, " 
+                      "PLAYER_ID INT NOT NULL, "
                       "FIRST_PLACE           TEXT    NOT NULL, "
                       "SECOND_PLACE           TEXT    NOT NULL, "
                       "THIRD_PLACE           TEXT    NOT NULL, "
@@ -43,11 +46,15 @@ void DataBase::createTables(){
 
     //Create fourth table FRIENDS
     sql="CREATE TABLE IF NOT EXISTS FRIENDS("
-                      "FRIENDS        TEXT NOT NULL)";
+                      "ID INT PRIMARY KEY NOT NULL, "
+                      "MY_FRIEND_ID INT NOT NULL, "
+                      "MY_PLAYER_ID        INT NOT NULL)";
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
     //Create fifth table CONVERSATIONS
     sql="CREATE TABLE IF NOT EXISTS CONVERSATIONS("
+                      "ID INT PRIMARY KEY NOT NULL, "
+                      "PLAYER_ID INT NOT NULL, "
                       "CONVERSATIONS       TEXT NOT NULL)";
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
@@ -85,7 +92,7 @@ void DataBase::insertBoard(int nrOfPlayers,int nrOfWalls){
     string query = "SELECT * FROM BOARD;";
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
     //Insert values
-    sql=("INSERT INTO BOARD VALUES("+to_string(nrOfPlayers) +"," + to_string(nrOfWalls) + ");");
+    sql=("INSERT INTO BOARD VALUES(1,"+to_string(nrOfPlayers) +"," + to_string(nrOfWalls) + ");");
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
     verifyTable();
