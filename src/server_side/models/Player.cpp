@@ -8,11 +8,14 @@ Player::Player(Position playerPos,DIRECTION dr):playerPos(playerPos),dr(dr){
 
 }
 
+///
+/// \return
 bool Player::isTurnOver(){
     return true;
 }
 
-
+///
+/// \return
 bool Player::hasWon(){
     if(dr==NORTH){
         if(playerPos.row==0){
@@ -39,7 +42,9 @@ bool Player::hasWon(){
     return false;
 }
 
-
+///
+/// \param placement
+/// \return
 pair<Position,Position> Player::placeWall(string placement){
     //Cut the a1->a2->N in a1 , a2 and N;
     std::string delimiter = "->";
@@ -58,8 +63,10 @@ pair<Position,Position> Player::placeWall(string placement){
     return ret;
 }
 
+///
+/// \param direction
+/// \return
 Position Player::playMove(DIRECTION direction){
-
 
     if(direction==NORTH){
             return calculateDirection('F',playerPos,dr);
@@ -76,6 +83,11 @@ Position Player::playMove(DIRECTION direction){
     isTurnOver();
 }
 
+///
+/// \param c
+/// \param Pos
+/// \param dir
+/// \return
 Position Player::calculateDirection(char c,Position Pos,DIRECTION dir){
     Position coup;
     if(c =='F'){
@@ -135,14 +147,20 @@ Position Player::calculateDirection(char c,Position Pos,DIRECTION dir){
     return coup;
 }
 
+///
+/// \param newPos
 void Player::setPlayerPosition(Position newPos){
     playerPos=newPos;
 }
 
+///
+/// \return
 Position Player::getPlayerPos(){
     return playerPos;
 }
 
+///
+/// \return
 DIRECTION Player::getGoal() const {
   return dr;
 }

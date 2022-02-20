@@ -19,14 +19,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42ab3e6f-55e7-42ce-ad9d-31bd2df60faf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/INFO-F209.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/cell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/common.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/common.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/ia.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/ia.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/input.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/input.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/position.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/position.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/serializable.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/serializable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/translator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/translator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/translator.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/translator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/view_controllers/api/base_quoridor_api.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/view_controllers/api/base_quoridor_api.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/view_controllers/api/base_quoridor_api.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/view_controllers/api/base_quoridor_api.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/view_controllers/api/v1/v1_api.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/view_controllers/api/v1/v1_api.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/view_controllers/api/v1/v1_api.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/view_controllers/api/v1/v1_api.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,11 +102,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -123,6 +127,7 @@
       <workItem from="1645181523405" duration="172000" />
       <workItem from="1645182816374" duration="8618000" />
       <workItem from="1645278054486" duration="2047000" />
+      <workItem from="1645389048480" duration="2974000" />
     </task>
     <servers />
   </component>

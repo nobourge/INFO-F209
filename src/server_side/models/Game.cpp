@@ -10,6 +10,7 @@ Game::Game(){
 
 }
 
+///
 
 void Game::StartTheGame(){
 
@@ -34,6 +35,8 @@ void Game::StartTheGame(){
 
 
 }
+
+///
 
 void Game::SwitchCurrentPlayer(){
     //First we check if the current player has won before we change the player at the end of the turn
@@ -65,6 +68,8 @@ void Game::SwitchCurrentPlayer(){
 
 }
 
+///
+
 void Game::playIaMove(){
     bool on=false;
     string choose[2]={"Movement","Wall"};
@@ -94,30 +99,42 @@ void Game::playIaMove(){
     SwitchCurrentPlayer();
 }
 
+///
+/// \return
 bool Game::hasCurrentPlayerWon(){
     //At the end of turn we check if the currentPlayer has won the game.
     return currentPlayer->hasWon();
 }
+
+///
 
 void Game::joinGame(){
     //if (players.size<4) Then the player can connect to the game.
 
 }
 
+///
+/// \return
 int Game::getScore(){
     //The score for each player when the game is finished
     return 0;
 }
+
+///
 
 void Game::endGame(){
     //Server stuff
     gameOn=false;
 }
 
+///
+/// \return
 bool Game::gameOnGoing(){
     playCoup();
     return gameOn;
 }
+
+///
 
 void Game::playCoup(){
     bool on=false;
@@ -172,6 +189,8 @@ void Game::playCoup(){
 
 }
 
+///
+/// \return
 std::shared_ptr<Player> Game::getCurrentPlayer(){
     return currentPlayer;
 }

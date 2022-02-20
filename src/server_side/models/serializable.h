@@ -8,6 +8,8 @@
 #include "../../includes/crow_all.hpp"
 
 struct Serializable {
+  /// serializes ?
+  /// \return
   virtual std::unique_ptr<crow::json::wvalue> Serialize() = 0;
 };
 

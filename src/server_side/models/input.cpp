@@ -2,12 +2,16 @@
 
 using namespace std;
 
+///
+/// \return
 char Input::getInput(){
     char movement;
     cin>>movement;
     return movement;
 }
 
+///
+/// \return
 DIRECTION Input::getInputMovement(){
     bool on=false;
     DIRECTION direction;
@@ -41,6 +45,8 @@ DIRECTION Input::getInputMovement(){
     
 }   
 
+///
+/// \return
 string Input::getInputWall(){
      
     cout<<"You have chosen to place a wall"<<endl;

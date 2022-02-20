@@ -12,7 +12,11 @@
 class BaseQuoridorApi {
  public:
   static const unsigned kQuoridorApiVersion;
+  ///
+
   BaseQuoridorApi();
+
+  ///
 
   void Run();
 

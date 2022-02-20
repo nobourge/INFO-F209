@@ -5,6 +5,9 @@ Ia::Ia(Position IAPos,DIRECTION dr): Player{IAPos, dr}{
 
 }
 
+///
+/// \param forward
+/// \return
 Position Ia::playIAMove(bool forward){
     Position newPos;
     if(forward){
@@ -21,6 +24,8 @@ Position Ia::playIAMove(bool forward){
     return newPos;
 }
 
+///
+/// \return
 bool Ia::hasWon(){
     bool won=false;
     if(getPlayerPos().row==8){
