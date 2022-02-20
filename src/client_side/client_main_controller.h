@@ -33,4 +33,9 @@ class ControllerTypeOfGameSelectClient :public AbstractController{
   EnumFactory::SelectionableMenu  Control();
 };
 
+class ControllerSignUpClient :public AbstractController{
+ public:
+  EnumFactory::SelectionableMenu  Control();
+};
+
 #endif //QUORIDOR_SRC_CLIENT_SIDE_CONTROLLER_H_

@@ -171,3 +171,60 @@ EnumFactory::SelectionableMenu ControllerTypeOfGameSelectClient::Control(){
   endwin();
   return EnumFactory::null;
 }
+
+
+
+
+
+EnumFactory::SelectionableMenu ControllerSignUpClient::Control(){
+  std::vector<bool> toSelect;
+  SignUpView lv({true, false, false,false,false});
+  SignUp lg;
+  WINDOW* menu;
+  initscr();
+  attron(A_STANDOUT);
+  clear();
+  noecho();
+  while(true){
+    toSelect = lg.getButtonState();
+    lv.settoSelect(toSelect);
+    menu = newwin(150,150,0,0);
+    lv.Display(menu);
+    keypad(menu,true);
+    int x;
+    x = wgetch(menu);
+    std::string y=std::to_string(x);
+    if (y=="10") {
+      EnumFactory::SelectionableMenu next=lg.ReceiveEnterMessage();
+      if(next==EnumFactory::SelectionableMenu::Pseudo){
+        char pseudo[80];
+        echo();
+        mvwgetstr(menu,4,70,pseudo);
+        lg.SetUsername(pseudo);
+        lv.setchamp(pseudo,0);
+
+      }else if(next==EnumFactory::SelectionableMenu::MDP){
+        char mdp[80];
+        echo();
+        mvwgetstr(menu,6,70,mdp);
+        lg.setfirstPassword(mdp);
+        lv.setchamp(mdp,1);
+
+      }else if(next==EnumFactory::SelectionableMenu::MDP2){
+        char mdp[80];
+        echo();
+        mvwgetstr(menu,8,70,mdp);
+        lg.setsecondPassword(mdp);
+        lv.setchamp(mdp,2);
+
+      }
+      else if(next==EnumFactory::SelectionableMenu::Main or next==EnumFactory::StartScreen){
+        endwin();
+        return next;
+      }
+    }else{
+      lg.ReceiveMessage(y);}
+  }
+  endwin();
+  return EnumFactory::null;
+}

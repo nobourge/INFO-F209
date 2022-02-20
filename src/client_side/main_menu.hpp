@@ -44,3 +44,17 @@ class TypeOfGameSelect{
   void ReceiveMessage(std::string message);
   EnumFactory::SelectionableMenu ReceiveEnterMessage();
 };
+
+class SignUp{
+  std::vector <std::string> data={"","",""};
+  std::vector<bool> buttons = {true, false, false,false,false};
+  int current_index = 0;
+ public:
+  std::vector <bool> getButtonState() const ;
+  void ReceiveMessage(std::string message);
+  EnumFactory::SelectionableMenu ReceiveEnterMessage();
+  std::vector <std::string> getData() const ;
+  void SetUsername(std::string username);
+  void setfirstPassword(std::string password);
+  void setsecondPassword(std::string password);
+};
