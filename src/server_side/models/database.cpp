@@ -14,22 +14,47 @@ static int callback(void* data, int argc, char** argv, char** azColName)
 }
 
 void DataBase::createTables(){
-    //Create first table
-    sql = "CREATE TABLE PLAYER("
+    //Create first table PLAYER(USER)
+    sql = "CREATE TABLE IF NOT EXISTS PLAYER("
                       "ID INT PRIMARY KEY     NOT NULL, "
                       "PSEUDO           TEXT    NOT NULL, "
-                      "STARTING_ROW         INT NOT NULL, "
-                      "STARTING_COL         INT NOT NULL,"
+                      "PASSWORD           TEXT    NOT NULL, "
+                      "FRIENDS           TEXT    NOT NULL, "
+                      "SCORE           INT    NOT NULL, "
+                      "ROW         INT NOT NULL, "
+                      "COL         INT NOT NULL,"
                       "DIRECTION         INT NOT NULL)";
     exit = sqlite3_open("example.db", &DB);
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
-    //Create second table
-    sql="CREATE TABLE BOARD("
+    //Create second table BOARD
+    sql="CREATE TABLE IF NOT EXISTS BOARD("
                       "PAWNS           INT    NOT NULL, "
                       "WALLS        INT NOT NULL)";
 
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+    
+    //Create third table RANKING
+    sql="CREATE TABLE IF NOT EXISTS RANKING("
+                      "FIRST_PLACE           TEXT    NOT NULL, "
+                      "SECOND_PLACE           TEXT    NOT NULL, "
+                      "THIRD_PLACE           TEXT    NOT NULL, "
+                      "FOURTH_PLACE        TEXT NOT NULL)";
+    exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+
+    //Create fourth table FRIENDS
+    sql="CREATE TABLE IF NOT EXISTS FRIENDS("
+                      "FRIENDS        TEXT NOT NULL)";
+    exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+
+    //Create fifth table CONVERSATIONS
+    sql="CREATE TABLE IF NOT EXISTS CONVERSATIONS("
+                      "CONVERSATIONS       TEXT NOT NULL)";
+    exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+
+
+    //Verify table
     verifyTable();
+    //Close db
     sqlite3_close(DB);
 }
 
@@ -44,9 +69,12 @@ void DataBase::inserPlayer(shared_ptr<Player>player){
     //Insert in the table
     string query = "SELECT * FROM PLAYER;";
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
-    sql=("INSERT INTO PLAYER VALUES(1, 'PSEUDO'," + to_string(row) +"," + to_string(col) +"," + to_string(dr) + ");");
+    sql=("INSERT INTO PLAYER VALUES(1, 'PSEUDO', 'NONE', 'NONE',0," + to_string(row) +"," + to_string(col) +"," + to_string(dr) + ");");
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+
+    //Verify creation of table
     verifyTable();
+    //Close db
     sqlite3_close(DB);
 }
 
