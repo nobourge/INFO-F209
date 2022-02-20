@@ -18,17 +18,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42ab3e6f-55e7-42ce-ad9d-31bd2df60faf" name="Changes" comment="login menu quit button">
+    <list default="true" id="42ab3e6f-55e7-42ce-ad9d-31bd2df60faf" name="Changes" comment="Doxygen comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client_side/main_menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_side/main_menu.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/user/abstract_validator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/user/abstract_validator.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/user/abstract_validator.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/user/abstract_validator.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/user/password.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/user/password.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/user/user.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/user/user.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/user/user.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/user/user.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/user/username.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/user/username.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server_side/models/user/username.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/user/username.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_side/client_main_controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_side/client_main_controller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server_side/models/board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server_side/models/board.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +62,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
@@ -123,7 +118,7 @@
       <workItem from="1645278054486" duration="2047000" />
       <workItem from="1645360511685" duration="8613000" />
       <workItem from="1645374382897" duration="1272000" />
-      <workItem from="1645375685658" duration="958000" />
+      <workItem from="1645375685658" duration="1898000" />
     </task>
     <task id="LOCAL-00001" summary="login menu quit button">
       <created>1645372453447</created>
@@ -132,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645372453447</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Doxygen comments">
+      <created>1645376759354</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645376759354</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +153,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="login menu quit button" />
-    <option name="LAST_COMMIT_MESSAGE" value="login menu quit button" />
+    <MESSAGE value="Doxygen comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Doxygen comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

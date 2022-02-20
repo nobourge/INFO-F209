@@ -37,7 +37,7 @@ EnumFactory::SelectionableMenu ControllerMainMenu::Control(){
 
 EnumFactory::SelectionableMenu ControllerLoginClient::Control(){
   std::vector<bool> toSelect;
-  LoginView lv({true, false, false});
+  LoginView lv({true, false, false, false});
   Login lg;
   WINDOW* menu;
   initscr();
@@ -70,7 +70,7 @@ EnumFactory::SelectionableMenu ControllerLoginClient::Control(){
         lv.setchamp(mdp,1);
 
       }
-      else if(next==EnumFactory::SelectionableMenu::Main){
+      else if(next==EnumFactory::SelectionableMenu::Main || next==EnumFactory::SelectionableMenu::StartScreen){
         endwin();
         return next;
       }
