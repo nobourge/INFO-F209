@@ -19,8 +19,8 @@ public:
 
 class LoginView : public MenuView{
     std::vector<bool> toSelect;
-    std::vector<std::string> words = {"Pseudo", "Password" , "Confirm"};
-    std::vector<std::string> champ = {"", "", ""};
+    std::vector<std::string> words = {"Pseudo", "Password" , "Confirm", "Quit"};
+    std::vector<std::string> champ = {"", "", "", ""};
     const char* name = "Login Menu";
 public:
   LoginView(std::vector<bool> toselect);
@@ -59,7 +59,7 @@ public:
 
 class SignUpView : public MenuView{
   std::vector<bool> toSelect;
-  std::vector<std::string> words = {"Isert a new pseudo", "Password" , "Confirm password","Confirm", "Quit"};
+  std::vector<std::string> words = {"Insert a new pseudo", "Password" , "Confirm password","Confirm", "Quit"};
   std::vector<std::string> champ = {"", "", "", "", ""};
   const char* name = "Sign up";
 public:

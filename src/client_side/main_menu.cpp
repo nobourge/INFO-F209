@@ -36,25 +36,26 @@ std::vector <bool> Login::getButtonState() const{
 void Login::SetUsername(std::string username){
     data[0] = username ;
 }
-
 void Login::setPassword(std::string password){
     //vérification
     data[1] = password ;
 }
 EnumFactory::SelectionableMenu Login::ReceiveEnterMessage(){
-  if(current_index==0)
-  return EnumFactory::Pseudo;
-  if(current_index==1)
-    return EnumFactory::MDP;
-  if(current_index==2){
-    if(data[0] != "" &&  data[1] != "")
-    return EnumFactory::Main;
-
+    if(current_index==0){
+        return EnumFactory::Pseudo;
+    }
+    if(current_index==1){
+        return EnumFactory::MDP;
+    }
+    if(current_index==2){
+        if (data[0] != "" && data[1] != "")
+            return EnumFactory::Main;
+    }
+    if(current_index==3){
+        return EnumFactory::StartScreen;
+    }
     return EnumFactory::null;
-
-  }
 }
-
 
 std::vector<std::string> Login::getData() const {
     if(data[0] != "" &&  data[1] != ""){
@@ -67,7 +68,7 @@ void Login::ReceiveMessage(std::string message){
   }else if (message == "258"){
     current_index+=1;
   }
-  buttons = {false, false, false, false, false};
+  buttons = {false, false, false, false};
   if(current_index<0)current_index=0;
   if(current_index>buttons.size()-1)current_index=buttons.size()-1;
   buttons[current_index]=true;
@@ -90,6 +91,7 @@ void StartScreen::ReceiveMessage(std::string message){
   if(current_index>buttons.size()-1)current_index=buttons.size()-1;
   buttons[current_index]=true;
 }
+
 EnumFactory::SelectionableMenu StartScreen::ReceiveEnterMessage(){
   if (current_index==0){
     return EnumFactory::Login;
@@ -102,9 +104,6 @@ EnumFactory::SelectionableMenu StartScreen::ReceiveEnterMessage(){
   }
   return EnumFactory::null;
 }
-
-
-
 
 std::vector <bool> TypeOfGameSelect::getButtonState() const{
   return buttons;
@@ -126,8 +125,6 @@ EnumFactory::SelectionableMenu TypeOfGameSelect::ReceiveEnterMessage(){
   }
   return EnumFactory::null;
 }
-
-
 
 
 std::vector <bool> SignUp::getButtonState() const{
@@ -154,13 +151,12 @@ EnumFactory::SelectionableMenu SignUp::ReceiveEnterMessage(){
     return EnumFactory::MDP2;
   if(current_index==3){
     if(data[0] != "" &&  data[1] != "")
-      return EnumFactory::Main;}
-  if(current_index==4)
-    return EnumFactory::StartScreen;
-
-    return EnumFactory::null;
-
-
+      return EnumFactory::Main;
+  }
+  if(current_index==4){
+      return EnumFactory::StartScreen;
+  }
+  return EnumFactory::null;
 }
 
 
