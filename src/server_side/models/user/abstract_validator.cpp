@@ -6,10 +6,14 @@
 
 #include <utility>
 
+///
+/// \return
 bool ValidatorResult::IsValid() const {
   return !error_message_.has_value();
 }
 
+///
+/// \return
 std::string ValidatorResult::GetErrorMessage() const {
   return error_message_.value_or("");
 }
