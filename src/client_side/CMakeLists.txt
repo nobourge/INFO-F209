@@ -6,7 +6,7 @@ set(HEADERS
         abstract_controller.h
         client_mvc_factory.h
         enum_factory.h
-
+        ../common/constants.h
 )
 
 set(SOURCES
