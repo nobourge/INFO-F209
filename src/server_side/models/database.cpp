@@ -1,5 +1,7 @@
 #include"database.h"
 
+int DataBase::friendsId=0;
+
 static int callback(void* data, int argc, char** argv, char** azColName)
 {
     int i;
@@ -14,16 +16,13 @@ static int callback(void* data, int argc, char** argv, char** azColName)
 }
 
 void DataBase::createTables(){
-    //Create first table PLAYER(USER)
-    sql = "CREATE TABLE IF NOT EXISTS PLAYER("
+    //Create first table USER
+    sql = "CREATE TABLE IF NOT EXISTS USER("
                       "ID INT PRIMARY KEY     NOT NULL, "
                       "PSEUDO           TEXT    NOT NULL, "
                       "PASSWORD           TEXT    NOT NULL, "
                       "FRIENDS           TEXT    NOT NULL, "
-                      "SCORE           INT    NOT NULL, "
-                      "ROW         INT NOT NULL, "
-                      "COL         INT NOT NULL,"
-                      "DIRECTION         INT NOT NULL)";
+                      "SCORE           INT    NOT NULL)";
     exit = sqlite3_open("example.db", &DB);
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
     //Create second table BOARD
@@ -47,8 +46,8 @@ void DataBase::createTables(){
     //Create fourth table FRIENDS
     sql="CREATE TABLE IF NOT EXISTS FRIENDS("
                       "ID INT PRIMARY KEY NOT NULL, "
-                      "MY_FRIEND_ID INT NOT NULL, "
-                      "MY_PLAYER_ID        INT NOT NULL)";
+                      "MY_USER_ID INT NOT NULL, "
+                      "MY_FRIEND_ID        INT NOT NULL)";
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
     //Create fifth table CONVERSATIONS
@@ -65,23 +64,39 @@ void DataBase::createTables(){
     sqlite3_close(DB);
 }
 
-void DataBase::inserPlayer(shared_ptr<Player>player){
+void DataBase::insertPlayer(int id){
     exit = sqlite3_open("example.db", &DB);
-    int row=player->getPlayerPos().row;
-    int col=player->getPlayerPos().col;
     string pseudo; //TO be completed later by the server.
-    DIRECTION dr=player->getGoal();
 
 
     //Insert in the table
     string query = "SELECT * FROM USER;";
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
-    sql=("INSERT INTO PLAYER VALUES(1, 'PSEUDO', 'NONE', 'NONE',0," + to_string(row) +"," + to_string(col) +"," + to_string(dr) + ");");
+    sql=("INSERT INTO USER VALUES(1,'PSEUDO','NONE','NONE',0);");
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
     //Verify creation of table
     verifyTable();
     //Close db
+    sqlite3_close(DB);
+}
+
+void DataBase::insertFriend(int myId,int myFriendId){
+    exit = sqlite3_open("example.db", &DB);
+
+    string query = "SELECT * FROM FRIENDS;";
+    sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
+
+    //Insert the friend-me and me-friend relation into the data base
+    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myId)+ "," + to_string(myFriendId)+");");
+    friendsId++;
+    exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+
+    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myFriendId)+ "," + to_string(myId)+");");
+    exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+    friendsId++;
+
+    verifyTable();
     sqlite3_close(DB);
 }
 

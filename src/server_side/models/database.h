@@ -9,10 +9,12 @@ class DataBase{
     std::string sql;
     int exit=0;
     char* messageError;
+    static int friendsId;
 public:
     void createTables();
-    void inserPlayer(std::shared_ptr<Player>);
+    void insertPlayer(int);
     void verifyTable();
     void insertBoard(int,int);
-
+    void insertFriend(int,int);
 };
+
