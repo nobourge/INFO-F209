@@ -15,7 +15,7 @@ static int callback(void* data, int argc, char** argv, char** azColName)
 
 void DataBase::createTables(){
     //Create first table PLAYER(USER)
-    sql = "CREATE TABLE IF NOT EXISTS USER("
+    sql = "CREATE TABLE IF NOT EXISTS PLAYER("
                       "ID INT PRIMARY KEY     NOT NULL, "
                       "PSEUDO           TEXT    NOT NULL, "
                       "PASSWORD           TEXT    NOT NULL, "
