@@ -62,74 +62,74 @@ Position Player::playMove(DIRECTION direction){
 
 
     if(direction==NORTH){
-            return calculateDirection('F');
+            return calculateDirection('F',playerPos,dr);
 
     }else if(direction==EAST){
-                    return calculateDirection('R');
+                    return calculateDirection('R',playerPos,dr);
 
     }else if(direction==WEST){
-            return calculateDirection('L');
+            return calculateDirection('L',playerPos,dr);
             }
     else if(direction==SOUTH){
-                    return calculateDirection('B');
+                    return calculateDirection('B',playerPos,dr);
             }
     isTurnOver();
 }
 
-Position Player::calculateDirection(char c){
+Position Player::calculateDirection(char c,Position Pos,DIRECTION dir){
     Position coup;
     if(c =='F'){
-        if(dr==NORTH){
-            coup=Position{playerPos.col,playerPos.row-1};
+        if(dir==NORTH){
+            coup=Position{Pos.col,Pos.row-1};
         }
-        else if(dr==EAST){
-            coup=Position{playerPos.col+1,playerPos.row};
+        else if(dir==EAST){
+            coup=Position{Pos.col+1,Pos.row};
         }
-        else if(dr==SOUTH){
-            coup=Position{playerPos.col,playerPos.row+1};
+        else if(dir==SOUTH){
+            coup=Position{Pos.col,Pos.row+1};
         }
         else{
-            coup=Position{playerPos.col-1,playerPos.row};
+            coup=Position{Pos.col-1,Pos.row};
         }
     }
     else if(c =='R'){
-        if(dr==NORTH){
-            coup=Position{playerPos.col+1,playerPos.row};
+        if(dir==NORTH){
+            coup=Position{Pos.col+1,Pos.row};
         }
-        else if(dr==EAST){
-            coup=Position{playerPos.col,playerPos.row+1};
+        else if(dir==EAST){
+            coup=Position{Pos.col,Pos.row+1};
         }
-        else if(dr==SOUTH){
-            coup=Position{playerPos.col-1,playerPos.row};
+        else if(dir==SOUTH){
+            coup=Position{Pos.col-1,Pos.row};
         }
         else{
-            coup=Position{playerPos.col,playerPos.row-1};
+            coup=Position{Pos.col,Pos.row-1};
         }
     }else if(c=='L'){
-        if(dr==NORTH){
-            coup=Position{playerPos.col-1,playerPos.row};
+        if(dir==NORTH){
+            coup=Position{Pos.col-1,Pos.row};
         }
-        else if(dr==EAST){
-            coup=Position{playerPos.col,playerPos.row-1};
+        else if(dir==EAST){
+            coup=Position{Pos.col,Pos.row-1};
         }
-        else if(dr==SOUTH){
-            coup=Position{playerPos.col+1,playerPos.row};
+        else if(dir==SOUTH){
+            coup=Position{Pos.col+1,Pos.row};
         }
         else{
-            coup=Position{playerPos.col,playerPos.row+1};
+            coup=Position{Pos.col,Pos.row+1};
         }
     }else{
-        if(dr==NORTH){
-            coup=Position{playerPos.col,playerPos.row+1};
+        if(dir==NORTH){
+            coup=Position{Pos.col,Pos.row+1};
         }
-        else if(dr==EAST){
-            coup=Position{playerPos.col-1,playerPos.row};
+        else if(dir==EAST){
+            coup=Position{Pos.col-1,Pos.row};
         }
-        else if(dr==SOUTH){
-            coup=Position{playerPos.col,playerPos.row-1};
+        else if(dir==SOUTH){
+            coup=Position{Pos.col,Pos.row-1};
         }
         else{
-            coup=Position{playerPos.col+1,playerPos.row};
+            coup=Position{Pos.col+1,Pos.row};
         }
     }
     return coup;

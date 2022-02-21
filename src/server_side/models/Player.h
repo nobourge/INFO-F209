@@ -11,17 +11,19 @@ class Player{
     int nbWalls=10;
     Position playerPos;
     DIRECTION dr;
-       
+
 
 public:
+    Player(){}
     Player(Position,DIRECTION);
     bool isTurnOver();
-    bool hasWon();
+    virtual bool hasWon();
     Position playMove(DIRECTION);
     Position getPlayerPos();
     void setPlayerPosition(Position);
-    Position calculateDirection(char);
+    Position calculateDirection(char,Position,DIRECTION);
     pair<Position,Position> placeWall(std::string);
+    virtual Position playIAMove(bool=true){return {0,0};};
     std::string getMessage();
     DIRECTION getGoal() const;
 };

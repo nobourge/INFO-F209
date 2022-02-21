@@ -74,7 +74,7 @@ void DataBase::inserPlayer(shared_ptr<Player>player){
 
 
     //Insert in the table
-    string query = "SELECT * FROM PLAYER;";
+    string query = "SELECT * FROM USER;";
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
     sql=("INSERT INTO PLAYER VALUES(1, 'PSEUDO', 'NONE', 'NONE',0," + to_string(row) +"," + to_string(col) +"," + to_string(dr) + ");");
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);

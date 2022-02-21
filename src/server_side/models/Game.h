@@ -4,9 +4,11 @@
 
 #include "board.h"
 #include "Player.h"
+#include "ia.h"
 #include "position.h"
 #include "memory"
 #include "input.h"
+#include"database.h"
 
 class Game {
  public:
@@ -20,14 +22,17 @@ class Game {
   void joinGame();
   void endGame();
   void playCoup();
+  void playIaMove();
   std::shared_ptr<Player> getCurrentPlayer();
   Board *getBoard() { return board; }
 
  private:
   Board *board;
   std::vector<std::shared_ptr<Player>> players;
+  DataBase db;
   std::shared_ptr<Player> currentPlayer;
   bool gameOn;
+  bool IaPlayer=false;
   GameMode gameMode=Normal;
 };
 
