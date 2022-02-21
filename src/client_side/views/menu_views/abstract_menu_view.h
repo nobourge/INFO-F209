@@ -34,7 +34,7 @@ public:
 
  protected:
   [[nodiscard]] int GetVerticalPadding() const;
-  std::vector<Button *>::iterator GetIteratorOfHoveredButton();
+  std::vector<Button>::iterator GetIteratorOfHoveredButton();
   [[nodiscard]] int GetVerticalGutterSize() const;
 
 

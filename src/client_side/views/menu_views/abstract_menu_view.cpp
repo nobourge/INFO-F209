@@ -61,7 +61,7 @@ void AbstractMenuView::MoveCursorUp() {
   next_btn->SetState(Button::HOVER);
 }
 
-std::vector<Button *>::iterator AbstractMenuView::GetIteratorOfHoveredButton() {
+std::vector<Button>::iterator AbstractMenuView::GetIteratorOfHoveredButton() {
   auto current_selected_idx = std::find_if(GetButtons().begin(), GetButtons().end(), [](const Button &btn) {
     return btn.GetState() == Button::HOVER;
   });
