@@ -32,10 +32,14 @@ void Game::StartTheGame(){
     // vector<Position> walls{{0,3},{2,3},{4,3},{6,3},{8,3},{10,3},{12,3},{14,3},{16,3}};
     board = new Board (players, walls);
 
+
     //Insert the data for all the players in the db
     for(auto x:players){
-        db.inserPlayer(x);
+        db.insertPlayer(1);
     }
+    //Insert friend using IDS of the users which should be stocked/used in the user file
+    db.insertFriend(1,2);
+
     //Insert the data for the board
     db.insertBoard(players.size(),walls.size());
 
