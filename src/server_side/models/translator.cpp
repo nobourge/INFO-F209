@@ -1,6 +1,11 @@
 #include"translator.h"
 
 using namespace std;
+
+/// checks move conformity
+/// \param move
+/// \param lettres
+/// \return
 bool translator::verifyMove(string move, vector<char> lettres) {
 	bool coup_verfied = false;
 	for (auto x : lettres) {
@@ -14,6 +19,10 @@ bool translator::verifyMove(string move, vector<char> lettres) {
 	return coup_verfied;
 }
 
+///
+/// \param move
+/// \param nombres
+/// \return
 bool translator::verifyNumber(string move, vector<string> nombres) {
 	bool numberVerified = false;
 	for (auto x : nombres) {
@@ -25,11 +34,15 @@ bool translator::verifyNumber(string move, vector<string> nombres) {
 	return numberVerified;
 }
 
+///
+/// \param move
+/// \param taille
+/// \return
 Position translator::translateMove(string move,int taille) {
 	Position res;
 	vector<char>lettres;
 	vector<string>nombres;
-	string numb = move.substr(1);
+	string numb = move.substr(1); // number
 	for (int x = 0; x < taille; x++) {
 		 lettres.push_back(char(x + int('a')));
 	}
@@ -38,6 +51,7 @@ Position translator::translateMove(string move,int taille) {
 	}
 	
 	if (move.length() < 2 || !verifyMove(move, lettres) || !verifyNumber(numb, nombres)) {
+      // not conform
 		return {-1,-1};
 	}
 	else {

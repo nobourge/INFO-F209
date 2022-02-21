@@ -5,6 +5,9 @@ TODO do the description
 
 #include "position.h"
 
+/// overloads == to compare 2 board positions
+/// \param pos
+/// \return
 bool Position::operator==(const Position &pos) const {
   if (this->row == pos.row && this->col == pos.col) {
     return true;
@@ -13,14 +16,24 @@ bool Position::operator==(const Position &pos) const {
   }
 }
 
+/// substract positions?
+/// \param position
+/// \return
 std::pair<int, int> Position::diff(const Position &position) const {
   return std::pair<int, int> (this->row - position.row, this->col - position.col);
 }
 
+///
+/// \param low
+/// \param high
+/// \return
 bool Position::IsOutOfBoundaries(const int &low, const int &high) const {
   return (this->col < low || this->col > high - 1 || this->row < low || this->row > high - 1) ? true : false;
 }
 
+///
+/// \param direction
+/// \return
 Position Position::operator+(const DIRECTION direction) {
   switch (direction) {
     case NORTH:
@@ -38,7 +51,8 @@ Position Position::operator+(const DIRECTION direction) {
   }
 }
 
-
+///
+/// \return
 std::unique_ptr<crow::json::wvalue> Position::Serialize() {
   std::unique_ptr<crow::json::wvalue> output;
   (*output)["x"] = col;
@@ -46,4 +60,7 @@ std::unique_ptr<crow::json::wvalue> Position::Serialize() {
   return output;
 }
 
+///
+/// \param col
+/// \param row
 Position::Position(int col, int row) : col(col), row(row) {}

@@ -7,11 +7,15 @@
 
 const unsigned BaseQuoridorApi::kQuoridorApiVersion = 0;
 
+///
+/// \return
 crow::SimpleApp &BaseQuoridorApi::GetApp() {
   return app;
 }
 
 BaseQuoridorApi::BaseQuoridorApi() {}
+
+///
 
 void BaseQuoridorApi::SetupRoutes() {
   CROW_ROUTE(GetApp(), "/")([] () {
@@ -19,6 +23,8 @@ void BaseQuoridorApi::SetupRoutes() {
     return page.render();
   });
 }
+
+///
 
 void BaseQuoridorApi::Run() {
   app.port(SERVER_PORT).multithreaded().run();

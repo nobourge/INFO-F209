@@ -15,7 +15,8 @@
 #include <ostream>
 #include <optional>
 #include <string>
-#include<random>
+#include <random>
+#include <algorithm>
 
 class Board : public std::enable_shared_from_this<Board> {
  public:
@@ -36,7 +37,10 @@ class Board : public std::enable_shared_from_this<Board> {
   // replacing the pair by a wall class might be intrestring but as for now
   // it is easier this way
 
-  bool IsWallPossible(std::vector<Position>, const DIRECTION ) const;
+  bool HasReachedEnd(const Position, const DIRECTION) const;
+  bool HasPathToEnd(std::vector<Position>, const DIRECTION);
+
+  bool IsWallPossible(const Position, const Position, const DIRECTION );
   bool IsMovePossible(const Position &, const Position &) const;
 
   void Movement(const Position, const Position);
@@ -47,7 +51,7 @@ class Board : public std::enable_shared_from_this<Board> {
   // replacing the overload by a string is easier if we use ncurses
 
   std::string GetBoardString() const;
-  
+
   void randomWallPlacement();
   DIRECTION getOpposite(DIRECTION);
   Position getOppositeCell(Position,DIRECTION);

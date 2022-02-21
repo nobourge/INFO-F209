@@ -7,6 +7,9 @@ TODO do the description
 
 using namespace std;
 
+///
+/// \param pawns_
+/// \param wallsPosition
 Board::Board(std::vector<std::shared_ptr<Player>> pawns_, std::vector<Position> wallsPosition) : pawns_{pawns_} {
   // setting up the board by trusting the positions to be possible
 
@@ -37,6 +40,8 @@ Board::Board(std::vector<std::shared_ptr<Player>> pawns_, std::vector<Position> 
   }
 }
 
+///
+/// \return
 std::string Board::GetBoardString() const {
   std::string boardString;
   for (int row = 0; row < kBoardSize * 2 - 1; row++) {
@@ -80,7 +85,7 @@ std::string Board::GetBoardString() const {
 
   // adding the numbers on the bottom row
   boardString += "   ";
-  for (int row = 0; row < 9; row++) {
+  for (int row = 1; row < 10; row++) {
     boardString += std::to_string(row);
     boardString += "   ";
   }
@@ -89,6 +94,10 @@ std::string Board::GetBoardString() const {
 
 }
 
+///
+/// \param firstCell
+/// \param secondCell
+/// \return
 bool Board::GetWallBetween(const Cell &firstCell, const Cell &secondCell) const {
   if (! firstCell.isNeighbour(secondCell)) return false;
   std::pair<int, int> deltas = firstCell.getPos().diff(secondCell.getPos());  // first is col
@@ -99,42 +108,106 @@ bool Board::GetWallBetween(const Cell &firstCell, const Cell &secondCell) const 
   }
 }
 
+///
+/// \param cell
+/// \param direction
+/// \return
 bool Board::GetWallBetween(const Cell &cell, const DIRECTION &direction) const {
   return cell.checkDirection(direction);
 }
 
+///
+/// \param position
+/// \return
 Cell Board::GetCellAtPosition(const Position &position) const {
   return cells_[position.row][position.col];
 }
 
-bool Board::IsWallPossible(std::vector<Position> path, const DIRECTION direction) const {
-  // bfs pathfinding algorithm
-  if (direction % 2 == 0 && path.front().row == pow(9, (int)(direction)) - 1) {
-    return true;
-  } else if (direction % 2 != 0 && path.front().col == pow(9, (int)(direction) -1) - 1) {
-    return true;
-  };
-
-  for (Position cellPosition : path) {
-    for (int dir = 0; dir<kNumberOfDirections; dir++){
-      if (GetWallBetween(GetCellAtPosition(cellPosition), GetCellAtPosition(cellPosition + direction))) {
-        path.push_back(cellPosition);
-        IsWallPossible(path, direction);
-      }
-      if (path.size() > 0) {
-        path.erase(path.begin());
-        IsWallPossible(path, direction);
-      }
-    }
+///
+/// \param position
+/// \param direction
+/// \return
+bool Board::HasReachedEnd(const Position position, const DIRECTION direction) const {
+  switch(direction) {
+    case NORTH:
+      if (position.row == 0) return true;
+      break;
+    case EAST:
+      if (position.col == kBoardSize - 1) return true;
+      break;
+    case SOUTH:
+      if (position.row == kBoardSize - 1) return true;
+      break;
+    case WEST:
+      if (position.col == 0) return true;
+      break;
   }
-
   return false;
 }
 
+///
+/// \param path
+/// \param goal
+/// \return
+bool Board::HasPathToEnd(std::vector<Position> path, const DIRECTION goal) {
+  bool deadEnd;
+  std::vector<Position> visited;
+  visited.push_back(path.front());
+
+  while (! path.empty()) {
+    if (HasReachedEnd(path.back(), goal)) return true;
+    deadEnd = true;
+    for (int direction = 0 ; direction < 4 ; direction++) {
+      if (std::find(visited.begin(), visited.end(), path.back() + static_cast<DIRECTION>(direction) ) == visited.end()
+          && IsMovePossible(path.back(), path.back() + static_cast<DIRECTION> (direction))){
+
+
+        visited.push_back(path.back() + static_cast<DIRECTION> (direction));
+        path.push_back(path.back() + static_cast<DIRECTION> (direction));
+        deadEnd = false;
+      }
+    }
+    if (deadEnd) path.pop_back();
+  }
+  return false;
+}
+
+///
+/// \param firstCell
+/// \param secondCell
+/// \param direction
+/// \return
+bool Board::IsWallPossible(const Position firstCell, const Position secondCell, const DIRECTION direction) {
+  Position firstOpposite=getOppositeCell(firstCell,direction);
+  Position secondOpposite=getOppositeCell(secondCell,direction);
+
+  cells_[firstCell.row][firstCell.col].setWall(direction);
+  cells_[secondCell.row][secondCell.col].setWall(direction);
+  cells_[firstOpposite.row][firstOpposite.col].setWall(getOpposite(direction));
+  cells_[secondOpposite.row][secondOpposite.col].setWall(getOpposite(direction));
+
+  for (auto pawn : pawns_ ) {
+    if (! HasPathToEnd({pawn->getPlayerPos()}, pawn->getGoal())){
+      cells_[firstCell.row][firstCell.col].unsetWall(direction);
+      cells_[secondCell.row][secondCell.col].unsetWall(direction);
+      cells_[firstOpposite.row][firstOpposite.col].unsetWall(getOpposite(direction));
+      cells_[secondOpposite.row][secondOpposite.col].unsetWall(getOpposite(direction));
+      return false;
+    }
+  }
+  return true;
+}
+
+///
+/// \param start
+/// \param end
+/// \return
 bool Board::IsMovePossible(const Position &start, const Position &end) const {
   if (end.IsOutOfBoundaries() || GetWallBetween(GetCellAtPosition(start), GetCellAtPosition(end))) return false;
   return (GetCellAtPosition(start).isNeighbour(end)) ? true : false;
 }
+
+///
 
 void Board::randomWallPlacement(){
   //Method used for our first game mode.
@@ -154,29 +227,32 @@ void Board::randomWallPlacement(){
 
 }
 
+///
+/// \param case1
+/// \param case2
+/// \param dir
 void Board::PlaceWall(Position case1, Position case2, DIRECTION dir) {
-      cells_[case1.row][case1.col].setWall(dir);
-      cells_[case2.row][case2.col].setWall(dir);
-      Position case3=getOppositeCell(case1,dir);
-      Position case4=getOppositeCell(case2,dir);
-      cells_[case3.row][case3.col].setWall(getOpposite(dir));
-      cells_[case4.row][case4.col].setWall(getOpposite(dir));
-      if(dir==SOUTH){
-        walls_[case1.row*2+1][case1.col*2]=true;
-        walls_[case2.row*2+1][case2.col*2]=true;
-      }else if(dir==NORTH){
-        walls_[case1.row*2-1][case1.col*2]=true;
-        walls_[case2.row*2-1][case2.col*2]=true;
-      }
-      else if(dir==EAST){
-        walls_[case1.row*2][case1.col*2+1]=true;
-        walls_[case2.row*2][case2.col*2+1]=true;
-      }else{
-        walls_[case1.row*2][case1.col*2-1]=true;
-        walls_[case2.row*2][case2.col*2-1]=true;
-      }
+  if (! IsWallPossible(case1, case2, dir)) return;
+  if(dir==SOUTH){
+    walls_[case1.row*2+1][case1.col*2]=true;
+    walls_[case2.row*2+1][case2.col*2]=true;
+  }else if(dir==NORTH){
+    walls_[case1.row*2-1][case1.col*2]=true;
+    walls_[case2.row*2-1][case2.col*2]=true;
+  }
+  else if(dir==EAST){
+    walls_[case1.row*2][case1.col*2+1]=true;
+    walls_[case2.row*2][case2.col*2+1]=true;
+  }else{
+    walls_[case1.row*2][case1.col*2-1]=true;
+    walls_[case2.row*2][case2.col*2-1]=true;
+  }
 }
 
+///
+/// \param pos
+/// \param dr
+/// \return
 Position Board::getOppositeCell(Position pos,DIRECTION dr){
     Position newPos;
     if(dr==NORTH){
@@ -191,6 +267,9 @@ Position Board::getOppositeCell(Position pos,DIRECTION dr){
     return newPos;
 }
 
+///
+/// \param dr
+/// \return
 DIRECTION Board::getOpposite(DIRECTION dr){
   DIRECTION newdr;
   if(dr==NORTH){
@@ -205,7 +284,9 @@ DIRECTION Board::getOpposite(DIRECTION dr){
   return newdr;
 }
 
-
+/// moves a pawn to a valid asked position
+/// \param start
+/// \param end
 void Board::Movement(const Position start, const Position end) {
   cells_[end.row][end.col].setPawn(GetCellAtPosition(start).getPawn());
   cells_[start.row][start.col].removePawn();
@@ -220,10 +301,16 @@ void Board::Movement(const Position start, const Position end) {
 //   }
 // }
 
+///
+/// \param os
+/// \param board
+/// \return
 std::ostream &operator<<(ostream &os, const Board &board) {
   return os << static_cast<std::string>(board) << "\n"; // we do not need to flush the output here, \n is enough
 }
 
+///
+/// \return
 Board::operator std::string() const {
   return GetBoardString();
 }

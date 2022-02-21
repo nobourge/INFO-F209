@@ -8,11 +8,14 @@ Player::Player(Position playerPos,DIRECTION dr):playerPos(playerPos),dr(dr){
 
 }
 
+///
+/// \return
 bool Player::isTurnOver(){
     return true;
 }
 
-
+///
+/// \return
 bool Player::hasWon(){
     if(dr==NORTH){
         if(playerPos.row==0){
@@ -39,7 +42,9 @@ bool Player::hasWon(){
     return false;
 }
 
-
+///
+/// \param placement
+/// \return
 pair<Position,Position> Player::placeWall(string placement){
     //Cut the a1->a2->N in a1 , a2 and N;
     std::string delimiter = "->";
@@ -58,91 +63,104 @@ pair<Position,Position> Player::placeWall(string placement){
     return ret;
 }
 
+///
+/// \param direction
+/// \return
 Position Player::playMove(DIRECTION direction){
 
-
     if(direction==NORTH){
-            return calculateDirection('F');
+            return calculateDirection('F',playerPos,dr);
 
     }else if(direction==EAST){
-                    return calculateDirection('R');
+                    return calculateDirection('R',playerPos,dr);
 
     }else if(direction==WEST){
-            return calculateDirection('L');
+            return calculateDirection('L',playerPos,dr);
             }
     else if(direction==SOUTH){
-                    return calculateDirection('B');
+                    return calculateDirection('B',playerPos,dr);
             }
     isTurnOver();
 }
 
-Position Player::calculateDirection(char c){
+///
+/// \param c
+/// \param Pos
+/// \param dir
+/// \return
+Position Player::calculateDirection(char c,Position Pos,DIRECTION dir){
     Position coup;
     if(c =='F'){
-        if(dr==NORTH){
-            coup=Position{playerPos.col,playerPos.row-1};
+        if(dir==NORTH){
+            coup=Position{Pos.col,Pos.row-1};
         }
-        else if(dr==EAST){
-            coup=Position{playerPos.col+1,playerPos.row};
+        else if(dir==EAST){
+            coup=Position{Pos.col+1,Pos.row};
         }
-        else if(dr==SOUTH){
-            coup=Position{playerPos.col,playerPos.row+1};
+        else if(dir==SOUTH){
+            coup=Position{Pos.col,Pos.row+1};
         }
         else{
-            coup=Position{playerPos.col-1,playerPos.row};
+            coup=Position{Pos.col-1,Pos.row};
         }
     }
     else if(c =='R'){
-        if(dr==NORTH){
-            coup=Position{playerPos.col+1,playerPos.row};
+        if(dir==NORTH){
+            coup=Position{Pos.col+1,Pos.row};
         }
-        else if(dr==EAST){
-            coup=Position{playerPos.col,playerPos.row+1};
+        else if(dir==EAST){
+            coup=Position{Pos.col,Pos.row+1};
         }
-        else if(dr==SOUTH){
-            coup=Position{playerPos.col-1,playerPos.row};
+        else if(dir==SOUTH){
+            coup=Position{Pos.col-1,Pos.row};
         }
         else{
-            coup=Position{playerPos.col,playerPos.row-1};
+            coup=Position{Pos.col,Pos.row-1};
         }
     }else if(c=='L'){
-        if(dr==NORTH){
-            coup=Position{playerPos.col-1,playerPos.row};
+        if(dir==NORTH){
+            coup=Position{Pos.col-1,Pos.row};
         }
-        else if(dr==EAST){
-            coup=Position{playerPos.col,playerPos.row-1};
+        else if(dir==EAST){
+            coup=Position{Pos.col,Pos.row-1};
         }
-        else if(dr==SOUTH){
-            coup=Position{playerPos.col+1,playerPos.row};
+        else if(dir==SOUTH){
+            coup=Position{Pos.col+1,Pos.row};
         }
         else{
-            coup=Position{playerPos.col,playerPos.row+1};
+            coup=Position{Pos.col,Pos.row+1};
         }
     }else{
-        if(dr==NORTH){
-            coup=Position{playerPos.col,playerPos.row+1};
+        if(dir==NORTH){
+            coup=Position{Pos.col,Pos.row+1};
         }
-        else if(dr==EAST){
-            coup=Position{playerPos.col-1,playerPos.row};
+        else if(dir==EAST){
+            coup=Position{Pos.col-1,Pos.row};
         }
-        else if(dr==SOUTH){
-            coup=Position{playerPos.col,playerPos.row-1};
+        else if(dir==SOUTH){
+            coup=Position{Pos.col,Pos.row-1};
         }
         else{
-            coup=Position{playerPos.col+1,playerPos.row};
+            coup=Position{Pos.col+1,Pos.row};
         }
     }
     return coup;
 }
 
+///
+/// \param newPos
 void Player::setPlayerPosition(Position newPos){
     playerPos=newPos;
 }
 
+///
+/// \return
 Position Player::getPlayerPos(){
     return playerPos;
 }
 
+///
+/// \return
 DIRECTION Player::getGoal() const {
   return dr;
 }

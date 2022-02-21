@@ -10,9 +10,11 @@ Game::Game(){
 
 }
 
+///
 
 void Game::StartTheGame(){
-
+    
+    db.createTables();
     // if (players.size>=2) We need at least 2 players to begin the game.
     gameOn=true;
     //When player connects from the server ... TODO
@@ -22,15 +24,27 @@ void Game::StartTheGame(){
     currentPlayer=players[0];
     cout<<endl;
 
+    if(gameMode==IA){
+        //If IA is on then we will have 1 Player vs 1 IA
+        players.push_back(make_shared<Ia>(Position{4,0},SOUTH));
+    }
     vector<Position> walls{{0,3}};
     // vector<Position> walls{{0,3},{2,3},{4,3},{6,3},{8,3},{10,3},{12,3},{14,3},{16,3}};
-
     board = new Board (players, walls);
+    
+    //Insert the data for all the players in the db
+    for(auto x:players){
+        db.inserPlayer(x);
+    }
+    //Insert the data for the board
+    db.insertBoard(players.size(),walls.size());
 
     cout<<board->GetBoardString()<<endl;
 
 
 }
+
+///
 
 void Game::SwitchCurrentPlayer(){
     //First we check if the current player has won before we change the player at the end of the turn
@@ -41,7 +55,14 @@ void Game::SwitchCurrentPlayer(){
     system("clear"); //clears the terminal.
 
     if(gameMode==IA){
-        
+        if(IaPlayer){
+            currentPlayer=players[0];
+            IaPlayer=false;
+        }else{
+            currentPlayer=players[1];
+            IaPlayer=true;
+            playIaMove();
+        }
     }else if(gameMode==RandomWall){
         board->randomWallPlacement();
     }
@@ -55,30 +76,73 @@ void Game::SwitchCurrentPlayer(){
 
 }
 
+///
+
+void Game::playIaMove(){
+    bool on=false;
+    string choose[2]={"Movement","Wall"};
+    string choice=choose[rand()%2];
+    if(choice=="Movement"){
+        while(!on){
+            Position coup=currentPlayer->playIAMove();
+            cout<<coup.row<<" "<<coup.col<<" move"<<endl;
+            if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
+                    board->Movement(currentPlayer->getPlayerPos(),coup);
+                    currentPlayer->setPlayerPosition(coup);
+                    on=true;
+            }else{
+                coup=currentPlayer->playIAMove(false);
+                 if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
+                    board->Movement(currentPlayer->getPlayerPos(),coup);
+                    currentPlayer->setPlayerPosition(coup);
+                    on=true;
+                }
+            }
+        }
+
+    }else{
+        //If IA places the wall then we will simply use the method from our first gameMode;
+        board->randomWallPlacement();
+    }
+    SwitchCurrentPlayer();
+}
+
+///
+/// \return
 bool Game::hasCurrentPlayerWon(){
     //At the end of turn we check if the currentPlayer has won the game.
     return currentPlayer->hasWon();
 }
+
+///
 
 void Game::joinGame(){
     //if (players.size<4) Then the player can connect to the game.
 
 }
 
+///
+/// \return
 int Game::getScore(){
     //The score for each player when the game is finished
     return 0;
 }
+
+///
 
 void Game::endGame(){
     //Server stuff
     gameOn=false;
 }
 
+///
+/// \return
 bool Game::gameOnGoing(){
     playCoup();
     return gameOn;
 }
+
+///
 
 void Game::playCoup(){
     bool on=false;
@@ -133,6 +197,8 @@ void Game::playCoup(){
 
 }
 
+///
+/// \return
 std::shared_ptr<Player> Game::getCurrentPlayer(){
     return currentPlayer;
 }

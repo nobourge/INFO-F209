@@ -11,6 +11,8 @@
 
 class ValidatorResult {
  public:
+    ///
+    /// \param error_message
   explicit ValidatorResult(std::optional<std::string> error_message);
   ValidatorResult();
 
@@ -21,6 +23,9 @@ class ValidatorResult {
 };
 
 class AbstractValidator {
+    ///
+    /// \param value
+    /// \return
   virtual ValidatorResult Validate(const std::string &value) = 0;
 };
 
