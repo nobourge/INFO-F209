@@ -1,5 +1,6 @@
 #include <string>
 #include <optional>
+#include <memory>
 
 #ifndef INFO_F209_SRC_CLIENT_SIDE_ABSTRACT_CONTROLLER_H_
 #define INFO_F209_SRC_CLIENT_SIDE_ABSTRACT_CONTROLLER_H_
