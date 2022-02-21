@@ -13,7 +13,7 @@ Game::Game(){
 ///
 
 void Game::StartTheGame(){
-    
+
     db.createTables();
     // if (players.size>=2) We need at least 2 players to begin the game.
     gameOn=true;
@@ -31,7 +31,7 @@ void Game::StartTheGame(){
     vector<Position> walls{{0,3}};
     // vector<Position> walls{{0,3},{2,3},{4,3},{6,3},{8,3},{10,3},{12,3},{14,3},{16,3}};
     board = new Board (players, walls);
-    
+
     //Insert the data for all the players in the db
     for(auto x:players){
         db.inserPlayer(x);
