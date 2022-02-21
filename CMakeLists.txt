@@ -18,19 +18,18 @@ endif()
 
 find_package(Boost REQUIRED COMPONENTS system)
 
-#add_executable(QuoridorClient src/client_side/main.cpp src/server_side/view_controllers/api/constants.h)
 add_executable(QuoridorServer
         src/server_side/main.cpp
         src/server_side/models/board.cpp
         src/server_side/models/board.h
         src/server_side/models/cell.cpp
         src/server_side/models/cell.h
-        src/server_side/models/wall.cpp
-        src/server_side/models/wall.h
+#        src/server_side/models/wall.cpp
+#        src/server_side/models/wall.h
         src/server_side/models/position.cpp
         src/server_side/models/position.h
-        src/server_side/models/Pawn.h
-        src/server_side/models/Pawn.cpp
+#        src/server_side/models/Pawn.h
+#        src/server_side/models/Pawn.cpp
         src/server_side/models/Player.h
         src/server_side/models/Player.cpp
         src/server_side/models/Game.h
@@ -47,5 +46,3 @@ add_executable(QuoridorServer
 
 target_include_directories(QuoridorServer PUBLIC ${Boost_INCLUDE_DIRS})
 target_link_libraries(QuoridorServer ${Boost_LIBRARIES} OpenSSL::SSL)
-#target_include_directories(QuoridorClient PUBLIC ${Boost_INCLUDE_DIRS})
-#target_link_libraries(QuoridorClient ${Boost_LIBRARIES} OpenSSL::SSL)

@@ -1,0 +1,12 @@
+//
+// Created by Anton Romanova on 18/02/2022.
+//
+
+#ifndef QUORIDOR_SRC_CLIENT_SIDE_VIEWS_LOGIN_MENU_VIEW_H_
+#define QUORIDOR_SRC_CLIENT_SIDE_VIEWS_LOGIN_MENU_VIEW_H_
+
+class login_menu_view {
+
+};
+
+#endif //QUORIDOR_SRC_CLIENT_SIDE_VIEWS_LOGIN_MENU_VIEW_H_
