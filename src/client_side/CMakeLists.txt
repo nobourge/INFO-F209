@@ -1,9 +1,9 @@
 set(HEADERS
-        answer.h
+#        answer.h
         views/menu_views/help_menu_view.h
         views/menu_views/home_menu_view.h
 #        views/main_menu.hpp
-#        view_controllers/home_menu_view_controller.h
+        view_controllers/home_menu_view_controller.h
         view_controllers/abstract_view_controller.h
 #        client_login_controller.h
 #        client_login_model.hpp
@@ -12,13 +12,13 @@ set(HEADERS
 )
 
 set(SOURCES
-        answer.cpp
+#        answer.cpp
         views/menu_views/help_menu_view.cpp
         views/menu_views/home_menu_view.cpp
         views/main_menu.cpp
         views/menu_views/abstract_menu_view.cpp
         main.cpp
-#        view_controllers/home_menu_view_controller.cpp
+        view_controllers/home_menu_view_controller.cpp
         view_controllers/abstract_view_controller.cpp
 #        client_login_controller.cpp
 #        client_login_model.cpp
