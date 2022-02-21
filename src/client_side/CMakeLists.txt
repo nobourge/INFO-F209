@@ -23,7 +23,13 @@ set(SOURCES
 #        client_login_model.cpp
         client_mvc_factory.cpp
 
-        views/menu_views/login_menu_view.cpp views/menu_views/login_menu_view.h views/view_elements/button.cpp views/view_elements/button.h view_controllers/menu_view_controller.cpp view_controllers/menu_view_controller.h)
+        views/menu_views/login_menu_view.cpp
+        views/menu_views/login_menu_view.h
+        views/view_elements/button.cpp
+        views/view_elements/button.h
+#        view_controllers/menu_view_controller.cpp
+#        view_controllers/menu_view_controller.h
+        )
 
 add_executable(ClientSide ${HEADERS} ${SOURCES})
 target_link_libraries(ClientSide ncurses)
