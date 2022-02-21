@@ -97,7 +97,7 @@ void AbstractMenuView::UpdateButtons(const std::optional<ButtonHandlersDict> &bu
   buttons_.clear();
   buttons_.reserve(submenus_.size());
   for (auto &submenu : submenus_) {
-    buttons_.emplace_back(submenu.first);
+    buttons_.emplace_back(std::get<0>(submenu));
     buttons_[buttons_.size() - 1].SetDelegate(this);
   }
 
@@ -108,11 +108,11 @@ void AbstractMenuView::ButtonClicked(const Button &sender) {
   // find index of clicked button
 
   const auto clicked_btn_submenu = std::find_if(submenus_.begin(), submenus_.end(), [&sender](const auto &pair) {
-    return pair.first == sender.GetTitle();
+    return std::get<0>(pair) == sender.GetTitle();
   });
 
   if (delegate_) {
-    delegate_->NextViewControllerSelected(clicked_btn_submenu->second);
+    delegate_->NextViewControllerSelected(std::get<1>(*clicked_btn_submenu));
   }
 }
 

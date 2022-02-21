@@ -2,13 +2,13 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
-#include <unordered_map>
+#include <tuple>
 #include "../view_elements/button.h"
 #include "../../view_controllers/abstract_view_controller.h"
 #include "../../../common/constants.h"
 
 struct MenuViewDelegate;
-typedef std::unordered_map<std::string, std::optional<std::shared_ptr<AbstractViewController>>> ButtonHandlersDict;
+typedef std::vector<std::tuple<std::string, std::optional<std::shared_ptr<AbstractViewController>>>> ButtonHandlersDict;
 
 class AbstractMenuView: public ButtonDelegate{
 public:
