@@ -2,15 +2,22 @@
 #include <fstream>
 #include <iostream>
 #include <stdio.h>
+#include<cstring>
 
 int DataBase::friendsId=0;
 
-void DataBase::checkiffileexists(std::string file){
+void DataBase::reloadFile(std::string file){
   ifstream ifile;
-  ifile.open(file);
+  int n=file.length();
+  char file2[n+1];
+  strcpy(file2,file.c_str());
+
+  ifile.open(file2);
   if(ifile) {
-    remove("example.db");
+    remove(file2);
   }
+
+
 }
 static int callback(void* data, int argc, char** argv, char** azColName)
 {
@@ -34,7 +41,7 @@ void DataBase::createTables(){
                       "FRIENDS           TEXT    NOT NULL, "
                       "SCORE           INT    NOT NULL)";
 
-    checkiffileexists("example.db");
+    reloadFile("example.db");
 
     exit = sqlite3_open("example.db", &DB);
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
@@ -110,6 +117,17 @@ void DataBase::insertFriend(int myId,int myFriendId){
     friendsId++;
 
     verifyTable();
+    sqlite3_close(DB);
+}
+
+void DataBase::searchFriends(int id){
+    exit = sqlite3_open("example.db", &DB);
+    
+    string data("CALLBACK FUNCTION");
+    string query = "SELECT MY_FRIEND_ID FROM FRIENDS WHERE FRIENDS.MY_USER_ID="+to_string(id)+";";
+    sqlite3_exec(DB, query.c_str(), callback, (void*)data.c_str(), NULL); 
+    
+
     sqlite3_close(DB);
 }
 

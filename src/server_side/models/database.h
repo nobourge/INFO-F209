@@ -16,6 +16,7 @@ public:
     void verifyTable();
     void insertBoard(int,int);
     void insertFriend(int,int);
-    void checkiffileexists(std::string file);
+    void searchFriends(int);
+    void reloadFile(std::string file);
 };
 
