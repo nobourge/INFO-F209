@@ -77,7 +77,7 @@ void DataBase::createTables(){
     sqlite3_close(DB);
 }
 
-void DataBase::insertPlayer(int id){
+void DataBase::insertPlayer(unsigned int id){
     exit = sqlite3_open("example.db", &DB);
     string pseudo; //TO be completed later by the server.
 

@@ -12,7 +12,7 @@ class DataBase{
     static int friendsId;
 public:
     void createTables();
-    void insertPlayer(int);
+    void insertPlayer(unsigned int);
     void verifyTable();
     void insertBoard(int,int);
     void insertFriend(int,int);
