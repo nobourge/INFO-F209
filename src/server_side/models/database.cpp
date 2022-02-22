@@ -1,7 +1,17 @@
 #include"database.h"
+#include <fstream>
+#include <iostream>
+#include <stdio.h>
 
 int DataBase::friendsId=0;
 
+void DataBase::checkiffileexists(std::string file){
+  ifstream ifile;
+  ifile.open(file);
+  if(ifile) {
+    remove("example.db");
+  }
+}
 static int callback(void* data, int argc, char** argv, char** azColName)
 {
     int i;
@@ -23,6 +33,9 @@ void DataBase::createTables(){
                       "PASSWORD           TEXT    NOT NULL, "
                       "FRIENDS           TEXT    NOT NULL, "
                       "SCORE           INT    NOT NULL)";
+
+    checkiffileexists("example.db");
+
     exit = sqlite3_open("example.db", &DB);
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
     //Create second table BOARD
