@@ -4,8 +4,9 @@
 
 #include "menu_view_controller.h"
 
-MenuViewController::MenuViewController(AbstractMenuView * view) : AbstractViewController(), home_menu_view_(view) {
-
+MenuViewController::MenuViewController(const std::shared_ptr<AbstractMenuView> &view) : AbstractViewController(),
+                                                                                        MenuViewDelegate(), menu_view_(view) {
+  menu_view_->SetDelegate(this);
 }
 std::optional<std::shared_ptr<AbstractViewController>> MenuViewController::Tick() {
   WINDOW *window;
@@ -15,10 +16,25 @@ std::optional<std::shared_ptr<AbstractViewController>> MenuViewController::Tick(
   noecho();
   while (!next_view_controller_.has_value()) {
     window = newwin(150, 150, 0, 0);
-    GetHomeMenuView().Draw(window);
+    GetMenuView()->Draw(window);
     keypad(window, true);
-    ParseMessage(wgetch(window));
+    RespondToKeyboardEvent(wgetch(window));
   }
   endwin();
-  return next_view_controller_.value();
+  auto next_vc = std::move(next_view_controller_.value());
+  MenuViewWillDisappear();
+  return next_vc;
+}
+
+
+void MenuViewController::PresentViewController(std::optional<std::shared_ptr<AbstractViewController>> next_view_controller) {
+  next_view_controller_ = next_view_controller;
+}
+
+const std::shared_ptr<AbstractMenuView> &MenuViewController::GetMenuView() const {
+  return menu_view_;
+}
+
+void MenuViewController::RespondToKeyboardEvent(const int &character) {
+  menu_view_->PropagateEvent(character);
 }

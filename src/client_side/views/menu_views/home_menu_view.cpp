@@ -3,13 +3,16 @@
 #include <cstring>
 #include <vector>
 #include "home_menu_view.h"
+#include "../../view_controllers/help_view_controller.h"
 
 HomeMenuView::HomeMenuView() : AbstractMenuView(menu_name_) {
-  UpdateButtons(GetSubmenus());
-}
-
-const ButtonHandlersDict &HomeMenuView::GetSubmenus() {
-  return submenus_;
+  UpdateSubviews({
+    std::make_shared<MenuButtonItem>(this, "Play", std::optional<std::shared_ptr<AbstractViewController>>{}, this),
+    std::make_shared<MenuButtonItem>(this, "Friend List", std::optional<std::shared_ptr<AbstractViewController>>{}, this),
+    std::make_shared<MenuButtonItem>(this, "Ranking", std::optional<std::shared_ptr<AbstractViewController>>{}, this),
+    std::make_shared<MenuButtonItem>(this, "Help", std::make_shared<HelpViewController>(), this),
+    std::make_shared<MenuButtonItem>(this, "Quit", std::optional<std::shared_ptr<AbstractViewController>>{}, this),
+  });
 }
 
 //void LoginMenuView::Draw() const {

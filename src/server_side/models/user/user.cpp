@@ -19,7 +19,6 @@ std::unique_ptr<crow::json::wvalue> User::Serialize()
   (*json_output)["username"] = username_.GetValue();
   (*json_output)["created_timestamp"] = GetCreationTimestamp();
 
-
   return json_output;
 }
 

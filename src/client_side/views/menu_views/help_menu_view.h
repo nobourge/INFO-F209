@@ -1,14 +1,19 @@
+#ifndef QUORIDOR_SRC_CLIENT_SIDE_VIEWS_HELP_MENU_VIEW_H_
+#define QUORIDOR_SRC_CLIENT_SIDE_VIEWS_HELP_MENU_VIEW_H_
+
 #include <ncurses.h>
 #include <iostream>
 #include <cstring>
 #include <vector>
 #include "abstract_menu_view.h"
+#include "views/text_field.h"
 
-//class HelpMenuView : public AbstractMenuView{
-//private:
-//  HelpMenuView() : AbstractMenuView(nullptr, std::vector<Button>()) {}
-//  const char* name = "Help Menu";
-//public:
-//    void DisplayHelp() const;
-////    void OpenMenu(){NULL;}
-//};
+class HelpMenuView : public AbstractMenuView, public TextFieldDelegate {
+ public:
+  void TextChanged(const std::string &new_text) override;
+  void TextEditingFinished() override;
+  HelpMenuView();
+  constexpr static const char menu_name_[] = "Help Menu";
+};
+
+#endif //QUORIDOR_SRC_CLIENT_SIDE_VIEWS_HELP_MENU_VIEW_H_

@@ -1,51 +1,12 @@
 #include <string>
-#include <cstring>
 #include "home_menu_view_controller.h"
-#include "../../common/constants.h"
 
-std::optional<std::shared_ptr<AbstractViewController>> HomeMenuViewController::Tick() {
-  WINDOW *window;
-  initscr();
-  attron(A_STANDOUT);
-  clear();
-  noecho();
-  while (!next_view_controller_.has_value()) {
-    window = newwin(150, 150, 0, 0);
-    GetHomeMenuView().Draw(window);
-    keypad(window, true);
-    ParseMessage(wgetch(window));
-  }
-  endwin();
-  return next_view_controller_.value();
-}
 
-const HomeMenuView &HomeMenuViewController::GetHomeMenuView() const {
-  return home_menu_view_;
-}
+HomeMenuViewController::HomeMenuViewController()
+    : MenuViewController(std::make_shared<HomeMenuView>()) {}
 
-HomeMenuViewController::HomeMenuViewController() : home_menu_view_(HomeMenuView()) {
-  home_menu_view_.SetDelegate(this);
-}
 
-void HomeMenuViewController::ParseMessage(const int &character) {
-  switch (character) {
-    case KEY_DOWN:
-      home_menu_view_.MoveCursorUp();
-      break;
-    case KEY_UP:
-      home_menu_view_.MoveCursorDown();
-      break;
-    case '\n':
-      home_menu_view_.Click();
-      break;
-    default:
-      break;
-  }
-}
 
-void HomeMenuViewController::NextViewControllerSelected(std::optional<std::shared_ptr<AbstractViewController>> next_view_controller) {
-  next_view_controller_ = next_view_controller;
-}
 
 //std::shared_ptr<AbstractViewController> ControllerLoginClient::Tick() {
 ////  std::vector<bool> toSelect;

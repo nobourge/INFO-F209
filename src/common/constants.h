@@ -18,7 +18,8 @@
 
 // client-side
 #define MENU_NAME_EFFECT                  A_BOLD
-#define MENU_SUBMENU_BUTTONS_EFFECT       A_REVERSE
+#define VIEW_HOVER_EFFECT                 A_REVERSE
+#define VIEW_SELECTED_EFFECT              A_UNDERLINE
 #define BUTTONS_VERTICAL_GUTTER_SIZE      1
 
 #endif //QUORIDOR_SRC_COMMON_CONSTANTS_H_

@@ -5,21 +5,24 @@
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_MENU_VIEW_CONTROLLER_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_MENU_VIEW_CONTROLLER_H_
 
+#include <memory>
 #include "abstract_view_controller.h"
 #include "../views/menu_views/abstract_menu_view.h"
 
 class MenuViewController : public AbstractViewController, public MenuViewDelegate {
  public:
-  explicit MenuViewController(AbstractMenuView *);
+  explicit MenuViewController(const std::shared_ptr<AbstractMenuView> &);
 
   std::optional<std::shared_ptr<AbstractViewController>> Tick() override;
-
-  void NextViewControllerSelected(std::optional<std::shared_ptr<AbstractViewController>> next_view_controller) override;
-
-  void ParseMessage(const int &character) override;
+  void RespondToKeyboardEvent(const int &character) override;
+  void PresentViewController(std::optional<std::shared_ptr<AbstractViewController>> next_view_controller) override;
 
  protected:
-  [[nodiscard]] const MenuViewController &GetMenuView() const;
+  [[nodiscard]] const std::shared_ptr<AbstractMenuView> &GetMenuView() const;
+
+  virtual void MenuViewWillDisappear() {
+    next_view_controller_ = {};
+  };
 
  private:
   // double optional. The first optional represents if the next_view_controller has been set.
@@ -27,7 +30,7 @@ class MenuViewController : public AbstractViewController, public MenuViewDelegat
   // the program has to exit
   std::optional<std::optional<std::shared_ptr<AbstractViewController>>> next_view_controller_ = {};
 
-  AbstractMenuView *home_menu_view_;
+  std::shared_ptr<AbstractMenuView> menu_view_;
 };
 
 

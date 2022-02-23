@@ -3,7 +3,7 @@
 #include <cstring>
 #include <vector>
 #include "abstract_menu_view.h"
-#include "../view_elements/button.h"
+#include "views/button.h"
 
 
 
@@ -11,10 +11,9 @@ class HomeMenuView : public AbstractMenuView {
  public:
   static constexpr char menu_name_[] = "Home";
   HomeMenuView();
-  const ButtonHandlersDict &GetSubmenus() override;
  private:
-  ButtonHandlersDict submenus_ =
-      {{"Play", {}}, {"Friend List", {}}, {"Ranking", {}}, {"Help", {}}, {"Quit", {}}};
+//  MenuButtonItemsHandlersDict submenus_ =
+//      {{"Play", {}}, {"Friend List", {}}, {"Ranking", {}}, {"Help", {}}, {"Quit", {}}};
 };
 
 

@@ -36,22 +36,22 @@ endif ()
 
 add_executable(QuoridorServer
         src/server_side/main.cpp
-        src/server_side/models/board.cpp
-        src/server_side/models/board.h
-        src/server_side/models/cell.cpp
-        src/server_side/models/cell.h
+#        src/server_side/models/board.cpp
+#        src/server_side/models/board.h
+#        src/server_side/models/cell.cpp
+#        src/server_side/models/cell.h
         #        src/server_side/models/wall.cpp
         #        src/server_side/models/wall.h
-        src/server_side/models/position.cpp
-        src/server_side/models/position.h
+#        src/server_side/models/position.cpp
+#        src/server_side/models/position.h
         #        src/server_side/models/Pawn.h
         #        src/server_side/models/Pawn.cpp
-        src/server_side/models/Player.h
-        src/server_side/models/Player.cpp
-        src/server_side/models/Game.h
-        src/server_side/models/Game.cpp
-        src/server_side/models/input.cpp
-        src/server_side/models/translator.cpp
+#        src/server_side/models/Player.h
+#        src/server_side/models/Player.cpp
+#        src/server_side/models/Game.h
+#        src/server_side/models/Game.cpp
+#        src/server_side/models/input.cpp
+#        src/server_side/models/translator.cpp
         src/server_side/view_controllers/api/base_quoridor_api.cpp
         src/server_side/view_controllers/api/base_quoridor_api.h
         src/server_side/view_controllers/api/v1/v1_api.cpp

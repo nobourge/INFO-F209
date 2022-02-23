@@ -1,22 +1,25 @@
 #include "abstract_menu_view.h"
 #include "../../../common/constants.h"
+#include "views/menu_button_item.h"
 
-AbstractMenuView::AbstractMenuView(const char *name) : name(name), submenus_() {}
+AbstractMenuView::AbstractMenuView(const char *name) : EventResponder({}), name(name), subviews_() {
+  BecomeEventResponder();
+}
 
 const char *AbstractMenuView::GetName() const {
   return name;
 }
 
 int AbstractMenuView::GetVerticalPadding() const {
-  return (LINES + 1 - GetButtons().size() - (GetButtons().size() - 1) * vertical_gutter_size_) / 2;
+  return (LINES + 1 - GetSubviews().size() - (GetSubviews().size() - 1) * vertical_gutter_size_) / 2;
 }
 
-const std::vector<Button> &AbstractMenuView::GetButtons() const {
-  return buttons_;
+const std::vector<std::shared_ptr<AbstractView>> &AbstractMenuView::GetSubviews() const {
+  return subviews_;
 }
 
-std::vector<Button> &AbstractMenuView::GetButtons() {
-  return buttons_;
+std::vector<std::shared_ptr<AbstractView>> &AbstractMenuView::GetSubviews() {
+  return subviews_;
 }
 
 int AbstractMenuView::GetVerticalGutterSize() const {
@@ -31,88 +34,100 @@ void AbstractMenuView::Draw(WINDOW *window) const {
   mvwprintw(window, 0, center_y - (strlen(GetName()) / 2), GetName());
   wattr_off(window, MENU_NAME_EFFECT, nullptr);
 
-  for (int button_idx = 0; button_idx < GetButtons().size(); ++button_idx) {
-    const auto &button = GetButtons().at(button_idx);
+  for (int view_idx = 0; view_idx < GetSubviews().size(); ++view_idx) {
+    const auto &view = GetSubviews().at(view_idx);
 
-    if (button.GetState() == Button::HOVER) {
-      wattr_on(window, MENU_SUBMENU_BUTTONS_EFFECT, nullptr);
-    }
+    wattr_on(window, view->GetNcursesEffectForCurrentState(), nullptr);
 
     mvwprintw(window,
               GetVerticalPadding()
-                  + button_idx * (GetVerticalGutterSize() + 1), // + 1 for title -1 for extra gutter cancels out
-              center_y - (button.GetTitle().size() / 2),
-              button.GetTitle().c_str());
-    wattr_off(window, MENU_SUBMENU_BUTTONS_EFFECT, nullptr);
+                  + view_idx * (GetVerticalGutterSize() + 1), // + 1 for title -1 for extra gutter cancels out
+              center_y - (view->GetInnerText().size() / 2),
+              view->GetInnerText().c_str());
+    wattr_off(window, view->GetNcursesEffectForCurrentState(), nullptr);
   }
 }
 
 void AbstractMenuView::MoveCursorDown() {
-  auto current_btn = GetIteratorOfHoveredButton();
-  current_btn->SetState(Button::NORMAL);
-  auto prev_btn = (current_btn == GetButtons().begin()) ? --GetButtons().end() : --current_btn;
-  prev_btn->SetState(Button::HOVER);
+  MoveCursor(false);
 }
 
 void AbstractMenuView::MoveCursorUp() {
-  auto current_btn = GetIteratorOfHoveredButton();
-  current_btn->SetState(Button::NORMAL);
-  auto next_btn = (current_btn == (--GetButtons().end())) ? GetButtons().begin() : ++current_btn;
-  next_btn->SetState(Button::HOVER);
+  MoveCursor(true);
 }
 
-std::vector<Button>::iterator AbstractMenuView::GetIteratorOfHoveredButton() {
-  auto current_selected_idx = std::find_if(GetButtons().begin(), GetButtons().end(), [](const Button &btn) {
-    return btn.GetState() == Button::HOVER;
-  });
-  if (current_selected_idx == GetButtons().end()) {
+void AbstractMenuView::MoveCursor(bool up) {
+  auto current_view = GetIteratorOfHoveredSubview();
+  (*current_view)->SetState(AbstractView::NORMAL);
+  typedef std::vector<std::shared_ptr<AbstractView>>::iterator SubviewsIterator;
+
+  std::function<SubviewsIterator(SubviewsIterator)> next_elem = [&](SubviewsIterator iter) {
+    if (up) {
+      return iter == GetSubviews().begin() ? --GetSubviews().end() : --current_view;
+    } else {
+      return iter == --GetSubviews().end() ? GetSubviews().begin() : ++current_view;
+    }
+  };
+
+  // size + 1 because if we go through all the subviews and none are possible event responders,
+  // we should fall back to the original view
+  auto next_view = current_view;
+
+  for (int i = 0; i < GetSubviews().size() + 1; i++) {
+    next_view = next_elem(next_view);
+    if ((*next_view)->CanBecomeEventResponder()) {
+      break;
+    }
+  }
+
+  (*next_view)->SetState(AbstractView::HOVER);
+}
+
+std::vector<std::shared_ptr<AbstractView>>::iterator AbstractMenuView::GetIteratorOfHoveredSubview() {
+  auto current_selected_idx =
+      std::find_if(GetSubviews().begin(), GetSubviews().end(), [](const std::shared_ptr<AbstractView> &btn) {
+        return btn->GetState() == AbstractView::HOVER;
+      });
+
+  // if none are selected
+  if (current_selected_idx == GetSubviews().end()) {
     // TODO: This shouldn't happen. Should be logged
-    current_selected_idx = GetButtons().begin();
-    current_selected_idx->SetState(Button::HOVER);
+    current_selected_idx = GetSubviews().begin();
+    // find the first "selectable" view
+    for (int i = 0; i < GetSubviews().size(); i++) {
+      if (!(*current_selected_idx)->CanBecomeEventResponder()) {
+        current_selected_idx++;
+      }
+    }
+
+    if (!(*current_selected_idx)->CanBecomeEventResponder()) {
+      throw std::logic_error("At least one view should be selectable");
+    }
+
+    (*current_selected_idx)->SetState(AbstractView::HOVER);
+
   }
   return current_selected_idx;
 }
 
-void AbstractMenuView::SetFirstButtonStateToHover() {
-  for (auto &btn : buttons_) {
-    btn.SetState(Button::NORMAL);
-  }
-  if (!buttons_.empty()) {
-    buttons_[0].SetState(Button::HOVER);
-  }
+void AbstractMenuView::SetFirstButtonStateToHoverIfNoneAreHoveredUpon() {
+  GetIteratorOfHoveredSubview(); // this allows to hover over a button if none are in hover state
 }
 
 void AbstractMenuView::Click() {
-  GetIteratorOfHoveredButton()->Click();
+  (*GetIteratorOfHoveredSubview())->SetState(AbstractView::SELECTED);
 }
 
-void AbstractMenuView::UpdateButtons(const std::optional<ButtonHandlersDict> &buttons_handlers = {}) {
-  if (buttons_handlers->empty()) {
-    submenus_ = GetSubmenus();
-  } else {
-    submenus_ = buttons_handlers.value();
-  }
-
-  // set buttons_ to keys of buttons_handler_map
-  buttons_.clear();
-  buttons_.reserve(submenus_.size());
-  for (auto &submenu : submenus_) {
-    buttons_.emplace_back(std::get<0>(submenu));
-    buttons_[buttons_.size() - 1].SetDelegate(this);
-  }
-
-  SetFirstButtonStateToHover();
+void AbstractMenuView::UpdateSubviews(const std::vector<std::shared_ptr<AbstractView>> &views = {}) {
+  // set subviews_ to keys of buttons_handler_map
+  subviews_ = views;
+  SetFirstButtonStateToHoverIfNoneAreHoveredUpon();
 }
 
-void AbstractMenuView::ButtonClicked(const Button &sender) {
+void AbstractMenuView::PresentController(const std::optional<std::shared_ptr<AbstractViewController>> &next_view_controller) {
   // find index of clicked button
-
-  const auto clicked_btn_submenu = std::find_if(submenus_.begin(), submenus_.end(), [&sender](const auto &pair) {
-    return std::get<0>(pair) == sender.GetTitle();
-  });
-
   if (delegate_) {
-    delegate_->NextViewControllerSelected(std::get<1>(*clicked_btn_submenu));
+    delegate_->PresentViewController(next_view_controller);
   }
 }
 
@@ -120,3 +135,27 @@ void AbstractMenuView::SetDelegate(MenuViewDelegate *delegate) {
   delegate_ = delegate;
 }
 
+bool AbstractMenuView::RespondToEvent(const int &character) {
+  switch (character) {
+    case KEY_UP:MoveCursorUp();
+      return true;
+    case KEY_DOWN:MoveCursorDown();
+      return true;
+    case '\n':Click();
+      return true;
+    default:return false;
+  }
+}
+
+std::unique_ptr<std::vector<std::shared_ptr<EventResponder>>> AbstractMenuView::GetChildren() {
+  auto output = std::make_unique<std::vector<std::shared_ptr<EventResponder>>>();
+  for (auto &subview : subviews_) {
+    output->push_back(subview);
+  }
+  return output;
+}
+
+void AbstractMenuView::AddSubview(const std::shared_ptr<AbstractView> &view) {
+  subviews_.push_back(view);
+  SetFirstButtonStateToHoverIfNoneAreHoveredUpon();
+}
