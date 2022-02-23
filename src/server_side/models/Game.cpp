@@ -40,6 +40,7 @@ void Game::StartTheGame(){
     //Insert friend using IDS of the users which should be stocked/used in the user file
     db.insertFriend(1,2);
 
+
     //Insert the data for the board
     db.insertBoard(players.size(),walls.size());
 
@@ -53,6 +54,7 @@ void Game::StartTheGame(){
 void Game::SwitchCurrentPlayer(){
     //First we check if the current player has won before we change the player at the end of the turn
     if(hasCurrentPlayerWon()){
+        calculateRanking();
         endGame();
     }
 
@@ -81,6 +83,32 @@ void Game::SwitchCurrentPlayer(){
 }
 
 ///
+
+void Game::calculateRanking(){
+    //The player who won is going to get 100 points bonus.
+    currentPlayer->increaseScore(100);
+
+    vector<int> scores;
+    for(auto x:players){
+        scores.push_back(x->getScore());
+    }
+
+    //sort the vector non-increasing
+    sort(scores.begin(), scores.end(), greater<int>());
+
+    if(scores.size()==2){
+        db.insertRanking(scores[0],scores[1]);
+    }else if(scores.size()==3){
+        db.insertRanking(scores[0],scores[1],scores[2]);
+    }else{
+        db.insertRanking(scores[0],scores[1],scores[2],scores[3]);
+    }
+
+    for(auto x:players){
+        db.updateUser(x->getScore(),1);
+    }
+
+}
 
 void Game::playIaMove(){
     bool on=false;
@@ -180,6 +208,7 @@ void Game::playCoup(){
 
             //Check is the placement is possible with isWallPossible();
             board->PlaceWall(wall.first,wall.second,direct);
+            currentPlayer->increaseScore();
             on=true;
 
         }else if(enter=='M'){
@@ -190,6 +219,7 @@ void Game::playCoup(){
                     board->Movement(currentPlayer->getPlayerPos(),coup);
                     currentPlayer->setPlayerPosition(coup);
                     // board->Movement(coup,true);
+                    currentPlayer->increaseScore();
                     on=true;
                  }
 

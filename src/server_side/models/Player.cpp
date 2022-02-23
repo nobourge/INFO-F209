@@ -147,6 +147,15 @@ Position Player::calculateDirection(char c,Position Pos,DIRECTION dir){
     return coup;
 }
 
+
+void Player::increaseScore(int newscore){
+    score+=newscore;
+}
+
+int Player::getScore(){
+    return score;
+}
+
 ///
 /// \param newPos
 void Player::setPlayerPosition(Position newPos){
