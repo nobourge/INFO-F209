@@ -39,13 +39,13 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/noe/CLionProjects/INFO-F209/cmake-build-debug/
+cmake_ninja_workdir = /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/cmake-build-debug/
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug && /snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/noe/CLionProjects/INFO-F209 -B/home/noe/CLionProjects/INFO-F209/cmake-build-debug
+  COMMAND = cd "/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209" -B"/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -57,15 +57,182 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug && /snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
 build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target QuoridorServer
+
+
+#############################################
+# Order-only phony target for QuoridorServer
+
+build cmake_object_order_depends_target_QuoridorServer: phony || CMakeFiles/QuoridorServer.dir
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/main.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/main.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/main.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/board.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/board.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/board.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/cell.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/cell.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/cell.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/position.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/position.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/position.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/Player.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/Player.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/Player.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/Game.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/Game.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/Game.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/input.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/input.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/input.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/translator.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/translator.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/translator.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_quoridor_api.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/view_controllers/api/base_quoridor_api.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_quoridor_api.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_api.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/view_controllers/api/v1/v1_api.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_api.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/user/user.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/user/user.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/user/user.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models/user
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/user/abstract_validator.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/user/abstract_validator.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/user/abstract_validator.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models/user
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/user/username.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/user/username.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/user/username.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models/user
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/user/password.cpp.o: CXX_COMPILER__QuoridorServer_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/server_side/models/user/password.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEFINES = -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB
+  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/user/password.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/openssl@1.1/1.1.1m/include
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models/user
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target QuoridorServer
+
+
+#############################################
+# Link the executable QuoridorServer
+
+build QuoridorServer: CXX_EXECUTABLE_LINKER__QuoridorServer_Debug CMakeFiles/QuoridorServer.dir/src/server_side/main.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/board.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/cell.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/position.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/Player.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/Game.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/input.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/translator.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_quoridor_api.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_api.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/user/user.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/user/abstract_validator.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/user/username.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/user/password.cpp.o | /opt/homebrew/lib/libboost_system-mt.dylib /opt/homebrew/Cellar/openssl@1.1/1.1.1m/lib/libssl.dylib /opt/homebrew/Cellar/openssl@1.1/1.1.1m/lib/libcrypto.dylib
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
+  LINK_LIBRARIES = /opt/homebrew/lib/libboost_system-mt.dylib  /opt/homebrew/Cellar/openssl@1.1/1.1.1m/lib/libssl.dylib  /opt/homebrew/Cellar/openssl@1.1/1.1.1m/lib/libcrypto.dylib
+  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_FILE = QuoridorServer
+  TARGET_PDB = QuoridorServer.pdb
+
+# =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/noe/CLionProjects/INFO-F209/CMakeLists.txt
+# /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/CMakeLists.txt
 # =============================================================================
 
 
@@ -73,7 +240,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src && /snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/noe/CLionProjects/INFO-F209 -B/home/noe/CLionProjects/INFO-F209/cmake-build-debug
+  COMMAND = cd "/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug/src" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209" -B"/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -85,7 +252,7 @@ build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src && /snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug/src" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -93,7 +260,7 @@ build src/edit_cache: phony src/CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/noe/CLionProjects/INFO-F209/src/CMakeLists.txt
+# /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/src/CMakeLists.txt
 # =============================================================================
 
 
@@ -101,7 +268,7 @@ build src/edit_cache: phony src/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build src/client_side/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src/client_side && /snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/noe/CLionProjects/INFO-F209 -B/home/noe/CLionProjects/INFO-F209/cmake-build-debug
+  COMMAND = cd "/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug/src/client_side" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209" -B"/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -113,7 +280,7 @@ build src/client_side/rebuild_cache: phony src/client_side/CMakeFiles/rebuild_ca
 # Utility command for edit_cache
 
 build src/client_side/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src/client_side && /snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug/src/client_side" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -128,47 +295,85 @@ build src/client_side/edit_cache: phony src/client_side/CMakeFiles/edit_cache.ut
 
 build cmake_object_order_depends_target_ClientSide: phony || src/client_side/CMakeFiles/ClientSide.dir
 
-build src/client_side/CMakeFiles/ClientSide.dir/view/MainMenuView.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view/MainMenuView.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view/MainMenuView.cpp.o.d
-  FLAGS = -g -std=gnu++2a
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/views/menu_views/help_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
-build src/client_side/CMakeFiles/ClientSide.dir/view/MenuView.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view/MenuView.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view/MenuView.cpp.o.d
-  FLAGS = -g -std=gnu++2a
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/views/menu_views/home_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
-build src/client_side/CMakeFiles/ClientSide.dir/main_menu.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/main_menu.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/main_menu.cpp.o.d
-  FLAGS = -g -std=gnu++2a
+build src/client_side/CMakeFiles/ClientSide.dir/views/main_menu.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/views/main_menu.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/main_menu.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
-build src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/main.cpp || cmake_object_order_depends_target_ClientSide
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/views/menu_views/abstract_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
+
+build src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/main.cpp || cmake_object_order_depends_target_ClientSide
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++2a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
-build src/client_side/CMakeFiles/ClientSide.dir/client_main_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/client_main_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/client_main_controller.cpp.o.d
-  FLAGS = -g -std=gnu++2a
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/view_controllers/home_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
-build src/client_side/CMakeFiles/ClientSide.dir/abstract_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/abstract_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/abstract_controller.cpp.o.d
-  FLAGS = -g -std=gnu++2a
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/view_controllers/abstract_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
-build src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/client_mvc_factory.cpp || cmake_object_order_depends_target_ClientSide
+build src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/client_mvc_factory.cpp || cmake_object_order_depends_target_ClientSide
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o.d
-  FLAGS = -g -std=gnu++2a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
+
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/views/menu_views/login_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
+
+build src/client_side/CMakeFiles/ClientSide.dir/views/view_elements/button.cpp.o: CXX_COMPILER__ClientSide_Debug /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet$ d'année$ 2/INFO-F209/src/client_side/views/view_elements/button.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/view_elements/button.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/view_elements
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 
 # =============================================================================
@@ -178,14 +383,15 @@ build src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o: CXX_CO
 #############################################
 # Link the executable src/client_side/ClientSide
 
-build src/client_side/ClientSide: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/view/MainMenuView.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view/MenuView.cpp.o src/client_side/CMakeFiles/ClientSide.dir/main_menu.cpp.o src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o src/client_side/CMakeFiles/ClientSide.dir/client_main_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/abstract_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o
-  FLAGS = -g
+build src/client_side/ClientSide: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/main_menu.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/view_elements/button.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
   LINK_LIBRARIES = -lncurses
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
   TARGET_FILE = src/client_side/ClientSide
-  TARGET_PDB = ClientSide.dbg
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 # =============================================================================
 # Target aliases.
@@ -198,21 +404,21 @@ build ClientSide: phony src/client_side/ClientSide
 # =============================================================================
 
 #############################################
-# Folder: /home/noe/CLionProjects/INFO-F209/cmake-build-debug
+# Folder: /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug
 
-build all: phony src/all
+build all: phony QuoridorServer src/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src
+# Folder: /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug/src
 
 build src/all: phony src/client_side/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src/client_side
+# Folder: /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet d'année 2/INFO-F209/cmake-build-debug/src/client_side
 
 build src/client_side/all: phony src/client_side/ClientSide
 
@@ -223,14 +429,14 @@ build src/client_side/all: phony src/client_side/ClientSide
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindBoost.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindOpenSSL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /opt/homebrew/lib/cmake/Boost-1.78.0/BoostConfig.cmake /opt/homebrew/lib/cmake/Boost-1.78.0/BoostConfigVersion.cmake /opt/homebrew/lib/cmake/BoostDetectToolset-1.78.0.cmake /opt/homebrew/lib/cmake/boost_headers-1.78.0/boost_headers-config-version.cmake /opt/homebrew/lib/cmake/boost_headers-1.78.0/boost_headers-config.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/boost_system-config-version.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/boost_system-config.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/libboost_system-variant-mt-shared.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/libboost_system-variant-mt-static.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/libboost_system-variant-shared.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindBoost.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindOpenSSL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /opt/homebrew/lib/cmake/Boost-1.78.0/BoostConfig.cmake /opt/homebrew/lib/cmake/Boost-1.78.0/BoostConfigVersion.cmake /opt/homebrew/lib/cmake/BoostDetectToolset-1.78.0.cmake /opt/homebrew/lib/cmake/boost_headers-1.78.0/boost_headers-config-version.cmake /opt/homebrew/lib/cmake/boost_headers-1.78.0/boost_headers-config.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/boost_system-config-version.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/boost_system-config.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/libboost_system-variant-mt-shared.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/libboost_system-variant-mt-static.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/libboost_system-variant-shared.cmake /opt/homebrew/lib/cmake/boost_system-1.78.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################

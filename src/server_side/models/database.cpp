@@ -1,7 +1,24 @@
 #include"database.h"
+#include <fstream>
+#include <iostream>
+#include <stdio.h>
+#include<cstring>
 
 int DataBase::friendsId=0;
 
+void DataBase::reloadFile(std::string file){
+  ifstream ifile;
+  int n=file.length();
+  char file2[n+1];
+  strcpy(file2,file.c_str());
+
+  ifile.open(file2);
+  if(ifile) {
+    remove(file2);
+  }
+
+
+}
 static int callback(void* data, int argc, char** argv, char** azColName)
 {
     int i;
@@ -23,6 +40,9 @@ void DataBase::createTables(){
                       "PASSWORD           TEXT    NOT NULL, "
                       "FRIENDS           TEXT    NOT NULL, "
                       "SCORE           INT    NOT NULL)";
+
+    reloadFile("example.db");
+
     exit = sqlite3_open("example.db", &DB);
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
     //Create second table BOARD
@@ -64,7 +84,7 @@ void DataBase::createTables(){
     sqlite3_close(DB);
 }
 
-void DataBase::insertPlayer(int id){
+void DataBase::insertPlayer(unsigned int id){
     exit = sqlite3_open("example.db", &DB);
     string pseudo; //TO be completed later by the server.
 
@@ -72,7 +92,7 @@ void DataBase::insertPlayer(int id){
     //Insert in the table
     string query = "SELECT * FROM USER;";
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
-    sql=("INSERT INTO USER VALUES(1,'PSEUDO','NONE','NONE',0);");
+    sql=("INSERT INTO USER VALUES("+to_string(id)+",'PSEUDO','NONE','NONE',0);");
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
     //Verify creation of table
@@ -97,6 +117,17 @@ void DataBase::insertFriend(int myId,int myFriendId){
     friendsId++;
 
     verifyTable();
+    sqlite3_close(DB);
+}
+
+void DataBase::searchFriends(int id){
+    exit = sqlite3_open("example.db", &DB);
+    
+    string data("CALLBACK FUNCTION");
+    string query = "SELECT MY_FRIEND_ID FROM FRIENDS WHERE FRIENDS.MY_USER_ID="+to_string(id)+";";
+    sqlite3_exec(DB, query.c_str(), callback, (void*)data.c_str(), NULL); 
+    
+
     sqlite3_close(DB);
 }
 

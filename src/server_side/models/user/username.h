@@ -10,7 +10,6 @@
 
 struct InvalidUsername : public std::exception {
   [[nodiscard]] const char *what() const noexcept override;
-
   ///
   /// \param validation_error_description
   InvalidUsername(std::string validation_error_description);
