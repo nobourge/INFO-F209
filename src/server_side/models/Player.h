@@ -11,7 +11,7 @@ class Player{
     int nbWalls=10;
     Position playerPos;
     DIRECTION dr;
-
+    int score=0;
 
 public:
     Player(){}
@@ -24,6 +24,8 @@ public:
     Position calculateDirection(char,Position,DIRECTION);
     pair<Position,Position> placeWall(std::string);
     virtual Position playIAMove(bool=true){return {0,0};};
+    void increaseScore(int=5);
+    int getScore();
     std::string getMessage();
     DIRECTION getGoal() const;
 };

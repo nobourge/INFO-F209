@@ -23,6 +23,7 @@ class Game {
   void endGame();
   void playCoup();
   void playIaMove();
+  void calculateRanking();
   std::shared_ptr<Player> getCurrentPlayer();
   Board *getBoard() { return board; }
 

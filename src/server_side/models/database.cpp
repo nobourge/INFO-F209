@@ -5,6 +5,7 @@
 #include<cstring>
 
 int DataBase::friendsId=0;
+int DataBase::rankingId=0;
 
 void DataBase::reloadFile(std::string file){
   ifstream ifile;
@@ -56,11 +57,10 @@ void DataBase::createTables(){
     //Create third table RANKING
     sql="CREATE TABLE IF NOT EXISTS RANKING("
                       "ID  INT PRIMARY KEY NOT NULL, " 
-                      "PLAYER_ID INT NOT NULL, "
-                      "FIRST_PLACE           TEXT    NOT NULL, "
-                      "SECOND_PLACE           TEXT    NOT NULL, "
-                      "THIRD_PLACE           TEXT    NOT NULL, "
-                      "FOURTH_PLACE        TEXT NOT NULL)";
+                      "FIRST_PLACE           INT    NOT NULL, "
+                      "SECOND_PLACE           INT    NOT NULL, "
+                      "THIRD_PLACE           INT    NOT NULL, "
+                      "FOURTH_PLACE        INT NOT NULL)";
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
     //Create fourth table FRIENDS
@@ -79,7 +79,7 @@ void DataBase::createTables(){
 
 
     //Verify table
-    verifyTable();
+    verifyTable("Creating tables");
     //Close db
     sqlite3_close(DB);
 }
@@ -96,7 +96,7 @@ void DataBase::insertPlayer(unsigned int id){
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
     //Verify creation of table
-    verifyTable();
+    verifyTable("Insert values into player");
     //Close db
     sqlite3_close(DB);
 }
@@ -116,7 +116,7 @@ void DataBase::insertFriend(int myId,int myFriendId){
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
     friendsId++;
 
-    verifyTable();
+    verifyTable("Insert values into friend");
     sqlite3_close(DB);
 }
 
@@ -131,6 +131,39 @@ void DataBase::searchFriends(int id){
     sqlite3_close(DB);
 }
 
+
+void DataBase::insertRanking(int firstPlaceId,int secondPlaceId,int thirdPlaceId,int fourthPlaceId){
+    exit = sqlite3_open("example.db", &DB);
+
+    string query = "SELECT * FROM RANKING;";
+    sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
+
+    //Only 2 players played this match.
+    if(thirdPlaceId==0 && fourthPlaceId==0){
+        sql=("INSERT INTO RANKING VALUES("+to_string(rankingId)+","+to_string(firstPlaceId)+ "," + to_string(secondPlaceId)+",0,0);");
+        rankingId++;
+        exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+    }else{
+        sql=("INSERT INTO RANKING VALUES("+to_string(rankingId)+","+to_string(firstPlaceId)+ "," + to_string(secondPlaceId)+","+to_string(thirdPlaceId)+","+to_string(fourthPlaceId)+");");
+        rankingId++;
+        exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+    }
+
+    verifyTable("Insert values into the ranking");
+    sqlite3_close(DB);
+}
+
+void DataBase::updateUser(int score,int id){
+    exit = sqlite3_open("example.db", &DB);
+
+    //Update Table
+    string query = "UPDATE USER SET SCORE="+to_string(score)+" WHERE ID="+to_string(id)+";";
+    sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
+
+    sqlite3_close(DB);
+
+}
+
 void DataBase::insertBoard(int nrOfPlayers,int nrOfWalls){
     exit = sqlite3_open("example.db", &DB);
 
@@ -141,11 +174,12 @@ void DataBase::insertBoard(int nrOfPlayers,int nrOfWalls){
     sql=("INSERT INTO BOARD VALUES(1,"+to_string(nrOfPlayers) +"," + to_string(nrOfWalls) + ");");
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
-    verifyTable();
+    verifyTable("Insert values into the board");
     sqlite3_close(DB);
 }
 
-void DataBase::verifyTable(){
+void DataBase::verifyTable(string message){
+      cout<<message<<" ";
       if (exit != SQLITE_OK) {
         std::cerr << "Error Create Table" << std::endl;
         sqlite3_free(messageError);

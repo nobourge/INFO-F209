@@ -10,13 +10,16 @@ class DataBase{
     int exit=0;
     char* messageError;
     static int friendsId;
+    static int rankingId;
 public:
     void createTables();
     void insertPlayer(unsigned int);
-    void verifyTable();
+    void verifyTable(std::string="");
     void insertBoard(int,int);
     void insertFriend(int,int);
     void searchFriends(int);
-    void reloadFile(std::string file);
+    void insertRanking(int,int=0,int=0,int=0);
+    void updateUser(int,int);
+    void reloadFile(std::string);
 };
 
