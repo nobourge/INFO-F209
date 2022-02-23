@@ -11,9 +11,6 @@ class HomeMenuViewController : public MenuViewController {
   HomeMenuViewController();
 };
 
-//class ControllerLoginClient : public AbstractViewController {
-// public:
-//  std::shared_ptr<AbstractViewController> Tick();
-//};
+
 
 #endif //QUORIDOR_SRC_CLIENT_SIDE_CONTROLLER_H_
