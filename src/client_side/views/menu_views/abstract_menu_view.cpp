@@ -62,10 +62,19 @@ void AbstractMenuView::MoveCursor(bool up) {
   typedef std::vector<std::shared_ptr<AbstractView>>::iterator SubviewsIterator;
 
   std::function<SubviewsIterator(SubviewsIterator)> next_elem = [&](SubviewsIterator iter) {
+    auto current_view_copy = iter;
     if (up) {
-      return iter == GetSubviews().begin() ? --GetSubviews().end() : --current_view;
+      if (iter == GetSubviews().begin()) {
+        return --GetSubviews().end();
+      } else {
+        return --current_view_copy;
+      }
     } else {
-      return iter == --GetSubviews().end() ? GetSubviews().begin() : ++current_view;
+      if (iter == --GetSubviews().end()) {
+        return GetSubviews().begin();
+      } else {
+        return ++current_view_copy;
+      }
     }
   };
 
@@ -73,7 +82,7 @@ void AbstractMenuView::MoveCursor(bool up) {
   // we should fall back to the original view
   auto next_view = current_view;
 
-  for (int i = 0; i < GetSubviews().size() + 1; i++) {
+  for (int i = 0; i < GetSubviews().size(); i++) {
     next_view = next_elem(next_view);
     if ((*next_view)->CanBecomeEventResponder()) {
       break;

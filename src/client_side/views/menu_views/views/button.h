@@ -7,6 +7,7 @@
 
 #include <string>
 #include <optional>
+#include <functional>
 
 #include "abstract_view.h"
 
