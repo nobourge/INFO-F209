@@ -1,5 +1,4 @@
 #include"database.h"
-#include <fstream>
 #include <iostream>
 #include <stdio.h>
 #include<cstring>
@@ -107,7 +106,7 @@ void DataBase::insertFriend(int myId,int myFriendId){
     string query = "SELECT * FROM FRIENDS;";
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
 
-    //Insert the friend-me and me-friend relation into the data base
+    //Insert the friend-me and me-friend relation into the database
     sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myId)+ "," + to_string(myFriendId)+");");
     friendsId++;
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
