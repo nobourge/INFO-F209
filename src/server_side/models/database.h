@@ -1,8 +1,13 @@
 #include<iostream>
-#include"Player.h"
-#include"position.h"
+#include<stdio.h>
+#include<cstring>
 #include<sqlite3.h>
 #include<memory>
+#include <fstream>
+#include <string>
+#include"Player.h"
+#include"position.h"
+#include "../../common/constants.h"
 
 class DataBase{
     sqlite3* DB;
