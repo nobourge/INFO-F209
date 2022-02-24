@@ -1,7 +1,5 @@
 #include"database.h"
-#include <iostream>
-#include <stdio.h>
-#include<cstring>
+
 
 int DataBase::friendsId=0;
 int DataBase::rankingId=0;
@@ -43,7 +41,7 @@ void DataBase::createTables(){
 
     reloadFile("example.db");
 
-    exit = sqlite3_open("example.db", &DB);
+    exit = sqlite3_open(DATABASE_FILE_NAME, &DB);
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
     //Create second table BOARD
     sql="CREATE TABLE IF NOT EXISTS BOARD("
@@ -84,7 +82,7 @@ void DataBase::createTables(){
 }
 
 void DataBase::insertPlayer(unsigned int id){
-    exit = sqlite3_open("example.db", &DB);
+    exit = sqlite3_open(DATABASE_FILE_NAME, &DB);
     string pseudo; //TO be completed later by the server.
 
 
@@ -101,7 +99,7 @@ void DataBase::insertPlayer(unsigned int id){
 }
 
 void DataBase::insertFriend(int myId,int myFriendId){
-    exit = sqlite3_open("example.db", &DB);
+    exit = sqlite3_open(DATABASE_FILE_NAME, &DB);
 
     string query = "SELECT * FROM FRIENDS;";
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
@@ -120,7 +118,7 @@ void DataBase::insertFriend(int myId,int myFriendId){
 }
 
 void DataBase::searchFriends(int id){
-    exit = sqlite3_open("example.db", &DB);
+    exit = sqlite3_open(DATABASE_FILE_NAME, &DB);
     
     string data("CALLBACK FUNCTION");
     string query = "SELECT MY_FRIEND_ID FROM FRIENDS WHERE FRIENDS.MY_USER_ID="+to_string(id)+";";
@@ -132,7 +130,7 @@ void DataBase::searchFriends(int id){
 
 
 void DataBase::insertRanking(int firstPlaceId,int secondPlaceId,int thirdPlaceId,int fourthPlaceId){
-    exit = sqlite3_open("example.db", &DB);
+    exit = sqlite3_open(DATABASE_FILE_NAME, &DB);
 
     string query = "SELECT * FROM RANKING;";
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
@@ -153,7 +151,7 @@ void DataBase::insertRanking(int firstPlaceId,int secondPlaceId,int thirdPlaceId
 }
 
 void DataBase::updateUser(int score,int id){
-    exit = sqlite3_open("example.db", &DB);
+    exit = sqlite3_open(DATABASE_FILE_NAME, &DB);
 
     //Update Table
     string query = "UPDATE USER SET SCORE="+to_string(score)+" WHERE ID="+to_string(id)+";";
@@ -164,7 +162,7 @@ void DataBase::updateUser(int score,int id){
 }
 
 void DataBase::insertBoard(int nrOfPlayers,int nrOfWalls){
-    exit = sqlite3_open("example.db", &DB);
+    exit = sqlite3_open(DATABASE_FILE_NAME, &DB);
 
     //Insert in the table
     string query = "SELECT * FROM BOARD;";
