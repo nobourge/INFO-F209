@@ -15,6 +15,10 @@ HelpMenuView::HelpMenuView() : AbstractMenuView(menu_name_) {
   );
 }
 
-void HelpMenuView::TextChanged(const std::string &new_text) {}
+void HelpMenuView::TextChanged(const std::string &new_text) {
 
-void HelpMenuView::TextEditingFinished() {}
+}
+
+void HelpMenuView::TextEditingFinished() {
+
+}

@@ -20,9 +20,9 @@ class MenuViewController : public AbstractViewController, public MenuViewDelegat
  protected:
   [[nodiscard]] const std::shared_ptr<AbstractMenuView> &GetMenuView() const;
 
-  virtual void MenuViewWillDisappear() {
-    next_view_controller_ = {};
-  };
+  virtual void MenuViewWillDisappear() {};
+
+  virtual void MenuViewWillAppear() {}
 
  private:
   // double optional. The first optional represents if the next_view_controller has been set.

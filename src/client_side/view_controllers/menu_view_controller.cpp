@@ -14,6 +14,9 @@ std::optional<std::shared_ptr<AbstractViewController>> MenuViewController::Tick(
   attron(A_STANDOUT);
   clear();
   noecho();
+
+  MenuViewWillAppear();
+
   while (!next_view_controller_.has_value()) {
     window = newwin(150, 150, 0, 0);
     GetMenuView()->Draw(window);
@@ -22,6 +25,10 @@ std::optional<std::shared_ptr<AbstractViewController>> MenuViewController::Tick(
   }
   endwin();
   auto next_vc = std::move(next_view_controller_.value());
+
+  next_view_controller_ = {};
+
+
   MenuViewWillDisappear();
   return next_vc;
 }
