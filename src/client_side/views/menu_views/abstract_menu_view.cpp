@@ -1,5 +1,4 @@
 #include "abstract_menu_view.h"
-#include "../../../common/constants.h"
 #include "views/menu_button_item.h"
 
 AbstractMenuView::AbstractMenuView(const char *name) : EventResponder({}), name(name), subviews_() {
