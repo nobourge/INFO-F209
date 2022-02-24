@@ -204,7 +204,7 @@ bool Board::IsWallPossible(const Position firstCell, const Position secondCell, 
 /// \return
 bool Board::IsMovePossible(const Position &start, const Position &end) const {
   if (end.IsOutOfBoundaries() || GetWallBetween(GetCellAtPosition(start), GetCellAtPosition(end))) return false;
-  return (GetCellAtPosition(start).isNeighbour(end)) ? true : false;
+  return GetCellAtPosition(start).isNeighbour(end) ? true : false;
 }
 
 ///
