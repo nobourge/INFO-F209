@@ -1,6 +1,3 @@
-#include <ncurses.h>
-#include <cstring>
-#include <vector>
 #include <memory>
 #include "help_menu_view.h"
 #include "views/label.h"
