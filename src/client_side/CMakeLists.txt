@@ -3,7 +3,9 @@ set(HEADERS
         view_controllers/home_menu_view_controller.h
         view_controllers/ranking_view_controller.h
         view_controllers/abstract_view_controller.h
+        view_controllers/selection_menu_view_controller.h
         views/menu_views/help_menu_view.h
+        views/menu_views/selection_menu_view.h
         views/menu_views/home_menu_view.h
         views/menu_views/ranking_menu_view.h
         client_mvc_factory.h
@@ -16,12 +18,14 @@ set(SOURCES
         view_controllers/abstract_view_controller.cpp
         view_controllers/ranking_view_controller.cpp
         view_controllers/menu_view_controller.cpp
+        view_controllers/selection_menu_view_controller.cpp
         views/menu_views/help_menu_view.cpp
         views/menu_views/home_menu_view.cpp
         views/menu_views/ranking_menu_view.cpp
         views/menu_views/abstract_menu_view.cpp
         views/menu_views/login_menu_view.cpp
         views/menu_views/login_menu_view.h
+        views/menu_views/selection_menu_view.cpp
         views/menu_views/views/button.cpp
         views/menu_views/views/button.h
         views/menu_views/views/abstract_view.cpp 
