@@ -1,6 +1,4 @@
-#include <ncurses.h>
-#include <iostream>
-#include <cstring>
+
 #include <vector>
 #include "home_menu_view.h"
 #include "../../view_controllers/help_view_controller.h"
