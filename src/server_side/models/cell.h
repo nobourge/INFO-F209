@@ -13,7 +13,7 @@
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_CELL_H_
 
 class Cell {
-  // as we are using a walls vector in board we might remove it from there to avoid repetion
+  // as we are using a walls vector in board we might remove it from there to avoid repetition
   std::array<bool, kNumberOfDirections> walls_; // using a boolean instead of a Wall class should be easier in this case
                                                 // because there is no action that might need a wall
 

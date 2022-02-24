@@ -22,9 +22,9 @@ class Board : public std::enable_shared_from_this<Board> {
  public:
 
   // std::variant<Cell, Wall> operator [](const Position &) const;
-  // if postion is {3, 4} and there is pawn but there is also a wall on the side
+  // if position is {3, 4} and there is pawn but there is also a wall on the side
   // do we return the pawn or the wall ?
-  // also a wall is not placed on top of a Cell but on it's side so I think that
+  // also, a wall is not placed on top of a Cell but on it's side, so I think that
   // return a Cell and dealing with walls elsewhere is easier
 
   Board(std::vector<std::shared_ptr<Player>>, std::vector<Position>);
@@ -34,7 +34,7 @@ class Board : public std::enable_shared_from_this<Board> {
 
   Cell GetCellAtPosition(const Position &) const;
 
-  // replacing the pair by a wall class might be intrestring but as for now
+  // replacing the pair by a wall class might be interesting but as for now
   // it is easier this way
 
   bool HasReachedEnd(const Position, const DIRECTION) const;

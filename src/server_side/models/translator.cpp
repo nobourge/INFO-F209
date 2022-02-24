@@ -7,16 +7,16 @@ using namespace std;
 /// \param lettres
 /// \return
 bool translator::verifyMove(string move, vector<char> lettres) {
-	bool coup_verfied = false;
+	bool coup_verified = false;
 	for (auto x : lettres) {
 		
 		if (move[0] == x) {
-			coup_verfied = true;
+			coup_verified = true;
 		
 		}
 	}
 	
-	return coup_verfied;
+	return coup_verified;
 }
 
 ///
