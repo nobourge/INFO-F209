@@ -1,4 +1,3 @@
-#include "view/MainMenuView.h"
 #include "main_menu.hpp"
 #include "ncurses.h"
 #include <string>
