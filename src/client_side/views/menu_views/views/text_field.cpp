@@ -8,8 +8,13 @@ bool TextField::RespondToEvent(const int &character) {
   if (IsCharAccepted(character)) {
     SetInnerText(GetInnerText() + static_cast<char>(character));
     return true;
-  } else if (character == KEY_BACKSPACE && !GetInnerText().empty()) {
+  } else if (character == BACKSPACE_CHAR && !GetInnerText().empty()) {
     SetInnerText(GetInnerText().substr(0, GetInnerText().size() - 1));
+    return true;
+  } if (character == '\n') {
+    SetState(HOVER);
+//    HasBeenUnselected();
+    return true;
   }
   return false;
 }
@@ -25,15 +30,16 @@ TextField::TextField(const std::optional<EventResponder *> &parent,
 }
 
 void TextField::SetInnerText(const std::string &inner_text) {
+  auto old_text = GetInnerText();
   AbstractView::SetInnerText(inner_text);
   if (delegate_.has_value()) {
-    (*delegate_)->TextChanged(inner_text);
+    (*delegate_)->TextChanged(*this, old_text);
   }
 }
 
 void TextField::HasBeenUnselected() {
   AbstractView::HasBeenUnselected();
   if (delegate_.has_value()) {
-    (*delegate_)->TextEditingFinished();
+    (*delegate_)->TextEditingFinished(*this);
   }
 }

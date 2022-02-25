@@ -34,6 +34,7 @@
 #define VIEW_HOVER_EFFECT                       A_REVERSE
 #define VIEW_SELECTED_EFFECT                    A_UNDERLINE
 #define BUTTONS_VERTICAL_GUTTER_SIZE            1
+#define BACKSPACE_CHAR                          127
 
 // server_side
 #define DATABASE_FILE_NAME                "example.db"

@@ -19,9 +19,9 @@ class TextField : public AbstractView {
             const std::optional<TextFieldDelegate *> &delegate);
 
   static bool IsCharAccepted(const int &character);
+  void SetInnerText(const std::string &inner_text) override;
 
  protected:
-  void SetInnerText(const std::string &inner_text) override;
   bool RespondToEvent(const int &character) override;
   void HasBeenUnselected() override;
 
@@ -30,8 +30,8 @@ class TextField : public AbstractView {
 };
 
 struct TextFieldDelegate {
-  virtual void TextChanged(const std::string &new_text) = 0;
-  virtual void TextEditingFinished() = 0;
+  virtual void TextChanged(TextField &sender, const std::string &old_text) = 0;
+  virtual void TextEditingFinished(TextField &sender) = 0;
 };
 
 #endif //QUORIDOR_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_TEXT_FIELD_H_
