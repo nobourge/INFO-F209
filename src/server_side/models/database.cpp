@@ -14,20 +14,47 @@ void DataBase::reloadFile(std::string file){
   if(ifile) {
     remove(file2);
   }
-
-
 }
+
 static int callback(void* data, int argc, char** argv, char** azColName)
 {
-    int i;
-    fprintf(stderr, "%s: ", (const char*)data);
-  
-    for (i = 0; i < argc; i++) {
-        printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
-    }
-  
-    printf("\n");
-    return 0;
+  int i;
+  fprintf(stderr, "%s: ", (const char*)data);
+
+  for (i = 0; i < argc; i++) {
+    printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+  }
+
+  printf("\n");
+  return 0;
+}
+
+static int select_callback(void *data, int argc, char **argv, char **colName) {
+
+  records *res = static_cast<records*>(data);
+
+  res->emplace_back(argv, argv + argc);
+
+  return 0;
+}
+
+records DataBase::getSelect(std::string statement) {
+
+  records res;
+
+  exit = sqlite3_open(DATABASE_FILE_NAME, &DB);
+
+  exit = sqlite3_exec(DB, statement.c_str(), select_callback, &res,  NULL);
+
+  sqlite3_close(DB);
+
+  if (exit != SQLITE_OK) {
+    std::cout<<"error"<<std::endl;
+  } else {
+    std::cout<<res.size()<<" records returned"<<std::endl;
+  }
+  return res;
+
 }
 
 void DataBase::createTables(){
@@ -50,10 +77,10 @@ void DataBase::createTables(){
                       "WALLS        INT NOT NULL)";
 
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
-    
+
     //Create third table RANKING
     sql="CREATE TABLE IF NOT EXISTS RANKING("
-                      "ID  INT PRIMARY KEY NOT NULL, " 
+                      "ID  INT PRIMARY KEY NOT NULL, "
                       "FIRST_PLACE           INT    NOT NULL, "
                       "SECOND_PLACE           INT    NOT NULL, "
                       "THIRD_PLACE           INT    NOT NULL, "
@@ -119,11 +146,11 @@ void DataBase::insertFriend(int myId,int myFriendId){
 
 void DataBase::searchFriends(int id){
     exit = sqlite3_open(DATABASE_FILE_NAME, &DB);
-    
+
     string data("CALLBACK FUNCTION");
     string query = "SELECT MY_FRIEND_ID FROM FRIENDS WHERE FRIENDS.MY_USER_ID="+to_string(id)+";";
-    sqlite3_exec(DB, query.c_str(), callback, (void*)data.c_str(), NULL); 
-    
+    sqlite3_exec(DB, query.c_str(), callback, (void*)data.c_str(), NULL);
+
 
     sqlite3_close(DB);
 }
