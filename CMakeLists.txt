@@ -66,7 +66,7 @@ add_executable(QuoridorServer
         src/common/constants.h
         src/server_side/models/user/password.cpp
         src/server_side/models/user/password.h
-)
+        src/common/base64.h src/server_side/models/user/message.cpp src/server_side/models/user/message.h src/server_side/models/database_compatible.h src/common/utils.h)
 
 
 target_include_directories(QuoridorServer PUBLIC ${Boost_INCLUDE_DIRS})

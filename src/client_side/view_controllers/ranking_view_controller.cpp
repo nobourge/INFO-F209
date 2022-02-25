@@ -2,3 +2,4 @@
 
 RankingMenuViewController::RankingMenuViewController()
     : MenuViewController(std::make_shared<RankingMenuView>()){}
+
