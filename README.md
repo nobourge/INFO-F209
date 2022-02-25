@@ -32,6 +32,3 @@
 
 
 
-![Visualization of the agenda](./Requirements/agenda.jpg)
-
-
