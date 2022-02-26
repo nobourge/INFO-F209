@@ -15,12 +15,11 @@ class RankingMenuViewController : public MenuViewController {
 
 protected:
 
-  void Update();
-  void FetchUsers();
-  void UpdateRankingMenuSubviews();
+  void FetchAndUpdate();
+  void ReloadSubviews();
 
-  std::shared_ptr<MenuButtonItem> back_btn_;
-  std::vector<std::shared_ptr<AbstractView>> leaderboard_views_;
+  std::shared_ptr<MenuButtonItem> back_btn_ = {};
+  std::vector<std::shared_ptr<AbstractView>> leaderboard_views_ = {};
   std::unique_ptr<std::vector<User>> users_;
   void MenuViewWillAppear() override;
 };
