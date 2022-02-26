@@ -34,6 +34,7 @@ public:
   TextFieldDisplayMode GetDisplayMode() const;
   void SetDisplayMode(TextFieldDisplayMode display_mode);
 
+
 protected:
   bool RespondToEvent(const int &character) override;
   void HasBeenUnselected() override;

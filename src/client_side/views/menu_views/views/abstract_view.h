@@ -20,7 +20,7 @@ class AbstractView : public EventResponder {
   [[nodiscard]] State GetState() const;
   void SetState(State new_state);
   void UnselectIfPossible();
-  [[nodiscard]] unsigned int GetNcursesEffectForCurrentState() const;
+  [[nodiscard]] virtual unsigned int GetNcursesEffectForCurrentState() const;
   virtual void SetInnerText(const std::string &inner_text);
 
  protected:

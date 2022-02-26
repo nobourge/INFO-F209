@@ -14,9 +14,7 @@ class LoginMenuView : public AbstractMenuView, public TextFieldDelegate {
   void TextEditingFinished(TextField &sender) override;
   LoginMenuView();
  private:
-   std::shared_ptr<TextField> login_field_;
-   std::shared_ptr<TextField> password_field_;
-  constexpr static const char menu_name_[] = "Help Menu";
+  constexpr static const char menu_name_[] = "Login";
 };
 
 #endif //QUORIDOR_SRC_CLIENT_SIDE_VIEWS_LOGIN_MENU_VIEW_H_
