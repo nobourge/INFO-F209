@@ -20,10 +20,10 @@ class AbstractView : public EventResponder {
   void SetState(State new_state);
   void UnselectIfPossible();
   [[nodiscard]] unsigned int GetNcursesEffectForCurrentState() const;
+  virtual void SetInnerText(const std::string &inner_text);
 
  protected:
   std::unique_ptr<std::vector<std::shared_ptr<EventResponder>>> GetChildren() override;
-  virtual void SetInnerText(const std::string &inner_text);
   virtual void HasBeenSelected();
   virtual void HasBeenUnselected();
 
