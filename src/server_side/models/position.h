@@ -3,10 +3,10 @@
 
 #include <utility>
 #include "common.h"
-#include "serializable.h"
+#include "../../common/models/serializable.h"
 #include <iostream>
 
-struct Position: public Serializable{
+struct Position: public Serializable<Position> {
   int col, row;
 
   Position() : col(0), row(0) {}

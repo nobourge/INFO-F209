@@ -20,24 +20,17 @@ struct InvalidUsername : public std::exception {
 
 struct UsernameValidator : public AbstractValidator {
  public:
-    ///
-    /// \param value
-    /// \return
   ValidatorResult Validate(const std::string &value) override;
 };
 
 class Username {
  public:
-    ///
-    /// \param username
-    /// \return
-    static bool IsValid(const std::string &username);
+   Username();
 
-    ///
-    /// \param value
+   static bool IsValid(const std::string &username);
+
     explicit Username(std::string value);
-    ///
-    /// \return
+
     [[nodiscard]] const std::string &GetValue() const;
 
  private:

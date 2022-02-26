@@ -3,7 +3,7 @@
 //
 
 #include "username.h"
-#include "../../../common/constants.h"
+#include "../../constants.h"
 
 #include <utility>
 #include <vector>
@@ -34,14 +34,10 @@ bool Username::IsValid(const std::string &username) {
   return UsernameValidator().Validate(username).IsValid();
 }
 
-///
-/// \return
 const std::string &Username::GetValue() const {
   return value_;
 }
 
-///
-/// \param value
 Username::Username(std::string value) {
   auto username_validation_res = UsernameValidator().Validate(value);
   if (!username_validation_res.IsValid()) {
@@ -49,9 +45,8 @@ Username::Username(std::string value) {
   }
   value_ = std::move(value);
 }
+Username::Username() : value_() {}
 
-///
-/// \return
 const char *InvalidUsername::what() const noexcept {
   return error_message_.c_str();
 }

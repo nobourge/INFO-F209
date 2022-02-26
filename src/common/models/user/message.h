@@ -7,22 +7,15 @@
 
 #include <string>
 #include "user.h"
-#include "../../../common/utils.h"
-#include "../../../common/constants.h"
+#include "../../utils.h"
+#include "../../constants.h"
 
-class Message : public DatabaseCompatible<Message> {
+class Message {
  public:
   static std::shared_ptr<Message> SendMessage(const std::shared_ptr<User> &sender,
                                               const std::shared_ptr<User> &receiver,
                                               const std::string &content) {
     return std::shared_ptr<Message>(new Message(GetMaxId() + 1, sender->GetId(), receiver->GetId(), content));
-  }
-
-  void SaveToDB() override {
-  }
-
-  Message &InitFromDB(object_id_t id) override {
-    return *this;
   }
 
  protected:

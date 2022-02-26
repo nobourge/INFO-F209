@@ -1,4 +1,3 @@
-#include <ncurses.h>
 #include <iostream>
 #include <cstring>
 #include <vector>

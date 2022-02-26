@@ -12,11 +12,8 @@
 class BaseQuoridorApi {
  public:
   static const unsigned kQuoridorApiVersion;
-  ///
 
   BaseQuoridorApi();
-
-  ///
 
   void Run();
 
@@ -26,7 +23,5 @@ class BaseQuoridorApi {
  private:
   crow::SimpleApp app{};
 };
-
-
 
 #endif //QUORIDOR_SRC_SERVER_SIDE_VIEWS_API_BASE_QUORIDOR_API_H_

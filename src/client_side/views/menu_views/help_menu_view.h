@@ -1,7 +1,6 @@
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_VIEWS_HELP_MENU_VIEW_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_VIEWS_HELP_MENU_VIEW_H_
 
-#include <ncurses.h>
 #include <iostream>
 #include <cstring>
 #include <vector>

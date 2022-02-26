@@ -3,13 +3,26 @@
 
 #include "../views/menu_views/ranking_menu_view.h"
 #include "menu_view_controller.h"
-#include "ncurses.h"
+#include "../../common/models/user/user.h"
+#include "../views/menu_views/views/label.h"
+
 #include <string>
 
 
 class RankingMenuViewController : public MenuViewController {
  public:
   RankingMenuViewController();
+
+protected:
+
+  void Update();
+  void FetchUsers();
+  void UpdateRankingMenuSubviews();
+
+  std::shared_ptr<MenuButtonItem> back_btn_;
+  std::vector<std::shared_ptr<AbstractView>> leaderboard_views_;
+  std::unique_ptr<std::vector<User>> users_;
+  void MenuViewWillAppear() override;
 };
 
 

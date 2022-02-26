@@ -15,7 +15,7 @@ class MenuButtonItem : public Button {
   MenuButtonItem(const std::optional<EventResponder *> &parent,
                  const std::string &title,
                  const std::optional<std::shared_ptr<AbstractViewController>> &controller_to_present_on_click,
-                 const std::optional<MenuButtonItemDelegate *> &delegate);
+                 const std::optional<MenuButtonItemDelegate *> &delegate = {});
 
   void SetDelegate(const std::optional<MenuButtonItemDelegate *> &delegate);
 

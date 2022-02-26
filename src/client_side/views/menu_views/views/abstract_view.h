@@ -7,6 +7,7 @@
 
 #include <string>
 #include <ncurses.h>
+#undef timeout // there is a conflict between two macros, from boost and ncurses
 #include "first_responder.h"
 #include "../../../../common/constants.h"
 
@@ -15,7 +16,7 @@ class AbstractView : public EventResponder {
   AbstractView(const std::optional<EventResponder *> &parent, const std::string &inner_text);
   enum State { NORMAL, HOVER, SELECTED };
 
-  [[nodiscard]] const std::string &GetInnerText() const;
+  [[nodiscard]] virtual const std::string &GetInnerText() const;
   [[nodiscard]] State GetState() const;
   void SetState(State new_state);
   void UnselectIfPossible();

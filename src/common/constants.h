@@ -7,7 +7,15 @@
 
 #include <cinttypes>
 
+#define STRINGIFY(s) #s
+
+#define __STR_VALUE(arg)      #arg
+#define __SURROUND_WITH_BRACKETS(name)          __STR_VALUE(name)
+
 #define SERVER_PORT                             560
+#define SERVER_PORT_S __SURROUND_WITH_BRACKETS(SERVER_PORT)
+#define LOCALHOST                               "0.0.0.0"
+
 
 // DB
 
@@ -24,7 +32,7 @@
 
 // API
 #define MAX_NUM_USERS_RANKING_PER_REQUEST       250
-#define MAX_NUM_USERS_RANKING_DEFAULT           10
+#define MAX_NUM_USERS_RANKING_DEFAULT           5
 #define AUTHORIZATION_HEADER_NAME               "Authorization"
 #define AUTHORIZATION_HEADER_CRED_SEPARATOR     ':'
 #define ENCODED_CREDENTIALS_START_AT_POS        6
@@ -37,7 +45,7 @@
 #define BACKSPACE_CHAR                          127
 
 // server_side
-#define DATABASE_FILE_NAME                "example.db"
+#define DATABASE_FILE_NAME                      "example.db"
 
 
 #endif //QUORIDOR_SRC_COMMON_CONSTANTS_H_

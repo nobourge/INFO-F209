@@ -6,7 +6,7 @@
 #define QUORIDOR_SRC_SERVER_SIDE_VIEWS_API_V1_API_H_
 
 #include "../base_quoridor_api.h"
-#include "../../../models/user/user.h"
+#include "../../../../common/models/user/user.h"
 #include "../../../../common/base64.h"
 
 #define V1_API_PREFIX "/api/v1/"  // PREFIX :
@@ -39,12 +39,12 @@ static std::optional<User> AuthenticateUser(const crow::request &request) {
   std::string credentials = base64_decode(credentials_encoded);
   size_t found = credentials.find(AUTHORIZATION_HEADER_CRED_SEPARATOR);
   if (found != std::string::npos) {
-    if (credentials.find(AUTHORIZATION_HEADER_CRED_SEPARATOR, found + 1) != std::string::npos ) {
+    if (credentials.find(AUTHORIZATION_HEADER_CRED_SEPARATOR, found + 1) != std::string::npos) {
       // there are more than one separator, we cannot know where the actual separator is
       return {};
     }
     std::string username = credentials.substr(0, found);
-    std::string password = credentials.substr(found+1);
+    std::string password = credentials.substr(found + 1);
 
     return User(Username(username), 0); // we will validate password when the db is ready
   }
@@ -77,20 +77,15 @@ class V1Api : public BaseQuoridorApi {
  public:
 
   V1Api() {
-    ///
 
     SetupRoutes();
   };
-///
-/// \return
+
   [[nodiscard]] unsigned int GetVersion() const;
  protected:
-  ///
 
   void SetupRoutes() override {
     BaseQuoridorApi::SetupRoutes();
-
-    ///
 
     API_ROUTE(GetApp(), "/api/v1/users")([]() {
       return GetUsersSerialized();
@@ -130,14 +125,14 @@ class V1Api : public BaseQuoridorApi {
       return *user.Serialize();
     });
 
-    API_ROUTE(GetApp(), "/api/v1/me") ([] (const crow::request &request) {
+    API_ROUTE(GetApp(), "/api/v1/me")([](const crow::request &request) {
       crow::json::wvalue output;
       VALIDATE_CREDENTIALS(requests, output);
 
       return *(optional_user->Serialize());
     });
 
-    API_ROUTE(GetApp(), "/api/v1/me/games/<uint>") ([] (const crow::request &request, unsigned int game_id) {
+    API_ROUTE(GetApp(), "/api/v1/me/games")([](const crow::request &request) {
       crow::json::wvalue output;
       VALIDATE_CREDENTIALS(requests, output);
 
@@ -145,6 +140,17 @@ class V1Api : public BaseQuoridorApi {
 
       return *(optional_user->Serialize());
     });
+
+    API_ROUTE(GetApp(), "/api/v1/me/games/<uint>")([](const crow::request &request, unsigned int game_id) {
+      crow::json::wvalue output;
+      VALIDATE_CREDENTIALS(requests, output);
+
+      User &user = *optional_user;
+
+      return *(optional_user->Serialize());
+    });
+
+
 
 //    API_ROUTE(GetApp(), "api/v1/users/<string>/") ([] (const crow::request))
 

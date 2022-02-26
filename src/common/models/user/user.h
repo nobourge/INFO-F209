@@ -5,14 +5,18 @@
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_H_
 
-#include "username.h"
+#include "../../constants.h"
 #include "../serializable.h"
-#include "../database_compatible.h"
+#include "username.h"
 #include "../../../common/constants.h"
 #include <memory>
 
-class User : public Serializable, public DatabaseCompatible<User>, public std::enable_shared_from_this<User> {
- public:
+class User : public Serializable<User>,
+             public std::enable_shared_from_this<User> {
+
+public:
+  User();
+  explicit User(const crow::json::rvalue &json);
   User(const Username &username, uint32_t score);
 
   std::unique_ptr<crow::json::wvalue> Serialize() override;
@@ -27,14 +31,14 @@ class User : public Serializable, public DatabaseCompatible<User>, public std::e
 
   void NewFriend(const User &new_friend);
 
-  void SaveToDB() override;
-  User &InitFromDB(object_id_t id) override;
+  //  void SaveToDB() override;
+  //  User &InitFromDB(object_id_t id) override;
 
- private:
+private:
   object_id_t id_;
   Username username_;
   int64_t creation_timestamp_;
   uint32_t score_;
 };
 
-#endif //QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_H_
+#endif // QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_H_

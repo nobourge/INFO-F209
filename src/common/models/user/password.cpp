@@ -3,7 +3,7 @@
 //
 
 #include "password.h"
-#include "../../../common/constants.h"
+#include "../../constants.h"
 
 /// check input password conformity
 /// \param value
