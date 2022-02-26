@@ -2,10 +2,11 @@
 #include <stack>
 #include "view_controllers/abstract_view_controller.h"
 #include "view_controllers/home_menu_view_controller.h"
+#include "view_controllers/login_view_controller.h"
 
 int main() {
   std::stack<std::shared_ptr<AbstractViewController>> view_controllers{};
-  view_controllers.push(std::make_shared<HomeMenuViewController>());
+  view_controllers.push(std::make_shared<LoginMenuViewController>());
   while (!view_controllers.empty()) {
     auto new_view_controller = view_controllers.top()->Tick();
 
