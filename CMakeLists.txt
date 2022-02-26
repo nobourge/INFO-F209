@@ -13,16 +13,16 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 add_subdirectory(src)
 
 find_package(SQLite3)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
 if (UNIX)
     find_package(Boost REQUIRED COMPONENTS system)
 
     if (APPLE)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I /usr/local/lib/boost_1_78_0 -pthread")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I /usr/local/lib/boost_1_78_0")
         file(GLOB OPENSSL_ROOT_DIR /opt/homebrew/Cellar/openssl@1.1/*)
         find_package(OpenSSL 1.0.2 REQUIRED)
     else ()
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
         find_package(OpenSSL 1.0.1 REQUIRED)
     endif ()
 
@@ -46,11 +46,11 @@ add_executable(QuoridorServer
         src/server_side/models/position.cpp
         src/server_side/models/translator.cpp
 
-        src/server_side/models/user/abstract_validator.cpp
-        src/server_side/models/user/message.cpp
-        src/server_side/models/user/password.cpp
-        src/server_side/models/user/user.cpp
-        src/server_side/models/user/username.cpp
+        src/common/models/user/abstract_validator.cpp
+        src/common/models/user/message.cpp
+        src/common/models/user/password.cpp
+        src/common/models/user/user.cpp
+        src/common/models/user/username.cpp
 
         src/server_side/view_controllers/api/base_quoridor_api.cpp
         src/server_side/view_controllers/api/v1/v1_api.cpp
