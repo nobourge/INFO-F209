@@ -8,7 +8,6 @@
 #include "position.h"
 #include "memory"
 #include "input.h"
-#include"database.h"
 
 class Game {
  public:
@@ -30,7 +29,6 @@ class Game {
  private:
   Board *board;
   std::vector<std::shared_ptr<Player>> players;
-  DataBase db;
   std::shared_ptr<Player> currentPlayer;
   bool gameOn;
   bool IaPlayer=false;
