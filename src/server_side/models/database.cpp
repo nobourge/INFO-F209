@@ -63,7 +63,7 @@ void DataBase::CreateTables() {
          "ID INT PRIMARY KEY     NOT NULL, "
          "PSEUDO           TEXT    NOT NULL, "
          "PASSWORD           TEXT    NOT NULL, "
-         "FRIENDS           TEXT    NOT NULL, "
+         "TIMESTAMP           TEXT    NOT NULL, "
          "SCORE           INT    NOT NULL)";
 
   ReloadFile("example.db");
@@ -108,7 +108,7 @@ void DataBase::CreateTables() {
   sqlite3_close(db_);
 }
 
-void DataBase::InsertPlayer(unsigned int id) {
+void DataBase::InsertPlayer(unsigned int id, string username, string password, int timestamp, int score ) {
   last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
   string pseudo; // TO be completed later by the server.
 
@@ -116,7 +116,7 @@ void DataBase::InsertPlayer(unsigned int id) {
   string query = "SELECT * FROM USER;";
   sqlite3_exec(db_, query.c_str(), callback, NULL, NULL);
   sql_ = ("INSERT INTO USER VALUES(" + to_string(id) +
-          ",'PSEUDO','NONE','NONE',0);");
+          ",\""+username+"\",\""+ password +"\","+to_string(timestamp)+","+to_string(score)+");");
   last_sqlite3_exit_code_ = sqlite3_exec(db_, sql_.c_str(), NULL, 0, &messageError);
 
   // Verify creation of table

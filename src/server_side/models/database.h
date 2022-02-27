@@ -30,7 +30,7 @@ public:
   }
 
   void CreateTables();
-  void InsertPlayer(unsigned int id);
+  void InsertPlayer(unsigned int id, string, string, int, int);
   void VerifyTable(std::string= "");
   void InsertBoard(int,int);
   void InsertFriend(int user1_id, int user2_id);
