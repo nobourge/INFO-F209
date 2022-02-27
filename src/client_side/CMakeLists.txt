@@ -1,8 +1,10 @@
 
 
+if (APPLE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I /usr/local/lib/boost_1_78_0")
+endif ()
 
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ")
 
 
 set(HEADERS
