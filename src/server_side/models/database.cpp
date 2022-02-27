@@ -131,13 +131,12 @@ void DataBase::insertFriend(int myId,int myFriendId){
 
     string query = "SELECT * FROM FRIENDS;";
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
-
     //Insert the friend-me and me-friend relation into the database
-    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myId)+ "," + to_string(myFriendId)+",NONE);");
+    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myId)+ "," + to_string(myFriendId)+",0);");
     friendsId++;
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
-    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myFriendId)+ "," + to_string(myId)+",NONE);");
+    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myFriendId)+ "," + to_string(myId)+",0);");
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
     friendsId++;
 
