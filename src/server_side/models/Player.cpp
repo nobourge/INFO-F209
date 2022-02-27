@@ -67,20 +67,21 @@ pair<Position,Position> Player::placeWall(string placement){
 /// \param direction
 /// \return
 Position Player::playMove(DIRECTION direction){
+    Position pos;
 
     if(direction==NORTH){
-            return calculateDirection('F',playerPos,dr);
+            pos=calculateDirection('F',playerPos,dr);
 
     }else if(direction==EAST){
-                    return calculateDirection('R',playerPos,dr);
+                    pos=calculateDirection('R',playerPos,dr);
 
     }else if(direction==WEST){
-            return calculateDirection('L',playerPos,dr);
+            pos=calculateDirection('L',playerPos,dr);
             }
     else if(direction==SOUTH){
-                    return calculateDirection('B',playerPos,dr);
+                    pos=calculateDirection('B',playerPos,dr);
             }
-    isTurnOver();
+    return pos;
 }
 
 ///

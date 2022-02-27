@@ -35,20 +35,22 @@ bool Position::IsOutOfBoundaries(const int &low, const int &high) const {
 /// \param direction
 /// \return
 Position Position::operator+(const DIRECTION direction) {
+  Position pos;
   switch (direction) {
     case NORTH:
-      return Position{this->col, this->row-1};
+      pos=Position{this->col, this->row-1};
       break;
     case EAST:
-      return Position{this->col+1, this->row};
+      pos=Position{this->col+1, this->row};
       break;
     case SOUTH:
-      return Position{this->col, this->row+1};
+      pos=Position{this->col, this->row+1};
       break;
     case WEST:
-      return Position{this->col-1, this->row};
+      pos=Position{this->col-1, this->row};
       break;
   }
+  return pos;
 }
 
 ///
