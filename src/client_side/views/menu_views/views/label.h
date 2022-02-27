@@ -9,19 +9,20 @@
 
 class Label : public AbstractView {
 public:
-  enum LabelDisplayMode {
-    NORMAL, BOLD, UNDERLINE, REVERSED };
+  enum LabelDisplayMode { NORMAL, BOLD, UNDERLINE, REVERSED };
 
-  Label(const std::optional<EventResponder *> &parent, const std::string &inner_text);
+  Label(const std::optional<EventResponder *> &parent,
+        const std::string &inner_text);
   bool CanBecomeEventResponder() override;
 
   [[nodiscard]] unsigned int GetNcursesEffectForCurrentState() const override;
 
-  LabelDisplayMode GetDisplayMode() const;
+  [[nodiscard]] LabelDisplayMode GetDisplayMode() const;
   void SetDisplayMode(LabelDisplayMode display_mode);
 
 protected:
   bool RespondToEvent(const int &character) override;
+
 private:
   LabelDisplayMode display_mode_ = NORMAL;
 };

@@ -5,10 +5,10 @@
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_H_
 
+#include "../../../common/constants.h"
 #include "../../constants.h"
 #include "../serializable.h"
 #include "username.h"
-#include "../../../common/constants.h"
 #include <memory>
 
 class User : public Serializable<User>,
@@ -32,9 +32,20 @@ public:
   void NewFriend(const User &new_friend);
 
   //  void SaveToDB() override;
-  //  User &InitFromDB(object_id_t id) override;
+
+  //  User &InitFromDB(object_id_t id);
+  //  User &InitFromDB(const Username &username);
+  std::optional<std::unique_ptr<User>> InitFromDB(const Username &username);
+  bool SaveToDB();
+  static std::unique_ptr<std::vector<User>> GetAllObjectsFromDB();
+  static std::unique_ptr<std::vector<User>> GetRanking(int max_num_users);
 
 private:
+  static std::unique_ptr<std::vector<User>> UsersVectorFromUsersStringVector(
+      const std::vector<std::vector<std::string>> &users_string_vector);
+
+  User(const std::vector<std::string> &database_query_result);
+
   object_id_t id_;
   Username username_;
   int64_t creation_timestamp_;

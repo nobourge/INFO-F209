@@ -72,6 +72,16 @@ static crow::json::wvalue GetUsersSerialized(unsigned num_users = 3, bool sort_s
   return output;
 }
 
+
+static crow::json::wvalue SerializeUsersVector(std::unique_ptr<std::vector<User>> users) {
+  crow::json::wvalue users_json;
+  for (int i = 0; i < users->size(); i++) {
+    //        std::cout << std::move(*(users->at(i).Serialize())) << std::endl;
+    users_json[i] = std::move(*(users->at(i).Serialize()));
+  }
+  return users_json;
+}
+
 template<class ...Middlewares>
 class V1Api : public BaseQuoridorApi {
  public:
@@ -88,7 +98,9 @@ class V1Api : public BaseQuoridorApi {
     BaseQuoridorApi::SetupRoutes();
 
     API_ROUTE(GetApp(), "/api/v1/users")([]() {
-      return GetUsersSerialized();
+      crow::json::wvalue output;
+      output["users"] = SerializeUsersVector(User::GetAllObjectsFromDB());
+      return output;
     });
 
     API_ROUTE(GetApp(), "/api/v1/users/ranking")([](const crow::request &request) {
@@ -111,7 +123,7 @@ class V1Api : public BaseQuoridorApi {
         if (*num_users > MAX_NUM_USERS_RANKING_PER_REQUEST) {
           output["error"] = "Too many users requested";
         } else {
-          output = GetUsersSerialized(*num_users, true);
+          output["users"] = SerializeUsersVector(User::GetRanking(*num_users));
         }
       }
 

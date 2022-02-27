@@ -5,6 +5,7 @@
 
 #include<iostream>
 #include<random>
+
 using namespace std;
 
 class Ia:public Player{
