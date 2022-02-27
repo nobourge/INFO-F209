@@ -9,14 +9,15 @@ set(CMAKE_HAVE_THREADS_LIBRARY 1)
 set(CMAKE_USE_WIN32_THREADS_INIT 0)
 set(CMAKE_USE_PTHREADS_INIT 1)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(SQLite3)
 
 add_subdirectory(src)
 
-find_package(SQLite3)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
 if (UNIX)
     find_package(Boost REQUIRED COMPONENTS system)
+    find_package(Boost REQUIRED COMPONENTS regex)
 
     if (APPLE)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I /usr/local/lib/boost_1_78_0")

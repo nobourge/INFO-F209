@@ -37,6 +37,8 @@ set(HEADERS
         models/requests.h
         client_mvc_factory.h
 
+        ../server_side/models/database.h
+
         ../common/constants.h
         ../common/models/user/user.h
         ../common/models/user/username.h
@@ -79,12 +81,17 @@ set(SOURCES
         models/api_wrapper.cpp
         models/requests.cpp
 
+        ../server_side/models/database.cpp
+
         ../common/models/user/user.cpp
         ../common/models/user/username.cpp
         ../common/models/user/abstract_validator.cpp
         )
 
 
-        
+
 add_executable(ClientSide ${HEADERS} ${SOURCES})
 target_link_libraries(ClientSide ncurses curl pthread)
+
+target_include_directories(ClientSide PUBLIC ${SQLite3_INCLUDE_DIRS})
+target_link_libraries(ClientSide ${SQLite3_LIBRARIES})
