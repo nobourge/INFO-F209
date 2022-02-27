@@ -19,7 +19,16 @@ class DataBase{
   char* messageError;
   static int friendsId;
   static int ranking_id_;
+
+  DataBase() {}
+
+  static DataBase instance;
+
 public:
+  static DataBase& Get(){
+    return instance;
+  }
+
   void CreateTables();
   void InsertPlayer(unsigned int id);
   void VerifyTable(std::string= "");

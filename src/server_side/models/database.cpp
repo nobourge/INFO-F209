@@ -3,6 +3,9 @@
 int DataBase::friendsId = 0;
 int DataBase::ranking_id_ = 0;
 
+DataBase DataBase::instance;
+
+
 void DataBase::ReloadFile(std::string file) {
   ifstream ifile;
   int n = file.length();
