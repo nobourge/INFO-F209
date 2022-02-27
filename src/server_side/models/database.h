@@ -13,12 +13,12 @@ using record = std::vector<std::string>;
 using records = std::vector<record>;
 
 class DataBase{
-  sqlite3* DB;
-  std::string sql;
-  int exit=0;
+  sqlite3* db_;
+  std::string sql_;
+  int last_sqlite3_exit_code_ =0;
   char* messageError;
   static int friendsId;
-  static int rankingId;
+  static int ranking_id_;
 public:
   void CreateTables();
   void InsertPlayer(unsigned int id);
