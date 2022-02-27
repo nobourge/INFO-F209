@@ -12,6 +12,7 @@ set(HEADERS
         view_controllers/abstract_view_controller.h
         view_controllers/login_view_controller.h
         view_controllers/create_account_view_controller.h
+        view_controllers/start_view_controller.h
         view_controllers/selection_menu_view_controller.h
         view_controllers/chat_room_view_controller.h
         views/menu_views/chat_room_menu_view.h
@@ -21,6 +22,7 @@ set(HEADERS
         views/menu_views/ranking_menu_view.h
         views/menu_views/create_account_menu_view.h
         views/menu_views/login_menu_view.h
+        views/menu_views/start_menu_view.h
         views/menu_views/views/button.h
         views/menu_views/views/abstract_view.h
         views/menu_views/views/first_responder.h
@@ -51,9 +53,12 @@ set(SOURCES
         view_controllers/help_view_controller.cpp
         view_controllers/create_account_view_controller.cpp
         view_controllers/chat_room_view_controller.cpp
+        view_controllers/start_view_controller.cpp
+
 
 
         views/menu_views/chat_room_menu_view.cpp
+        views/menu_views/start_menu_view.cpp
         views/menu_views/views/menu_button_item.cpp
         views/menu_views/views/first_responder.cpp
         views/menu_views/create_account_menu_view.cpp
