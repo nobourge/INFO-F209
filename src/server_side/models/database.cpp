@@ -91,7 +91,8 @@ void DataBase::createTables(){
     sql="CREATE TABLE IF NOT EXISTS FRIENDS("
                       "ID INT PRIMARY KEY NOT NULL, "
                       "MY_USER_ID INT NOT NULL, "
-                      "MY_FRIEND_ID        INT NOT NULL)";
+                      "MY_FRIEND_ID INT NOT NULL, "
+                      "PORT        INT NOT NULL)";
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
     //Create fifth table CONVERSATIONS
@@ -132,11 +133,11 @@ void DataBase::insertFriend(int myId,int myFriendId){
     sqlite3_exec(DB, query.c_str(), callback, NULL, NULL);
 
     //Insert the friend-me and me-friend relation into the database
-    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myId)+ "," + to_string(myFriendId)+");");
+    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myId)+ "," + to_string(myFriendId)+",NONE);");
     friendsId++;
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
 
-    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myFriendId)+ "," + to_string(myId)+");");
+    sql=("INSERT INTO FRIENDS VALUES("+to_string(friendsId)+","+to_string(myFriendId)+ "," + to_string(myId)+",NONE);");
     exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
     friendsId++;
 
