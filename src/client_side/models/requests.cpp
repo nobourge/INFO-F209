@@ -3,6 +3,7 @@
 //
 
 #include "requests.h"
+#include <curl/curl.h>
 
 Requests::Requests(const std::string &url,
                    const std::unordered_map<std::string, std::string> &headers)
