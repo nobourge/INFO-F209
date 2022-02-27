@@ -14,7 +14,7 @@ Game::Game(){
 
 void Game::StartTheGame(){
 
-    db.createTables();
+  db.CreateTables();
     // if (players.size>=2) We need at least 2 players to begin the game.
     gameOn=true;
     //When player connects from the server ... TODO
@@ -35,14 +35,14 @@ void Game::StartTheGame(){
 
     //Insert the data for all the players in the db
     for(auto x:players){
-        db.insertPlayer(1);
+      db.InsertPlayer(1);
     }
     //Insert friend using IDS of the users which should be stocked/used in the user file
-    db.insertFriend(1,2);
+    db.InsertFriend(1, 2);
 
 
     //Insert the data for the board
-    db.insertBoard(players.size(),walls.size());
+    db.InsertBoard(players.size(), walls.size());
 
     cout<<board->GetBoardString()<<endl;
 
@@ -97,15 +97,15 @@ void Game::calculateRanking(){
     sort(scores.begin(), scores.end(), greater<int>());
 
     if(scores.size()==2){
-        db.insertRanking(scores[0],scores[1]);
+      db.InsertRanking(scores[0], scores[1]);
     }else if(scores.size()==3){
-        db.insertRanking(scores[0],scores[1],scores[2]);
+      db.InsertRanking(scores[0], scores[1], scores[2]);
     }else{
-        db.insertRanking(scores[0],scores[1],scores[2],scores[3]);
+      db.InsertRanking(scores[0], scores[1], scores[2], scores[3]);
     }
 
     for(auto x:players){
-        db.updateUser(x->getScore(),1);
+      db.UpdateUser(x->getScore(), 1);
     }
 
 }

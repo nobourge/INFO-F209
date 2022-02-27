@@ -20,14 +20,14 @@ class DataBase{
   static int friendsId;
   static int rankingId;
 public:
-  void createTables();
-  void insertPlayer(unsigned int);
-  void verifyTable(std::string="");
-  void insertBoard(int,int);
-  void insertFriend(int,int);
-  void searchFriends(int);
-  void insertRanking(int,int=0,int=0,int=0);
-  void updateUser(int,int);
-  void reloadFile(std::string);
-  records getSelect(string);
+  void CreateTables();
+  void InsertPlayer(unsigned int id);
+  void VerifyTable(std::string= "");
+  void InsertBoard(int,int);
+  void InsertFriend(int user1_id, int user2_id);
+  void SearchFriends(int user_id);
+  void InsertRanking(int,int=0,int=0,int=0);
+  void UpdateUser(int,int);
+  void ReloadFile(std::string);
+  records GetSelect(string);
 };
