@@ -20,6 +20,7 @@ public:
 
 private:
   static std::string ReceiveMesssage(ChatRoomViewController *chatroom);
+  void SendMessage(std::string message);
   bool *MessagesReceivable;
 
   void UpdateSubviews() {

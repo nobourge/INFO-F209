@@ -68,4 +68,8 @@ ApiWrapper::Login(const std::string &login, const std::string &password) {
     return api_wrapper;
   }
 }
+void ApiWrapper::SendNewMessages(std::string message) {
+
+}
+
 

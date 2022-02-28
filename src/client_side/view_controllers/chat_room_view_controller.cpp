@@ -29,7 +29,7 @@ void ChatRoomViewController::TextChanged(TextField &sender,
 }
 void ChatRoomViewController::TextEditingFinished(TextField &sender) {
 
-
+  SendMessage("test");
   messages_[2]->SetInnerText(messages_[1]->GetInnerText());
   messages_[1]->SetInnerText(messages_[0]->GetInnerText());
   messages_[0]->SetInnerText(sender.GetUserEnteredText());
@@ -43,4 +43,7 @@ std::string ChatRoomViewController::ReceiveMesssage(ChatRoomViewController *chat
     if (chatroom->messages_.size() > 0){}
       //messages_[0]->SetInnerText(ApiWrapper::ReceiveNewMessages(0));
   }
+}
+void ChatRoomViewController::SendMessage(std::string message) {
+ApiWrapper::SendNewMessages(message);
 }
