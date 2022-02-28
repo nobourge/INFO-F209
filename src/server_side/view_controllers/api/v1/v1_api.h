@@ -6,7 +6,7 @@
 #define QUORIDOR_SRC_SERVER_SIDE_VIEWS_API_V1_API_H_
 
 #include "../base_quoridor_api.h"
-#include "../../../../common/models/user/user.h"
+#include "../../../models/server_side_user.h"
 #include "../../../../common/base64.h"
 
 #define V1_API_PREFIX "/api/v1/"  // PREFIX :
@@ -17,19 +17,19 @@
                                                   return output; \
                                                 }
 
-static std::unique_ptr<std::vector<User>> GenerateUsers(unsigned num_users) {
-  auto users = std::make_unique<std::vector<User>>();
+static std::unique_ptr<std::vector<UserServer>> GenerateUsers(unsigned num_users) {
+  auto users = std::make_unique<std::vector<UserServer>>();
 
   for (int i = 0; i < num_users; i++) {
     std::string username = "User" + std::to_string(i);
     uint32_t score = i;
-    users->push_back(User(Username(username), score));
+    users->push_back(UserServer(Username(username), score));
   }
 
   return users;
 }
 
-static std::optional<User> AuthenticateUser(const crow::request &request) {
+static std::optional<UserServer> AuthenticateUser(const crow::request &request) {
 //  request.headers
   std::string auth = request.get_header_value(AUTHORIZATION_HEADER_NAME);
   if (auth.size() < ENCODED_CREDENTIALS_START_AT_POS + 1) {
@@ -46,7 +46,7 @@ static std::optional<User> AuthenticateUser(const crow::request &request) {
     std::string username = credentials.substr(0, found);
     std::string password = credentials.substr(found + 1);
 
-    return User(Username(username), 0); // we will validate password when the db is ready
+    return UserServer(Username(username), 0); // we will validate password when the db is ready
   }
 
   return {};
@@ -73,7 +73,7 @@ static crow::json::wvalue GetUsersSerialized(unsigned num_users = 3, bool sort_s
 }
 
 
-static crow::json::wvalue SerializeUsersVector(std::unique_ptr<std::vector<User>> users) {
+static crow::json::wvalue SerializeUsersVector(std::unique_ptr<std::vector<UserServer>> users) {
   crow::json::wvalue users_json;
   for (int i = 0; i < users->size(); i++) {
     //        std::cout << std::move(*(users->at(i).Serialize())) << std::endl;
@@ -99,7 +99,7 @@ class V1Api : public BaseQuoridorApi {
 
     API_ROUTE(GetApp(), "/api/v1/users")([]() {
       crow::json::wvalue output;
-      output["users"] = SerializeUsersVector(User::GetAllObjectsFromDB());
+      output["users"] = SerializeUsersVector(UserServer::GetAllObjectsFromDB());
       return output;
     });
 
@@ -123,7 +123,7 @@ class V1Api : public BaseQuoridorApi {
         if (*num_users > MAX_NUM_USERS_RANKING_PER_REQUEST) {
           output["error"] = "Too many users requested";
         } else {
-          output["users"] = SerializeUsersVector(User::GetRanking(*num_users));
+          output["users"] = SerializeUsersVector(UserServer::GetRankingFromDB(*num_users));
         }
       }
 
@@ -133,7 +133,7 @@ class V1Api : public BaseQuoridorApi {
     ///
 
     API_ROUTE(GetApp(), "/api/v1/user/<string>")([](const std::string &username) {
-      User user{Username{username}, 0};
+      UserServer user{Username{username}, 0};
       return *user.Serialize();
     });
 

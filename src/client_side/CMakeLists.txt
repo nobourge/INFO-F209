@@ -15,11 +15,11 @@ set(HEADERS
         view_controllers/login_view_controller.h
         view_controllers/create_account_view_controller.h
         view_controllers/start_view_controller.h
-        view_controllers/selection_menu_view_controller.h
+        view_controllers/game_mode_selection_menu_view_controller.h
         view_controllers/chat_room_view_controller.h
         views/menu_views/chat_room_menu_view.h
         views/menu_views/help_menu_view.h
-        views/menu_views/selection_menu_view.h
+        views/menu_views/game_mode_selection_menu_view.h
         views/menu_views/home_menu_view.h
         views/menu_views/ranking_menu_view.h
         views/menu_views/create_account_menu_view.h
@@ -52,7 +52,7 @@ set(SOURCES
         view_controllers/abstract_view_controller.cpp
         view_controllers/ranking_view_controller.cpp
         view_controllers/menu_view_controller.cpp
-        view_controllers/selection_menu_view_controller.cpp
+        view_controllers/game_mode_selection_menu_view_controller.cpp
         view_controllers/login_view_controller.cpp
         view_controllers/help_view_controller.cpp
         view_controllers/create_account_view_controller.cpp
@@ -67,7 +67,7 @@ set(SOURCES
         views/menu_views/views/first_responder.cpp
         views/menu_views/create_account_menu_view.cpp
         views/menu_views/views/abstract_view.cpp
-        views/menu_views/selection_menu_view.cpp
+        views/menu_views/game_mode_selection_menu_view.cpp
         views/menu_views/abstract_menu_view.cpp
         views/menu_views/ranking_menu_view.cpp
         views/menu_views/views/text_field.cpp
@@ -86,7 +86,7 @@ set(SOURCES
         ../common/models/user/user.cpp
         ../common/models/user/username.cpp
         ../common/models/user/abstract_validator.cpp
-        )
+        view_controllers/friend_list_view_controller.cpp view_controllers/friend_list_view_controller.h views/menu_views/friend_list_menu_view.cpp views/menu_views/friend_list_menu_view.h models/user_client.cpp models/user_client.h)
 
 
 

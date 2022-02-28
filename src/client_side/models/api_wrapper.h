@@ -5,20 +5,36 @@
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_MODELS_API_WRAPPER_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_MODELS_API_WRAPPER_H_
 
-#include <string>
-#include "../../common/models/user/user.h"
+#include "../../common/base64.h"
 #include "../../common/constants.h"
+#include "user_client.h"
+#include <string>
+
+struct LoginError {
+  std::string error_message;
+};
 
 class ApiWrapper {
 public:
-  ApiWrapper();
+  ApiWrapper(const std::string &login, const std::string &password);
 
+<<<<<<< HEAD
   static std::unique_ptr<std::vector<User>> GetUsersRanked(unsigned max_num_users);
   static std::string ReceiveNewMessages(int id);
+=======
+  static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
+
+  std::variant<UserClient, LoginError> GetCurrentUser();
+
+  static std::variant<ApiWrapper, LoginError> Login(const std::string &login, const std::string &password);
+>>>>>>> 561bc3253011bb8654f00a8f743d8b545f56a9d7
 
 private:
-  constexpr static const char url_[] = "http://" LOCALHOST ":" SERVER_PORT_S "/api/v1/";
-};
+  constexpr static const char url_[] =
+      "http://" LOCALHOST ":" SERVER_PORT_S "/api/v1/";
 
+  std::string login_;
+  std::string password_;
+};
 
 #endif // QUORIDOR_SRC_CLIENT_SIDE_MODELS_API_WRAPPER_H_

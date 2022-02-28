@@ -6,7 +6,7 @@
 #include <curl/curl.h>
 
 Requests::Requests(const std::string &url,
-                   const std::unordered_map<std::string, std::string> &headers)
+                   const std::optional<std::tuple<std::string, std::string>> login_password)
     : curl_(curl_easy_init()) {
 
   if (!curl_) {
@@ -20,6 +20,11 @@ Requests::Requests(const std::string &url,
   curl_easy_setopt(curl_, CURLOPT_URL, url_cstr);
   curl_easy_setopt(curl_, CURLOPT_WRITEFUNCTION, Requests::InvokeWriteData);
   curl_easy_setopt(curl_, CURLOPT_WRITEDATA, this);
+
+  if (login_password.has_value()) {
+    curl_easy_setopt(curl_, CURLOPT_USERNAME, std::get<0>(*login_password).c_str());
+    curl_easy_setopt(curl_, CURLOPT_PASSWORD, std::get<1>(*login_password).c_str());
+  }
 
 
   CURLcode res = curl_easy_perform(curl_);

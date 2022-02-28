@@ -13,7 +13,7 @@
 class Requests {
 public:
   Requests(const std::string &url,
-           const std::unordered_map<std::string, std::string> &headers);
+           const std::optional<std::tuple<std::string, std::string>> login_password = {});
   ~Requests();
 
   [[nodiscard]] std::string GetText() const;
