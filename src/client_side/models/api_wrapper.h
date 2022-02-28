@@ -14,6 +14,7 @@ public:
   ApiWrapper();
 
   static std::unique_ptr<std::vector<User>> GetUsersRanked(unsigned max_num_users);
+  static std::string ReceiveNewMessages(int id);
 
 private:
   constexpr static const char url_[] = "http://" LOCALHOST ":" SERVER_PORT_S "/api/v1/";

@@ -8,6 +8,7 @@
 #include "../views/menu_views/views/label.h"
 #include "../views/menu_views/views/text_field.h"
 #include "menu_view_controller.h"
+#include <thread>
 
 class ChatRoomViewController : public MenuViewController,
                                public TextFieldDelegate {
@@ -18,6 +19,9 @@ public:
   void TextEditingFinished(TextField &sender) override;
 
 private:
+  static std::string ReceiveMesssage(ChatRoomViewController *chatroom);
+  bool *MessagesReceivable;
+
   void UpdateSubviews() {
 
     std::vector<std::shared_ptr<AbstractView>> subviews_;
@@ -40,6 +44,7 @@ private:
 
   std::vector<std::shared_ptr<Label>> messages_;
   std::shared_ptr<TextField> text_field_;
+  std::thread t1 ;
 };
 
 #endif // INFO_F209_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_CHAT_ROOM_VIEW_CONTROLLER_H_

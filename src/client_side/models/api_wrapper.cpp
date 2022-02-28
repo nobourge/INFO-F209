@@ -24,3 +24,6 @@ std::unique_ptr<std::vector<User>> ApiWrapper::GetUsersRanked(unsigned int max_n
   }
   return users;
 }
+static std::string ReceiveNewMessages(int id){
+  return "wip";
+}
