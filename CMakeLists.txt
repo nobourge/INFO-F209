@@ -55,7 +55,7 @@ add_executable(QuoridorServer
 
         src/server_side/view_controllers/api/base_quoridor_api.cpp
         src/server_side/view_controllers/api/v1/v1_api.cpp
-        )
+        src/server_side/models/server_side_user.cpp src/server_side/models/server_side_user.h)
 
 
 target_include_directories(QuoridorServer PUBLIC ${Boost_INCLUDE_DIRS})

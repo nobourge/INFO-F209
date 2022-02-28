@@ -28,6 +28,8 @@
 #ifndef QUORIDOR_SRC_COMMON_BASE64_H_
 #define QUORIDOR_SRC_COMMON_BASE64_H_
 
+#include <string>
+
 static const std::string base64_chars =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "abcdefghijklmnopqrstuvwxyz"

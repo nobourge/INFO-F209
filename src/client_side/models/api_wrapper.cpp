@@ -6,21 +6,61 @@
 #include "requests.h"
 #include <stdexcept>
 
-ApiWrapper::ApiWrapper() {
-
-}
-std::unique_ptr<std::vector<User>> ApiWrapper::GetUsersRanked(unsigned int max_num_users) {
+std::vector<UserClient> ApiWrapper::GetUsersRanked(unsigned int max_num_users) {
   std::string url = url_;
   url += "users/ranking?max_num_users=";
   url += std::to_string(max_num_users);
-//  std::cout << Requests(url, {}).GetJson() << std::endl;
+  //  std::cout << Requests(url, {}).GetJson() << std::endl;
   auto json_res = Requests(url, {}).GetJson();
-  auto users_json = json_res["users"];
+  crow::json::rvalue users_json;
+  try {
+    users_json = json_res["users"];
+  } catch (const std::runtime_error &) {
+    return {};
+  }
 
-  auto users = std::make_unique<std::vector<User>>();
-  users->reserve(users->size());
+  auto users = std::vector<UserClient>();
+  users.reserve(users.size());
   for (auto &user_json : users_json) {
-    users->push_back(User(user_json));
+    users.push_back(UserClient(user_json));
   }
   return users;
+}
+
+ApiWrapper::ApiWrapper(const std::string &login, const std::string &password)
+    : login_(login), password_(password) {}
+
+std::variant<UserClient, LoginError> ApiWrapper::GetCurrentUser() {
+  std::string url = url_;
+  url += "me";
+
+  std::variant<UserClient, LoginError> ret =
+      LoginError{"A network error occurred"};
+  crow::json::rvalue request_result_json;
+
+  try {
+    request_result_json = Requests(url, {{login_, password_}}).GetJson();
+  } catch (const std::runtime_error &) {
+    return ret;
+  }
+
+  try {
+    ret = UserClient(request_result_json);
+  } catch (const std::runtime_error &) {
+    ret = LoginError{{request_result_json["error"]}};
+  }
+  return ret;
+}
+
+std::variant<ApiWrapper, LoginError>
+ApiWrapper::Login(const std::string &login, const std::string &password) {
+  auto api_wrapper = ApiWrapper(login, password);
+
+  auto user = api_wrapper.GetCurrentUser();
+
+  if (holds_alternative<LoginError>(user)) {
+    return std::get<LoginError>(user);
+  } else {
+    return api_wrapper;
+  }
 }

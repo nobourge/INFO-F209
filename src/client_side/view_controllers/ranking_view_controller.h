@@ -3,8 +3,8 @@
 
 #include "../views/menu_views/ranking_menu_view.h"
 #include "menu_view_controller.h"
-#include "../../common/models/user/user.h"
 #include "../views/menu_views/views/label.h"
+#include "../models/user_client.h"
 
 #include <string>
 
@@ -14,14 +14,14 @@ class RankingMenuViewController : public MenuViewController {
   RankingMenuViewController();
 
 protected:
+  void MenuViewWillAppear() override;
 
   void FetchAndUpdate();
   void ReloadSubviews();
 
   std::shared_ptr<MenuButtonItem> back_btn_ = {};
   std::vector<std::shared_ptr<AbstractView>> leaderboard_views_ = {};
-  std::unique_ptr<std::vector<User>> users_;
-  void MenuViewWillAppear() override;
+  std::vector<UserClient> users_;
 };
 
 

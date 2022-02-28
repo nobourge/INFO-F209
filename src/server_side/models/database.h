@@ -6,8 +6,9 @@
 #include <iostream>
 #include <memory>
 #include <sqlite3.h>
-#include <stdio.h>
+#include <cstdio>
 #include <string>
+#include <unordered_set>
 
 using record = std::vector<std::string>;
 using records = std::vector<record>;
@@ -32,7 +33,7 @@ public:
   void VerifyTable(const string &message);
   void InsertBoard(int nrOfPlayers, int nrOfWalls);
   void InsertFriend(int user1_id, int user2_id);
-  void SearchFriends(int user_id);
+  std::unique_ptr<std::unordered_set<uint32_t>> SearchFriends(object_id_t user_id);
   void InsertRanking(int firstPlaceId, int secondPlaceId, int thirdPlaceId,
                      int fourthPlaceId);
   void UpdateUser(uint32_t score, uint32_t id);

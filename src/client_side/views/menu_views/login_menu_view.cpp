@@ -12,6 +12,7 @@ LoginMenuView::LoginMenuView()
   auto login_field = std::make_shared<TextField>(this, "", this);
   auto password_field = std::make_shared<TextField>(this, "", this);
 
+
   UpdateSubviews({
       login_label,
       login_field,

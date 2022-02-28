@@ -3,7 +3,6 @@
 int DataBase::friendsId = 0;
 int DataBase::ranking_id_ = 0;
 
-
 void DataBase::ReloadFile(std::string file) {
   ifstream ifile;
   int n = file.length();
@@ -49,7 +48,8 @@ records DataBase::GetSelect(std::string statement) {
   sqlite3_close(db_);
 
   if (last_sqlite3_exit_code_ != SQLITE_OK) {
-    std::cout << "Database error: " << sqlite3_errstr(last_sqlite3_exit_code_) << std::endl;
+    std::cout << "Database error: " << sqlite3_errstr(last_sqlite3_exit_code_)
+              << std::endl;
   } else {
     std::cout << res.size() << " records returned" << std::endl;
   }
@@ -65,7 +65,7 @@ void DataBase::CreateTables() {
          "TIMESTAMP           TEXT    NOT NULL, "
          "SCORE           INT    NOT NULL)";
 
-//  ReloadFile("example.db");
+  //  ReloadFile("example.db");
 
   last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
   last_sqlite3_exit_code_ =
@@ -113,16 +113,17 @@ void DataBase::CreateTables() {
 }
 
 void DataBase::InsertPlayer(unsigned int id, const string &username,
-                            const string &password,
-                            int64_t timestamp, uint32_t score ) {
+                            const string &password, int64_t timestamp,
+                            uint32_t score) {
   last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
   string pseudo; // TO be completed later by the server.
 
   // Insert in the table
   string query = "SELECT * FROM USER;";
   sqlite3_exec(db_, query.c_str(), callback, nullptr, nullptr);
-  sql_ = ("INSERT INTO USER VALUES(" + to_string(id) +
-          ",\""+username+"\",\""+ password +"\","+to_string(timestamp)+","+to_string(score)+");");
+  sql_ =
+      ("INSERT INTO USER VALUES(" + to_string(id) + ",\"" + username + "\",\"" +
+       password + "\"," + to_string(timestamp) + "," + to_string(score) + ");");
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
@@ -154,15 +155,27 @@ void DataBase::InsertFriend(int user1_id, int user2_id) {
   sqlite3_close(db_);
 }
 
-void DataBase::SearchFriends(int user_id) {
+std::unique_ptr<std::unordered_set<uint32_t>>
+DataBase::SearchFriends(object_id_t user_id) {
   last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
 
-  string data("CALLBACK FUNCTION");
-  string query = "SELECT MY_FRIEND_ID FROM FRIENDS WHERE FRIENDS.MY_USER_ID=" +
-                 to_string(user_id) + ";";
-  sqlite3_exec(db_, query.c_str(), callback, (void *)data.c_str(), nullptr);
+  std::string current_user_id_str = std::to_string(user_id);
 
-  sqlite3_close(db_);
+  string data("CALLBACK FUNCTION");
+  string query = "SELECT MY_USER_ID, MY_FRIEND_ID FROM FRIENDS WHERE FRIENDS.MY_USER_ID=" +
+                 current_user_id_str +
+                 " OR FRIENDS.MY_USER_ID=" + current_user_id_str + ";";
+
+  auto query_res = GetSelect(query);
+  auto friends = std::make_unique<std::unordered_set<object_id_t>>();
+  friends->reserve(query_res.size());
+  for (const std::vector<std::string> &friend_string_repr : query_res) {
+    std::string other_user_id_str = friend_string_repr[
+        friend_string_repr[0] == current_user_id_str ? 1 : 0];
+
+    friends->insert(std::stoul(other_user_id_str));
+  }
+  return friends;
 }
 
 void DataBase::InsertRanking(int firstPlaceId, int secondPlaceId,

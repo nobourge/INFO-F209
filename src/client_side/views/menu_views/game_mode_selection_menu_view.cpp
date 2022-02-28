@@ -1,7 +1,7 @@
-#include "selection_menu_view.h"
+#include "game_mode_selection_menu_view.h"
 #include "views/label.h"
 
-SelectionMenuView::SelectionMenuView() : AbstractMenuView(menu_name_) {
+GameModeSelectionMenuView::GameModeSelectionMenuView() : AbstractMenuView(menu_name_) {
     UpdateSubviews({
         std::make_shared<MenuButtonItem>(this,"Against the IA", std::optional<std::shared_ptr<AbstractViewController>>{}, this),
         std::make_shared<MenuButtonItem>(this,"Walls ?", std::optional<std::shared_ptr<AbstractViewController>>{}, this),
