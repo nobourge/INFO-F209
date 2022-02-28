@@ -17,11 +17,11 @@ void RankingMenuViewController::MenuViewWillAppear() {
 }
 
 void RankingMenuViewController::FetchAndUpdate() {
-  try {
-    users_ = ApiWrapper::GetUsersRanked(MAX_NUM_USERS_RANKING_DEFAULT);
-  } catch (const std::runtime_error &) {
-    users_.clear();
-  }
+//  try {
+//    users_ = ApiWrapper::GetUsersRanked(MAX_NUM_USERS_RANKING_DEFAULT);
+//  } catch (const std::runtime_error &) {
+//    users_.clear();
+//  }
 
   ReloadSubviews();
 }

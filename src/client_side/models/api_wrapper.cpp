@@ -26,11 +26,10 @@ std::vector<UserClient> ApiWrapper::GetUsersRanked(unsigned int max_num_users) {
   }
   return users;
 }
-<<<<<<< HEAD
+
 static std::string ReceiveNewMessages(int id){
   return "wip";
 }
-=======
 
 ApiWrapper::ApiWrapper(const std::string &login, const std::string &password)
     : login_(login), password_(password) {}
@@ -49,11 +48,11 @@ std::variant<UserClient, LoginError> ApiWrapper::GetCurrentUser() {
     return ret;
   }
 
-  try {
-    ret = UserClient(request_result_json);
-  } catch (const std::runtime_error &) {
-    ret = LoginError{{request_result_json["error"]}};
-  }
+//  try {
+//    ret = UserClient(request_result_json);
+//  } catch (const std::runtime_error &) {
+//    ret = LoginError{{request_result_json["error"]}};
+//  }
   return ret;
 }
 
@@ -69,4 +68,4 @@ ApiWrapper::Login(const std::string &login, const std::string &password) {
     return api_wrapper;
   }
 }
->>>>>>> 561bc3253011bb8654f00a8f743d8b545f56a9d7
+

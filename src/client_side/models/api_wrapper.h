@@ -18,16 +18,16 @@ class ApiWrapper {
 public:
   ApiWrapper(const std::string &login, const std::string &password);
 
-<<<<<<< HEAD
-  static std::unique_ptr<std::vector<User>> GetUsersRanked(unsigned max_num_users);
+
+  //static std::unique_ptr<std::vector<User>> GetUsersRanked(unsigned max_num_users);
   static std::string ReceiveNewMessages(int id);
-=======
+
   static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
 
   std::variant<UserClient, LoginError> GetCurrentUser();
 
   static std::variant<ApiWrapper, LoginError> Login(const std::string &login, const std::string &password);
->>>>>>> 561bc3253011bb8654f00a8f743d8b545f56a9d7
+
 
 private:
   constexpr static const char url_[] =
