@@ -17,7 +17,9 @@ set(HEADERS
         view_controllers/start_view_controller.h
         view_controllers/game_mode_selection_menu_view_controller.h
         view_controllers/chat_room_view_controller.h
+        view_controllers/game_view_controller.h
         views/menu_views/chat_room_menu_view.h
+        views/menu_views/game_view.h
         views/menu_views/help_menu_view.h
         views/menu_views/game_mode_selection_menu_view.h
         views/menu_views/home_menu_view.h
@@ -58,6 +60,7 @@ set(SOURCES
         view_controllers/create_account_view_controller.cpp
         view_controllers/chat_room_view_controller.cpp
         view_controllers/start_view_controller.cpp
+        view_controllers/game_view_controller.cpp
 
 
 
@@ -76,6 +79,7 @@ set(SOURCES
         views/menu_views/home_menu_view.cpp
         views/menu_views/views/button.cpp
         views/menu_views/views/label.cpp
+        views/menu_views/game_view.cpp
 
         models/ranking.cpp
         models/api_wrapper.cpp
