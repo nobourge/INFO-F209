@@ -50,8 +50,6 @@ static std::optional<UserServer> AuthenticateUser(const crow::request &request) 
       std::unique_ptr<Username> username = nullptr;
       std::unique_ptr<Password> password = nullptr;
 
-      std::cout << "Password: " << password_str << std::endl;
-
       try {
         username = std::make_unique<Username>(username_str);
         password = std::make_unique<Password>(password_str);
@@ -60,7 +58,6 @@ static std::optional<UserServer> AuthenticateUser(const crow::request &request) 
       }
 
       auto user = UserServer::InitFromDB(*username);
-      std::cout << "Actual password: " << user->GetPassword().value() << std::endl;
 
       if (user.has_value() && user->GetPassword().has_value() && *user->GetPassword() == (*password).GetValue()) {
         return user;

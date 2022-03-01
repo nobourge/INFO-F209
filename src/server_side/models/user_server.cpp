@@ -56,13 +56,19 @@ UserServer::InitFromDB(const Username &username, const std::optional<std::string
 
     user.SetFriendsIds(DataBase::GetInstance()->SearchFriends(user.GetId()));
 
+
+    std::cout << "Friends:" << std::endl;
+    for (auto friend_id : user.GetFriendsIds()) {
+      std::cout << friend_id << " " << std::endl;
+    }
+
     return user;
   }
 }
 
 bool UserServer::SaveToDB() {
   auto users_with_same_id = DataBase::GetInstance()->GetSelect(
-      "SELECT * FROM USER WHERE USER.USERNAME=" + GetUsername().GetValue());
+      "SELECT * FROM USER WHERE USER.PSEUDO=" + GetUsername().GetValue());
 
   if (users_with_same_id.empty()) {
     // the user does not exist
@@ -72,17 +78,17 @@ bool UserServer::SaveToDB() {
     DataBase::GetInstance()->UpdateUser(GetScore(), GetId());
 
     auto friends_in_db = DataBase::GetInstance()->SearchFriends(GetId());
-    if (*friends_in_db != *GetFriendsIds()) {
+    if (*friends_in_db != GetFriendsIds()) {
       // update friends list
 
       std::unordered_set<object_id_t> friends_changes = {};
 
       std::set_difference(
           friends_in_db->begin(), friends_in_db->end(),
-          GetFriendsIds()->begin(), GetFriendsIds()->end(),
+          GetFriendsIds().begin(), GetFriendsIds().end(),
           std::inserter(friends_changes, friends_changes.end()));
       for (auto &changed_friend : friends_changes) {
-        if (GetFriendsIds()->contains(changed_friend)) {
+        if (GetFriendsIds().contains(changed_friend)) {
           // the friend was added
           DataBase::GetInstance()->InsertFriend(GetId(), changed_friend);
         } else {
@@ -104,6 +110,17 @@ std::unique_ptr<crow::json::wvalue> UserServer::Serialize() {
   (*json_output)["created_timestamp"] = GetCreationTimestamp();
   (*json_output)["score"] = GetScore();
 
+
+  crow::json::wvalue friends_json;
+
+  {
+    auto friends = GetFriendsWithoutLoadingTheirFriends();
+    for (int i = 0; i < friends.size(); i++) {
+      friends_json[i] = std::move(*friends[i].Serialize());
+    }
+  }
+
+  (*json_output)["friends"] = std::move(friends_json);
   return json_output;
 }
 
@@ -121,4 +138,31 @@ std::optional<UserServer> UserServer::NewUser(const Username &username,
 //  DataBase::GetInstance()->GetSelect(R"(INSERT INTO USER (PSEUDO, PASSWORD, TIMESTAMP, SCORE) VALUES ("test55", "haha", 5, 100);)");
   DataBase::GetInstance()->InsertPlayer(username.GetValue(), password, GET_UNIX_TIMESTAMP, 0);
   return UserServer::InitFromDB(username);
+}
+
+std::optional<UserServer> UserServer::InitFromDbByIdWithoutFriendList(const uint32_t id) {
+  auto users_string_vector = DataBase::GetInstance()->GetSelect(
+      "SELECT * FROM USER WHERE USER.ID=" + std::to_string(id));
+
+  std::cout << "Users with id: " << users_string_vector.size() << std::endl;
+
+  if (users_string_vector.empty()) {
+    return {};
+  } else {
+    return UserServer(users_string_vector[0]);
+  }
+}
+
+std::vector<UserServer> UserServer::GetFriendsWithoutLoadingTheirFriends() {
+  std::vector<UserServer> output;
+
+  for (const auto &friend_id : GetFriendsIds()) {
+    auto friend_user = UserServer::InitFromDbByIdWithoutFriendList(friend_id);
+    if (friend_user.has_value()) {
+      output.push_back(std::move(*friend_user));
+    } else {
+      // TODO: delete friend relation, the user does not exist
+    }
+  }
+  return output;
 }

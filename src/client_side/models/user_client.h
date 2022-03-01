@@ -8,7 +8,13 @@
 #include "../../common/models/user/user.h"
 class UserClient : public User {
 public:
-    explicit UserClient(const crow::json::rvalue &json);
+  explicit UserClient(const crow::json::rvalue &json);
+  const std::vector<UserClient> &GetFriends() const;
+
+  std::unordered_set<uint32_t> GetFriendsIds() const override;
+
+private:
+  std::vector<UserClient> friends_;
 };
 
 #endif // QUORIDOR_SRC_CLIENT_SIDE_MODELS_USER_CLIENT_H_

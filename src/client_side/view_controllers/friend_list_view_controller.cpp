@@ -18,30 +18,31 @@ void FriendListViewController::MenuViewWillAppear() {
 }
 
 void FriendListViewController::ReloadViews() {
-  std::unordered_set<object_id_t> friends = {};
+  std::vector<std::shared_ptr<AbstractView>> subviews = {};
   std::optional<std::string> error_message = {};
+
   if (ApiWrapper::GetShared().has_value()) {
     auto optional_user = ApiWrapper::GetShared()->GetCurrentUser();
     if (holds_alternative<UserClient>(optional_user)) {
       UserClient &user = std::get<UserClient>(optional_user);
-      friends = *user.GetFriendsIds();
+
+      for (const auto &friend_ : user.GetFriends()) {
+        subviews.push_back(std::make_shared<Label>(
+            GetMenuView().get(), friend_.GetUsername().GetValue()));
+      }
+
     } else {
       error_message = "User is not signed in: " +
                       std::get<LoginError>(optional_user).error_message;
     }
+  } else {
     error_message = "Sign in first";
   }
-
-  std::vector<std::shared_ptr<AbstractView>> subviews = {};
 
   if (error_message.has_value()) {
     subviews.push_back(
         std::make_shared<Label>(GetMenuView().get(), *error_message));
   } else {
-    for (auto &friend_id : friends) {
-      subviews.push_back(std::make_shared<Label>(GetMenuView().get(),
-                                                 std::to_string(friend_id)));
-    }
   }
 
   subviews.push_back(std::make_shared<MenuButtonItem>(
@@ -49,7 +50,5 @@ void FriendListViewController::ReloadViews() {
       std::optional<std::shared_ptr<AbstractViewController>>{},
       GetMenuView().get()));
 
-
   GetMenuView()->UpdateSubviews(subviews);
-
 }
