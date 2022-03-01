@@ -30,7 +30,7 @@ public:
 
   void NewFriend(User &new_friend);
 
-  const std::unique_ptr<std::unordered_set<uint32_t>> &GetFriendsIds() const;
+  virtual std::unordered_set<uint32_t> GetFriendsIds() const;
 
   void
   SetFriendsIds(std::unique_ptr<std::unordered_set<uint32_t>> &&friends_ids);

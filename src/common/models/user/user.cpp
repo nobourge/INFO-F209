@@ -28,8 +28,8 @@ User::User()
     : id_(0), username_(), password_(), creation_timestamp_(GET_UNIX_TIMESTAMP),
       score_(0) {}
 
-const unique_ptr<std::unordered_set<uint32_t>> &User::GetFriendsIds() const {
-  return friends_ids_;
+std::unordered_set<uint32_t> User::GetFriendsIds() const {
+  return *friends_ids_;
 }
 
 void User::SetFriendsIds(
