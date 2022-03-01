@@ -71,5 +71,8 @@ ApiWrapper::Login(const std::string &login, const std::string &password) {
 void ApiWrapper::SendNewMessages(std::string message) {
 
 }
+bool ApiWrapper::IsThereNewMessage(int id) {
+  return false;
+}
 
 

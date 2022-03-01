@@ -21,6 +21,7 @@ public:
 
   //static std::unique_ptr<std::vector<User>> GetUsersRanked(unsigned max_num_users);
   static std::string ReceiveNewMessages(int id);
+  static bool IsThereNewMessage(int id);
   static void SendNewMessages(std::string message);
   static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
 

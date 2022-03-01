@@ -17,11 +17,13 @@ public:
 
   void TextChanged(TextField &sender, const std::string &old_text) override;
   void TextEditingFinished(TextField &sender) override;
+  static void SlideMessages(ChatRoomViewController *chatroom,std::string new_message);
+  void MenuViewWillDisappear() override;
 
 private:
   static std::string ReceiveMesssage(ChatRoomViewController *chatroom);
   void SendMessage(std::string message);
-  bool *MessagesReceivable;
+  bool MessagesReceivable=false;
 
   void UpdateSubviews() {
 

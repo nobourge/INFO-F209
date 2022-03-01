@@ -28,22 +28,27 @@ void ChatRoomViewController::TextChanged(TextField &sender,
 
 }
 void ChatRoomViewController::TextEditingFinished(TextField &sender) {
-
   SendMessage("test");
-  messages_[2]->SetInnerText(messages_[1]->GetInnerText());
-  messages_[1]->SetInnerText(messages_[0]->GetInnerText());
-  messages_[0]->SetInnerText(sender.GetUserEnteredText());
-  text_field_->SetInnerText("");
-  UpdateSubviews();
 
 }
 std::string ChatRoomViewController::ReceiveMesssage(ChatRoomViewController *chatroom) {
-  *(chatroom->MessagesReceivable)=true;
-  while(*(chatroom->MessagesReceivable)) {
-    if (chatroom->messages_.size() > 0){}
-      //messages_[0]->SetInnerText(ApiWrapper::ReceiveNewMessages(0));
+  chatroom->MessagesReceivable=true;
+  while(chatroom->MessagesReceivable) {
+    if (chatroom->messages_.size() > 0 && ApiWrapper::IsThereNewMessage(0)){
+      SlideMessages(chatroom,ApiWrapper::ReceiveNewMessages(0));}
   }
 }
 void ChatRoomViewController::SendMessage(std::string message) {
 ApiWrapper::SendNewMessages(message);
+}
+void ChatRoomViewController::SlideMessages(ChatRoomViewController *chatroom,std::string new_message) {
+  chatroom->messages_[2]->SetInnerText(chatroom->messages_[1]->GetInnerText());
+  chatroom->messages_[1]->SetInnerText(chatroom->messages_[0]->GetInnerText());
+  chatroom->messages_[0]->SetInnerText(new_message);
+  chatroom->text_field_->SetInnerText("");
+  chatroom->UpdateSubviews();
+}
+void ChatRoomViewController::MenuViewWillDisappear() {
+  MenuViewController::MenuViewWillDisappear();
+  MessagesReceivable=false;
 }
