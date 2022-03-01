@@ -100,8 +100,10 @@ void DataBase::CreateTables() {
   // Create fifth table CONVERSATIONS
   sql_ = "CREATE TABLE IF NOT EXISTS CONVERSATIONS("
          "ID INT PRIMARY KEY NOT NULL, "
-         "PLAYER_ID INT NOT NULL, "
-         "CONVERSATIONS       TEXT NOT NULL)";
+         "SENDER_ID     INT NOT NULL, "
+         "RECEIVER_ID   INT NOT NULL, "
+         "TIMESTAMP     INT NOT NULL, "
+         "CONTENT       TEXT NOT NULL)";
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
@@ -110,7 +112,21 @@ void DataBase::CreateTables() {
   // Close db
   sqlite3_close(db_);
 }
+void DataBase::InsertMessage(const int sender_id, const int receiver_id, int64_t timestamp, const string content) {
+  last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
 
+  sql_ = "INSERT INTO CONVERSATIONS (SENDER_ID, RECEIVER_ID, TIMESTAMP, CONTENT) VALUES(\"" +
+      to_string(sender_id) + "\",\"" + to_string(receiver_id) + "\"," + to_string(timestamp) + "," +
+      content + ");";
+
+  last_sqlite3_exit_code_ = sqlite3_exec(db_, sql_.c_str(), callback, nullptr, &messageError);
+
+  // Verify creation of table
+  VerifyTable("Insert message into conversation");
+  // Close db
+  sqlite3_close(db_);
+
+}
 void DataBase::InsertPlayer(const string &username, const string &password,
                             int64_t timestamp, uint32_t score) {
   last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
