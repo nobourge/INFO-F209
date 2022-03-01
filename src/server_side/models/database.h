@@ -29,6 +29,8 @@ public:
   void CreateTables();
   void InsertPlayer(const string &username, const string &password,
                     int64_t timestamp, uint32_t score);
+  void InsertMessage(const int sender_id, const int receiver_id,
+                     int64_t timestamp, const string content);
   void VerifyTable(const string &message);
   void InsertBoard(int nrOfPlayers, int nrOfWalls);
   void InsertFriend(int user1_id, int user2_id);
