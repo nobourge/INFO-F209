@@ -27,7 +27,7 @@ std::vector<UserClient> ApiWrapper::GetUsersRanked(unsigned int max_num_users) {
   return users;
 }
 
-static std::string ReceiveNewMessages(int id){
+ std::string ApiWrapper::ReceiveNewMessages(int id){
   return "wip";
 }
 
@@ -70,6 +70,13 @@ ApiWrapper::Login(const std::string &login, const std::string &password) {
     return api_wrapper;
   }
 }
+void ApiWrapper::SendNewMessages(std::string message) {
+
+}
+bool ApiWrapper::IsThereNewMessage(int id) {
+  return false;
+}
+
 
 std::variant<ApiWrapper, LoginError>
 ApiWrapper::CreateAccount(const std::string &login,

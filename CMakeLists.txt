@@ -61,3 +61,48 @@ add_executable(QuoridorServer
 target_include_directories(QuoridorServer PUBLIC ${Boost_INCLUDE_DIRS})
 target_include_directories(QuoridorServer PUBLIC ${SQLite3_INCLUDE_DIRS})
 target_link_libraries(QuoridorServer ${Boost_LIBRARIES} OpenSSL::SSL ${SQLite3_LIBRARIES})
+
+#[[
+
+future conan cmakelists:
+
+# Download automatically, you can also just copy the conan.cmake file
+if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
+    message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
+    file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/master/conan.cmake"
+            "${CMAKE_BINARY_DIR}/conan.cmake")
+endif()
+
+include(${CMAKE_BINARY_DIR}/conan.cmake)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+
+#conan_cmake_run(REQUIRES BASIC_SETUP)
+conan_cmake_run(BASIC_SETUP)
+
+
+add_executable(QuoridorServer
+        src/server_side/main.cpp
+        src/server_side/models/board.cpp
+        src/server_side/models/cell.cpp
+        src/server_side/models/database.cpp
+        src/server_side/models/Game.cpp
+        src/server_side/models/ia.cpp
+        src/server_side/models/input.cpp
+        src/server_side/models/input.cpp
+        src/server_side/models/Player.cpp
+        src/server_side/models/position.cpp
+        src/server_side/models/translator.cpp
+
+        src/common/models/user/abstract_validator.cpp
+        src/common/models/user/message.cpp
+        src/common/models/user/password.cpp
+        src/common/models/user/user.cpp
+        src/common/models/user/username.cpp
+
+        src/server_side/view_controllers/api/base_quoridor_api.cpp
+        src/server_side/view_controllers/api/v1/v1_api.cpp
+        src/server_side/models/server_side_user.cpp src/server_side/models/server_side_user.h)
+
+target_link_libraries(QuoridorServer ${CONAN_LIBS})
+
+]]

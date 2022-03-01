@@ -1,4 +1,1 @@
 # ninja log v5
-1243	1403	1645378904243014288	src/client_side/ClientSide	417f6e64aa9f1396
-3	1001	1645378903843014278	src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o	c33c25fb2091b33d
-4	826	1645378903667014274	src/client_side/CMakeFiles/ClientSide.dir/client_mvc_factory.cpp.o	9472ba55237a7ede
