@@ -33,7 +33,7 @@ bool TextField::RespondToEvent(const int &character) {
 }
 
 bool TextField::IsCharAccepted(const int &character) {
-  static const std::vector<int> valid_chars = USERNAME_VALID_SPECIAL_CHARS;
+  static const std::vector<int> valid_chars = VALID_SPECIAL_CHARS;
   return (isalnum(character)) ||
          std::find(valid_chars.begin(), valid_chars.end(), character) !=
              valid_chars.end();
@@ -45,7 +45,7 @@ TextField::TextField(const std::optional<EventResponder *> &parent,
     : AbstractView(parent, default_text), delegate_(delegate) {}
 
 void TextField::SetInnerText(const std::string &inner_text) {
-  auto old_text = GetInnerText();
+  auto old_text = GetUserEnteredText();
   AbstractView::SetInnerText(inner_text);
   if (delegate_.has_value()) {
     (*delegate_)->TextChanged(*this, old_text);
@@ -69,7 +69,12 @@ bool TextField::IsEmpty() const {
 const std::string &TextField::GetPlaceholder() const { return placeholder_; }
 
 std::string TextField::GetUserEnteredText() const {
-  return IsEmpty() ? "" : GetInnerText();
+  if (IsEmpty()) {
+    return "";
+  } else {
+    return GetDisplayMode() == PASSWORD ? AbstractView::GetInnerText()
+                                        : GetInnerText();
+  }
 }
 
 const std::string &TextField::GetInnerText() const {

@@ -2,13 +2,14 @@
 // Created by Anton Romanova on 21/02/2022.
 //
 
-#include "menu_view_controller.h"
+#include "abstract_menu_view_controller.h"
 
-MenuViewController::MenuViewController(const std::shared_ptr<AbstractMenuView> &view) : AbstractViewController(),
+AbstractMenuViewController::AbstractMenuViewController(const std::shared_ptr<AbstractMenuView> &view) : AbstractViewController(),
                                                                                         MenuViewDelegate(), menu_view_(view) {
   menu_view_->SetDelegate(this);
 }
-std::optional<std::shared_ptr<AbstractViewController>> MenuViewController::Tick() {
+std::optional<std::shared_ptr<AbstractViewController>>
+AbstractMenuViewController::Tick() {
   WINDOW *window;
   initscr();
   attron(A_STANDOUT);
@@ -34,14 +35,15 @@ std::optional<std::shared_ptr<AbstractViewController>> MenuViewController::Tick(
 }
 
 
-void MenuViewController::PresentViewController(std::optional<std::shared_ptr<AbstractViewController>> next_view_controller) {
+void AbstractMenuViewController::PresentViewController(std::optional<std::shared_ptr<AbstractViewController>> next_view_controller) {
   next_view_controller_ = next_view_controller;
 }
 
-const std::shared_ptr<AbstractMenuView> &MenuViewController::GetMenuView() const {
+const std::shared_ptr<AbstractMenuView> &
+AbstractMenuViewController::GetMenuView() const {
   return menu_view_;
 }
 
-void MenuViewController::RespondToKeyboardEvent(const int &character) {
+void AbstractMenuViewController::RespondToKeyboardEvent(const int &character) {
   menu_view_->PropagateEvent(character);
 }

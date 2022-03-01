@@ -5,8 +5,9 @@
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_HELP_VIEW_CONTROLLER_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_HELP_VIEW_CONTROLLER_H_
 
-#include "menu_view_controller.h"
-class HelpViewController : public MenuViewController {
+#include "abstract_authed_menu_view_controller.h"
+
+class HelpViewController : public AbstractAuthedMenuViewController {
  public:
   HelpViewController();
 };

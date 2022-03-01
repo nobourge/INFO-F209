@@ -24,7 +24,8 @@
 // username
 #define MAX_USERNAME_SIZE                       32
 #define MIN_USERNAME_SIZE                       3
-#define USERNAME_VALID_SPECIAL_CHARS            {'-', '_'}
+#define VALID_SPECIAL_CHARS                                                    \
+  {'-', '_'}
 
 // password
 #define MIN_PASSWORD_LENGTH                     8

@@ -48,11 +48,11 @@ std::variant<UserClient, LoginError> ApiWrapper::GetCurrentUser() {
     return ret;
   }
 
-//  try {
-//    ret = UserClient(request_result_json);
-//  } catch (const std::runtime_error &) {
-//    ret = LoginError{{request_result_json["error"]}};
-//  }
+  try {
+    ret = UserClient(request_result_json);
+  } catch (const std::runtime_error &) {
+    ret = LoginError{static_cast<std::string>(request_result_json["error"])};
+  }
   return ret;
 }
 
@@ -62,10 +62,40 @@ ApiWrapper::Login(const std::string &login, const std::string &password) {
 
   auto user = api_wrapper.GetCurrentUser();
 
+
   if (holds_alternative<LoginError>(user)) {
     return std::get<LoginError>(user);
   } else {
+    GetShared() = api_wrapper;
     return api_wrapper;
   }
 }
 
+std::variant<ApiWrapper, LoginError>
+ApiWrapper::CreateAccount(const std::string &login,
+                         const std::string &password) {
+
+  std::string url = url_;
+  url += "new_user";
+
+  std::variant<ApiWrapper, LoginError> ret =
+      LoginError{"A network error occurred"};
+  crow::json::rvalue request_result_json;
+
+
+  try {
+    request_result_json = Requests(url, {{login, password}}).GetJson();
+  } catch (const std::runtime_error &) {
+    return ret;
+  }
+
+  if (request_result_json["success"].b()) {
+    GetShared() = ApiWrapper(login, password);
+    ret = *GetShared();
+  } else {
+    ret = LoginError{static_cast<std::string>(request_result_json["error"])};
+  }
+
+
+  return ret;
+}

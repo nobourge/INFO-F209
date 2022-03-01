@@ -2,16 +2,16 @@
 // Created by Anton Romanova on 21/02/2022.
 //
 
-#ifndef QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_MENU_VIEW_CONTROLLER_H_
-#define QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_MENU_VIEW_CONTROLLER_H_
+#ifndef QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_ABSTRACT_MENU_VIEW_CONTROLLER_H_
+#define QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_ABSTRACT_MENU_VIEW_CONTROLLER_H_
 
 #include <memory>
 #include "abstract_view_controller.h"
 #include "../views/menu_views/abstract_menu_view.h"
 
-class MenuViewController : public AbstractViewController, public MenuViewDelegate {
+class AbstractMenuViewController : public AbstractViewController, public MenuViewDelegate {
  public:
-  explicit MenuViewController(const std::shared_ptr<AbstractMenuView> &);
+  explicit AbstractMenuViewController(const std::shared_ptr<AbstractMenuView> &);
 
   std::optional<std::shared_ptr<AbstractViewController>> Tick() override;
   void RespondToKeyboardEvent(const int &character) override;
@@ -34,4 +34,4 @@ class MenuViewController : public AbstractViewController, public MenuViewDelegat
 };
 
 
-#endif //QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_MENU_VIEW_CONTROLLER_H_
+#endif // QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_ABSTRACT_MENU_VIEW_CONTROLLER_H_

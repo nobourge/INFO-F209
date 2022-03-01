@@ -12,10 +12,6 @@
 #include "../../common/constants.h"
 #include "../../includes/crow_all.hpp"
 
-struct Ranking {
-  static std::unique_ptr<std::vector<User>> GetUsersRanking(int max_num_users = MAX_NUM_USERS_RANKING_DEFAULT) {
 
-  }
-};
 
 #endif // QUORIDOR_SRC_CLIENT_SIDE_MODELS_RANKING_H_

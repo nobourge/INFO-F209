@@ -8,10 +8,8 @@
 #include "abstract_menu_view.h"
 #include "views/text_field.h"
 
-class CreateAccountMenuView : public AbstractMenuView, public TextFieldDelegate {
+class CreateAccountMenuView : public AbstractMenuView {
  public:
-  void TextChanged(TextField &sender, const std::string &old_text) override;
-  void TextEditingFinished(TextField &sender) override;
   CreateAccountMenuView();
  private:
   constexpr static const char menu_name_[] = "Create Account";

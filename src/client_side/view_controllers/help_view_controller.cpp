@@ -5,6 +5,6 @@
 #include "help_view_controller.h"
 #include "../views/menu_views/help_menu_view.h"
 
-HelpViewController::HelpViewController() : MenuViewController(std::make_shared<HelpMenuView>()) {
+HelpViewController::HelpViewController() : AbstractAuthedMenuViewController(std::make_shared<HelpMenuView>()) {
 
 }

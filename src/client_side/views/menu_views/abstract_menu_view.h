@@ -27,7 +27,10 @@ public:
   void AddSubview(const std::shared_ptr<AbstractView> &view);
 
   void UpdateSubviews(const std::vector<std::shared_ptr<AbstractView>> &views);
-  void PresentController(const std::optional<std::shared_ptr<AbstractViewController>> &next_view_controller) override;
+  void
+  PresentController(const std::optional<std::shared_ptr<AbstractViewController>>
+                        &next_view_controller,
+                    MenuButtonItem &sender) override;
 
  protected:
   std::unique_ptr<std::vector<std::shared_ptr<EventResponder>>> GetChildren() override;

@@ -19,7 +19,7 @@ void MenuButtonItem::SetDelegate(const std::optional<MenuButtonItemDelegate *> &
 std::function<void()> MenuButtonItem::CreateClickEventDispatcherFunction() {
   return [&]() {
     if (delegate_.has_value()) {
-      (*delegate_)->PresentController(controller_to_present_on_click_);
+      (*delegate_)->PresentController(controller_to_present_on_click_, *this);
     }
   };
 }

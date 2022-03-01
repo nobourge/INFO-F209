@@ -8,11 +8,11 @@
 #include "abstract_validator.h"
 #include <exception>
 
-struct InvalidUsername : public std::exception {
+struct InvalidUsernameError : public std::exception {
   [[nodiscard]] const char *what() const noexcept override;
   ///
   /// \param validation_error_description
-  InvalidUsername(std::string validation_error_description);
+  InvalidUsernameError(std::string validation_error_description);
  private:
   std::string error_message_;
 };

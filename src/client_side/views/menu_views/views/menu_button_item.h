@@ -5,28 +5,31 @@
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_MENU_BUTTON_ITEM_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_MENU_BUTTON_ITEM_H_
 
-#include "button.h"
 #include "../../../view_controllers/abstract_view_controller.h"
+#include "button.h"
 
 struct MenuButtonItemDelegate;
 
 class MenuButtonItem : public Button {
- public:
+public:
   MenuButtonItem(const std::optional<EventResponder *> &parent,
                  const std::string &title,
-                 const std::optional<std::shared_ptr<AbstractViewController>> &controller_to_present_on_click,
+                 const std::optional<std::shared_ptr<AbstractViewController>>
+                     &controller_to_present_on_click,
                  const std::optional<MenuButtonItemDelegate *> &delegate = {});
 
   void SetDelegate(const std::optional<MenuButtonItemDelegate *> &delegate);
 
- private:
+private:
   std::function<void()> CreateClickEventDispatcherFunction();
-  std::optional<std::shared_ptr<AbstractViewController>> controller_to_present_on_click_;
+  std::optional<std::shared_ptr<AbstractViewController>>
+      controller_to_present_on_click_;
   std::optional<MenuButtonItemDelegate *> delegate_ = {};
 };
 
 struct MenuButtonItemDelegate {
-  virtual void PresentController(const std::optional<std::shared_ptr<AbstractViewController>> &sender) = 0;
+  virtual void PresentController(
+      const std::optional<std::shared_ptr<AbstractViewController>> &destination, MenuButtonItem &sender) = 0;
 };
 
-#endif //QUORIDOR_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_MENU_BUTTON_ITEM_H_
+#endif // QUORIDOR_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_MENU_BUTTON_ITEM_H_

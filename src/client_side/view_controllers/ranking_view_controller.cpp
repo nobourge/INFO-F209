@@ -3,7 +3,7 @@
 #include "../views/menu_views/views/label.h"
 
 RankingMenuViewController::RankingMenuViewController()
-    : MenuViewController(std::make_shared<RankingMenuView>()), users_(),
+    : AbstractAuthedMenuViewController(std::make_shared<RankingMenuView>()), users_(),
       back_btn_(std::make_shared<MenuButtonItem>(
           GetMenuView().get(), "Back",
           std::optional<std::shared_ptr<AbstractViewController>>{},
@@ -12,16 +12,16 @@ RankingMenuViewController::RankingMenuViewController()
 }
 
 void RankingMenuViewController::MenuViewWillAppear() {
-  MenuViewController::MenuViewWillAppear();
+  AbstractMenuViewController::MenuViewWillAppear();
   FetchAndUpdate();
 }
 
 void RankingMenuViewController::FetchAndUpdate() {
-//  try {
-//    users_ = ApiWrapper::GetUsersRanked(MAX_NUM_USERS_RANKING_DEFAULT);
-//  } catch (const std::runtime_error &) {
-//    users_.clear();
-//  }
+  try {
+    users_ = ApiWrapper::GetUsersRanked(MAX_NUM_USERS_RANKING_DEFAULT);
+  } catch (const std::runtime_error &) {
+    users_.clear();
+  }
 
   ReloadSubviews();
 }

@@ -94,7 +94,7 @@ void AbstractMenuView::MoveCursor(bool up) {
 std::vector<std::shared_ptr<AbstractView>>::iterator AbstractMenuView::GetIteratorOfHoveredSubview() {
   auto current_selected_idx =
       std::find_if(GetSubviews().begin(), GetSubviews().end(), [](const std::shared_ptr<AbstractView> &btn) {
-        return btn->GetState() == AbstractView::HOVER;
+        return btn->GetState() == AbstractView::HOVER or btn->GetState() == AbstractView::SELECTED;
       });
 
   // if none are selected
@@ -132,7 +132,10 @@ void AbstractMenuView::UpdateSubviews(const std::vector<std::shared_ptr<Abstract
   SetFirstButtonStateToHoverIfNoneAreHoveredUpon();
 }
 
-void AbstractMenuView::PresentController(const std::optional<std::shared_ptr<AbstractViewController>> &next_view_controller) {
+void AbstractMenuView::PresentController(
+    const std::optional<std::shared_ptr<AbstractViewController>>
+        &next_view_controller,
+    MenuButtonItem &sender) {
   // find index of clicked button
   if (delegate_) {
     delegate_->PresentViewController(next_view_controller);

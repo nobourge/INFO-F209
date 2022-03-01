@@ -9,7 +9,6 @@
 class UserClient : public User {
 public:
     explicit UserClient(const crow::json::rvalue &json);
-
 };
 
 #endif // QUORIDOR_SRC_CLIENT_SIDE_MODELS_USER_CLIENT_H_

@@ -8,9 +8,10 @@
 
 const Username &User::GetUsername() const { return username_; }
 
-User::User(const Username &username, uint32_t score)
-    : username_(username), creation_timestamp_(GET_UNIX_TIMESTAMP),
-      score_(score) {}
+User::User(const Username &username, const std::optional<std::string> &password,
+           uint32_t score)
+    : username_(username), password_(password),
+      creation_timestamp_(GET_UNIX_TIMESTAMP), score_(score) {}
 
 int64_t User::GetCreationTimestamp() const { return creation_timestamp_; }
 
@@ -24,16 +25,28 @@ void User::NewFriend(User &new_friend) {
 }
 
 User::User()
-    : id_(0), username_(), creation_timestamp_(GET_UNIX_TIMESTAMP), score_(0) {}
+    : id_(0), username_(), password_(), creation_timestamp_(GET_UNIX_TIMESTAMP),
+      score_(0) {}
 
 const unique_ptr<std::unordered_set<uint32_t>> &User::GetFriendsIds() const {
   return friends_ids_;
 }
 
-void User::SetFriendsIds(unique_ptr<std::unordered_set<uint32_t>> &&friends_ids) {
+void User::SetFriendsIds(
+    unique_ptr<std::unordered_set<uint32_t>> &&friends_ids) {
   friends_ids_ = std::move(friends_ids);
 }
-User::User(const object_id_t id, const Username &username, const int64_t &creation_timestamp,
-           const uint32_t &score, std::unique_ptr<std::unordered_set<object_id_t>> &&friends_ids_)
-    : id_(id), username_(username), creation_timestamp_(creation_timestamp),
-      score_(score), friends_ids_(std::move(friends_ids_)) {}
+
+User::User(const object_id_t id, const Username &username,
+           const std::optional<std::string> &password,
+           const int64_t &creation_timestamp, const uint32_t &score,
+           std::unique_ptr<std::unordered_set<object_id_t>> &&friends_ids_)
+
+    : id_(id), username_(username), password_(password),
+      creation_timestamp_(creation_timestamp), score_(score),
+      friends_ids_(std::move(friends_ids_)) {}
+
+
+const optional<std::string> &User::GetPassword() const { return password_; }
+
+void User::SetId(object_id_t id) { id_ = id; }

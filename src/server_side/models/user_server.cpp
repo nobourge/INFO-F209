@@ -2,7 +2,7 @@
 // Created by Anton Romanova on 28/02/2022.
 //
 
-#include "server_side_user.h"
+#include "user_server.h"
 #include "../../common/utils.h"
 #include "database.h"
 
@@ -25,8 +25,8 @@ std::unique_ptr<std::vector<UserServer>> UserServer::GetAllObjectsFromDB() {
 }
 
 UserServer::UserServer(const vector<std::string> &query_res)
-    : User(std::stoul(query_res[0]), Username{query_res[1]}, GET_UNIX_TIMESTAMP,
-           std::stoul(query_res[4]),
+    : User(std::stoull(query_res[0]), Username{query_res[1]}, query_res[2],
+           std::stoll(query_res[3]), std::stoul(query_res[4]),
            std::make_unique<std::unordered_set<object_id_t>>()) {}
 
 std::unique_ptr<std::vector<UserServer>>
@@ -36,8 +36,8 @@ UserServer::GetRankingFromDB(int max_num_users) {
       std::to_string(max_num_users)));
 }
 
-std::optional<std::unique_ptr<UserServer>>
-UserServer::InitFromDB(const Username &username) {
+std::optional<UserServer>
+UserServer::InitFromDB(const Username &username, const std::optional<std::string> &password) {
   auto users_string_vector = DataBase::GetInstance()->GetSelect(
       "SELECT * FROM USER WHERE USER.PSEUDO=\"" + username.GetValue() + "\"");
 
@@ -46,10 +46,15 @@ UserServer::InitFromDB(const Username &username) {
   } else if (users_string_vector.size() > 1) {
     throw std::runtime_error("Two users with same username in database");
   } else {
-    auto user =
-        std::unique_ptr<UserServer>(new UserServer(users_string_vector[0]));
+    auto user = UserServer(users_string_vector[0]);
 
-    user->SetFriendsIds(DataBase::GetInstance()->SearchFriends(user->GetId()));
+    if (password.has_value()) {
+      if (user.GetPassword() != password) {
+        return {};
+      }
+    }
+
+    user.SetFriendsIds(DataBase::GetInstance()->SearchFriends(user.GetId()));
 
     return user;
   }
@@ -57,20 +62,11 @@ UserServer::InitFromDB(const Username &username) {
 
 bool UserServer::SaveToDB() {
   auto users_with_same_id = DataBase::GetInstance()->GetSelect(
-      "SELECT * FROM USER WHERE USER.ID=" + std::to_string(GetId()));
+      "SELECT * FROM USER WHERE USER.USERNAME=" + GetUsername().GetValue());
 
   if (users_with_same_id.empty()) {
-    // register new user
-
-    // check if there is any user with same username in db
-    auto users_with_same_username = InitFromDB(GetUsername());
-    if (users_with_same_username.has_value()) {
-      return false;
-    }
-
-    DataBase::GetInstance()->InsertPlayer(GetId(), GetUsername().GetValue(), "",
-                                          GetCreationTimestamp(), GetScore());
-    return true;
+    // the user does not exist
+    return false;
   } else {
     // save new score
     DataBase::GetInstance()->UpdateUser(GetScore(), GetId());
@@ -110,5 +106,19 @@ std::unique_ptr<crow::json::wvalue> UserServer::Serialize() {
 
   return json_output;
 }
+
 UserServer::UserServer(const Username &username, uint32_t score)
-    : User(username, score) {}
+    : User(username, {}, score) {}
+
+
+std::optional<UserServer> UserServer::NewUser(const Username &username,
+                                              const string &password) {
+  // check if there is any user with same username in db
+  auto users_with_same_username = InitFromDB(username);
+  if (users_with_same_username.has_value()) {
+    return {};
+  }
+//  DataBase::GetInstance()->GetSelect(R"(INSERT INTO USER (PSEUDO, PASSWORD, TIMESTAMP, SCORE) VALUES ("test55", "haha", 5, 100);)");
+  DataBase::GetInstance()->InsertPlayer(username.GetValue(), password, GET_UNIX_TIMESTAMP, 0);
+  return UserServer::InitFromDB(username);
+}

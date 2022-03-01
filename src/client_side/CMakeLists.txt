@@ -8,7 +8,7 @@ endif ()
 
 
 set(HEADERS
-        view_controllers/menu_view_controller.h
+        view_controllers/abstract_menu_view_controller.h
         view_controllers/home_menu_view_controller.h
         view_controllers/ranking_view_controller.h
         view_controllers/abstract_view_controller.h
@@ -51,7 +51,7 @@ set(SOURCES
         view_controllers/home_menu_view_controller.cpp
         view_controllers/abstract_view_controller.cpp
         view_controllers/ranking_view_controller.cpp
-        view_controllers/menu_view_controller.cpp
+        view_controllers/abstract_menu_view_controller.cpp
         view_controllers/game_mode_selection_menu_view_controller.cpp
         view_controllers/login_view_controller.cpp
         view_controllers/help_view_controller.cpp
@@ -86,7 +86,7 @@ set(SOURCES
         ../common/models/user/user.cpp
         ../common/models/user/username.cpp
         ../common/models/user/abstract_validator.cpp
-        view_controllers/friend_list_view_controller.cpp view_controllers/friend_list_view_controller.h views/menu_views/friend_list_menu_view.cpp views/menu_views/friend_list_menu_view.h models/user_client.cpp models/user_client.h)
+        view_controllers/friend_list_view_controller.cpp view_controllers/friend_list_view_controller.h views/menu_views/friend_list_menu_view.cpp views/menu_views/friend_list_menu_view.h models/user_client.cpp models/user_client.h view_controllers/abstract_authed_menu_view_controller.cpp view_controllers/abstract_authed_menu_view_controller.h)
 
 
 

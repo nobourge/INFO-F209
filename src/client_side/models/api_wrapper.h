@@ -19,15 +19,20 @@ public:
   ApiWrapper(const std::string &login, const std::string &password);
 
 
-  //static std::unique_ptr<std::vector<User>> GetUsersRanked(unsigned max_num_users);
   static std::string ReceiveNewMessages(int id);
-
   static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
 
   std::variant<UserClient, LoginError> GetCurrentUser();
 
   static std::variant<ApiWrapper, LoginError> Login(const std::string &login, const std::string &password);
 
+
+  static std::variant<ApiWrapper, LoginError> CreateAccount(const std::string &login, const std::string &password);
+
+  static std::optional<ApiWrapper> &GetShared() {
+    static std::optional<ApiWrapper> shared_instance = {};
+    return shared_instance;
+  }
 
 private:
   constexpr static const char url_[] =

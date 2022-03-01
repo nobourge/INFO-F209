@@ -7,10 +7,10 @@
 
 #include "../views/menu_views/views/label.h"
 #include "../views/menu_views/views/text_field.h"
-#include "menu_view_controller.h"
+#include "abstract_authed_menu_view_controller.h"
 #include <thread>
 
-class ChatRoomViewController : public MenuViewController,
+class ChatRoomViewController : public AbstractAuthedMenuViewController,
                                public TextFieldDelegate {
 public:
   ChatRoomViewController();
@@ -19,7 +19,7 @@ public:
   void TextEditingFinished(TextField &sender) override;
 
 private:
-  static std::string ReceiveMesssage(ChatRoomViewController *chatroom);
+  static std::string ReceiveMessage(ChatRoomViewController *chatroom);
   bool *MessagesReceivable;
 
   void UpdateSubviews() {

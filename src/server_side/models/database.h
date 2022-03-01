@@ -27,8 +27,7 @@ public:
   static DataBase *GetInstance();
 
   void CreateTables();
-  void InsertPlayer(unsigned int id, const string &username,
-                    const string &password,
+  void InsertPlayer(const string &username, const string &password,
                     int64_t timestamp, uint32_t score);
   void VerifyTable(const string &message);
   void InsertBoard(int nrOfPlayers, int nrOfWalls);

@@ -7,7 +7,7 @@
 #include "../views/menu_views/views/label.h"
 #include "../models/api_wrapper.h"
 
-ChatRoomViewController :: ChatRoomViewController() : MenuViewController(std::make_shared<ChatRoomMenuView>()) {
+ChatRoomViewController :: ChatRoomViewController() : AbstractAuthedMenuViewController(std::make_shared<ChatRoomMenuView>()) {
   text_field_ = std::make_shared<TextField>(GetMenuView().get(), "", this);
 
   messages_ = {
@@ -19,7 +19,7 @@ ChatRoomViewController :: ChatRoomViewController() : MenuViewController(std::mak
   text_field_->SetPlaceholder("Text:");
 
   UpdateSubviews();
-  t1 =std::thread (ReceiveMesssage,this);
+  t1 = std::thread(ReceiveMessage, this);
 }
 
 
@@ -37,10 +37,11 @@ void ChatRoomViewController::TextEditingFinished(TextField &sender) {
   UpdateSubviews();
 
 }
-std::string ChatRoomViewController::ReceiveMesssage(ChatRoomViewController *chatroom) {
-  *(chatroom->MessagesReceivable)=true;
-  while(*(chatroom->MessagesReceivable)) {
-    if (chatroom->messages_.size() > 0){}
-      //messages_[0]->SetInnerText(ApiWrapper::ReceiveNewMessages(0));
-  }
+std::string ChatRoomViewController::ReceiveMessage(ChatRoomViewController *chatroom) {
+  return "";
+//  *(chatroom->MessagesReceivable)=true;
+//  while(*(chatroom->MessagesReceivable)) {
+//    if (chatroom->messages_.size() > 0){}
+//      //messages_[0]->SetInnerText(ApiWrapper::ReceiveNewMessages(0));
+//  }
 }

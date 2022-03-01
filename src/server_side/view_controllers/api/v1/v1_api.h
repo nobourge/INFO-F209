@@ -6,8 +6,10 @@
 #define QUORIDOR_SRC_SERVER_SIDE_VIEWS_API_V1_API_H_
 
 #include "../base_quoridor_api.h"
-#include "../../../models/server_side_user.h"
+#include "../../../models/user_server.h"
 #include "../../../../common/base64.h"
+#include "../../../../client_side/models/api_wrapper.h"
+#include <memory>
 
 #define V1_API_PREFIX "/api/v1/"  // PREFIX :
 #define API_ROUTE(app, url) app.template route<crow::black_magic::get_parameter_tag(url)>(url)
@@ -17,20 +19,7 @@
                                                   return output; \
                                                 }
 
-static std::unique_ptr<std::vector<UserServer>> GenerateUsers(unsigned num_users) {
-  auto users = std::make_unique<std::vector<UserServer>>();
-
-  for (int i = 0; i < num_users; i++) {
-    std::string username = "User" + std::to_string(i);
-    uint32_t score = i;
-    users->push_back(UserServer(Username(username), score));
-  }
-
-  return users;
-}
-
-static std::optional<UserServer> AuthenticateUser(const crow::request &request) {
-//  request.headers
+static std::optional<std::tuple<std::string, std::string>> ExtractUsernameAndPassword(const crow::request &request) {
   std::string auth = request.get_header_value(AUTHORIZATION_HEADER_NAME);
   if (auth.size() < ENCODED_CREDENTIALS_START_AT_POS + 1) {
     return {};
@@ -46,30 +35,39 @@ static std::optional<UserServer> AuthenticateUser(const crow::request &request) 
     std::string username = credentials.substr(0, found);
     std::string password = credentials.substr(found + 1);
 
-    return UserServer(Username(username), 0); // we will validate password when the db is ready
+    return {{ username, password }};
   }
-
   return {};
 }
 
-static crow::json::wvalue GetUsersSerialized(unsigned num_users = 3, bool sort_scores = false) {
-  /// this is just a temporary function to generate random users_serialized
-  crow::json::wvalue users_serialized;
+static std::optional<UserServer> AuthenticateUser(const crow::request &request) {
+    auto username_and_password = ExtractUsernameAndPassword(request);
 
-  auto users = GenerateUsers(num_users);
-  if (sort_scores) {
-    std::sort(users->begin(), users->end(), [](const User &user1, const User &user2) {
-      return user1.GetScore() > user2.GetScore();
-    });
-  }
+    if (username_and_password.has_value()) {
+      std::string username_str = std::get<0>(*username_and_password);
+      std::string password_str = std::get<1>(*username_and_password);
 
-  for (int i = 0; i < num_users; i++) {
-    users_serialized[i] = std::move(*users->at(i).Serialize());
-  }
+      std::unique_ptr<Username> username = nullptr;
+      std::unique_ptr<Password> password = nullptr;
 
-  crow::json::wvalue output;
-  output["users"] = std::move(users_serialized);
-  return output;
+      std::cout << "Password: " << password_str << std::endl;
+
+      try {
+        username = std::make_unique<Username>(username_str);
+        password = std::make_unique<Password>(password_str);
+      } catch (const std::exception &) {
+        return {};
+      }
+
+      auto user = UserServer::InitFromDB(*username);
+      std::cout << "Actual password: " << user->GetPassword().value() << std::endl;
+
+      if (user.has_value() && user->GetPassword().has_value() && *user->GetPassword() == (*password).GetValue()) {
+        return user;
+      }
+    }
+
+  return {};
 }
 
 
@@ -160,6 +158,45 @@ class V1Api : public BaseQuoridorApi {
       User &user = *optional_user;
 
       return *(optional_user->Serialize());
+    });
+
+    API_ROUTE(GetApp(), "/api/v1/new_user") ([](const crow::request &request) {
+      crow::json::wvalue output;
+      output["success"] = false;
+
+      auto username_and_password = ExtractUsernameAndPassword(request);
+      if (username_and_password.has_value()) {
+        std::string username_str = std::get<0>(*username_and_password);
+        std::string password_str = std::get<1>(*username_and_password);
+
+        // todo: check input for sql injection
+
+        std::unique_ptr<Username> username = nullptr;
+        std::unique_ptr<Password> password = nullptr;
+
+        try {
+          username = std::make_unique<Username>(username_str);
+          password = std::make_unique<Password>(password_str);
+        } catch (const std::exception &err) {
+          output["error"] = err.what();
+          return output;
+        }
+
+        auto user = UserServer::NewUser(*username, password->GetValue());
+
+        if (!user.has_value()) {
+          output["error"] = "Failed to create user";
+          return output;
+        } else {
+          output["user"] = std::move(*user->Serialize());
+          output["success"] = true;
+        }
+
+
+      } else {
+        output["error"] = "Failed to create user. No authentication data provided";
+      }
+      return output;
     });
 
 

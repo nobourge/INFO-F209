@@ -3,4 +3,4 @@
 
 
 StartViewController::StartViewController()
-    : MenuViewController(std::make_shared<StartMenuView>()){}
+    : AbstractMenuViewController(std::make_shared<StartMenuView>()){}
