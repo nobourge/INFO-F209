@@ -70,8 +70,39 @@ ApiWrapper::Login(const std::string &login, const std::string &password) {
     return api_wrapper;
   }
 }
-void ApiWrapper::SendNewMessage(std::string message) {
+std::variant<ApiWrapper, LoginError>
+ApiWrapper::SendNewMessage(std::string message) {
+  if (ApiWrapper::GetShared().has_value()) {
+    auto optional_user = ApiWrapper::GetCurrentUserFromSharedApiWrapperInstance();
+    if (holds_alternative<UserClient>(optional_user)) {
+      UserClient &user = std::get<UserClient>(optional_user);
+      std::string login=user.GetUsername().GetValue();
+      std::string password=user.GetPassword().value();
+      std::string url = url_;
+      url += "new_message";
+      std::variant<ApiWrapper, LoginError> ret =
+          LoginError{"A network error occurred"};
+      crow::json::rvalue request_result_json;
 
+
+      try {
+        request_result_json = Requests(url, {{login, password}}).GetJson();
+      } catch (const std::runtime_error &) {
+        return ret;
+      }
+
+      if (request_result_json["success"].b()) {
+        GetShared() = ApiWrapper(user.GetUsername().GetValue(), user.GetPassword().value());
+        ret = *GetShared();
+      } else {
+        ret = LoginError{static_cast<std::string>(request_result_json["error"])};
+      }
+
+
+      return ret;
+    }
+
+  }
 }
 
 bool ApiWrapper::IsThereNewMessage(int id) {

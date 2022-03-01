@@ -24,7 +24,7 @@ ChatRoomViewController ::ChatRoomViewController()
 void ChatRoomViewController::TextChanged(TextField &sender,
                                          const std::string &old_text) {}
 void ChatRoomViewController::TextEditingFinished(TextField &sender) {
-//  SendMessage("test");
+   SendMessage("test");
   sender.SetInnerText("");
 }
 
@@ -39,7 +39,16 @@ void ChatRoomViewController::ReceiveMessage(ChatRoomViewController *chatroom) {
 }
 
 void ChatRoomViewController::SendMessage(std::string message) {
-//  ApiWrapper::GetShared()->SendNewMessage(message);
+  std::string test="test";
+  auto api_wrapper = ApiWrapper::SendNewMessage(message);
+
+  if ( holds_alternative<LoginError>(api_wrapper) ) {
+    // error occurred
+    error_message_ = get<LoginError>(api_wrapper).error_message;
+  } else {
+    // success creating account!
+    error_message_ = {};
+   }
 }
 
 void ChatRoomViewController::SlideMessages(std::string new_message) {
@@ -81,7 +90,8 @@ void ChatRoomViewController::UpdateSubviews() {
 void ChatRoomViewController::Draw(WINDOW *window) {
   AbstractMenuViewController::Draw(window);
   if (new_messages_pending_) {
-      SlideMessages(ApiWrapper::ReceiveNewMessages(0));
+    if(ApiWrapper::IsThereNewMessage(0)){
+      SlideMessages(ApiWrapper::ReceiveNewMessages(0));}
       new_messages_pending_ = false;
   }
 }

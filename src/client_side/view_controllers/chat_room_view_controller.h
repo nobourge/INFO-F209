@@ -32,6 +32,7 @@ private:
 
   void UpdateSubviews();
 
+  std::optional<std::string> error_message_ = {};
   std::atomic_bool listen_to_new_messages_ = false;
   std::atomic_bool new_messages_pending_ = false;
   std::vector<std::shared_ptr<Label>> messages_;
