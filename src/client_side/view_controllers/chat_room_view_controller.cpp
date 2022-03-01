@@ -19,6 +19,7 @@ ChatRoomViewController :: ChatRoomViewController() : AbstractAuthedMenuViewContr
   text_field_->SetPlaceholder("Text:");
 
   UpdateSubviews();
+  MessagesReceivable=true;
   t1 = std::thread(ReceiveMessage, this);
 }
 
@@ -32,9 +33,8 @@ void ChatRoomViewController::TextEditingFinished(TextField &sender) {
 
 }
 void ChatRoomViewController::ReceiveMessage(ChatRoomViewController *chatroom) {
-  chatroom->MessagesReceivable=true;
   while(chatroom->MessagesReceivable) {
-    if (!chatroom->messages_.empty() && ApiWrapper::IsThereNewMessage(0)){
+    if (!chatroom->messages_.empty() ){//&& ApiWrapper::IsThereNewMessage(0)){
       SlideMessages(chatroom,ApiWrapper::ReceiveNewMessages(0));
     }
   }

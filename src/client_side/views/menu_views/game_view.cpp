@@ -15,7 +15,7 @@ void GameView::Draw(WINDOW *window) const {
   wrefresh(window);
   wattr_on(window, MENU_NAME_EFFECT, nullptr);
   int center_y = COLS / 2;
-  int right_end_y = COLS-2;
+  int right_end_y =150;
   mvwprintw(window, 0, center_y - (strlen(GetName()) / 2), GetName());
   wattr_off(window, MENU_NAME_EFFECT, nullptr);
 
@@ -27,8 +27,9 @@ void GameView::Draw(WINDOW *window) const {
     mvwprintw(window,
               GetVerticalPadding()
                   + view_idx * (GetVerticalGutterSize() + 1), // + 1 for title -1 for extra gutter cancels out
-              right_end_y - (view->GetInnerText().size()),
+              right_end_y- (view->GetInnerText().size()),
               view->GetInnerText().c_str());
     wattr_off(window, view->GetNcursesEffectForCurrentState(), nullptr);
   }
+
 }

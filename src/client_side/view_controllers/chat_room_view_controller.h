@@ -14,6 +14,9 @@ class ChatRoomViewController : public AbstractAuthedMenuViewController,
                                public TextFieldDelegate {
 public:
   ChatRoomViewController();
+  ~ChatRoomViewController(){
+    MessagesReceivable=false;
+  }
 
   void TextChanged(TextField &sender, const std::string &old_text) override;
   void TextEditingFinished(TextField &sender) override;
