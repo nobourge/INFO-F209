@@ -30,6 +30,8 @@ void LoginMenuViewController::PresentController(
       ApiWrapper::GetShared() = std::get<ApiWrapper>(login_res);
       AbstractMenuViewController::PresentViewController(destination);
     }
+  } else {
+    AbstractMenuViewController::PresentViewController(destination);
   }
 }
 

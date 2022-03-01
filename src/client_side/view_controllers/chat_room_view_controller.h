@@ -21,7 +21,7 @@ public:
   void MenuViewWillDisappear() override;
 
 private:
-  static std::string ReceiveMesssage(ChatRoomViewController *chatroom);
+  static void ReceiveMessage(ChatRoomViewController *chatroom);
   void SendMessage(std::string message);
   bool MessagesReceivable=false;
 

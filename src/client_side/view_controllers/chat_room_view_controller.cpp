@@ -31,10 +31,10 @@ void ChatRoomViewController::TextEditingFinished(TextField &sender) {
   SendMessage("test");
 
 }
-std::string ChatRoomViewController::ReceiveMesssage(ChatRoomViewController *chatroom) {
+void ChatRoomViewController::ReceiveMessage(ChatRoomViewController *chatroom) {
   chatroom->MessagesReceivable=true;
   while(chatroom->MessagesReceivable) {
-    if (chatroom->messages_.size() > 0 && ApiWrapper::IsThereNewMessage(0)){
+    if (!chatroom->messages_.empty() && ApiWrapper::IsThereNewMessage(0)){
       SlideMessages(chatroom,ApiWrapper::ReceiveNewMessages(0));
     }
   }
@@ -50,6 +50,6 @@ void ChatRoomViewController::SlideMessages(ChatRoomViewController *chatroom,std:
   chatroom->UpdateSubviews();
 }
 void ChatRoomViewController::MenuViewWillDisappear() {
-  MenuViewController::MenuViewWillDisappear();
+  AbstractAuthedMenuViewController::MenuViewWillDisappear();
   MessagesReceivable=false;
 }
