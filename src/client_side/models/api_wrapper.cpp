@@ -27,7 +27,7 @@ std::vector<UserClient> ApiWrapper::GetUsersRanked(unsigned int max_num_users) {
   return users;
 }
 
-static std::string ReceiveNewMessages(int id){
+ std::string ApiWrapper::ReceiveNewMessages(int id){
   return "wip";
 }
 

@@ -35,7 +35,8 @@ std::string ChatRoomViewController::ReceiveMesssage(ChatRoomViewController *chat
   chatroom->MessagesReceivable=true;
   while(chatroom->MessagesReceivable) {
     if (chatroom->messages_.size() > 0 && ApiWrapper::IsThereNewMessage(0)){
-      SlideMessages(chatroom,ApiWrapper::ReceiveNewMessages(0));}
+      SlideMessages(chatroom,ApiWrapper::ReceiveNewMessages(0));
+    }
   }
 }
 void ChatRoomViewController::SendMessage(std::string message) {
