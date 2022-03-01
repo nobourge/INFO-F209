@@ -31,5 +31,12 @@ void GameView::Draw(WINDOW *window) const {
               view->GetInnerText().c_str());
     wattr_off(window, view->GetNcursesEffectForCurrentState(), nullptr);
   }
-
+for(int ligne_idx=0;ligne_idx<parsed_board.size();ligne_idx++){
+  mvwprintw(window,
+            4
+                + ligne_idx, // + 1 for title -1 for extra gutter cancels out
+            1,
+            parsed_board[ligne_idx].c_str()
+  );
+}
 }

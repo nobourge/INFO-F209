@@ -9,6 +9,7 @@
 #include "../views/menu_views/views/text_field.h"
 #include "abstract_authed_menu_view_controller.h"
 #include <thread>
+#include <atomic>
 
 class ChatRoomViewController : public AbstractAuthedMenuViewController,
                                public TextFieldDelegate {
