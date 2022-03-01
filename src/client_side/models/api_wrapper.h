@@ -21,7 +21,7 @@ public:
 
   static std::string ReceiveNewMessages(int id);
   static bool IsThereNewMessage(int id);
-  static void SendNewMessages(std::string message);
+  static void SendNewMessage(std::string message);
   static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
 
   std::variant<UserClient, LoginError> GetCurrentUser();

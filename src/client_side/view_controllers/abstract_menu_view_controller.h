@@ -17,6 +17,8 @@ class AbstractMenuViewController : public AbstractViewController, public MenuVie
   void RespondToKeyboardEvent(const int &character) override;
   void PresentViewController(std::optional<std::shared_ptr<AbstractViewController>> next_view_controller) override;
 
+  virtual void Draw(WINDOW *window);
+
  protected:
   [[nodiscard]] const std::shared_ptr<AbstractMenuView> &GetMenuView() const;
 

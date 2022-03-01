@@ -20,7 +20,7 @@ AbstractMenuViewController::Tick() {
 
   while (!next_view_controller_.has_value()) {
     window = newwin(150, 150, 0, 0);
-    GetMenuView()->Draw(window);
+    Draw(window);
     keypad(window, true);
     RespondToKeyboardEvent(wgetch(window));
   }
@@ -46,4 +46,8 @@ AbstractMenuViewController::GetMenuView() const {
 
 void AbstractMenuViewController::RespondToKeyboardEvent(const int &character) {
   menu_view_->PropagateEvent(character);
+}
+
+void AbstractMenuViewController::Draw(WINDOW *window) {
+  GetMenuView()->Draw(window);
 }

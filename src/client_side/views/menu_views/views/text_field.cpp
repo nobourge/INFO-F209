@@ -22,8 +22,7 @@ bool TextField::RespondToEvent(const int &character) {
       SetInnerText("");
       is_showing_placeholder_ = true;
     }
-  }
-  if (character == '\n') {
+  }else if (character == '\n') {
     // user clicks enter
     SetState(HOVER);
   } else {

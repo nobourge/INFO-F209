@@ -14,43 +14,28 @@ class ChatRoomViewController : public AbstractAuthedMenuViewController,
                                public TextFieldDelegate {
 public:
   ChatRoomViewController();
-  ~ChatRoomViewController(){
-    MessagesReceivable=false;
-  }
 
   void TextChanged(TextField &sender, const std::string &old_text) override;
   void TextEditingFinished(TextField &sender) override;
-  static void SlideMessages(ChatRoomViewController *chatroom,std::string new_message);
+  void SlideMessages(std::string new_message);
   void MenuViewWillDisappear() override;
+
+  void Draw(WINDOW *window) override;
+
+protected:
+  void MenuViewWillAppear() override;
 
 private:
   static void ReceiveMessage(ChatRoomViewController *chatroom);
   void SendMessage(std::string message);
-  bool MessagesReceivable=false;
 
-  void UpdateSubviews() {
+  void UpdateSubviews();
 
-    std::vector<std::shared_ptr<AbstractView>> subviews_;
-
-
-    for (auto &message : messages_)
-      subviews_.push_back(message);
-
-
-    subviews_.push_back(text_field_);
-
-    subviews_.push_back(std::make_shared<MenuButtonItem>(
-        GetMenuView().get(), "Back",
-        std::optional<std::shared_ptr<AbstractViewController>>{},
-        GetMenuView().get())
-    );
-
-    GetMenuView()->UpdateSubviews(subviews_);
-  }
-
+  std::atomic_bool listen_to_new_messages_ = false;
+  std::atomic_bool new_messages_pending_ = false;
   std::vector<std::shared_ptr<Label>> messages_;
   std::shared_ptr<TextField> text_field_;
-  std::thread t1 ;
+  std::thread t1_;
 };
 
 #endif // INFO_F209_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_CHAT_ROOM_VIEW_CONTROLLER_H_

@@ -3,53 +3,84 @@
 //
 
 #include "chat_room_view_controller.h"
+#include "../models/api_wrapper.h"
 #include "../views/menu_views/chat_room_menu_view.h"
 #include "../views/menu_views/views/label.h"
-#include "../models/api_wrapper.h"
 
-ChatRoomViewController :: ChatRoomViewController() : AbstractAuthedMenuViewController(std::make_shared<ChatRoomMenuView>()) {
+ChatRoomViewController ::ChatRoomViewController()
+    : AbstractAuthedMenuViewController(std::make_shared<ChatRoomMenuView>()) {
   text_field_ = std::make_shared<TextField>(GetMenuView().get(), "", this);
 
-  messages_ = {
-      std::make_shared<Label>(GetMenuView().get(), "msg1"),
-      std::make_shared<Label>(GetMenuView().get(), "msg2"),
-      std::make_shared<Label>(GetMenuView().get(), "msg3")
-  };
+  messages_ = {std::make_shared<Label>(GetMenuView().get(), "msg1"),
+               std::make_shared<Label>(GetMenuView().get(), "msg2"),
+               std::make_shared<Label>(GetMenuView().get(), "msg3")};
 
   text_field_->SetPlaceholder("Text:");
 
   UpdateSubviews();
-  MessagesReceivable=true;
-  t1 = std::thread(ReceiveMessage, this);
+  listen_to_new_messages_ = true;
 }
-
 
 void ChatRoomViewController::TextChanged(TextField &sender,
-                                         const std::string &old_text) {
-
-}
+                                         const std::string &old_text) {}
 void ChatRoomViewController::TextEditingFinished(TextField &sender) {
-  SendMessage("test");
-
+//  SendMessage("test");
 }
+
 void ChatRoomViewController::ReceiveMessage(ChatRoomViewController *chatroom) {
-  while(chatroom->MessagesReceivable) {
-    if (!chatroom->messages_.empty() ){//&& ApiWrapper::IsThereNewMessage(0)){
-      SlideMessages(chatroom,ApiWrapper::ReceiveNewMessages(0));
+  while (chatroom->listen_to_new_messages_) {
+    auto &text_field = chatroom->text_field_;
+    if (!text_field->IsEmpty() && !text_field->IsEventResponder()) {
+      chatroom->new_messages_pending_ = true;
     }
+    std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 }
+
 void ChatRoomViewController::SendMessage(std::string message) {
-ApiWrapper::SendNewMessages(message);
+//  ApiWrapper::GetShared()->SendNewMessage(message);
 }
-void ChatRoomViewController::SlideMessages(ChatRoomViewController *chatroom,std::string new_message) {
-  chatroom->messages_[2]->SetInnerText(chatroom->messages_[1]->GetInnerText());
-  chatroom->messages_[1]->SetInnerText(chatroom->messages_[0]->GetInnerText());
-  chatroom->messages_[0]->SetInnerText(new_message);
-  chatroom->text_field_->SetInnerText("");
-  chatroom->UpdateSubviews();
+
+void ChatRoomViewController::SlideMessages(std::string new_message) {
+  messages_[2]->SetInnerText(messages_[1]->GetInnerText());
+  messages_[1]->SetInnerText(messages_[0]->GetInnerText());
+  messages_[0]->SetInnerText(new_message);
+  text_field_->SetInnerText("");
+  UpdateSubviews();
 }
+
 void ChatRoomViewController::MenuViewWillDisappear() {
   AbstractAuthedMenuViewController::MenuViewWillDisappear();
-  MessagesReceivable=false;
+  listen_to_new_messages_ = false;
+  t1_.join();
+}
+
+void ChatRoomViewController::MenuViewWillAppear() {
+  AbstractAuthedMenuViewController::MenuViewWillAppear();
+  t1_ = std::thread(ReceiveMessage, this);
+}
+
+void ChatRoomViewController::UpdateSubviews() {
+
+  std::vector<std::shared_ptr<AbstractView>> subviews_;
+
+  for (auto &message : messages_)
+    subviews_.push_back(message);
+
+  subviews_.push_back(text_field_);
+
+  subviews_.push_back(std::make_shared<MenuButtonItem>(
+      GetMenuView().get(), "Back",
+      std::optional<std::shared_ptr<AbstractViewController>>{},
+      GetMenuView().get()));
+
+  GetMenuView()->UpdateSubviews(subviews_);
+}
+
+void ChatRoomViewController::Draw(WINDOW *window) {
+  AbstractMenuViewController::Draw(window);
+  if (new_messages_pending_) {
+      SlideMessages(ApiWrapper::ReceiveNewMessages(0));
+      new_messages_pending_ = false;
+  }
 }
