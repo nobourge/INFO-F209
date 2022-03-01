@@ -6,12 +6,10 @@
 #define INFO_F209_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_GAME_VIEW_H_
 #include "abstract_menu_view.h"
 
-class GameView :public AbstractMenuView {//,  public TextFieldDelegate{
+class GameView :public AbstractMenuView{
  public:
   GameView();
   void Draw(WINDOW *window) const override;
-//  void TextChanged(TextField &sender, const std::string &old_text) override;
-//  void TextEditingFinished(TextField &sender) override;
   void setBoard(std::vector<std::string > board){
     parsed_board=board;
   }

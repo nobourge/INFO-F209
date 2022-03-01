@@ -4,10 +4,6 @@
 
 #include "game_view.h"
 GameView::GameView() : AbstractMenuView(menu_name_) {
-  UpdateSubviews({
-                     std::make_shared<MenuButtonItem>(this, "Back", std::optional<std::shared_ptr<AbstractViewController>>{}, this)
-                 }
-  );
 }
 
 void GameView::Draw(WINDOW *window) const {
@@ -40,3 +36,4 @@ for(int ligne_idx=0;ligne_idx<parsed_board.size();ligne_idx++){
   );
 }
 }
+

@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 /// checks move conformity
 /// \param move
 /// \param lettres

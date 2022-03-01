@@ -25,6 +25,7 @@ void ChatRoomViewController::TextChanged(TextField &sender,
                                          const std::string &old_text) {}
 void ChatRoomViewController::TextEditingFinished(TextField &sender) {
 //  SendMessage("test");
+  sender.SetInnerText("");
 }
 
 void ChatRoomViewController::ReceiveMessage(ChatRoomViewController *chatroom) {
