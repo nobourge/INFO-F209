@@ -19,6 +19,8 @@
                                                   return output; \
                                                 }
 
+///
+
 static std::optional<std::tuple<std::string, std::string>> ExtractUsernameAndPassword(const crow::request &request) {
   std::string auth = request.get_header_value(AUTHORIZATION_HEADER_NAME);
   if (auth.size() < ENCODED_CREDENTIALS_START_AT_POS + 1) {
@@ -39,6 +41,35 @@ static std::optional<std::tuple<std::string, std::string>> ExtractUsernameAndPas
   }
   return {};
 }
+
+/// prend en paramètre un message
+/// et s’occupe de Prevenir une SQL Injection en levant une erreur
+/// si le now d'utilisateur ou le mot de passe contiennent les caracteres:
+/// '
+/// "
+/// ;
+/// ?
+/// ,
+/// \param lettres
+/// \return
+static crow::json::wvalue PreventSQLInjection(const std::string& msg)
+{
+  crow::json::wvalue output;
+
+  for (auto & c : msg) {
+    int a = c;
+    if ((34 == a )
+    || (39 == a )
+    || (44 == a )
+    || (59 == a )
+    || (63 == a ))
+    {
+      output["error"] = "Invalid caracters";
+      return output;
+    }
+  }
+}
+
 
 static std::optional<UserServer> AuthenticateUser(const crow::request &request) {
     auto username_and_password = ExtractUsernameAndPassword(request);
@@ -167,6 +198,8 @@ class V1Api : public BaseQuoridorApi {
         std::string password_str = std::get<1>(*username_and_password);
 
         // todo: check input for sql injection
+        PreventSQLInjection(username_str);
+        PreventSQLInjection(password_str);
 
         std::unique_ptr<Username> username = nullptr;
         std::unique_ptr<Password> password = nullptr;
