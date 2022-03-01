@@ -32,7 +32,7 @@ public:
   void VerifyTable(const string &message);
   void InsertBoard(int nrOfPlayers, int nrOfWalls);
   void InsertFriend(int user1_id, int user2_id);
-  std::unique_ptr<std::unordered_set<uint32_t>> SearchFriends(object_id_t user_id);
+  std::unordered_set<uint32_t> SearchFriends(object_id_t user_id);
   void InsertRanking(int firstPlaceId, int secondPlaceId, int thirdPlaceId,
                      int fourthPlaceId);
   void UpdateUser(uint32_t score, uint32_t id);

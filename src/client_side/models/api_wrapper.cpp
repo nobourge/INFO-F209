@@ -107,3 +107,18 @@ ApiWrapper::CreateAccount(const std::string &login,
 
   return ret;
 }
+
+std::variant<UserClient, LoginError>
+ApiWrapper::GetCurrentUserFromSharedApiWrapperInstance() {
+  if (ApiWrapper::GetShared().has_value()) {
+    auto optional_user = ApiWrapper::GetShared()->GetCurrentUser();
+    if (holds_alternative<UserClient>(optional_user)) {
+      return std::get<UserClient>(optional_user);
+    } else {
+      return LoginError{"User is not signed in: " +
+              std::get<LoginError>(optional_user).error_message};
+    }
+  } else {
+    return LoginError{"Sign in first"};
+  }
+}

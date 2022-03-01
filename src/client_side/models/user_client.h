@@ -8,6 +8,12 @@
 #include "../../common/models/user/user.h"
 class UserClient : public User {
 public:
+
+  UserClient() = default;
+  UserClient(const UserClient &) = default;
+  UserClient &operator=(const UserClient &) = default;
+  UserClient(UserClient &&) = default;
+
   explicit UserClient(const crow::json::rvalue &json);
   const std::vector<UserClient> &GetFriends() const;
 

@@ -118,9 +118,10 @@ void DataBase::InsertPlayer(const string &username, const string &password,
 
   // Insert in the table
   sql_ = "INSERT INTO USER (PSEUDO, PASSWORD, TIMESTAMP, SCORE) VALUES(\"" +
-          username + "\",\"" + password + "\"," + to_string(timestamp) + "," +
-          to_string(score) + ");";
-  last_sqlite3_exit_code_ = sqlite3_exec(db_, sql_.c_str(), callback, nullptr, &messageError);
+         username + "\",\"" + password + "\"," + to_string(timestamp) + "," +
+         to_string(score) + ");";
+  last_sqlite3_exit_code_ =
+      sqlite3_exec(db_, sql_.c_str(), callback, nullptr, &messageError);
 
   // Verify creation of table
   VerifyTable("Insert values into player");
@@ -150,27 +151,26 @@ void DataBase::InsertFriend(int user1_id, int user2_id) {
   sqlite3_close(db_);
 }
 
-std::unique_ptr<std::unordered_set<uint32_t>>
-DataBase::SearchFriends(object_id_t user_id) {
+std::unordered_set<uint32_t> DataBase::SearchFriends(object_id_t user_id) {
   last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
 
   std::string current_user_id_str = std::to_string(user_id);
 
   string data("CALLBACK FUNCTION");
   string query =
-      "SELECT MY_USER_ID, MY_FRIEND_ID FROM FRIENDS WHERE FRIENDS.MY_USER_ID=" +
+      "SELECT MY_USER_ID, MY_FRIEND_ID FROM FRIENDS WHERE FRIENDS.MY_FRIEND_ID=" +
       current_user_id_str + " OR FRIENDS.MY_USER_ID=" + current_user_id_str +
       ";";
 
   auto query_res = GetSelect(query);
-  auto friends = std::make_unique<std::unordered_set<object_id_t>>();
-  friends->reserve(query_res.size());
+  std::unordered_set<object_id_t> friends = {};
+  friends.reserve(query_res.size());
   for (const std::vector<std::string> &friend_string_repr : query_res) {
     std::string other_user_id_str =
         friend_string_repr[friend_string_repr[0] == current_user_id_str ? 1
                                                                         : 0];
 
-    friends->insert(std::stoul(other_user_id_str));
+    friends.insert(std::stoul(other_user_id_str));
   }
   return friends;
 }
@@ -233,7 +233,8 @@ void DataBase::InsertBoard(int nrOfPlayers, int nrOfWalls) {
 void DataBase::VerifyTable(const string &message) {
   cout << message << " ";
   if (last_sqlite3_exit_code_ != SQLITE_OK) {
-    std::cerr << "Error Create Table: " << sqlite3_errstr(last_sqlite3_exit_code_) << std::endl;
+    std::cerr << "Error Create Table: "
+              << sqlite3_errstr(last_sqlite3_exit_code_) << std::endl;
     sqlite3_free(messageError);
   } else
     std::cout << "Table created Successfully" << std::endl;

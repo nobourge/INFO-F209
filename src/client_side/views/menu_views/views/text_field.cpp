@@ -5,30 +5,33 @@
 #include "text_field.h"
 
 bool TextField::RespondToEvent(const int &character) {
+  bool responded_to_event = true;
   if (IsCharAccepted(character)) {
     // user types a character
-    SetInnerText(GetUserEnteredText() + static_cast<char>(character));
-    is_showing_placeholder_ = false;
+    std::string c;
+    c += static_cast<char>(character);
+
+    SetInnerText(IsEmpty() ? c : GetUserEnteredText() + c);
   } else if (character == BACKSPACE_CHAR && !GetInnerText().empty()) {
     // user deletes a character
 
-    if (IsEmpty()) {
-      return false;
-    }
-
-    if (GetInnerText().size() > 1) {
-      SetInnerText(GetInnerText().substr(0, GetInnerText().size() - 1));
-    } else if (GetInnerText().size() == 1){
-      SetInnerText("");
-      is_showing_placeholder_ = true;
+    if (!IsEmpty()) {
+      if (GetInnerText().size() > 1) {
+        SetInnerText(GetInnerText().substr(0, GetInnerText().size() - 1));
+      } else if (GetInnerText().size() == 1){
+        SetInnerText("");
+        is_showing_placeholder_ = true;
+      }
+    } else {
+      responded_to_event = false;
     }
   }else if (character == '\n') {
     // user clicks enter
     SetState(HOVER);
   } else {
-    return false;
+    responded_to_event = false;
   }
-  return true;
+  return responded_to_event;
 }
 
 bool TextField::IsCharAccepted(const int &character) {
@@ -45,6 +48,7 @@ TextField::TextField(const std::optional<EventResponder *> &parent,
 
 void TextField::SetInnerText(const std::string &inner_text) {
   auto old_text = GetUserEnteredText();
+  is_showing_placeholder_ = inner_text.empty();
   AbstractView::SetInnerText(inner_text);
   if (delegate_.has_value()) {
     (*delegate_)->TextChanged(*this, old_text);

@@ -23,7 +23,7 @@ public:
   static bool IsThereNewMessage(int id);
   static void SendNewMessage(std::string message);
   static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
-
+  static std::variant<UserClient, LoginError> GetCurrentUserFromSharedApiWrapperInstance();
   std::variant<UserClient, LoginError> GetCurrentUser();
 
   static std::variant<ApiWrapper, LoginError> Login(const std::string &login, const std::string &password);

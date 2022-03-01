@@ -26,8 +26,7 @@ std::unique_ptr<std::vector<UserServer>> UserServer::GetAllObjectsFromDB() {
 
 UserServer::UserServer(const vector<std::string> &query_res)
     : User(std::stoull(query_res[0]), Username{query_res[1]}, query_res[2],
-           std::stoll(query_res[3]), std::stoul(query_res[4]),
-           std::make_unique<std::unordered_set<object_id_t>>()) {}
+           std::stoll(query_res[3]), std::stoul(query_res[4]), {}) {}
 
 std::unique_ptr<std::vector<UserServer>>
 UserServer::GetRankingFromDB(int max_num_users) {
@@ -56,12 +55,6 @@ UserServer::InitFromDB(const Username &username, const std::optional<std::string
 
     user.SetFriendsIds(DataBase::GetInstance()->SearchFriends(user.GetId()));
 
-
-    std::cout << "Friends:" << std::endl;
-    for (auto friend_id : user.GetFriendsIds()) {
-      std::cout << friend_id << " " << std::endl;
-    }
-
     return user;
   }
 }
@@ -78,13 +71,13 @@ bool UserServer::SaveToDB() {
     DataBase::GetInstance()->UpdateUser(GetScore(), GetId());
 
     auto friends_in_db = DataBase::GetInstance()->SearchFriends(GetId());
-    if (*friends_in_db != GetFriendsIds()) {
+    if (friends_in_db != GetFriendsIds()) {
       // update friends list
 
       std::unordered_set<object_id_t> friends_changes = {};
 
       std::set_difference(
-          friends_in_db->begin(), friends_in_db->end(),
+          friends_in_db.begin(), friends_in_db.end(),
           GetFriendsIds().begin(), GetFriendsIds().end(),
           std::inserter(friends_changes, friends_changes.end()));
       for (auto &changed_friend : friends_changes) {
@@ -143,8 +136,6 @@ std::optional<UserServer> UserServer::NewUser(const Username &username,
 std::optional<UserServer> UserServer::InitFromDbByIdWithoutFriendList(const uint32_t id) {
   auto users_string_vector = DataBase::GetInstance()->GetSelect(
       "SELECT * FROM USER WHERE USER.ID=" + std::to_string(id));
-
-  std::cout << "Users with id: " << users_string_vector.size() << std::endl;
 
   if (users_string_vector.empty()) {
     return {};

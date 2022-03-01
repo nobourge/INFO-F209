@@ -17,8 +17,12 @@ class User : public std::enable_shared_from_this<User> {
 
 public:
   User();
+  User(const User &other) = default;
+  User(User &&other) noexcept ;
+  User &operator=(const User &) = default;
   User(const Username &username, const std::optional<std::string> &password,
        uint32_t score);
+
 
   [[nodiscard]] const Username &GetUsername() const;
 
@@ -33,7 +37,7 @@ public:
   virtual std::unordered_set<uint32_t> GetFriendsIds() const;
 
   void
-  SetFriendsIds(std::unique_ptr<std::unordered_set<uint32_t>> &&friends_ids);
+  SetFriendsIds(const std::unordered_set<uint32_t> &friends_ids);
 
   const std::optional<std::string> &GetPassword() const;
 
@@ -44,8 +48,7 @@ protected:
   User(const object_id_t id, const Username &username,
        const std::optional<std::string> &password,
        const int64_t &creation_timestamp, const uint32_t &score,
-       std::unique_ptr<std::unordered_set<object_id_t>> &&friends_ids_ =
-           std::make_unique<std::unordered_set<object_id_t>>());
+       std::unordered_set<object_id_t> &&friends_ids_ = {});
 
 private:
   object_id_t id_;
@@ -53,8 +56,7 @@ private:
   std::optional<std::string> password_;
   int64_t creation_timestamp_;
   uint32_t score_;
-  std::unique_ptr<std::unordered_set<object_id_t>> friends_ids_ =
-      std::make_unique<std::unordered_set<object_id_t>>();
+  std::unordered_set<object_id_t> friends_ids_ = {};
 };
 
 #endif // QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_H_
