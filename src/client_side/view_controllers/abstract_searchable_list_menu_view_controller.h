@@ -22,8 +22,8 @@ public:
   [[nodiscard]] virtual unsigned GetNumViewsToSearch() const = 0;
   [[nodiscard]] virtual std::shared_ptr<AbstractView>
   GetViewAtIndex(unsigned i) const = 0;
-  virtual std::optional<std::shared_ptr<AbstractView>> GetHeaderView() const  { return {}; }
-  virtual bool DisplayList() const { return true; }
+  virtual std::optional<std::shared_ptr<AbstractView>> GetHeaderView() const  { return {}; } //TODO nodiscard?
+  virtual bool DisplayList() const { return true; } //TODO nodiscard?
 
   [[nodiscard]] bool ShouldDisplayViewAtIndex(unsigned i) const;
 
