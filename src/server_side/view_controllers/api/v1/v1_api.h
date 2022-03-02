@@ -52,25 +52,11 @@ static std::optional<std::tuple<std::string, std::string>> ExtractUsernameAndPas
 /// ,
 /// \param lettres
 /// \return
-static crow::json::wvalue PreventSQLInjection(const std::string& msg)
-{
-  crow::json::wvalue output;
 
-  for ( char const &c : msg) {
-    unsigned char uc = c;
-    int a = uc;
-    if ((34 == a )
-    || (39 == a )
-    || (44 == a )
-    || (59 == a )
-    || (63 == a ))
-    {
-      output["error"] = "Invalid caracters";
-      return output;
-    }
-  }
+static bool AreCharsValid(const std::string &msg) {
+  // these chars can be used for a sql injection attack;
+  return msg.find_first_of("\"',\\;:?") == std::string::npos;
 }
-
 
 static std::optional<UserServer> AuthenticateUser(const crow::request &request) {
     auto username_and_password = ExtractUsernameAndPassword(request);
@@ -244,8 +230,7 @@ class V1Api : public BaseQuoridorApi {
         std::string password_str = std::get<1>(*username_and_password);
 
         // todo: check input for sql injection
-        PreventSQLInjection(username_str);
-        PreventSQLInjection(password_str);
+
 
         std::unique_ptr<Username> username = nullptr;
         std::unique_ptr<Password> password = nullptr;
