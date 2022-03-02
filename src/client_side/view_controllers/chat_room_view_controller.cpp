@@ -5,7 +5,6 @@
 #include "chat_room_view_controller.h"
 #include "../models/api_wrapper.h"
 #include "../views/menu_views/chat_room_menu_view.h"
-#include "../views/menu_views/views/label.h"
 
 ChatRoomViewController ::ChatRoomViewController()
     : AbstractAuthedMenuViewController(std::make_shared<ChatRoomMenuView>()) {
@@ -39,7 +38,6 @@ void ChatRoomViewController::ReceiveMessage(ChatRoomViewController *chatroom) {
 }
 
 void ChatRoomViewController::SendMessage(std::string message) {
-  std::string test="test";
   auto api_wrapper = ApiWrapper::SendNewMessage(message);
 
   if ( holds_alternative<LoginError>(api_wrapper) ) {
