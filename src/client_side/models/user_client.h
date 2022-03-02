@@ -6,6 +6,7 @@
 #define QUORIDOR_SRC_CLIENT_SIDE_MODELS_USER_CLIENT_H_
 
 #include "../../common/models/user/user.h"
+
 class UserClient : public User {
 public:
 

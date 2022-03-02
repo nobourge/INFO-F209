@@ -157,12 +157,6 @@ void DataBase::InsertFriend(int user1_id, int user2_id) {
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
-  sql_ = ("INSERT INTO FRIENDS VALUES(" + to_string(friendsId) + "," +
-          to_string(user2_id) + "," + to_string(user1_id) + ",0);");
-  last_sqlite3_exit_code_ =
-      sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
-  friendsId++;
-
   VerifyTable("Insert values into friend");
   sqlite3_close(db_);
 }

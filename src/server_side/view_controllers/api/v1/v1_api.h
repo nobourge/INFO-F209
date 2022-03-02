@@ -170,6 +170,51 @@ class V1Api : public BaseQuoridorApi {
       return *(optional_user->Serialize());
     });
 
+    API_ROUTE(GetApp(), "/api/v1/me/add_friend") ([] (const crow::request &request) {
+      crow::json::wvalue output;
+      output["success"] = false;
+      VALIDATE_CREDENTIALS(request, output);
+
+
+      auto username_unparsed = request.url_params.get("username");
+
+      if (username_unparsed == nullptr) {
+        output["error"] = "No username provided";
+        return output;
+      }
+
+      std::unique_ptr<Username> username = nullptr;
+
+      try {
+        username = std::make_unique<Username>(username_unparsed);
+      } catch (const InvalidUsernameError &error) {
+        output["error"] = "Invalid username";
+        return output;
+      }
+
+      auto other_user = UserServer::InitFromDB(*username);
+
+      if (!other_user.has_value()) {
+        output["error"] = "No user with this username";
+        return output;
+      }
+
+      if (other_user->GetId() == optional_user->GetId()) {
+        output["error"] = "Cannot add yourself as friend";
+        return output;
+      }
+
+      const auto &friends_ids = optional_user->GetFriendsIds();
+      if (friends_ids.find(other_user->GetId()) != friends_ids.end()) {
+        output["error"] = "Friend already added";
+        return output;
+      }
+
+      optional_user->AddFriendAndSaveToDb(*other_user);
+      output["success"] = true;
+      return output;
+    });
+
     API_ROUTE(GetApp(), "/api/v1/me/games")([](const crow::request &request) {
       crow::json::wvalue output;
       VALIDATE_CREDENTIALS(requests, output);
@@ -228,6 +273,7 @@ class V1Api : public BaseQuoridorApi {
       }
       return output;
     });
+
 
 
 

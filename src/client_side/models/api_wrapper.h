@@ -8,36 +8,39 @@
 #include "../../common/base64.h"
 #include "../../common/constants.h"
 #include "user_client.h"
+#include "requests.h"
 #include <string>
 
-struct LoginError {
+struct ApiError {
   std::string error_message;
+
+};
+
+struct LoginError: ApiError {
 };
 
 class ApiWrapper {
 public:
   ApiWrapper(const std::string &login, const std::string &password);
-
-
   static std::string ReceiveNewMessages(int id);
   static bool IsThereNewMessage(int id);
   static std::variant<ApiWrapper, LoginError> SendNewMessage(std::string message);
   static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
   static std::variant<UserClient, LoginError> GetCurrentUserFromSharedApiWrapperInstance();
   std::variant<UserClient, LoginError> GetCurrentUser();
+  static std::variant<std::vector<UserClient>, ApiError> GetAllUsers();
+
+  std::optional<ApiError> AddFriend(const UserClient &user);
 
   static std::variant<ApiWrapper, LoginError> Login(const std::string &login, const std::string &password);
 
 
   static std::variant<ApiWrapper, LoginError> CreateAccount(const std::string &login, const std::string &password);
 
-  static std::optional<ApiWrapper> &GetShared() {
-    static std::optional<ApiWrapper> shared_instance = {};
-    return shared_instance;
-  }
+  static std::optional<ApiWrapper> &GetShared();
 
 private:
-  constexpr static const char url_[] =
+  constexpr static const char api_url_[] =
       "http://" LOCALHOST ":" SERVER_PORT_S "/api/v1/";
 
   std::string login_;

@@ -90,7 +90,7 @@ set(SOURCES
         ../common/models/user/user.cpp
         ../common/models/user/username.cpp
         ../common/models/user/abstract_validator.cpp
-        view_controllers/friend_list_view_controller.cpp view_controllers/friend_list_view_controller.h views/menu_views/friend_list_menu_view.cpp views/menu_views/friend_list_menu_view.h models/user_client.cpp models/user_client.h view_controllers/abstract_authed_menu_view_controller.cpp view_controllers/abstract_authed_menu_view_controller.h)
+        view_controllers/friend_list_view_controller.cpp view_controllers/friend_list_view_controller.h views/menu_views/friend_list_menu_view.cpp views/menu_views/friend_list_menu_view.h models/user_client.cpp models/user_client.h view_controllers/abstract_authed_menu_view_controller.cpp view_controllers/abstract_authed_menu_view_controller.h view_controllers/find_friend_view_controller.cpp view_controllers/find_friend_view_controller.h views/menu_views/find_new_friend_menu_view.cpp views/menu_views/find_new_friend_menu_view.h view_controllers/abstract_searchable_list_menu_view_controller.cpp view_controllers/abstract_searchable_list_menu_view_controller.h)
 
 
 

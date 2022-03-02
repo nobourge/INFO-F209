@@ -6,6 +6,7 @@
 #include "../models/api_wrapper.h"
 #include "../views/menu_views/friend_list_menu_view.h"
 #include "../views/menu_views/views/label.h"
+#include "find_friend_view_controller.h"
 #include <algorithm>
 
 FriendListViewController::FriendListViewController()
@@ -18,7 +19,7 @@ FriendListViewController::FriendListViewController()
 
   find_new_friends_button_ = std::make_shared<MenuButtonItem>(
       GetMenuView().get(), "Find new friends",
-      std::optional<std::shared_ptr<AbstractViewController>>(),
+      std::make_shared<FindFriendViewController>(),
       GetMenuView().get());
 
 }

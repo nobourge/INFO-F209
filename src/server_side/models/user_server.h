@@ -6,6 +6,7 @@
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_SERVER_H_
 
 #include "../../common/models/user/user.h"
+#include "database.h"
 
 class UserServer : public User, public Serializable<User> {
 public:
@@ -21,7 +22,11 @@ public:
   std::unique_ptr<crow::json::wvalue> Serialize() override;
   UserServer(const Username &username, uint32_t score);
 
+  bool AddFriendAndSaveToDb(const UserServer &user);
+
   std::vector<UserServer> GetFriendsWithoutLoadingTheirFriends();
+
+
 
 private:
   static std::unique_ptr<std::vector<UserServer>>

@@ -157,3 +157,8 @@ std::vector<UserServer> UserServer::GetFriendsWithoutLoadingTheirFriends() {
   }
   return output;
 }
+
+bool UserServer::AddFriendAndSaveToDb(const UserServer &user) {
+
+  DataBase::GetInstance()->InsertFriend(GetId(), user.GetId());
+}

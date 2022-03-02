@@ -1,3 +1,6 @@
+#ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_DATABASE_H_
+#define QUORIDOR_SRC_SERVER_SIDE_MODELS_DATABASE_H_
+
 #include "../../common/constants.h"
 #include "Player.h"
 #include "position.h"
@@ -41,3 +44,6 @@ public:
   void ReloadFile(std::string);
   records GetSelect(string);
 };
+
+
+#endif // QUORIDOR_SRC_SERVER_SIDE_MODELS_DATABASE_H_
