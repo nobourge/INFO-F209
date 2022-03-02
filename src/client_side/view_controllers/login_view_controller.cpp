@@ -61,7 +61,7 @@ void LoginMenuViewController::ReloadSubviews() {
       std::make_shared<Label>(GetMenuView().get(), ""), // separator
       login_button_,
       std::make_shared<MenuButtonItem>(
-          GetMenuView().get(), "Quit",
+          GetMenuView().get(), "Back",
           std::optional<std::shared_ptr<AbstractViewController>>{}, this),
   };
 
