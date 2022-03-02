@@ -23,7 +23,10 @@ class Message {
     return 0;
   }
 
-  Message(object_id_t message_id, object_id_t sender_id, object_id_t receiver_id, const std::string &content)
+  Message(object_id_t message_id,
+          object_id_t sender_id,
+          object_id_t receiver_id,
+          const std::string &content)
       : message_id(message_id),
         sender_id(sender_id),
         receiver_id(receiver_id),

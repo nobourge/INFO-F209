@@ -56,8 +56,9 @@ static crow::json::wvalue PreventSQLInjection(const std::string& msg)
 {
   crow::json::wvalue output;
 
-  for (auto & c : msg) {
-    int a = c;
+  for ( char const &c : msg) {
+    unsigned char uc = c;
+    int a = uc;
     if ((34 == a )
     || (39 == a )
     || (44 == a )
