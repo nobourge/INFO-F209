@@ -39,7 +39,7 @@ private:
   // actually a view controller or the program has to last_sqlite3_exit_code_
 
   std::shared_ptr<AbstractMenuView> menu_view_;
-  bool is_on_screen_ = false;
+  bool is_on_screen_ = false;//TODO is this needed?
 };
 
 #endif // QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_ABSTRACT_MENU_VIEW_CONTROLLER_H_
