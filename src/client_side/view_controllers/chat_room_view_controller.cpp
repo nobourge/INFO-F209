@@ -20,6 +20,7 @@ ChatRoomViewController::ChatRoomViewController(
 
 void ChatRoomViewController::TextChanged(TextField &sender,
                                          const std::string &old_text) {}
+
 void ChatRoomViewController::TextEditingFinished(TextField &sender) {
   if (&sender == message_text_field_.get()) {
     if (!message_text_field_->IsEmpty()) {
@@ -106,15 +107,18 @@ void ChatRoomViewController::FetchMessages() {
     messages_ = {};
   } else {
     error_message_ = {};
-    messages_ = std::move(std::get<std::vector<Message>>(fetch_res));
+    auto new_messages = std::get<std::vector<Message>>(fetch_res);
+    if (messages_ != new_messages) {
+      messages_ = std::move(new_messages);
+      UpdateSubviews();
+    }
   }
-  last_fetched_messages = GetTimeInMillis();
-  UpdateSubviews();
+  last_fetched_messages_ = GetTimeInMillis();
 }
 
 bool ChatRoomViewController::ShouldFetchMessages() const {
   return !error_message_.has_value() &&
-         last_fetched_messages + min_interval_between_fetches_millis <
+         last_fetched_messages_ + min_interval_between_fetches_millis <
              GetTimeInMillis();
 }
 long ChatRoomViewController::GetTimeInMillis() {

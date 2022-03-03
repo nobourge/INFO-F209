@@ -22,6 +22,7 @@ AbstractMenuViewController::Tick() {
     window = newwin(150, 150, 0, 0);
     Draw(window);
     keypad(window, true);
+    notimeout(window, true);
     RespondToKeyboardEvent(wgetch(window));
   }
   endwin();
@@ -51,3 +52,5 @@ void AbstractMenuViewController::RespondToKeyboardEvent(const int &character) {
 void AbstractMenuViewController::Draw(WINDOW *window) {
   GetMenuView()->Draw(window);
 }
+
+bool AbstractMenuViewController::IsOnScreen() const { return is_on_screen_; }

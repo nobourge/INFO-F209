@@ -29,10 +29,6 @@ class Button : public AbstractView {
   virtual void HandleClick();
 
  private:
-  // TODO: Migrate to smart pointers!
-  //       We might end up with a dangling pointer here if this
-  //       button doesn't have the same lifecycle as its delegate;
-
   std::function<void()> click_handler_;
 //  std::optional<ButtonDelegate *> delegate_;
 };

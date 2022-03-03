@@ -41,6 +41,9 @@ public:
 
   int64_t GetTimestamp() const { return timestamp_; }
 
+  bool operator==(const Message &rhs) const;
+  bool operator!=(const Message &rhs) const;
+
 private:
   object_id_t message_id;
 
