@@ -3,6 +3,8 @@
 int DataBase::friendsId = 0;
 int DataBase::ranking_id_ = 0;
 
+#define LOCK_DB std::lock_guard<std::mutex> __lock(accessing_db_)
+
 void DataBase::ReloadFile(std::string file) {
   ifstream ifile;
   int n = file.length();
@@ -36,25 +38,22 @@ static int select_callback(void *data, int argc, char **argv, char **colName) {
 }
 
 records DataBase::GetSelect(std::string statement) {
-
+  LOCK_DB;
   records res;
 
-  last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
 
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, statement.c_str(), select_callback, &res, nullptr);
 
-  if (last_sqlite3_exit_code_ != SQLITE_OK) {
-    std::cout << "Database error: " << sqlite3_errstr(last_sqlite3_exit_code_)
-              << std::endl;
-  } else {
-    std::cout << res.size() << " records returned" << std::endl;
-  }
+
+  HandleSQLErr(last_sqlite3_exit_code_);
+
   return res;
 }
 
 void DataBase::CreateTables() {
   // Create first table USER
+  LOCK_DB;
   sql_ = "CREATE TABLE IF NOT EXISTS USER("
          "ID INTEGER PRIMARY KEY, "
          "PSEUDO         TEXT    NOT NULL, "
@@ -107,28 +106,32 @@ void DataBase::CreateTables() {
 
   // Verify table
   VerifyTable("Creating tables");
-  // Close db
-  sqlite3_close(db_);
+
+  HandleSQLErr(last_sqlite3_exit_code_);
+
 }
 
-void DataBase::InsertMessage(const int sender_id, const int receiver_id, int64_t timestamp, const string content) {
-  last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
+void DataBase::InsertMessage(const int sender_id, const int receiver_id,
+                             int64_t timestamp, const string content) {
+  LOCK_DB;
+  sql_ = "INSERT INTO CONVERSATIONS (SENDER_ID, RECEIVER_ID, TIMESTAMP, "
+         "CONTENT) VALUES(" +
+         to_string(sender_id) + "," + to_string(receiver_id) + "," +
+         to_string(timestamp) + ",\"" + content + "\");";
 
-  sql_ = "INSERT INTO CONVERSATIONS (SENDER_ID, RECEIVER_ID, TIMESTAMP, CONTENT) VALUES(" +
-      to_string(sender_id) + "," + to_string(receiver_id) + "," + to_string(timestamp) + ",\"" +
-      content + "\");";
-
-  last_sqlite3_exit_code_ = sqlite3_exec(db_, sql_.c_str(), callback, nullptr, &messageError);
+  last_sqlite3_exit_code_ =
+      sqlite3_exec(db_, sql_.c_str(), callback, nullptr, &messageError);
 
   // Verify creation of table
   VerifyTable("Insert message into conversation");
-  // Close db
-  sqlite3_close(db_);
+
+  HandleSQLErr(last_sqlite3_exit_code_);
+
 }
 
 void DataBase::InsertPlayer(const string &username, const string &password,
                             int64_t timestamp, uint32_t score) {
-  last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
+  LOCK_DB;
   string pseudo; // TO be completed later by the server.
 
   // Insert in the table
@@ -140,12 +143,13 @@ void DataBase::InsertPlayer(const string &username, const string &password,
 
   // Verify creation of table
   VerifyTable("Insert values into player");
-  // Close db
-  sqlite3_close(db_);
+
+  HandleSQLErr(last_sqlite3_exit_code_);
+
 }
 
 void DataBase::InsertFriend(int user1_id, int user2_id) {
-  last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
+  LOCK_DB;
 
   string query = "SELECT * FROM FRIENDS;";
   sqlite3_exec(db_, query.c_str(), callback, nullptr, nullptr);
@@ -157,19 +161,17 @@ void DataBase::InsertFriend(int user1_id, int user2_id) {
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   VerifyTable("Insert values into friend");
-  sqlite3_close(db_);
 }
 
 std::unordered_set<uint32_t> DataBase::SearchFriends(object_id_t user_id) {
-  last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
 
   std::string current_user_id_str = std::to_string(user_id);
 
   string data("CALLBACK FUNCTION");
-  string query =
-      "SELECT MY_USER_ID, MY_FRIEND_ID FROM FRIENDS WHERE FRIENDS.MY_FRIEND_ID=" +
-      current_user_id_str + " OR FRIENDS.MY_USER_ID=" + current_user_id_str +
-      ";";
+  string query = "SELECT MY_USER_ID, MY_FRIEND_ID FROM FRIENDS WHERE "
+                 "FRIENDS.MY_FRIEND_ID=" +
+                 current_user_id_str +
+                 " OR FRIENDS.MY_USER_ID=" + current_user_id_str + ";";
 
   auto query_res = GetSelect(query);
   std::unordered_set<object_id_t> friends = {};
@@ -181,12 +183,15 @@ std::unordered_set<uint32_t> DataBase::SearchFriends(object_id_t user_id) {
 
     friends.insert(std::stoul(other_user_id_str));
   }
+
+  HandleSQLErr(last_sqlite3_exit_code_);
+
   return friends;
 }
 
 void DataBase::InsertRanking(int firstPlaceId, int secondPlaceId,
                              int thirdPlaceId, int fourthPlaceId) {
-  last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
+  LOCK_DB;
 
   string query = "SELECT * FROM RANKING;";
   sqlite3_exec(db_, query.c_str(), callback, nullptr, nullptr);
@@ -209,22 +214,22 @@ void DataBase::InsertRanking(int firstPlaceId, int secondPlaceId,
   }
 
   VerifyTable("Insert values into the ranking");
-  sqlite3_close(db_);
+  HandleSQLErr(last_sqlite3_exit_code_);
 }
 
 void DataBase::UpdateUser(uint32_t score, uint32_t id) {
-  last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
+  LOCK_DB;
 
   // Update Table
   string query = "UPDATE USER SET SCORE=" + to_string(score) +
                  " WHERE ID=" + to_string(id) + ";";
-  sqlite3_exec(db_, query.c_str(), callback, nullptr, nullptr);
+  last_sqlite3_exit_code_ = sqlite3_exec(db_, query.c_str(), callback, nullptr, nullptr);
 
-  sqlite3_close(db_);
+  HandleSQLErr(last_sqlite3_exit_code_);
 }
 
 void DataBase::InsertBoard(int nrOfPlayers, int nrOfWalls) {
-  last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
+  LOCK_DB;
 
   // Insert in the table
   string query = "SELECT * FROM BOARD;";
@@ -236,17 +241,12 @@ void DataBase::InsertBoard(int nrOfPlayers, int nrOfWalls) {
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   VerifyTable("Insert values into the board");
-  sqlite3_close(db_);
+
+  HandleSQLErr(last_sqlite3_exit_code_);
 }
 
 void DataBase::VerifyTable(const string &message) {
-  cout << message << " ";
-  if (last_sqlite3_exit_code_ != SQLITE_OK) {
-    std::cerr << "Error Create Table: "
-              << sqlite3_errstr(last_sqlite3_exit_code_) << std::endl;
-    sqlite3_free(messageError);
-  } else
-    std::cout << "Table created Successfully" << std::endl;
+  HandleSQLErr(last_sqlite3_exit_code_);
 }
 
 DataBase *DataBase::GetInstance() {
@@ -254,11 +254,21 @@ DataBase *DataBase::GetInstance() {
   static DataBase db;
   if (!initialized) {
     db.CreateTables();
+    sqlite3_extended_result_codes(db.db_, true);
     initialized = true;
   }
 
   return &db;
 }
-DataBase::~DataBase() {
-  sqlite3_close(db_);
+DataBase::~DataBase() { sqlite3_close(db_); }
+
+void DataBase::HandleSQLErr(int error_code) {
+  if (error_code != SQLITE_OK) {
+    auto extended_error_code = sqlite3_extended_errcode(db_);
+    if (extended_error_code == SQLITE_CANTOPEN) {
+      sqlite3_close(db_);
+      last_sqlite3_exit_code_ = sqlite3_open(DATABASE_FILE_NAME, &db_);
+    }
+    std::cout << "Database error: " << sqlite3_errmsg(db_) << std::endl;
+  }
 }

@@ -8,9 +8,10 @@
 
 std::vector<UserClient> ApiWrapper::GetUsersRanked(unsigned int max_num_users) {
   std::string url = api_url_;
-  url += "users/ranking?max_num_users=";
-  url += std::to_string(max_num_users);
-  auto json_res = Requests(url, {}).GetJson();
+  url += "users/ranking";
+  auto json_res =
+      Requests(url, {}, {{"max_num_users", std::to_string(max_num_users)}})
+          .GetJson();
   crow::json::rvalue users_json;
   try {
     users_json = json_res["users"];
@@ -74,15 +75,18 @@ std::optional<ApiError> ApiWrapper::SendNewMessage(const UserClient &other_user,
   }
 
   std::string url = api_url_;
-  url += "me/messages/send?user=" + other_user.GetUsername().GetValue() +
-         "&content=" + message;
+  url += "me/messages/send";
 
   auto &this_user = std::get<UserClient>(user_or_err);
 
   crow::json::rvalue request_result_json;
 
   try {
-    request_result_json = Requests(url, {{login_, password_}}).GetJson();
+    request_result_json =
+        Requests(url, {{login_, password_}},
+                 {{"user", other_user.GetUsername().GetValue()},
+                  {"content", message}})
+            .GetJson();
   } catch (...) {
     return ApiError{"A network error occurred"};
   }
@@ -194,12 +198,13 @@ std::optional<ApiError> ApiWrapper::AddFriend(const UserClient &user) {
   auto this_user = std::get<UserClient>(user_requests_result);
 
   std::string url = api_url_;
-  url += "me/add_friend?username=";
-  url += user.GetUsername().GetValue();
+  url += "me/add_friend";
 
   crow::json::rvalue response;
   try {
-    response = Requests(url, {{login_, password_}}).GetJson();
+    response = Requests(url, {{login_, password_}},
+                        {{"username", user.GetUsername().GetValue()}})
+                   .GetJson();
   } catch (const std::runtime_error &error) {
     return ApiError{"Network error"};
   }
@@ -234,14 +239,17 @@ ApiWrapper::GetConversationWithUser(const UserClient &other_user) {
   const auto kUser = std::get<UserClient>(kUserOrErr);
 
   std::string url = api_url_;
-  url += "me/messages?user=" + other_user.GetUsername().GetValue();
+  url += "me/messages";
 
   std::variant<std::vector<Message>, ApiError> ret =
       LoginError{"A network error occurred"};
 
   crow::json::rvalue request_result_json;
   try {
-    request_result_json = Requests(url, {{login_, password_}}).GetJson();
+    request_result_json =
+        Requests(url, {{login_, password_}},
+                 {{"user", other_user.GetUsername().GetValue()}})
+            .GetJson();
   } catch (const std::runtime_error &err) {
     return ApiError{err.what()};
   } catch (...) {

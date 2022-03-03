@@ -23,13 +23,13 @@ class DataBase {
   char *messageError;
   static int friendsId;
   static int ranking_id_;
+  std::mutex accessing_db_;
 
   DataBase() {}
 
-public:
-  virtual ~DataBase();
 
 public:
+  virtual ~DataBase();
   static DataBase *GetInstance();
 
   void CreateTables();
@@ -46,6 +46,7 @@ public:
   void UpdateUser(uint32_t score, uint32_t id);
   void ReloadFile(std::string);
   records GetSelect(string);
+  void HandleSQLErr(int error_code);
 };
 
 
