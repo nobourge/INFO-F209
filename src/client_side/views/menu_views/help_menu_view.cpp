@@ -5,9 +5,11 @@
 
 HelpMenuView::HelpMenuView() : AbstractMenuView(menu_name_) {
   UpdateSubviews({
-    std::make_shared<Label>(this, "This is a help label"),
-    std::make_shared<MenuButtonItem>(this, "Back", std::optional<std::shared_ptr<AbstractViewController>>{}, this),
-    std::make_shared<TextField>(this, "S P A C Y ", this)
+    std::make_shared<Label>(this, "Quoridor is played on a game board of 81 square spaces (9x9). Each player is represented by a pawn which begins at the center space of one edge of the board (in a two-player game, the pawns begin opposite each other). The objective is to be the first player to move their pawn to any space on the opposite side of the game board from which it begins. "),
+    std::make_shared<Label>(this, "The distinguishing characteristic of Quoridor is its twenty walls. Walls are flat two-space-wide pieces which can be placed in the groove that runs between the spaces."),
+    std::make_shared<Label>(this, "Walls block the path of all pawns, which must go around them. The walls are divided equally among the players at the start of the game, and once placed, cannot be moved or removed. On a turn, a player may either move their pawn, or, if possible, place a wall. "),
+
+    std::make_shared<MenuButtonItem>(this, "Back", std::optional<std::shared_ptr<AbstractViewController>>{}, this)
     }
   );
 }
