@@ -6,77 +6,23 @@
 #include "../models/api_wrapper.h"
 #include "../views/menu_views/friend_list_menu_view.h"
 #include "../views/menu_views/views/label.h"
+#include "chat_room_view_controller.h"
 #include "find_friend_view_controller.h"
 #include <algorithm>
 
 FriendListViewController::FriendListViewController()
-    : AbstractAuthedMenuViewController(std::make_shared<FriendListMenuView>()) {
-
-  filter_friends_field_ = std::make_shared<TextField>(
-      GetMenuView().get(), "", this);
-
-  filter_friends_field_->SetPlaceholder("Filter:");
-
+    : AbstractSearchableListMenuViewController(
+          std::make_shared<FriendListMenuView>()) {
   find_new_friends_button_ = std::make_shared<MenuButtonItem>(
       GetMenuView().get(), "Find new friends",
-      std::make_shared<FindFriendViewController>(),
-      GetMenuView().get());
-
+      std::make_shared<FindFriendViewController>(), GetMenuView().get());
 }
 
 void FriendListViewController::MenuViewWillAppear() {
-  AbstractAuthedMenuViewController::MenuViewWillAppear();
-  filter_friends_field_->SetInnerText("");
   FetchFriends();
-  FilterFriends();
-  ReloadViews();
+  CreateButtonViews();
+  AbstractSearchableListMenuViewController::MenuViewWillAppear();
 }
-
-void FriendListViewController::ReloadViews() {
-  std::vector<std::shared_ptr<AbstractView>> subviews = {};
-  std::vector<UserClient> friends = {};
-
-
-  if (error_message_.has_value()) {
-    subviews.push_back(
-        std::make_shared<Label>(GetMenuView().get(), *error_message_));
-  } else {
-    auto num_users_to_show = std::min(MAX_NUM_USERS_TO_SHOW, static_cast<int>(friends_to_display.size()));
-
-    for (int i = 0; i < num_users_to_show; i++) {
-      const auto &friend_username = friends_to_display.at(i).GetUsername().GetValue();
-      auto view = std::make_shared<Label>(GetMenuView().get(), friend_username);
-      subviews.push_back(view);
-    }
-
-    if (num_users_to_show < friends_to_display.size()) {
-      subviews.push_back(std::make_shared<Label>(GetMenuView().get(), "..."));
-
-      subviews.push_back(std::make_shared<Label>(GetMenuView().get(), "")); // separator
-    }
-
-    subviews.push_back(filter_friends_field_);
-
-    subviews.push_back(find_new_friends_button_);
-
-  }
-
-
-  subviews.push_back(std::make_shared<MenuButtonItem>(
-      GetMenuView().get(), "Back",
-      std::optional<std::shared_ptr<AbstractViewController>>{},
-      GetMenuView().get()));
-
-  GetMenuView()->UpdateSubviews(subviews);
-}
-
-void FriendListViewController::TextChanged(TextField &sender,
-                                           const std::string &old_text) {
-  FilterFriends();
-  ReloadViews();
-}
-
-void FriendListViewController::TextEditingFinished(TextField &sender) {}
 
 void FriendListViewController::FetchFriends() {
   auto user_fetch_attempt =
@@ -90,16 +36,44 @@ void FriendListViewController::FetchFriends() {
     friends_ = {};
   }
 }
+unsigned int FriendListViewController::GetNumItemsInList() const {
+  return friends_button_views_.size();
+}
+std::shared_ptr<AbstractView>
+FriendListViewController::GetViewAtIndex(unsigned int i) const {
+  return friends_button_views_.at(i);
+}
 
-void FriendListViewController::FilterFriends() {
-  const std::string filter = filter_friends_field_->GetUserEnteredText();
-
-  if (filter.empty()) {
-    friends_to_display = friends_;
-  } else {
-    friends_to_display = {};
-    std::copy_if(friends_.begin(), friends_.end(), std::back_inserter(friends_to_display), [&filter] (const UserClient &user) {
-      return user.GetUsername().GetValue().find(filter) != std::string::npos;
-    });
+std::vector<std::shared_ptr<AbstractView>>
+FriendListViewController::GetHeaderViews() const {
+  auto output = AbstractSearchableListMenuViewController::GetHeaderViews();
+  if (error_message_.has_value()) {
+    output.push_back(std::make_shared<Label>(GetMenuView().get(), *error_message_));
   }
+  return output;
+}
+
+std::vector<std::shared_ptr<AbstractView>>
+FriendListViewController::GetBottomViews() const {
+  auto output = AbstractSearchableListMenuViewController::GetBottomViews();
+  output.push_back(find_new_friends_button_);
+  return output;
+}
+
+bool FriendListViewController::ShouldDisplayList() const {
+  return !error_message_.has_value();
+}
+
+void FriendListViewController::CreateButtonViews() {
+  friends_button_views_.clear();
+  friends_button_views_.reserve(friends_.size());
+  for (auto &user : friends_) {
+    friends_button_views_.push_back(std::make_shared<MenuButtonItem>(
+        GetMenuView().get(), user.GetUsername().GetValue(),
+        std::make_shared<ChatRoomViewController>(user), GetMenuView().get()));
+  }
+}
+void FriendListViewController::MenuViewWillDisappear() {
+  AbstractMenuViewController::MenuViewWillDisappear();
+  friends_button_views_.clear();
 }

@@ -40,7 +40,7 @@ void FindFriendViewController::AddFriend(const UserClient &user) {
   ReloadSubviews();
 }
 
-unsigned int FindFriendViewController::GetNumViewsToSearch() const {
+unsigned int FindFriendViewController::GetNumItemsInList() const {
   return users_.size();
 }
 
@@ -65,13 +65,17 @@ void FindFriendViewController::CreateViewsForUsers() {
 }
 
 void FindFriendViewController::MenuViewWillAppear() {
+  error_message_ = {};
+  username_of_last_added_friend_ = {};
   FetchUsers();
   CreateViewsForUsers();
   AbstractSearchableListMenuViewController::MenuViewWillAppear();
 }
 
-std::optional<std::shared_ptr<AbstractView>>
-FindFriendViewController::GetHeaderView() const {
+std::vector<std::shared_ptr<AbstractView>>
+FindFriendViewController::GetHeaderViews() const {
+  auto output = AbstractSearchableListMenuViewController::GetHeaderViews();
+
   std::optional<std::string> header_label_message;
 
   if (error_message_.has_value())
@@ -80,10 +84,9 @@ FindFriendViewController::GetHeaderView() const {
     header_label_message = "New friend: " + *username_of_last_added_friend_;
 
   if (header_label_message.has_value())
-    return std::make_shared<Label>(GetMenuView().get(), *header_label_message);
-  else
-    return {};
+    output.push_back(std::make_shared<Label>(GetMenuView().get(), *header_label_message));
+  return output;
 }
-bool FindFriendViewController::DisplayList() const {
+bool FindFriendViewController::ShouldDisplayList() const {
   return !error_message_.has_value();
 }

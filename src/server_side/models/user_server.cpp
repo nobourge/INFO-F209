@@ -36,7 +36,8 @@ UserServer::GetRankingFromDB(int max_num_users) {
 }
 
 std::optional<UserServer>
-UserServer::InitFromDB(const Username &username, const std::optional<std::string> &password) {
+UserServer::InitFromDB(const Username &username,
+                       const std::optional<std::string> &password) {
   auto users_string_vector = DataBase::GetInstance()->GetSelect(
       "SELECT * FROM USER WHERE USER.PSEUDO=\"" + username.GetValue() + "\"");
 
@@ -77,8 +78,8 @@ bool UserServer::SaveToDB() {
       std::unordered_set<object_id_t> friends_changes = {};
 
       std::set_difference(
-          friends_in_db.begin(), friends_in_db.end(),
-          GetFriendsIds().begin(), GetFriendsIds().end(),
+          friends_in_db.begin(), friends_in_db.end(), GetFriendsIds().begin(),
+          GetFriendsIds().end(),
           std::inserter(friends_changes, friends_changes.end()));
       for (auto &changed_friend : friends_changes) {
         if (GetFriendsIds().contains(changed_friend)) {
@@ -103,7 +104,6 @@ std::unique_ptr<crow::json::wvalue> UserServer::Serialize() {
   (*json_output)["created_timestamp"] = GetCreationTimestamp();
   (*json_output)["score"] = GetScore();
 
-
   crow::json::wvalue friends_json;
 
   {
@@ -120,7 +120,6 @@ std::unique_ptr<crow::json::wvalue> UserServer::Serialize() {
 UserServer::UserServer(const Username &username, uint32_t score)
     : User(username, {}, score) {}
 
-
 std::optional<UserServer> UserServer::NewUser(const Username &username,
                                               const string &password) {
   // check if there is any user with same username in db
@@ -128,12 +127,15 @@ std::optional<UserServer> UserServer::NewUser(const Username &username,
   if (users_with_same_username.has_value()) {
     return {};
   }
-//  DataBase::GetInstance()->GetSelect(R"(INSERT INTO USER (PSEUDO, PASSWORD, TIMESTAMP, SCORE) VALUES ("test55", "haha", 5, 100);)");
-  DataBase::GetInstance()->InsertPlayer(username.GetValue(), password, GET_UNIX_TIMESTAMP, 0);
+  //  DataBase::GetInstance()->GetSelect(R"(INSERT INTO USER (PSEUDO, PASSWORD,
+  //  TIMESTAMP, SCORE) VALUES ("test55", "haha", 5, 100);)");
+  DataBase::GetInstance()->InsertPlayer(username.GetValue(), password,
+                                        GET_UNIX_TIMESTAMP, 0);
   return UserServer::InitFromDB(username);
 }
 
-std::optional<UserServer> UserServer::InitFromDbByIdWithoutFriendList(const uint32_t id) {
+std::optional<UserServer>
+UserServer::InitFromDbByIdWithoutFriendList(const uint32_t id) {
   auto users_string_vector = DataBase::GetInstance()->GetSelect(
       "SELECT * FROM USER WHERE USER.ID=" + std::to_string(id));
 
@@ -158,7 +160,46 @@ std::vector<UserServer> UserServer::GetFriendsWithoutLoadingTheirFriends() {
   return output;
 }
 
-bool UserServer::AddFriendAndSaveToDb(const UserServer &user) {
+void UserServer::AddFriendAndSaveToDb(const UserServer &user) {
 
   DataBase::GetInstance()->InsertFriend(GetId(), user.GetId());
 }
+
+std::vector<Message>
+UserServer::RetrieveMessagesWithUserFromDb(const UserServer &other_user) {
+  auto this_user_id = std::to_string(GetId());
+  auto messages_retrieval_result = DataBase::GetInstance()->GetSelect(
+      "SELECT * FROM CONVERSATIONS WHERE CONVERSATIONS.SENDER_ID = " +
+      this_user_id + " OR CONVERSATIONS.RECEIVER_ID = " + this_user_id + ";");
+
+  std::vector<Message> messages_;
+
+  try {
+    for (auto &message : messages_retrieval_result) {
+      messages_.emplace_back(message);
+    }
+  } catch (...) {
+    // TODO: Log fatal db error when logger will be added
+    std::cerr << "Error initializing messages from db query result"
+              << std::endl;
+    return {};
+  }
+  return messages_;
+}
+
+bool UserServer::SendMessageAndSaveToDb(const UserServer &receiver,
+                                        const string &message) {
+  bool ret = false;
+  if (
+    // cannot send message to ourselves
+      receiver.GetId() != GetId() &&
+          // can only send message to friends
+          receiver.GetFriendsIds().find(GetId()) !=
+              receiver.GetFriendsIds().end()) {
+    DataBase::GetInstance()->InsertMessage(GetId(), receiver.GetId(),
+                                           GET_UNIX_TIMESTAMP, message);
+    ret = true;
+  }
+  return ret;
+}
+

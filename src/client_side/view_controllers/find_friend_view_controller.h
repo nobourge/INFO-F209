@@ -14,15 +14,15 @@ class FindFriendViewController : public AbstractSearchableListMenuViewController
 public:
   FindFriendViewController();
 
-  [[nodiscard]] unsigned int GetNumViewsToSearch() const override;
+  [[nodiscard]] unsigned int GetNumItemsInList() const override;
   [[nodiscard]] std::shared_ptr<AbstractView> GetViewAtIndex(unsigned int i) const override;
 
 protected:
   void MenuViewWillAppear() override;
 
 public:
-  std::optional<std::shared_ptr<AbstractView>> GetHeaderView() const override;
-  bool DisplayList() const override;
+  std::vector<std::shared_ptr<AbstractView>> GetHeaderViews() const override;
+  bool ShouldDisplayList() const override;
 
 private:
 

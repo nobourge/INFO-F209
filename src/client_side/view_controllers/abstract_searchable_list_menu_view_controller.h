@@ -7,34 +7,25 @@
 
 #include "../views/menu_views/views/label.h"
 #include "../views/menu_views/views/text_field.h"
-#include "abstract_menu_view_controller.h"
+#include "abstract_list_menu_view_controller.h"
 
 class AbstractSearchableListMenuViewController
-    : public AbstractMenuViewController,
+    : public AbstractListMenuViewController,
       public TextFieldDelegate {
-
-  constexpr const static unsigned max_num_items_to_display = 3;
-
 public:
   AbstractSearchableListMenuViewController(
       const std::shared_ptr<AbstractMenuView> &view);
 
-  [[nodiscard]] virtual unsigned GetNumViewsToSearch() const = 0;
-  [[nodiscard]] virtual std::shared_ptr<AbstractView>
-  GetViewAtIndex(unsigned i) const = 0;
-  virtual std::optional<std::shared_ptr<AbstractView>> GetHeaderView() const  { return {}; }
-  virtual bool DisplayList() const { return true; }
-
-  [[nodiscard]] bool ShouldDisplayViewAtIndex(unsigned i) const;
+  [[nodiscard]] std::vector<std::shared_ptr<AbstractView>> GetBottomViews() const override;
 
   void TextChanged(TextField &sender, const std::string &old_text) override;
+
   void TextEditingFinished(TextField &sender) override;
+
+  bool ShouldDisplayViewAtIndex(unsigned int i) const override;
 
 protected:
   void MenuViewWillAppear() override;
-
-protected:
-  virtual void ReloadSubviews();
 
 private:
   [[nodiscard]] std::string

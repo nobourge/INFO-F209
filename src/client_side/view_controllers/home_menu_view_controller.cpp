@@ -15,9 +15,8 @@ HomeMenuViewController::HomeMenuViewController()
 
   GetMenuView()->UpdateSubviews({
       std::make_shared<MenuButtonItem>(pMenu, "Play", std::make_shared<GameModeSelectionMenuViewController>(), pMenu),
-      std::make_shared<MenuButtonItem>(pMenu, "Friend List", std::make_shared<FriendListViewController>(), pMenu),
-      std::make_shared<MenuButtonItem>(pMenu, "Chat Room", std::make_shared<ChatRoomViewController>(), pMenu),
-      std::make_shared<MenuButtonItem>(pMenu, "Ranking",std::make_shared<RankingMenuViewController>(), pMenu),
+      std::make_shared<MenuButtonItem>(pMenu, "Chat", std::make_shared<FriendListViewController>(), pMenu),
+      std::make_shared<MenuButtonItem>(pMenu, "Rankings",std::make_shared<RankingMenuViewController>(), pMenu),
       std::make_shared<MenuButtonItem>(pMenu, "Help", std::make_shared<HelpViewController>(), pMenu),
       logout_button_
   });

@@ -85,9 +85,9 @@ void CreateAccountViewController::PresentController(
       // passwords match
       auto api_wrapper = ApiWrapper::CreateAccount(username, password);
 
-      if (holds_alternative<LoginError>(api_wrapper)) {
+      if (holds_alternative<ApiError>(api_wrapper)) {
         // error occurred
-        error_message_ = get<LoginError>(api_wrapper).error_message;
+        error_message_ = get<ApiError>(api_wrapper).error_message;
       } else {
         // success creating account!
         error_message_ = {};

@@ -5,32 +5,43 @@
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_MESSAGE_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_MESSAGE_H_
 
-#include <string>
-#include "user.h"
-#include "../../utils.h"
+#include "../../../server_side/models/database.h"
 #include "../../constants.h"
+#include "../../utils.h"
+#include "user.h"
+#include <string>
 
-class Message {
- public:
-  static std::shared_ptr<Message> SendMessage(const std::shared_ptr<User> &sender,
-                                              const std::shared_ptr<User> &receiver,
-                                              const std::string &content) {
-    return std::shared_ptr<Message>(new Message(GetMaxId() + 1, sender->GetId(), receiver->GetId(), content));
-  }
+class Message : public Serializable<Message> {
+public:
+  std::unique_ptr<crow::json::wvalue> Serialize() override;
 
- protected:
-  static uint32_t GetMaxId() {
-    return 0;
-  }
+  static std::optional<Message> FromJson(const crow::json::rvalue &json);
 
-  Message(object_id_t message_id, object_id_t sender_id, object_id_t receiver_id, const std::string &content)
-      : message_id(message_id),
-        sender_id(sender_id),
-        receiver_id(receiver_id),
-        timestamp_(GET_UNIX_TIMESTAMP),
-        content_(content) {}
+  Message(object_id_t message_id, object_id_t sender_id,
+          object_id_t receiver_id, const std::string &content)
+      : message_id(message_id), sender_id(sender_id), receiver_id(receiver_id),
+        timestamp_(GET_UNIX_TIMESTAMP), content_(content) {}
 
- private:
+  Message(object_id_t message_id, object_id_t sender_id,
+          object_id_t receiver_id, int64_t timestamp,
+          const std::string &content)
+      : message_id(message_id), sender_id(sender_id), receiver_id(receiver_id),
+        timestamp_(timestamp), content_(content) {}
+
+  Message(const std::vector<std::string> &db_row_string_vector)
+      : message_id(stoul(db_row_string_vector.at(0))),
+        sender_id(stoul(db_row_string_vector.at(1))),
+        receiver_id(stoul(db_row_string_vector.at(2))),
+        timestamp_(stol(db_row_string_vector.at(3))),
+        content_(db_row_string_vector.at(4)) {}
+
+  const std::string &GetContent() const { return content_; }
+
+  object_id_t GetSenderId() const { return sender_id; }
+
+  int64_t GetTimestamp() const { return timestamp_; }
+
+private:
   object_id_t message_id;
 
   object_id_t sender_id;
@@ -40,4 +51,4 @@ class Message {
   std::string content_;
 };
 
-#endif //QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_MESSAGE_H_
+#endif // QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_MESSAGE_H_

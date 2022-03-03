@@ -12,6 +12,8 @@ set(HEADERS
         view_controllers/home_menu_view_controller.h
         view_controllers/ranking_view_controller.h
         view_controllers/abstract_view_controller.h
+        view_controllers/abstract_list_menu_view_controller.h
+        view_controllers/abstract_searchable_list_menu_view_controller.h
         view_controllers/login_view_controller.h
         view_controllers/create_account_view_controller.h
         view_controllers/start_view_controller.h
@@ -43,6 +45,7 @@ set(HEADERS
 
         ../common/constants.h
         ../common/models/user/user.h
+        ../common/models/user/message.h
         ../common/models/user/username.h
         ../common/models/serializable.h
         ../common/models/user/abstract_validator.h
@@ -54,6 +57,8 @@ set(SOURCES
         view_controllers/abstract_view_controller.cpp
         view_controllers/ranking_view_controller.cpp
         view_controllers/abstract_menu_view_controller.cpp
+        view_controllers/abstract_list_menu_view_controller.cpp
+        view_controllers/abstract_searchable_list_menu_view_controller.cpp
         view_controllers/game_mode_selection_menu_view_controller.cpp
         view_controllers/login_view_controller.cpp
         view_controllers/help_view_controller.cpp
@@ -88,9 +93,10 @@ set(SOURCES
         ../server_side/models/database.cpp
 
         ../common/models/user/user.cpp
+        ../common/models/user/message.cpp
         ../common/models/user/username.cpp
         ../common/models/user/abstract_validator.cpp
-        view_controllers/friend_list_view_controller.cpp view_controllers/friend_list_view_controller.h views/menu_views/friend_list_menu_view.cpp views/menu_views/friend_list_menu_view.h models/user_client.cpp models/user_client.h view_controllers/abstract_authed_menu_view_controller.cpp view_controllers/abstract_authed_menu_view_controller.h view_controllers/find_friend_view_controller.cpp view_controllers/find_friend_view_controller.h views/menu_views/find_new_friend_menu_view.cpp views/menu_views/find_new_friend_menu_view.h view_controllers/abstract_searchable_list_menu_view_controller.cpp view_controllers/abstract_searchable_list_menu_view_controller.h)
+        view_controllers/friend_list_view_controller.cpp view_controllers/friend_list_view_controller.h views/menu_views/friend_list_menu_view.cpp views/menu_views/friend_list_menu_view.h models/user_client.cpp models/user_client.h view_controllers/abstract_authed_menu_view_controller.cpp view_controllers/abstract_authed_menu_view_controller.h view_controllers/find_friend_view_controller.cpp view_controllers/find_friend_view_controller.h views/menu_views/find_new_friend_menu_view.cpp views/menu_views/find_new_friend_menu_view.h view_controllers/abstract_searchable_list_menu_view_controller.cpp view_controllers/abstract_searchable_list_menu_view_controller.h view_controllers/abstract_list_menu_view_controller.cpp view_controllers/abstract_list_menu_view_controller.h)
 
 
 

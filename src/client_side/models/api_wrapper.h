@@ -9,6 +9,7 @@
 #include "../../common/constants.h"
 #include "user_client.h"
 #include "requests.h"
+#include "../../common/models/user/message.h"
 #include <string>
 
 struct ApiError {
@@ -22,20 +23,27 @@ struct LoginError: ApiError {
 class ApiWrapper {
 public:
   ApiWrapper(const std::string &login, const std::string &password);
-  static std::string ReceiveNewMessages(int id);
-  static bool IsThereNewMessage(int id);
-  static std::variant<ApiWrapper, LoginError> SendNewMessage(std::string message);
-  static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
   static std::variant<UserClient, LoginError> GetCurrentUserFromSharedApiWrapperInstance();
+
+
   std::variant<UserClient, LoginError> GetCurrentUser();
+
+
+  // general purpose
   static std::variant<std::vector<UserClient>, ApiError> GetAllUsers();
+  static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
 
-  std::optional<ApiError> AddFriend(const UserClient &user);
 
+  // account
   static std::variant<ApiWrapper, LoginError> Login(const std::string &login, const std::string &password);
+  static std::variant<ApiWrapper, ApiError> CreateAccount(const std::string &login, const std::string &password);
 
 
-  static std::variant<ApiWrapper, LoginError> CreateAccount(const std::string &login, const std::string &password);
+  // friends
+  std::optional<ApiError> AddFriend(const UserClient &user);
+  std::variant<std::vector<Message>, ApiError> GetConversationWithUser(const UserClient &other_user);
+  std::optional<ApiError> SendNewMessage(const UserClient &user, const string &message);
+
 
   static std::optional<ApiWrapper> &GetShared();
 

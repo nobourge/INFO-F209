@@ -26,10 +26,6 @@ std::vector<UserClient> ApiWrapper::GetUsersRanked(unsigned int max_num_users) {
   return users;
 }
 
- std::string ApiWrapper::ReceiveNewMessages(int id){
-  return "wip";
-}
-
 ApiWrapper::ApiWrapper(const std::string &login, const std::string &password)
     : login_(login), password_(password) {}
 
@@ -61,7 +57,6 @@ ApiWrapper::Login(const std::string &login, const std::string &password) {
 
   auto user = api_wrapper.GetCurrentUser();
 
-
   if (holds_alternative<LoginError>(user)) {
     return std::get<LoginError>(user);
   } else {
@@ -69,57 +64,61 @@ ApiWrapper::Login(const std::string &login, const std::string &password) {
     return api_wrapper;
   }
 }
-std::variant<ApiWrapper, LoginError>
-ApiWrapper::SendNewMessage(std::string message) {
-  if (ApiWrapper::GetShared().has_value()) {
-    auto optional_user = ApiWrapper::GetCurrentUserFromSharedApiWrapperInstance();
-    if (holds_alternative<UserClient>(optional_user)) {
-      UserClient &user = std::get<UserClient>(optional_user);
-      std::string login=user.GetUsername().GetValue();
-      std::string password=user.GetPassword().value();
-      std::string url = api_url_;
-      url += "new_message";
-      std::variant<ApiWrapper, LoginError> ret =
-          LoginError{"A network error occurred"};
-      crow::json::rvalue request_result_json;
 
+std::optional<ApiError> ApiWrapper::SendNewMessage(const UserClient &other_user,
+                                                   const string &message) {
+  auto user_or_err = ApiWrapper::GetCurrentUserFromSharedApiWrapperInstance();
 
-      try {
-        request_result_json = Requests(url, {{login, password}}).GetJson();
-      } catch (const std::runtime_error &) {
-        return ret;
-      }
-
-      if (request_result_json["success"].b()) {
-        GetShared() = ApiWrapper(user.GetUsername().GetValue(), user.GetPassword().value());
-        ret = *GetShared();
-      } else {
-        ret = LoginError{static_cast<std::string>(request_result_json["error"])};
-      }
-
-
-      return ret;
-    }
-
+  if (holds_alternative<LoginError>(user_or_err)) {
+    return ApiError{std::get<LoginError>(user_or_err).error_message};
   }
+
+  std::string url = api_url_;
+  url += "me/messages/send?user=" + other_user.GetUsername().GetValue() +
+         "&content=" + message;
+
+  auto &this_user = std::get<UserClient>(user_or_err);
+
+  crow::json::rvalue request_result_json;
+
+  try {
+    request_result_json = Requests(url, {{login_, password_}}).GetJson();
+  } catch (...) {
+    return ApiError{"A network error occurred"};
+  }
+
+  bool success = false;
+
+  try {
+    success = request_result_json["success"].b();
+  } catch (const std::runtime_error &) {
+    return ApiError{"Unknown error"};
+  }
+
+  if (!success) {
+    std::string error_message = "Unknown error";
+    try {
+      error_message = static_cast<std::string>(request_result_json["error"]);
+    } catch (const std::runtime_error &) {
+    }
+    return ApiError{error_message};
+  }
+
+  // successfully sent message!
+
+  return {};
 }
 
-bool ApiWrapper::IsThereNewMessage(int id) {
-  return false;
-}
-
-
-std::variant<ApiWrapper, LoginError>
+std::variant<ApiWrapper, ApiError>
 ApiWrapper::CreateAccount(const std::string &login,
-                         const std::string &password) {
+                          const std::string &password) {
 
   std::string url = api_url_;
   url += "new_user";
 
-  std::variant<ApiWrapper, LoginError> ret =
+  std::variant<ApiWrapper, ApiError> ret =
       LoginError{"A network error occurred"};
   crow::json::rvalue request_result_json;
-
 
   try {
     request_result_json = Requests(url, {{login, password}}).GetJson();
@@ -131,9 +130,8 @@ ApiWrapper::CreateAccount(const std::string &login,
     GetShared() = ApiWrapper(login, password);
     ret = *GetShared();
   } else {
-    ret = LoginError{static_cast<std::string>(request_result_json["error"])};
+    ret = ApiError{static_cast<std::string>(request_result_json["error"])};
   }
-
 
   return ret;
 }
@@ -146,7 +144,7 @@ ApiWrapper::GetCurrentUserFromSharedApiWrapperInstance() {
       return std::get<UserClient>(optional_user);
     } else {
       return LoginError{"User is not signed in: " +
-              std::get<LoginError>(optional_user).error_message};
+                        std::get<LoginError>(optional_user).error_message};
     }
   } else {
     return LoginError{"Sign in first"};
@@ -200,7 +198,7 @@ std::optional<ApiError> ApiWrapper::AddFriend(const UserClient &user) {
   url += user.GetUsername().GetValue();
 
   crow::json::rvalue response;
-  try{
+  try {
     response = Requests(url, {{login_, password_}}).GetJson();
   } catch (const std::runtime_error &error) {
     return ApiError{"Network error"};
@@ -214,11 +212,71 @@ std::optional<ApiError> ApiWrapper::AddFriend(const UserClient &user) {
     if (!success) {
       error_message = response["error"].s();
     }
-  } catch (const std::runtime_error &){}
+  } catch (const std::runtime_error &) {
+  }
 
   if (success) {
     return {};
   } else {
     return ApiError{error_message};
   }
+}
+
+std::variant<std::vector<Message>, ApiError>
+ApiWrapper::GetConversationWithUser(const UserClient &other_user) {
+
+  std::string error_message = "An unknown error occurred";
+
+  const auto kUserOrErr = GetCurrentUser();
+  if (std::holds_alternative<LoginError>(kUserOrErr)) {
+    return ApiError{std::get<LoginError>(kUserOrErr).error_message};
+  }
+  const auto kUser = std::get<UserClient>(kUserOrErr);
+
+  std::string url = api_url_;
+  url += "me/messages?user=" + other_user.GetUsername().GetValue();
+
+  std::variant<std::vector<Message>, ApiError> ret =
+      LoginError{"A network error occurred"};
+
+  crow::json::rvalue request_result_json;
+  try {
+    request_result_json = Requests(url, {{login_, password_}}).GetJson();
+  } catch (const std::runtime_error &err) {
+    return ApiError{err.what()};
+  } catch (...) {
+    return ApiError{"A network error occurred"};
+  }
+
+  bool success = false;
+  std::vector<Message> messages;
+
+  try {
+    success = request_result_json["success"].b();
+    if (!success) {
+      error_message = request_result_json["error"].s();
+    }
+  } catch (const std::runtime_error &err) {
+    success = false;
+  }
+
+  if (success) {
+    try {
+      for (auto &message_json : request_result_json["messages"]) {
+        auto message = Message::FromJson(message_json);
+        if (message.has_value()) {
+          messages.push_back(*message);
+        }
+      }
+    } catch (const std::runtime_error &err) {
+      // there are no messages, the server sent null
+      messages = {};
+    }
+  }
+
+  if (!success) {
+    return ApiError{error_message};
+  }
+
+  return messages;
 }
