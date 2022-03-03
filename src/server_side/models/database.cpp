@@ -44,8 +44,6 @@ records DataBase::GetSelect(std::string statement) {
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, statement.c_str(), select_callback, &res, nullptr);
 
-  sqlite3_close(db_);
-
   if (last_sqlite3_exit_code_ != SQLITE_OK) {
     std::cout << "Database error: " << sqlite3_errstr(last_sqlite3_exit_code_)
               << std::endl;
@@ -71,7 +69,7 @@ void DataBase::CreateTables() {
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
   // Create second table BOARD
   sql_ = "CREATE TABLE IF NOT EXISTS BOARD("
-         "ID PRIMARY KEY NOT NULL, "
+         "ID INTEGER PRIMARY KEY, "
          "PAWNS           INT    NOT NULL, "
          "WALLS        INT NOT NULL)";
 
@@ -80,7 +78,7 @@ void DataBase::CreateTables() {
 
   // Create third table RANKING
   sql_ = "CREATE TABLE IF NOT EXISTS RANKING("
-         "ID  INT PRIMARY KEY NOT NULL, "
+         "ID INTEGER PRIMARY KEY, "
          "FIRST_PLACE           INT    NOT NULL, "
          "SECOND_PLACE           INT    NOT NULL, "
          "THIRD_PLACE           INT    NOT NULL, "
@@ -90,7 +88,7 @@ void DataBase::CreateTables() {
 
   // Create fourth table FRIENDS
   sql_ = "CREATE TABLE IF NOT EXISTS FRIENDS("
-         "ID INT PRIMARY KEY NOT NULL, "
+         "ID INTEGER PRIMARY KEY, "
          "MY_USER_ID INT NOT NULL, "
          "MY_FRIEND_ID INT NOT NULL, "
          "PORT        INT NOT NULL)";
@@ -260,4 +258,7 @@ DataBase *DataBase::GetInstance() {
   }
 
   return &db;
+}
+DataBase::~DataBase() {
+  sqlite3_close(db_);
 }

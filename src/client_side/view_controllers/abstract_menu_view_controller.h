@@ -12,6 +12,9 @@
 class AbstractMenuViewController : public AbstractViewController,
                                    public MenuViewDelegate {
 public:
+
+  static constexpr const unsigned refresh_rate_in_ms = 50;  // 20 fps
+
   explicit AbstractMenuViewController(
       const std::shared_ptr<AbstractMenuView> &);
 

@@ -4,8 +4,9 @@
 
 #include "abstract_menu_view_controller.h"
 
-AbstractMenuViewController::AbstractMenuViewController(const std::shared_ptr<AbstractMenuView> &view) : AbstractViewController(),
-                                                                                        MenuViewDelegate(), menu_view_(view) {
+AbstractMenuViewController::AbstractMenuViewController(
+    const std::shared_ptr<AbstractMenuView> &view)
+    : AbstractViewController(), MenuViewDelegate(), menu_view_(view) {
   menu_view_->SetDelegate(this);
 }
 std::optional<std::shared_ptr<AbstractViewController>>
@@ -17,12 +18,13 @@ AbstractMenuViewController::Tick() {
   noecho();
 
   MenuViewWillAppear();
+  window = newwin(150, 150, 0, 0);
 
   while (!next_view_controller_.has_value()) {
-    window = newwin(150, 150, 0, 0);
+    werase(window);
     Draw(window);
     keypad(window, true);
-    notimeout(window, true);
+    wtimeout(window, 1000);
     RespondToKeyboardEvent(wgetch(window));
   }
   endwin();
@@ -30,13 +32,15 @@ AbstractMenuViewController::Tick() {
 
   next_view_controller_ = {};
 
+#undef GET_TIME_IN_MILLIS
 
   MenuViewWillDisappear();
   return next_vc;
 }
 
-
-void AbstractMenuViewController::PresentViewController(std::optional<std::shared_ptr<AbstractViewController>> next_view_controller) {
+void AbstractMenuViewController::PresentViewController(
+    std::optional<std::shared_ptr<AbstractViewController>>
+        next_view_controller) {
   next_view_controller_ = next_view_controller;
 }
 

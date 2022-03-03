@@ -17,7 +17,7 @@ class ChatRoomViewController : public AbstractAuthedMenuViewController,
                                public TextFieldDelegate {
 public:
 
-  static const constexpr long min_interval_between_fetches_millis = 250;
+  static const constexpr long min_interval_between_fetches_millis = 750;
   static const constexpr int max_num_messages_to_display = 3;
 
   ChatRoomViewController(const UserClient &user_to_chat_with);

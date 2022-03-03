@@ -27,6 +27,9 @@ class DataBase {
   DataBase() {}
 
 public:
+  virtual ~DataBase();
+
+public:
   static DataBase *GetInstance();
 
   void CreateTables();
