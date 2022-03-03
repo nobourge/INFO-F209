@@ -9,9 +9,7 @@ Button::Button(const std::optional<EventResponder *> &parent,
                const std::function<void()> &click_handler) : AbstractView(parent, title),
                                                              click_handler_(click_handler) {}
 
-void Button::Click() {
-  AbstractView::SetState(AbstractView::SELECTED);
-}
+
 
 bool Button::RespondToEvent(const int &character) {
   if (character == '\n') {

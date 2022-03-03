@@ -20,7 +20,6 @@ class Button : public AbstractView {
          const std::string &title,
          const std::function<void()> &click_handler = {});
 
-  void Click();
 
 //  void SetDelegate(const std::optional<ButtonDelegate *> &delegate);
 

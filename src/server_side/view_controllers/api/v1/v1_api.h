@@ -251,7 +251,6 @@ protected:
       std::string username_str = std::get<0>(*username_and_password);
       std::string password_str = std::get<1>(*username_and_password);
 
-      // todo: check input for sql injection
       AreCharsValid(username_str);
       AreCharsValid(password_str);
 
