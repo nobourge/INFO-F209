@@ -28,13 +28,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 97,
+				"line" : 125,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 98,
+				"line" : 126,
 				"parent" : 0
 			}
 		]
@@ -62,12 +62,8 @@
 			},
 			"sourceIndexes" : 
 			[
-				36,
-				37,
-				38,
 				39,
 				40,
-				41,
 				42,
 				43,
 				44,
@@ -76,7 +72,6 @@
 				47,
 				48,
 				49,
-				50,
 				51,
 				52,
 				53,
@@ -87,23 +82,30 @@
 				58,
 				59,
 				60,
-				61,
 				62,
-				63,
 				64,
 				65,
-				66,
 				67,
-				68,
 				69,
 				70,
 				71,
+				72,
 				73,
+				74,
 				75,
+				76,
 				77,
+				78,
 				79,
+				80,
 				81,
-				83
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88
 			]
 		}
 	],
@@ -191,25 +193,23 @@
 				33,
 				34,
 				35,
-				72,
-				74,
-				76,
-				78,
-				80,
-				82,
-				84
+				36,
+				37,
+				38,
+				41,
+				50,
+				61,
+				63,
+				66,
+				68
 			]
 		},
 		{
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				36,
-				37,
-				38,
 				39,
 				40,
-				41,
 				42,
 				43,
 				44,
@@ -218,7 +218,6 @@
 				47,
 				48,
 				49,
-				50,
 				51,
 				52,
 				53,
@@ -229,28 +228,55 @@
 				58,
 				59,
 				60,
-				61,
 				62,
-				63,
 				64,
 				65,
-				66,
 				67,
-				68,
 				69,
 				70,
 				71,
+				72,
 				73,
+				74,
 				75,
+				76,
 				77,
+				78,
 				79,
+				80,
 				81,
-				83
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88
 			]
 		}
 	],
 	"sources" : 
 	[
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/models/ranking.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/models/api_wrapper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/models/requests.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/client_mvc_factory.h",
+			"sourceGroupIndex" : 0
+		},
 		{
 			"backtrace" : 1,
 			"path" : "src/client_side/view_controllers/abstract_menu_view_controller.h",
@@ -269,6 +295,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/client_side/view_controllers/abstract_view_controller.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/view_controllers/abstract_list_menu_view_controller.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/view_controllers/abstract_searchable_list_menu_view_controller.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -299,6 +335,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/client_side/view_controllers/game_view_controller.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/view_controllers/help_view_controller.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -373,32 +414,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/client_side/view_controllers/help_view_controller.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"path" : "src/client_side/views/menu_views/views/text_field.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/models/ranking.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/models/api_wrapper.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/models/requests.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/client_mvc_factory.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -414,6 +430,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/common/models/user/user.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/common/models/user/message.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -440,7 +461,30 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/client_side/view_controllers/home_menu_view_controller.cpp",
+			"path" : "src/client_side/models/user_client.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/models/user_client.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/models/ranking.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/models/api_wrapper.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/models/requests.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -452,13 +496,42 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/client_side/view_controllers/ranking_view_controller.cpp",
+			"path" : "src/client_side/view_controllers/abstract_searchable_list_menu_view_controller.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/view_controllers/abstract_list_menu_view_controller.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/client_side/view_controllers/abstract_menu_view_controller.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/view_controllers/abstract_authed_menu_view_controller.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/view_controllers/abstract_authed_menu_view_controller.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/view_controllers/ranking_view_controller.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/view_controllers/home_menu_view_controller.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -506,6 +579,56 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/client_side/view_controllers/friend_list_view_controller.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/view_controllers/friend_list_view_controller.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/view_controllers/find_friend_view_controller.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/view_controllers/find_friend_view_controller.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/views/menu_views/find_new_friend_menu_view.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/views/menu_views/friend_list_menu_view.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/views/menu_views/friend_list_menu_view.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/client_side/views/menu_views/game_view.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/client_side/views/menu_views/find_new_friend_menu_view.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/client_side/views/menu_views/chat_room_menu_view.cpp",
 			"sourceGroupIndex" : 1
 		},
@@ -518,25 +641,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/client_side/views/menu_views/views/menu_button_item.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/views/menu_views/views/first_responder.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "src/client_side/views/menu_views/create_account_menu_view.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/views/menu_views/views/abstract_view.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -560,12 +665,6 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/client_side/views/menu_views/views/text_field.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "src/client_side/views/menu_views/login_menu_view.cpp",
 			"sourceGroupIndex" : 1
 		},
@@ -584,6 +683,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/client_side/views/menu_views/views/abstract_view.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/client_side/views/menu_views/views/button.cpp",
 			"sourceGroupIndex" : 1
 		},
@@ -596,25 +701,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/client_side/views/menu_views/game_view.cpp",
+			"path" : "src/client_side/views/menu_views/views/menu_button_item.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/client_side/models/ranking.cpp",
+			"path" : "src/client_side/views/menu_views/views/first_responder.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/client_side/models/api_wrapper.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/models/requests.cpp",
+			"path" : "src/client_side/views/menu_views/views/text_field.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -632,6 +731,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/common/models/user/message.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/common/models/user/username.cpp",
 			"sourceGroupIndex" : 1
 		},
@@ -640,83 +745,6 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/common/models/user/abstract_validator.cpp",
 			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/view_controllers/friend_list_view_controller.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/view_controllers/friend_list_view_controller.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/views/menu_views/friend_list_menu_view.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/views/menu_views/friend_list_menu_view.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/models/user_client.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/models/user_client.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/view_controllers/abstract_authed_menu_view_controller.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/view_controllers/abstract_authed_menu_view_controller.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/view_controllers/find_friend_view_controller.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/view_controllers/find_friend_view_controller.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/views/menu_views/find_new_friend_menu_view.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/views/menu_views/find_new_friend_menu_view.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_side/view_controllers/abstract_searchable_list_menu_view_controller.cpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/client_side/view_controllers/abstract_searchable_list_menu_view_controller.h",
-			"sourceGroupIndex" : 0
 		}
 	],
 	"type" : "EXECUTABLE"
