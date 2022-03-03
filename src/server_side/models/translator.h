@@ -5,6 +5,8 @@
 using namespace std;
 
 class translator{
+  //should be a singleton
+
 public:
   ///
   /// \return
@@ -15,4 +17,7 @@ public:
     ///
     /// \return
     Position translateMove(string,int=9);
+
+    std::string PositionToMove(const Position, int=9);
+
 };

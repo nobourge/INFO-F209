@@ -5,7 +5,6 @@
 using namespace std;
 
 Player::Player(Position playerPos,DIRECTION dr):playerPos(playerPos),dr(dr){
-
 }
 
 ///
@@ -173,4 +172,13 @@ Position Player::getPlayerPos(){
 /// \return
 DIRECTION Player::getGoal() const {
   return dr;
+}
+
+
+void Player::DecNrOfWalls() {
+  nbWalls--;
+}
+
+int Player::GetNrOfWalls() {
+  return nbWalls;
 }

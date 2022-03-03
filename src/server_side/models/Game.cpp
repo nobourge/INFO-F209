@@ -20,6 +20,7 @@ void Game::StartTheGame(){
     //When player connects from the server ... TODO
 
     players.push_back(make_shared<Player>(Position{4,8},NORTH));
+    players.push_back(make_shared<Player>(Position{4,0},SOUTH));
     //For now, we have only 1 player
     currentPlayer=players[0];
     cout<<endl;
@@ -58,7 +59,7 @@ void Game::SwitchCurrentPlayer(){
         endGame();
     }
 
-    system("clear"); //clears the terminal.
+    // system("clear"); //clears the terminal.
 
     if(gameMode==IA){
         if(IaPlayer){
@@ -164,6 +165,7 @@ int Game::getScore(){
 
 void Game::endGame(){
     //Server stuff
+    board->SaveToDB();
     gameOn=false;
 }
 
@@ -184,6 +186,11 @@ void Game::playCoup(){
         cout<<"Do you want to move your player or place a wall?"<<endl<<"To make your choice please write W (place wall) or M (move player)"<<endl;
         char enter=input.getInput();
         if(enter=='W'){
+            if (currentPlayer->GetNrOfWalls() <= 0){
+              cout<<"out of walls"<<endl;
+              break;
+            }
+
             string placement=input.getInputWall();
             DIRECTION direct;
             pair<Position,Position> wall=currentPlayer->placeWall(placement);
@@ -207,9 +214,12 @@ void Game::playCoup(){
             }
 
             //Check is the placement is possible with isWallPossible();
-            board->PlaceWall(wall.first,wall.second,direct);
-            currentPlayer->increaseScore();
-            on=true;
+            if (board->IsWallPossible(wall.first,wall.second,direct)){
+              board->PlaceWall(wall.first,wall.second,direct);
+              currentPlayer->increaseScore();
+              on=true;
+              currentPlayer->DecNrOfWalls();
+            }
 
         }else if(enter=='M'){
                 DIRECTION direction=input.getInputMovement();

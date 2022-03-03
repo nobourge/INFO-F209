@@ -17,8 +17,10 @@
 #include <string>
 #include <random>
 #include <algorithm>
+#include "database.h"
+#include "database.h"
 
-class Board : public std::enable_shared_from_this<Board> {
+class Board : public std::enable_shared_from_this<Board>{
  public:
 
   // std::variant<Cell, Wall> operator [](const Position &) const;
@@ -28,6 +30,18 @@ class Board : public std::enable_shared_from_this<Board> {
   // return a Cell and dealing with walls elsewhere is easier
 
   Board(std::vector<std::shared_ptr<Player>>, std::vector<Position>);
+  Board(std::string);
+
+  // should be implementing DatabaseCompatible
+  void SaveToDB() const;
+  std::string GetSerializedString() const;
+  std::string GetPositionSerialization(const Position) const;
+  std::string GetWallsSerialization() const;
+  std::vector<Position> GetWallFromWallSerialization(std::string); // the use of position here only
+                                                        // provides an easier way to store
+                                                        // pair than using pair<int, int>
+                                                        // it's not a real position
+  Position GetPositionFromPositionSerialization(std::string);
 
   bool GetWallBetween(const Cell &, const Cell &) const;
   bool GetWallBetween(const Cell &, const DIRECTION &) const; // might be faster in some cases
@@ -57,6 +71,7 @@ class Board : public std::enable_shared_from_this<Board> {
   Position getOppositeCell(Position,DIRECTION);
 
   explicit operator std::string() const;
+
 
  private:
 

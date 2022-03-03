@@ -1,11 +1,11 @@
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_Player_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_Player_H_
 
-#include"position.h"
-#include"memory.h"
-#include"common.h"
-#include<iostream>
-#include"translator.h"
+#include "position.h"
+#include "memory.h"
+#include "common.h"
+#include <iostream>
+#include "translator.h"
 
 class Player{
     int nbWalls=10;
@@ -28,6 +28,10 @@ public:
     int getScore();
     std::string getMessage();
     DIRECTION getGoal() const;
+
+    void DecNrOfWalls();
+    int GetNrOfWalls();
+
 };
 
 #endif

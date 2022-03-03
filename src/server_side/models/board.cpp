@@ -38,8 +38,63 @@ Board::Board(std::vector<std::shared_ptr<Player>> pawns_, std::vector<Position> 
       cells_[pos.row/2][pos.col/2 + 1].setWall(WEST);
     }
   }
+
+  std::cout<<GetWallsSerialization()<<std::endl;
+  std::string test = GetWallsSerialization();
+  std::cout<<GetWallFromWallSerialization(test)[0].row<<std::endl;
+
 }
 
+Board::Board(std::string) {
+  //"to do or not to do this is the question" -Shakespear
+}
+
+void Board::SaveToDB() const {
+  // DataBase::GetInstance()
+  if (pawns_.size() > 2) {
+    // DataBase::GetInstance()->InsertBoard(4, GetWallsSerialization(), pawns_[0]);
+  }else{
+    DataBase::GetInstance()->InsertBoard(2,  GetWallsSerialization(),
+        GetPositionSerialization(pawns_[0]->getPlayerPos()), pawns_[0]->GetNrOfWalls(),
+        GetPositionSerialization(pawns_[1]->getPlayerPos()), pawns_[1]->GetNrOfWalls());
+  }
+}
+
+std::string Board::GetSerializedString() const {
+  return {};
+}
+
+std::string Board::GetWallsSerialization() const {
+  std::string serializedString = "";
+  for (int row = 0; row<kBoardSize*2-1; row++) {
+    for (int col = 0; col<kBoardSize*2-1; col++) {
+      if (walls_[row][col]) serializedString = serializedString + GetPositionSerialization({col, row}) + "|";
+    }
+  }
+  return serializedString;
+}
+
+std::string Board::GetPositionSerialization(const Position position) const {
+  return std::to_string(position.col) + "," + std::to_string(position.row);
+}
+
+std::vector<Position> Board::GetWallFromWallSerialization(std::string serializedWalls) {
+  std::vector<Position> res;
+  std::string currentWall = serializedWalls.substr(0, serializedWalls.find("|"));
+  while (!currentWall.empty()) {
+    res.push_back(GetPositionFromPositionSerialization(currentWall));
+    serializedWalls.erase(0, serializedWalls.find("|") + 1);
+    currentWall = serializedWalls.substr(0, serializedWalls.find("|"));
+  }
+  return res;
+}
+
+Position Board::GetPositionFromPositionSerialization(std::string serializedPosition) {
+  std::string col = serializedPosition.substr(0, serializedPosition.find(","));
+  serializedPosition.erase(0, serializedPosition.find(",") + 1);
+  std::string row = serializedPosition;
+  return Position{std::stoi(col), std::stoi(row)};
+}
 ///
 /// \return
 std::string Board::GetBoardString() const {
@@ -292,16 +347,6 @@ void Board::Movement(const Position start, const Position end) {
   cells_[start.row][start.col].removePawn();
 }
 
-// void Board::Movement(const Position &p, bool pw) {
-//   if (pw) {
-//     cells_[p.row][p.col].setPawn();
-//   } else {
-//     cells_[p.row][p.col].removePawn();
-//     cells_[p.row][p.col] = Cell{};
-//   }
-// }
-
-///
 /// \param os
 /// \param board
 /// \return

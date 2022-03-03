@@ -10,13 +10,13 @@ using namespace std;
 bool translator::verifyMove(string move, vector<char> lettres) {
 	bool coup_verified = false;
 	for (auto x : lettres) {
-		
+
 		if (move[0] == x) {
 			coup_verified = true;
-		
+
 		}
 	}
-	
+
 	return coup_verified;
 }
 
@@ -50,7 +50,7 @@ Position translator::translateMove(string move,int taille) {
 	for (int x = 1; x < taille + 1; x++) {
 		nombres.push_back(to_string(x));
 	}
-	
+
 	if (move.length() < 2 || !verifyMove(move, lettres) || !verifyNumber(numb, nombres)) {
       // not conform
 		return {-1,-1};
@@ -67,9 +67,24 @@ Position translator::translateMove(string move,int taille) {
 				res.col = x;
 			}
 		}
-		
+
 	}
 
     return res;
+
+}
+
+std::string translator::PositionToMove(const Position position, int size){
+	vector<char>lettres;
+	vector<string>nombres;
+
+	for (int x = 0; x < size; x++) {
+		lettres.push_back(char(x + int('a')));
+	}
+	for (int x = 1; x < size + 1; x++) {
+		nombres.push_back(to_string(x));
+	}
+
+	return lettres[position.row] + nombres[position.col];
 
 }
