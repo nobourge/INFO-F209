@@ -31,7 +31,7 @@ An all purpose networking library for C++
 ```
 
 **Windows**
->>Download [link](https://slproweb.com/products/Win32OpenSSL.html) for manual download
+>Download [link](https://slproweb.com/products/Win32OpenSSL.html) for manual download
 
 ### crow
 A web service framework library for C++
