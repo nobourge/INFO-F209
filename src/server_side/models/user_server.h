@@ -13,16 +13,20 @@
 class UserServer : public User, public Serializable<User> {
 public:
   bool SaveToDB();
+
   static std::optional<UserServer>
   InitFromDbByIdWithoutFriendList(const object_id_t id);
+
   static std::optional<UserServer>
   InitFromDB(const Username &username,
              const std::optional<std::string> &password = {});
+
   static std::optional<UserServer> NewUser(const Username &username,
                                            const std::string &password);
 
   static std::unique_ptr<std::vector<UserServer>>
   GetAllObjectsFromDB();
+
   std::unique_ptr<std::vector<UserServer>>
   GetAllObjectsFromDBExceptCurrentUser();
 
