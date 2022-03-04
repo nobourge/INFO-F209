@@ -166,14 +166,14 @@ protected:
     });
 
     API_ROUTE(GetApp(), "/api/v1/users/except/me")
-        ([](const crow::request &request) {
-          VALIDATE_CREDENTIALS(requests);
+    ([](const crow::request &request) {
+      VALIDATE_CREDENTIALS(requests);
 
-          crow::json::wvalue output;
-          int v = 1;
-          output["users"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
-          return output;
-        });
+      crow::json::wvalue output;
+      int v = 1;
+      output["users"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
+      return output;
+    });
 
     ///
 
