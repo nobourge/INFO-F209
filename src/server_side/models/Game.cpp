@@ -1,23 +1,20 @@
-#include<iostream>
-#include<memory>
+#include <iostream>
+#include <memory>
 
-#include"Game.h"
+#include "Game.h"
 
 using namespace std;
 
-
-Game::Game(){
-
-}
+Game::Game() {}
 
 ///
 
-void Game::StartTheGame(){
+void Game::StartTheGame() {
 
   // db.CreateTables();
-    // if (players.size>=2) We need at least 2 players to begin the game.
-    gameOn=true;
-    //When player connects from the server ... TODO
+  // if (players.size>=2) We need at least 2 players to begin the game.
+  gameOn = true;
+  // When player connects from the server ... TODO
 
     players.push_back(make_shared<Player>(Position{4,8},NORTH));
     players.push_back(make_shared<Player>(Position{4,4},SOUTH));
@@ -53,174 +50,175 @@ void Game::StartTheGame(){
 
 ///
 
-void Game::SwitchCurrentPlayer(){
-    //First we check if the current player has won before we change the player at the end of the turn
-    if(hasCurrentPlayerWon()){
-        calculateRanking();
-        endGame();
+void Game::SwitchCurrentPlayer() {
+  // First we check if the current player has won before we change the player at
+  // the end of the turn
+  if (hasCurrentPlayerWon()) {
+    calculateRanking();
+    endGame();
+  }
+
+  // system("clear"); //clears the terminal.
+
+  if (gameMode == IA) {
+    if (IaPlayer) {
+      currentPlayer = players[0];
+      IaPlayer = false;
+    } else {
+      currentPlayer = players[1];
+      IaPlayer = true;
+      playIaMove();
     }
+  } else if (gameMode == RandomWall) {
+    board->randomWallPlacement();
+  }
 
-    // system("clear"); //clears the terminal.
+  // currentPlayer=next player from the vector
+  cout << currentPlayer->getPlayerPos().row << " "
+       << currentPlayer->getPlayerPos().col << endl;
+  cout << endl;
+  cout << board->GetBoardString() << std::endl;
+  cout << endl;
+}
 
-    if(gameMode==IA){
-        if(IaPlayer){
-            currentPlayer=players[0];
-            IaPlayer=false;
-        }else{
-            currentPlayer=players[1];
-            IaPlayer=true;
-            playIaMove();
+///
+
+void Game::calculateRanking() {
+  // The player who won is going to get 100 points bonus.
+  currentPlayer->increaseScore(100);
+
+  vector<int> scores;
+  for (auto x : players) {
+    scores.push_back(x->getScore());
+  }
+
+  // sort the vector non-increasing
+  sort(scores.begin(), scores.end(), greater<int>());
+
+  // if(scores.size()==2){
+  //   db.InsertRanking(scores[0], scores[1]);
+  // }else if(scores.size()==3){
+  //   db.InsertRanking(scores[0], scores[1], scores[2]);
+  // }else{
+  //   db.InsertRanking(scores[0], scores[1], scores[2], scores[3]);
+  // }
+
+  // for(auto x:players){
+  //   db.UpdateUser(x->getScore(), 1);
+  // }
+}
+
+void Game::playIaMove() {
+  bool on = false;
+  string choose[2] = {"Movement", "Wall"};
+  string choice = choose[rand() % 2];
+  if (choice == "Movement") {
+    while (!on) {
+      Position coup = currentPlayer->playIAMove();
+      cout << coup.row << " " << coup.col << " move" << endl;
+      if (board->IsMovePossible(currentPlayer->getPlayerPos(), coup)) {
+        board->Movement(currentPlayer->getPlayerPos(), coup);
+        currentPlayer->setPlayerPosition(coup);
+        on = true;
+      } else {
+        coup = currentPlayer->playIAMove(false);
+        if (board->IsMovePossible(currentPlayer->getPlayerPos(), coup)) {
+          board->Movement(currentPlayer->getPlayerPos(), coup);
+          currentPlayer->setPlayerPosition(coup);
+          on = true;
         }
-    }else if(gameMode==RandomWall){
-        board->randomWallPlacement();
+      }
     }
 
-    //currentPlayer=next player from the vector
-    cout<<currentPlayer->getPlayerPos().row<<" "<<currentPlayer->getPlayerPos().col<<endl;
-    cout<<endl;
-    cout<<board->GetBoardString()<<std::endl;
-    cout<<endl;
-
-
-}
-
-///
-
-void Game::calculateRanking(){
-    //The player who won is going to get 100 points bonus.
-    currentPlayer->increaseScore(100);
-
-    vector<int> scores;
-    for(auto x:players){
-        scores.push_back(x->getScore());
-    }
-
-    //sort the vector non-increasing
-    sort(scores.begin(), scores.end(), greater<int>());
-
-    // if(scores.size()==2){
-    //   db.InsertRanking(scores[0], scores[1]);
-    // }else if(scores.size()==3){
-    //   db.InsertRanking(scores[0], scores[1], scores[2]);
-    // }else{
-    //   db.InsertRanking(scores[0], scores[1], scores[2], scores[3]);
-    // }
-
-    // for(auto x:players){
-    //   db.UpdateUser(x->getScore(), 1);
-    // }
-
-}
-
-void Game::playIaMove(){
-    bool on=false;
-    string choose[2]={"Movement","Wall"};
-    string choice=choose[rand()%2];
-    if(choice=="Movement"){
-        while(!on){
-            Position coup=currentPlayer->playIAMove();
-            cout<<coup.row<<" "<<coup.col<<" move"<<endl;
-            if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
-                    board->Movement(currentPlayer->getPlayerPos(),coup);
-                    currentPlayer->setPlayerPosition(coup);
-                    on=true;
-            }else{
-                coup=currentPlayer->playIAMove(false);
-                 if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
-                    board->Movement(currentPlayer->getPlayerPos(),coup);
-                    currentPlayer->setPlayerPosition(coup);
-                    on=true;
-                }
-            }
-        }
-
-    }else{
-        //If IA places the wall then we will simply use the method from our first gameMode;
-        board->randomWallPlacement();
-    }
-    SwitchCurrentPlayer();
+  } else {
+    // If IA places the wall then we will simply use the method from our first
+    // gameMode;
+    board->randomWallPlacement();
+  }
+  SwitchCurrentPlayer();
 }
 
 ///
 /// \return
-bool Game::hasCurrentPlayerWon(){
-    //At the end of turn we check if the currentPlayer has won the game.
-    return currentPlayer->hasWon();
+bool Game::hasCurrentPlayerWon() {
+  // At the end of turn we check if the currentPlayer has won the game.
+  return currentPlayer->hasWon();
 }
 
 ///
 
-void Game::joinGame(){
-    //if (players.size<4) Then the player can connect to the game.
-
-}
-
-///
-/// \return
-int Game::getScore(){
-    //The score for each player when the game is finished
-    return 0;
-}
-
-///
-
-void Game::endGame(){
-    //Server stuff
-    board->SaveToDB();
-    gameOn=false;
+void Game::joinGame() {
+  // if (players.size<4) Then the player can connect to the game.
 }
 
 ///
 /// \return
-bool Game::gameOnGoing(){
-    playCoup();
-    return gameOn;
+int Game::getScore() {
+  // The score for each player when the game is finished
+  return 0;
 }
 
 ///
 
-void Game::playCoup(){
-    bool on=false;
+void Game::endGame() {
+  // Server stuff
+  board->SaveToDB();
+  gameOn = false;
+}
 
-    while(!on){
-        Input input;
-        cout<<"Do you want to move your player or place a wall?"<<endl<<"To make your choice please write W (place wall) or M (move player)"<<endl;
-        char enter=input.getInput();
-        if(enter=='W'){
-            if (currentPlayer->GetNrOfWalls() <= 0){
-              cout<<"out of walls"<<endl;
-              break;
-            }
+///
+/// \return
+bool Game::gameOnGoing() {
+  playCoup();
+  return gameOn;
+}
 
-            string placement=input.getInputWall();
-            DIRECTION direct;
-            pair<Position,Position> wall=currentPlayer->placeWall(placement);
-            char direction=placement[8];
-            cout<<wall.first.col<<" "<<wall.first.row<<endl;
-            cout<<wall.second.col<<" "<<wall.second.row<<endl;
-            cout<<direction<<endl;
-            switch (direction){
-                case 'N':
-                    direct=NORTH;
-                    break;
-                case 'S':
-                    direct=SOUTH;
-                    break;
-                case 'E':
-                    direct=EAST;
-                    break;
-                case 'W':
-                    direct=WEST;
-                    break;
-            }
+///
 
-            //Check is the placement is possible with isWallPossible();
-            if (board->IsWallPossible(wall.first,wall.second,direct)){
-              board->PlaceWall(wall.first,wall.second,direct);
-              currentPlayer->increaseScore();
-              on=true;
-              currentPlayer->DecNrOfWalls();
-            }
+void Game::playCoup() {
+  bool on = false;
+
+  while (!on) {
+    Input input;
+    cout << "Do you want to move your player or place a wall?" << endl
+         << "To make your choice please write W (place wall) or M (move player)"
+         << endl;
+    char enter = input.getInput();
+    if (enter == 'W') {
+      if (currentPlayer->GetNrOfWalls() <= 0) {
+        cout << "out of walls" << endl;
+        break;
+      }
+
+      string placement = input.getInputWall();
+      DIRECTION direct;
+      pair<Position, Position> wall = currentPlayer->placeWall(placement);
+      char direction = placement[8];
+      cout << wall.first.col << " " << wall.first.row << endl;
+      cout << wall.second.col << " " << wall.second.row << endl;
+      cout << direction << endl;
+      switch (direction) {
+      case 'N':
+        direct = NORTH;
+        break;
+      case 'S':
+        direct = SOUTH;
+        break;
+      case 'E':
+        direct = EAST;
+        break;
+      case 'W':
+        direct = WEST;
+        break;
+      }
+
+      // Check is the placement is possible with isWallPossible();
+      if (board->IsWallPossible(wall.first, wall.second, direct)) {
+        board->PlaceWall(wall.first, wall.second, direct);
+        currentPlayer->increaseScore();
+        on = true;
+        currentPlayer->DecNrOfWalls();
+      }
 
         }else if(enter=='M'){
                 DIRECTION direction=input.getInputMovement();
@@ -253,16 +251,13 @@ void Game::playCoup(){
 
                   }
 
-        }else{
-            cout<<"Move invalid"<<endl;
-        }
+    } else {
+      cout << "Move invalid" << endl;
     }
-    SwitchCurrentPlayer();
-
+  }
+  SwitchCurrentPlayer();
 }
 
 ///
 /// \return
-std::shared_ptr<Player> Game::getCurrentPlayer(){
-    return currentPlayer;
-}
+std::shared_ptr<Player> Game::getCurrentPlayer() { return currentPlayer; }

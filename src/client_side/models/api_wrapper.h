@@ -14,8 +14,9 @@
 
 struct ApiError {
   std::string error_message;
-
 };
+
+typedef bool IsAdmin;
 
 struct LoginError: ApiError {
 };
@@ -44,6 +45,10 @@ public:
   std::optional<ApiError> AddFriend(const UserClient &user);
   std::variant<std::vector<Message>, ApiError> GetConversationWithUser(const UserClient &other_user);
   std::optional<ApiError> SendNewMessage(const UserClient &user, const string &message);
+
+
+  // game
+  std::variant<std::vector<object_id_t>, ApiError> GetGamesVector();
 
 
   static std::optional<ApiWrapper> &GetShared();

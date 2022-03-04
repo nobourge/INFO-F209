@@ -46,6 +46,15 @@ public:
   void ReloadFile(std::string);
   std::vector<std::vector<string>> GetSelect(string statement);
 
+  std::vector<object_id_t> GetAllGamesWhereUserIsAdmin(object_id_t user);
+  std::vector<object_id_t> GetAllGamesForUser(object_id_t user);
+  std::vector<object_id_t> GetAllParticipantsInGame(object_id_t game);
+  object_id_t CreateGame(object_id_t current_user_id);
+  void InviteUserToGame(object_id_t game_id, object_id_t userid);
+  std::optional<uint32_t> GetAdminOfGame(object_id_t game_id);
+
+  void RunSQL(const std::string &query);
+
   void InsertBoard(int nrOfPawns, std::string walls, std::string firstPlayerPawnPosition, int firstPlayerWallsLeft,
                              std::string secondPlayerPawnPosition, int secondPlayerWallsLeft,
                              std::string thirdPlayerPawnPosition, int thirdPlayerWallsLeft,

@@ -317,3 +317,34 @@ ApiWrapper::GetConversationWithUser(const UserClient &other_user) {
 
   return messages;
 }
+
+std::variant<std::vector<object_id_t>, ApiError> ApiWrapper::GetGamesVector() {
+  std::string error_message = "An unknown error occurred";
+  std::string url = api_url_;
+
+  url += "me/games";
+
+  crow::json::rvalue json_res;
+
+  try {
+    json_res = Requests(url, {{login_, password_}}).GetJson();
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+
+  try {
+    if (!json_res["success"].b()) {
+      return ApiError{json_res["error"].s()};
+    }
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+
+  std::vector<object_id_t> games;
+
+  for (const auto &game_id_json : json_res["games"]) {
+    games.push_back(game_id_json.i());
+  }
+
+  return games;
+}

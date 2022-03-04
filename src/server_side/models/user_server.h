@@ -8,6 +8,7 @@
 #include "../../common/models/user/message.h"
 #include "../../common/models/user/user.h"
 #include "../../common/utils.h"
+#include "Game.h"
 #include "database.h"
 
 class UserServer : public User, public Serializable<User> {
@@ -45,6 +46,19 @@ public:
                               const std::string &message);
 
   std::vector<UserServer> GetFriendsWithoutLoadingTheirFriends();
+
+  std::optional<object_id_t>
+  CreateNewGameAndSaveToDb(const std::vector<UserServer> &invitees) {
+    // it is possible to have at most 3 invitees. If there are only two, an AI
+    // player will be added
+    if (invitees.size() <= 3) {
+      auto game_id = DataBase::GetInstance()->CreateGame(GetId());
+      for (auto &invitee : invitees)
+        DataBase::GetInstance()->InviteUserToGame(game_id, invitee.GetId());
+      return game_id;
+    } else
+      return {};
+  }
 
 private:
   static std::unique_ptr<std::vector<UserServer>>

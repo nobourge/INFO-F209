@@ -9,9 +9,9 @@
 #include "views/button.h"
 
 
-class GameModeSelectionMenuView : public AbstractMenuView{
+class NewGameMenuView : public AbstractMenuView{
  public:
-   GameModeSelectionMenuView();
+   NewGameMenuView();
  private:
     constexpr static const char menu_name_[] = "Game Selection";
 

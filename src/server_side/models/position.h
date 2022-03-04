@@ -19,7 +19,7 @@ struct Position: public Serializable<Position> {
   std::pair<int, int> diff(const Position &) const; // outputs a pair of deltaRow
                                                     // and deltaCol
 
-  bool IsOutOfBoundaries(const int low=0, const int high=kBoardSize) const;
+  bool IsOutOfBoundaries(const int &low=0, const int &high=kBoardSize) const;
 
   Position operator+(const DIRECTION);
 

@@ -64,10 +64,6 @@ void Board::SaveToDB() const {
   }
 }
 
-std::string Board::GetSerializedString() const {
-  return {};
-}
-
 std::string Board::GetWallsSerialization() const {
   std::string serializedString = "";
   for (int row = 0; row<kBoardSize*2-1; row++) {

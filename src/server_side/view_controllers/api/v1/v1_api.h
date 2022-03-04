@@ -175,28 +175,6 @@ protected:
       return output;
     });
 
-    ///
-
-    //    API_ROUTE(GetApp(), "/api/v1/user/<string>")([](const std::string
-    //    &username) {
-    //      crow::json::wvalue output_in_case_of_err;
-    //      output_in_case_of_err["success"] = false;
-    //
-    //      if (!AreCharsValid(username)) {
-    //        output_in_case_of_err["error"] = "Invalid characters";
-    //        return output_in_case_of_err;
-    //      }
-    //      std::unique_ptr<UserServer> user = nullptr;
-    //      try {
-    //        user = std::make_unique<UserServer>(Username{username}, 0);
-    //      } catch (const LoginError &err) {
-    //        output_in_case_of_err["error"] = err.error_message;
-    //        return output_in_case_of_err;
-    //      }
-    //      UserServer user{};
-    //      return *user.Serialize();
-    //    });
-
     API_ROUTE(GetApp(), "/api/v1/me")
     ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(requests);
@@ -214,7 +192,7 @@ protected:
       API_GUARD(AreCharsValid(username_unparsed),
                 "Invalid characters in username");
 
-      std::unique_ptr<Username> username = nullptr;
+      std::unique_ptr<Username> username;
 
       try {
         username = std::make_unique<Username>(username_unparsed);
@@ -237,19 +215,50 @@ protected:
       RETURN_SUCCESS_JSON
     });
 
-    API_ROUTE(GetApp(), "/api/v1/me/games")
-    ([](const crow::request &request) {
+    API_ROUTE(GetApp(), "/api/v1/me/games") ([] (const crow::request &request) {
       VALIDATE_CREDENTIALS(requests);
 
-      return *(user.Serialize());
+      auto games = DataBase::GetInstance()->GetAllGamesForUser(user.GetId());
+
+      crow::json::wvalue output;
+      output["success"] = true;
+      output["games"] = games;
+
+      return output;
     });
 
-    API_ROUTE(GetApp(), "/api/v1/me/games/<uint>")
-    ([](const crow::request &request, unsigned int game_id) {
+    API_ROUTE(GetApp(), "/api/v1/me/games/new") ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(requests);
 
-      return *(user.Serialize());
+      std::vector<UserServer> participants;
+
+      auto participants_unparsed = request.url_params.get_list("participants");
+
+      API_GUARD(participants_unparsed.size() <= 3, "Too many participants")
+
+      for (std::string participant_str : participants_unparsed) {
+        API_GUARD(AreCharsValid(participant_str),
+                  "Illegal chars in participant_str username");
+        try {
+          auto participant = UserServer::InitFromDB(Username{std::move(participant_str)});
+          API_GUARD(participant.has_value(), "Inexistant participant");
+          participants.push_back(*participant);
+        } catch (const std::exception &err) {
+          API_GUARD(false, err.what());
+        }
+      }
+
+
+      API_GUARD(user.CreateNewGameAndSaveToDb(participants).has_value(), "Failed to create game");
+      RETURN_SUCCESS_JSON;
     });
+
+    //    API_ROUTE(GetApp(), "/api/v1/me/games/<uint>")
+    //    ([](const crow::request &request, unsigned int game_id) {
+    //      VALIDATE_CREDENTIALS(requests);
+    //
+    //      return *(user.Serialize());
+    //    });
 
     API_ROUTE(GetApp(), "/api/v1/new_user")
     ([](const crow::request &request) {
@@ -287,8 +296,7 @@ protected:
     API_ROUTE(GetApp(), "/api/v1/me/messages/send")
     ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(request);
-      auto receiver_username_unparsed =
-          request.url_params.get("user");
+      auto receiver_username_unparsed = request.url_params.get("user");
       auto message_content_unparsed = request.url_params.get("content");
 
       API_GUARD(receiver_username_unparsed != nullptr,
@@ -325,8 +333,7 @@ protected:
     ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(request)
 
-      auto other_user_username_str =
-          request.url_params.get("user");
+      auto other_user_username_str = request.url_params.get("user");
 
       API_GUARD(other_user_username_str != nullptr,
                 "Other user has not been given");

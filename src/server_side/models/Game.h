@@ -2,15 +2,15 @@
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_Game_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_Game_H_
 
-#include "board.h"
 #include "Player.h"
+#include "board.h"
 #include "ia.h"
-#include "position.h"
-#include "memory"
 #include "input.h"
+#include "memory"
+#include "position.h"
 
 class Game {
- public:
+public:
   Game();
   ~Game() { delete board; }
   void SwitchCurrentPlayer();
@@ -26,13 +26,13 @@ class Game {
   std::shared_ptr<Player> getCurrentPlayer();
   Board *getBoard() { return board; }
 
- private:
+private:
   Board *board;
   std::vector<std::shared_ptr<Player>> players;
   std::shared_ptr<Player> currentPlayer;
   bool gameOn;
-  bool IaPlayer=false;
-  GameMode gameMode=Normal;
+  bool IaPlayer = false;
+  GameMode gameMode = Normal;
 };
 
 #endif

@@ -22,7 +22,7 @@ set(HEADERS
         view_controllers/login_view_controller.h
         view_controllers/create_account_view_controller.h
         view_controllers/start_view_controller.h
-        view_controllers/game_mode_selection_menu_view_controller.h
+        view_controllers/new_game_menu_view_controller.h
         view_controllers/chat_room_view_controller.h
         view_controllers/game_view_controller.h
         view_controllers/help_view_controller.h
@@ -30,7 +30,7 @@ set(HEADERS
         views/menu_views/chat_room_menu_view.h
         views/menu_views/game_view.h
         views/menu_views/help_menu_view.h
-        views/menu_views/game_mode_selection_menu_view.h
+        views/menu_views/new_game_menu_view.h
         views/menu_views/home_menu_view.h
         views/menu_views/ranking_menu_view.h
         views/menu_views/create_account_menu_view.h
@@ -77,7 +77,7 @@ set(SOURCES
 
         view_controllers/ranking_view_controller.cpp
         view_controllers/home_menu_view_controller.cpp
-        view_controllers/game_mode_selection_menu_view_controller.cpp
+        view_controllers/new_game_menu_view_controller.cpp
         view_controllers/login_view_controller.cpp
         view_controllers/help_view_controller.cpp
         view_controllers/create_account_view_controller.cpp
@@ -98,7 +98,7 @@ set(SOURCES
         views/menu_views/chat_room_menu_view.cpp
         views/menu_views/start_menu_view.cpp
         views/menu_views/create_account_menu_view.cpp
-        views/menu_views/game_mode_selection_menu_view.cpp
+        views/menu_views/new_game_menu_view.cpp
         views/menu_views/abstract_menu_view.cpp
         views/menu_views/ranking_menu_view.cpp
         views/menu_views/login_menu_view.cpp
@@ -118,7 +118,7 @@ set(SOURCES
         ../common/models/user/message.cpp
         ../common/models/user/username.cpp
         ../common/models/user/abstract_validator.cpp
-        )
+        view_controllers/join_or_create_game_menu_view_controller.cpp view_controllers/join_or_create_game_menu_view_controller.h views/menu_views/join_or_create_game_menu_view.cpp views/menu_views/join_or_create_game_menu_view.h view_controllers/join_game_menu_view_controller.cpp view_controllers/join_game_menu_view_controller.h views/menu_views/join_game_menu_view.cpp views/menu_views/join_game_menu_view.h)
 
 
 
