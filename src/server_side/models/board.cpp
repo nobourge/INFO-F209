@@ -262,20 +262,20 @@ bool Board::HasPathToEnd(std::vector<Position> path, const DIRECTION goal) {
 /// \param direction
 /// \return
 bool Board::IsWallPossible(const Position firstCell, const Position secondCell, const DIRECTION direction) {
-  Position firstOpposite=getOppositeCell(firstCell,direction);
-  Position secondOpposite=getOppositeCell(secondCell,direction);
+  Position firstOpposite=GetOppositeCell(firstCell,direction);
+  Position secondOpposite=GetOppositeCell(secondCell,direction);
 
   cells_[firstCell.row][firstCell.col].setWall(direction);
   cells_[secondCell.row][secondCell.col].setWall(direction);
-  cells_[firstOpposite.row][firstOpposite.col].setWall(getOpposite(direction));
-  cells_[secondOpposite.row][secondOpposite.col].setWall(getOpposite(direction));
+  cells_[firstOpposite.row][firstOpposite.col].setWall(GetOpposite(direction));
+  cells_[secondOpposite.row][secondOpposite.col].setWall(GetOpposite(direction));
 
   for (auto pawn : pawns_ ) {
     if (! HasPathToEnd({pawn->getPlayerPos()}, pawn->getGoal())){
       cells_[firstCell.row][firstCell.col].unsetWall(direction);
       cells_[secondCell.row][secondCell.col].unsetWall(direction);
-      cells_[firstOpposite.row][firstOpposite.col].unsetWall(getOpposite(direction));
-      cells_[secondOpposite.row][secondOpposite.col].unsetWall(getOpposite(direction));
+      cells_[firstOpposite.row][firstOpposite.col].unsetWall(GetOpposite(direction));
+      cells_[secondOpposite.row][secondOpposite.col].unsetWall(GetOpposite(direction));
       return false;
     }
   }
@@ -358,7 +358,7 @@ void Board::PlaceWall(Position case1, Position case2, DIRECTION dir) {
 /// \param pos
 /// \param dr
 /// \return
-Position Board::getOppositeCell(Position pos,DIRECTION dr){
+Position Board::GetOppositeCell(Position pos,DIRECTION dr){
     Position newPos;
     if(dr==NORTH){
       newPos={pos.col,pos.row-1};
@@ -375,7 +375,7 @@ Position Board::getOppositeCell(Position pos,DIRECTION dr){
 ///
 /// \param dr
 /// \return
-DIRECTION Board::getOpposite(DIRECTION dr){
+DIRECTION Board::GetOpposite(DIRECTION dr){
   DIRECTION newdr;
   if(dr==NORTH){
     newdr=SOUTH;

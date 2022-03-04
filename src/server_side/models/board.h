@@ -69,8 +69,8 @@ class Board : public std::enable_shared_from_this<Board>{
   std::string GetBoardString() const;
 
   void randomWallPlacement();
-  DIRECTION getOpposite(DIRECTION);
-  Position getOppositeCell(Position,DIRECTION);
+  DIRECTION GetOpposite(DIRECTION);
+  Position GetOppositeCell(Position,DIRECTION);
 
   explicit operator std::string() const;
 
