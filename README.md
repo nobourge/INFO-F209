@@ -44,7 +44,7 @@ Manual download only
 1. boost
 
 
-## curl
+### curl
 command line tool and library for transferring data with URLs
 
 **Debian**  
@@ -52,6 +52,15 @@ command line tool and library for transferring data with URLs
 $ sudo apt-get install curl
 $ sudo apt-get install libcurl-dev
 ```
+
+### ncurses
+A simple text-based user interface library for C/C++
+
+**Debian**
+```
+$ sudo apt-get install libncurses5-dev libncursesw5-dev
+```
+
 ## SRD
 
 ![Visualization of the codebase](./diagram.svg)

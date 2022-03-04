@@ -20,7 +20,7 @@ void Game::StartTheGame(){
     //When player connects from the server ... TODO
 
     players.push_back(make_shared<Player>(Position{4,8},NORTH));
-    players.push_back(make_shared<Player>(Position{4,0},SOUTH));
+    players.push_back(make_shared<Player>(Position{4,4},SOUTH));
     //For now, we have only 1 player
     currentPlayer=players[0];
     cout<<endl;
@@ -29,7 +29,8 @@ void Game::StartTheGame(){
         //If IA is on then we will have 1 Player vs 1 IA
         players.push_back(make_shared<Ia>(Position{4,0},SOUTH));
     }
-    vector<Position> walls{{0,3}};
+    // vector<Position> walls{{0,3}};
+    vector<Position> walls{{0,3}, {8,7}, {9,8}};
     // vector<Position> walls{{0,3},{2,3},{4,3},{6,3},{8,3},{10,3},{12,3},{14,3},{16,3}};
     board = new Board (players, walls);
 
@@ -231,7 +232,26 @@ void Game::playCoup(){
                     // board->Movement(coup,true);
                     currentPlayer->increaseScore();
                     on=true;
-                 }
+                }else if(!board->GetWallBetween(board->GetCellAtPosition(currentPlayer->getPlayerPos()), direction)
+                        && board->GetCellAtPosition(coup).isPawn()){
+                    //it just works
+                    std::vector<DIRECTION> possible_hops = board->PossiblePawnHops(coup, direction);
+                    if (possible_hops.size() == 1) {
+                        board->Movement(currentPlayer->getPlayerPos(), coup+possible_hops[0]);
+                        currentPlayer->setPlayerPosition(coup+possible_hops[0]);
+                        currentPlayer->increaseScore();
+                        on=true;
+                    }else if (! possible_hops.empty()) {
+                        DIRECTION second_direction = input.getInputMovement();
+                        if (std::find(possible_hops.begin(), possible_hops.end(), second_direction) != possible_hops.end()){
+                            board->Movement(currentPlayer->getPlayerPos(), coup+second_direction);
+                            currentPlayer->setPlayerPosition(coup+second_direction);
+                            currentPlayer->increaseScore();
+                            on=true;
+                        }
+                    }
+
+                  }
 
         }else{
             cout<<"Move invalid"<<endl;

@@ -262,9 +262,25 @@ bool Board::IsWallPossible(const Position firstCell, const Position secondCell, 
 /// \param end
 /// \return
 bool Board::IsMovePossible(const Position &start, const Position &end) const {
-  if (end.IsOutOfBoundaries() || GetWallBetween(GetCellAtPosition(start), GetCellAtPosition(end))) return false;
-  return GetCellAtPosition(start).isNeighbour(end) ? true : false;
+  if (end.IsOutOfBoundaries() || GetWallBetween(GetCellAtPosition(start), GetCellAtPosition(end)) || GetCellAtPosition(end).isPawn()) return false;
+  return GetCellAtPosition(start).isNeighbour(end);
 }
+
+///
+/// \param start
+/// \param end
+std::vector<DIRECTION> Board::PossiblePawnHops(const Position pawnToHopPosition, const DIRECTION direction) {
+  if (! GetWallBetween(GetCellAtPosition(pawnToHopPosition), direction)) return {direction};
+  std::vector<DIRECTION> possible_hops;
+  // not clean implementation but functionnal
+  if (!GetWallBetween(GetCellAtPosition(pawnToHopPosition), NORTH)) possible_hops.push_back(NORTH);
+  if (!GetWallBetween(GetCellAtPosition(pawnToHopPosition), EAST)) possible_hops.push_back(EAST);
+  if (!GetWallBetween(GetCellAtPosition(pawnToHopPosition), SOUTH)) possible_hops.push_back(SOUTH);
+  if (!GetWallBetween(GetCellAtPosition(pawnToHopPosition), WEST)) possible_hops.push_back(WEST);
+  return possible_hops;
+}
+
+
 
 ///
 

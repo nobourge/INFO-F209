@@ -57,8 +57,8 @@ class Board : public std::enable_shared_from_this<Board>{
   bool IsWallPossible(const Position, const Position, const DIRECTION );
   bool IsMovePossible(const Position &, const Position &) const;
 
+  std::vector<DIRECTION> PossiblePawnHops(const Position, const DIRECTION );
   void Movement(const Position, const Position);
-  // void Movement(const Position &, bool);
   void PlaceWall(Position,Position,DIRECTION);
 
   friend std::ostream &operator<<(std::ostream &, const Board &);
