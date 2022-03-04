@@ -171,7 +171,7 @@ protected:
 
       crow::json::wvalue output;
       int v = 1;
-      output["users"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
+      output["usersexceptme"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
       return output;
     });
 

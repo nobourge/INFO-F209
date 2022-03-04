@@ -189,6 +189,35 @@ std::variant<std::vector<UserClient>, ApiError> ApiWrapper::GetAllUsers() {
   }
 }
 
+std::variant<std::vector<UserClient>, ApiError> ApiWrapper::GetAllUsersExceptCurrentUser() {
+  std::string url = api_url_;
+  url += "users/except/me";
+
+  std::variant<std::vector<UserClient>, ApiError> ret =
+      LoginError{"A network error occurred"};
+
+  crow::json::rvalue request_result_json;
+
+  try {
+    request_result_json = Requests(url).GetJson();
+  } catch (const std::runtime_error &) {
+    return ret;
+  }
+
+  try {
+    crow::json::rvalue users_json = request_result_json["usersexceptme"];
+
+    auto users = std::vector<UserClient>();
+    users.reserve(users.size());
+    for (auto &user_json : users_json) {
+      users.emplace_back(user_json);
+    }
+    return users;
+  } catch (const std::runtime_error &) {
+    return ApiError{"Unknown error occurred"};
+  }
+}
+
 std::optional<ApiError> ApiWrapper::AddFriend(const UserClient &user) {
   auto user_requests_result = GetCurrentUser();
   if (holds_alternative<LoginError>(user_requests_result)) {
