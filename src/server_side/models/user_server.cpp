@@ -19,9 +19,20 @@ UserServer::UsersVectorFromUsersStringVector(
   return users;
 }
 
-std::unique_ptr<std::vector<UserServer>> UserServer::GetAllObjectsFromDB() {
+std::unique_ptr<std::vector<UserServer>>
+UserServer::GetAllObjectsFromDB() {
   return UsersVectorFromUsersStringVector(
       DataBase::GetInstance()->GetSelect("SELECT * FROM USER"));
+}
+
+std::unique_ptr<std::vector<UserServer>>
+UserServer::GetAllObjectsFromDBExceptCurrentUser() {
+  auto this_user_id = std::to_string(GetId());
+  auto users_except_current_user = DataBase::GetInstance()->GetSelect(
+      "SELECT * FROM USER WHERE USER.ID!=" + this_user_id );
+
+  return UsersVectorFromUsersStringVector(
+      users_except_current_user);
 }
 
 UserServer::UserServer(const vector<std::string> &query_res)

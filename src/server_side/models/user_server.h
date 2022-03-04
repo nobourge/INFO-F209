@@ -21,7 +21,11 @@ public:
   static std::optional<UserServer> NewUser(const Username &username,
                                            const std::string &password);
 
-  static std::unique_ptr<std::vector<UserServer>> GetAllObjectsFromDB();
+  static std::unique_ptr<std::vector<UserServer>>
+  GetAllObjectsFromDB();
+  std::unique_ptr<std::vector<UserServer>>
+  GetAllObjectsFromDBExceptCurrentUser();
+
   static std::unique_ptr<std::vector<UserServer>>
   GetRankingFromDB(int max_num_users);
 
