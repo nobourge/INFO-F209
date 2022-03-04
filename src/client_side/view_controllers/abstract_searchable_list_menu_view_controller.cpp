@@ -11,7 +11,7 @@ AbstractSearchableListMenuViewController::
     const std::shared_ptr<AbstractMenuView> &view)
     : AbstractListMenuViewController(view) {
   filter_field_ = std::make_shared<TextField>(GetMenuView().get(), "", this);
-  filter_field_->SetPlaceholder("Search:");
+  filter_field_->SetPlaceholder("Search: ");
 }
 
 std::string &
