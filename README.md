@@ -41,6 +41,7 @@ Manual download only
 >Download [link](https://github.com/CrowCpp/Crow) for manual download
 
 #### Dependencies
+1. openssl
 1. boost
 
 
