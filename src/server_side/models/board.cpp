@@ -52,7 +52,11 @@ Board::Board(std::string) {
 void Board::SaveToDB() const {
   // DataBase::GetInstance()
   if (pawns_.size() > 2) {
-    // DataBase::GetInstance()->InsertBoard(4, GetWallsSerialization(), pawns_[0]);
+    DataBase::GetInstance()->InsertBoard(4,  GetWallsSerialization(),
+    GetPositionSerialization(pawns_[0]->getPlayerPos()), pawns_[0]->GetNrOfWalls(),
+    GetPositionSerialization(pawns_[1]->getPlayerPos()), pawns_[1]->GetNrOfWalls(),
+    GetPositionSerialization(pawns_[2]->getPlayerPos()), pawns_[2]->GetNrOfWalls(),
+    GetPositionSerialization(pawns_[3]->getPlayerPos()), pawns_[3]->GetNrOfWalls());
   }else{
     DataBase::GetInstance()->InsertBoard(2,  GetWallsSerialization(),
         GetPositionSerialization(pawns_[0]->getPlayerPos()), pawns_[0]->GetNrOfWalls(),
