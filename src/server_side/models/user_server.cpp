@@ -27,9 +27,9 @@ UserServer::GetAllObjectsFromDB() {
 
 std::unique_ptr<std::vector<UserServer>>
 UserServer::GetAllObjectsFromDBExceptCurrentUser() {
-  auto this_user_id = std::to_string(GetId());
+  auto current_user_id_str = std::to_string(GetId());
   auto users_except_current_user = DataBase::GetInstance()->GetSelect(
-      "SELECT * FROM USER WHERE USER.ID!=" + this_user_id );
+      "SELECT * FROM USER WHERE USER.ID!=" + current_user_id_str );
 
   return UsersVectorFromUsersStringVector(
       users_except_current_user);
