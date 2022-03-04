@@ -12,8 +12,8 @@
 
 class Requests {
 public:
-  Requests(const std::string &url,
-           const std::optional<std::tuple<std::string, std::string>> login_password = {});
+  Requests(std::string url,
+           const std::optional<std::tuple<std::string, std::string>> &login_password = {}, const std::vector<std::tuple<std::string, std::string>> &params = {});
   ~Requests();
 
   [[nodiscard]] std::string GetText() const;

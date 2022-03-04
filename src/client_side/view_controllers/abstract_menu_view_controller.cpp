@@ -19,6 +19,7 @@ AbstractMenuViewController::Tick() {
 
   MenuViewWillAppear();
   window = newwin(150, 150, 0, 0);
+  curs_set(0);
 
   while (!next_view_controller_.has_value()) {
     werase(window);

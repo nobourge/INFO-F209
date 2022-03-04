@@ -168,9 +168,12 @@ void UserServer::AddFriendAndSaveToDb(const UserServer &user) {
 std::vector<Message>
 UserServer::RetrieveMessagesWithUserFromDb(const UserServer &other_user) {
   auto this_user_id = std::to_string(GetId());
+  auto other_user_id = std::to_string(other_user.GetId());
   auto messages_retrieval_result = DataBase::GetInstance()->GetSelect(
-      "SELECT * FROM CONVERSATIONS WHERE CONVERSATIONS.SENDER_ID = " +
-      this_user_id + " OR CONVERSATIONS.RECEIVER_ID = " + this_user_id + ";");
+      "SELECT * FROM CONVERSATIONS WHERE (CONVERSATIONS.SENDER_ID = " +
+      this_user_id + " AND CONVERSATIONS.RECEIVER_ID = " + other_user_id +
+      ") OR (CONVERSATIONS.RECEIVER_ID = " + this_user_id +
+      " AND CONVERSATIONS.SENDER_ID = " + other_user_id + ");");
 
   std::vector<Message> messages_;
 
@@ -191,15 +194,14 @@ bool UserServer::SendMessageAndSaveToDb(const UserServer &receiver,
                                         const string &message) {
   bool ret = false;
   if (
-    // cannot send message to ourselves
+      // cannot send message to ourselves
       receiver.GetId() != GetId() &&
-          // can only send message to friends
-          receiver.GetFriendsIds().find(GetId()) !=
-              receiver.GetFriendsIds().end()) {
+      // can only send message to friends
+      receiver.GetFriendsIds().find(GetId()) !=
+          receiver.GetFriendsIds().end()) {
     DataBase::GetInstance()->InsertMessage(GetId(), receiver.GetId(),
                                            GET_UNIX_TIMESTAMP, message);
     ret = true;
   }
   return ret;
 }
-
