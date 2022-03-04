@@ -15,7 +15,9 @@ class Player{
 
 public:
     Player(){}
-    Player(Position,DIRECTION);
+    Player(Position,DIRECTION, int=10);
+    // direction of first player is always NORTH, second SOUTH, third WEST,
+    // fourth EAST
     bool isTurnOver();
     virtual bool hasWon();
     Position playMove(DIRECTION);

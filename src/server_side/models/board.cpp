@@ -99,6 +99,31 @@ Position Board::GetPositionFromPositionSerialization(std::string serializedPosit
   std::string row = serializedPosition;
   return Position{std::stoi(col), std::stoi(row)};
 }
+
+std::optional<Board> Board::InitFromDB(object_id_t game_id) {
+  std::vector<std::vector<std::string>> records =
+        DataBase::GetInstance()->GetSelect("SELECT * FROM BOARD WHERE BOARD.ID="+std::to_string(game_id));
+
+  if(records.size()<=0) {
+    std::cout<<"an error has occured when initializing the board"<<std::endl;
+    return std::nullopt;
+  }
+
+  int nrOfPlayers = std::stoi(records[0][1]);
+
+  if (nrOfPlayers < 2) {
+    return Board {std::vector<std::shared_ptr<Player>>{std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][3]),NORTH, std::stoi(records[0][4])),
+                                                       std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][5]),SOUTH, std::stoi(records[0][6]))},
+                  GetWallFromWallSerialization(records[0][2])};
+  }else{
+    return Board {std::vector<std::shared_ptr<Player>>{std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][3]), NORTH, std::stoi(records[0][4])),
+                                                       std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][5]), SOUTH, std::stoi(records[0][6])),
+                                                       std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][7]), WEST,  std::stoi(records[0][8])),
+                                                       std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][9]), WEST,  std::stoi(records[0][10]))},
+                  GetWallFromWallSerialization(records[0][2])};
+  }
+}
+
 ///
 /// \return
 std::string Board::GetBoardString() const {
@@ -286,20 +311,25 @@ std::vector<DIRECTION> Board::PossiblePawnHops(const Position pawnToHopPosition,
 
 void Board::randomWallPlacement(){
   //Method used for our first game mode.
-  int x=0+(rand()%kBoardSize);
-  int y=0+(rand()%kBoardSize);
-  DIRECTION dr=static_cast<DIRECTION>(rand()%4);
-  Position cell1;
-  Position cell2;
-  if(dr==NORTH || dr==SOUTH){
-    cell1={x,y};
-    cell2={x+1,y};
-  }else{
-    cell1={x,y};
-    cell2={x,y-1};
+  bool moveDone=false;
+  while(!moveDone){
+    int x=0+(rand()%kBoardSize);
+    int y=0+(rand()%kBoardSize);
+    DIRECTION dr=static_cast<DIRECTION>(rand()%4);
+    Position cell1;
+    Position cell2;
+    if(dr==NORTH || dr==SOUTH){
+      cell1={x,y};
+      cell2={x+1,y};
+    }else{
+      cell1={x,y};
+      cell2={x,y-1};
+    }
+    if(IsWallPossible(cell1,cell2,dr)){
+      PlaceWall(cell1,cell2,dr);
+      moveDone=true;
+    }
   }
-  PlaceWall(cell1,cell2,dr);
-
 }
 
 ///

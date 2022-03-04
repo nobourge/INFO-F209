@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Player::Player(Position playerPos,DIRECTION dr):playerPos(playerPos),dr(dr){
+Player::Player(Position playerPos,DIRECTION dr, int nbWalls):playerPos(playerPos),dr(dr), nbWalls{nbWalls}{
 }
 
 ///

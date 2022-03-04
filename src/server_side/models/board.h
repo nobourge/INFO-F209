@@ -37,11 +37,13 @@ class Board : public std::enable_shared_from_this<Board>{
   std::string GetSerializedString() const;
   std::string GetPositionSerialization(const Position) const;
   std::string GetWallsSerialization() const;
-  std::vector<Position> GetWallFromWallSerialization(std::string); // the use of position here only
-                                                        // provides an easier way to store
-                                                        // pair than using pair<int, int>
-                                                        // it's not a real position
-  Position GetPositionFromPositionSerialization(std::string);
+  static std::vector<Position> GetWallFromWallSerialization(std::string); // the use of position here only
+                                                                          // provides an easier way to store
+                                                                          // pair than using pair<int, int>
+                                                                          // it's not a real position
+  static Position GetPositionFromPositionSerialization(std::string);
+  static std::optional<Board> InitFromDB(object_id_t game_id);
+
 
   bool GetWallBetween(const Cell &, const Cell &) const;
   bool GetWallBetween(const Cell &, const DIRECTION &) const; // might be faster in some cases
