@@ -23,6 +23,16 @@ An all purpose networking library for C++
 ```
 > Download [link](https://www.boost.org/) for manual download
 
+### OpenSSL
+
+**Debian**
+```
+& sudo apt-get install libssl-dev
+```
+
+**Windows**
+>>Download [link](https://slproweb.com/products/Win32OpenSSL.html) for manual download
+
 ### crow
 A web service framework library for C++
 
