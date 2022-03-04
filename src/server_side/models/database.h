@@ -21,11 +21,9 @@ class DataBase {
   char *messageError;
   static int friendsId;
   static int ranking_id_;
-<<<<<<< HEAD
   static int board_id;
-=======
+
   std::mutex accessing_db_;
->>>>>>> 6691511ae763d1a42e14bc03346f53a468ba13ed
 
   DataBase() {}
 
@@ -46,7 +44,6 @@ public:
                      int fourthPlaceId);
   void UpdateUser(uint32_t score, uint32_t id);
   void ReloadFile(std::string);
-<<<<<<< HEAD
   std::vector<std::vector<string>> GetSelect(string statement);
 
   void InsertBoard(int nrOfPawns, std::string walls, std::string firstPlayerPawnPosition, int firstPlayerWallsLeft,
@@ -57,10 +54,8 @@ public:
   void InsertBoard(int nrOfPawns, std::string walls, std::string firstPlayerPawnPosition, int firstPlayerWallsLeft,
                    std::string secondPlayerPawnPosition, int secondPlayerWallsLeft);
 
-=======
-  records GetSelect(string);
   void HandleSQLErr(int error_code);
->>>>>>> 6691511ae763d1a42e14bc03346f53a468ba13ed
+
 };
 
 

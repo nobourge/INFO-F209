@@ -38,16 +38,9 @@ static int select_callback(void *data, int argc, char **argv, char **colName) {
   return 0;
 }
 
-<<<<<<< HEAD
 std::vector<std::vector<string>> DataBase::GetSelect(std::string statement) {
-
-  std::vector<std::vector<string>> res;
-=======
-records DataBase::GetSelect(std::string statement) {
   LOCK_DB;
-  records res;
->>>>>>> 6691511ae763d1a42e14bc03346f53a468ba13ed
-
+  std::vector<std::vector<string>> res;
 
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, statement.c_str(), select_callback, &res, nullptr);
@@ -243,26 +236,6 @@ void DataBase::UpdateUser(uint32_t score, uint32_t id) {
   HandleSQLErr(last_sqlite3_exit_code_);
 }
 
-<<<<<<< HEAD
-=======
-void DataBase::InsertBoard(int nrOfPlayers, int nrOfWalls) {
-  LOCK_DB;
-
-  // Insert in the table
-  string query = "SELECT * FROM BOARD;";
-  sqlite3_exec(db_, query.c_str(), callback, nullptr, nullptr);
-  // Insert values
-  sql_ = ("INSERT INTO BOARD VALUES(1," + to_string(nrOfPlayers) + "," +
-          to_string(nrOfWalls) + ");");
-  last_sqlite3_exit_code_ =
-      sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
-
-  VerifyTable("Insert values into the board");
-
-  HandleSQLErr(last_sqlite3_exit_code_);
-}
-
->>>>>>> 6691511ae763d1a42e14bc03346f53a468ba13ed
 void DataBase::VerifyTable(const string &message) {
   HandleSQLErr(last_sqlite3_exit_code_);
 }
@@ -271,6 +244,7 @@ DataBase *DataBase::GetInstance() {
   static bool initialized = false;
   static DataBase db;
   if (!initialized) {
+
     db.CreateTables();
     sqlite3_extended_result_codes(db.db_, true);
     initialized = true;
@@ -278,11 +252,7 @@ DataBase *DataBase::GetInstance() {
 
   return &db;
 }
-<<<<<<< HEAD
 
-DataBase::~DataBase() {
-  sqlite3_close(db_);
-=======
 DataBase::~DataBase() { sqlite3_close(db_); }
 
 void DataBase::HandleSQLErr(int error_code) {
@@ -294,7 +264,6 @@ void DataBase::HandleSQLErr(int error_code) {
     }
     std::cout << "Database error: " << sqlite3_errmsg(db_) << std::endl;
   }
->>>>>>> 6691511ae763d1a42e14bc03346f53a468ba13ed
 }
 
 void DataBase::InsertBoard(int nrOfPawns, std::string walls, std::string firstPlayerPawnPosition, int firstPlayerWallsLeft,
@@ -307,9 +276,9 @@ void DataBase::InsertBoard(int nrOfPawns, std::string walls, std::string firstPl
       +std::to_string(secondPlayerWallsLeft)+",\""+thirdPlayerPawnPosition+"\","+std::to_string(thirdPlayerWallsLeft)+",\""
       +fourthPlayerPawnPosition+"\","+std::to_string(fourthPlayerWallsLeft)+")";
 
-  sqlite3_open(DATABASE_FILE_NAME, &db_);
+  // sqlite3_open(DATABASE_FILE_NAME, &db_);
   sqlite3_exec(db_, statement.c_str(), nullptr, nullptr, &messageError);
-  sqlite3_close(db_);
+  // sqlite3_close(db_);
   board_id++;
   }
 
@@ -320,10 +289,10 @@ void DataBase::InsertBoard(int nrOfPawns, std::string walls, std::string firstPl
      +firstPlayerPawnPosition+"\","+std::to_string(firstPlayerWallsLeft)+",\""+secondPlayerPawnPosition+"\","
      +std::to_string(secondPlayerWallsLeft)+ ",\"0\", 0, \"0\", 0)";
 
-  sqlite3_open(DATABASE_FILE_NAME, &db_);
+  // sqlite3_open(DATABASE_FILE_NAME, &db_);
   std::cout<<statement<<std::endl;
   sqlite3_exec(db_, statement.c_str(), nullptr, nullptr, &messageError);
-  sqlite3_close(db_);
+  // sqlite3_close(db_);
   board_id++;
 
   }
