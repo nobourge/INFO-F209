@@ -17,8 +17,8 @@ void AbstractListMenuViewController::ReloadSubviews() {
   }
 
   if (ShouldDisplayList()) {
-    for (int i = 0; i < GetNumItemsInList() &&
-                    subviews.size() <= max_num_items_to_display;
+    for (int i = 0;
+         i < GetNumItemsInList() && subviews.size() <= max_num_items_to_display;
          i++) {
       if (ShouldDisplayViewAtIndex(i)) {
         subviews.push_back(GetViewAtIndex(i));
@@ -35,11 +35,6 @@ void AbstractListMenuViewController::ReloadSubviews() {
   for (auto &view : GetBottomViews()) {
     subviews.push_back(view);
   }
-
-  subviews.push_back(std::make_shared<MenuButtonItem>(
-      GetMenuView().get(), "Back",
-      std::optional<std::shared_ptr<AbstractViewController>>(),
-      GetMenuView().get()));
 
   GetMenuView()->UpdateSubviews(subviews);
 }

@@ -84,11 +84,6 @@ void ChatRoomViewController::UpdateSubviews() {
     subviews_.push_back(message_text_field_);
   }
 
-  subviews_.push_back(std::make_shared<MenuButtonItem>(
-      GetMenuView().get(), "Back",
-      std::optional<std::shared_ptr<AbstractViewController>>{},
-      GetMenuView().get()));
-
   GetMenuView()->UpdateSubviews(subviews_);
 }
 

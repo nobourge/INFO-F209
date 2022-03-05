@@ -3,12 +3,7 @@
 #include "../views/menu_views/views/label.h"
 
 RankingMenuViewController::RankingMenuViewController()
-    : AbstractAuthedMenuViewController(std::make_shared<RankingMenuView>()), users_(),
-      back_btn_(std::make_shared<MenuButtonItem>(
-          GetMenuView().get(), "Back",
-          std::optional<std::shared_ptr<AbstractViewController>>{},
-          GetMenuView().get())) {
-  GetMenuView()->AddSubview(back_btn_);
+    : AbstractAuthedMenuViewController(std::make_shared<RankingMenuView>()), users_() {
 }
 
 void RankingMenuViewController::MenuViewWillAppear() {
@@ -47,6 +42,5 @@ void RankingMenuViewController::ReloadSubviews() {
   }
 
   std::vector<std::shared_ptr<AbstractView>> subviews = leaderboard_views_;
-  subviews.push_back(back_btn_);
   GetMenuView()->UpdateSubviews(subviews);
 }

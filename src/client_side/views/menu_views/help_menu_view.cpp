@@ -15,9 +15,8 @@ HelpMenuView::HelpMenuView() : AbstractMenuView(menu_name_) {
     std::make_shared<Label>(this, "of all pawns, which must go around them. The walls are divided equally among the players at"),
     std::make_shared<Label>(this, "the start of the game, and once placed, cannot be moved or removed. On a turn, a player may"),
     std::make_shared<Label>(this, "either move their pawn, or, if possible, place a wall. "),
-    std::make_shared<Label>(this,"                       "),
-    std::make_shared<Label>(this,"For more details, wikipedia is your best friend https://en.wikipedia.org/wiki/Quoridor"),
-    std::make_shared<MenuButtonItem>(this, "Back", std::optional<std::shared_ptr<AbstractViewController>>{}, this)
+    std::make_shared<Label>(this, ""),
+    std::make_shared<Label>(this, "For more details, wikipedia is your best friend https://en.wikipedia.org/wiki/Quoridor"),
     }
   );
 }

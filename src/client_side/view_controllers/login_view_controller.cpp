@@ -60,9 +60,6 @@ void LoginMenuViewController::ReloadSubviews() {
       password_field_,
       std::make_shared<Label>(GetMenuView().get(), ""), // separator
       login_button_,
-      std::make_shared<MenuButtonItem>(
-          GetMenuView().get(), "Back",
-          std::optional<std::shared_ptr<AbstractViewController>>{}, this),
   };
 
   if (error_message_.has_value()) {

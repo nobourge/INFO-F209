@@ -12,6 +12,7 @@
 class StartMenuView : public AbstractMenuView {
  public:
   static constexpr char menu_name_[] = "Welcome";
+  [[nodiscard]] std::string GetBackButtonName() const override;
   StartMenuView();
 };
 

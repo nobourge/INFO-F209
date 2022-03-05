@@ -19,7 +19,6 @@ protected:
   void FetchAndUpdate();
   void ReloadSubviews();
 
-  std::shared_ptr<MenuButtonItem> back_btn_ = {};
   std::vector<std::shared_ptr<AbstractView>> leaderboard_views_ = {};
   std::vector<UserClient> users_;
 };

@@ -10,9 +10,11 @@
 class GameViewController: public AbstractAuthedMenuViewController,  public TextFieldDelegate{
  public:
  GameViewController();
-  std::optional<std::shared_ptr<AbstractViewController>> Tick() override;
+
   void TextChanged(TextField &sender, const std::string &old_text) override;
   void TextEditingFinished(TextField &sender) override;
+
+
 
 };
 #endif //QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_GAME_VIEW_CONTROLLER_H_

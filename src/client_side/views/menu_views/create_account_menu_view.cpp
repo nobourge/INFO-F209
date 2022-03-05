@@ -4,9 +4,4 @@
 #include "views/text_field.h"
 #include <memory>
 
-CreateAccountMenuView::CreateAccountMenuView()
-    : AbstractMenuView(menu_name_) {
-
-
-}
-
+CreateAccountMenuView::CreateAccountMenuView() : AbstractMenuView(menu_name_) {}

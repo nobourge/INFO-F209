@@ -1,19 +1,21 @@
 #include "abstract_menu_view.h"
 #include "views/menu_button_item.h"
 
-AbstractMenuView::AbstractMenuView(const char *name) : EventResponder({}), name(name), subviews_() {
+AbstractMenuView::AbstractMenuView(const char *name)
+    : EventResponder({}), name(name), subviews_() {
   BecomeEventResponder();
 }
 
-const char *AbstractMenuView::GetName() const {
-  return name;
-}
+const char *AbstractMenuView::GetName() const { return name; }
 
 int AbstractMenuView::GetVerticalPadding() const {
-  return (LINES + 1 - GetSubviews().size() - (GetSubviews().size() - 1) * vertical_gutter_size_) / 2;
+  return (LINES + 1 - GetSubviews().size() -
+          (GetSubviews().size() - 1) * vertical_gutter_size_) /
+         2;
 }
 
-const std::vector<std::shared_ptr<AbstractView>> &AbstractMenuView::GetSubviews() const {
+const std::vector<std::shared_ptr<AbstractView>> &
+AbstractMenuView::GetSubviews() const {
   return subviews_;
 }
 
@@ -39,46 +41,45 @@ void AbstractMenuView::Draw(WINDOW *window) const {
     wattr_on(window, view->GetNcursesEffectForCurrentState(), nullptr);
 
     mvwprintw(window,
-              GetVerticalPadding()
-                  + view_idx * (GetVerticalGutterSize() + 1), // + 1 for title -1 for extra gutter cancels out
+              GetVerticalPadding() +
+                  view_idx *
+                      (GetVerticalGutterSize() +
+                       1), // + 1 for title -1 for extra gutter cancels out
               center_y - (view->GetInnerText().size() / 2),
               view->GetInnerText().c_str());
     wattr_off(window, view->GetNcursesEffectForCurrentState(), nullptr);
   }
 }
 
-void AbstractMenuView::MoveCursorDown() {
-  MoveCursor(false);
-}
+void AbstractMenuView::MoveCursorDown() { MoveCursor(false); }
 
-void AbstractMenuView::MoveCursorUp() {
-  MoveCursor(true);
-}
+void AbstractMenuView::MoveCursorUp() { MoveCursor(true); }
 
 void AbstractMenuView::MoveCursor(bool up) {
   auto current_view = GetIteratorOfHoveredSubview();
   (*current_view)->SetState(AbstractView::NORMAL);
   typedef std::vector<std::shared_ptr<AbstractView>>::iterator SubviewsIterator;
 
-  std::function<SubviewsIterator(SubviewsIterator)> next_elem = [&](SubviewsIterator iter) {
-    auto current_view_copy = iter;
-    if (up) {
-      if (iter == GetSubviews().begin()) {
-        return --GetSubviews().end();
-      } else {
-        return --current_view_copy;
-      }
-    } else {
-      if (iter == --GetSubviews().end()) {
-        return GetSubviews().begin();
-      } else {
-        return ++current_view_copy;
-      }
-    }
-  };
+  std::function<SubviewsIterator(SubviewsIterator)> next_elem =
+      [&](SubviewsIterator iter) {
+        auto current_view_copy = iter;
+        if (up) {
+          if (iter == GetSubviews().begin()) {
+            return --GetSubviews().end();
+          } else {
+            return --current_view_copy;
+          }
+        } else {
+          if (iter == --GetSubviews().end()) {
+            return GetSubviews().begin();
+          } else {
+            return ++current_view_copy;
+          }
+        }
+      };
 
-  // size + 1 because if we go through all the subviews and none are possible event responders,
-  // we should fall back to the original view
+  // size + 1 because if we go through all the subviews and none are possible
+  // event responders, we should fall back to the original view
   auto next_view = current_view;
 
   for (int i = 0; i < GetSubviews().size(); i++) {
@@ -91,11 +92,14 @@ void AbstractMenuView::MoveCursor(bool up) {
   (*next_view)->SetState(AbstractView::HOVER);
 }
 
-std::vector<std::shared_ptr<AbstractView>>::iterator AbstractMenuView::GetIteratorOfHoveredSubview() {
+std::vector<std::shared_ptr<AbstractView>>::iterator
+AbstractMenuView::GetIteratorOfHoveredSubview() {
   auto current_selected_idx =
-      std::find_if(GetSubviews().begin(), GetSubviews().end(), [](const std::shared_ptr<AbstractView> &btn) {
-        return btn->GetState() == AbstractView::HOVER or btn->GetState() == AbstractView::SELECTED;
-      });
+      std::find_if(GetSubviews().begin(), GetSubviews().end(),
+                   [](const std::shared_ptr<AbstractView> &btn) {
+                     return btn->GetState() == AbstractView::HOVER or
+                            btn->GetState() == AbstractView::SELECTED;
+                   });
 
   // if none are selected
   if (current_selected_idx == GetSubviews().end()) {
@@ -113,22 +117,24 @@ std::vector<std::shared_ptr<AbstractView>>::iterator AbstractMenuView::GetIterat
     }
 
     (*current_selected_idx)->SetState(AbstractView::HOVER);
-
   }
   return current_selected_idx;
 }
 
 void AbstractMenuView::SetFirstButtonStateToHoverIfNoneAreHoveredUpon() {
-  GetIteratorOfHoveredSubview(); // this allows to hover over a button if none are in hover state
+  GetIteratorOfHoveredSubview(); // this allows to hover over a button if none
+                                 // are in hover state
 }
 
 void AbstractMenuView::Click() {
   (*GetIteratorOfHoveredSubview())->SetState(AbstractView::SELECTED);
 }
 
-void AbstractMenuView::UpdateSubviews(const std::vector<std::shared_ptr<AbstractView>> &views = {}) {
+void AbstractMenuView::UpdateSubviews(
+    const std::vector<std::shared_ptr<AbstractView>> &views = {}) {
   // set subviews_ to keys of buttons_handler_map
   subviews_ = views;
+  subviews_.push_back(GetBackButtonView());
   SetFirstButtonStateToHoverIfNoneAreHoveredUpon();
 }
 
@@ -148,18 +154,24 @@ void AbstractMenuView::SetDelegate(MenuViewDelegate *delegate) {
 
 bool AbstractMenuView::RespondToEvent(const int &character) {
   switch (character) {
-    case KEY_UP:MoveCursorUp();
-      return true;
-    case KEY_DOWN:MoveCursorDown();
-      return true;
-    case '\n':Click();
-      return true;
-    default:return false;
+  case KEY_UP:
+    MoveCursorUp();
+    return true;
+  case KEY_DOWN:
+    MoveCursorDown();
+    return true;
+  case '\n':
+    Click();
+    return true;
+  default:
+    return false;
   }
 }
 
-std::unique_ptr<std::vector<std::shared_ptr<EventResponder>>> AbstractMenuView::GetChildren() {
-  auto output = std::make_unique<std::vector<std::shared_ptr<EventResponder>>>();
+std::unique_ptr<std::vector<std::shared_ptr<EventResponder>>>
+AbstractMenuView::GetChildren() {
+  auto output =
+      std::make_unique<std::vector<std::shared_ptr<EventResponder>>>();
   for (auto &subview : subviews_) {
     output->push_back(subview);
   }
@@ -167,6 +179,18 @@ std::unique_ptr<std::vector<std::shared_ptr<EventResponder>>> AbstractMenuView::
 }
 
 void AbstractMenuView::AddSubview(const std::shared_ptr<AbstractView> &view) {
-  subviews_.push_back(view);
+  if (subviews_.size() > 0) {
+    subviews_.insert(--(--subviews_.end()), view);
+  } else {
+    subviews_ = {view, GetBackButtonView()};
+  }
   SetFirstButtonStateToHoverIfNoneAreHoveredUpon();
+}
+
+std::string AbstractMenuView::GetBackButtonName() const { return "Back"; }
+
+std::shared_ptr<MenuButtonItem> AbstractMenuView::GetBackButtonView() {
+  return std::make_shared<MenuButtonItem>(
+      this, GetBackButtonName(),
+      std::optional<std::shared_ptr<AbstractViewController>>(), this);
 }

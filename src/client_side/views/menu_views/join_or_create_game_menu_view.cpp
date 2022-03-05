@@ -16,10 +16,5 @@ JoinOrCreateGameMenuView::JoinOrCreateGameMenuView()
       std::make_shared<MenuButtonItem>(
           this, "Join existing",
           std::make_shared<JoinGameMenuViewController>(), this),
-
-      std::make_shared<MenuButtonItem>(
-          this, "Back",
-          std::optional<std::shared_ptr<AbstractMenuViewController>>(), this),
-
   });
 }

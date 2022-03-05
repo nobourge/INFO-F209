@@ -1,7 +1,7 @@
 #include "create_account_view_controller.h"
+#include "../models/api_wrapper.h"
 #include "../views/menu_views/views/label.h"
 #include "home_menu_view_controller.h"
-#include "../models/api_wrapper.h"
 
 CreateAccountViewController::CreateAccountViewController()
     : AbstractMenuViewController(std::make_shared<CreateAccountMenuView>()) {
@@ -11,13 +11,9 @@ CreateAccountViewController::CreateAccountViewController()
   confirm_password_field_ =
       std::make_shared<TextField>(GetMenuView().get(), "", this);
 
-
-
   confirm_button_ = std::make_shared<MenuButtonItem>(
       GetMenuView().get(), "Create account",
       std::make_shared<HomeMenuViewController>(), this);
-
-
 
   username_field_->SetPlaceholder("empty login");
   password_field_->SetPlaceholder("empty password");
@@ -25,7 +21,6 @@ CreateAccountViewController::CreateAccountViewController()
 
   password_field_->SetDisplayMode(TextField::PASSWORD);
   confirm_password_field_->SetDisplayMode(TextField::PASSWORD);
-
 
   ReloadViews();
 }
@@ -53,13 +48,12 @@ void CreateAccountViewController::ReloadViews() {
       std::make_shared<Label>(GetMenuView().get(), ""), // SEPARATOR
 
       confirm_button_,
-      std::make_shared<MenuButtonItem>(
-          GetMenuView().get(), "Quit",
-          std::optional<std::shared_ptr<AbstractViewController>>{}, this),
   };
 
   if (error_message_.has_value()) {
-    subviews.insert(subviews.begin(), std::make_shared<Label>(GetMenuView().get(), *error_message_));
+    subviews.insert(
+        subviews.begin(),
+        std::make_shared<Label>(GetMenuView().get(), *error_message_));
   }
 
   GetMenuView()->UpdateSubviews(subviews);
@@ -95,12 +89,9 @@ void CreateAccountViewController::PresentController(
       }
     }
 
-
     ReloadViews();
 
   } else {
     AbstractMenuViewController::PresentViewController(destination);
-
   }
 }
-
