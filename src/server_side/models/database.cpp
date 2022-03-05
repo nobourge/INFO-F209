@@ -87,7 +87,7 @@ void DataBase::CreateTables() {
   // Create second table GAMES
   sql_ = "CREATE TABLE IF NOT EXISTS GAMES("
          "ID                      INTEGER   PRIMARY KEY , "
-         "ROOM_NAME               INT       NOT NULL    , "
+         "ROOM_NAME               TEXT       NOT NULL    , "
          "ADMIN_ID                INT       NOT NULL    , "
          "BOARD_ID                INT       NOT NULL    )";
 
