@@ -38,14 +38,21 @@ Game::Game(std::vector<std::pair<Position, int>> playersPair, int currentPlayerI
 
 }
 
-Game::Game(std::string gameName, int nrOfPlayers): gameName(gameName) {
+Game::Game(std::string gameName, object_id_t board_id, int nrOfPlayers): gameName(gameName) {
 
   players.push_back(std::make_shared<Player>(Position{4, 8}, NORTH));
   players.push_back(std::make_shared<Player>(Position{4, 0}, SOUTH));
 
+  if (nrOfPlayers > 2){
+    players.push_back(std::make_shared<Player>(Position{8, 4}, WEST));
+    players.push_back(std::make_shared<Player>(Position{0, 4}, EAST));
+  }
+
   gameOn = true;
   currentPlayer = players[0];
   board = new Board (players, {});
+
+  board->SaveToDB(board_id);
 
 }
 
@@ -58,6 +65,10 @@ Game::Game(std::string gameName, int nrOfPlayers): gameName(gameName) {
 
 // Game()  // randomwall game constructor
 
+
+Game Game::StartNewGame(std::string gameName, int nrOfPlayers, object_id_t board_id) {
+  return Game(gameName, board_id, nrOfPlayers);
+}
 
 std::optional<Game> Game::InitFromDB(object_id_t game_id) {
   std::string statement = "SELECT * FROM BOARD WHERE BOARD.ID=(SELECT GAMES.BOARD_ID FROM GAMES WHERE GAMES.ID="+std::to_string(game_id)+")";
@@ -339,8 +350,6 @@ void Game::PlayMove(std::string move) {
   }else {
     std::cout<<"invalid input"<<std::endl;
   }
-
-
 }
 
 ///

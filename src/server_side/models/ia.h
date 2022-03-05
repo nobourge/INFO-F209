@@ -9,10 +9,10 @@
 using namespace std;
 
 class Ia:public Player{
-    int nrOfWalls=10;
 public:
     Ia(Position,DIRECTION=SOUTH);
-    Position playIAMove(bool=true) override;
+    bool IsAI(){return true;};
+    Position playIAMove(bool=true);
     bool hasWon() override;
   };
 

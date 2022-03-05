@@ -16,9 +16,10 @@ class Game {
 public:
   Game();
   Game(std::vector<std::pair<Position, int>> playersPair, int currentPlayerIndex, std::vector<Position> walls);
-  Game(std::string gameName, int nrOfPlayers=2);
+  Game(std::string gameName, object_id_t game_id, int nrOfPlayers=2);
   ~Game() { delete board; }
 
+  static Game StartNewGame(std::string gameName, int nrOfPlayers, object_id_t board_id=0);   // initializing the id to make testing easier
   static std::optional<Game> InitFromDB(object_id_t game_id=0);   // initializing the id to make testing easier
 
   void SaveToDB(std::string game_name, object_id_t game_id=0);
@@ -31,7 +32,6 @@ public:
   void joinGame();
   void endGame();
   void PlayMove(std::string move);
-  // void playCoup();
   void playIaMove();
   void calculateRanking();
   std::shared_ptr<Player> getCurrentPlayer();
