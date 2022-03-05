@@ -8,14 +8,45 @@ using namespace std;
 
 Game::Game() {}
 
-Game::Game(std::vector<std::shared_ptr<Player>> players, int currentPlayerIndex,
-           std::vector<Position> walls):
-           players{players}, currentPlayer{players[currentPlayerIndex]} {
+Game::Game(std::vector<std::pair<Position, int>> playersPair, int currentPlayerIndex,
+           std::vector<Position> walls) {
 
   // if (players.size>=2) We need at least 2 players to begin the game.
+  int direction = 0;
+
+  // not giving the pointer in paramater but making them here due to a previous
+  // memory leak
+  for (auto pair : playersPair) {
+    players.push_back(std::make_shared<Player>(pair.first, static_cast<DIRECTION>(direction), pair.second));
+    direction++;
+  }
+
+  currentPlayer = players[0];
+
+
   gameOn = true;
   board = new Board (players, walls);
-  cout<<board->GetBoardString()<<std::endl;
+
+  // cout<<board->GetBoardString()<<std::endl;
+  // code for local testing on terminal
+  // std::vector<std::string> test{"M->F", "M->F", "M->F", "M->F->L", "W->a1->a2->S", "W->a2->a3->S"};
+  // for (std::string move : test){
+  //   PlayMove(move);
+  //   cout<<board->GetBoardString()<<std::endl;
+  // }
+  // end of testing code
+
+}
+
+Game::Game(std::string gameName, int nrOfPlayers): gameName(gameName) {
+
+  players.push_back(std::make_shared<Player>(Position{4, 8}, NORTH));
+  players.push_back(std::make_shared<Player>(Position{4, 0}, SOUTH));
+
+  gameOn = true;
+  currentPlayer = players[0];
+  board = new Board (players, {});
+
 }
 
 // Game() // ia game constructor
@@ -30,7 +61,6 @@ Game::Game(std::vector<std::shared_ptr<Player>> players, int currentPlayerIndex,
 
 std::optional<Game> Game::InitFromDB(object_id_t game_id) {
   std::string statement = "SELECT * FROM BOARD WHERE BOARD.ID=(SELECT GAMES.BOARD_ID FROM GAMES WHERE GAMES.ID="+std::to_string(game_id)+")";
-  std::cout<<statement<<std::endl;
 
   std::vector<std::vector<std::string>> records = DataBase::GetInstance()->
     GetSelect(statement);
@@ -47,14 +77,14 @@ std::optional<Game> Game::InitFromDB(object_id_t game_id) {
 
 
   if (std::stoi(record[1]) > 2){
-    return Game{ {std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[3]), NORTH, std::stoi(record[4])),
-                 std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[5]), SOUTH, std::stoi(record[6])),
-                 std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[7]), SOUTH, std::stoi(record[8])),
-                 std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[9]), SOUTH, std::stoi(record[10]))},
+    return Game{ {std::pair<Position, int>(Board::GetPositionFromPositionSerialization(record[3]), std::stoi(record[4])),
+                 std::pair<Position, int>(Board::GetPositionFromPositionSerialization(record[5]), std::stoi(record[6])),
+                 std::pair<Position, int>(Board::GetPositionFromPositionSerialization(record[7]), std::stoi(record[8])),
+                 std::pair<Position, int>(Board::GetPositionFromPositionSerialization(record[9]), std::stoi(record[10]))},
                  std::stoi(record[11]), Board::GetWallFromWallSerialization(record[2])};
   }else{
-    return Game{{std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[3]), NORTH, std::stoi(record[4])),
-                 std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[5]), SOUTH, std::stoi(record[6]))},
+    return Game{{std::pair<Position, int>(Board::GetPositionFromPositionSerialization(record[3]), std::stoi(record[4])),
+                 std::pair<Position, int>(Board::GetPositionFromPositionSerialization(record[5]), std::stoi(record[6]))},
                  std::stoi(record[11]), Board::GetWallFromWallSerialization(record[2])};
   }
 }
@@ -183,95 +213,134 @@ void Game::endGame() {
 ///
 /// \return
 bool Game::gameOnGoing() {
-  playCoup();
+  PlayMove("M->F");
   return gameOn;
 }
 
-///
 
-void Game::playCoup() {
-  bool on = false;
+void Game::PlayMove(std::string move) {
+  std::string first_input =  move.substr(0, move.find("->"));
+  move.erase(0, move.find("->") + 2);
+  std::string second_input = move.substr(0, move.find("->"));
+  move.erase(0, move.find("->") + 2);
 
-  while (!on) {
-    Input input;
-    cout << "Do you want to move your player or place a wall?" << endl
-         << "To make your choice please write W (place wall) or M (move player)"
-         << endl;
-    char enter = input.getInput();
-    if (enter == 'W') {
-      if (currentPlayer->GetNrOfWalls() <= 0) {
-        cout << "out of walls" << endl;
+  if (first_input == "M") {
+    DIRECTION direction;
+    switch(second_input[0]) {
+      case 'F':
+        direction = NORTH;
         break;
+      case 'B':
+        direction = SOUTH;
+        break;
+      case 'L':
+        direction = WEST;
+        break;
+      case 'R':
+          direction = EAST;
+          break;
+      default:
+        std::cout<<second_input[0]<<" is an invalid direction"<<std::endl;
+        return;
+    }
+
+    Position playerMove = currentPlayer->playMove(direction);
+    if(move.empty()){
+      if(board->IsMovePossible(currentPlayer->getPlayerPos(),playerMove)){
+        board->Movement(currentPlayer->getPlayerPos(),playerMove);
+        currentPlayer->setPlayerPosition(playerMove);
+        currentPlayer->increaseScore();
+        SwitchCurrentPlayer();
+      }
+    }else if (second_input.size() == 1
+              && !board->GetWallBetween(board->GetCellAtPosition(currentPlayer->getPlayerPos()), direction)
+              && board->GetCellAtPosition(playerMove).isPawn()) {
+
+      std::string third_input = move;
+
+      DIRECTION second_direction;
+      std::cout<<"is hop"<<std::endl;
+
+      switch(third_input[0]) {
+        case 'F':
+          second_direction = NORTH;
+          break;
+        case 'B':
+          second_direction = SOUTH;
+          break;
+        case 'L':
+          second_direction = WEST;
+          break;
+        case 'R':
+          second_direction = EAST;
+          break;
+        default:
+          std::cout<<third_input[0]<<" is an invalid direction"<<std::endl;
+          return;
       }
 
-      string placement = input.getInputWall();
-      DIRECTION direct;
-      pair<Position, Position> wall = currentPlayer->placeWall(placement);
-      char direction = placement[8];
-      cout << wall.first.col << " " << wall.first.row << endl;
-      cout << wall.second.col << " " << wall.second.row << endl;
-      cout << direction << endl;
-      switch (direction) {
+      std::vector<DIRECTION> possible_hops = board->PossiblePawnHops(playerMove, direction);
+
+      if (! possible_hops.empty()) {
+        if (std::find(possible_hops.begin(), possible_hops.end(), second_direction) != possible_hops.end()){
+          board->Movement(currentPlayer->getPlayerPos(), playerMove+second_direction);
+          currentPlayer->setPlayerPosition(playerMove+second_direction);
+          currentPlayer->increaseScore();
+          SwitchCurrentPlayer();
+        }else std::cout<<"wrong hop direction"<<std::endl;
+      }else {
+        std::cout<<"impossible to hop over"<<std::endl;
+        return;
+      }
+    }
+
+  }else if (first_input == "W"){
+    std::cout<<"is placing a wall"<<std::endl;
+    if (currentPlayer->GetNrOfWalls() <= 0) {
+      cout << "out of walls" << endl;
+      return;
+    }
+    std::string third_input =  move.substr(0, move.find("->"));
+    move.erase(0, move.find("->") + 2);
+    std::string fourth_input = move;
+    move.erase(0, 1);
+
+    if (!move.empty()) return;
+
+    DIRECTION wallDirection;
+    switch (fourth_input[0]) {
       case 'N':
-        direct = NORTH;
+        wallDirection = NORTH;
         break;
       case 'S':
-        direct = SOUTH;
+        wallDirection = SOUTH;
         break;
       case 'E':
-        direct = EAST;
+        wallDirection = EAST;
         break;
       case 'W':
-        direct = WEST;
+        wallDirection = WEST;
         break;
-      }
-
-      // Check is the placement is possible with isWallPossible();
-      if (board->IsWallPossible(wall.first, wall.second, direct)) {
-        board->PlaceWall(wall.first, wall.second, direct);
-        currentPlayer->increaseScore();
-        on = true;
-        currentPlayer->DecNrOfWalls();
-      }
-
-        }else if(enter=='M'){
-                DIRECTION direction=input.getInputMovement();
-                Position coup=currentPlayer->playMove(direction);
-                if(board->IsMovePossible(currentPlayer->getPlayerPos(),coup)){
-                    // board->Movement(currentPlayer->getPlayerPos(),false);
-                    board->Movement(currentPlayer->getPlayerPos(),coup);
-                    currentPlayer->setPlayerPosition(coup);
-                    // board->Movement(coup,true);
-                    currentPlayer->increaseScore();
-                    on=true;
-                }
-                else if(!board->GetWallBetween(board->GetCellAtPosition(currentPlayer->getPlayerPos()), direction)
-                        && board->GetCellAtPosition(coup).isPawn()){
-                    //it just works
-                    std::vector<DIRECTION> possible_hops = board->PossiblePawnHops(coup, direction);
-                    if (possible_hops.size() == 1) {
-                        board->Movement(currentPlayer->getPlayerPos(), coup+possible_hops[0]);
-                        currentPlayer->setPlayerPosition(coup+possible_hops[0]);
-                        currentPlayer->increaseScore();
-                        on=true;
-                    }else if (! possible_hops.empty()) {
-                        DIRECTION second_direction = input.getInputMovement();
-                        if (std::find(possible_hops.begin(), possible_hops.end(), second_direction) != possible_hops.end()){
-                            board->Movement(currentPlayer->getPlayerPos(), coup+second_direction);
-                            currentPlayer->setPlayerPosition(coup+second_direction);
-                            currentPlayer->increaseScore();
-                            on=true;
-                        }
-                    }
-
-                  }
-
-    } else {
-      cout << "Move invalid" << endl;
+      default:
+        return;
     }
+
+    pair<Position, Position> wall {Translator::Get().translateMove(second_input),
+                                   Translator::Get().translateMove(third_input)};
+
+    // Check is the placement is possible with isWallPossible();
+    if (board->IsWallPossible(wall.first, wall.second, wallDirection)) {
+      board->PlaceWall(wall.first, wall.second, wallDirection);
+      currentPlayer->increaseScore();
+      currentPlayer->DecNrOfWalls();
+      SwitchCurrentPlayer();
+    }
+
+  }else {
+    std::cout<<"invalid input"<<std::endl;
   }
 
-  SwitchCurrentPlayer();
+
 }
 
 ///

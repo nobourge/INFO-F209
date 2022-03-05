@@ -11,10 +11,12 @@
 #include <optional>
 
 
+
 class Game {
 public:
   Game();
-  Game(std::vector<std::shared_ptr<Player>> players, int currentPlayerIndex, std::vector<Position> walls);
+  Game(std::vector<std::pair<Position, int>> playersPair, int currentPlayerIndex, std::vector<Position> walls);
+  Game(std::string gameName, int nrOfPlayers=2);
   ~Game() { delete board; }
 
   static std::optional<Game> InitFromDB(object_id_t game_id=0);   // initializing the id to make testing easier
@@ -28,7 +30,8 @@ public:
   bool hasCurrentPlayerWon();
   void joinGame();
   void endGame();
-  void playCoup();
+  void PlayMove(std::string move);
+  // void playCoup();
   void playIaMove();
   void calculateRanking();
   std::shared_ptr<Player> getCurrentPlayer();
@@ -39,6 +42,7 @@ public:
 
 
 private:
+  std::string gameName;
   Board *board;
   std::vector<std::shared_ptr<Player>> players;
   std::shared_ptr<Player> currentPlayer;

@@ -4,10 +4,13 @@
 
 using namespace std;
 
-class translator{
-  //should be a singleton
-
+class Translator{ // singleton
+  Translator() {}
+  static Translator instance;
 public:
+
+  static Translator& Get();
+
   ///
   /// \return
     bool verifyMove(string,vector<char>);
@@ -19,5 +22,6 @@ public:
     Position translateMove(string,int=9);
 
     std::string PositionToMove(const Position, int=9);
+
 
 };

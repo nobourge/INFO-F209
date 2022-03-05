@@ -47,7 +47,6 @@ bool Player::hasWon(){
 pair<Position,Position> Player::placeWall(string placement){
     //Cut the a1->a2->N in a1 , a2 and N;
     std::string delimiter = "->";
-	translator translate;
 	std::string case1 = placement.substr(0, placement.find(delimiter));
 
 	placement.erase(0, placement.find(delimiter) + delimiter.length());
@@ -55,8 +54,8 @@ pair<Position,Position> Player::placeWall(string placement){
 
 
     //Translate the move a1 in Position;
-    Position move1=translate.translateMove(case1);
-    Position move2=translate.translateMove(case2);
+    Position move1=Translator::Get().translateMove(case1);
+    Position move2=Translator::Get().translateMove(case2);
 
     pair<Position,Position> ret={move1, move2};
     return ret;

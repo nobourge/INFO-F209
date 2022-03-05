@@ -3,11 +3,17 @@
 using namespace std;
 
 
+Translator Translator::instance;
+
+Translator& Translator::Get() {
+	return instance;
+}
+
 /// checks move conformity
 /// \param move
 /// \param lettres
 /// \return
-bool translator::verifyMove(string move, vector<char> lettres) {
+bool Translator::verifyMove(string move, vector<char> lettres) {
 	bool coup_verified = false;
 	for (auto x : lettres) {
 
@@ -24,7 +30,7 @@ bool translator::verifyMove(string move, vector<char> lettres) {
 /// \param move
 /// \param nombres
 /// \return
-bool translator::verifyNumber(string move, vector<string> nombres) {
+bool Translator::verifyNumber(string move, vector<string> nombres) {
 	bool numberVerified = false;
 	for (auto x : nombres) {
 		int nr = stoi(move);
@@ -39,7 +45,7 @@ bool translator::verifyNumber(string move, vector<string> nombres) {
 /// \param move
 /// \param taille
 /// \return
-Position translator::translateMove(string move,int taille) {
+Position Translator::translateMove(string move,int taille) {
 	Position res;
 	vector<char>lettres;
 	vector<string>nombres;
@@ -74,7 +80,7 @@ Position translator::translateMove(string move,int taille) {
 
 }
 
-std::string translator::PositionToMove(const Position position, int size){
+std::string Translator::PositionToMove(const Position position, int size){
 	vector<char>lettres;
 	vector<string>nombres;
 

@@ -6,6 +6,7 @@
 #include "common.h"
 #include <iostream>
 #include "translator.h"
+#include <optional>
 
 class Player{
     int nbWalls=10;
@@ -34,6 +35,7 @@ public:
     void DecNrOfWalls();
     int GetNrOfWalls();
 
+    virtual bool IsAI(){return false;};
 };
 
 #endif
