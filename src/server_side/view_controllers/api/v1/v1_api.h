@@ -169,7 +169,12 @@ protected:
     ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(requests);
 
-      return SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
+      crow::json::wvalue output;
+
+      output["success"] = true;
+      output["users"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
+
+      return output;
     });
 
     API_ROUTE(GetApp(), "/api/v1/me")
