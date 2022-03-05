@@ -39,10 +39,6 @@ Board::Board(std::vector<std::shared_ptr<Player>> pawns_, std::vector<Position> 
 
   }
 
-  std::cout<<GetWallsSerialization()<<std::endl;
-  std::string test = GetWallsSerialization();
-  std::cout<<GetWallFromWallSerialization(test)[0].row<<std::endl;
-
 }
 
 
@@ -263,6 +259,9 @@ bool Board::HasPathToEnd(std::vector<Position> path, const DIRECTION goal) {
 /// \param direction
 /// \return
 bool Board::IsWallPossible(const Position firstCell, const Position secondCell, const DIRECTION direction) {
+
+  if (GetCellAtPosition(firstCell).checkDirection(direction)
+      || GetCellAtPosition(secondCell).checkDirection(direction)) return false;
 
   Position firstOpposite=GetOppositeCell(firstCell,direction);
   Position secondOpposite=GetOppositeCell(secondCell,direction);
