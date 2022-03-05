@@ -39,30 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/noe/CLionProjects/INFO-F209/cmake-build-debug/
-
-#############################################
-# Utility command for rebuild_cache
-
-build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug && /snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/noe/CLionProjects/INFO-F209 -B/home/noe/CLionProjects/INFO-F209/cmake-build-debug
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build rebuild_cache: phony CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug && /snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build edit_cache: phony CMakeFiles/edit_cache.util
-
+cmake_ninja_workdir = C$:/Users/bourg/Documents/GitHub/INFO-F209/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target QuoridorServer
 
@@ -72,167 +49,131 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_QuoridorServer: phony || CMakeFiles/QuoridorServer.dir
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/main.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/main.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/main.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/main.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/main.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\main.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/board.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/board.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/board.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/board.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/board.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\board.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/cell.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/cell.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/cell.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/cell.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/cell.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\cell.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/database.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/database.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/database.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/database.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/database.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\database.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/Game.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/Game.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/Game.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/Game.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/Game.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\Game.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/ia.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/ia.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/ia.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/ia.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/ia.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\ia.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/input.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/input.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/input.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/input.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/input.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\input.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/Player.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/Player.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/Player.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/Player.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/Player.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\Player.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/position.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/position.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/position.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/position.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/position.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\position.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/translator.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/translator.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/translator.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/translator.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/translator.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\translator.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
-build CMakeFiles/QuoridorServer.dir/src/common/models/user/abstract_validator.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/common/models/user/abstract_validator.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/common/models/user/abstract_validator.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/common/models/user/abstract_validator.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/common/models/user/abstract_validator.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\common\models\user\abstract_validator.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\common\models\user
 
-build CMakeFiles/QuoridorServer.dir/src/common/models/user/message.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/common/models/user/message.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/common/models/user/message.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/common/models/user/message.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/common/models/user/message.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\common\models\user\message.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\common\models\user
 
-build CMakeFiles/QuoridorServer.dir/src/common/models/user/password.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/common/models/user/password.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/common/models/user/password.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/common/models/user/password.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/common/models/user/password.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\common\models\user\password.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\common\models\user
 
-build CMakeFiles/QuoridorServer.dir/src/common/models/user/user.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/common/models/user/user.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/common/models/user/user.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/common/models/user/user.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/common/models/user/user.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\common\models\user\user.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\common\models\user
 
-build CMakeFiles/QuoridorServer.dir/src/common/models/user/username.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/common/models/user/username.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/common/models/user/username.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/common/models/user/username.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/common/models/user/username.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\common\models\user\username.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\common\models\user
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_quoridor_api.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/view_controllers/api/base_quoridor_api.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_quoridor_api.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_quoridor_api.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/view_controllers/api/base_quoridor_api.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\view_controllers\api\base_quoridor_api.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\view_controllers\api
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_api.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/view_controllers/api/v1/v1_api.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_api.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_api.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/view_controllers/api/v1/v1_api.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\view_controllers\api\v1\v1_api.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\view_controllers\api\v1
 
-build CMakeFiles/QuoridorServer.dir/src/server_side/models/user_server.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/user_server.cpp || cmake_object_order_depends_target_QuoridorServer
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
-  DEP_FILE = CMakeFiles/QuoridorServer.dir/src/server_side/models/user_server.cpp.o.d
+build CMakeFiles/QuoridorServer.dir/src/server_side/models/user_server.cpp.obj: CXX_COMPILER__QuoridorServer_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/user_server.cpp || cmake_object_order_depends_target_QuoridorServer
+  DEP_FILE = CMakeFiles\QuoridorServer.dir\src\server_side\models\user_server.cpp.obj.d
   FLAGS = -pthread -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/models
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_PDB = QuoridorServer.pdb
+  INCLUDES = -isystem "C:/Program Files/OpenSSL-Win64/include"
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  OBJECT_FILE_DIR = CMakeFiles\QuoridorServer.dir\src\server_side\models
 
 
 # =============================================================================
@@ -240,49 +181,72 @@ build CMakeFiles/QuoridorServer.dir/src/server_side/models/user_server.cpp.o: CX
 
 
 #############################################
-# Link the executable QuoridorServer
+# Link the executable QuoridorServer.exe
 
-build QuoridorServer: CXX_EXECUTABLE_LINKER__QuoridorServer_Debug CMakeFiles/QuoridorServer.dir/src/server_side/main.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/board.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/cell.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/database.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/Game.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/ia.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/input.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/Player.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/position.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/translator.cpp.o CMakeFiles/QuoridorServer.dir/src/common/models/user/abstract_validator.cpp.o CMakeFiles/QuoridorServer.dir/src/common/models/user/message.cpp.o CMakeFiles/QuoridorServer.dir/src/common/models/user/password.cpp.o CMakeFiles/QuoridorServer.dir/src/common/models/user/user.cpp.o CMakeFiles/QuoridorServer.dir/src/common/models/user/username.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_quoridor_api.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_api.cpp.o CMakeFiles/QuoridorServer.dir/src/server_side/models/user_server.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0 /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libsqlite3.so /usr/lib/x86_64-linux-gnu/libcrypto.so
+build QuoridorServer.exe: CXX_EXECUTABLE_LINKER__QuoridorServer_Debug CMakeFiles/QuoridorServer.dir/src/server_side/main.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/board.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/cell.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/database.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/Game.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/ia.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/input.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/Player.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/position.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/translator.cpp.obj CMakeFiles/QuoridorServer.dir/src/common/models/user/abstract_validator.cpp.obj CMakeFiles/QuoridorServer.dir/src/common/models/user/message.cpp.obj CMakeFiles/QuoridorServer.dir/src/common/models/user/password.cpp.obj CMakeFiles/QuoridorServer.dir/src/common/models/user/user.cpp.obj CMakeFiles/QuoridorServer.dir/src/common/models/user/username.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_quoridor_api.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_api.cpp.obj CMakeFiles/QuoridorServer.dir/src/server_side/models/user_server.cpp.obj | C$:/Program$ Files/OpenSSL-Win64/lib/libssl.lib C$:/Program$ Files/OpenSSL-Win64/lib/libcrypto.lib
   FLAGS = -pthread -g
-  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0  /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib/x86_64-linux-gnu/libsqlite3.so  /usr/lib/x86_64-linux-gnu/libcrypto.so
-  OBJECT_DIR = CMakeFiles/QuoridorServer.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
-  TARGET_FILE = QuoridorServer
-  TARGET_PDB = QuoridorServer.pdb
+  LINK_LIBRARIES = "C:/Program Files/OpenSSL-Win64/lib/libssl.lib"  "C:/Program Files/OpenSSL-Win64/lib/libcrypto.lib"  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\QuoridorServer.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = QuoridorServer.exe
+  TARGET_IMPLIB = libQuoridorServer.dll.a
+  TARGET_PDB = QuoridorServer.exe.dbg
 
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/noe/CLionProjects/INFO-F209/CMakeLists.txt
-# =============================================================================
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src && /snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/noe/CLionProjects/INFO-F209 -B/home/noe/CLionProjects/INFO-F209/cmake-build-debug
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\bourg\Documents\GitHub\INFO-F209 -BC:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/bourg/Documents/GitHub/INFO-F209/CMakeLists.txt
+# =============================================================================
 
 
 #############################################
 # Utility command for edit_cache
 
 build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src && /snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
 build src/edit_cache: phony src/CMakeFiles/edit_cache.util
 
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug\src && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\bourg\Documents\GitHub\INFO-F209 -BC:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/noe/CLionProjects/INFO-F209/src/CMakeLists.txt
+# C:/Users/bourg/Documents/GitHub/INFO-F209/src/CMakeLists.txt
 # =============================================================================
 
 
@@ -290,23 +254,12 @@ build src/edit_cache: phony src/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build src/client_side/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src/client_side && /snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/noe/CLionProjects/INFO-F209 -B/home/noe/CLionProjects/INFO-F209/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug\src\client_side && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\bourg\Documents\GitHub\INFO-F209 -BC:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
 build src/client_side/rebuild_cache: phony src/client_side/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build src/client_side/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src/client_side && /snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build src/client_side/edit_cache: phony src/client_side/CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Object build statements for EXECUTABLE target ClientSide
@@ -317,357 +270,293 @@ build src/client_side/edit_cache: phony src/client_side/CMakeFiles/edit_cache.ut
 
 build cmake_object_order_depends_target_ClientSide: phony || src/client_side/CMakeFiles/ClientSide.dir
 
-build src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/main.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/main.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/main.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir
 
-build src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/models/user_client.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/models/user_client.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\models\user_client.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/models
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\models
 
-build src/client_side/CMakeFiles/ClientSide.dir/models/ranking.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/models/ranking.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/models/ranking.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/models/ranking.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/models/ranking.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\models\ranking.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/models
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\models
 
-build src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/models/api_wrapper.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/models/api_wrapper.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\models\api_wrapper.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/models
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\models
 
-build src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/models/requests.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/models/requests.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\models\requests.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/models
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\models
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/abstract_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_searchable_list_menu_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/abstract_searchable_list_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_searchable_list_menu_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_searchable_list_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_searchable_list_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_searchable_list_menu_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_list_menu_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/abstract_list_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_list_menu_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_list_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_list_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_list_menu_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_menu_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/abstract_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_menu_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_menu_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_authed_menu_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/abstract_authed_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_authed_menu_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_authed_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_authed_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_authed_menu_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/ranking_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/ranking_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/ranking_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/ranking_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/ranking_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\ranking_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/home_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/home_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\home_menu_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_mode_selection_menu_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/game_mode_selection_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_mode_selection_menu_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/new_game_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/new_game_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\new_game_menu_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/login_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/login_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/login_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/login_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/login_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\login_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/help_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/help_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/help_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/help_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/help_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\help_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/create_account_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/create_account_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/create_account_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/create_account_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/create_account_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\create_account_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/chat_room_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/chat_room_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/chat_room_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/chat_room_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/chat_room_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\chat_room_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/start_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/start_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/start_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/start_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/start_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\start_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/game_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/game_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\game_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/friend_list_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/friend_list_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/friend_list_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/friend_list_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/friend_list_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\friend_list_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/find_friend_view_controller.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/view_controllers/find_friend_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/find_friend_view_controller.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/find_friend_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/find_friend_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\find_friend_view_controller.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/find_new_friend_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/find_new_friend_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\find_new_friend_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/friend_list_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/friend_list_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\friend_list_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/game_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/game_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\game_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/chat_room_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/chat_room_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\chat_room_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/start_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/start_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\start_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/create_account_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/create_account_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\create_account_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_mode_selection_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/game_mode_selection_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_mode_selection_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/new_game_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/new_game_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\new_game_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/abstract_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/abstract_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\abstract_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/ranking_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/ranking_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\ranking_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/login_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/login_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\login_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/help_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/help_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\help_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/home_menu_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/home_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\home_menu_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/views/abstract_view.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/views/abstract_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views\abstract_view.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/views/button.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/views/button.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views\button.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/views/label.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/views/label.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views\label.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/views/menu_button_item.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/views/menu_button_item.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views\menu_button_item.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/views/first_responder.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/views/first_responder.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views\first_responder.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views
 
-build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/client_side/views/menu_views/views/text_field.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/views/text_field.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views\text_field.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\views
 
-build src/client_side/CMakeFiles/ClientSide.dir/__/server_side/models/database.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/server_side/models/database.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/server_side/models/database.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/__/server_side/models/database.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/server_side/models/database.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\__\server_side\models\database.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/server_side/models
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\__\server_side\models
 
-build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/common/models/user/user.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/common/models/user/user.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\__\common\models\user\user.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\__\common\models\user
 
-build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/common/models/user/message.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/common/models/user/message.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\__\common\models\user\message.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\__\common\models\user
 
-build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/common/models/user/username.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/common/models/user/username.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\__\common\models\user\username.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\__\common\models\user
 
-build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/CLionProjects/INFO-F209/src/common/models/user/abstract_validator.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.o.d
+build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/common/models/user/abstract_validator.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\__\common\models\user\abstract_validator.cpp.obj.d
   FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\__\common\models\user
+
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/join_or_create_game_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/join_or_create_game_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\join_or_create_game_menu_view_controller.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
+
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_or_create_game_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/join_or_create_game_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\join_or_create_game_menu_view.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
+
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/join_game_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/join_game_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\join_game_menu_view_controller.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
+
+build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_game_menu_view.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/views/menu_views/join_game_menu_view.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views\join_game_menu_view.cpp.obj.d
+  FLAGS = -g -std=gnu++2a
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
 
 # =============================================================================
@@ -675,22 +564,37 @@ build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_v
 
 
 #############################################
-# Link the executable src/client_side/ClientSide
+# Link the executable src\client_side\ClientSide.exe
 
-build src/client_side/ClientSide: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/ranking.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_searchable_list_menu_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_list_menu_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_menu_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_authed_menu_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/ranking_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_mode_selection_menu_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/login_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/help_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/create_account_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/chat_room_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/start_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/friend_list_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/find_friend_view_controller.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_mode_selection_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/server_side/models/database.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.o | /usr/lib/x86_64-linux-gnu/libsqlite3.so
+build src/client_side/ClientSide.exe: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/main.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/ranking.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_searchable_list_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_list_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_authed_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/ranking_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/new_game_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/login_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/help_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/create_account_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/chat_room_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/start_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/friend_list_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/find_friend_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/new_game_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/server_side/models/database.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/join_or_create_game_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_or_create_game_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/join_game_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_game_menu_view.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lncurses  -lcurl  -lpthread  /usr/lib/x86_64-linux-gnu/libsqlite3.so
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
-  TARGET_FILE = src/client_side/ClientSide
-  TARGET_PDB = src/client_side/ClientSide.pdb
+  LINK_LIBRARIES = -lncurses  -lcurl  -lpthread  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = src\client_side\ClientSide.exe
+  TARGET_IMPLIB = src\client_side\libClientSide.dll.a
+  TARGET_PDB = ClientSide.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/client_side/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\bourg\Documents\GitHub\INFO-F209\cmake-build-debug\src\client_side && "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/client_side/edit_cache: phony src/client_side/CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Target aliases.
 
-build ClientSide: phony src/client_side/ClientSide
+build ClientSide: phony src/client_side/ClientSide.exe
+
+build ClientSide.exe: phony src/client_side/ClientSide.exe
+
+build QuoridorServer: phony QuoridorServer.exe
 
 # =============================================================================
 # Folder targets.
@@ -698,23 +602,23 @@ build ClientSide: phony src/client_side/ClientSide
 # =============================================================================
 
 #############################################
-# Folder: /home/noe/CLionProjects/INFO-F209/cmake-build-debug
+# Folder: C:/Users/bourg/Documents/GitHub/INFO-F209/cmake-build-debug
 
-build all: phony QuoridorServer src/all
+build all: phony QuoridorServer.exe src/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src
+# Folder: C:/Users/bourg/Documents/GitHub/INFO-F209/cmake-build-debug/src
 
 build src/all: phony src/client_side/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/noe/CLionProjects/INFO-F209/cmake-build-debug/src/client_side
+# Folder: C:/Users/bourg/Documents/GitHub/INFO-F209/cmake-build-debug/src/client_side
 
-build src/client_side/all: phony src/client_side/ClientSide
+build src/client_side/all: phony src/client_side/ClientSide.exe
 
 # =============================================================================
 # Built-in targets
@@ -723,14 +627,14 @@ build src/client_side/all: phony src/client_side/ClientSide
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompilerABI.c /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystem.cmake.in /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindSQLite3.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-static.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindOpenSSL.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindSQLite3.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompilerABI.c /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystem.cmake.in /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/FindSQLite3.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/180/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-static.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindOpenSSL.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/FindSQLite3.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2019.3.4/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################
