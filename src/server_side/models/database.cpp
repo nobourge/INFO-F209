@@ -78,13 +78,18 @@ void DataBase::CreateTables() {
          "PLAYER3_PAWN            TEXT      NOT NULL    , "
          "PLAYER3_WALLS_LEFT      INT       NOT NULL    , "
          "PLAYER4_PAWN            TEXT      NOT NULL    , "
-         "PLAYER4_WALLS_LEFT      INT       NOT NULL    ) ";
+         "PLAYER4_WALLS_LEFT      INT       NOT NULL    , "
+         "LAST_TO_MOVE            INT       NOT NULL    ) ";
+
+  last_sqlite3_exit_code_ =
+      sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   // Create second table GAMES
   sql_ = "CREATE TABLE IF NOT EXISTS GAMES("
          "ID                      INTEGER   PRIMARY KEY , "
+         "ROOM_NAME               INT       NOT NULL    , "
          "ADMIN_ID                INT       NOT NULL    , "
-         "BOARD_ID                INT                   )";
+         "BOARD_ID                INT       NOT NULL    )";
 
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
@@ -284,7 +289,7 @@ void DataBase::InsertBoard(
     int firstPlayerWallsLeft, std::string secondPlayerPawnPosition,
     int secondPlayerWallsLeft, std::string thirdPlayerPawnPosition,
     int thirdPlayerWallsLeft, std::string fourthPlayerPawnPosition,
-    int fourthPlayerWallsLeft) {
+    int fourthPlayerWallsLeft, int lastPlayerToMove, int gameId) {
   LOCK_DB;
   std::string statement =
       "INSERT INTO BOARD VALUES (" + std::to_string(board_id) + "," +
@@ -294,7 +299,7 @@ void DataBase::InsertBoard(
       std::to_string(secondPlayerWallsLeft) + ",\"" + thirdPlayerPawnPosition +
       "\"," + std::to_string(thirdPlayerWallsLeft) + ",\"" +
       fourthPlayerPawnPosition + "\"," + std::to_string(fourthPlayerWallsLeft) +
-      ")";
+      "," + std::to_string(lastPlayerToMove) + ")";
 
   // sqlite3_open(DATABASE_FILE_NAME, &db_);
   sqlite3_exec(db_, statement.c_str(), nullptr, nullptr, &messageError);
@@ -306,14 +311,16 @@ void DataBase::InsertBoard(int nrOfPawns, std::string walls,
                            std::string firstPlayerPawnPosition,
                            int firstPlayerWallsLeft,
                            std::string secondPlayerPawnPosition,
-                           int secondPlayerWallsLeft) {
+                           int secondPlayerWallsLeft,
+                           int lastPlayerToMove, int gameId) {
   LOCK_DB;
   std::string statement =
       "INSERT INTO BOARD VALUES (" + std::to_string(board_id) + "," +
       std::to_string(nrOfPawns) + ",\"" + walls + "\",\"" +
       firstPlayerPawnPosition + "\"," + std::to_string(firstPlayerWallsLeft) +
       ",\"" + secondPlayerPawnPosition + "\"," +
-      std::to_string(secondPlayerWallsLeft) + R"(,"0", 0, "0", 0))";
+      std::to_string(secondPlayerWallsLeft) + R"(,"0", 0, "0", 0, )" +
+      std::to_string(lastPlayerToMove) + ")";
 
   // sqlite3_open(DATABASE_FILE_NAME, &db_);
   std::cout << statement << std::endl;

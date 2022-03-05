@@ -10,7 +10,6 @@
 #include "cell.h"
 #include "position.h"
 #include <vector>
-#include <variant>
 #include <memory>
 #include <ostream>
 #include <optional>
@@ -18,40 +17,28 @@
 #include <random>
 #include <algorithm>
 #include "database.h"
-#include "database.h"
 
-class Board : public std::enable_shared_from_this<Board>{
+class Board : public std::enable_shared_from_this<Board> {
  public:
 
-  // std::variant<Cell, Wall> operator [](const Position &) const;
-  // if position is {3, 4} and there is pawn but there is also a wall on the side
-  // do we return the pawn or the wall ?
-  // also, a wall is not placed on top of a Cell but on it's side, so I think that
-  // return a Cell and dealing with walls elsewhere is easier
-
   Board(std::vector<std::shared_ptr<Player>>, std::vector<Position>);
-  Board(std::string);
 
-  // should be implementing DatabaseCompatible
-  void SaveToDB() const;
-  std::string GetSerializedString() const;
-  std::string GetPositionSerialization(const Position) const;
+  // should be implementing by inheriting DatabaseCompatible
+  void SaveToDB(object_id_t board_id=0) const;
+  // static std::optional<Board> InitFromDB(object_id_t game_id);
+
+
+  static std::string GetPositionSerialization(const Position);
   std::string GetWallsSerialization() const;
-  static std::vector<Position> GetWallFromWallSerialization(std::string); // the use of position here only
-                                                                          // provides an easier way to store
-                                                                          // pair than using pair<int, int>
-                                                                          // it's not a real position
+
+  static std::vector<Position> GetWallFromWallSerialization(std::string);
   static Position GetPositionFromPositionSerialization(std::string);
-  static std::optional<Board> InitFromDB(object_id_t game_id);
 
 
   bool GetWallBetween(const Cell &, const Cell &) const;
   bool GetWallBetween(const Cell &, const DIRECTION &) const; // might be faster in some cases
 
   Cell GetCellAtPosition(const Position &) const;
-
-  // replacing the pair by a wall class might be interesting but as for now
-  // it is easier this way
 
   bool HasReachedEnd(const Position, const DIRECTION) const;
   bool HasPathToEnd(std::vector<Position>, const DIRECTION);
@@ -64,16 +51,16 @@ class Board : public std::enable_shared_from_this<Board>{
   void PlaceWall(Position,Position,DIRECTION);
 
   friend std::ostream &operator<<(std::ostream &, const Board &);
-  // replacing the overload by a string is easier if we use ncurses
 
   std::string GetBoardString() const;
 
-  void randomWallPlacement();
+  void RandomWallPlacement();
   DIRECTION GetOpposite(DIRECTION);
   Position GetOppositeCell(Position,DIRECTION);
 
   explicit operator std::string() const;
 
+  std::array<std::array<bool, kBoardSize * 2 - 1>, kBoardSize * 2 - 1> GetWalls();
 
  private:
 

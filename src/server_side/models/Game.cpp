@@ -5,46 +5,62 @@
 
 using namespace std;
 
+
 Game::Game() {}
 
-///
+Game::Game(std::vector<std::shared_ptr<Player>> players, int currentPlayerIndex,
+           std::vector<Position> walls):
+           players{players}, currentPlayer{players[currentPlayerIndex]} {
 
-void Game::StartTheGame() {
-
-  // db.CreateTables();
   // if (players.size>=2) We need at least 2 players to begin the game.
   gameOn = true;
-  // When player connects from the server ... TODO
+  board = new Board (players, walls);
+  cout<<board->GetBoardString()<<std::endl;
+}
 
-    players.push_back(make_shared<Player>(Position{4,8},NORTH));
-    players.push_back(make_shared<Player>(Position{4,4},SOUTH));
-    //For now, we have only 1 player
-    currentPlayer=players[0];
-    cout<<endl;
-
-    if(gameMode==IA){
-        //If IA is on then we will have 1 Player vs 1 IA
-        players.push_back(make_shared<Ia>(Position{4,0},SOUTH));
-    }
-    // vector<Position> walls{{0,3}};
-    vector<Position> walls{{0,3}, {8,7}, {9,8}};
-    // vector<Position> walls{{0,3},{2,3},{4,3},{6,3},{8,3},{10,3},{12,3},{14,3},{16,3}};
-    board = new Board (players, walls);
+// Game() // ia game constructor
+// if(gameMode==IA){
+  //   //If IA is on then we will have 1 Player vs 1 IA
+  //   players.push_back(make_shared<Ia>(Position{4,0},SOUTH));
+  // }
 
 
-    //Insert the data for all the players in the db
-    // for(auto x:players){
-    //   db.InsertPlayer(1);
-    // }
-    //Insert friend using IDS of the users which should be stocked/used in the user file
-    // db.InsertFriend(1, 2);
+// Game()  // randomwall game constructor
 
 
-    //Insert the data for the board
-    // db.InsertBoard(players.size(), walls.size());
+std::optional<Game> Game::InitFromDB(object_id_t game_id) {
+  std::string statement = "SELECT * FROM BOARD WHERE BOARD.ID=(SELECT GAMES.BOARD_ID FROM GAMES WHERE GAMES.ID="+std::to_string(game_id)+")";
+  std::cout<<statement<<std::endl;
 
-    cout<<board->GetBoardString()<<endl;
+  std::vector<std::vector<std::string>> records = DataBase::GetInstance()->
+    GetSelect(statement);
 
+  std::cout<<records.size()<<std::endl;
+
+  if (records.empty()) {
+    std::string error = "initialization error";
+    // don't know what to do next here
+    return {};
+  }
+  std::vector<std::string> record = records[0];
+
+
+
+  if (std::stoi(record[1]) > 2){
+    return Game{ {std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[3]), NORTH, std::stoi(record[4])),
+                 std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[5]), SOUTH, std::stoi(record[6])),
+                 std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[7]), SOUTH, std::stoi(record[8])),
+                 std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[9]), SOUTH, std::stoi(record[10]))},
+                 std::stoi(record[11]), Board::GetWallFromWallSerialization(record[2])};
+  }else{
+    return Game{{std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[3]), NORTH, std::stoi(record[4])),
+                 std::make_shared<Player>(Board::GetPositionFromPositionSerialization(record[5]), SOUTH, std::stoi(record[6]))},
+                 std::stoi(record[11]), Board::GetWallFromWallSerialization(record[2])};
+  }
+}
+
+///
+void Game::StartTheGame() {
 
 }
 
@@ -70,12 +86,10 @@ void Game::SwitchCurrentPlayer() {
       playIaMove();
     }
   } else if (gameMode == RandomWall) {
-    board->randomWallPlacement();
+    board->RandomWallPlacement();
   }
 
   // currentPlayer=next player from the vector
-  cout << currentPlayer->getPlayerPos().row << " "
-       << currentPlayer->getPlayerPos().col << endl;
   cout << endl;
   cout << board->GetBoardString() << std::endl;
   cout << endl;
@@ -133,7 +147,7 @@ void Game::playIaMove() {
   } else {
     // If IA places the wall then we will simply use the method from our first
     // gameMode;
-    board->randomWallPlacement();
+    board->RandomWallPlacement();
   }
   SwitchCurrentPlayer();
 }
@@ -230,7 +244,8 @@ void Game::playCoup() {
                     // board->Movement(coup,true);
                     currentPlayer->increaseScore();
                     on=true;
-                }else if(!board->GetWallBetween(board->GetCellAtPosition(currentPlayer->getPlayerPos()), direction)
+                }
+                else if(!board->GetWallBetween(board->GetCellAtPosition(currentPlayer->getPlayerPos()), direction)
                         && board->GetCellAtPosition(coup).isPawn()){
                     //it just works
                     std::vector<DIRECTION> possible_hops = board->PossiblePawnHops(coup, direction);
@@ -255,9 +270,60 @@ void Game::playCoup() {
       cout << "Move invalid" << endl;
     }
   }
+
   SwitchCurrentPlayer();
 }
 
 ///
 /// \return
 std::shared_ptr<Player> Game::getCurrentPlayer() { return currentPlayer; }
+
+crow::json::wvalue Game::GetGameJson() {
+  crow::json::wvalue game_json;
+  int wall_index = 0;
+  string item;
+
+  for (int row=0; row<kBoardSize*2 -1; row++ ){
+      for (int col=0; col<kBoardSize*2 -1; col++ ){
+        if (board->GetWalls()[row][col]){
+          item = std::to_string(col)+","+std::to_string(row);
+          game_json["walls"][wall_index] = item;
+          wall_index++;
+        }
+      }
+  }
+
+  // should change in the future as there is a lot of code repetition
+  if (players.size() > 2){
+    crow::json::wvalue player;
+
+    player["position"] = Board::GetPositionSerialization(players[0]->getPlayerPos());
+    player["walls_left"] = players[0]->GetNrOfWalls();
+    game_json["player1"] = std::move(player);
+
+    player["position"] = Board::GetPositionSerialization(players[1]->getPlayerPos());
+    player["walls_left"] = players[1]->GetNrOfWalls();
+    game_json["player2"] = std::move(player);
+
+    player["position"] = Board::GetPositionSerialization(players[2]->getPlayerPos());
+    player["walls_left"] = players[2]->GetNrOfWalls();
+    game_json["player3"] = std::move(player);
+
+    player["position"] = Board::GetPositionSerialization(players[3]->getPlayerPos());
+    player["walls_left"] = players[3]->GetNrOfWalls();
+    game_json["player4"] = std::move(player);
+  }else{
+    crow::json::wvalue player;
+
+    player["position"] = Board::GetPositionSerialization(players[0]->getPlayerPos());
+    player["walls_left"] = players[0]->GetNrOfWalls();
+    game_json["player1"] = std::move(player);
+
+    player["position"] = Board::GetPositionSerialization(players[1]->getPlayerPos());
+    player["walls_left"] = players[1]->GetNrOfWalls();
+    game_json["player2"] = std::move(player);
+  }
+
+  return  game_json;
+
+}

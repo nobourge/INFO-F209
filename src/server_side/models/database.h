@@ -58,10 +58,11 @@ public:
   void InsertBoard(int nrOfPawns, std::string walls, std::string firstPlayerPawnPosition, int firstPlayerWallsLeft,
                              std::string secondPlayerPawnPosition, int secondPlayerWallsLeft,
                              std::string thirdPlayerPawnPosition, int thirdPlayerWallsLeft,
-                             std::string fourthPlayerPawnPosition, int fourthPlayerWallsLeft);
+                             std::string fourthPlayerPawnPosition, int fourthPlayerWallsLeft, int lastPlayerToMove,
+                             int gameId=board_id);
 
   void InsertBoard(int nrOfPawns, std::string walls, std::string firstPlayerPawnPosition, int firstPlayerWallsLeft,
-                   std::string secondPlayerPawnPosition, int secondPlayerWallsLeft);
+                   std::string secondPlayerPawnPosition, int secondPlayerWallsLeft, int lastPlayerToMove, int gameId=board_id);
 
   void HandleSQLErr(int error_code);
 

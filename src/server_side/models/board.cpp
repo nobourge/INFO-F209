@@ -5,8 +5,6 @@ TODO do the description
 #include "board.h"
 #include <iostream>
 
-using namespace std;
-
 ///
 /// \param pawns_
 /// \param wallsPosition
@@ -37,6 +35,8 @@ Board::Board(std::vector<std::shared_ptr<Player>> pawns_, std::vector<Position> 
       cells_[pos.row/2][pos.col/2].setWall(EAST);
       cells_[pos.row/2][pos.col/2 + 1].setWall(WEST);
     }
+
+
   }
 
   std::cout<<GetWallsSerialization()<<std::endl;
@@ -45,24 +45,47 @@ Board::Board(std::vector<std::shared_ptr<Player>> pawns_, std::vector<Position> 
 
 }
 
-Board::Board(std::string) {
-  //"to do or not to do this is the question" -Shakespear
-}
 
-void Board::SaveToDB() const {
+void Board::SaveToDB(object_id_t board_id) const {
   // DataBase::GetInstance()
   if (pawns_.size() > 2) {
     DataBase::GetInstance()->InsertBoard(4,  GetWallsSerialization(),
     GetPositionSerialization(pawns_[0]->getPlayerPos()), pawns_[0]->GetNrOfWalls(),
     GetPositionSerialization(pawns_[1]->getPlayerPos()), pawns_[1]->GetNrOfWalls(),
     GetPositionSerialization(pawns_[2]->getPlayerPos()), pawns_[2]->GetNrOfWalls(),
-    GetPositionSerialization(pawns_[3]->getPlayerPos()), pawns_[3]->GetNrOfWalls());
+    GetPositionSerialization(pawns_[3]->getPlayerPos()), pawns_[3]->GetNrOfWalls(),
+    board_id);
   }else{
     DataBase::GetInstance()->InsertBoard(2,  GetWallsSerialization(),
         GetPositionSerialization(pawns_[0]->getPlayerPos()), pawns_[0]->GetNrOfWalls(),
-        GetPositionSerialization(pawns_[1]->getPlayerPos()), pawns_[1]->GetNrOfWalls());
+        GetPositionSerialization(pawns_[1]->getPlayerPos()), pawns_[1]->GetNrOfWalls(),
+        board_id);
   }
 }
+
+// std::optional<Board> Board::InitFromDB(object_id_t board_id) {
+//   std::vector<std::vector<std::string>> records =
+//   DataBase::GetInstance()->GetSelect("SELECT * FROM BOARD WHERE BOARD.ID="+std::to_string(board_id));
+//
+//   if(records.size()<=0) {
+//     std::cout<<"an error has occured when initializing the board"<<std::endl;
+//     return std::nullopt;
+//   }
+//
+//   int nrOfPlayers = std::stoi(records[0][1]);
+//
+//   if (nrOfPlayers < 2) {
+//     return Board {std::vector<std::shared_ptr<Player>>{std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][3]),NORTH, std::stoi(records[0][4])),
+//       std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][5]),SOUTH, std::stoi(records[0][6]))},
+//       GetWallFromWallSerialization(records[0][2])};
+//     }else{
+//       return Board {std::vector<std::shared_ptr<Player>>{std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][3]), NORTH, std::stoi(records[0][4])),
+//         std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][5]), SOUTH, std::stoi(records[0][6])),
+//         std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][7]), WEST,  std::stoi(records[0][8])),
+//         std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][9]), WEST,  std::stoi(records[0][10]))},
+//         GetWallFromWallSerialization(records[0][2])};
+//       }
+//     }
 
 std::string Board::GetWallsSerialization() const {
   std::string serializedString = "";
@@ -74,7 +97,7 @@ std::string Board::GetWallsSerialization() const {
   return serializedString;
 }
 
-std::string Board::GetPositionSerialization(const Position position) const {
+std::string Board::GetPositionSerialization(const Position position) {
   return std::to_string(position.col) + "," + std::to_string(position.row);
 }
 
@@ -96,33 +119,15 @@ Position Board::GetPositionFromPositionSerialization(std::string serializedPosit
   return Position{std::stoi(col), std::stoi(row)};
 }
 
-std::optional<Board> Board::InitFromDB(object_id_t game_id) {
-  std::vector<std::vector<std::string>> records =
-        DataBase::GetInstance()->GetSelect("SELECT * FROM BOARD WHERE BOARD.ID="+std::to_string(game_id));
-
-  if(records.size()<=0) {
-    std::cout<<"an error has occured when initializing the board"<<std::endl;
-    return std::nullopt;
-  }
-
-  int nrOfPlayers = std::stoi(records[0][1]);
-
-  if (nrOfPlayers < 2) {
-    return Board {std::vector<std::shared_ptr<Player>>{std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][3]),NORTH, std::stoi(records[0][4])),
-                                                       std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][5]),SOUTH, std::stoi(records[0][6]))},
-                  GetWallFromWallSerialization(records[0][2])};
-  }else{
-    return Board {std::vector<std::shared_ptr<Player>>{std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][3]), NORTH, std::stoi(records[0][4])),
-                                                       std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][5]), SOUTH, std::stoi(records[0][6])),
-                                                       std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][7]), WEST,  std::stoi(records[0][8])),
-                                                       std::make_shared<Player>(GetPositionFromPositionSerialization(records[0][9]), WEST,  std::stoi(records[0][10]))},
-                  GetWallFromWallSerialization(records[0][2])};
-  }
-}
 
 ///
 /// \return
 std::string Board::GetBoardString() const {
+  // for (auto test :walls_){
+  //   for (auto item : test) {
+  //     if (item) std::cout<<"there is a wall"<<std::endl;
+  //   }
+  // }
   std::string boardString;
   for (int row = 0; row < kBoardSize * 2 - 1; row++) {
     for (int col = 0; col < kBoardSize * 2 - 1; col++) {
@@ -258,6 +263,7 @@ bool Board::HasPathToEnd(std::vector<Position> path, const DIRECTION goal) {
 /// \param direction
 /// \return
 bool Board::IsWallPossible(const Position firstCell, const Position secondCell, const DIRECTION direction) {
+
   Position firstOpposite=GetOppositeCell(firstCell,direction);
   Position secondOpposite=GetOppositeCell(secondCell,direction);
 
@@ -305,7 +311,7 @@ std::vector<DIRECTION> Board::PossiblePawnHops(const Position pawnToHopPosition,
 
 ///
 
-void Board::randomWallPlacement(){
+void Board::RandomWallPlacement(){
   //Method used for our first game mode.
   bool moveDone=false;
   while(!moveDone){
@@ -404,4 +410,8 @@ std::ostream &operator<<(ostream &os, const Board &board) {
 /// \return
 Board::operator std::string() const {
   return GetBoardString();
+}
+
+std::array<std::array<bool, kBoardSize * 2 - 1>, kBoardSize * 2 - 1> Board::GetWalls() {
+  return walls_;
 }
