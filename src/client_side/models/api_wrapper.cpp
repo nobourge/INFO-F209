@@ -191,7 +191,7 @@ std::variant<std::vector<UserClient>, ApiError> ApiWrapper::GetAllUsers() {
 
 std::variant<std::vector<UserClient>, ApiError> ApiWrapper::GetAllUsersExceptCurrentUser() {
   std::string url = api_url_;
-  url += "users/except/me";
+  url += "me/users_except_me";
 
   std::variant<std::vector<UserClient>, ApiError> ret =
       LoginError{"A network error occurred"};
@@ -205,7 +205,7 @@ std::variant<std::vector<UserClient>, ApiError> ApiWrapper::GetAllUsersExceptCur
   }
 
   try {
-    crow::json::rvalue users_json = request_result_json["usersexceptme"];
+    crow::json::rvalue users_json = request_result_json["users"];
 
     auto users = std::vector<UserClient>();
     users.reserve(users.size());

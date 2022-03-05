@@ -165,14 +165,11 @@ protected:
       return output;
     });
 
-    API_ROUTE(GetApp(), "/api/v1/users/except/me")
+    API_ROUTE(GetApp(), "/api/v1/me/users_except_me")
     ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(requests);
 
-      crow::json::wvalue output;
-      int v = 1;
-      output["usersexceptme"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
-      return output;
+      return SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
     });
 
     API_ROUTE(GetApp(), "/api/v1/me")
@@ -215,7 +212,8 @@ protected:
       RETURN_SUCCESS_JSON
     });
 
-    API_ROUTE(GetApp(), "/api/v1/me/games") ([] (const crow::request &request) {
+    API_ROUTE(GetApp(), "/api/v1/me/games")
+    ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(requests);
 
       auto games = DataBase::GetInstance()->GetAllGamesForUser(user.GetId());
