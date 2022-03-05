@@ -134,7 +134,9 @@ void AbstractMenuView::UpdateSubviews(
     const std::vector<std::shared_ptr<AbstractView>> &views = {}) {
   // set subviews_ to keys of buttons_handler_map
   subviews_ = views;
-  subviews_.push_back(GetBackButtonView());
+  if (ShouldDisplayDefaultBackButton()){
+    subviews_.push_back(GetBackButtonView());
+  }
   SetFirstButtonStateToHoverIfNoneAreHoveredUpon();
 }
 
@@ -172,18 +174,21 @@ std::unique_ptr<std::vector<std::shared_ptr<EventResponder>>>
 AbstractMenuView::GetChildren() {
   auto output =
       std::make_unique<std::vector<std::shared_ptr<EventResponder>>>();
-  for (auto &subview : subviews_) {
+  for (auto &subview : subviews_)
     output->push_back(subview);
-  }
   return output;
 }
 
 void AbstractMenuView::AddSubview(const std::shared_ptr<AbstractView> &view) {
-  if (subviews_.size() > 0) {
-    subviews_.insert(--(--subviews_.end()), view);
+  if (ShouldDisplayDefaultBackButton()) {
+    if (!subviews_.empty())
+      subviews_.insert(--(--subviews_.end()), view);
+    else
+      subviews_ = {view, GetBackButtonView()};
   } else {
-    subviews_ = {view, GetBackButtonView()};
+    subviews_.push_back(view);
   }
+
   SetFirstButtonStateToHoverIfNoneAreHoveredUpon();
 }
 
@@ -194,3 +199,5 @@ std::shared_ptr<MenuButtonItem> AbstractMenuView::GetBackButtonView() {
       this, GetBackButtonName(),
       std::optional<std::shared_ptr<AbstractViewController>>(), this);
 }
+
+bool AbstractMenuView::ShouldDisplayDefaultBackButton() const { return true; }

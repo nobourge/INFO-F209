@@ -10,4 +10,5 @@ class HomeMenuView : public AbstractMenuView {
  public:
   static constexpr char menu_name_[] = "Home";
   HomeMenuView();
+  bool ShouldDisplayDefaultBackButton() const override;
 };

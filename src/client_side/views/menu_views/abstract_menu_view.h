@@ -23,6 +23,8 @@ public:
 
   [[nodiscard]] std::shared_ptr<MenuButtonItem> GetBackButtonView();
 
+  [[nodiscard]] virtual bool ShouldDisplayDefaultBackButton() const;
+
   [[nodiscard]] virtual std::string GetBackButtonName() const;
 
   virtual void Draw(WINDOW *window) const;
@@ -60,7 +62,6 @@ private:
   const char *name;
   std::vector<std::shared_ptr<AbstractView>> subviews_;
   int vertical_gutter_size_ = BUTTONS_VERTICAL_GUTTER_SIZE;
-  std::shared_ptr<MenuButtonItem> back_button_;
   MenuViewDelegate *delegate_ = nullptr;
 };
 
