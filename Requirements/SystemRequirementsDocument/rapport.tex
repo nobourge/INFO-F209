@@ -209,12 +209,11 @@ Si il le désire, l'utilisateur pourra aussi demander de l'aide, l'application a
 Diagramme de classe des menus:
 \begin{figure}[ht]
 \centering
-    \includegraphics[width=170mm,scale=0.1]{Image/MenuDiagramme.png}
+    \includegraphics[width=170mm,scale=0.1]{Image/mvc_menu.PNG}
 \end{figure}
 
-Voici le diagramme de classe centré sur le côté client et les menus, qui sont des entités à travers lesquelles les utilisateurs naviguent pour effectuer des actions telles que configurer et lancer une partie. Celles-ci s'occupent aussi de l'affichage sur le terminal. \newline
-Dans ce diagramme nous faisons la distinction entre les menus qui nécessitent d'avoir un accès à un serveur et les autres qui n'en ont pas besoin. \newline
-La ChatRoom utilise un thread pour pouvoir envoyer et recevoir des messages en même temps(l'envoie est géré dans la ChatRoom et la réception dans le thread).
+Le diagramme ci-dessus représente tout le fonctionnement orienté MVC des menus. D'une part il y a les contrôleurs qui interagissent avec l'utilisateur et qui attendent une entrée de la part de ces derniers, et d'autre part il y a les vues qui, comme leurs noms l'indiquent, sont la partie visuelle des menus. \newline
+
 
 
 \subsubsection{Durant une partie}
@@ -249,13 +248,13 @@ Si l'un des joueurs se déconnecte sans proposer de sauvegarder la partie, il es
 \end{tabular}\\
 \end{center}
 
-\paragraph{Mode de jeux}
+\subsubsection{Mode de jeux}
 \
 L'utilisateur peut choisir un mode de jeux différent au mode classique parmi les modes suivants.
 \paragraph{Murs aléatoires}
 
 Des murs apparaissent de façon aléatoire\footnote{les murs ne pourront pas bloquer totalement le chemin d'un joueur vers son objectif} sur le plateau.
-\subsubsection{Humain contre ordinateur}
+\paragraph{Humain contre ordinateur}
 
 L'adversaire est contrôlé par l'ordinateur. Ce dernier est capable des mêmes actions qu'un joueur normal.
 
@@ -307,7 +306,6 @@ Dans le cas d'une déconnexion durant une partie, le jeu est interrompu et tout 
 % -----------------------------------------------------
 % -----------------------------------------------------
 % -----------------------------------------------------
-\newpage
 \section{Besoins du système}
 
 % -----------------------------------------------------
@@ -576,8 +574,6 @@ Diagramme de séquence expliquant les interaction client-serveur lorsqu'un joueu
 % -----------------------------------------------------
 % -----------------------------------------------------
 
-\section{Images d'illustration}
-
 \section{Annexes}
 \appendix
 
@@ -609,13 +605,17 @@ Dans le cadre de ce projet d'année , les librairies utilisées sont :
     \item Algorithm
     \item boost
 \end{itemize}
-\section{Protocole}
+
+\section{Lancement de jeu}
+Pour lancer le jeu il faut utiliser les commandes suivantes sur Ubuntu :
+cmake .
+cmake --build . --target ClientSide
+cmake --build . --target QuoridorServer
+
 
 
 \section{Commentaires sur les diagrammes}
 Les diagrammes séquentiels ont un rappel des classes à la fin de chaque ligne. Cela a pour but d'augmenter la lisibilité.
-
-
 
 \end{document}
 
