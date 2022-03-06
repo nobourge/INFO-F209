@@ -7,7 +7,7 @@
 
 #include "abstract_searchable_list_menu_view_controller.h"
 #include "../views/menu_views/views/text_field.h"
-#include "../models/user_client.h"
+#include "../../../src/client_side/models/user_client.h"
 
 class FriendListViewController: public AbstractSearchableListMenuViewController {
 public:
