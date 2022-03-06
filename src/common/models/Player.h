@@ -32,7 +32,6 @@ public:
   virtual Position playIAMove(bool = true) { return {0, 0}; };
   void increaseScore(int = 5);
   int getScore();
-  std::string getMessage();
   DIRECTION getGoal() const;
 
   crow::json::wvalue Serialize() {

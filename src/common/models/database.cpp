@@ -7,17 +7,6 @@ int DataBase::board_id = 0;
 
 #define LOCK_DB std::lock_guard<std::mutex> __lock(accessing_db_)
 
-void DataBase::ReloadFile(std::string file) {
-  ifstream ifile;
-  int n = file.length();
-  char file2[n + 1];
-  strcpy(file2, file.c_str());
-
-  ifile.open(file2);
-  if (ifile) {
-    remove(file2);
-  }
-}
 
 static int callback(void *data, int argc, char **argv, char **azColName) {
   fprintf(stderr, "%s: ", (const char *)data);

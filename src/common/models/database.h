@@ -43,7 +43,6 @@ public:
   void InsertRanking(int firstPlaceId, int secondPlaceId, int thirdPlaceId,
                      int fourthPlaceId);
   void UpdateUser(uint32_t score, uint32_t id);
-  void ReloadFile(std::string);
   std::vector<std::vector<string>> GetSelect(string statement);
 
   std::vector<object_id_t> GetAllGamesWhereUserIsAdmin(object_id_t user);

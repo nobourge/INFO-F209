@@ -37,7 +37,7 @@
     return (__output);                                                         \
   }
 /// prend en paramètre un message
-/// et s’occupe de Prevenir une SQL Injection en levant une erreur
+/// et s’occupe de prevenir une SQL Injection en levant une erreur
 /// si le now d'utilisateur ou le mot de passe contiennent les caracteres:
 /// '
 /// "
@@ -113,7 +113,6 @@ static crow::json::wvalue
 SerializeUsersVector(std::unique_ptr<std::vector<UserServer>> users) {
   crow::json::wvalue users_json;
   for (int i = 0; i < users->size(); i++) {
-    //        std::cout << std::move(*(users->at(i).Serialize())) << std::endl;
     users_json[i] = std::move(*(users->at(i).Serialize()));
   }
   return users_json;

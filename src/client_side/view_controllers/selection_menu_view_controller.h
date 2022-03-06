@@ -14,4 +14,4 @@ class SelectionMenuViewController : public MenuViewController {
 
 //TODO errors are here
 
-#endif //QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_MENU_VIEW_CONTROLLER_H_
+#endif //QUORIDOR_SRC_CLIENT_SIDE_VIEW_CONTROLLERS_SELECTION_MENU_VIEW_CONTROLLER_H_
