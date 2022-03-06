@@ -11,11 +11,11 @@ class AbstractListMenuViewController : public AbstractMenuViewController {
 public:
   constexpr const static unsigned max_num_items_to_display = 3;
 
-  [[nodiscard]] constexpr virtual unsigned GetMaxNumItemsToDisplay() const {
+  [[maybe_unused]] [[nodiscard]] constexpr virtual unsigned GetMaxNumItemsToDisplay() const {
     return max_num_items_to_display;
   }
 
-  AbstractListMenuViewController(const std::shared_ptr<AbstractMenuView> &view);
+  explicit AbstractListMenuViewController(const std::shared_ptr<AbstractMenuView> &view);
 
   [[nodiscard]] virtual std::vector<std::shared_ptr<AbstractView>>
   GetHeaderViews() const;
@@ -30,7 +30,7 @@ public:
   [[nodiscard]] virtual std::shared_ptr<AbstractView>
   GetViewAtIndex(unsigned i) const = 0;
 
-  virtual bool ShouldDisplayList() const { return true; }
+  [[nodiscard]] virtual bool ShouldDisplayList() const { return true; }
 
 protected:
   void MenuViewWillAppear() override;

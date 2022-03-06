@@ -1,7 +1,6 @@
 
 #include "new_game_menu_view_controller.h"
 #include "../views/menu_views/views/label.h"
-#include "../views/menu_views/views/text_field.h"
 
 NewGameMenuViewController::NewGameMenuViewController()
     : AbstractAuthedMenuViewController(std::make_shared<NewGameMenuView>()) {

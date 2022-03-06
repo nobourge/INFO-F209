@@ -5,7 +5,6 @@
 #include "chat_room_view_controller.h"
 #include "../models/api_wrapper.h"
 #include "../views/menu_views/chat_room_menu_view.h"
-#include "../views/menu_views/views/label.h"
 
 ChatRoomViewController::ChatRoomViewController(
     const UserClient &user_to_chat_with)

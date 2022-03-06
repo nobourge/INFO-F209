@@ -13,7 +13,7 @@ class AbstractSearchableListMenuViewController
     : public AbstractListMenuViewController,
       public TextFieldDelegate {
 public:
-  AbstractSearchableListMenuViewController(
+  explicit AbstractSearchableListMenuViewController(
       const std::shared_ptr<AbstractMenuView> &view);
 
   [[nodiscard]] std::vector<std::shared_ptr<AbstractView>> GetBottomViews() const override;
@@ -22,7 +22,7 @@ public:
 
   void TextEditingFinished(TextField &sender) override;
 
-  bool ShouldDisplayViewAtIndex(unsigned int i) const override;
+  [[nodiscard]] bool ShouldDisplayViewAtIndex(unsigned int i) const override;
 
 protected:
   void MenuViewWillAppear() override;

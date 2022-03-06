@@ -16,7 +16,7 @@ public:
   [[nodiscard]] unsigned int GetNumItemsInList() const override;
   [[nodiscard]] std::shared_ptr<AbstractView> GetViewAtIndex(unsigned int i) const override;
   [[nodiscard]] bool ShouldDisplayList() const override;
-  vector<std::shared_ptr<AbstractView>> GetHeaderViews() const override;
+  [[nodiscard]] vector<std::shared_ptr<AbstractView>> GetHeaderViews() const override;
 
 
 

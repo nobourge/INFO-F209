@@ -5,7 +5,6 @@
 #include "game_view_controller.h"
 #include "../views/menu_views/game_view.h"
 #include "../views/menu_views/help_menu_view.h"
-#include "../views/menu_views/views/label.h"
 
 GameViewController::GameViewController()
     : AbstractAuthedMenuViewController(std::make_shared<GameView>()) {

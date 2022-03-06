@@ -57,5 +57,3 @@ void AbstractMenuViewController::RespondToKeyboardEvent(const int &character) {
 void AbstractMenuViewController::Draw(WINDOW *window) {
   GetMenuView()->Draw(window);
 }
-
-bool AbstractMenuViewController::IsOnScreen() const { return is_on_screen_; }

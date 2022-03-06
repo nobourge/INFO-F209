@@ -13,7 +13,7 @@ Game::Game(std::vector<std::pair<Position, int>> playersPair,
   // if (players.size>=2) We need at least 2 players to begin the game.
   int direction = 0;
 
-  // not giving the pointer in paramater but making them here due to a previous
+  // not giving the pointer in parameter but making them here due to a previous
   // memory leak
   for (auto pair : playersPair) {
     players.push_back(std::make_shared<Player>(

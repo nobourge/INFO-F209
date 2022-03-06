@@ -16,8 +16,6 @@ public:
            const std::optional<std::tuple<std::string, std::string>> &login_password = {}, const std::vector<std::tuple<std::string, std::string>> &params = {});
   ~Requests();
 
-  [[nodiscard]] std::string GetText() const;
-
   [[nodiscard]] crow::json::rvalue GetJson() const {
     return crow::json::load(text_);
   }

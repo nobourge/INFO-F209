@@ -51,4 +51,3 @@ Requests::Requests(
 
 Requests::~Requests() { curl_easy_cleanup(curl_); }
 
-std::string Requests::GetText() const { return text_; }

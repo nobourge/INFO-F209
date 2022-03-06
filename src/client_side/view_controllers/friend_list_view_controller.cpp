@@ -5,7 +5,6 @@
 #include "friend_list_view_controller.h"
 #include "../models/api_wrapper.h"
 #include "../views/menu_views/friend_list_menu_view.h"
-#include "../views/menu_views/views/label.h"
 #include "chat_room_view_controller.h"
 #include "find_friend_view_controller.h"
 #include <algorithm>

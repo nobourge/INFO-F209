@@ -5,7 +5,6 @@
 #include "find_friend_view_controller.h"
 #include "../models/api_wrapper.h"
 #include "../views/menu_views/find_new_friend_menu_view.h"
-#include "../views/menu_views/views/label.h"
 
 FindFriendViewController::FindFriendViewController()
     : AbstractSearchableListMenuViewController(

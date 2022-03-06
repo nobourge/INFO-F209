@@ -1,6 +1,5 @@
 #include "ranking_view_controller.h"
 #include "../models/api_wrapper.h"
-#include "../views/menu_views/views/label.h"
 
 RankingMenuViewController::RankingMenuViewController()
     : AbstractAuthedMenuViewController(std::make_shared<RankingMenuView>()), users_() {

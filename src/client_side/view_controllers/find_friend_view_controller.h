@@ -21,8 +21,8 @@ protected:
   void MenuViewWillAppear() override;
 
 public:
-  std::vector<std::shared_ptr<AbstractView>> GetHeaderViews() const override;
-  bool ShouldDisplayList() const override;
+  [[nodiscard]] std::vector<std::shared_ptr<AbstractView>> GetHeaderViews() const override;
+  [[nodiscard]] bool ShouldDisplayList() const override;
 
 private:
 

@@ -1,8 +1,6 @@
-#include <iostream>
 #include <stack>
 #include "view_controllers/abstract_view_controller.h"
 #include "view_controllers/home_menu_view_controller.h"
-#include "view_controllers/login_view_controller.h"
 #include "view_controllers/start_view_controller.h"
 
 int main() {

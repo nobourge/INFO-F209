@@ -8,10 +8,8 @@ endif ()
 
 
 set(HEADERS
-        models/ranking.h
         models/api_wrapper.h
         models/requests.h
-        client_mvc_factory.h
 
         view_controllers/abstract_menu_view_controller.h
         view_controllers/home_menu_view_controller.h
@@ -70,7 +68,6 @@ set(SOURCES
 
         models/user_client.cpp
         models/user_client.h
-        models/ranking.cpp
         models/api_wrapper.cpp
         models/requests.cpp
 
