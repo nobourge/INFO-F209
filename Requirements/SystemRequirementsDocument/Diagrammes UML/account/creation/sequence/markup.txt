@@ -1,0 +1,46 @@
+participant U as User
+participant LP as "Account creation view"
+participant ACC as "Account creation controller"
+participant S as Server
+participant DB as Database
+
+
+activate U
+activate LP
+
+LP -> U: ask username
+LP -> U: ask password
+LP -> U: ask password
+
+
+U -->> ACC: enter username
+U -->> ACC: enter password
+U -->> ACC: enter password
+
+ACC-> S: register(username,password)
+activate S
+
+S -> S: are_chars_valid(username)
+S -> S: are_chars_valid(password)
+
+alt username or password invalid
+ loop
+  S -->> ACC: username or password creation error msg
+  ACC -->> LP: username or password creation error msg
+  opt
+  note over LP: GUI:display username or password input space in red 
+  end
+  LP -->> U: username or password creation error msg  
+  U -->> LP: enter username or password 
+ end
+else username & password valids
+ S -> DB: update(username,password)
+activate DB
+DB -->> S: updated
+deactivate DB
+
+end
+
+deactivate U
+deactivate LP
+deactivate S

@@ -1,0 +1,67 @@
+participant U as User
+participant LP as "Login View"
+participant LC as "Login Controller"
+participant MP as "Home Menu View"
+participant S as Server
+participant DB as "Data Base"
+
+activate U
+activate LP
+LP -> U: ask username
+LP -> U: ask password
+
+U -> LC: enter username
+U -> LC: enter password
+
+LC -> S: Matches(username,password)
+activate S
+
+S -> DB: Matches(username,password)
+deactivate U
+deactivate LP
+deactivate S
+
+alt username or password doesn't match
+loop
+activate U
+activate LP
+activate S
+activate DB
+DB -->> S: username or password doesn't match
+deactivate DB
+S -->> LP: username or password doesn't match
+deactivate S
+
+LP->U: username or password doesn't match error msg 
+opt
+note over LP: GUI:display username or password input space in red 
+end
+LP -> U: ask username or password
+
+U -> LC: enter username or password
+
+LC -> S: Matches(username,password)
+activate S
+
+S -> DB: Matches(username,password)
+deactivate U
+deactivate LP
+deactivate S
+end
+else username & password match
+activate U
+activate S
+activate DB
+DB --> S: username & password match
+deactivate DB
+S --> LC: username & password match
+LC -> MP: show(HomeMenuView)
+deactivate S
+
+activate MP
+MP -> U: show(self)
+deactivate MP
+deactivate U
+deactivate LP
+end
+
