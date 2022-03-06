@@ -13,9 +13,17 @@ class NewGameMenuViewController : public AbstractAuthedMenuViewController, publi
    NewGameMenuViewController();
    void TextChanged(TextField &sender, const std::string &old_text) override;
    void TextEditingFinished(TextField &sender) override;
+   void CreateGame();
+   void ReloadSubviews();
+
+ protected:
+   void MenuViewWillAppear() override;
+
  private:
    std::shared_ptr<TextField> title_field_;
    std::shared_ptr<TextField> opponent_username_field_;
+   std::optional<std::string> notification_message_;
+   bool created = false;
 };
 
 

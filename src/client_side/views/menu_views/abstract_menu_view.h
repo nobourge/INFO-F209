@@ -52,7 +52,7 @@ protected:
   [[nodiscard]] int GetVerticalPadding() const;
   std::vector<std::shared_ptr<AbstractView>>::iterator
   GetIteratorOfHoveredSubview();
-  [[nodiscard]] int GetVerticalGutterSize() const;
+  [[nodiscard]] virtual int GetVerticalGutterSize() const;
 
 private:
   void MoveCursor(bool up);

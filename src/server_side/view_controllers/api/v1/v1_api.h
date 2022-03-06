@@ -128,6 +128,10 @@ protected:
   void SetupRoutes() override {
     BaseQuoridorApi::SetupRoutes();
 
+    // this is a temporary solution... we hadn't the time to save game to db
+    static unordered_map<object_id_t, std::vector<std::shared_ptr<Game>>>
+        users_games_map_;
+
     API_ROUTE(GetApp(), "/api/v1/users")
     ([]() {
       crow::json::wvalue output;
@@ -171,7 +175,8 @@ protected:
       crow::json::wvalue output;
 
       output["success"] = true;
-      output["users"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
+      output["users"] =
+          SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
 
       return output;
     });
@@ -219,55 +224,104 @@ protected:
     API_ROUTE(GetApp(), "/api/v1/me/games")
     ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(requests);
-
-      auto games = DataBase::GetInstance()->GetAllGamesForUser(user.GetId());
-
       crow::json::wvalue output;
-
       output["success"] = true;
-      output["games"] = games;
+
+      if (!users_games_map_.contains(user.GetId())) {
+        output["games"] = std::vector<std::string>();
+      } else {
+        auto games = users_games_map_[user.GetId()];
+        for (int i = 0; i < games.size(); i++) {
+          output["games"][i] = games[i]->GetGameJson();
+        }
+      }
 
       return output;
     });
 
     API_ROUTE(GetApp(), "/api/v1/me/game/<uint>")
-    ([](const crow::request &request, object_id_t game_id) {
+    ([](const crow::request &request, object_id_t game_index) {
       VALIDATE_CREDENTIALS(request);
-//      auto optional_game = Game::InitFromDB(game_id);
 
-//      API_GUARD(optional_game.has_value(), "Inexistant game");
-//      auto &game = *optional_game;
+      API_GUARD(users_games_map_.contains(user.GetId()), "Inexistant game");
+      API_GUARD(users_games_map_[user.GetId()].size() > game_index,
+                "Inexistant game");
 
-      Game game = Game("Test game", 0);
+      auto game = users_games_map_[user.GetId()][game_index];
 
       crow::json::wvalue output;
       output["success"] = true;
 
-      output["game"] = game.GetGameJson();
+      output["game"] = game->GetGameJson();
 
       return output;
     });
 
-    API_ROUTE(GetApp(), "/api/v1/me/game/<uint>/perform_action")
-    ([](const crow::request &request, object_id_t game_id) {
+    API_ROUTE(GetApp(), "/api/v1/me/game/<uint>/repr")
+    ([](const crow::request &request, object_id_t game_index) {
       VALIDATE_CREDENTIALS(request);
 
-      auto action_unparsed = request.url_params.get("object");
+      API_GUARD(users_games_map_.contains(user.GetId()), "Inexistant game");
+      API_GUARD(users_games_map_[user.GetId()].size() > game_index,
+                "Inexistant game");
 
-      API_GUARD(action_unparsed != nullptr,
-                "No object specified to perform the action");
-
-      std::string object = action_unparsed;
-
-      auto optional_game = Game::InitFromDB(game_id);
-
-      API_GUARD(optional_game.has_value(), "Inexistant game");
-
-      auto &game = *optional_game;
-
-      API_GUARD(object == "wall" or object == "player", "Invalid object");
+      auto game = users_games_map_[user.GetId()][game_index];
 
       crow::json::wvalue output;
+      output["success"] = true;
+      output["game_repr"] = game->GetBoard()->GetBoardString();
+
+      return output;
+    });
+
+    API_ROUTE(GetApp(), "/api/v1/me/game/<uint>/my_turn")
+    ([](const crow::request &request, object_id_t game_index) {
+      VALIDATE_CREDENTIALS(request);
+
+      API_GUARD(users_games_map_.contains(user.GetId()), "Inexistant game");
+      API_GUARD(users_games_map_[user.GetId()].size() > game_index,
+                "Inexistant game");
+
+      auto game = users_games_map_[user.GetId()][game_index];
+
+      crow::json::wvalue output;
+
+      output["success"] = true;
+
+      output["my_turn"] =
+          game->GetCurrentPlayer() != nullptr
+              ? game->GetCurrentPlayer()->GetUserId() == user.GetId()
+              : false;
+
+      return output;
+    });
+
+    API_ROUTE(GetApp(), "/api/v1/me/game/<uint>/move")
+    ([](const crow::request &request, object_id_t game_index) {
+      VALIDATE_CREDENTIALS(request);
+
+      API_GUARD(users_games_map_.contains(user.GetId()), "Inexistant game");
+      API_GUARD(users_games_map_[user.GetId()].size() > game_index,
+                "Inexistant game");
+
+      auto game = users_games_map_[user.GetId()][game_index];
+
+      auto action_unparsed = request.url_params.get("move_value");
+
+      API_GUARD(action_unparsed != nullptr,
+                "No object specified to perform the move");
+
+      std::string move = action_unparsed;
+
+      API_GUARD(game->GetCurrentPlayer() != nullptr, "No current user");
+      API_GUARD(game->GetCurrentPlayer()->GetUserId() == user.GetId(),
+                "It is not your turn");
+      API_GUARD(game->GameOnGoing(), "Game has finished");
+
+      crow::json::wvalue output;
+      auto move_ret = game->PlayMove(move);
+
+      API_GUARD(!move_ret.has_value(), *move_ret)
 
       output["success"] = true;
 
@@ -278,11 +332,13 @@ protected:
     ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(requests);
 
-      std::vector<UserServer> participants;
+      std::vector<UserServer> participants = {user};
 
-      auto participants_unparsed = request.url_params.get_list("participants");
+      auto participants_unparsed =
+          request.url_params.get_list("participants", false);
 
-      API_GUARD(participants_unparsed.size() <= 3, "Too many participants")
+      API_GUARD(participants_unparsed.size() == 1,
+                "Only 2 participants are supported for now")
 
       for (std::string participant_str : participants_unparsed) {
         API_GUARD(AreCharsValid(participant_str),
@@ -297,8 +353,30 @@ protected:
         }
       }
 
-      API_GUARD(user.CreateNewGameAndSaveToDb(participants).has_value(),
-                "Failed to create game");
+      API_GUARD(participants.size() == 2, "Invalid number of participants");
+
+      API_GUARD(participants[0].GetId() != participants[1].GetId(),
+                "Cannot add yourself as second player");
+
+      auto room_name = request.url_params.get("room_name");
+
+      API_GUARD(room_name != nullptr, "No room name specified");
+
+      std::shared_ptr<Game> game;
+
+      try {
+        game = std::make_shared<Game>(room_name, 2);
+      } catch (const std::exception &err) {
+        API_GUARD(false, err.what());
+      }
+
+      for (int i = 1; i < participants.size(); i++)
+      { // starts with 1 to avoid double adding the admin (creator) of the room
+        users_games_map_[participants[i].GetId()].push_back(game);
+        game->GetPlayers().at(i)->SetUser(participants[i].GetId());
+      }
+      users_games_map_[user.GetId()].push_back(game);
+
       RETURN_SUCCESS_JSON;
     });
 

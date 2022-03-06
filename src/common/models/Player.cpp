@@ -1,11 +1,12 @@
 #include "Player.h"
 #include "position.h"
 #include <iostream>
+#include <utility>
 
 using namespace std;
 
 Player::Player(Position playerPos, DIRECTION dr, int nbWalls)
-    : playerPos(playerPos), dr(dr), nbWalls{nbWalls} {}
+    : playerPos(std::move(playerPos)), dr(dr), nbWalls{nbWalls} {}
 
 ///
 /// \return
@@ -14,29 +15,10 @@ bool Player::isTurnOver() { return true; }
 ///
 /// \return
 bool Player::hasWon() {
-  if (dr == NORTH) {
-    if (playerPos.row == 0) {
-      cout << "Game Won" << endl;
-      return true;
-    }
-  } else if (dr == SOUTH) {
-    if (playerPos.row == 8) {
-      cout << "Game Won" << endl;
-      return true;
-    }
-  } else if (dr == EAST) {
-    if (playerPos.col == 8) {
-      cout << "Game Won" << endl;
-      return true;
-    }
-  } else {
-    if (playerPos.col == 0) {
-      cout << "Game Won" << endl;
-      return true;
-    }
-  }
-
-  return false;
+  return (dr == NORTH && playerPos.row == 0) ||
+         (dr == SOUTH && playerPos.row == kBoardSize - 1) ||
+         (dr == EAST && playerPos.col == kBoardSize - 1) ||
+         (dr == WEST && playerPos.col == 0);
 }
 
 ///
@@ -83,7 +65,7 @@ Position Player::playMove(DIRECTION direction) {
 /// \param Pos
 /// \param dir
 /// \return
-Position Player::calculateDirection(char c, Position Pos, DIRECTION dir) {
+Position Player::calculateDirection(char c, const Position& Pos, DIRECTION dir) {
   Position coup;
   if (c == 'F') {
     if (dir == NORTH) {
@@ -135,7 +117,7 @@ int Player::getScore() { return score; }
 
 ///
 /// \param newPos
-void Player::setPlayerPosition(Position newPos) { playerPos = newPos; }
+void Player::setPlayerPosition(Position newPos) { playerPos = std::move(newPos); }
 
 ///
 /// \return
@@ -147,4 +129,8 @@ DIRECTION Player::getGoal() const { return dr; }
 
 void Player::DecNrOfWalls() { nbWalls--; }
 
-int Player::GetNrOfWalls() { return nbWalls; }
+int Player::GetNrOfWalls() const { return nbWalls; }
+
+const optional<uint32_t> &Player::GetUserId() const { return user_; }
+
+void Player::SetUser(const optional<uint32_t> &user) { user_ = user; }

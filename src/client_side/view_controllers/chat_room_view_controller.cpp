@@ -107,16 +107,11 @@ void ChatRoomViewController::FetchMessages() {
       UpdateSubviews();
     }
   }
-  last_fetched_messages_ = GetTimeInMillis();
+  last_fetched_messages_ = GET_TIME_IN_MILLIS;
 }
 
 bool ChatRoomViewController::ShouldFetchMessages() const {
   return !error_message_.has_value() &&
          last_fetched_messages_ + min_interval_between_fetches_millis <
-             GetTimeInMillis();
-}
-long ChatRoomViewController::GetTimeInMillis() {
-  using namespace std::chrono;
-  return duration_cast<milliseconds>(system_clock::now().time_since_epoch())
-      .count();
+             GET_TIME_IN_MILLIS;
 }

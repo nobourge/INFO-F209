@@ -18,15 +18,15 @@
 #include <string>
 #include <vector>
 
-class Board : public std::enable_shared_from_this<Board> {
+class Board {
 public:
-  Board(std::vector<std::shared_ptr<Player>>, std::vector<Position>);
+  Board(const std::vector<std::shared_ptr<Player>>&, const std::vector<Position>&);
 
   // should be implementing by inheriting DatabaseCompatible
-  void SaveToDB(object_id_t board_id = 0) const;
+//  void SaveToDB(object_id_t board_id = 0) const;
   // static std::optional<Board> InitFromDB(object_id_t game_id);
 
-  static std::string GetPositionSerialization(const Position);
+  static std::string GetPositionSerialization(const Position&);
   std::string GetWallsSerialization() const;
 
   static std::vector<Position> GetWallFromWallSerialization(std::string);
@@ -56,65 +56,14 @@ public:
   DIRECTION GetOpposite(DIRECTION);
   Position GetOppositeCell(Position, DIRECTION);
 
-  static std::optional<Board> FromJson(const crow::json::rvalue &json) {
-
-    Board board{{}, {}};
-
-    try {
-      for (int i = 0; i < json["walls"].size(); i++) {
-        for (int j = 0; j < json["walls"][i].size(); j++) {
-          board.walls_[i][j] = json["walls"][i][j].b();
-        }
-      }
-      for (int i = 0; i < json["cells"].size(); i++) {
-        for (int j = 0; j < json["cells"][i].size(); j++) {
-          auto cell = Cell::FromJson(json["cells"][i][j]);
-          if (!cell.has_value()) {
-            return {};
-          }
-          board.cells_[i][j] = *cell;
-        }
-      }
-
-      for (int i = 0; i < json["pawns"].size(); i++) {
-        auto pawn = Player::FromJson(json["pawns"][i]);
-        if (!pawn.has_value()) {
-          return {};
-        }
-        board.pawns_[i] = std::make_shared<Player>(*pawn);
-      }
-    } catch (...) {
-      return {};
-    }
-
-    return board;
-  }
+  static std::optional<Board> FromJson(const crow::json::rvalue &json);
 
   explicit operator std::string() const;
 
   std::array<std::array<bool, kBoardSize * 2 - 1>, kBoardSize * 2 - 1>
   GetWalls();
 
-  crow::json::wvalue Serialize() {
-    crow::json::wvalue output;
-
-    for (int i = 0; i < walls_.size(); i++) {
-      for (int j = 0; j < walls_.at(i).size(); j++) {
-        output["walls"][i][j] = walls_.at(i).at(j);
-      }
-    }
-
-    for (int i = 0; i < walls_.size(); i++) {
-      for (int j = 0; j < walls_.at(i).size(); j++) {
-        output["cells"][i][j] = walls_.at(i).at(j);
-      }
-    }
-
-    for (int i = 0; i < pawns_.size(); i++) {
-      output["pawns"][i] = pawns_.at(i)->Serialize();
-    }
-    return output;
-  }
+  crow::json::wvalue Serialize();
 
 private:
   std::vector<std::shared_ptr<Player>> pawns_;

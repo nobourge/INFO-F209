@@ -41,8 +41,6 @@ private:
 
   [[nodiscard]] bool ShouldFetchMessages() const;
 
-  static long GetTimeInMillis();
-
   uint64_t last_fetched_messages_{};
 
   UserClient user_to_chat_with_;

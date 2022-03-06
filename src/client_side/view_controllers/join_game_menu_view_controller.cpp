@@ -4,6 +4,7 @@
 
 #include "join_game_menu_view_controller.h"
 #include "../views/menu_views/join_game_menu_view.h"
+#include "game_view_controller.h"
 
 unsigned int JoinGameMenuViewController::GetNumItemsInList() const {
   return game_views_.size();
@@ -16,10 +17,10 @@ JoinGameMenuViewController::GetViewAtIndex(unsigned int i) const {
 
 void JoinGameMenuViewController::ReloadViews() {
   game_views_ = {};
-  for (auto &game_id : games_) {
+  for (int i = 0; i < games_.size(); i++) {
     game_views_.push_back(std::make_shared<MenuButtonItem>(
-        GetMenuView().get(), "Game " + std::to_string(game_id),
-        std::optional<std::shared_ptr<AbstractViewController>>(), GetMenuView().get()));
+        GetMenuView().get(), games_[i],
+        std::make_shared<GameViewController>(i), GetMenuView().get()));
   }
 }
 
@@ -46,7 +47,7 @@ void JoinGameMenuViewController::FetchGames() {
     games_ = {};
   } else {
     error_message_ = {};
-    games_ = std::get<std::vector<object_id_t>>(res);
+    games_ = std::move(std::get<std::vector<std::string>>(res));
   }
 }
 

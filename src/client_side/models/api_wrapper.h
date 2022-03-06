@@ -47,7 +47,14 @@ public:
 
 
   // game
-  std::variant<std::vector<object_id_t>, ApiError> GetGamesVector();
+  std::variant<std::vector<std::string>, ApiError> GetGamesVector();
+  optional<ApiError> CreateGame(const std::string &room_name,
+                                const std::string &friend_username);
+
+  optional<ApiError> PerformGameMove(const object_id_t &room_id, const std::string &move);
+
+  std::variant<std::string, ApiError>
+  GetGameReprWithGameId(object_id_t game_id);
 
 
   static std::optional<ApiWrapper> &GetShared();

@@ -12,7 +12,7 @@ HelpMenuView::HelpMenuView() : AbstractMenuView(menu_name_) {
     std::make_shared<Label>(this, "pawn to any space on the opposite side of the game board from which it begins. The distin-"),
     std::make_shared<Label>(this, "guishing characteristic of Quoridor is its twenty walls. Walls are flat two-space-wide"),
     std::make_shared<Label>(this, "pieces which can be placed in the groove that runs between the spaces. Walls block the path"),
-    std::make_shared<Label>(this, "of all pawns, which must go around them. The walls are divided equally among the players at"),
+    std::make_shared<Label>(this, "of all pawns, which must go around them. The walls are divided equally among the players_ at"),
     std::make_shared<Label>(this, "the start of the game, and once placed, cannot be moved or removed. On a turn, a player may"),
     std::make_shared<Label>(this, "either move their pawn, or, if possible, place a wall. "),
     std::make_shared<Label>(this, ""),

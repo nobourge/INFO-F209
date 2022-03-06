@@ -15,6 +15,10 @@ class Player {
   DIRECTION dr;
   int score = 0;
 
+public:
+  void SetUser(const optional<uint32_t> &user);
+
+private:
   std::optional<object_id_t> user_;
 
 public:
@@ -22,12 +26,14 @@ public:
   Player(Position, DIRECTION, int = 10);
   // direction of first player is always NORTH, second SOUTH, third WEST,
   // fourth EAST
+
+  const optional<uint32_t> &GetUserId() const;
   bool isTurnOver();
   virtual bool hasWon();
   Position playMove(DIRECTION);
   Position getPlayerPos();
   void setPlayerPosition(Position);
-  Position calculateDirection(char, Position, DIRECTION);
+  static Position calculateDirection(char, const Position&, DIRECTION);
   pair<Position, Position> placeWall(std::string);
   virtual Position playIAMove(bool = true) { return {0, 0}; };
   void increaseScore(int = 5);
@@ -70,7 +76,7 @@ public:
   }
 
   void DecNrOfWalls();
-  int GetNrOfWalls();
+  int GetNrOfWalls() const;
 
   virtual bool IsAI() { return false; };
 

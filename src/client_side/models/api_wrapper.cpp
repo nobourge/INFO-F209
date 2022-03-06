@@ -289,7 +289,7 @@ ApiWrapper::GetConversationWithUser(const UserClient &other_user) {
   return messages;
 }
 
-std::variant<std::vector<object_id_t>, ApiError> ApiWrapper::GetGamesVector() {
+std::variant<std::vector<std::string>, ApiError> ApiWrapper::GetGamesVector() {
   std::string error_message = "An unknown error occurred";
   std::string url = api_url_;
 
@@ -311,11 +311,80 @@ std::variant<std::vector<object_id_t>, ApiError> ApiWrapper::GetGamesVector() {
     return ApiError{err.what()};
   }
 
-  std::vector<object_id_t> games;
+  std::vector<std::string> games;
 
   for (const auto &game_id_json : json_res["games"]) {
-    games.push_back(game_id_json.i());
+    games.push_back(game_id_json["name"].s());
   }
 
   return games;
+}
+
+std::variant<std::string, ApiError> ApiWrapper::GetGameReprWithGameId(uint32_t game_id) {
+  std::string url = api_url_;
+
+  url += "me/game/" + std::to_string(game_id) + "/repr";
+
+  crow::json::rvalue json_res;
+
+  try {
+    json_res = Requests(url, {{login_, password_}}).GetJson();
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+
+  try {
+    if (!json_res["success"].b()) {
+      return ApiError{json_res["error"].s()};
+    }
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+
+  return json_res["game_repr"].s();
+}
+
+std::optional<ApiError> ApiWrapper::CreateGame(const std::string &room_name,
+                                          const std::string &friend_username) {
+  std::string url = api_url_;
+  url += "me/games/new";
+  crow::json::rvalue json_res;
+
+  try {
+    json_res = Requests(url, {{login_, password_}}, {{"participants", friend_username}, {"room_name", room_name}}).GetJson();
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+
+
+  try {
+    if (!json_res["success"].b()) {
+      return {{json_res["error"].s()}};
+    }
+  } catch(...) {
+    return {{"Unknown error occurred"}};
+  }
+
+  return {};
+}
+optional<ApiError> ApiWrapper::PerformGameMove(const object_id_t &game_id, const std::string &move) {
+  std::string url = api_url_;
+  url += "me/game/" + std::to_string(game_id) + "/move";
+
+  crow::json::rvalue json_res;
+
+  try {
+    json_res = Requests(url, {{login_, password_}}, {{"move_value", move}}).GetJson();
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+  try {
+    if (!json_res["success"].b()) {
+      return {{json_res["error"].s()}};
+    }
+  } catch(...) {
+    return {{"Unknown error occurred"}};
+  }
+
+  return {};
 }

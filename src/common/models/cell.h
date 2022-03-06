@@ -42,7 +42,10 @@ public:
       output["walls"][i] = walls_.at(i);
     }
 
-    output["pawn"] = pawn_->Serialize();
+    if (pawn_) {
+      output["pawn"] = pawn_->Serialize();
+    }
+
     output["position"] = std::move(*pos_.Serialize());
 
 

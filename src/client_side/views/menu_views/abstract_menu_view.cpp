@@ -10,7 +10,7 @@ const char *AbstractMenuView::GetName() const { return name; }
 
 int AbstractMenuView::GetVerticalPadding() const {
   return (LINES + 1 - GetSubviews().size() -
-          (GetSubviews().size() - 1) * vertical_gutter_size_) /
+          (GetSubviews().size() - 1) * GetVerticalGutterSize()) /
          2;
 }
 

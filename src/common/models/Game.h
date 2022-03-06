@@ -10,46 +10,60 @@
 #include "position.h"
 #include <optional>
 
-
+typedef std::string Error;
 
 class Game {
 public:
   Game();
-  Game(std::vector<std::pair<Position, int>> playersPair, int currentPlayerIndex, std::vector<Position> walls);
-  Game(std::string gameName, object_id_t game_id, int nrOfPlayers=2);
-  ~Game() { delete board; }
+  Game(const std::vector<std::pair<Position, int>>& playersPair,
+       int currentPlayerIndex, std::vector<Position> walls);
 
-  static Game StartNewGame(std::string gameName, int nrOfPlayers, object_id_t board_id=0);   // initializing the id to make testing easier
-  static std::optional<Game> InitFromDB(object_id_t game_id=0);   // initializing the id to make testing easier
+  Game(std::string gameName, int nrOfPlayers = 2);
+  ~Game() { delete p_board_; }
+
+
+
+  static Game StartNewGame(std::string gameName, int nrOfPlayers);
+
+  static std::optional<Game>
+  InitFromDB(object_id_t game_id); // initializing the id to make testing easier
 
   void SaveToDB(std::string game_name);
 
   void SwitchCurrentPlayer();
   void StartTheGame();
-  int getScore();
-  bool gameOnGoing();
-  bool hasCurrentPlayerWon();
-  void joinGame();
-  void endGame();
-  void PlayMove(std::string move);
-  void playIaMove();
-  void calculateRanking();
-  std::shared_ptr<Player> getCurrentPlayer();
-  Board *getBoard() { return board; }
+  int GetScore();
+  bool GameOnGoing();
+  bool HasCurrentPlayerWon();
+  void JoinGame();
+  void EndGame();
+  std::optional<Error> PlayMove(std::string move);
+  void PlayIaMove();
+  void CalculateRanking();
+  std::shared_ptr<Player> GetCurrentPlayer();
+  Board *GetBoard() { return p_board_; }
 
   crow::json::wvalue GetGameJson();
-  static std::optional<Game> StartGameFromJson(const crow::json::rvalue &json);
+  static std::optional<Game> InitGameFromJson(const crow::json::rvalue &json);
 
+//  const optional<uint32_t> &GetGameId() const;
+//  void SetGameId(const optional<uint32_t> &game_id);
+//
+//  const string &GetGameName() const;
+//  void SetGameName(const string &game_name);
+
+  const vector<std::shared_ptr<Player>> &GetPlayers() const;
 
 private:
-  std::string gameName;
-  Board *board;
-  std::shared_ptr<Player> admin_player;
-  std::vector<std::shared_ptr<Player>> players;
-  std::shared_ptr<Player> currentPlayer;
-  bool gameOn;
-  bool IaPlayer = false;
-  GameMode gameMode = Normal;
+  std::optional<object_id_t> game_id_;
+  std::string game_name_;
+  Board *p_board_;
+  std::shared_ptr<Player> admin_player_;
+  std::vector<std::shared_ptr<Player>> players_;
+  std::shared_ptr<Player> current_player_;
+  bool game_on_;
+  bool ia_player_ = false;
+  GameMode game_mode_ = Normal;
 };
 
 #endif

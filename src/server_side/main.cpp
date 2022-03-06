@@ -12,10 +12,10 @@ int main() {
   api.Run();
 
   Game gameOn = Game(); //Normally this gets turned on by the server when the user wants to begin a game.
-  //Server has to start the game and manage the players connection etc.
+  //Server has to start the game and manage the players_ connection etc.
   //TODO server stuff
-//  gameOn.StartTheGame();
-//  while (gameOn.gameOnGoing()) {
+//  game_on_.StartTheGame();
+//  while (game_on_.GameOnGoing()) {
 //
 //  }
 

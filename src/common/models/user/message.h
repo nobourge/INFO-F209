@@ -5,7 +5,7 @@
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_MESSAGE_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_MESSAGE_H_
 
-#include "../../../common/models/database.h"
+#include "../database.h"
 #include "../../constants.h"
 #include "../../utils.h"
 #include "user.h"
