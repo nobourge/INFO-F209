@@ -36,16 +36,16 @@ endif ()
 
 add_executable(QuoridorServer
         src/server_side/main.cpp
-        src/server_side/models/board.cpp
-        src/server_side/models/cell.cpp
-        src/server_side/models/database.cpp
-        src/server_side/models/Game.cpp
-        src/server_side/models/ia.cpp
-        src/server_side/models/input.cpp
-        src/server_side/models/input.cpp
-        src/server_side/models/Player.cpp
-        src/server_side/models/position.cpp
-        src/server_side/models/translator.cpp
+        src/common/models/board.cpp
+        src/common/models/cell.cpp
+        src/common/models/database.cpp
+        src/common/models/Game.cpp
+        src/common/models/ia.cpp
+        src/common/models/input.cpp
+        src/common/models/input.cpp
+        src/common/models/Player.cpp
+        src/common/models/position.cpp
+        src/common/models/translator.cpp
 
         src/common/models/user/abstract_validator.cpp
         src/common/models/user/message.cpp
@@ -55,7 +55,7 @@ add_executable(QuoridorServer
 
         src/server_side/view_controllers/api/base_quoridor_api.cpp
         src/server_side/view_controllers/api/v1/v1_api.cpp
-        src/server_side/models/user_server.cpp src/server_side/models/user_server.h)
+        src/common/models/user_server.cpp src/common/models/user_server.h)
 
 
 target_include_directories(QuoridorServer PUBLIC ${Boost_INCLUDE_DIRS})

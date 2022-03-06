@@ -1,7 +1,7 @@
 #include"ia.h"
 
 
-Ia::Ia(Position IAPos,DIRECTION dr): Player{IAPos, dr}{
+Ia::Ia(Position IAPos,DIRECTION dr): Player{IAPos, dr} {
 
 }
 

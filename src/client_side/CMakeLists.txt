@@ -45,14 +45,24 @@ set(HEADERS
         views/menu_views/views/text_field.h
 
 
-        ../server_side/models/database.h
+        ../common/models/database.h
 
         ../common/constants.h
         ../common/models/user/user.h
         ../common/models/user/message.h
         ../common/models/user/username.h
-        ../common/models/serializable.h
         ../common/models/user/abstract_validator.h
+        ../common/models/board.h
+        ../common/models/cell.h
+        ../common/models/database.h
+        ../common/models/database_compatible.h
+        ../common/models/Game.h
+        ../common/models/ia.h
+        ../common/models/input.h
+        ../common/models/Player.h
+        ../common/models/position.h
+        ../common/models/serializable.h
+        ../common/models/translator.h
         )
 
 set(SOURCES
@@ -113,11 +123,20 @@ set(SOURCES
         views/menu_views/views/text_field.cpp
 
 
-        ../server_side/models/database.cpp
+        ../common/models/database.cpp
         ../common/models/user/user.cpp
         ../common/models/user/message.cpp
         ../common/models/user/username.cpp
         ../common/models/user/abstract_validator.cpp
+        ../common/models/board.cpp
+        ../common/models/cell.cpp
+        ../common/models/database.cpp
+        ../common/models/Game.cpp
+        ../common/models/ia.cpp
+        ../common/models/input.cpp
+        ../common/models/Player.cpp
+        ../common/models/position.cpp
+        ../common/models/translator.cpp
         view_controllers/join_or_create_game_menu_view_controller.cpp view_controllers/join_or_create_game_menu_view_controller.h views/menu_views/join_or_create_game_menu_view.cpp views/menu_views/join_or_create_game_menu_view.h view_controllers/join_game_menu_view_controller.cpp view_controllers/join_game_menu_view_controller.h views/menu_views/join_game_menu_view.cpp views/menu_views/join_game_menu_view.h)
 
 
