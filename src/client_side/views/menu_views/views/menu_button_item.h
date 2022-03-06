@@ -18,7 +18,6 @@ public:
                      &controller_to_present_on_click,
                  const std::optional<MenuButtonItemDelegate *> &delegate = {});
 
-  void SetDelegate(const std::optional<MenuButtonItemDelegate *> &delegate);
 
 private:
   std::function<void()> CreateClickEventDispatcherFunction();

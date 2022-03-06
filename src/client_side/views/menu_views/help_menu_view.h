@@ -13,7 +13,6 @@ class HelpMenuView : public AbstractMenuView, public TextFieldDelegate {
   void TextEditingFinished(TextField &sender) override;
   HelpMenuView();
  private:
-   std::shared_ptr<TextField> text_field_;
   constexpr static const char menu_name_[] = "Help Menu";
 };
 

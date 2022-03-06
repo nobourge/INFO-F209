@@ -11,7 +11,6 @@
 
 #include "abstract_view.h"
 
-class ButtonDelegate;
 
 class Button : public AbstractView {
  public:

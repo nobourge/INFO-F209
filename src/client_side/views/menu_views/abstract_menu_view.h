@@ -31,7 +31,7 @@ public:
 
   void SetDelegate(MenuViewDelegate *delegate);
 
-  void AddSubview(const std::shared_ptr<AbstractView> &view);
+  [[maybe_unused]] void AddSubview(const std::shared_ptr<AbstractView> &view);
 
   void UpdateSubviews(const std::vector<std::shared_ptr<AbstractView>> &views);
   void

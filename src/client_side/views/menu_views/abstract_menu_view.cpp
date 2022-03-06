@@ -179,7 +179,7 @@ AbstractMenuView::GetChildren() {
   return output;
 }
 
-void AbstractMenuView::AddSubview(const std::shared_ptr<AbstractView> &view) {
+[[maybe_unused]] void AbstractMenuView::AddSubview(const std::shared_ptr<AbstractView> &view) {
   if (ShouldDisplayDefaultBackButton()) {
     if (!subviews_.empty())
       subviews_.insert(--(--subviews_.end()), view);

@@ -7,9 +7,10 @@
 
 #include <string>
 #include <ncurses.h>
-#undef timeout // there is a conflict between two macros, from boost and ncurses
 #include "first_responder.h"
 #include "../../../../common/constants.h"
+#undef timeout // there is a conflict between two macros, from boost and ncurses
+
 
 class AbstractView : public EventResponder {
  public:

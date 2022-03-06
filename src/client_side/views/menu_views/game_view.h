@@ -10,7 +10,7 @@ class GameView :public AbstractMenuView{
  public:
   GameView();
   void Draw(WINDOW *window) const override;
-  void setBoard(std::vector<std::string > board){
+  [[maybe_unused]] void setBoard(std::vector<std::string > board){
     parsed_board=board;
   }
  private:

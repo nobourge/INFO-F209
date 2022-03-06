@@ -12,9 +12,7 @@ MenuButtonItem::MenuButtonItem(const std::optional<EventResponder *> &parent,
       controller_to_present_on_click_(controller_to_present_on_click),
       delegate_(delegate) {}
 
-void MenuButtonItem::SetDelegate(const std::optional<MenuButtonItemDelegate *> &delegate) {
-  delegate_ = delegate;
-}
+
 
 std::function<void()> MenuButtonItem::CreateClickEventDispatcherFunction() {
   return [&]() {
