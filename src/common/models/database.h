@@ -1,7 +1,7 @@
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_DATABASE_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_DATABASE_H_
 
-#include "../../common/constants.h"
+#include "../constants.h"
 #include "Player.h"
 #include "position.h"
 #include <cstring>

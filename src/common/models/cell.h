@@ -35,6 +35,48 @@ public:
   Position getPos() const;
   void setPos(const Position &);
 
+  crow::json::wvalue Serialize() {
+    crow::json::wvalue output;
+
+    for (int i = 0; i < walls_.size(); i++) {
+      output["walls"][i] = walls_.at(i);
+    }
+
+    output["pawn"] = pawn_->Serialize();
+    output["position"] = std::move(*pos_.Serialize());
+
+
+    return output;
+  }
+
+  static std::optional<Cell> FromJson(const crow::json::rvalue &json) {
+    Cell cell;
+
+    try {
+      for (int i = 0; i < json["walls"].size(); i++) {
+        cell.walls_[i] = json["walls"][i].b();
+      }
+      auto pos = Position::FromJson(json["position"]);
+      if (!pos.has_value()) {
+        return {};
+      }
+
+      cell.pos_ = *pos;
+
+      auto pawn = Player::FromJson(json["pawn"]);
+
+      if (!pawn.has_value()) {
+        return {};
+      }
+
+      cell.pawn_ = std::make_shared<Player>(*pawn);
+
+    } catch ( ... ) {
+      return {};
+    }
+    return cell;
+  }
+
   bool isNeighbour(const Cell &) const;
   bool isNeighbour(const Position &) const;
 };

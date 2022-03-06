@@ -3,7 +3,7 @@
 //
 
 #include "user.h"
-#include "../../../server_side/models/database.h"
+#include "../database.h"
 #include "../../utils.h"
 
 const Username &User::GetUsername() const { return username_; }

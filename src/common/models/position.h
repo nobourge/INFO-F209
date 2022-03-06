@@ -3,7 +3,7 @@
 
 #include <utility>
 #include "common.h"
-#include "../../common/models/serializable.h"
+#include "serializable.h"
 #include <iostream>
 
 struct Position: public Serializable<Position> {
@@ -20,6 +20,8 @@ struct Position: public Serializable<Position> {
                                                     // and deltaCol
 
   bool IsOutOfBoundaries(const int &low=0, const int &high=kBoardSize) const;
+
+  static std::optional<Position> FromJson(const crow::json::rvalue &json);
 
   Position operator+(const DIRECTION);
 

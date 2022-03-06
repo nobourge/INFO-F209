@@ -22,7 +22,7 @@ public:
   static Game StartNewGame(std::string gameName, int nrOfPlayers, object_id_t board_id=0);   // initializing the id to make testing easier
   static std::optional<Game> InitFromDB(object_id_t game_id=0);   // initializing the id to make testing easier
 
-  void SaveToDB(std::string game_name, object_id_t game_id=0);
+  void SaveToDB(std::string game_name);
 
   void SwitchCurrentPlayer();
   void StartTheGame();
@@ -38,12 +38,13 @@ public:
   Board *getBoard() { return board; }
 
   crow::json::wvalue GetGameJson();
-  void StartGameFromJson(const crow::json::rvalue &game_json);
+  static std::optional<Game> StartGameFromJson(const crow::json::rvalue &json);
 
 
 private:
   std::string gameName;
   Board *board;
+  std::shared_ptr<Player> admin_player;
   std::vector<std::shared_ptr<Player>> players;
   std::shared_ptr<Player> currentPlayer;
   bool gameOn;

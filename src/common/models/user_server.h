@@ -5,9 +5,9 @@
 #ifndef QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_SERVER_H_
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_USER_SERVER_H_
 
-#include "../../common/models/user/message.h"
-#include "../../common/models/user/user.h"
-#include "../../common/utils.h"
+#include "user/message.h"
+#include "user/user.h"
+#include "../utils.h"
 #include "Game.h"
 #include "database.h"
 

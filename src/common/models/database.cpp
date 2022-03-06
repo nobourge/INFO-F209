@@ -1,4 +1,5 @@
 #include "database.h"
+#include "board.h"
 
 int DataBase::friendsId = 0;
 int DataBase::ranking_id_ = 0;
@@ -311,8 +312,8 @@ void DataBase::InsertBoard(int nrOfPawns, std::string walls,
                            std::string firstPlayerPawnPosition,
                            int firstPlayerWallsLeft,
                            std::string secondPlayerPawnPosition,
-                           int secondPlayerWallsLeft,
-                           int lastPlayerToMove, int gameId) {
+                           int secondPlayerWallsLeft, int lastPlayerToMove,
+                           int gameId) {
   LOCK_DB;
   std::string statement =
       "INSERT INTO BOARD VALUES (" + std::to_string(board_id) + "," +
@@ -329,9 +330,12 @@ void DataBase::InsertBoard(int nrOfPawns, std::string walls,
   board_id++;
 }
 
-uint32_t DataBase::CreateGame(object_id_t current_user_id) {
+uint32_t DataBase::CreateGame(object_id_t current_user_id
+//                              const std::string &game_name, const Board &board
+                              ) {
   accessing_db_.lock();
-  RunSQL("INSERT INTO GAMES (ADMIN_ID) VALUES (" +
+//  board.
+  RunSQL("INSERT INTO GAMES (ROOM_NAME, ADMIN_ID, BOARD_ID) VALUES (" +
          std::to_string(current_user_id) + ")");
   accessing_db_.unlock();
   return stoul(
@@ -393,12 +397,12 @@ std::vector<object_id_t> DataBase::GetAllParticipantsInGame(object_id_t game) {
 
   std::vector<object_id_t> output;
 
-  for (auto &row : res) {
-    output.push_back(std::stoul(row.at(0)));
-  }
-
   if (!output.empty()) {
     output.push_back(*GetAdminOfGame(game));
+  }
+
+  for (auto &row : res) {
+    output.push_back(std::stoul(row.at(0)));
   }
 
   return output;

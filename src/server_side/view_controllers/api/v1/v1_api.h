@@ -7,7 +7,7 @@
 
 #include "../../../../client_side/models/api_wrapper.h"
 #include "../../../../common/base64.h"
-#include "../../../models/user_server.h"
+#include "../../../../common/models/user_server.h"
 #include "../base_quoridor_api.h"
 #include <memory>
 
@@ -224,13 +224,59 @@ protected:
       auto games = DataBase::GetInstance()->GetAllGamesForUser(user.GetId());
 
       crow::json::wvalue output;
+
       output["success"] = true;
       output["games"] = games;
 
       return output;
     });
 
-    API_ROUTE(GetApp(), "/api/v1/me/games/new") ([](const crow::request &request) {
+    API_ROUTE(GetApp(), "/api/v1/me/game/<uint>")
+    ([](const crow::request &request, object_id_t game_id) {
+      VALIDATE_CREDENTIALS(request);
+//      auto optional_game = Game::InitFromDB(game_id);
+
+//      API_GUARD(optional_game.has_value(), "Inexistant game");
+//      auto &game = *optional_game;
+
+      Game game = Game("Test game", 0);
+
+      crow::json::wvalue output;
+      output["success"] = true;
+
+      output["game"] = game.GetGameJson();
+
+      return output;
+    });
+
+    API_ROUTE(GetApp(), "/api/v1/me/game/<uint>/perform_action")
+    ([](const crow::request &request, object_id_t game_id) {
+      VALIDATE_CREDENTIALS(request);
+
+      auto action_unparsed = request.url_params.get("object");
+
+      API_GUARD(action_unparsed != nullptr,
+                "No object specified to perform the action");
+
+      std::string object = action_unparsed;
+
+      auto optional_game = Game::InitFromDB(game_id);
+
+      API_GUARD(optional_game.has_value(), "Inexistant game");
+
+      auto &game = *optional_game;
+
+      API_GUARD(object == "wall" or object == "player", "Invalid object");
+
+      crow::json::wvalue output;
+
+      output["success"] = true;
+
+      return output;
+    });
+
+    API_ROUTE(GetApp(), "/api/v1/me/games/new")
+    ([](const crow::request &request) {
       VALIDATE_CREDENTIALS(requests);
 
       std::vector<UserServer> participants;
@@ -243,7 +289,8 @@ protected:
         API_GUARD(AreCharsValid(participant_str),
                   "Illegal chars in participant_str username");
         try {
-          auto participant = UserServer::InitFromDB(Username{std::move(participant_str)});
+          auto participant =
+              UserServer::InitFromDB(Username{std::move(participant_str)});
           API_GUARD(participant.has_value(), "Inexistant participant");
           participants.push_back(*participant);
         } catch (const std::exception &err) {
@@ -251,8 +298,8 @@ protected:
         }
       }
 
-
-      API_GUARD(user.CreateNewGameAndSaveToDb(participants).has_value(), "Failed to create game");
+      API_GUARD(user.CreateNewGameAndSaveToDb(participants).has_value(),
+                "Failed to create game");
       RETURN_SUCCESS_JSON;
     });
 

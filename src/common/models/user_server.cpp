@@ -3,7 +3,7 @@
 //
 
 #include "user_server.h"
-#include "../../common/utils.h"
+#include "../utils.h"
 #include "database.h"
 
 std::unique_ptr<std::vector<UserServer>>

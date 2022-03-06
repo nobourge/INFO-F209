@@ -6,7 +6,7 @@
 #define QUORIDOR_SRC_SERVER_SIDE_MODELS_DATABASE_COMPATIBLE_H_
 
 #include <memory>
-#include "../../common/constants.h"
+#include "../constants.h"
 
 template<typename T>
 struct DatabaseCompatible {
