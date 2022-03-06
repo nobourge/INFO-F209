@@ -4,8 +4,8 @@
 #include <iostream>
 #include "view_controllers/api/v1/v1_api.h"
 //#include "models/board.h"
-#include "models/position.h"
-#include "models/Game.h"
+#include "../common/models/position.h"
+#include "../common/models/Game.h"
 
 int main() {
   V1Api api;
