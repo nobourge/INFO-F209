@@ -33,7 +33,7 @@ alt username or password invalid
   LP -->> U: username or password creation error msg  
   U -->> LP: enter username or password 
  end
-else username & password valids
+else username & password valid
  S -> DB: update(username,password)
 activate DB
 DB -->> S: updated
