@@ -15,7 +15,7 @@ $ sudo apt-get install libsqlite3-dev
 > Download [link](https://www.sqlite.org/download.html) for manual download
 
 ### boost
-An all purpose networking library for C++
+An all-purpose networking library for C++
 
 **Debian**
 ```
