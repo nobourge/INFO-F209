@@ -1,0 +1,42 @@
+
+User -> Client:Acces()
+
+activate User
+activate Client
+
+Client-->User:show()
+
+
+opt change Bio
+  User->>Client: ChangeBio()
+  activate QuoridorAPI
+  Client -> QuoridorAPI: GET /v1/user/{username}/{token}/set_bio?new_bio={}
+end
+
+opt Modify Username
+  User ->> Client:ChangeUsername()
+  Client -> QuoridorAPI : GET /v1/user/{username}/{token}/set_username?new_username={}
+end
+
+opt Modify Password
+  User ->> Client:ChangePassword()
+  Client -> QuoridorAPI : GET /v1/user/{username}/get_secret_question
+  Client <-- QuoridorAPI : {secret_question: secret_question}
+  User <- Client: PromptSecretQuestion(secret_question)
+  User --> Client: secret_question_answer
+  Client -> QuoridorAPI : GET /v1/user/{username}/set_password?new_password={}&secret_question={}
+  Client <-- QuoridorAPI : {success: bool}
+  Client --> User: DisplayRusult(success)
+end
+opt Delete Account
+  User ->> Client : DeleteAccount(password: password)
+  Client -> QuoridorAPI: GET /v1/user/{username}/{token}/delete_account?password={}
+  Client <-- QuoridorAPI: {success: true}
+  deactivate QuoridorAPI
+  Client --> User: DisplayResult()
+end
+
+deactivate Client
+deactivate User
+
+
