@@ -314,9 +314,6 @@ protected:
       std::string move = action_unparsed;
 
       API_GUARD(game->GetCurrentPlayer() != nullptr, "No current user");
-      if (!game->GetCurrentPlayer()->GetUserId().has_value()) {
-        game->GetCurrentPlayer()->SetUser(user.GetId());
-      }
       API_GUARD(game->GetCurrentPlayer()->GetUserId() == user.GetId(),
                 "It is not your turn");
       API_GUARD(game->GameOnGoing(), "Game has finished");
@@ -373,12 +370,14 @@ protected:
         API_GUARD(false, err.what());
       }
 
-      for (int i = 1; i < participants.size();
-           i++) { // starts with 1 to avoid double adding the admin (creator) of
-                  // the room
-        users_games_map_[participants[i].GetId()].push_back(game);
-        game->GetPlayers().at(i)->SetUser(participants[i].GetId());
-      }
+      for (int i = 0; i < participants.size(); i++){
+        if (i > 0) {
+            // starts with 1 to avoid double adding the admin (creator) of the
+            // room
+            users_games_map_[participants[i].GetId()].push_back(game);
+          }
+          game->GetPlayers().at(i)->SetUser(participants[i].GetId());
+        }
       users_games_map_[user.GetId()].push_back(game);
 
       RETURN_SUCCESS_JSON;
