@@ -1,0 +1,39 @@
+
+activate User
+User -> Client: Create Game
+activate Client
+Client -> QuoridorAPI : GET /v1/user/{username}/{token}/game/new?opponnents=user1
+activate QuoridorAPI
+Client <-- QuoridorAPI : {game_id: game_id}
+
+User <-- Client: Game creation success
+
+
+Client -> QuoridorAPI : GET /v1/user/{username}/{token}/game/{game_id}/join
+
+loop not game active
+  Client -> QuoridorAPI : GET /v1/user/{username}/{token}/game/{game_id}/game_active
+  Client <-- QuoridorAPI : {game_active: bool}
+end
+
+loop game is active
+  Client -> QuoridorAPI : GET /v1/user/{username}/{token}/game/{game_id}/get_board_repr
+  Client <-- QuoridorAPI : {success: bool, board_repr: board_repr}
+  User <-- Client : UpdateBoard(board_repr)
+
+
+  Client -> QuoridorAPI : GET /v1/user/{username}/{token}/game/{game_id}/is_this_players_turn
+  Client <-- QuoridorAPI : {this_player_turn: bool}
+  opt is_this_players_turn
+    User <- Client : PromptAction
+    User --> Client : PerformAction
+    Client -> QuoridorAPI : GET /v1/user/{username}/{token}/game/{game_id}/perform_action?action={action}
+  end
+end
+
+Client -> QuoridorAPI : GET /v1/user/{username}/{token}/game/{game_id}/has_this_user_won
+Client <-- QuoridorAPI : {this_player_won: bool, new_score: int}
+deactivate QuoridorAPI
+User <-- Client : ShowEndgameStatus(this_player_won, new_score)
+deactivate Client
+deactivate User
