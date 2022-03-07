@@ -1,8 +1,14 @@
 bin/
+
+**/.vscode/
+.idea/
+
+cmake-build-*
 CMakeFiles/
 cmake_install.cmake
 CMakeCache.txt
+
 Makefile
-**/.vscode/
-.idea/
+
+
 src/server_side/build/*

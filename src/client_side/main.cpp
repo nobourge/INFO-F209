@@ -1,7 +1,7 @@
 #include <stack>
-#include "view_controllers/abstract_view_controller.h"
-#include "view_controllers/home_menu_view_controller.h"
-#include "view_controllers/start_view_controller.h"
+#include "view_controllers/view_controller_abstract.h"
+#include "view_controllers/view_controller_home_menu.h"
+#include "view_controllers/view_controller_welcome.h"
 
 int main() {
   std::stack<std::shared_ptr<AbstractViewController>> view_controllers{};

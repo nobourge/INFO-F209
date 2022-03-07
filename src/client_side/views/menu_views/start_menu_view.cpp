@@ -1,6 +1,6 @@
 #include "start_menu_view.h"
-#include "../../view_controllers/create_account_view_controller.h"
-#include "../../view_controllers/login_view_controller.h"
+#include "../../view_controllers/view_controller_create_account.h"
+#include "../../view_controllers/view_controller_login.h"
 #include <vector>
 
 StartMenuView::StartMenuView() : AbstractMenuView(menu_name_) {

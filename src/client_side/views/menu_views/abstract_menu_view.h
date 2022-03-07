@@ -2,7 +2,7 @@
 #define QUORIDOR_SRC_CLIENT_SIDE_VIEWS_ABSTRACT_MENU_VIEW_H_
 
 #include "../../../common/constants.h"
-#include "../../view_controllers/abstract_view_controller.h"
+#include "../../view_controllers/view_controller_abstract.h"
 #include "views/button.h"
 #include "views/menu_button_item.h"
 #include <cstring>

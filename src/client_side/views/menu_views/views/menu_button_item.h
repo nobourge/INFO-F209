@@ -5,7 +5,7 @@
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_MENU_BUTTON_ITEM_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_MENU_BUTTON_ITEM_H_
 
-#include "../../../view_controllers/abstract_view_controller.h"
+#include "../../../view_controllers/view_controller_abstract.h"
 #include "button.h"
 
 struct MenuButtonItemDelegate;

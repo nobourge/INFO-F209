@@ -11,19 +11,19 @@ set(HEADERS
         models/api_wrapper.h
         models/requests.h
 
-        view_controllers/abstract_menu_view_controller.h
-        view_controllers/home_menu_view_controller.h
-        view_controllers/ranking_view_controller.h
-        view_controllers/abstract_view_controller.h
-        view_controllers/abstract_list_menu_view_controller.h
-        view_controllers/abstract_searchable_list_menu_view_controller.h
-        view_controllers/login_view_controller.h
-        view_controllers/create_account_view_controller.h
-        view_controllers/start_view_controller.h
-        view_controllers/new_game_menu_view_controller.h
-        view_controllers/chat_room_view_controller.h
-        view_controllers/game_view_controller.h
-        view_controllers/help_view_controller.h
+        view_controllers/view_controller_menu_abstract.h
+        view_controllers/view_controller_home_menu.h
+        view_controllers/view_controller_ranking.h
+        view_controllers/view_controller_abstract.h
+        view_controllers/view_controller_menu_abstract_list.h
+        view_controllers/view_controller_menu_abstract_searchable_list.h
+        view_controllers/view_controller_login.h
+        view_controllers/view_controller_create_account.h
+        view_controllers/view_controller_welcome.h
+        view_controllers/view_controller_menu_new_game.h
+        view_controllers/view_controller_chat_room.h
+        view_controllers/view_controller_game.h
+        view_controllers/view_controller_help.h
 
         views/menu_views/chat_room_menu_view.h
         views/menu_views/game_view.h
@@ -71,30 +71,30 @@ set(SOURCES
         models/api_wrapper.cpp
         models/requests.cpp
 
-        view_controllers/abstract_view_controller.cpp
-        view_controllers/abstract_searchable_list_menu_view_controller.cpp
-        view_controllers/abstract_searchable_list_menu_view_controller.h
-        view_controllers/abstract_list_menu_view_controller.cpp
-        view_controllers/abstract_list_menu_view_controller.h
-        view_controllers/abstract_menu_view_controller.cpp
-        view_controllers/abstract_list_menu_view_controller.cpp
-        view_controllers/abstract_searchable_list_menu_view_controller.cpp
-        view_controllers/abstract_authed_menu_view_controller.cpp
-        view_controllers/abstract_authed_menu_view_controller.h
+        view_controllers/view_controller_abstract.cpp
+        view_controllers/view_controller_menu_abstract_searchable_list.cpp
+        view_controllers/view_controller_menu_abstract_searchable_list.h
+        view_controllers/view_controller_menu_abstract_list.cpp
+        view_controllers/view_controller_menu_abstract_list.h
+        view_controllers/view_controller_menu_abstract.cpp
+        view_controllers/view_controller_menu_abstract_list.cpp
+        view_controllers/view_controller_menu_abstract_searchable_list.cpp
+        view_controllers/view_controller_menu_abstract_authed.cpp
+        view_controllers/view_controller_menu_abstract_authed.h
 
-        view_controllers/ranking_view_controller.cpp
-        view_controllers/home_menu_view_controller.cpp
-        view_controllers/new_game_menu_view_controller.cpp
-        view_controllers/login_view_controller.cpp
-        view_controllers/help_view_controller.cpp
-        view_controllers/create_account_view_controller.cpp
-        view_controllers/chat_room_view_controller.cpp
-        view_controllers/start_view_controller.cpp
-        view_controllers/game_view_controller.cpp
-        view_controllers/friend_list_view_controller.cpp
-        view_controllers/friend_list_view_controller.h
-        view_controllers/find_friend_view_controller.cpp
-        view_controllers/find_friend_view_controller.h
+        view_controllers/view_controller_ranking.cpp
+        view_controllers/view_controller_home_menu.cpp
+        view_controllers/view_controller_menu_new_game.cpp
+        view_controllers/view_controller_login.cpp
+        view_controllers/view_controller_help.cpp
+        view_controllers/view_controller_create_account.cpp
+        view_controllers/view_controller_chat_room.cpp
+        view_controllers/view_controller_welcome.cpp
+        view_controllers/view_controller_game.cpp
+        view_controllers/view_controller_friend_list.cpp
+        view_controllers/view_controller_friend_list.h
+        view_controllers/view_controller_find_friend.cpp
+        view_controllers/view_controller_find_friend.h
 
 
         views/menu_views/find_new_friend_menu_view.cpp
@@ -134,7 +134,7 @@ set(SOURCES
         ../common/models/Player.cpp
         ../common/models/position.cpp
         ../common/models/translator.cpp
-        view_controllers/join_or_create_game_menu_view_controller.cpp view_controllers/join_or_create_game_menu_view_controller.h views/menu_views/join_or_create_game_menu_view.cpp views/menu_views/join_or_create_game_menu_view.h view_controllers/join_game_menu_view_controller.cpp view_controllers/join_game_menu_view_controller.h views/menu_views/join_game_menu_view.cpp views/menu_views/join_game_menu_view.h)
+        view_controllers/view_controller_menu_join_or_create_game.cpp view_controllers/view_controller_menu_join_or_create_game.h views/menu_views/join_or_create_game_menu_view.cpp views/menu_views/join_or_create_game_menu_view.h view_controllers/view_controller_menu_join_game.cpp view_controllers/view_controller_menu_join_game.h views/menu_views/join_game_menu_view.cpp views/menu_views/join_game_menu_view.h)
 
 
 

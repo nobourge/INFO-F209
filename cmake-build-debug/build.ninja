@@ -294,98 +294,98 @@ build src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.obj: CXX_COM
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\models
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_abstract.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_abstract.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_abstract.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_searchable_list_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_searchable_list_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_searchable_list_menu_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_searchable_list.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_menu_abstract_searchable_list.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_menu_abstract_searchable_list.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_list_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_list_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_list_menu_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_list.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_menu_abstract_list.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_menu_abstract_list.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_menu_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_menu_abstract.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_menu_abstract.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_authed_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/abstract_authed_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\abstract_authed_menu_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_authed.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_menu_abstract_authed.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_menu_abstract_authed.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/ranking_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/ranking_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\ranking_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_ranking.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_ranking.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_ranking.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/home_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\home_menu_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_home_menu.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_home_menu.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_home_menu.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/new_game_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/new_game_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\new_game_menu_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_new_game.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_menu_new_game.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_menu_new_game.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/login_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/login_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\login_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_login.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_login.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_login.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/help_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/help_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\help_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_help.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_help.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_help.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/create_account_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/create_account_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\create_account_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_create_account.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_create_account.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_create_account.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/chat_room_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/chat_room_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\chat_room_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_chat_room.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_chat_room.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_chat_room.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/start_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/start_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\start_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_welcome.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_welcome.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_welcome.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/game_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\game_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_game.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_game.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_game.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/friend_list_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/friend_list_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\friend_list_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_friend_list.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_friend_list.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_friend_list.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/find_friend_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/find_friend_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\find_friend_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_find_friend.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_find_friend.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_find_friend.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
@@ -576,8 +576,8 @@ build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/translator.cpp.
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\__\common\models
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/join_or_create_game_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/join_or_create_game_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\join_or_create_game_menu_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_or_create_game.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_menu_join_or_create_game.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_menu_join_or_create_game.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
@@ -588,8 +588,8 @@ build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_or_create_
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\views\menu_views
 
-build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/join_game_menu_view_controller.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/join_game_menu_view_controller.cpp || cmake_object_order_depends_target_ClientSide
-  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\join_game_menu_view_controller.cpp.obj.d
+build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_game.cpp.obj: CXX_COMPILER__ClientSide_Debug C$:/Users/bourg/Documents/GitHub/INFO-F209/src/client_side/view_controllers/view_controller_menu_join_game.cpp || cmake_object_order_depends_target_ClientSide
+  DEP_FILE = src\client_side\CMakeFiles\ClientSide.dir\view_controllers\view_controller_menu_join_game.cpp.obj.d
   FLAGS = -g -std=gnu++2a
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
   OBJECT_FILE_DIR = src\client_side\CMakeFiles\ClientSide.dir\view_controllers
@@ -608,7 +608,7 @@ build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_game_menu_
 #############################################
 # Link the executable src\client_side\ClientSide.exe
 
-build src/client_side/ClientSide.exe: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/main.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_searchable_list_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_list_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/abstract_authed_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/ranking_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/home_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/new_game_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/login_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/help_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/create_account_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/chat_room_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/start_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/game_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/friend_list_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/find_friend_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/new_game_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/database.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/board.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/cell.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Game.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/ia.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/input.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Player.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/position.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/translator.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/join_or_create_game_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_or_create_game_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/join_game_menu_view_controller.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_game_menu_view.cpp.obj
+build src/client_side/ClientSide.exe: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/main.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_abstract.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_searchable_list.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_list.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_authed.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_ranking.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_home_menu.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_new_game.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_login.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_help.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_create_account.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_chat_room.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_welcome.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_game.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_friend_list.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_find_friend.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/new_game_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/database.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/board.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/cell.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Game.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/ia.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/input.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Player.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/position.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/__/common/models/translator.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_or_create_game.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_or_create_game_menu_view.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_game.cpp.obj src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_game_menu_view.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lncurses  -lcurl  -lpthread  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = src\client_side\CMakeFiles\ClientSide.dir
