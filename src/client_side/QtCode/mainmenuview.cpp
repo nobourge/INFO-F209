@@ -5,14 +5,37 @@ MainMenuView::MainMenuView(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainMenuView)
 {
-    ui->setupUi(this);
-    setFixedSize(size());
-      ui->stackedWidget->setCurrentIndex(0);
+  ui->setupUi(this);
+
+  //this->setStyleSheet("Qframe {background-color: black;}");
+  //this->setStyleSheet("this {background-color: black;}");
+  //this->setStyleSheet("Qwidget {background-color: black;}");
+  //this->setStyleSheet("QInputDialog {background-color: black;}");
+
+  bool dark_mode = false;
+  //bool dark_mode = true;
+  if(dark_mode){
+    //todo     //this->setStyleSheet("QInputDialog {background-color: white;}"
+    this->setStyleSheet("background-color: black;"
+                        //"foreground-color: white;"
+                        "selection-color: green;"
+                        "color: white;"
+                        "QLineEdit {background-color: red;}"
+                        "border: red"
+                        "");
+  }
+
+  //todo if a field is mandatory:
+  //field->setProperty("mandatoryField",true);
+  //todo then here uncomment  next line:
+  //*[mandatoryField="true"] {background_color: yellow};
+  setFixedSize(size());
+  ui->stackedWidget->setCurrentIndex(0);
 }
 
 MainMenuView::~MainMenuView()
 {
-    delete ui;
+  delete ui;
 }
 
 // 0 choose login
@@ -26,104 +49,104 @@ MainMenuView::~MainMenuView()
 
 void MainMenuView::on_pushButton_9_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+  ui->stackedWidget->setCurrentIndex(1);
 }
 
 
 void MainMenuView::on_pushButton_6_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+  ui->stackedWidget->setCurrentIndex(2);
 }
 
 
 void MainMenuView::on_pushButton_8_clicked()
 {
-    exit(0);
+  exit(0);
 }
 
 
 void MainMenuView::on_pushButton_11_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+  ui->stackedWidget->setCurrentIndex(0);
 }
 
 
 void MainMenuView::on_pushButton_10_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+  ui->stackedWidget->setCurrentIndex(3);
 }
 
 
 void MainMenuView::on_pushButton_12_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+  ui->stackedWidget->setCurrentIndex(3);
 }
 
 
 void MainMenuView::on_pushButton_13_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+  ui->stackedWidget->setCurrentIndex(0);
 }
 
 
 void MainMenuView::on_pushButton_4_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+  ui->stackedWidget->setCurrentIndex(4);
 }
 
 
 void MainMenuView::on_pushButton_7_clicked()
 {
-    Rankingtext=Rankingtext+"\n test";
-   ui->textEdit->setText(QString::fromStdString( Rankingtext));
+  Rankingtext=Rankingtext+"\n test";
+  ui->textEdit->setText(QString::fromStdString( Rankingtext));
 }
 
 
 void MainMenuView::on_pushButton_14_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+  ui->stackedWidget->setCurrentIndex(3);
 }
 
 
 void MainMenuView::on_pushButton_16_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+  ui->stackedWidget->setCurrentIndex(3);
 }
 
 
 void MainMenuView::on_pushButton_15_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(6);
+  ui->stackedWidget->setCurrentIndex(6);
 }
 
 
 void MainMenuView::on_pushButton_2_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(5);
+  ui->stackedWidget->setCurrentIndex(5);
 }
 
 
 void MainMenuView::on_pushButton_18_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+  ui->stackedWidget->setCurrentIndex(3);
 }
 
 
 void MainMenuView::on_pushButton_17_clicked()
 {
-    chattext=chattext+"\n"+ui->lineEdit_6->text().toStdString();
-    ui->textEdit_2->setText(QString::fromStdString( chattext));
-    ui->lineEdit_6->setText("");
+  chattext=chattext+"\n"+ui->lineEdit_6->text().toStdString();
+  ui->textEdit_2->setText(QString::fromStdString( chattext));
+  ui->lineEdit_6->setText("");
 }
 
 void MainMenuView::on_pushButton_19_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+  ui->stackedWidget->setCurrentIndex(3);
 }
 
 
 void MainMenuView::on_pushButton_3_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(7);
+  ui->stackedWidget->setCurrentIndex(7);
 }
 

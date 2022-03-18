@@ -54,7 +54,9 @@ private slots:
 
 private:
     Ui::MainMenuView *ui;
-    std::string chattext="";
-    std::string Rankingtext="";
+    //std::string chattext="";
+    std::string chattext;
+    //std::string Rankingtext="";
+    std::string Rankingtext;
 };
 #endif // MAINMENUVIEW_H
