@@ -7,6 +7,7 @@
 
 #include "abstract_view.h"
 #include <string>
+#include <algorithm>
 
 struct TextFieldDelegate;
 

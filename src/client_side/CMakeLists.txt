@@ -1,5 +1,15 @@
 
 
+
+
+
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
 if (APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I /usr/local/lib/boost_1_78_0")
 endif ()
@@ -34,13 +44,14 @@ set(HEADERS
         views/menu_views/create_account_menu_view.h
         views/menu_views/login_menu_view.h
         views/menu_views/start_menu_view.h
-        
+
         views/menu_views/views/button.h
         views/menu_views/views/abstract_view.h
         views/menu_views/views/first_responder.h
         views/menu_views/views/label.h
         views/menu_views/views/menu_button_item.h
         views/menu_views/views/text_field.h
+        QtCode/mainmenuview.h
 
 
         ../common/models/database.h
@@ -61,6 +72,7 @@ set(HEADERS
         ../common/models/position.h
         ../common/models/serializable.h
         ../common/models/translator.h
+
         )
 
 set(SOURCES
@@ -134,12 +146,19 @@ set(SOURCES
         ../common/models/Player.cpp
         ../common/models/position.cpp
         ../common/models/translator.cpp
-        view_controllers/view_controller_menu_join_or_create_game.cpp view_controllers/view_controller_menu_join_or_create_game.h views/menu_views/join_or_create_game_menu_view.cpp views/menu_views/join_or_create_game_menu_view.h view_controllers/view_controller_menu_join_game.cpp view_controllers/view_controller_menu_join_game.h views/menu_views/join_game_menu_view.cpp views/menu_views/join_game_menu_view.h)
+        view_controllers/view_controller_menu_join_or_create_game.cpp view_controllers/view_controller_menu_join_or_create_game.h views/menu_views/join_or_create_game_menu_view.cpp views/menu_views/join_or_create_game_menu_view.h view_controllers/view_controller_menu_join_game.cpp view_controllers/view_controller_menu_join_game.h views/menu_views/join_game_menu_view.cpp views/menu_views/join_game_menu_view.h
+        QtCode/mainmenuview.ui
+        QtCode/mainmenuview.cpp
+        QtCode/ressource.qrc)
 
 
+find_package(Qt6 CONFIG REQUIRED COMPONENTS Widgets)
 
-add_executable(ClientSide ${HEADERS} ${SOURCES})
-target_link_libraries(ClientSide ncurses curl pthread)
+add_executable(ClientSide ${HEADERS} ${SOURCES}
+        )
+target_link_libraries(ClientSide ncurses curl pthread Qt6::Widgets)
 
 target_include_directories(ClientSide PUBLIC ${SQLite3_INCLUDE_DIRS})
 target_link_libraries(ClientSide ${SQLite3_LIBRARIES})
+
+
