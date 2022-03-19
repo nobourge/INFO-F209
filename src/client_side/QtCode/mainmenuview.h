@@ -17,7 +17,9 @@ public:
 
 private slots:
 
-
+    void on_pushButton_0_clicked();
+    void on_pushButton_1_clicked();
+    void on_pushButton_5_clicked();
     void on_pushButton_9_clicked();
 
     void on_pushButton_6_clicked();
@@ -54,7 +56,10 @@ private slots:
 
 private:
     Ui::MainMenuView *ui;
-    std::string chattext="";
-    std::string Rankingtext="";
+    //std::string chattext="";
+    std::string chattext;
+    //std::string Rankingtext="";
+    std::string Rankingtext;
+
 };
 #endif // MAINMENUVIEW_H

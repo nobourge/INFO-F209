@@ -6,6 +6,39 @@ MainMenuView::MainMenuView(QWidget *parent)
     , ui(new Ui::MainMenuView)
 {
     ui->setupUi(this);
+
+    this->setStyleSheet("selection-color: green");
+
+    std::string theme = "dark_red";
+    //std::string theme = "dark_grey";
+
+    if(theme == "black")
+    {
+      //todo this->setStyleSheet("QInputDialog {background-color: white;}"
+      this->setStyleSheet("background-color: black;"
+                          "color: white;"
+                          "border: red");
+    }
+
+    else if(theme == "dark_grey")
+    {
+      this->setStyleSheet("background-color: darkGrey;"
+                          "font: Bold;"
+                          );
+    }
+
+    else if(theme == "dark_red")
+    {
+      this->setStyleSheet("background-color: darkRed;"
+                          "font: Bold;"
+                          );
+    }
+
+    //todo if a field is mandatory:
+    //field->setProperty("mandatoryField",true);
+    //todo then here uncomment  next line:
+    //*[mandatoryField="true"] {background_color: yellow};
+
     setFixedSize(size());
       ui->stackedWidget->setCurrentIndex(0);
 }
@@ -24,6 +57,21 @@ MainMenuView::~MainMenuView()
 // 6 Chat Room
 // 7 Help
 
+void MainMenuView::on_pushButton_0_clicked()
+{
+    this->setStyleSheet("background-color: black");
+}
+
+void MainMenuView::on_pushButton_1_clicked()
+{
+    this->setStyleSheet("background-color: blue");
+}
+
+void MainMenuView::on_pushButton_5_clicked()
+{
+    this->setStyleSheet("background-color: green");
+}
+
 void MainMenuView::on_pushButton_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
@@ -35,7 +83,7 @@ void MainMenuView::on_pushButton_6_clicked()
     ui->stackedWidget->setCurrentIndex(2);
 }
 
-
+///Quit
 void MainMenuView::on_pushButton_8_clicked()
 {
     exit(0);
@@ -108,7 +156,7 @@ void MainMenuView::on_pushButton_18_clicked()
     ui->stackedWidget->setCurrentIndex(3);
 }
 
-
+///message send
 void MainMenuView::on_pushButton_17_clicked()
 {
     chattext=chattext+"\n"+ui->lineEdit_6->text().toStdString();
