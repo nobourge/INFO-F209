@@ -49,6 +49,21 @@
        <string>Quit</string>
       </property>
      </widget>
+
+     <widget class="QLabel" name="label_Welcome">
+           <property name="geometry">
+            <rect>
+             <x>365</x>
+             <y>60</y>
+             <width>350</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Welcome</string>
+           </property>
+          </widget>
+
      <widget class="QPushButton" name="pushButton_9">
       <property name="geometry">
        <rect>
@@ -143,6 +158,8 @@
       </property>
      </widget>
     </widget>
+
+
     <widget class="QWidget" name="page_5">
      <widget class="QLabel" name="label_2">
       <property name="geometry">

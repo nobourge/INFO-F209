@@ -3,6 +3,9 @@ bin/
 **/.vscode/
 .idea/
 
+buil.ninja
+LastTest.log
+
 cmake-build-*
 CMakeFiles/
 cmake_install.cmake

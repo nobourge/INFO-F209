@@ -151,7 +151,7 @@ set(SOURCES
         QtCode/mainmenuview.cpp
         QtCode/ressource.qrc)
 
-
+set(CMAKE_PREFIX_PATH "~/Qt/6.2.3/gcc_64/lib/cmake")
 find_package(Qt6 CONFIG REQUIRED COMPONENTS Widgets)
 
 add_executable(ClientSide ${HEADERS} ${SOURCES}
