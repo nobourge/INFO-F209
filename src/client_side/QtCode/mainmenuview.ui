@@ -141,7 +141,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Quit</string>
+       <string>Back</string>
       </property>
      </widget>
      <widget class="QLabel" name="label">
@@ -281,6 +281,7 @@
       </property>
       <property name="text">
        <string>Help</string>
+
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton">
@@ -297,6 +298,7 @@
       </property>
       <property name="text">
        <string>Play</string>
+
       </property>
       <property name="checkable">
        <bool>false</bool>
@@ -357,6 +359,7 @@
       </property>
       <property name="text">
        <string>Back</string>
+
       </property>
      </widget>
     </widget>
@@ -382,6 +385,7 @@
       </property>
       <property name="text">
        <string>Choose Friend</string>
+
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_15">
@@ -395,6 +399,7 @@
       </property>
       <property name="text">
        <string>Chat</string>
+
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_16">
@@ -408,6 +413,7 @@
       </property>
       <property name="text">
        <string>Back</string>
+
       </property>
      </widget>
     </widget>
@@ -446,6 +452,7 @@
       </property>
       <property name="text">
        <string>Send</string>
+
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_18">
@@ -459,9 +466,14 @@
       </property>
       <property name="text">
        <string>Back</string>
+
       </property>
      </widget>
     </widget>
+
+
+
+
     <widget class="QWidget" name="page_8">
      <widget class="QLabel" name="label_4">
       <property name="geometry">
@@ -474,6 +486,7 @@
       </property>
       <property name="text">
        <string>The Help</string>
+
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_19">
@@ -487,7 +500,44 @@
       </property>
       <property name="text">
        <string>Back</string>
+
       </property>
+
+     </widget>
+    </widget>
+
+
+
+
+    <widget class="QWidget" name="page_9">
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>60</y>
+        <width>201</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Game</string>
+
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_20">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>330</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+
+      </property>
+
      </widget>
     </widget>
    </widget>

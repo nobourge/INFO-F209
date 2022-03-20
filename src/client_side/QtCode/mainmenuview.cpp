@@ -56,19 +56,15 @@ MainMenuView::~MainMenuView()
 // 5 FriendList
 // 6 Chat Room
 // 7 Help
+// 8 Game
 
-///?
-///not close window
-///not reduce window
-void MainMenuView::on_pushButton_0_clicked()
+///play : from main to game
+void MainMenuView::on_pushButton_clicked()
 {
-  ui->stackedWidget->setCurrentIndex(5);
-  this->setStyleSheet("background-color: blue");
+  ui->stackedWidget->setCurrentIndex(8);
 }
 
 ///?
-///not close window
-///not reduce window
 void MainMenuView::on_pushButton_1_clicked()
 {
   this->setStyleSheet("background-color: blue");
@@ -101,10 +97,10 @@ void MainMenuView::on_pushButton_8_clicked()
   exit(0);
 }
 
-///from login back to welcome
+///back : from login to welcome
 void MainMenuView::on_pushButton_11_clicked()
 {
-  this->setStyleSheet("background-color: blue");
+  //this->setStyleSheet("background-color: blue");
 
   ui->stackedWidget->setCurrentIndex(0);
 }
@@ -179,6 +175,12 @@ void MainMenuView::on_pushButton_17_clicked()
 }
 
 void MainMenuView::on_pushButton_19_clicked()
+{
+  ui->stackedWidget->setCurrentIndex(3);
+}
+
+///game back to main
+void MainMenuView::on_pushButton_20_clicked()
 {
   ui->stackedWidget->setCurrentIndex(3);
 }
