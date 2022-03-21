@@ -62,6 +62,10 @@ A simple text-based user interface library for C/C++
 $ sudo apt-get install libncurses5-dev libncursesw5-dev
 ```
 
+## Build
+```
+$ 
+```
 ## SRD
 
 ![Visualization of the codebase](./diagram.svg)
