@@ -52,6 +52,9 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_19_clicked();
   void on_pushButton_20_clicked();
+  void on_pushButton_21_clicked();
+  void on_pushButton_22_clicked();
+  void on_pushButton_23_clicked();
 
   void on_pushButton_3_clicked();
 

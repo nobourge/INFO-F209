@@ -8,10 +8,7 @@ MainMenuView::MainMenuView(QWidget *parent)
   ui->setupUi(this);
 
   this->setStyleSheet("selection-color: green");
-
-  std::string theme = "dark_red";
-  //std::string theme = "dark_grey";
-
+/*
   if(theme == "black")
   {
     //todo this->setStyleSheet("QInputDialog {background-color: white;}"
@@ -19,27 +16,13 @@ MainMenuView::MainMenuView(QWidget *parent)
                         "color: white;"
                         "border: red");
   }
-
-  else if(theme == "dark_grey")
-  {
-    this->setStyleSheet("background-color: darkGrey;"
-                        "font: Bold;"
-    );
-  }
-
-  else if(theme == "dark_red")
-  {
-    this->setStyleSheet("background-color: darkRed;"
-                        "font: Bold;"
-    );
-  }
-
+*/
   //todo if a field is mandatory:
   //field->setProperty("mandatoryField",true);
   //todo then here uncomment  next line:
   //*[mandatoryField="true"] {background_color: yellow};
 
-  setFixedSize(size());
+  //setFixedSize(size());
   ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -183,6 +166,28 @@ void MainMenuView::on_pushButton_19_clicked()
 void MainMenuView::on_pushButton_20_clicked()
 {
   ui->stackedWidget->setCurrentIndex(3);
+}
+
+///theme grey
+void MainMenuView::on_pushButton_21_clicked()
+{
+  this->setStyleSheet("background-color: darkGrey;"
+                      "font: Bold;"
+  );
+}
+
+///theme red
+void MainMenuView::on_pushButton_22_clicked()
+{
+  this->setStyleSheet("background-color: darkRed;"
+                      "font: Bold;"
+  );
+}
+
+void MainMenuView::on_pushButton_23_clicked()
+{
+  this->setStyleSheet("background-color: white;"
+  );
 }
 
 
