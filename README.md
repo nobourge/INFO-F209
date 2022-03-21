@@ -62,6 +62,19 @@ A simple text-based user interface library for C/C++
 $ sudo apt-get install libncurses5-dev libncursesw5-dev
 ```
 
+## Build
+```
+$ cmake -S . -B bin/
+$ cd bin 
+$ make
+```
+
+## Execution
+```
+$ ./QuoridorServer
+$ ./QuoridorClient
+```
+
 ## SRD
 
 ![Visualization of the codebase](./diagram.svg)
