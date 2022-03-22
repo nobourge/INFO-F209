@@ -1,5 +1,6 @@
 #include "mainmenuview.h"
 #include "ui_mainmenuview.h"
+#include "../models/api_wrapper.h"
 
 MainMenuView::MainMenuView(QWidget *parent)
     : QMainWindow(parent)
@@ -88,16 +89,41 @@ void MainMenuView::on_pushButton_11_clicked()
   ui->stackedWidget->setCurrentIndex(0);
 }
 
-
+//Login button
 void MainMenuView::on_pushButton_10_clicked()
 {
-  ui->stackedWidget->setCurrentIndex(3);
+  auto login_res = ApiWrapper::Login(ui->lineEdit->text().toStdString(), ui->lineEdit_2->text().toStdString());
+
+    //if (holds_alternative<LoginError>(login_res)) {
+    //  //Mettre ici le message d'erreur
+    //}
+    //else {
+    ApiWrapper::GetShared() = std::get<ApiWrapper>(login_res);
+    ui->stackedWidget->setCurrentIndex(3);
+    //}
+
 }
 
 
 void MainMenuView::on_pushButton_12_clicked()
 {
-  ui->stackedWidget->setCurrentIndex(3);
+  // we only need
+    auto username = ui->lineEdit_3->text().toStdString();
+    auto password = ui->lineEdit_4->text().toStdString();
+
+    if (password != ui->lineEdit_5->text().toStdString()) {
+      // error_message_ = "Password mismatch";
+    } else {
+      // passwords match
+      auto api_wrapper = ApiWrapper::CreateAccount(username, password);
+
+      // if (holds_alternative<ApiError>(api_wrapper)) {
+      //   // error occurred
+      //   error_message_ = get<ApiError>(api_wrapper).error_message;
+      // } else {
+        ui->stackedWidget->setCurrentIndex(3);
+      //}
+    }
 }
 
 

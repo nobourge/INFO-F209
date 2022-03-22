@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainmenuview.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.3
+** Created by: Qt User Interface Compiler version 6.2.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -29,7 +29,12 @@ public:
     QStackedWidget *stackedWidget;
     QWidget *page_3;
     QPushButton *pushButton_8;
+    QLabel *label_Welcome;
     QPushButton *pushButton_9;
+    QLabel *label_Theme;
+    QPushButton *pushButton_21;
+    QPushButton *pushButton_22;
+    QPushButton *pushButton_23;
     QPushButton *pushButton_6;
     QWidget *page_4;
     QPushButton *pushButton_10;
@@ -67,6 +72,9 @@ public:
     QWidget *page_8;
     QLabel *label_4;
     QPushButton *pushButton_19;
+    QWidget *page_9;
+    QLabel *label_41;
+    QPushButton *pushButton_20;
 
     void setupUi(QMainWindow *MainMenuView)
     {
@@ -86,9 +94,24 @@ public:
         pushButton_8 = new QPushButton(page_3);
         pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
         pushButton_8->setGeometry(QRect(360, 360, 80, 25));
+        label_Welcome = new QLabel(page_3);
+        label_Welcome->setObjectName(QString::fromUtf8("label_Welcome"));
+        label_Welcome->setGeometry(QRect(365, 60, 350, 40));
         pushButton_9 = new QPushButton(page_3);
         pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
         pushButton_9->setGeometry(QRect(360, 180, 80, 25));
+        label_Theme = new QLabel(page_3);
+        label_Theme->setObjectName(QString::fromUtf8("label_Theme"));
+        label_Theme->setGeometry(QRect(10, 0, 80, 25));
+        pushButton_21 = new QPushButton(page_3);
+        pushButton_21->setObjectName(QString::fromUtf8("pushButton_21"));
+        pushButton_21->setGeometry(QRect(10, 30, 80, 25));
+        pushButton_22 = new QPushButton(page_3);
+        pushButton_22->setObjectName(QString::fromUtf8("pushButton_22"));
+        pushButton_22->setGeometry(QRect(10, 60, 80, 25));
+        pushButton_23 = new QPushButton(page_3);
+        pushButton_23->setObjectName(QString::fromUtf8("pushButton_23"));
+        pushButton_23->setGeometry(QRect(10, 90, 80, 25));
         pushButton_6 = new QPushButton(page_3);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         pushButton_6->setGeometry(QRect(361, 278, 80, 25));
@@ -207,6 +230,15 @@ public:
         pushButton_19->setObjectName(QString::fromUtf8("pushButton_19"));
         pushButton_19->setGeometry(QRect(330, 330, 89, 25));
         stackedWidget->addWidget(page_8);
+        page_9 = new QWidget();
+        page_9->setObjectName(QString::fromUtf8("page_9"));
+        label_41 = new QLabel(page_9);
+        label_41->setObjectName(QString::fromUtf8("label_41"));
+        label_41->setGeometry(QRect(350, 60, 201, 101));
+        pushButton_20 = new QPushButton(page_9);
+        pushButton_20->setObjectName(QString::fromUtf8("pushButton_20"));
+        pushButton_20->setGeometry(QRect(330, 330, 89, 25));
+        stackedWidget->addWidget(page_9);
         MainMenuView->setCentralWidget(centralwidget);
 
         retranslateUi(MainMenuView);
@@ -221,12 +253,17 @@ public:
     {
         MainMenuView->setWindowTitle(QCoreApplication::translate("MainMenuView", "Quoridor", nullptr));
         pushButton_8->setText(QCoreApplication::translate("MainMenuView", "Quit", nullptr));
+        label_Welcome->setText(QCoreApplication::translate("MainMenuView", "Welcome", nullptr));
         pushButton_9->setText(QCoreApplication::translate("MainMenuView", "Login", nullptr));
+        label_Theme->setText(QCoreApplication::translate("MainMenuView", "Theme", nullptr));
+        pushButton_21->setText(QCoreApplication::translate("MainMenuView", "Grey", nullptr));
+        pushButton_22->setText(QCoreApplication::translate("MainMenuView", "Red", nullptr));
+        pushButton_23->setText(QCoreApplication::translate("MainMenuView", "White", nullptr));
         pushButton_6->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
         pushButton_10->setText(QCoreApplication::translate("MainMenuView", "Enter", nullptr));
         lineEdit->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Pseudo", nullptr));
         lineEdit_2->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Mot de passe", nullptr));
-        pushButton_11->setText(QCoreApplication::translate("MainMenuView", "Quit", nullptr));
+        pushButton_11->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label->setText(QCoreApplication::translate("MainMenuView", "Login", nullptr));
         label_2->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
         pushButton_12->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
@@ -248,6 +285,8 @@ public:
         pushButton_18->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_4->setText(QCoreApplication::translate("MainMenuView", "The Help", nullptr));
         pushButton_19->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
+        label_41->setText(QCoreApplication::translate("MainMenuView", "Game", nullptr));
+        pushButton_20->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
     } // retranslateUi
 
 };
