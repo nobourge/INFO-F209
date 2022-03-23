@@ -1,5 +1,5 @@
 #include "mainmenuview.h"
-#include "ui_mainmenuview.h"
+#include "../../../src/client_side/build-Test-Qt_6_2_3_for_macOS-Debug/ui_mainmenuview.h"
 #include <QComboBox>
 #include <QStringList>
 #include <QPlainTextEdit>
@@ -146,14 +146,14 @@ void MainMenuView::on_pushButton_15_clicked()
 
 void MainMenuView::on_pushButton_2_clicked()
 {
-  auto user_fetch_result = ApiWrapper::GetAllUsers();
-  if (std::holds_alternative<ApiError>(user_fetch_result)) {
-    //TODO add user
-
-  } else {
-    std::vector<UserClient> users_;
-    users_ = std::move(std::get<std::vector<UserClient>>(user_fetch_result));
-  }
+//  auto user_fetch_result = ApiWrapper::GetAllUsers();
+//  if (std::holds_alternative<ApiError>(user_fetch_result)) {
+//    //TODO add user
+//
+//  } else {
+//    std::vector<UserClient> users_;
+//    users_ = std::move(std::get<std::vector<UserClient>>(user_fetch_result));
+//  }
   ui->comboBox->addItem("a"); //exemple pour rajouter un element
   ui->comboBox->addItem("b"); //exemple pour rajouter un element
   ui->comboBox->addItem("c"); //exemple pour rajouter un element
@@ -229,6 +229,7 @@ void MainMenuView::on_pushButton_3_clicked()
 
 void MainMenuView::on_pushButton_24_clicked()
 {
+  ui->stackedWidget->setCurrentIndex(9);
 
 }
 
@@ -248,6 +249,13 @@ void MainMenuView::on_lineEdit_7_textChanged(const QString &arg1)
   for (auto &user:users_) {
     friends_usernames += user.GetUsername().GetValue() +"\n";
   }
-  ui->textEdit_3->setText(friends_usernames);
+  ui->textEdit_3->setText(QString::fromStdString( friends_usernames));
+}
+
+
+void MainMenuView::on_pushButton_25_clicked()
+{
+  ui->stackedWidget->setCurrentIndex(5);
+
 }
 
