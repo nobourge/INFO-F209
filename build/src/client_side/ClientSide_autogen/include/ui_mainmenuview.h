@@ -87,7 +87,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(0, 0, 811, 641));
+        stackedWidget->setGeometry(QRect(-20, 20, 811, 641));
         stackedWidget->setStyleSheet(QString::fromUtf8(""));
         page_3 = new QWidget();
         page_3->setObjectName(QString::fromUtf8("page_3"));

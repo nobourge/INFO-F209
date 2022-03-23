@@ -22,8 +22,6 @@ void FindFriendViewController::FetchUsers() {
   }
 }
 
-
-
 void FindFriendViewController::AddFriend(const UserClient &user) {
   auto this_user_fetch_result =
       ApiWrapper::GetCurrentUserFromSharedApiWrapperInstance();

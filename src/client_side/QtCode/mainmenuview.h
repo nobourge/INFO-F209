@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainMenuView; }
 QT_END_NAMESPACE
@@ -55,10 +56,11 @@ class MainMenuView : public QMainWindow
   void on_pushButton_21_clicked();
   void on_pushButton_22_clicked();
   void on_pushButton_23_clicked();
-
+  void on_pushButton_24_clicked();
   void on_pushButton_3_clicked();
+  void on_lineEdit_7_textChanged(const QString &arg1);
 
- private:
+private:
   Ui::MainMenuView *ui;
   //std::string chattext="";
   std::string chattext;
