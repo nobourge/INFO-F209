@@ -33,7 +33,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>9</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_3">
      <widget class="QPushButton" name="pushButton_8">
@@ -146,7 +146,7 @@
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>260</y>
+        <y>320</y>
         <width>89</width>
         <height>25</height>
        </rect>
@@ -159,7 +159,7 @@
       <property name="geometry">
        <rect>
         <x>320</x>
-        <y>110</y>
+        <y>180</y>
         <width>113</width>
         <height>25</height>
        </rect>
@@ -172,7 +172,7 @@
       <property name="geometry">
        <rect>
         <x>320</x>
-        <y>190</y>
+        <y>250</y>
         <width>113</width>
         <height>25</height>
        </rect>
@@ -185,7 +185,7 @@
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>340</y>
+        <y>390</y>
         <width>89</width>
         <height>25</height>
        </rect>
@@ -207,6 +207,19 @@
        <string>Login</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>90</y>
+        <width>181</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_5">
      <widget class="QLabel" name="label_2">
@@ -226,7 +239,7 @@
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>320</y>
+        <y>350</y>
         <width>111</width>
         <height>21</height>
        </rect>
@@ -239,7 +252,7 @@
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>100</y>
+        <y>170</y>
         <width>113</width>
         <height>25</height>
        </rect>
@@ -252,7 +265,7 @@
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>170</y>
+        <y>220</y>
         <width>113</width>
         <height>25</height>
        </rect>
@@ -265,7 +278,7 @@
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>250</y>
+        <y>290</y>
         <width>113</width>
         <height>25</height>
        </rect>
@@ -278,13 +291,26 @@
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>390</y>
+        <y>430</y>
         <width>111</width>
         <height>21</height>
        </rect>
       </property>
       <property name="text">
        <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>80</y>
+        <width>221</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
@@ -3259,19 +3285,6 @@
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QPushButton" name="pushButton_7">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>350</y>
-        <width>89</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>add test</string>
-      </property>
-     </widget>
      <widget class="QTextEdit" name="textEdit">
       <property name="geometry">
        <rect>

@@ -1,15 +1,15 @@
-#set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
-#set(CMAKE_AUTORCC ON)
-#set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 
-if (APPLE)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I /usr/local/lib/boost_1_78_0")
-#    set(CMAKE_PREFIX_PATH "/Users/ismaelsecundar/Qt/6.2.3/macos/lib/cmake")
-endif ()
+# if (APPLE)
+#     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I /usr/local/lib/boost_1_78_0")
+# #    set(CMAKE_PREFIX_PATH "/Users/ismaelsecundar/Qt/6.2.3/macos/lib/cmake")
+# endif ()
 
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ")
 
 
 set(HEADERS
@@ -144,13 +144,13 @@ set(SOURCES
         view_controllers/view_controller_menu_join_or_create_game.cpp view_controllers/view_controller_menu_join_or_create_game.h views/menu_views/join_or_create_game_menu_view.cpp views/menu_views/join_or_create_game_menu_view.h view_controllers/view_controller_menu_join_game.cpp view_controllers/view_controller_menu_join_game.h views/menu_views/join_game_menu_view.cpp views/menu_views/join_game_menu_view.h
         QtCode/mainmenuview.ui
         QtCode/mainmenuview.cpp
-#        QtCode/ressource.qrc
+        QtCode/ressource.qrc
 
         )
 
 
 #if(UNIX)
-set(CMAKE_PREFIX_PATH "~/Qt/6.2.3/gcc_64/lib/cmake")
+set(CMAKE_PREFIX_PATH "~/Qt/6.2.4/gcc_64/lib/cmake")
 #endif ()
 find_package(Qt6 CONFIG REQUIRED COMPONENTS Widgets)
 

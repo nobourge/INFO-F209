@@ -42,6 +42,7 @@ public:
     QLineEdit *lineEdit_2;
     QPushButton *pushButton_11;
     QLabel *label;
+    QLabel *label_6;
     QWidget *page_5;
     QLabel *label_2;
     QPushButton *pushButton_12;
@@ -126,19 +127,22 @@ public:
         page_4->setObjectName(QString::fromUtf8("page_4"));
         pushButton_10 = new QPushButton(page_4);
         pushButton_10->setObjectName(QString::fromUtf8("pushButton_10"));
-        pushButton_10->setGeometry(QRect(330, 260, 89, 25));
+        pushButton_10->setGeometry(QRect(330, 320, 89, 25));
         lineEdit = new QLineEdit(page_4);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(320, 110, 113, 25));
+        lineEdit->setGeometry(QRect(320, 180, 113, 25));
         lineEdit_2 = new QLineEdit(page_4);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(320, 190, 113, 25));
+        lineEdit_2->setGeometry(QRect(320, 250, 113, 25));
         pushButton_11 = new QPushButton(page_4);
         pushButton_11->setObjectName(QString::fromUtf8("pushButton_11"));
-        pushButton_11->setGeometry(QRect(330, 340, 89, 25));
+        pushButton_11->setGeometry(QRect(330, 390, 89, 25));
         label = new QLabel(page_4);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(340, 30, 67, 17));
+        label_6 = new QLabel(page_4);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(290, 90, 181, 17));
         stackedWidget->addWidget(page_4);
         page_5 = new QWidget();
         page_5->setObjectName(QString::fromUtf8("page_5"));
@@ -163,7 +167,7 @@ public:
         stackedWidget->addWidget(page_5);
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
-        page->setStyleSheet(QString::fromUtf8("background-image: url(:/img/Main.jpg);"));
+        page->setStyleSheet(QString::fromUtf8(""));
         pushButton_4 = new QPushButton(page);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(280, 310, 239, 25));
@@ -677,7 +681,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(9);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -699,6 +703,7 @@ public:
         lineEdit_2->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Mot de passe", nullptr));
         pushButton_11->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label->setText(QCoreApplication::translate("MainMenuView", "Login", nullptr));
+        label_6->setText(QString());
         label_2->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
         pushButton_12->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
         lineEdit_3->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Pseudo", nullptr));

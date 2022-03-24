@@ -1,8 +1,9 @@
 #include "mainmenuview.h"
-#include "../../../src/client_side/build-Test-Qt_6_2_3_for_macOS-Debug/ui_mainmenuview.h"
+#include "../../../src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
 #include <QComboBox>
 #include <QStringList>
 #include <QPlainTextEdit>
+#include <variant>
 #include "../../../src/client_side/models/user_client.h"
 #include "../../../src/client_side/models/api_wrapper.h"
 
@@ -53,11 +54,7 @@ void MainMenuView::on_pushButton_clicked()
   ui->stackedWidget->setCurrentIndex(8);
 }
 
-///?
-void MainMenuView::on_pushButton_1_clicked()
-{
-  this->setStyleSheet("background-color: blue");
-}
+
 
 ///from home_menu back to login
 void MainMenuView::on_pushButton_5_clicked()
@@ -70,13 +67,18 @@ void MainMenuView::on_pushButton_5_clicked()
 ///from welcome to login
 void MainMenuView::on_pushButton_9_clicked()
 {
-
+  ui->label_6->setText("");
+  ui->lineEdit->setText("");
+  ui->lineEdit_2->setText("");
   ui->stackedWidget->setCurrentIndex(1);
 }
 
 ///from welcome to register
 void MainMenuView::on_pushButton_6_clicked()
 {
+  ui->label_7->setText("");
+  ui->lineEdit_4->setText("");
+  ui->lineEdit_3->setText("");
   ui->stackedWidget->setCurrentIndex(2);
 }
 
@@ -97,13 +99,37 @@ void MainMenuView::on_pushButton_11_clicked()
 
 void MainMenuView::on_pushButton_10_clicked()
 {
-  ui->stackedWidget->setCurrentIndex(3);
+  auto login_res = ApiWrapper::Login(ui->lineEdit->text().toStdString(), ui->lineEdit_2->text().toStdString());
+
+    if (holds_alternative<LoginError>(login_res)) {
+    //  //Mettre ici le message d'erreur
+        ui->label_6->setText("Error");
+    }
+    else {
+    ApiWrapper::GetShared() = std::get<ApiWrapper>(login_res);
+    ui->stackedWidget->setCurrentIndex(3);
+    }
 }
 
 
 void MainMenuView::on_pushButton_12_clicked()
 {
-  ui->stackedWidget->setCurrentIndex(3);
+    // we only need
+    auto username = ui->lineEdit_3->text().toStdString();
+    auto password = ui->lineEdit_4->text().toStdString();
+
+    if (password != ui->lineEdit_5->text().toStdString()) {
+      ui->label_7->setText("Password missmatch");
+    } else {
+      // passwords match
+      auto api_wrapper = ApiWrapper::CreateAccount(username, password);
+
+       if (holds_alternative<ApiError>(api_wrapper)) {
+        ui->label_7->setText(QString::fromStdString(get<ApiError>(api_wrapper).error_message));
+       } else {
+        ui->stackedWidget->setCurrentIndex(3);
+      }
+    }
 }
 
 
@@ -115,15 +141,25 @@ void MainMenuView::on_pushButton_13_clicked()
 
 void MainMenuView::on_pushButton_4_clicked()
 {
+  std::vector<UserClient> users_;
+  try {
+    users_ = ApiWrapper::GetUsersRanked(MAX_NUM_USERS_RANKING_DEFAULT);
+  } catch (const std::runtime_error &) {
+    users_.clear();
+  }
+  std::string rankings;
+   for (auto &user : users_) {
+      std::string label = user.GetUsername().GetValue();
+      label += " : ";
+      label += std::to_string(user.GetScore());
+      label += " pts";
+      rankings += label+"\n";
+      }
+    ui->textEdit->setText(QString::fromStdString(rankings));
   ui->stackedWidget->setCurrentIndex(4);
 }
 
 
-void MainMenuView::on_pushButton_7_clicked()
-{
-  Rankingtext=Rankingtext+"\n test";
-  ui->textEdit->setText(QString::fromStdString( Rankingtext));
-}
 
 
 void MainMenuView::on_pushButton_14_clicked()

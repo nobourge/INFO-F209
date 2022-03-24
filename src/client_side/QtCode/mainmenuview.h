@@ -19,7 +19,6 @@ class MainMenuView : public QMainWindow
  private slots:
 
   void on_pushButton_clicked();
-  void on_pushButton_1_clicked();
   void on_pushButton_5_clicked();
   void on_pushButton_9_clicked();
 
@@ -36,8 +35,6 @@ class MainMenuView : public QMainWindow
   void on_pushButton_13_clicked();
 
   void on_pushButton_4_clicked();
-
-  void on_pushButton_7_clicked();
 
   void on_pushButton_14_clicked();
 
