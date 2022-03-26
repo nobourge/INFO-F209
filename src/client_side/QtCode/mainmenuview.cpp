@@ -1,5 +1,6 @@
 #include "mainmenuview.h"
 #include "game.h"
+#include "board_scene.h"
 #include "../../../src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
 #include <QComboBox>
 #include <QStringList>
@@ -242,6 +243,8 @@ void MainMenuView::on_pushButton_53_clicked()
   game_chattext = game_chattext + "\n" + ui->lineEdit_15->text().toStdString();
   ui->textEdit_7->setText(QString::fromStdString( game_chattext));
   ui->lineEdit_15->setText("");
+
+
 }
 
 void MainMenuView::on_pushButton_19_clicked()
@@ -383,9 +386,11 @@ void MainMenuView::on_pushButton_27_clicked()
   mainLayout->addLayout(Layout_chat,1);
 
   mainLayout->addLayout(Layout_board,2);
-  //this->ui->page_9->setLayout(mainLayout);
   ui->stackedWidget->setCurrentIndex(8);
   this->showMaximized();
+
+  auto *board_scene = new MenuBoardScene();
+  this->ui->graphicsView->setScene(board_scene);
 
 
 

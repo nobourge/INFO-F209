@@ -155,7 +155,7 @@ set(SOURCES
         QtCode/game.cpp
         QtCode/game.h
         QtCode/canvas.cpp
-        QtCode/canvas.h)
+        QtCode/canvas.h QtCode/board_scene.cpp QtCode/board_scene.h)
 
 
 #if(UNIX)

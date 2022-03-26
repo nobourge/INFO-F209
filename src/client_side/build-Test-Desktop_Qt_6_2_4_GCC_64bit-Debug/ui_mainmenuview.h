@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -111,7 +112,7 @@ public:
     QLabel *label_41;
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_10;
-    QWidget *widget;
+    QGraphicsView *graphicsView;
     QWidget *page_10;
     QPushButton *pushButton_25;
     QLabel *label_5;
@@ -861,13 +862,10 @@ public:
 
         gridLayout_12->addItem(horizontalSpacer_10, 1, 1, 1, 1);
 
-        widget = new QWidget(page_9);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setMinimumSize(QSize(534, 462));
-        widget->setAutoFillBackground(false);
-        widget->setStyleSheet(QString::fromUtf8("border-image: url(:/img/Main.jpg);"));
+        graphicsView = new QGraphicsView(page_9);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
 
-        gridLayout_12->addWidget(widget, 2, 1, 1, 1);
+        gridLayout_12->addWidget(graphicsView, 2, 1, 1, 1);
 
         stackedWidget->addWidget(page_9);
         page_10 = new QWidget();
@@ -899,7 +897,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(8);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
