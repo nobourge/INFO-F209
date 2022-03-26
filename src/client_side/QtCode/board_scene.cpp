@@ -9,7 +9,7 @@ using namespace std;
 
 BoardScene::BoardScene() {
   int cells_quantity = 17; // change magic number later
-  int size = 666/cells_quantity;
+  int size = (666/cells_quantity);
 
 
   for (int row = 0; row < cells_quantity; row++) {

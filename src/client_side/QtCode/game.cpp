@@ -6,7 +6,7 @@
 #include "canvas.h"
 
 
-
+/*
 int init_game(int argc, char *argv[])
 {
   QApplication app(argc, argv);
@@ -35,7 +35,6 @@ int init_game(int argc, char *argv[])
   QWidget canvas;
   //canvas = Canvas::Canvas();
 
-  /*
         self.hbox = QHBoxLayout()
 
         self.canvas = Canvas(self.board, self.N, self.width,
@@ -56,16 +55,11 @@ int init_game(int argc, char *argv[])
             self.add_arrow)
 
         self.main_hbox.addLayout(self.hbox)
-        */
 
   auto *Layout_board = new QVBoxLayout();
 
   auto *resultView2 = new QTableView();
-  /*
-  QWidget *frame;
-  //frame->setGeometry(x, y, width, height);
-  frame->setStyleSheet("background-image: url(:/img/board.jpg)");
-  */
+
   Layout_board->addWidget(resultView2);
 
   mainLayout->addLayout(Layout_chat,1);
@@ -78,5 +72,5 @@ int init_game(int argc, char *argv[])
   window.showMaximized();
   return QApplication::exec();
 
-
 }
+*/

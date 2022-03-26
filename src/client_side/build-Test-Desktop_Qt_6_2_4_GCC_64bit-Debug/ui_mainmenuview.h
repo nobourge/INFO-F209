@@ -31,7 +31,7 @@ class Ui_MainMenuView
 {
 public:
     QWidget *centralwidget;
-    QGridLayout *gridLayout;
+    QGridLayout *gridLayout_4;
     QHBoxLayout *horizontalLayout;
     QStackedWidget *stackedWidget;
     QWidget *page_3;
@@ -98,11 +98,14 @@ public:
     QLabel *label_4;
     QPushButton *pushButton_19;
     QWidget *page_9;
-    QGridLayout *gridLayout_12;
+    QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout_9;
     QTextEdit *textEdit_7;
     QLineEdit *lineEdit_15;
     QPushButton *pushButton_53;
+    QSpacerItem *horizontalSpacer_10;
+    QHBoxLayout *horizontalLayout_2;
+    QGraphicsView *graphicsView;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *pushButton_20;
@@ -111,8 +114,6 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QLabel *label_41;
     QSpacerItem *horizontalSpacer_3;
-    QSpacerItem *horizontalSpacer_10;
-    QGraphicsView *graphicsView;
     QWidget *page_10;
     QPushButton *pushButton_25;
     QLabel *label_5;
@@ -130,8 +131,8 @@ public:
         MainMenuView->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(MainMenuView);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        gridLayout = new QGridLayout(centralwidget);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout_4 = new QGridLayout(centralwidget);
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         stackedWidget = new QStackedWidget(centralwidget);
@@ -800,8 +801,8 @@ public:
         stackedWidget->addWidget(page_8);
         page_9 = new QWidget();
         page_9->setObjectName(QString::fromUtf8("page_9"));
-        gridLayout_12 = new QGridLayout(page_9);
-        gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
+        gridLayout = new QGridLayout(page_9);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         verticalLayout_9 = new QVBoxLayout();
         verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
         textEdit_7 = new QTextEdit(page_9);
@@ -821,11 +822,25 @@ public:
         verticalLayout_9->addWidget(pushButton_53);
 
 
-        gridLayout_12->addLayout(verticalLayout_9, 1, 0, 2, 1);
+        gridLayout->addLayout(verticalLayout_9, 1, 0, 2, 1);
+
+        horizontalSpacer_10 = new QSpacerItem(584, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_10, 1, 1, 1, 1);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        graphicsView = new QGraphicsView(page_9);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+
+        horizontalLayout_2->addWidget(graphicsView);
+
+
+        gridLayout->addLayout(horizontalLayout_2, 2, 1, 1, 1);
 
         verticalSpacer_3 = new QSpacerItem(20, 474, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_12->addItem(verticalSpacer_3, 2, 2, 1, 1);
+        gridLayout->addItem(verticalSpacer_3, 2, 2, 1, 1);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
@@ -839,7 +854,7 @@ public:
         horizontalLayout_5->addItem(horizontalSpacer_9);
 
 
-        gridLayout_12->addLayout(horizontalLayout_5, 3, 0, 1, 2);
+        gridLayout->addLayout(horizontalLayout_5, 3, 0, 1, 2);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
@@ -857,16 +872,7 @@ public:
         horizontalLayout_4->addItem(horizontalSpacer_3);
 
 
-        gridLayout_12->addLayout(horizontalLayout_4, 0, 0, 1, 3);
-
-        horizontalSpacer_10 = new QSpacerItem(584, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_12->addItem(horizontalSpacer_10, 1, 1, 1, 1);
-
-        graphicsView = new QGraphicsView(page_9);
-        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-
-        gridLayout_12->addWidget(graphicsView, 2, 1, 1, 1);
+        gridLayout->addLayout(horizontalLayout_4, 0, 0, 1, 2);
 
         stackedWidget->addWidget(page_9);
         page_10 = new QWidget();
@@ -889,20 +895,19 @@ public:
         pushButton_26->setGeometry(QRect(370, 310, 80, 24));
         label_8 = new QLabel(page_10);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(300, 60, 221, 71));
-        label_8->setAlignment(Qt::AlignCenter);
+        label_8->setGeometry(QRect(337, 59, 221, 71));
         stackedWidget->addWidget(page_10);
 
         horizontalLayout->addWidget(stackedWidget);
 
 
-        gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
+        gridLayout_4->addLayout(horizontalLayout, 0, 0, 1, 1);
 
         MainMenuView->setCentralWidget(centralwidget);
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(9);
+        stackedWidget->setCurrentIndex(8);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);

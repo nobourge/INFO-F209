@@ -20,7 +20,7 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
+   <layout class="QGridLayout" name="gridLayout_4">
     <item row="0" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
@@ -29,7 +29,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>9</number>
+         <number>8</number>
         </property>
         <widget class="QWidget" name="page_3">
          <layout class="QGridLayout" name="gridLayout_6">
@@ -3558,7 +3558,7 @@ border-image: null;
          </widget>
         </widget>
         <widget class="QWidget" name="page_9">
-         <layout class="QGridLayout" name="gridLayout_12">
+         <layout class="QGridLayout" name="gridLayout">
           <item row="1" column="0" rowspan="2">
            <layout class="QVBoxLayout" name="verticalLayout_9">
             <item>
@@ -3577,6 +3577,26 @@ border-image: null;
                <string>Send</string>
               </property>
              </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <spacer name="horizontalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>584</width>
+              <height>17</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QGraphicsView" name="graphicsView"/>
             </item>
            </layout>
           </item>
@@ -3617,7 +3637,7 @@ border-image: null;
             </item>
            </layout>
           </item>
-          <item row="0" column="0" colspan="3">
+          <item row="0" column="0" colspan="2">
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
              <spacer name="horizontalSpacer_2">
@@ -3653,22 +3673,6 @@ border-image: null;
              </spacer>
             </item>
            </layout>
-          </item>
-          <item row="1" column="1">
-           <spacer name="horizontalSpacer_10">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>584</width>
-              <height>17</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="1">
-           <widget class="QGraphicsView" name="graphicsView"/>
           </item>
          </layout>
         </widget>
