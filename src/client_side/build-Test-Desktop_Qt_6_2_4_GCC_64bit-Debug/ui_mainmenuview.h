@@ -119,6 +119,7 @@ public:
     QTextEdit *textEdit_3;
     QLineEdit *lineEdit_7;
     QPushButton *pushButton_26;
+    QLabel *label_8;
 
     void setupUi(QMainWindow *MainMenuView)
     {
@@ -886,6 +887,9 @@ public:
         pushButton_26 = new QPushButton(page_10);
         pushButton_26->setObjectName(QString::fromUtf8("pushButton_26"));
         pushButton_26->setGeometry(QRect(370, 310, 80, 24));
+        label_8 = new QLabel(page_10);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(390, 110, 58, 16));
         stackedWidget->addWidget(page_10);
 
         horizontalLayout->addWidget(stackedWidget);
@@ -897,7 +901,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(8);
+        stackedWidget->setCurrentIndex(9);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -949,6 +953,7 @@ public:
         label_5->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
         lineEdit_7->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Search friend username", nullptr));
         pushButton_26->setText(QCoreApplication::translate("MainMenuView", "Add", nullptr));
+        label_8->setText(QString());
     } // retranslateUi
 
 };

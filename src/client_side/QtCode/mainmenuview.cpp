@@ -181,22 +181,32 @@ void MainMenuView::on_pushButton_15_clicked()
   ui->stackedWidget->setCurrentIndex(6);
 }
 
+void MainMenuView::on_pushButton_2_clicked() {
+  std::vector<UserClient> users_;
+  std::vector<string> friends;
+  auto all_user_fetch_result = ApiWrapper::GetAllUsers();
 
-void MainMenuView::on_pushButton_2_clicked()
-{
-//  auto user_fetch_result = ApiWrapper::GetAllUsers();
-//  if (std::holds_alternative<ApiError>(user_fetch_result)) {
-//    //TODO add user
-//
-//  } else {
-//    std::vector<UserClient> users_;
-//    users_ = std::move(std::get<std::vector<UserClient>>(user_fetch_result));
-//  }
-  ui->comboBox->addItem("a"); //exemple pour rajouter un element
-  ui->comboBox->addItem("b"); //exemple pour rajouter un element
-  ui->comboBox->addItem("c"); //exemple pour rajouter un element
+  if (std::holds_alternative<ApiError>(all_user_fetch_result)) {
+    users_ = {};
+  } else {
+    users_ = std::move(std::get<std::vector<UserClient>>(all_user_fetch_result));
+  }
+
+    for (auto &user : users_) {
+      friends.push_back(user.GetUsername().GetValue());
+    }
+
+    for (int i = 0; i < friends.size(); ++i) {
+      ui->comboBox->addItem(QString::fromStdString(friends[i]));
+    }
+
+
+
+  //ui->comboBox->currentText(); //to get the current user
+
 
   ui->stackedWidget->setCurrentIndex(5);
+
 }
 
 
@@ -414,4 +424,31 @@ void MainMenuView::on_pushButton_27_clicked()
    */
 
 }
+
+
+void MainMenuView::on_pushButton_26_clicked()
+{
+  auto user_to_add_username_str = ui->lineEdit_7->text().toStdString(); //username written by the user_to_add_username_str
+  auto all_user_fetch_result = ApiWrapper::GetAllUsers();
+
+  std::vector<UserClient> users_;
+  std::vector<string> friends;
+
+  if (std::holds_alternative<ApiError>(all_user_fetch_result)) {
+    users_ = {};
+  } else {
+    users_ = std::move(std::get<std::vector<UserClient>>(all_user_fetch_result));
+  }
+  for (auto &user:users_) {
+    friends.push_back(user.GetUsername().GetValue());
+  }
+
+  for (auto & friend_ : friends) {
+    if(friend_ == user_to_add_username_str)
+      cout << "ajout de " << user_to_add_username_str << endl;
+      ui->label_8->setText("Friend added !");
+    auto user_to_add = UserClient(Username{user_to_add_username_str});
+  }
+}
+
 
