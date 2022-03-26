@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>811</width>
-    <height>599</height>
+    <width>820</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -368,9 +368,9 @@
         </widget>
         <widget class="QWidget" name="page">
          <property name="styleSheet">
-          <string notr="true">background-image: url(:/img/Main.jpg);</string>
+          <string notr="true">border-image: url(:/img/Main.jpg);</string>
          </property>
-         <layout class="QGridLayout" name="gridLayout_5">
+         <layout class="QGridLayout" name="gridLayout_3">
           <item row="0" column="1">
            <spacer name="verticalSpacer_4">
             <property name="orientation">
@@ -393,6 +393,19 @@
              <size>
               <width>40</width>
               <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="1">
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
              </size>
             </property>
            </spacer>
@@ -981,6 +994,10 @@
               <property name="autoFillBackground">
                <bool>false</bool>
               </property>
+              <property name="styleSheet">
+               <string notr="true">border-image: null;
+</string>
+              </property>
               <property name="text">
                <string>Friend list</string>
               </property>
@@ -1568,6 +1585,10 @@
                 </disabled>
                </palette>
               </property>
+              <property name="styleSheet">
+               <string notr="true">border-image: null;
+</string>
+              </property>
               <property name="text">
                <string>Ranking</string>
               </property>
@@ -2151,6 +2172,10 @@
                  </colorrole>
                 </disabled>
                </palette>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-image: null;
+</string>
               </property>
               <property name="text">
                <string>Help</string>
@@ -2738,6 +2763,12 @@
                  </colorrole>
                 </disabled>
                </palette>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+border-image: null;
+
+</string>
               </property>
               <property name="text">
                <string>Play</string>
@@ -3329,6 +3360,10 @@
                 </disabled>
                </palette>
               </property>
+              <property name="styleSheet">
+               <string notr="true">border-image: null;
+</string>
+              </property>
               <property name="text">
                <string>Back</string>
               </property>
@@ -3345,19 +3380,6 @@
              <size>
               <width>40</width>
               <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="1">
-           <spacer name="verticalSpacer_5">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
              </size>
             </property>
            </spacer>
@@ -3558,23 +3580,6 @@
             </item>
            </layout>
           </item>
-          <item row="2" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayout_6">
-            <item>
-             <spacer name="horizontalSpacer_11">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>584</width>
-                <height>17</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
           <item row="2" column="2">
            <spacer name="verticalSpacer_3">
             <property name="orientation">
@@ -3661,6 +3666,22 @@
              </size>
             </property>
            </spacer>
+          </item>
+          <item row="2" column="1">
+           <widget class="QWidget" name="" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>534</width>
+              <height>462</height>
+             </size>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-image: url(:/img/Main.jpg);</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>

@@ -68,9 +68,10 @@ public:
     QPushButton *pushButton_13;
     QLabel *label_7;
     QWidget *page;
-    QGridLayout *gridLayout_5;
+    QGridLayout *gridLayout_3;
     QSpacerItem *verticalSpacer_4;
     QSpacerItem *horizontalSpacer_5;
+    QSpacerItem *verticalSpacer_5;
     QGridLayout *gridLayout_2;
     QPushButton *pushButton_2;
     QPushButton *pushButton_4;
@@ -78,7 +79,6 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_5;
     QSpacerItem *horizontalSpacer_4;
-    QSpacerItem *verticalSpacer_5;
     QWidget *page_2;
     QTextEdit *textEdit;
     QPushButton *pushButton_14;
@@ -102,8 +102,6 @@ public:
     QTextEdit *textEdit_7;
     QLineEdit *lineEdit_15;
     QPushButton *pushButton_53;
-    QHBoxLayout *horizontalLayout_6;
-    QSpacerItem *horizontalSpacer_11;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *pushButton_20;
@@ -113,6 +111,7 @@ public:
     QLabel *label_41;
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_10;
+    QWidget *widget;
     QWidget *page_10;
     QPushButton *pushButton_25;
     QLabel *label_5;
@@ -124,7 +123,7 @@ public:
     {
         if (MainMenuView->objectName().isEmpty())
             MainMenuView->setObjectName(QString::fromUtf8("MainMenuView"));
-        MainMenuView->resize(811, 599);
+        MainMenuView->resize(820, 624);
         MainMenuView->setAutoFillBackground(false);
         MainMenuView->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(MainMenuView);
@@ -270,16 +269,20 @@ public:
         stackedWidget->addWidget(page_5);
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
-        page->setStyleSheet(QString::fromUtf8("background-image: url(:/img/Main.jpg);"));
-        gridLayout_5 = new QGridLayout(page);
-        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        page->setStyleSheet(QString::fromUtf8("border-image: url(:/img/Main.jpg);"));
+        gridLayout_3 = new QGridLayout(page);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_5->addItem(verticalSpacer_4, 0, 1, 1, 1);
+        gridLayout_3->addItem(verticalSpacer_4, 0, 1, 1, 1);
 
         horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_5->addItem(horizontalSpacer_5, 1, 0, 1, 1);
+        gridLayout_3->addItem(horizontalSpacer_5, 1, 0, 1, 1);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_3->addItem(verticalSpacer_5, 2, 1, 1, 1);
 
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
@@ -393,6 +396,8 @@ public:
 #endif
         pushButton_2->setPalette(palette);
         pushButton_2->setAutoFillBackground(false);
+        pushButton_2->setStyleSheet(QString::fromUtf8("border-image: null;\n"
+""));
         pushButton_2->setCheckable(false);
 
         gridLayout_2->addWidget(pushButton_2, 1, 1, 1, 1);
@@ -474,6 +479,8 @@ public:
         palette1.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
 #endif
         pushButton_4->setPalette(palette1);
+        pushButton_4->setStyleSheet(QString::fromUtf8("border-image: null;\n"
+""));
 
         gridLayout_2->addWidget(pushButton_4, 2, 1, 1, 1);
 
@@ -554,6 +561,8 @@ public:
         palette2.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
 #endif
         pushButton_3->setPalette(palette2);
+        pushButton_3->setStyleSheet(QString::fromUtf8("border-image: null;\n"
+""));
 
         gridLayout_2->addWidget(pushButton_3, 3, 1, 1, 1);
 
@@ -635,6 +644,10 @@ public:
         palette3.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
 #endif
         pushButton->setPalette(palette3);
+        pushButton->setStyleSheet(QString::fromUtf8("\n"
+"border-image: null;\n"
+"\n"
+""));
         pushButton->setCheckable(false);
         pushButton->setFlat(false);
 
@@ -717,19 +730,17 @@ public:
         palette4.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
 #endif
         pushButton_5->setPalette(palette4);
+        pushButton_5->setStyleSheet(QString::fromUtf8("border-image: null;\n"
+""));
 
         gridLayout_2->addWidget(pushButton_5, 4, 1, 1, 1);
 
 
-        gridLayout_5->addLayout(gridLayout_2, 1, 1, 1, 1);
+        gridLayout_3->addLayout(gridLayout_2, 1, 1, 1, 1);
 
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
-
-        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_5->addItem(verticalSpacer_5, 2, 1, 1, 1);
+        gridLayout_3->addItem(horizontalSpacer_4, 1, 2, 1, 1);
 
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
@@ -810,15 +821,6 @@ public:
 
         gridLayout_12->addLayout(verticalLayout_9, 1, 0, 2, 1);
 
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
-        horizontalSpacer_11 = new QSpacerItem(584, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_6->addItem(horizontalSpacer_11);
-
-
-        gridLayout_12->addLayout(horizontalLayout_6, 2, 1, 1, 1);
-
         verticalSpacer_3 = new QSpacerItem(20, 474, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_12->addItem(verticalSpacer_3, 2, 2, 1, 1);
@@ -858,6 +860,14 @@ public:
         horizontalSpacer_10 = new QSpacerItem(584, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_12->addItem(horizontalSpacer_10, 1, 1, 1, 1);
+
+        widget = new QWidget(page_9);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setMinimumSize(QSize(534, 462));
+        widget->setAutoFillBackground(false);
+        widget->setStyleSheet(QString::fromUtf8("border-image: url(:/img/Main.jpg);"));
+
+        gridLayout_12->addWidget(widget, 2, 1, 1, 1);
 
         stackedWidget->addWidget(page_9);
         page_10 = new QWidget();
