@@ -197,6 +197,7 @@ void MainMenuView::on_pushButton_2_clicked() {
 
     for (int i = 0; i < friends.size(); ++i) {
       ui->comboBox->addItem(QString::fromStdString(friends[i]));
+      friends.pop_back();
     }
 
 
@@ -211,7 +212,7 @@ void MainMenuView::on_pushButton_2_clicked() {
 
 void MainMenuView::on_pushButton_18_clicked()
 {
-  ui->stackedWidget->setCurrentIndex(3);
+  ui->stackedWidget->setCurrentIndex(5);
 }
 
 ///message send
