@@ -1,4 +1,5 @@
 #include "mainmenuview.h"
+#include "game.h"
 #include "../../../src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
 #include <QComboBox>
 #include <QStringList>
@@ -29,7 +30,6 @@ MainMenuView::MainMenuView(QWidget *parent)
   //todo then here uncomment  next line:
   //*[mandatoryField="true"] {background_color: yellow};
 
-  //setFixedSize(size());
   ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -52,6 +52,7 @@ MainMenuView::~MainMenuView()
 void MainMenuView::on_pushButton_clicked()
 {
   ui->stackedWidget->setCurrentIndex(8);
+
 }
 
 
@@ -223,6 +224,26 @@ void MainMenuView::on_pushButton_17_clicked()
   ui->lineEdit_6->setText("");
 }
 
+///game message send
+void MainMenuView::on_pushButton_53_clicked()
+{
+/*
+  auto api_wrapper = ApiWrapper::GetShared();
+
+  if (api_wrapper.has_value()) {
+    auto message_res = api_wrapper->SendNewMessage(user_to_chat_with_, ui->lineEdit_6->text().toStdString(););
+    if (message_res.has_value()) {
+      error_message_ = message_res->error_message;
+    }
+  } else {
+    error_message_ = "Not signed in";
+  }
+*/
+  game_chattext = game_chattext + "\n" + ui->lineEdit_15->text().toStdString();
+  ui->textEdit_7->setText(QString::fromStdString( game_chattext));
+  ui->lineEdit_15->setText("");
+}
+
 void MainMenuView::on_pushButton_19_clicked()
 {
   ui->stackedWidget->setCurrentIndex(3);
@@ -231,6 +252,11 @@ void MainMenuView::on_pushButton_19_clicked()
 ///game back to main
 void MainMenuView::on_pushButton_20_clicked()
 {
+  //this->setFixedSize(901,599);
+  this->setFixedSize(90,59);
+  //this->showMinimized();
+  this->showNormal();
+
   ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -292,6 +318,95 @@ void MainMenuView::on_lineEdit_7_textChanged(const QString &arg1)
 void MainMenuView::on_pushButton_25_clicked()
 {
   ui->stackedWidget->setCurrentIndex(5);
+
+}
+
+///play shortcut
+void MainMenuView::on_pushButton_27_clicked()
+{
+  auto *mainLayout = new QHBoxLayout();
+
+  auto *Layout_chat = new QVBoxLayout();
+
+  auto *queryLayout = new QHBoxLayout();
+
+  auto *queryLabel = new QLabel(
+      QApplication::translate("quoridor", "New message:"));
+  auto *queryEdit = new QLineEdit();
+  auto *resultView = new QTableView();
+
+  queryLayout->addWidget(queryLabel);
+  queryLayout->addWidget(queryEdit);
+
+  Layout_chat->addWidget(resultView);
+  Layout_chat->addLayout(queryLayout);
+
+
+
+  //QWidget canvas = Canvas();
+  QWidget canvas;
+  //canvas = Canvas::Canvas();
+
+  /*
+        self.hbox = QHBoxLayout()
+
+        self.canvas = Canvas(self.board, self.N, self.width,
+                             self.height,
+                             parent=self.central_widget)
+
+        self.canvas.mousePressEvent = self.handle_click_event
+
+        self.hbox.addWidget(self.canvas, alignment=Qt.AlignCenter)
+
+        self.load_board_button.clicked.connect(
+            self.load_board)
+        self.add_player_1button.clicked.connect(
+            self.add_player_1)
+        self.add_player_2button.clicked.connect(
+            self.add_player_2)
+        self.add_arrow_button.clicked.connect(
+            self.add_arrow)
+
+        self.main_hbox.addLayout(self.hbox)
+        */
+
+  auto *Layout_board = new QVBoxLayout();
+
+  auto *resultView2 = new QTableView();
+  /*
+  QWidget *frame;
+  //frame->setGeometry(x, y, width, height);
+  frame->setStyleSheet("background-image: url(:/img/board.jpg)");
+  */
+  Layout_board->addWidget(resultView2);
+
+  mainLayout->addLayout(Layout_chat,1);
+
+  mainLayout->addLayout(Layout_board,2);
+  //this->ui->page_9->setLayout(mainLayout);
+  ui->stackedWidget->setCurrentIndex(8);
+  this->showMaximized();
+
+
+
+  /*
+
+  QSize size = qApp->screens()[0]->size();
+  ///this->ui->setFixedSize(size.width(),size.height());
+
+  this->setFixedSize(size.width(),size.height());
+
+  this->ui->page_9->setFixedSize(size.width(),size.height());
+  ///mainLayout->se
+
+  //this->show();
+  //this->ui->page_9->showMaximized();
+
+  //window.showMaximized();
+  ui->page_9->setStyleSheet("background-color: darkRed;"
+                      "font: Bold;"
+  );
+   */
 
 }
 

@@ -12,12 +12,16 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,16 +30,28 @@ class Ui_MainMenuView
 {
 public:
     QWidget *centralwidget;
+    QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout;
     QStackedWidget *stackedWidget;
     QWidget *page_3;
-    QPushButton *pushButton_8;
+    QGridLayout *gridLayout_6;
+    QVBoxLayout *verticalLayout;
     QLabel *label_Welcome;
+    QSpacerItem *verticalSpacer_2;
     QPushButton *pushButton_9;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_8;
+    QPushButton *pushButton_27;
+    QSpacerItem *verticalSpacer;
+    QVBoxLayout *verticalLayout_2;
+    QSpacerItem *verticalSpacer_7;
     QLabel *label_Theme;
     QPushButton *pushButton_21;
     QPushButton *pushButton_22;
     QPushButton *pushButton_23;
-    QPushButton *pushButton_6;
+    QSpacerItem *horizontalSpacer_7;
+    QSpacerItem *horizontalSpacer;
+    QSpacerItem *horizontalSpacer_8;
     QWidget *page_4;
     QPushButton *pushButton_10;
     QLineEdit *lineEdit;
@@ -52,11 +68,17 @@ public:
     QPushButton *pushButton_13;
     QLabel *label_7;
     QWidget *page;
+    QGridLayout *gridLayout_5;
+    QSpacerItem *verticalSpacer_4;
+    QSpacerItem *horizontalSpacer_5;
+    QGridLayout *gridLayout_2;
+    QPushButton *pushButton_2;
     QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
     QPushButton *pushButton_3;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *pushButton_5;
+    QSpacerItem *horizontalSpacer_4;
+    QSpacerItem *verticalSpacer_5;
     QWidget *page_2;
     QTextEdit *textEdit;
     QPushButton *pushButton_14;
@@ -75,8 +97,22 @@ public:
     QLabel *label_4;
     QPushButton *pushButton_19;
     QWidget *page_9;
-    QLabel *label_41;
+    QGridLayout *gridLayout_12;
+    QVBoxLayout *verticalLayout_9;
+    QTextEdit *textEdit_7;
+    QLineEdit *lineEdit_15;
+    QPushButton *pushButton_53;
+    QHBoxLayout *horizontalLayout_6;
+    QSpacerItem *horizontalSpacer_11;
+    QSpacerItem *verticalSpacer_3;
+    QHBoxLayout *horizontalLayout_5;
     QPushButton *pushButton_20;
+    QSpacerItem *horizontalSpacer_9;
+    QHBoxLayout *horizontalLayout_4;
+    QSpacerItem *horizontalSpacer_2;
+    QLabel *label_41;
+    QSpacerItem *horizontalSpacer_3;
+    QSpacerItem *horizontalSpacer_10;
     QWidget *page_10;
     QPushButton *pushButton_25;
     QLabel *label_5;
@@ -88,41 +124,104 @@ public:
     {
         if (MainMenuView->objectName().isEmpty())
             MainMenuView->setObjectName(QString::fromUtf8("MainMenuView"));
-        MainMenuView->resize(803, 634);
+        MainMenuView->resize(811, 599);
         MainMenuView->setAutoFillBackground(false);
         MainMenuView->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(MainMenuView);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(-10, 0, 811, 641));
         stackedWidget->setStyleSheet(QString::fromUtf8(""));
         page_3 = new QWidget();
         page_3->setObjectName(QString::fromUtf8("page_3"));
-        pushButton_8 = new QPushButton(page_3);
-        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
-        pushButton_8->setGeometry(QRect(360, 360, 80, 25));
+        gridLayout_6 = new QGridLayout(page_3);
+        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         label_Welcome = new QLabel(page_3);
         label_Welcome->setObjectName(QString::fromUtf8("label_Welcome"));
-        label_Welcome->setGeometry(QRect(365, 60, 61, 51));
+
+        verticalLayout->addWidget(label_Welcome);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_2);
+
         pushButton_9 = new QPushButton(page_3);
         pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
-        pushButton_9->setGeometry(QRect(360, 180, 80, 25));
-        label_Theme = new QLabel(page_3);
-        label_Theme->setObjectName(QString::fromUtf8("label_Theme"));
-        label_Theme->setGeometry(QRect(10, 0, 80, 25));
-        pushButton_21 = new QPushButton(page_3);
-        pushButton_21->setObjectName(QString::fromUtf8("pushButton_21"));
-        pushButton_21->setGeometry(QRect(10, 30, 80, 25));
-        pushButton_22 = new QPushButton(page_3);
-        pushButton_22->setObjectName(QString::fromUtf8("pushButton_22"));
-        pushButton_22->setGeometry(QRect(10, 60, 80, 25));
-        pushButton_23 = new QPushButton(page_3);
-        pushButton_23->setObjectName(QString::fromUtf8("pushButton_23"));
-        pushButton_23->setGeometry(QRect(10, 90, 80, 25));
+
+        verticalLayout->addWidget(pushButton_9);
+
         pushButton_6 = new QPushButton(page_3);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setGeometry(QRect(361, 278, 80, 25));
+
+        verticalLayout->addWidget(pushButton_6);
+
+        pushButton_8 = new QPushButton(page_3);
+        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
+
+        verticalLayout->addWidget(pushButton_8);
+
+        pushButton_27 = new QPushButton(page_3);
+        pushButton_27->setObjectName(QString::fromUtf8("pushButton_27"));
+
+        verticalLayout->addWidget(pushButton_27);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
+
+        gridLayout_6->addLayout(verticalLayout, 0, 2, 2, 1);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalSpacer_7 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_2->addItem(verticalSpacer_7);
+
+        label_Theme = new QLabel(page_3);
+        label_Theme->setObjectName(QString::fromUtf8("label_Theme"));
+
+        verticalLayout_2->addWidget(label_Theme);
+
+        pushButton_21 = new QPushButton(page_3);
+        pushButton_21->setObjectName(QString::fromUtf8("pushButton_21"));
+        pushButton_21->setStyleSheet(QString::fromUtf8("background-color: rgb(186, 189, 182);"));
+
+        verticalLayout_2->addWidget(pushButton_21);
+
+        pushButton_22 = new QPushButton(page_3);
+        pushButton_22->setObjectName(QString::fromUtf8("pushButton_22"));
+        pushButton_22->setStyleSheet(QString::fromUtf8("background-color: rgb(164, 0, 0);"));
+
+        verticalLayout_2->addWidget(pushButton_22);
+
+        pushButton_23 = new QPushButton(page_3);
+        pushButton_23->setObjectName(QString::fromUtf8("pushButton_23"));
+        pushButton_23->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        verticalLayout_2->addWidget(pushButton_23);
+
+
+        gridLayout_6->addLayout(verticalLayout_2, 1, 0, 1, 1);
+
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_7, 0, 4, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer, 1, 1, 1, 1);
+
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_8, 0, 0, 1, 2);
+
         stackedWidget->addWidget(page_3);
         page_4 = new QWidget();
         page_4->setObjectName(QString::fromUtf8("page_4"));
@@ -172,9 +271,20 @@ public:
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
         page->setStyleSheet(QString::fromUtf8("background-image: url(:/img/Main.jpg);"));
-        pushButton_4 = new QPushButton(page);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(280, 310, 239, 25));
+        gridLayout_5 = new QGridLayout(page);
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_5->addItem(verticalSpacer_4, 0, 1, 1, 1);
+
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_5, 1, 0, 1, 1);
+
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        pushButton_2 = new QPushButton(page);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         QPalette palette;
         QBrush brush(QColor(208, 208, 208, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -281,10 +391,14 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
 #endif
-        pushButton_4->setPalette(palette);
-        pushButton_5 = new QPushButton(page);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setGeometry(QRect(280, 355, 239, 25));
+        pushButton_2->setPalette(palette);
+        pushButton_2->setAutoFillBackground(false);
+        pushButton_2->setCheckable(false);
+
+        gridLayout_2->addWidget(pushButton_2, 1, 1, 1, 1);
+
+        pushButton_4 = new QPushButton(page);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette1.setBrush(QPalette::Active, QPalette::Button, brush1);
@@ -359,10 +473,12 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette1.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
 #endif
-        pushButton_5->setPalette(palette1);
+        pushButton_4->setPalette(palette1);
+
+        gridLayout_2->addWidget(pushButton_4, 2, 1, 1, 1);
+
         pushButton_3 = new QPushButton(page);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(280, 265, 239, 25));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Active, QPalette::Button, brush1);
@@ -438,10 +554,12 @@ public:
         palette2.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
 #endif
         pushButton_3->setPalette(palette2);
+
+        gridLayout_2->addWidget(pushButton_3, 3, 1, 1, 1);
+
         pushButton = new QPushButton(page);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setEnabled(true);
-        pushButton->setGeometry(QRect(280, 175, 239, 25));
         QPalette palette3;
         palette3.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette3.setBrush(QPalette::Active, QPalette::Button, brush1);
@@ -519,9 +637,11 @@ public:
         pushButton->setPalette(palette3);
         pushButton->setCheckable(false);
         pushButton->setFlat(false);
-        pushButton_2 = new QPushButton(page);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(280, 220, 239, 25));
+
+        gridLayout_2->addWidget(pushButton, 0, 1, 1, 1);
+
+        pushButton_5 = new QPushButton(page);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         QPalette palette4;
         palette4.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette4.setBrush(QPalette::Active, QPalette::Button, brush1);
@@ -596,9 +716,21 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette4.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush13);
 #endif
-        pushButton_2->setPalette(palette4);
-        pushButton_2->setAutoFillBackground(false);
-        pushButton_2->setCheckable(false);
+        pushButton_5->setPalette(palette4);
+
+        gridLayout_2->addWidget(pushButton_5, 4, 1, 1, 1);
+
+
+        gridLayout_5->addLayout(gridLayout_2, 1, 1, 1, 1);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_5->addItem(verticalSpacer_5, 2, 1, 1, 1);
+
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
@@ -617,7 +749,7 @@ public:
         comboBox->setGeometry(QRect(330, 200, 86, 25));
         label_3 = new QLabel(page_6);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(330, 150, 91, 17));
+        label_3->setGeometry(QRect(330, 150, 111, 17));
         pushButton_15 = new QPushButton(page_6);
         pushButton_15->setObjectName(QString::fromUtf8("pushButton_15"));
         pushButton_15->setGeometry(QRect(330, 300, 89, 25));
@@ -655,12 +787,78 @@ public:
         stackedWidget->addWidget(page_8);
         page_9 = new QWidget();
         page_9->setObjectName(QString::fromUtf8("page_9"));
-        label_41 = new QLabel(page_9);
-        label_41->setObjectName(QString::fromUtf8("label_41"));
-        label_41->setGeometry(QRect(350, 60, 201, 101));
+        gridLayout_12 = new QGridLayout(page_9);
+        gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
+        verticalLayout_9 = new QVBoxLayout();
+        verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
+        textEdit_7 = new QTextEdit(page_9);
+        textEdit_7->setObjectName(QString::fromUtf8("textEdit_7"));
+        textEdit_7->setReadOnly(true);
+
+        verticalLayout_9->addWidget(textEdit_7);
+
+        lineEdit_15 = new QLineEdit(page_9);
+        lineEdit_15->setObjectName(QString::fromUtf8("lineEdit_15"));
+
+        verticalLayout_9->addWidget(lineEdit_15);
+
+        pushButton_53 = new QPushButton(page_9);
+        pushButton_53->setObjectName(QString::fromUtf8("pushButton_53"));
+
+        verticalLayout_9->addWidget(pushButton_53);
+
+
+        gridLayout_12->addLayout(verticalLayout_9, 1, 0, 2, 1);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        horizontalSpacer_11 = new QSpacerItem(584, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_11);
+
+
+        gridLayout_12->addLayout(horizontalLayout_6, 2, 1, 1, 1);
+
+        verticalSpacer_3 = new QSpacerItem(20, 474, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_12->addItem(verticalSpacer_3, 2, 2, 1, 1);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         pushButton_20 = new QPushButton(page_9);
         pushButton_20->setObjectName(QString::fromUtf8("pushButton_20"));
-        pushButton_20->setGeometry(QRect(330, 330, 89, 25));
+
+        horizontalLayout_5->addWidget(pushButton_20);
+
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_9);
+
+
+        gridLayout_12->addLayout(horizontalLayout_5, 3, 0, 1, 2);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_2);
+
+        label_41 = new QLabel(page_9);
+        label_41->setObjectName(QString::fromUtf8("label_41"));
+
+        horizontalLayout_4->addWidget(label_41);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_3);
+
+
+        gridLayout_12->addLayout(horizontalLayout_4, 0, 0, 1, 3);
+
+        horizontalSpacer_10 = new QSpacerItem(584, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_12->addItem(horizontalSpacer_10, 1, 1, 1, 1);
+
         stackedWidget->addWidget(page_9);
         page_10 = new QWidget();
         page_10->setObjectName(QString::fromUtf8("page_10"));
@@ -681,6 +879,12 @@ public:
         pushButton_26->setObjectName(QString::fromUtf8("pushButton_26"));
         pushButton_26->setGeometry(QRect(370, 310, 80, 24));
         stackedWidget->addWidget(page_10);
+
+        horizontalLayout->addWidget(stackedWidget);
+
+
+        gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
+
         MainMenuView->setCentralWidget(centralwidget);
 
         retranslateUi(MainMenuView);
@@ -694,14 +898,15 @@ public:
     void retranslateUi(QMainWindow *MainMenuView)
     {
         MainMenuView->setWindowTitle(QCoreApplication::translate("MainMenuView", "Quoridor", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("MainMenuView", "Quit", nullptr));
         label_Welcome->setText(QCoreApplication::translate("MainMenuView", "Welcome", nullptr));
         pushButton_9->setText(QCoreApplication::translate("MainMenuView", "Login", nullptr));
+        pushButton_6->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
+        pushButton_8->setText(QCoreApplication::translate("MainMenuView", "Quit", nullptr));
+        pushButton_27->setText(QCoreApplication::translate("MainMenuView", "play shortcut", nullptr));
         label_Theme->setText(QCoreApplication::translate("MainMenuView", "Theme", nullptr));
         pushButton_21->setText(QCoreApplication::translate("MainMenuView", "Grey", nullptr));
         pushButton_22->setText(QCoreApplication::translate("MainMenuView", "Red", nullptr));
         pushButton_23->setText(QCoreApplication::translate("MainMenuView", "White", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
         pushButton_10->setText(QCoreApplication::translate("MainMenuView", "Enter", nullptr));
         lineEdit->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Pseudo", nullptr));
         lineEdit_2->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Mot de passe", nullptr));
@@ -715,11 +920,11 @@ public:
         lineEdit_5->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Confirmer", nullptr));
         pushButton_13->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_7->setText(QString());
+        pushButton_2->setText(QCoreApplication::translate("MainMenuView", "Friend list", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainMenuView", "Ranking", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainMenuView", "Help", nullptr));
         pushButton->setText(QCoreApplication::translate("MainMenuView", "Play", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainMenuView", "Friend list", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         pushButton_14->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_3->setText(QCoreApplication::translate("MainMenuView", "Choose Friend", nullptr));
         pushButton_15->setText(QCoreApplication::translate("MainMenuView", "Chat", nullptr));
@@ -729,8 +934,9 @@ public:
         pushButton_18->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_4->setText(QCoreApplication::translate("MainMenuView", "The Help", nullptr));
         pushButton_19->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
+        pushButton_53->setText(QCoreApplication::translate("MainMenuView", "Send", nullptr));
+        pushButton_20->setText(QCoreApplication::translate("MainMenuView", "Quit Game", nullptr));
         label_41->setText(QCoreApplication::translate("MainMenuView", "Game", nullptr));
-        pushButton_20->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         pushButton_25->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_5->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
         lineEdit_7->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Search friend username", nullptr));

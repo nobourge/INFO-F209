@@ -58,11 +58,17 @@ class MainMenuView : public QMainWindow
   void on_lineEdit_7_textChanged(const QString &arg1);
 
   void on_pushButton_25_clicked();
+  void on_pushButton_27_clicked();
 
-private:
+  void on_pushButton_53_clicked();
+
+
+
+ private:
   Ui::MainMenuView *ui;
   //std::string chattext="";
   std::string chattext;
+  std::string game_chattext;
   //std::string Rankingtext="";
     std::string Rankingtext;
 

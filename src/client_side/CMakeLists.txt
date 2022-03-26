@@ -141,12 +141,21 @@ set(SOURCES
         ../common/models/Player.cpp
         ../common/models/position.cpp
         ../common/models/translator.cpp
-        view_controllers/view_controller_menu_join_or_create_game.cpp view_controllers/view_controller_menu_join_or_create_game.h views/menu_views/join_or_create_game_menu_view.cpp views/menu_views/join_or_create_game_menu_view.h view_controllers/view_controller_menu_join_game.cpp view_controllers/view_controller_menu_join_game.h views/menu_views/join_game_menu_view.cpp views/menu_views/join_game_menu_view.h
+        view_controllers/view_controller_menu_join_or_create_game.cpp
+        view_controllers/view_controller_menu_join_or_create_game.h
+        views/menu_views/join_or_create_game_menu_view.cpp
+        views/menu_views/join_or_create_game_menu_view.h
+        view_controllers/view_controller_menu_join_game.cpp
+        view_controllers/view_controller_menu_join_game.h
+        views/menu_views/join_game_menu_view.cpp views/menu_views/join_game_menu_view.h
         QtCode/mainmenuview.ui
         QtCode/mainmenuview.cpp
         QtCode/ressource.qrc
 
-        )
+        QtCode/game.cpp
+        QtCode/game.h
+        QtCode/canvas.cpp
+        QtCode/canvas.h)
 
 
 #if(UNIX)

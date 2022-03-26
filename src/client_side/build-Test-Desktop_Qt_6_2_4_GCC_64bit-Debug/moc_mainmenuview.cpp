@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainMenuView_t {
     const uint offsetsAndSize[58];
-    char stringdata0[659];
+    char stringdata0[660];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainMenuView_t, stringdata0) + ofs), len 
@@ -32,38 +32,37 @@ static const qt_meta_stringdata_MainMenuView_t qt_meta_stringdata_MainMenuView =
 QT_MOC_LITERAL(0, 12), // "MainMenuView"
 QT_MOC_LITERAL(13, 21), // "on_pushButton_clicked"
 QT_MOC_LITERAL(35, 0), // ""
-QT_MOC_LITERAL(36, 23), // "on_pushButton_1_clicked"
-QT_MOC_LITERAL(60, 23), // "on_pushButton_5_clicked"
-QT_MOC_LITERAL(84, 23), // "on_pushButton_9_clicked"
-QT_MOC_LITERAL(108, 23), // "on_pushButton_6_clicked"
-QT_MOC_LITERAL(132, 23), // "on_pushButton_8_clicked"
-QT_MOC_LITERAL(156, 24), // "on_pushButton_11_clicked"
-QT_MOC_LITERAL(181, 24), // "on_pushButton_10_clicked"
-QT_MOC_LITERAL(206, 24), // "on_pushButton_12_clicked"
-QT_MOC_LITERAL(231, 24), // "on_pushButton_13_clicked"
-QT_MOC_LITERAL(256, 23), // "on_pushButton_4_clicked"
-QT_MOC_LITERAL(280, 24), // "on_pushButton_14_clicked"
-QT_MOC_LITERAL(305, 24), // "on_pushButton_16_clicked"
-QT_MOC_LITERAL(330, 24), // "on_pushButton_15_clicked"
-QT_MOC_LITERAL(355, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(379, 24), // "on_pushButton_18_clicked"
-QT_MOC_LITERAL(404, 24), // "on_pushButton_17_clicked"
-QT_MOC_LITERAL(429, 24), // "on_pushButton_19_clicked"
-QT_MOC_LITERAL(454, 24), // "on_pushButton_20_clicked"
-QT_MOC_LITERAL(479, 24), // "on_pushButton_21_clicked"
-QT_MOC_LITERAL(504, 24), // "on_pushButton_22_clicked"
-QT_MOC_LITERAL(529, 24), // "on_pushButton_23_clicked"
-QT_MOC_LITERAL(554, 24), // "on_pushButton_24_clicked"
-QT_MOC_LITERAL(579, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(603, 25), // "on_lineEdit_7_textChanged"
-QT_MOC_LITERAL(629, 4), // "arg1"
-QT_MOC_LITERAL(634, 24) // "on_pushButton_25_clicked"
+QT_MOC_LITERAL(36, 23), // "on_pushButton_5_clicked"
+QT_MOC_LITERAL(60, 23), // "on_pushButton_9_clicked"
+QT_MOC_LITERAL(84, 23), // "on_pushButton_6_clicked"
+QT_MOC_LITERAL(108, 23), // "on_pushButton_8_clicked"
+QT_MOC_LITERAL(132, 24), // "on_pushButton_11_clicked"
+QT_MOC_LITERAL(157, 24), // "on_pushButton_10_clicked"
+QT_MOC_LITERAL(182, 24), // "on_pushButton_12_clicked"
+QT_MOC_LITERAL(207, 24), // "on_pushButton_13_clicked"
+QT_MOC_LITERAL(232, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(256, 24), // "on_pushButton_14_clicked"
+QT_MOC_LITERAL(281, 24), // "on_pushButton_16_clicked"
+QT_MOC_LITERAL(306, 24), // "on_pushButton_15_clicked"
+QT_MOC_LITERAL(331, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(355, 24), // "on_pushButton_18_clicked"
+QT_MOC_LITERAL(380, 24), // "on_pushButton_17_clicked"
+QT_MOC_LITERAL(405, 24), // "on_pushButton_19_clicked"
+QT_MOC_LITERAL(430, 24), // "on_pushButton_20_clicked"
+QT_MOC_LITERAL(455, 24), // "on_pushButton_21_clicked"
+QT_MOC_LITERAL(480, 24), // "on_pushButton_22_clicked"
+QT_MOC_LITERAL(505, 24), // "on_pushButton_23_clicked"
+QT_MOC_LITERAL(530, 24), // "on_pushButton_24_clicked"
+QT_MOC_LITERAL(555, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(579, 25), // "on_lineEdit_7_textChanged"
+QT_MOC_LITERAL(605, 4), // "arg1"
+QT_MOC_LITERAL(610, 24), // "on_pushButton_25_clicked"
+QT_MOC_LITERAL(635, 24) // "on_pushButton_27_clicked"
 
     },
     "MainMenuView\0on_pushButton_clicked\0\0"
-    "on_pushButton_1_clicked\0on_pushButton_5_clicked\0"
-    "on_pushButton_9_clicked\0on_pushButton_6_clicked\0"
-    "on_pushButton_8_clicked\0"
+    "on_pushButton_5_clicked\0on_pushButton_9_clicked\0"
+    "on_pushButton_6_clicked\0on_pushButton_8_clicked\0"
     "on_pushButton_11_clicked\0"
     "on_pushButton_10_clicked\0"
     "on_pushButton_12_clicked\0"
@@ -83,7 +82,8 @@ QT_MOC_LITERAL(634, 24) // "on_pushButton_25_clicked"
     "on_pushButton_24_clicked\0"
     "on_pushButton_3_clicked\0"
     "on_lineEdit_7_textChanged\0arg1\0"
-    "on_pushButton_25_clicked"
+    "on_pushButton_25_clicked\0"
+    "on_pushButton_27_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -124,8 +124,8 @@ static const uint qt_meta_data_MainMenuView[] = {
       22,    0,  190,    2, 0x08,   21 /* Private */,
       23,    0,  191,    2, 0x08,   22 /* Private */,
       24,    0,  192,    2, 0x08,   23 /* Private */,
-      25,    0,  193,    2, 0x08,   24 /* Private */,
-      26,    1,  194,    2, 0x08,   25 /* Private */,
+      25,    1,  193,    2, 0x08,   24 /* Private */,
+      27,    0,  196,    2, 0x08,   26 /* Private */,
       28,    0,  197,    2, 0x08,   27 /* Private */,
 
  // slots: parameters
@@ -152,8 +152,8 @@ static const uint qt_meta_data_MainMenuView[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   26,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   27,
     QMetaType::Void,
 
        0        // eod
@@ -166,31 +166,31 @@ void MainMenuView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         (void)_t;
         switch (_id) {
         case 0: _t->on_pushButton_clicked(); break;
-        case 1: _t->on_pushButton_1_clicked(); break;
-        case 2: _t->on_pushButton_5_clicked(); break;
-        case 3: _t->on_pushButton_9_clicked(); break;
-        case 4: _t->on_pushButton_6_clicked(); break;
-        case 5: _t->on_pushButton_8_clicked(); break;
-        case 6: _t->on_pushButton_11_clicked(); break;
-        case 7: _t->on_pushButton_10_clicked(); break;
-        case 8: _t->on_pushButton_12_clicked(); break;
-        case 9: _t->on_pushButton_13_clicked(); break;
-        case 10: _t->on_pushButton_4_clicked(); break;
-        case 11: _t->on_pushButton_14_clicked(); break;
-        case 12: _t->on_pushButton_16_clicked(); break;
-        case 13: _t->on_pushButton_15_clicked(); break;
-        case 14: _t->on_pushButton_2_clicked(); break;
-        case 15: _t->on_pushButton_18_clicked(); break;
-        case 16: _t->on_pushButton_17_clicked(); break;
-        case 17: _t->on_pushButton_19_clicked(); break;
-        case 18: _t->on_pushButton_20_clicked(); break;
-        case 19: _t->on_pushButton_21_clicked(); break;
-        case 20: _t->on_pushButton_22_clicked(); break;
-        case 21: _t->on_pushButton_23_clicked(); break;
-        case 22: _t->on_pushButton_24_clicked(); break;
-        case 23: _t->on_pushButton_3_clicked(); break;
-        case 24: _t->on_lineEdit_7_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 25: _t->on_pushButton_25_clicked(); break;
+        case 1: _t->on_pushButton_5_clicked(); break;
+        case 2: _t->on_pushButton_9_clicked(); break;
+        case 3: _t->on_pushButton_6_clicked(); break;
+        case 4: _t->on_pushButton_8_clicked(); break;
+        case 5: _t->on_pushButton_11_clicked(); break;
+        case 6: _t->on_pushButton_10_clicked(); break;
+        case 7: _t->on_pushButton_12_clicked(); break;
+        case 8: _t->on_pushButton_13_clicked(); break;
+        case 9: _t->on_pushButton_4_clicked(); break;
+        case 10: _t->on_pushButton_14_clicked(); break;
+        case 11: _t->on_pushButton_16_clicked(); break;
+        case 12: _t->on_pushButton_15_clicked(); break;
+        case 13: _t->on_pushButton_2_clicked(); break;
+        case 14: _t->on_pushButton_18_clicked(); break;
+        case 15: _t->on_pushButton_17_clicked(); break;
+        case 16: _t->on_pushButton_19_clicked(); break;
+        case 17: _t->on_pushButton_20_clicked(); break;
+        case 18: _t->on_pushButton_21_clicked(); break;
+        case 19: _t->on_pushButton_22_clicked(); break;
+        case 20: _t->on_pushButton_23_clicked(); break;
+        case 21: _t->on_pushButton_24_clicked(); break;
+        case 22: _t->on_pushButton_3_clicked(); break;
+        case 23: _t->on_lineEdit_7_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 24: _t->on_pushButton_25_clicked(); break;
+        case 25: _t->on_pushButton_27_clicked(); break;
         default: ;
         }
     }
@@ -204,7 +204,7 @@ const QMetaObject MainMenuView::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainMenuView_t
 , QtPrivate::TypeAndForceComplete<MainMenuView, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
