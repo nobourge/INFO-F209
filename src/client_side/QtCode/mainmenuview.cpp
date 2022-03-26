@@ -428,6 +428,7 @@ void MainMenuView::on_pushButton_27_clicked()
 
 
 void MainMenuView::on_pushButton_26_clicked()
+//TODO ne fonctionne pas
 {
   auto user_to_add_username_str = ui->lineEdit_7->text().toStdString(); //username written by the user_to_add_username_str
   auto all_user_fetch_result = ApiWrapper::GetAllUsers();
@@ -447,9 +448,13 @@ void MainMenuView::on_pushButton_26_clicked()
   for (auto & friend_ : friends) {
     if(friend_ == user_to_add_username_str)
       cout << "ajout de " << user_to_add_username_str << endl;
-      ui->label_8->setText("Friend added !");
+    ui->label_8->setText("Friend added !");
     auto user_to_add = UserClient(Username{user_to_add_username_str});
   }
 }
+
+
+
+
 
 
