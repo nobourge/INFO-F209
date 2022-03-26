@@ -190,12 +190,14 @@ void MainMenuView::on_pushButton_2_clicked() {
   } else {
     users_ = std::move(std::get<std::vector<UserClient>>(all_user_fetch_result));
   }
-  for (auto &user : users_) {
-    friends.push_back(user.GetUsername().GetValue());
-  }
-  for (int i = 0; i < friends.size(); ++i) {
-    ui->comboBox->addItem(QString::fromStdString(friends[i]));
-  }
+
+    for (auto &user : users_) {
+      friends.push_back(user.GetUsername().GetValue());
+    }
+
+    for (int i = 0; i < friends.size(); ++i) {
+      ui->comboBox->addItem(QString::fromStdString(friends[i]));
+    }
 
 
 
@@ -439,8 +441,9 @@ void MainMenuView::on_pushButton_26_clicked()
   for (auto & friend_ : friends) {
     if(friend_ == user_to_add_username_str)
       cout << "ajout de " << user_to_add_username_str << endl;
-//      ui->label_8->setText("Friend added !");
+      ui->label_8->setText("Friend added !");
     auto user_to_add = UserClient(Username{user_to_add_username_str});
   }
 }
+
 

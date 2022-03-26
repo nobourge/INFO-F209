@@ -6,6 +6,7 @@
 #include "../models/api_wrapper.h"
 #include "../views/menu_views/find_new_friend_menu_view.h"
 
+
 FindFriendViewController::FindFriendViewController()
     : AbstractSearchableListMenuViewController(
           std::make_shared<FindNewFriendMenuView>()) {}
