@@ -29,3 +29,4 @@ std::unordered_set<uint32_t> UserClient::GetFriendsIds() const {
   }
   return friends;
 }
+UserClient::UserClient(const Username &username) : User(0, username, "", 0, 0, {}) {}

@@ -64,7 +64,9 @@ class MainMenuView : public QMainWindow
 
 
 
- private:
+  void on_pushButton_26_clicked();
+
+private:
   Ui::MainMenuView *ui;
   //std::string chattext="";
   std::string chattext;
