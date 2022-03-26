@@ -253,9 +253,9 @@ void MainMenuView::on_pushButton_19_clicked()
 void MainMenuView::on_pushButton_20_clicked()
 {
   //this->setFixedSize(901,599);
-  this->setFixedSize(90,59);
+  //this->setFixedSize(90,59);
   //this->showMinimized();
-  this->showNormal();
+  //this->showNormal();
 
   ui->stackedWidget->setCurrentIndex(3);
 }
