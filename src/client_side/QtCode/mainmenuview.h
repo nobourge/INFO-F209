@@ -2,7 +2,7 @@
 #define MAINMENUVIEW_H
 
 #include <QMainWindow>
-
+#include "../models/user_client.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainMenuView; }
@@ -66,13 +66,17 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_26_clicked();
 
+  void updateChatRoomMessagesListView();
+
 private:
   Ui::MainMenuView *ui;
+  std::vector<UserClient> friends_ = {};
+  std::optional<UserClient> selected_friend_ = {};
   //std::string chattext="";
   std::string chattext;
   std::string game_chattext;
   //std::string Rankingtext="";
-    std::string Rankingtext;
+  std::string Rankingtext;
 
 };
 #endif // MAINMENUVIEW_H

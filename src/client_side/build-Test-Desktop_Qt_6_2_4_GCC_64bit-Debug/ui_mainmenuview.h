@@ -889,7 +889,7 @@ public:
         pushButton_26->setGeometry(QRect(370, 310, 80, 24));
         label_8 = new QLabel(page_10);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(390, 110, 58, 16));
+        label_8->setGeometry(QRect(250, 90, 351, 41));
         stackedWidget->addWidget(page_10);
 
         horizontalLayout->addWidget(stackedWidget);
