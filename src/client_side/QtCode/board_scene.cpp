@@ -6,20 +6,27 @@
 #include "QGraphicsRectItem"
 using namespace std;
 
-MenuBoardScene::MenuBoardScene() {
-  auto *rect = new QGraphicsRectItem();
-  rect->setRect(0, 0, 100, 100);
-  this->addItem(rect);
-  /*
-  for (int row = 0; row < 17; row++) {    // change magic number later
-    for (int col = 0; col <17; col++) { // same as above
+BoardScene::BoardScene() {
+  int cells_quantity = 17; // change magic number later
+  int size = 666/cells_quantity;
+
+
+  for (int row = 0; row < cells_quantity; row++) {
+    for (int col = 0; col < cells_quantity; col++) {
+      auto *rect = new QGraphicsRectItem();
+      rect->setRect(row*size,col*size,size, size);
+      this->addItem(rect);
+      /*
       // this->addItem(new MenuCell(32*row, 32*col, 32));
-      if (col % 2 == 0 && row % 2 == 0) this->addItem(new MenuCell(32*row, 32*col,row,col,32));
-      else this->addItem(new MenuWallCell(32*row, 32*col,row,col,32));
+      if (col % 2 == 0 && row % 2 == 0)
+        //this->addItem(new Cell(32*row, 32*col,row,col,32));
+      else
+        //this->addItem(new WallCell(32*row, 32*col,row,col,32));
+        */
     }
-    this->addItem(new MenuPlayerCell(32*0, 32*0,0,0,32));
+    //this->addItem(new PlayerCell(32*0, 32*0,0,0,32));
 
   }
-   */
+
 
 }

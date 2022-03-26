@@ -6,11 +6,11 @@
 #define QUORIDOR_SRC_CLIENT_SIDE_QTCODE_BOARD_SCENE_H_
 
 #include <QGraphicsScene>
-class MenuBoardScene : public QGraphicsScene {
+class BoardScene : public QGraphicsScene {
   //QVector<QVector<MenuCell*>> cells;
  public:
-  MenuBoardScene();
-  ~MenuBoardScene(){
+  BoardScene();
+  ~BoardScene(){
     /*
     for(int i=0;i<cells.size();i++){
       for(int j=0;j<cells.size();j++){

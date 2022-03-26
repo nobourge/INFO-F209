@@ -400,7 +400,7 @@ void MainMenuView::on_pushButton_27_clicked()
   ui->stackedWidget->setCurrentIndex(8);
   this->showMaximized();
 
-  auto *board_scene = new MenuBoardScene();
+  auto *board_scene = new BoardScene();
   this->ui->graphicsView->setScene(board_scene);
 
 
