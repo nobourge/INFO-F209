@@ -28,10 +28,10 @@ void FindFriendViewController::FetchUsersExceptCurrentUser() {
   auto user_fetch_result = ApiWrapper::GetAllUsersExceptCurrentUser();
 
   if (std::holds_alternative<ApiError>(user_fetch_result)) {
-    errormessage = std::get<ApiError>(user_fetch_result).errormessage;
-    users = {};
+    error_message_ = std::get<ApiError>(user_fetch_result).error_message;
+    users_ = {};
   } else {
-    errormessage = {};
+    error_message_ = {};
     users_ = std::move(std::get<std::vector<UserClient>>(user_fetch_result));
   }
 }

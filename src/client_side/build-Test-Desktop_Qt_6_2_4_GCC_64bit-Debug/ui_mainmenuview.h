@@ -876,7 +876,7 @@ public:
         pushButton_25->setGeometry(QRect(370, 350, 80, 24));
         label_5 = new QLabel(page_10);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(380, 140, 101, 20));
+        label_5->setGeometry(QRect(390, 140, 71, 16));
         textEdit_3 = new QTextEdit(page_10);
         textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
         textEdit_3->setGeometry(QRect(370, 170, 104, 70));
@@ -889,7 +889,8 @@ public:
         pushButton_26->setGeometry(QRect(370, 310, 80, 24));
         label_8 = new QLabel(page_10);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(337, 59, 221, 71));
+        label_8->setGeometry(QRect(300, 60, 221, 71));
+        label_8->setAlignment(Qt::AlignCenter);
         stackedWidget->addWidget(page_10);
 
         horizontalLayout->addWidget(stackedWidget);
@@ -936,7 +937,7 @@ public:
         pushButton_4->setText(QCoreApplication::translate("MainMenuView", "Ranking", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainMenuView", "Help", nullptr));
         pushButton->setText(QCoreApplication::translate("MainMenuView", "Play", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainMenuView", "Log out", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         pushButton_14->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_3->setText(QCoreApplication::translate("MainMenuView", "Choose Friend", nullptr));
         pushButton_15->setText(QCoreApplication::translate("MainMenuView", "Chat", nullptr));
