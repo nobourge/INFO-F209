@@ -139,6 +139,15 @@ protected:
       return output;
     });
 
+    API_ROUTE(GetApp(), "/api/v1/users/except/me")
+        ([](const crow::request &request) {
+          VALIDATE_CREDENTIALS(requests);
+
+          crow::json::wvalue output;
+          output["usersexceptme"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
+          return output;
+        });
+
     API_ROUTE(GetApp(), "/api/v1/users/ranking")
     ([](const crow::request &request) {
       std::optional<unsigned int> num_users = {};

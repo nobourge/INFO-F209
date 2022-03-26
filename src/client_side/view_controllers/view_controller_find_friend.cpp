@@ -23,6 +23,19 @@ void FindFriendViewController::FetchUsers() {
   }
 }
 
+void FindFriendViewController::FetchUsersExceptCurrentUser() {
+  //auto user_fetch_result = ApiWrapper::GetAllUsers();
+  auto user_fetch_result = ApiWrapper::GetAllUsersExceptCurrentUser();
+
+  if (std::holds_alternative<ApiError>(user_fetch_result)) {
+    errormessage = std::get<ApiError>(user_fetch_result).errormessage;
+    users = {};
+  } else {
+    errormessage = {};
+    users_ = std::move(std::get<std::vector<UserClient>>(user_fetch_result));
+  }
+}
+
 void FindFriendViewController::AddFriend(const UserClient &user) {
   auto this_user_fetch_result =
       ApiWrapper::GetCurrentUserFromSharedApiWrapperInstance();

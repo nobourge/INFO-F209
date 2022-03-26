@@ -13,6 +13,7 @@ MainMenuView::MainMenuView(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainMenuView) {
   ui->setupUi(this);
 
+
   this->setStyleSheet("selection-color: green");
 /*
   if(theme == "black")
@@ -31,7 +32,8 @@ MainMenuView::MainMenuView(QWidget *parent)
   ui->stackedWidget->setCurrentIndex(0);
 }
 
-MainMenuView::~MainMenuView() {
+MainMenuView::~MainMenuView()
+{
   delete ui;
 }
 
