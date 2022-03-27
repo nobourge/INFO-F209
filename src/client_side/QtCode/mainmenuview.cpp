@@ -580,6 +580,7 @@ void MainMenuView::updateChatRoomMessagesListView() {
 }
 
 
+
 void MainMenuView::updateFriendsComboBoxView() {
   ui->comboBox_ChooseFriend->clear();
 

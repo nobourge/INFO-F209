@@ -66,10 +66,6 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_26_clicked();
 
-  void updateChatRoomMessagesListView();
-  void updateFriendsComboBoxView();
-  void updateRankingView();
-
   void on_lineEdit_SearchFriendUsername_textChanged(const QString &arg1);
 
   void on_pushButton_BackAddFriend_clicked();
@@ -126,6 +122,11 @@ class MainMenuView : public QMainWindow
   void on_pushButton_FriendListMainMenu_clicked();
 
   void on_pushButton_PlayMainMenu_clicked();
+  ///Update functions
+  void updateChatRoomMessagesListView();
+  void updateFriendsComboBoxView();
+  void updateRankingView();
+////
 
 private:
   Ui::MainMenuView *ui;
