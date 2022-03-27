@@ -45,9 +45,9 @@ void MenuBoardView::placeWall(MenuCell* first, MenuCell* second) {
 bool MenuBoardView::verifyWall(QPoint, QPoint) {return true;}
 
 void MenuBoardView::playMove(MenuCell* item){
-    ancientCell->setCellPixmap(QPixmap("../QtCode/game/assets/cell.png"));
+    ancientCell->setCellPixmap(QPixmap(cell_png));
     ancientCell->setCellPawn(false);
-    item->setCellPixmap(QPixmap("../QtCode/game/assets/pawn.png"));
+    item->setCellPixmap(QPixmap(pawn_png));
     item->setCellPawn(true);
 }
 
