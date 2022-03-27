@@ -1,12 +1,6 @@
 #set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-<<<<<<< HEAD
 cmake_minimum_required(VERSION 3.5)
-=======
-set(CMAKE_AUTOMOC ON)
-#set(CMAKE_AUTORCC ON)
-#set(CMAKE_AUTOUIC ON)
->>>>>>> refs/remotes/origin/main
 
 project(ClientSide)
 

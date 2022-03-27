@@ -520,7 +520,6 @@ void MainMenuView::on_pushButton_FriendListMainMenu_clicked()
 
 }
 
-<<<<<<< HEAD
 ///play shortcut
 void MainMenuView::on_pushButton_27_clicked() {
   ui->stackedWidget->setCurrentIndex(9);
@@ -528,10 +527,6 @@ void MainMenuView::on_pushButton_27_clicked() {
 
 void MainMenuView::on_pushButton_26_clicked()
 //TODO ne fonctionne pas
-=======
-
-void MainMenuView::on_pushButton_PlayMainMenu_clicked()
->>>>>>> refs/remotes/origin/main
 {
   ui->stackedWidget->setCurrentIndex(8);
 
