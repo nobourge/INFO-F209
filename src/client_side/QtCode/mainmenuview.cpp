@@ -259,20 +259,7 @@ void MainMenuView::on_pushButton_24_clicked() {
 }
 
 void MainMenuView::on_lineEdit_7_textChanged(const QString &arg1) {
-  auto user_fetch_result = ApiWrapper::GetAllUsers();
 
-  std::vector<UserClient> users_;
-
-  if (std::holds_alternative<ApiError>(user_fetch_result)) {
-    users_ = {};
-  } else {
-    users_ = std::move(std::get<std::vector<UserClient>>(user_fetch_result));
-  }
-  string friends_usernames;
-  for (auto &user : users_) {
-    friends_usernames += user.GetUsername().GetValue() + "\n";
-  }
-  ui->textEdit_3->setText(QString::fromStdString(friends_usernames));
 }
 
 void MainMenuView::on_pushButton_25_clicked() {
@@ -374,23 +361,23 @@ void MainMenuView::on_pushButton_26_clicked()
 //TODO ne fonctionne pas
 {
   auto user_to_add_username_str =
-      ui->lineEdit_7->text().toStdString(); //username written by the user_to_add_username_str
+      ui->lineEdit_SearchFriendUsername->text().toStdString(); //username written by the user_to_add_username_str
 
   std::unique_ptr<UserClient> user_to_add;
 
   try {
     user_to_add = std::make_unique<UserClient>(Username{user_to_add_username_str});
   } catch (const std::exception &err) {
-    ui->label_8->setText(err.what()); return;
+    ui->label_FriendAdded->setText(err.what()); return;
   }
   std::vector<UserClient> users_;
 
   auto err = ApiWrapper::GetShared()->AddFriend(*user_to_add);
 
   if (err.has_value())
-    ui->label_8->setText(QString::fromStdString(err->error_message));
+    ui->label_FriendAdded->setText(QString::fromStdString(err->error_message));
   else
-    ui->label_8->setText(QString::fromStdString("Friend added successfully"));
+    ui->label_FriendAdded->setText(QString::fromStdString("Friend added successfully"));
 }
 
 
@@ -433,8 +420,29 @@ void MainMenuView::updateChatRoomMessagesListView() {
   }
 }
 
+void MainMenuView::on_lineEdit_SearchFriendUsername_textChanged(const QString &arg1)
+{
+    auto user_fetch_result = ApiWrapper::GetAllUsers();
+
+    std::vector<UserClient> users_;
+
+    if (std::holds_alternative<ApiError>(user_fetch_result)) {
+      users_ = {};
+    } else {
+      users_ = std::move(std::get<std::vector<UserClient>>(user_fetch_result));
+    }
+    string friends_usernames;
+    for (auto &user : users_) {
+      friends_usernames += user.GetUsername().GetValue() + "\n";
+    }
+    ui->textEdit_DisplayFriendsAddFriend->setText(QString::fromStdString(friends_usernames));
+}
 
 
 
+void MainMenuView::on_pushButton_BackAddFriend_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
 
+}
 

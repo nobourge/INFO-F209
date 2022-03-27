@@ -68,6 +68,10 @@ class MainMenuView : public QMainWindow
 
   void updateChatRoomMessagesListView();
 
+  void on_lineEdit_SearchFriendUsername_textChanged(const QString &arg1);
+
+  void on_pushButton_BackAddFriend_clicked();
+
 private:
   Ui::MainMenuView *ui;
   std::vector<UserClient> friends_ = {};

@@ -29,7 +29,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>8</number>
+         <number>9</number>
         </property>
         <widget class="QWidget" name="page_3">
          <layout class="QGridLayout" name="gridLayout_6">
@@ -228,6 +228,9 @@
             <width>113</width>
             <height>25</height>
            </rect>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::PasswordEchoOnEdit</enum>
           </property>
           <property name="placeholderText">
            <string>Mot de passe</string>
@@ -3677,7 +3680,7 @@ border-image: null;
          </layout>
         </widget>
         <widget class="QWidget" name="page_10">
-         <widget class="QPushButton" name="pushButton_25">
+         <widget class="QPushButton" name="pushButton_BackAddFriend">
           <property name="geometry">
            <rect>
             <x>370</x>
@@ -3690,7 +3693,7 @@ border-image: null;
            <string>Back</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_5">
+         <widget class="QLabel" name="label_AddFriend">
           <property name="geometry">
            <rect>
             <x>390</x>
@@ -3703,7 +3706,7 @@ border-image: null;
            <string>Add Friend</string>
           </property>
          </widget>
-         <widget class="QTextEdit" name="textEdit_3">
+         <widget class="QTextEdit" name="textEdit_DisplayFriendsAddFriend">
           <property name="geometry">
            <rect>
             <x>370</x>
@@ -3716,7 +3719,7 @@ border-image: null;
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_7">
+         <widget class="QLineEdit" name="lineEdit_SearchFriendUsername">
           <property name="geometry">
            <rect>
             <x>300</x>
@@ -3742,17 +3745,20 @@ border-image: null;
            <string>Add</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_8">
+         <widget class="QLabel" name="label_FriendAdded">
           <property name="geometry">
            <rect>
-            <x>337</x>
-            <y>59</y>
+            <x>300</x>
+            <y>60</y>
             <width>221</width>
             <height>71</height>
            </rect>
           </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </widget>

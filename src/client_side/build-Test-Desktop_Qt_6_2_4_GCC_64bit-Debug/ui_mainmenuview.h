@@ -115,12 +115,12 @@ public:
     QLabel *label_41;
     QSpacerItem *horizontalSpacer_3;
     QWidget *page_10;
-    QPushButton *pushButton_25;
-    QLabel *label_5;
-    QTextEdit *textEdit_3;
-    QLineEdit *lineEdit_7;
+    QPushButton *pushButton_BackAddFriend;
+    QLabel *label_AddFriend;
+    QTextEdit *textEdit_DisplayFriendsAddFriend;
+    QLineEdit *lineEdit_SearchFriendUsername;
     QPushButton *pushButton_26;
-    QLabel *label_8;
+    QLabel *label_FriendAdded;
 
     void setupUi(QMainWindow *MainMenuView)
     {
@@ -236,6 +236,7 @@ public:
         lineEdit_2 = new QLineEdit(page_4);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(320, 250, 113, 25));
+        lineEdit_2->setEchoMode(QLineEdit::PasswordEchoOnEdit);
         pushButton_11 = new QPushButton(page_4);
         pushButton_11->setObjectName(QString::fromUtf8("pushButton_11"));
         pushButton_11->setGeometry(QRect(330, 390, 89, 25));
@@ -877,25 +878,26 @@ public:
         stackedWidget->addWidget(page_9);
         page_10 = new QWidget();
         page_10->setObjectName(QString::fromUtf8("page_10"));
-        pushButton_25 = new QPushButton(page_10);
-        pushButton_25->setObjectName(QString::fromUtf8("pushButton_25"));
-        pushButton_25->setGeometry(QRect(370, 350, 80, 24));
-        label_5 = new QLabel(page_10);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(390, 140, 71, 16));
-        textEdit_3 = new QTextEdit(page_10);
-        textEdit_3->setObjectName(QString::fromUtf8("textEdit_3"));
-        textEdit_3->setGeometry(QRect(370, 170, 104, 70));
-        textEdit_3->setReadOnly(true);
-        lineEdit_7 = new QLineEdit(page_10);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
-        lineEdit_7->setGeometry(QRect(300, 260, 241, 24));
+        pushButton_BackAddFriend = new QPushButton(page_10);
+        pushButton_BackAddFriend->setObjectName(QString::fromUtf8("pushButton_BackAddFriend"));
+        pushButton_BackAddFriend->setGeometry(QRect(370, 350, 80, 24));
+        label_AddFriend = new QLabel(page_10);
+        label_AddFriend->setObjectName(QString::fromUtf8("label_AddFriend"));
+        label_AddFriend->setGeometry(QRect(390, 140, 71, 16));
+        textEdit_DisplayFriendsAddFriend = new QTextEdit(page_10);
+        textEdit_DisplayFriendsAddFriend->setObjectName(QString::fromUtf8("textEdit_DisplayFriendsAddFriend"));
+        textEdit_DisplayFriendsAddFriend->setGeometry(QRect(370, 170, 104, 70));
+        textEdit_DisplayFriendsAddFriend->setReadOnly(true);
+        lineEdit_SearchFriendUsername = new QLineEdit(page_10);
+        lineEdit_SearchFriendUsername->setObjectName(QString::fromUtf8("lineEdit_SearchFriendUsername"));
+        lineEdit_SearchFriendUsername->setGeometry(QRect(300, 260, 241, 24));
         pushButton_26 = new QPushButton(page_10);
         pushButton_26->setObjectName(QString::fromUtf8("pushButton_26"));
         pushButton_26->setGeometry(QRect(370, 310, 80, 24));
-        label_8 = new QLabel(page_10);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(337, 59, 221, 71));
+        label_FriendAdded = new QLabel(page_10);
+        label_FriendAdded->setObjectName(QString::fromUtf8("label_FriendAdded"));
+        label_FriendAdded->setGeometry(QRect(300, 60, 221, 71));
+        label_FriendAdded->setAlignment(Qt::AlignCenter);
         stackedWidget->addWidget(page_10);
 
         horizontalLayout->addWidget(stackedWidget);
@@ -907,7 +909,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(8);
+        stackedWidget->setCurrentIndex(9);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -955,11 +957,11 @@ public:
         pushButton_53->setText(QCoreApplication::translate("MainMenuView", "Send", nullptr));
         pushButton_20->setText(QCoreApplication::translate("MainMenuView", "Quit Game", nullptr));
         label_41->setText(QCoreApplication::translate("MainMenuView", "Game", nullptr));
-        pushButton_25->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
-        label_5->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
-        lineEdit_7->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Search friend username", nullptr));
+        pushButton_BackAddFriend->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
+        label_AddFriend->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
+        lineEdit_SearchFriendUsername->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Search friend username", nullptr));
         pushButton_26->setText(QCoreApplication::translate("MainMenuView", "Add", nullptr));
-        label_8->setText(QString());
+        label_FriendAdded->setText(QString());
     } // retranslateUi
 
 };
