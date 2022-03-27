@@ -84,11 +84,11 @@ public:
     QTextEdit *textEdit;
     QPushButton *pushButton_14;
     QWidget *page_6;
-    QComboBox *comboBox;
-    QLabel *label_3;
-    QPushButton *pushButton_15;
-    QPushButton *pushButton_16;
-    QPushButton *pushButton_24;
+    QComboBox *comboBox_ChooseFriend;
+    QLabel *label_ChooseFriend;
+    QPushButton *pushButton_Chat;
+    QPushButton *pushButton_BackChooseFriend;
+    QPushButton *pushButton_AddFriend;
     QWidget *page_7;
     QTextEdit *textEdit_2;
     QLineEdit *lineEdit_6;
@@ -759,21 +759,21 @@ public:
         stackedWidget->addWidget(page_2);
         page_6 = new QWidget();
         page_6->setObjectName(QString::fromUtf8("page_6"));
-        comboBox = new QComboBox(page_6);
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(330, 200, 86, 25));
-        label_3 = new QLabel(page_6);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(330, 150, 111, 17));
-        pushButton_15 = new QPushButton(page_6);
-        pushButton_15->setObjectName(QString::fromUtf8("pushButton_15"));
-        pushButton_15->setGeometry(QRect(330, 300, 89, 25));
-        pushButton_16 = new QPushButton(page_6);
-        pushButton_16->setObjectName(QString::fromUtf8("pushButton_16"));
-        pushButton_16->setGeometry(QRect(330, 340, 89, 25));
-        pushButton_24 = new QPushButton(page_6);
-        pushButton_24->setObjectName(QString::fromUtf8("pushButton_24"));
-        pushButton_24->setGeometry(QRect(330, 250, 91, 24));
+        comboBox_ChooseFriend = new QComboBox(page_6);
+        comboBox_ChooseFriend->setObjectName(QString::fromUtf8("comboBox_ChooseFriend"));
+        comboBox_ChooseFriend->setGeometry(QRect(330, 200, 86, 25));
+        label_ChooseFriend = new QLabel(page_6);
+        label_ChooseFriend->setObjectName(QString::fromUtf8("label_ChooseFriend"));
+        label_ChooseFriend->setGeometry(QRect(330, 150, 111, 17));
+        pushButton_Chat = new QPushButton(page_6);
+        pushButton_Chat->setObjectName(QString::fromUtf8("pushButton_Chat"));
+        pushButton_Chat->setGeometry(QRect(330, 300, 89, 25));
+        pushButton_BackChooseFriend = new QPushButton(page_6);
+        pushButton_BackChooseFriend->setObjectName(QString::fromUtf8("pushButton_BackChooseFriend"));
+        pushButton_BackChooseFriend->setGeometry(QRect(330, 340, 89, 25));
+        pushButton_AddFriend = new QPushButton(page_6);
+        pushButton_AddFriend->setObjectName(QString::fromUtf8("pushButton_AddFriend"));
+        pushButton_AddFriend->setGeometry(QRect(330, 250, 91, 24));
         stackedWidget->addWidget(page_6);
         page_7 = new QWidget();
         page_7->setObjectName(QString::fromUtf8("page_7"));
@@ -909,7 +909,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(9);
+        stackedWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -946,10 +946,10 @@ public:
         pushButton->setText(QCoreApplication::translate("MainMenuView", "Play", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         pushButton_14->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
-        label_3->setText(QCoreApplication::translate("MainMenuView", "Choose Friend", nullptr));
-        pushButton_15->setText(QCoreApplication::translate("MainMenuView", "Chat", nullptr));
-        pushButton_16->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
-        pushButton_24->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
+        label_ChooseFriend->setText(QCoreApplication::translate("MainMenuView", "Choose Friend", nullptr));
+        pushButton_Chat->setText(QCoreApplication::translate("MainMenuView", "Chat", nullptr));
+        pushButton_BackChooseFriend->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
+        pushButton_AddFriend->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
         pushButton_17->setText(QCoreApplication::translate("MainMenuView", "Send", nullptr));
         pushButton_18->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_4->setText(QCoreApplication::translate("MainMenuView", "The Help", nullptr));

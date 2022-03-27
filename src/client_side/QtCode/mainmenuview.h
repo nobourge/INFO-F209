@@ -72,9 +72,16 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_BackAddFriend_clicked();
 
+  void on_pushButton_AddFriend_clicked();
+
+  void on_pushButton_Chat_clicked();
+
+  void on_pushButton_BackChooseFriend_clicked();
+
 private:
   Ui::MainMenuView *ui;
   std::vector<UserClient> friends_ = {};
+
   std::optional<UserClient> selected_friend_ = {};
   //std::string chattext="";
   std::string chattext;

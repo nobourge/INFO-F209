@@ -146,13 +146,10 @@ void MainMenuView::on_pushButton_14_clicked() {
 }
 
 void MainMenuView::on_pushButton_16_clicked() {
-  ui->stackedWidget->setCurrentIndex(3);
 }
 
 void MainMenuView::on_pushButton_15_clicked() {
-  selected_friend_ = friends_[ui->comboBox->currentIndex()];
-  updateChatRoomMessagesListView();
-  ui->stackedWidget->setCurrentIndex(6);
+
 }
 
 void MainMenuView::on_pushButton_2_clicked() {
@@ -166,7 +163,7 @@ void MainMenuView::on_pushButton_2_clicked() {
   }
 
   for (auto &user : friends_) {
-    ui->comboBox->addItem(QString::fromStdString(user.GetUsername().GetValue()));
+    ui->comboBox_ChooseFriend->addItem(QString::fromStdString(user.GetUsername().GetValue()));
     friends.push_back(user.GetUsername().GetValue());
   }
 
@@ -254,7 +251,6 @@ void MainMenuView::on_pushButton_3_clicked() {
 }
 
 void MainMenuView::on_pushButton_24_clicked() {
-  ui->stackedWidget->setCurrentIndex(9);
 
 }
 
@@ -442,7 +438,28 @@ void MainMenuView::on_lineEdit_SearchFriendUsername_textChanged(const QString &a
 
 void MainMenuView::on_pushButton_BackAddFriend_clicked()
 {
+
     ui->stackedWidget->setCurrentIndex(5);
 
+}
+
+
+void MainMenuView::on_pushButton_AddFriend_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(9);
+}
+
+
+void MainMenuView::on_pushButton_Chat_clicked()
+{
+    selected_friend_ = friends_[ui->comboBox_ChooseFriend->currentIndex()];
+    updateChatRoomMessagesListView();
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+
+void MainMenuView::on_pushButton_BackChooseFriend_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
 }
 
