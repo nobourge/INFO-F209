@@ -29,12 +29,25 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>8</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="page_3">
-         <layout class="QGridLayout" name="gridLayout_6">
-          <item row="0" column="2" rowspan="2">
-           <layout class="QVBoxLayout" name="verticalLayout">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0" colspan="3">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
             <item>
              <widget class="QLabel" name="label_Welcome">
               <property name="text">
@@ -43,158 +56,196 @@
              </widget>
             </item>
             <item>
-             <spacer name="verticalSpacer_2">
+             <spacer name="horizontalSpacer_7">
               <property name="orientation">
-               <enum>Qt::Vertical</enum>
+               <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>20</width>
-                <height>40</height>
+                <width>40</width>
+                <height>20</height>
                </size>
               </property>
              </spacer>
             </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>94</width>
+              <height>143</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>333</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout">
             <item>
-             <widget class="QPushButton" name="pushButton_9">
+             <widget class="QPushButton" name="pushButton_LoginWelcome">
               <property name="text">
                <string>Login</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_6">
+             <widget class="QPushButton" name="pushButton_RegisterWelcome">
               <property name="text">
                <string>Register</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_8">
-              <property name="text">
-               <string>Quit</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_27">
+             <widget class="QPushButton" name="pushButton_PlayShortcutWelcome">
               <property name="text">
                <string>play shortcut</string>
               </property>
              </widget>
             </item>
+           </layout>
+          </item>
+          <item row="2" column="2">
+           <spacer name="horizontalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>332</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="1">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>94</width>
+              <height>142</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="0" colspan="3">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <spacer name="verticalSpacer">
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <spacer name="verticalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_QuitWelcome">
+                <property name="text">
+                 <string>Quit</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_8">
               <property name="orientation">
-               <enum>Qt::Vertical</enum>
+               <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>20</width>
-                <height>40</height>
+                <width>40</width>
+                <height>20</height>
                </size>
               </property>
              </spacer>
             </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <spacer name="verticalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_Theme">
+                <property name="text">
+                 <string>Theme</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_GrayTheme">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(186, 189, 182);</string>
+                </property>
+                <property name="text">
+                 <string>Grey</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_RedTheme">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(164, 0, 0);</string>
+                </property>
+                <property name="text">
+                 <string>Red</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_WhiteTheme">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="text">
+                 <string>White</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
            </layout>
-          </item>
-          <item row="1" column="0">
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <item>
-             <spacer name="verticalSpacer_7">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_Theme">
-              <property name="text">
-               <string>Theme</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_21">
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(186, 189, 182);</string>
-              </property>
-              <property name="text">
-               <string>Grey</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_22">
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(164, 0, 0);</string>
-              </property>
-              <property name="text">
-               <string>Red</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_23">
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);</string>
-              </property>
-              <property name="text">
-               <string>White</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="0" column="4">
-           <spacer name="horizontalSpacer_7">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="1">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="0" colspan="2">
-           <spacer name="horizontalSpacer_8">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
          </layout>
         </widget>
         <widget class="QWidget" name="page_4">
-         <widget class="QPushButton" name="pushButton_10">
+         <widget class="QPushButton" name="pushButton_EnterLogin">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -207,7 +258,7 @@
            <string>Enter</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="lineEdit_PseudoLogin">
           <property name="geometry">
            <rect>
             <x>320</x>
@@ -220,7 +271,7 @@
            <string>Pseudo</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_2">
+         <widget class="QLineEdit" name="lineEdit_PasswordLogin">
           <property name="geometry">
            <rect>
             <x>320</x>
@@ -229,11 +280,14 @@
             <height>25</height>
            </rect>
           </property>
+          <property name="echoMode">
+           <enum>QLineEdit::PasswordEchoOnEdit</enum>
+          </property>
           <property name="placeholderText">
            <string>Mot de passe</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_11">
+         <widget class="QPushButton" name="pushButton_BackLogin">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -246,7 +300,7 @@
            <string>Back</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="label_Login">
           <property name="geometry">
            <rect>
             <x>340</x>
@@ -259,7 +313,7 @@
            <string>Login</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_6">
+         <widget class="QLabel" name="label_LoginDone">
           <property name="geometry">
            <rect>
             <x>290</x>
@@ -274,7 +328,7 @@
          </widget>
         </widget>
         <widget class="QWidget" name="page_5">
-         <widget class="QLabel" name="label_2">
+         <widget class="QLabel" name="label_Register">
           <property name="geometry">
            <rect>
             <x>360</x>
@@ -287,7 +341,7 @@
            <string>Register</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_12">
+         <widget class="QPushButton" name="pushButton_Register">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -300,7 +354,7 @@
            <string>Register</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_3">
+         <widget class="QLineEdit" name="lineEdit_PseudoRegistration">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -313,7 +367,7 @@
            <string>Pseudo</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_4">
+         <widget class="QLineEdit" name="lineEdit_PasswordRegistration">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -326,7 +380,7 @@
            <string>Mot de passe</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_5">
+         <widget class="QLineEdit" name="lineEdit_PasswordVerificationRegistration">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -339,7 +393,7 @@
            <string>Confirmer</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_13">
+         <widget class="QPushButton" name="pushButton_BackRegister">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -352,7 +406,7 @@
            <string>Back</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_7">
+         <widget class="QLabel" name="label_RegistrationDone">
           <property name="geometry">
            <rect>
             <x>310</x>
@@ -413,7 +467,7 @@
           <item row="1" column="1">
            <layout class="QGridLayout" name="gridLayout_2">
             <item row="1" column="1">
-             <widget class="QPushButton" name="pushButton_2">
+             <widget class="QPushButton" name="pushButton_FriendListMainMenu">
               <property name="palette">
                <palette>
                 <active>
@@ -1007,7 +1061,7 @@
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QPushButton" name="pushButton_4">
+             <widget class="QPushButton" name="pushButton_RankingMainMenu">
               <property name="palette">
                <palette>
                 <active>
@@ -1595,7 +1649,7 @@
              </widget>
             </item>
             <item row="3" column="1">
-             <widget class="QPushButton" name="pushButton_3">
+             <widget class="QPushButton" name="pushButton_HelpMainMenu">
               <property name="palette">
                <palette>
                 <active>
@@ -2183,7 +2237,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="pushButton_PlayMainMenu">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -2782,7 +2836,7 @@ border-image: null;
              </widget>
             </item>
             <item row="4" column="1">
-             <widget class="QPushButton" name="pushButton_5">
+             <widget class="QPushButton" name="pushButton_BackMainMenu">
               <property name="palette">
                <palette>
                 <active>
@@ -3387,7 +3441,7 @@ border-image: null;
          </layout>
         </widget>
         <widget class="QWidget" name="page_2">
-         <widget class="QTextEdit" name="textEdit">
+         <widget class="QTextEdit" name="textEdit_RankingDisplay">
           <property name="geometry">
            <rect>
             <x>320</x>
@@ -3400,7 +3454,7 @@ border-image: null;
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_14">
+         <widget class="QPushButton" name="pushButton_BackRanking">
           <property name="geometry">
            <rect>
             <x>350</x>
@@ -3415,7 +3469,7 @@ border-image: null;
          </widget>
         </widget>
         <widget class="QWidget" name="page_6">
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="comboBox_ChooseFriend">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3425,7 +3479,7 @@ border-image: null;
            </rect>
           </property>
          </widget>
-         <widget class="QLabel" name="label_3">
+         <widget class="QLabel" name="label_ChooseFriend">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3438,7 +3492,7 @@ border-image: null;
            <string>Choose Friend</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_15">
+         <widget class="QPushButton" name="pushButton_Chat">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3451,7 +3505,7 @@ border-image: null;
            <string>Chat</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_16">
+         <widget class="QPushButton" name="pushButton_BackChooseFriend">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3464,7 +3518,7 @@ border-image: null;
            <string>Back</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_24">
+         <widget class="QPushButton" name="pushButton_AddFriend">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3479,7 +3533,7 @@ border-image: null;
          </widget>
         </widget>
         <widget class="QWidget" name="page_7">
-         <widget class="QTextEdit" name="textEdit_2">
+         <widget class="QTextEdit" name="textEdit_Conversation">
           <property name="geometry">
            <rect>
             <x>300</x>
@@ -3492,7 +3546,7 @@ border-image: null;
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_6">
+         <widget class="QLineEdit" name="lineEdit_InputNewMessage">
           <property name="geometry">
            <rect>
             <x>300</x>
@@ -3502,7 +3556,7 @@ border-image: null;
            </rect>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_17">
+         <widget class="QPushButton" name="pushButton_SendButtonChat">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3515,7 +3569,7 @@ border-image: null;
            <string>Send</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_18">
+         <widget class="QPushButton" name="pushButton_BackChat">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3530,7 +3584,7 @@ border-image: null;
          </widget>
         </widget>
         <widget class="QWidget" name="page_8">
-         <widget class="QLabel" name="label_4">
+         <widget class="QLabel" name="label_Help">
           <property name="geometry">
            <rect>
             <x>300</x>
@@ -3540,10 +3594,10 @@ border-image: null;
            </rect>
           </property>
           <property name="text">
-           <string>The Help</string>
+           <string>Help</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_19">
+         <widget class="QPushButton" name="pushButton_BackHelp">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3572,7 +3626,7 @@ border-image: null;
              <widget class="QLineEdit" name="lineEdit_15"/>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_53">
+             <widget class="QPushButton" name="pushButton_game_chat_send">
               <property name="text">
                <string>Send</string>
               </property>
@@ -3616,7 +3670,7 @@ border-image: null;
           <item row="3" column="0" colspan="2">
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <item>
-             <widget class="QPushButton" name="pushButton_20">
+             <widget class="QPushButton" name="pushButton_game_quit">
               <property name="text">
                <string>Quit Game</string>
               </property>
@@ -3653,7 +3707,7 @@ border-image: null;
              </spacer>
             </item>
             <item>
-             <widget class="QLabel" name="label_4">
+             <widget class="QLabel" name="label_Game">
               <property name="text">
                <string>Game</string>
               </property>
@@ -3677,7 +3731,7 @@ border-image: null;
          </layout>
         </widget>
         <widget class="QWidget" name="page_10">
-         <widget class="QPushButton" name="pushButton_25">
+         <widget class="QPushButton" name="pushButton_BackAddFriend">
           <property name="geometry">
            <rect>
             <x>370</x>
@@ -3690,7 +3744,7 @@ border-image: null;
            <string>Back</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_5">
+         <widget class="QLabel" name="label_AddFriend">
           <property name="geometry">
            <rect>
             <x>390</x>
@@ -3703,20 +3757,33 @@ border-image: null;
            <string>Add Friend</string>
           </property>
          </widget>
-         <widget class="QTextEdit" name="textEdit_3">
+         <widget class="QTextEdit" name="textEdit_DisplayFriendsAddFriend">
           <property name="geometry">
            <rect>
-            <x>370</x>
+            <x>333</x>
             <y>170</y>
-            <width>104</width>
+            <width>161</width>
             <height>70</height>
            </rect>
           </property>
           <property name="readOnly">
            <bool>true</bool>
           </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.AppleSystemUIFont'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+          </property>
+          <property name="placeholderText">
+           <string>Friends Usernames</string>
+          </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_7">
+         <widget class="QLineEdit" name="lineEdit_SearchFriendUsername">
           <property name="geometry">
            <rect>
             <x>300</x>
@@ -3729,7 +3796,7 @@ border-image: null;
            <string>Search friend username</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_26">
+         <widget class="QPushButton" name="pushButton_AddAddFriend">
           <property name="geometry">
            <rect>
             <x>370</x>
@@ -3742,17 +3809,20 @@ border-image: null;
            <string>Add</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_8">
+         <widget class="QLabel" name="label_FriendAdded">
           <property name="geometry">
            <rect>
-            <x>337</x>
-            <y>59</y>
+            <x>300</x>
+            <y>60</y>
             <width>221</width>
             <height>71</height>
            </rect>
           </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </widget>

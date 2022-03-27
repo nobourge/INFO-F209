@@ -78,6 +78,8 @@ build CMakeFiles/QuoridorServer.dir/src/server_side/main.cpp.o: CXX_COMPILER__Qu
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/board.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/board.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -85,6 +87,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/board.cpp.o: CXX_COMPILER_
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/cell.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/cell.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -92,6 +96,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/cell.cpp.o: CXX_COMPILER__
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/database.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/database.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -99,6 +105,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/database.cpp.o: CXX_COMPIL
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/Game.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/Game.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -106,6 +114,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/Game.cpp.o: CXX_COMPILER__
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/ia.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/ia.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -113,6 +123,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/ia.cpp.o: CXX_COMPILER__Qu
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/input.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/input.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -120,6 +132,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/input.cpp.o: CXX_COMPILER_
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/Player.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/Player.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -127,6 +141,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/Player.cpp.o: CXX_COMPILER
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/position.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/position.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -134,6 +150,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/position.cpp.o: CXX_COMPIL
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/translator.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/translator.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -141,6 +159,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/translator.cpp.o: CXX_COMP
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/user/abstract_validator.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/user/abstract_validator.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -148,6 +168,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/user/abstract_validator.cp
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/user/message.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/user/message.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -155,6 +177,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/user/message.cpp.o: CXX_CO
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/user/password.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/user/password.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -162,6 +186,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/user/password.cpp.o: CXX_C
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/user/user.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/user/user.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -169,6 +195,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/user/user.cpp.o: CXX_COMPI
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/user/username.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/user/username.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -176,6 +204,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/user/username.cpp.o: CXX_C
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models/user
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_quoridor_api.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/server_side/view_controllers/api/base_quoridor_api.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -183,6 +213,8 @@ build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/base_qu
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_api.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/server_side/view_controllers/api/v1/v1_api.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -190,6 +222,8 @@ build CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1/v1_a
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/server_side/view_controllers/api/v1
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 build CMakeFiles/QuoridorServer.dir/src/common/models/user_server.cpp.o: CXX_COMPILER__QuoridorServer_Debug /home/noe/Github/INFO-F209/src/common/models/user_server.cpp || cmake_object_order_depends_target_QuoridorServer
   DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_REGEX_DYN_LINK
@@ -197,6 +231,8 @@ build CMakeFiles/QuoridorServer.dir/src/common/models/user_server.cpp.o: CXX_COM
   FLAGS = -pthread -g -std=gnu++2a
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   OBJECT_FILE_DIR = CMakeFiles/QuoridorServer.dir/src/common/models
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
+  TARGET_PDB = QuoridorServer.pdb
 
 
 # =============================================================================
@@ -212,8 +248,9 @@ build QuoridorServer: CXX_EXECUTABLE_LINKER__QuoridorServer_Debug CMakeFiles/Quo
   OBJECT_DIR = CMakeFiles/QuoridorServer.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/QuoridorServer.dir/
   TARGET_FILE = QuoridorServer
-  TARGET_PDB = QuoridorServer.dbg
+  TARGET_PDB = QuoridorServer.pdb
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -278,495 +315,607 @@ build src/client_side/edit_cache: phony src/client_side/CMakeFiles/edit_cache.ut
 #############################################
 # Order-only phony target for ClientSide
 
-build cmake_object_order_depends_target_ClientSide: phony || src/client_side/ClientSide_autogen src/client_side/ClientSide_autogen/PJW37UPRAE/qrc_ressource.cpp src/client_side/ClientSide_autogen/mocs_compilation.cpp src/client_side/ClientSide_autogen/timestamp src/client_side/ClientSide_autogen_timestamp_deps
+build cmake_object_order_depends_target_ClientSide: phony || src/client_side/ClientSide_autogen src/client_side/ClientSide_autogen/mocs_compilation.cpp src/client_side/ClientSide_autogen/timestamp src/client_side/ClientSide_autogen_timestamp_deps
 
 build src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen/mocs_compilation.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen/mocs_compilation.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/main.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/models/user_client.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/models/api_wrapper.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/models/requests.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_abstract.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_abstract.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_abstract.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_searchable_list.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_menu_abstract_searchable_list.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_searchable_list.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_list.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_menu_abstract_list.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_list.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_menu_abstract.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_authed.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_menu_abstract_authed.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_authed.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_ranking.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_ranking.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_ranking.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_home_menu.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_home_menu.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_home_menu.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_new_game.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_menu_new_game.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_new_game.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_login.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_login.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_login.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_help.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_help.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_help.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_create_account.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_create_account.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_create_account.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_chat_room.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_chat_room.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_chat_room.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_welcome.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_welcome.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_welcome.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_game.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_game.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_game.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_friend_list.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_friend_list.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_friend_list.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_find_friend.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_find_friend.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_find_friend.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/find_new_friend_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/friend_list_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/game_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/chat_room_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/start_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/create_account_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/new_game_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/new_game_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/new_game_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/abstract_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/ranking_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/login_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/help_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/home_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/views/abstract_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/views/button.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/views/label.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/views/menu_button_item.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/views/first_responder.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/views/text_field.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/database.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/database.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/database.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/user/user.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/user/message.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/user/username.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/user/abstract_validator.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/board.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/board.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/board.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/cell.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/cell.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/cell.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Game.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/Game.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Game.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/ia.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/ia.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/ia.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/input.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/input.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/input.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Player.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/Player.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Player.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/position.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/position.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/position.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/__/common/models/translator.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/common/models/translator.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/__/common/models/translator.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/__/common/models
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_or_create_game.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_menu_join_or_create_game.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_or_create_game.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_or_create_game_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/join_or_create_game_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_or_create_game_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_game.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/view_controllers/view_controller_menu_join_game.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_game.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/view_controllers
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_game_menu_view.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/views/menu_views/join_game_menu_view.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_game_menu_view.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/views/menu_views
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/QtCode/mainmenuview.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/QtCode/mainmenuview.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/QtCode/mainmenuview.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/QtCode
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/QtCode/game.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/QtCode/game.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/QtCode/game.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/QtCode
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/QtCode/canvas.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/QtCode/canvas.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/QtCode/canvas.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/QtCode
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 build src/client_side/CMakeFiles/ClientSide.dir/QtCode/board_scene.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/src/client_side/QtCode/board_scene.cpp || cmake_object_order_depends_target_ClientSide
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/QtCode/board_scene.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
+  FLAGS = -g -fPIC -pthread -std=gnu++2a
   INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/QtCode
-
-build src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen/PJW37UPRAE/qrc_ressource.cpp.o: CXX_COMPILER__ClientSide_Debug /home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/PJW37UPRAE/qrc_ressource.cpp || cmake_object_order_depends_target_ClientSide
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen/PJW37UPRAE/qrc_ressource.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
-  INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
-  OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
-  OBJECT_FILE_DIR = src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen/PJW37UPRAE
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 
 # =============================================================================
@@ -776,14 +925,15 @@ build src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen/PJW37UPRAE/qr
 #############################################
 # Link the executable src/client_side/ClientSide
 
-build src/client_side/ClientSide: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen/mocs_compilation.cpp.o src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_abstract.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_searchable_list.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_list.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_authed.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_ranking.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_home_menu.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_new_game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_login.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_help.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_create_account.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_chat_room.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_welcome.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_friend_list.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_find_friend.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/new_game_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/database.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/board.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/cell.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/ia.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/input.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Player.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/position.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/translator.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_or_create_game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_or_create_game_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_game_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/QtCode/mainmenuview.cpp.o src/client_side/CMakeFiles/ClientSide.dir/QtCode/game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/QtCode/canvas.cpp.o src/client_side/CMakeFiles/ClientSide.dir/QtCode/board_scene.cpp.o src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen/PJW37UPRAE/qrc_ressource.cpp.o | /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /usr/lib/x86_64-linux-gnu/libsqlite3.so /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4 /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || src/client_side/ClientSide_autogen src/client_side/ClientSide_autogen_timestamp_deps
+build src/client_side/ClientSide: CXX_EXECUTABLE_LINKER__ClientSide_Debug src/client_side/CMakeFiles/ClientSide.dir/ClientSide_autogen/mocs_compilation.cpp.o src/client_side/CMakeFiles/ClientSide.dir/main.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/user_client.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/api_wrapper.cpp.o src/client_side/CMakeFiles/ClientSide.dir/models/requests.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_abstract.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_searchable_list.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_list.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_abstract_authed.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_ranking.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_home_menu.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_new_game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_login.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_help.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_create_account.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_chat_room.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_welcome.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_friend_list.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_find_friend.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/find_new_friend_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/friend_list_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/game_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/chat_room_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/start_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/create_account_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/new_game_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/abstract_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/ranking_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/login_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/help_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/home_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/abstract_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/button.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/label.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/menu_button_item.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/first_responder.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/views/text_field.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/database.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/user.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/message.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/username.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/user/abstract_validator.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/board.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/cell.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/ia.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/input.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/Player.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/position.cpp.o src/client_side/CMakeFiles/ClientSide.dir/__/common/models/translator.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_or_create_game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_or_create_game_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/view_controllers/view_controller_menu_join_game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/views/menu_views/join_game_menu_view.cpp.o src/client_side/CMakeFiles/ClientSide.dir/QtCode/mainmenuview.cpp.o src/client_side/CMakeFiles/ClientSide.dir/QtCode/game.cpp.o src/client_side/CMakeFiles/ClientSide.dir/QtCode/canvas.cpp.o src/client_side/CMakeFiles/ClientSide.dir/QtCode/board_scene.cpp.o | /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /usr/lib/x86_64-linux-gnu/libsqlite3.so /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4 /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || src/client_side/ClientSide_autogen src/client_side/ClientSide_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/noe/Qt/6.2.4/gcc_64/lib  -lncurses  -lcurl  -lpthread  /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4  /usr/lib/x86_64-linux-gnu/libsqlite3.so  /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4  /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4  -pthread  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so
   OBJECT_DIR = src/client_side/CMakeFiles/ClientSide.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = src/client_side/CMakeFiles/ClientSide.dir/
   TARGET_FILE = src/client_side/ClientSide
-  TARGET_PDB = ClientSide.dbg
+  TARGET_PDB = src/client_side/ClientSide.pdb
 
 
 #############################################
@@ -795,38 +945,29 @@ build src/client_side/ClientSide_autogen_timestamp_deps: phony src/client_side/C
 #############################################
 # Utility command for ClientSide_autogen
 
-build src/client_side/ClientSide_autogen: phony src/client_side/CMakeFiles/ClientSide_autogen src/src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h src/client_side/ClientSide_autogen/timestamp src/client_side/ClientSide_autogen/mocs_compilation.cpp src/client_side/ClientSide_autogen_timestamp_deps
+build src/client_side/ClientSide_autogen: phony src/client_side/CMakeFiles/ClientSide_autogen src/client_side/ClientSide_autogen/timestamp src/client_side/ClientSide_autogen/mocs_compilation.cpp src/client_side/ClientSide_autogen_timestamp_deps
 
 
 #############################################
 # Custom command for src/client_side/ClientSide_autogen/timestamp
 
-build src/client_side/ClientSide_autogen/timestamp src/client_side/ClientSide_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}src/client_side/ClientSide_autogen/timestamp ${cmake_ninja_workdir}src/client_side/ClientSide_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /home/noe/Qt/6.2.4/gcc_64/./libexec/moc /home/noe/Qt/6.2.4/gcc_64/./libexec/uic || src/client_side/ClientSide_autogen_timestamp_deps
+build src/client_side/ClientSide_autogen/timestamp src/client_side/ClientSide_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}src/client_side/ClientSide_autogen/timestamp ${cmake_ninja_workdir}src/client_side/ClientSide_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /home/noe/Qt/6.2.4/gcc_64/./libexec/moc || src/client_side/ClientSide_autogen_timestamp_deps
   COMMAND = cd /home/noe/Github/INFO-F209/cmake-build-debug/src/client_side && /snap/clion/184/bin/cmake/linux/bin/cmake -E cmake_autogen /home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/CMakeFiles/ClientSide_autogen.dir/AutogenInfo.json Debug && /snap/clion/184/bin/cmake/linux/bin/cmake -E touch /home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/timestamp && /snap/clion/184/bin/cmake/linux/bin/cmake -E cmake_transform_depfile Ninja gccdepfile /home/noe/Github/INFO-F209 /home/noe/Github/INFO-F209/src/client_side /home/noe/Github/INFO-F209/cmake-build-debug /home/noe/Github/INFO-F209/cmake-build-debug/src/client_side /home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/ClientSide_autogen/deps /home/noe/Github/INFO-F209/cmake-build-debug/CMakeFiles/d/1558d4957f1850aeaa9e938551d59f59ec1bad5fb1bacb969f2117774cc8d39d.d
-  DESC = Automatic MOC and UIC for target ClientSide
+  DESC = Automatic MOC for target ClientSide
   depfile = /home/noe/Github/INFO-F209/cmake-build-debug/CMakeFiles/d/1558d4957f1850aeaa9e938551d59f59ec1bad5fb1bacb969f2117774cc8d39d.d
-  restat = 1
-
-
-#############################################
-# Custom command for src/client_side/ClientSide_autogen/PJW37UPRAE/qrc_ressource.cpp
-
-build src/client_side/ClientSide_autogen/PJW37UPRAE/qrc_ressource.cpp | ${cmake_ninja_workdir}src/client_side/ClientSide_autogen/PJW37UPRAE/qrc_ressource.cpp: CUSTOM_COMMAND ../src/client_side/QtCode/ressource.qrc src/client_side/CMakeFiles/ClientSide_autogen.dir/AutoRcc_ressource_PJW37UPRAE_Info.json ../src/client_side/QtCode/Main.jpg /home/noe/Qt/6.2.4/gcc_64/./libexec/rcc || src/client_side/ClientSide_autogen src/client_side/ClientSide_autogen_timestamp_deps
-  COMMAND = cd /home/noe/Github/INFO-F209/cmake-build-debug/src/client_side && /snap/clion/184/bin/cmake/linux/bin/cmake -E cmake_autorcc /home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/CMakeFiles/ClientSide_autogen.dir/AutoRcc_ressource_PJW37UPRAE_Info.json Debug
-  DESC = Automatic RCC for QtCode/ressource.qrc
   restat = 1
 
 
 #############################################
 # Phony custom command for src/client_side/CMakeFiles/ClientSide_autogen_timestamp_deps
 
-build src/client_side/CMakeFiles/ClientSide_autogen_timestamp_deps | ${cmake_ninja_workdir}src/client_side/CMakeFiles/ClientSide_autogen_timestamp_deps: phony /home/noe/Qt/6.2.4/gcc_64/./libexec/moc /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /home/noe/Qt/6.2.4/gcc_64/./libexec/uic /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4
+build src/client_side/CMakeFiles/ClientSide_autogen_timestamp_deps | ${cmake_ninja_workdir}src/client_side/CMakeFiles/ClientSide_autogen_timestamp_deps: phony /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4 /home/noe/Qt/6.2.4/gcc_64/./libexec/moc /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4
 
 
 #############################################
 # Phony custom command for src/client_side/CMakeFiles/ClientSide_autogen
 
-build src/client_side/CMakeFiles/ClientSide_autogen src/src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h | ${cmake_ninja_workdir}src/client_side/CMakeFiles/ClientSide_autogen ${cmake_ninja_workdir}src/src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h: phony src/client_side/ClientSide_autogen/timestamp || src/client_side/ClientSide_autogen_timestamp_deps
+build src/client_side/CMakeFiles/ClientSide_autogen | ${cmake_ninja_workdir}src/client_side/CMakeFiles/ClientSide_autogen: phony src/client_side/ClientSide_autogen/timestamp || src/client_side/ClientSide_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
@@ -868,14 +1009,14 @@ build src/client_side/all: phony src/client_side/ClientSide
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt ../src/client_side/QtCode/ressource.qrc /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/3rdparty/kwin/FindXKB.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapAtomic.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapOpenGL.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Config.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Targets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtFeature.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtFeatureCommon.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindDependencyMacro.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseArguments.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXCompilerFlag.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckLibraryExists.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FeatureSummary.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenGL.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindSQLite3.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindThreads.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindVulkan.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckCompilerFlag.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/MacroAddFileDependencies.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-static.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/3rdparty/kwin/FindXKB.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapAtomic.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapOpenGL.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Config.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Targets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtFeature.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtFeatureCommon.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompilerABI.c /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindDependencyMacro.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseArguments.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystem.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXCompilerFlag.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckForPthreads.c /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.c.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckLibraryExists.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FeatureSummary.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenGL.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindSQLite3.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindThreads.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindVulkan.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckCompilerFlag.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/MacroAddFileDependencies.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-static.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt ../src/client_side/QtCode/ressource.qrc /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/3rdparty/kwin/FindXKB.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapAtomic.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapOpenGL.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Config.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Targets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtFeature.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtFeatureCommon.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindDependencyMacro.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseArguments.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXCompilerFlag.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckLibraryExists.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FeatureSummary.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenGL.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindSQLite3.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindThreads.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindVulkan.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckCompilerFlag.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/MacroAddFileDependencies.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-static.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../src/CMakeLists.txt ../src/client_side/CMakeLists.txt /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/3rdparty/kwin/FindXKB.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapAtomic.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapOpenGL.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Config.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6Targets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtFeature.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtFeatureCommon.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBus/Qt6DBusVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake /home/noe/Qt/6.2.4/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompilerABI.c /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindDependencyMacro.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseArguments.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystem.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXCompilerFlag.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckForPthreads.c /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.c.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckIncludeFile.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CheckLibraryExists.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FeatureSummary.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindBoost.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenGL.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindOpenSSL.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPackageMessage.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindPkgConfig.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindSQLite3.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindThreads.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/FindVulkan.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckCompilerFlag.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/MacroAddFileDependencies.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/boost_regex-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_regex-1.71.0/libboost_regex-variant-static.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################
