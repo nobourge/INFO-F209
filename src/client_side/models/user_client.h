@@ -14,7 +14,7 @@ public:
   UserClient(const UserClient &) = default;
   UserClient &operator=(const UserClient &) = default;
   UserClient(UserClient &&) = default;
-
+  UserClient(const Username &username);
   explicit UserClient(const crow::json::rvalue &json);
   const std::vector<UserClient> &GetFriends() const;
 
@@ -25,3 +25,4 @@ private:
 };
 
 #endif // QUORIDOR_SRC_CLIENT_SIDE_MODELS_USER_CLIENT_H_
+

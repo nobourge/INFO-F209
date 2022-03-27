@@ -34,6 +34,7 @@ public:
 
   // general purpose
   static std::variant<std::vector<UserClient>, ApiError> GetAllUsers();
+  static std::variant<std::vector<UserClient>, ApiError> GetAllUsersExceptCurrentUser();
   static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
 
 

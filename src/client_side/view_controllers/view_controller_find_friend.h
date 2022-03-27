@@ -29,6 +29,7 @@ private:
   void CreateViewsForUsers();
 
   void FetchUsers();
+  void FetchUsersExceptCurrentUser();
 
 
   void AddFriend(const UserClient &user);
