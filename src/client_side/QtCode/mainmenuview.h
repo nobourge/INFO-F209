@@ -78,6 +78,8 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_BackChooseFriend_clicked();
 
+  void on_pushButton_Register_clicked();
+
 private:
   Ui::MainMenuView *ui;
   std::vector<UserClient> friends_ = {};

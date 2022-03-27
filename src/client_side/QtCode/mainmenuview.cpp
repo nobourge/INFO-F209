@@ -101,21 +101,7 @@ void MainMenuView::on_pushButton_10_clicked() {
 
 void MainMenuView::on_pushButton_12_clicked() {
   // we only need
-  auto username = ui->lineEdit_3->text().toStdString();
-  auto password = ui->lineEdit_4->text().toStdString();
 
-  if (password != ui->lineEdit_5->text().toStdString()) {
-    ui->label_7->setText("Password missmatch");
-  } else {
-    // passwords match
-    auto api_wrapper = ApiWrapper::CreateAccount(username, password);
-
-    if (holds_alternative<ApiError>(api_wrapper)) {
-      ui->label_7->setText(QString::fromStdString(get<ApiError>(api_wrapper).error_message));
-    } else {
-      ui->stackedWidget->setCurrentIndex(3);
-    }
-  }
 }
 
 void MainMenuView::on_pushButton_13_clicked() {
@@ -461,5 +447,25 @@ void MainMenuView::on_pushButton_Chat_clicked()
 void MainMenuView::on_pushButton_BackChooseFriend_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
+}
+
+
+void MainMenuView::on_pushButton_Register_clicked()
+{
+    auto username = ui->lineEdit_3->text().toStdString();
+    auto password = ui->lineEdit_4->text().toStdString();
+
+      if (password != ui->lineEdit_5->text().toStdString()) {
+        ui->label_7->setText("Password missmatch");
+      } else {
+        // passwords match
+        auto api_wrapper = ApiWrapper::CreateAccount(username, password);
+
+        if (holds_alternative<ApiError>(api_wrapper)) {
+          ui->label_7->setText(QString::fromStdString(get<ApiError>(api_wrapper).error_message));
+        } else {
+          ui->stackedWidget->setCurrentIndex(3);
+        }
+      }
 }
 

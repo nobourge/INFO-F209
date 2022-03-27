@@ -29,7 +29,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>5</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="page_3">
          <layout class="QGridLayout" name="gridLayout_6">
@@ -290,7 +290,7 @@
            <string>Register</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_12">
+         <widget class="QPushButton" name="pushButton_Register">
           <property name="geometry">
            <rect>
             <x>330</x>

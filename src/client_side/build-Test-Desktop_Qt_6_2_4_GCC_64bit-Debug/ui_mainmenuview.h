@@ -62,7 +62,7 @@ public:
     QLabel *label_6;
     QWidget *page_5;
     QLabel *label_2;
-    QPushButton *pushButton_12;
+    QPushButton *pushButton_Register;
     QLineEdit *lineEdit_3;
     QLineEdit *lineEdit_4;
     QLineEdit *lineEdit_5;
@@ -252,9 +252,9 @@ public:
         label_2 = new QLabel(page_5);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(360, 40, 67, 17));
-        pushButton_12 = new QPushButton(page_5);
-        pushButton_12->setObjectName(QString::fromUtf8("pushButton_12"));
-        pushButton_12->setGeometry(QRect(330, 350, 111, 21));
+        pushButton_Register = new QPushButton(page_5);
+        pushButton_Register->setObjectName(QString::fromUtf8("pushButton_Register"));
+        pushButton_Register->setGeometry(QRect(330, 350, 111, 21));
         lineEdit_3 = new QLineEdit(page_5);
         lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
         lineEdit_3->setGeometry(QRect(330, 170, 113, 25));
@@ -909,7 +909,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -934,7 +934,7 @@ public:
         label->setText(QCoreApplication::translate("MainMenuView", "Login", nullptr));
         label_6->setText(QString());
         label_2->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
-        pushButton_12->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
+        pushButton_Register->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
         lineEdit_3->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Pseudo", nullptr));
         lineEdit_4->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Mot de passe", nullptr));
         lineEdit_5->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Confirmer", nullptr));
