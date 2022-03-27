@@ -29,7 +29,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>8</number>
+         <number>6</number>
         </property>
         <widget class="QWidget" name="page_3">
          <layout class="QGridLayout" name="gridLayout_6">
@@ -56,28 +56,28 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_9">
+             <widget class="QPushButton" name="pushButton_LoginWelcome">
               <property name="text">
                <string>Login</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_6">
+             <widget class="QPushButton" name="pushButton_RegisterWelcome">
               <property name="text">
                <string>Register</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_8">
+             <widget class="QPushButton" name="pushButton_QuitWelcome">
               <property name="text">
                <string>Quit</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_27">
+             <widget class="QPushButton" name="pushButton_PlayShortcutWelcome">
               <property name="text">
                <string>play shortcut</string>
               </property>
@@ -121,7 +121,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_21">
+             <widget class="QPushButton" name="pushButton_GrayTheme">
               <property name="styleSheet">
                <string notr="true">background-color: rgb(186, 189, 182);</string>
               </property>
@@ -131,7 +131,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_22">
+             <widget class="QPushButton" name="pushButton_RedTheme">
               <property name="styleSheet">
                <string notr="true">background-color: rgb(164, 0, 0);</string>
               </property>
@@ -141,7 +141,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_23">
+             <widget class="QPushButton" name="pushButton_WhiteTheme">
               <property name="styleSheet">
                <string notr="true">background-color: rgb(255, 255, 255);</string>
               </property>
@@ -194,7 +194,7 @@
          </layout>
         </widget>
         <widget class="QWidget" name="page_4">
-         <widget class="QPushButton" name="pushButton_10">
+         <widget class="QPushButton" name="pushButton_EnterLogin">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -207,7 +207,7 @@
            <string>Enter</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="lineEdit_PseudoLogin">
           <property name="geometry">
            <rect>
             <x>320</x>
@@ -220,7 +220,7 @@
            <string>Pseudo</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_2">
+         <widget class="QLineEdit" name="lineEdit_PasswordLogin">
           <property name="geometry">
            <rect>
             <x>320</x>
@@ -236,7 +236,7 @@
            <string>Mot de passe</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_11">
+         <widget class="QPushButton" name="pushButton_BackLogin">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -249,7 +249,7 @@
            <string>Back</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="label_Login">
           <property name="geometry">
            <rect>
             <x>340</x>
@@ -262,7 +262,7 @@
            <string>Login</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_6">
+         <widget class="QLabel" name="label_LoginDone">
           <property name="geometry">
            <rect>
             <x>290</x>
@@ -277,7 +277,7 @@
          </widget>
         </widget>
         <widget class="QWidget" name="page_5">
-         <widget class="QLabel" name="label_2">
+         <widget class="QLabel" name="label_Register">
           <property name="geometry">
            <rect>
             <x>360</x>
@@ -303,7 +303,7 @@
            <string>Register</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_3">
+         <widget class="QLineEdit" name="lineEdit_PseudoRegistration">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -316,7 +316,7 @@
            <string>Pseudo</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_4">
+         <widget class="QLineEdit" name="lineEdit_PasswordRegistration">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -329,7 +329,7 @@
            <string>Mot de passe</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_5">
+         <widget class="QLineEdit" name="lineEdit_PasswordVerificationRegistration">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -342,7 +342,7 @@
            <string>Confirmer</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_13">
+         <widget class="QPushButton" name="pushButton_BackRegister">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -355,7 +355,7 @@
            <string>Back</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_7">
+         <widget class="QLabel" name="label_RegistrationDone">
           <property name="geometry">
            <rect>
             <x>310</x>
@@ -416,7 +416,7 @@
           <item row="1" column="1">
            <layout class="QGridLayout" name="gridLayout_2">
             <item row="1" column="1">
-             <widget class="QPushButton" name="pushButton_2">
+             <widget class="QPushButton" name="pushButton_FriendListMainMenu">
               <property name="palette">
                <palette>
                 <active>
@@ -1010,7 +1010,7 @@
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QPushButton" name="pushButton_4">
+             <widget class="QPushButton" name="pushButton_RankingMainMenu">
               <property name="palette">
                <palette>
                 <active>
@@ -1598,7 +1598,7 @@
              </widget>
             </item>
             <item row="3" column="1">
-             <widget class="QPushButton" name="pushButton_3">
+             <widget class="QPushButton" name="pushButton_HelpMainMenu">
               <property name="palette">
                <palette>
                 <active>
@@ -2186,7 +2186,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="pushButton_PlayMainMenu">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -2785,7 +2785,7 @@ border-image: null;
              </widget>
             </item>
             <item row="4" column="1">
-             <widget class="QPushButton" name="pushButton_5">
+             <widget class="QPushButton" name="pushButton_BackMainMenu">
               <property name="palette">
                <palette>
                 <active>
@@ -3390,7 +3390,7 @@ border-image: null;
          </layout>
         </widget>
         <widget class="QWidget" name="page_2">
-         <widget class="QTextEdit" name="textEdit">
+         <widget class="QTextEdit" name="textEdit_RankingDisplay">
           <property name="geometry">
            <rect>
             <x>320</x>
@@ -3403,7 +3403,7 @@ border-image: null;
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_14">
+         <widget class="QPushButton" name="pushButton_BackRanking">
           <property name="geometry">
            <rect>
             <x>350</x>
@@ -3482,7 +3482,7 @@ border-image: null;
          </widget>
         </widget>
         <widget class="QWidget" name="page_7">
-         <widget class="QTextEdit" name="textEdit_2">
+         <widget class="QTextEdit" name="textEdit_Conversation">
           <property name="geometry">
            <rect>
             <x>300</x>
@@ -3495,7 +3495,7 @@ border-image: null;
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_6">
+         <widget class="QLineEdit" name="lineEdit_InputNewMessage">
           <property name="geometry">
            <rect>
             <x>300</x>
@@ -3505,7 +3505,7 @@ border-image: null;
            </rect>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_17">
+         <widget class="QPushButton" name="pushButton_SendButtonChat">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3518,7 +3518,7 @@ border-image: null;
            <string>Send</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_18">
+         <widget class="QPushButton" name="pushButton_BackChat">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3533,7 +3533,7 @@ border-image: null;
          </widget>
         </widget>
         <widget class="QWidget" name="page_8">
-         <widget class="QLabel" name="label_4">
+         <widget class="QLabel" name="label_Help">
           <property name="geometry">
            <rect>
             <x>300</x>
@@ -3546,7 +3546,7 @@ border-image: null;
            <string>The Help</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_19">
+         <widget class="QPushButton" name="pushButton_BackHelp">
           <property name="geometry">
            <rect>
             <x>330</x>
@@ -3709,14 +3709,27 @@ border-image: null;
          <widget class="QTextEdit" name="textEdit_DisplayFriendsAddFriend">
           <property name="geometry">
            <rect>
-            <x>370</x>
+            <x>333</x>
             <y>170</y>
-            <width>104</width>
+            <width>161</width>
             <height>70</height>
            </rect>
           </property>
           <property name="readOnly">
            <bool>true</bool>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+          </property>
+          <property name="placeholderText">
+           <string>Friends Usernames</string>
           </property>
          </widget>
          <widget class="QLineEdit" name="lineEdit_SearchFriendUsername">
@@ -3732,7 +3745,7 @@ border-image: null;
            <string>Search friend username</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_26">
+         <widget class="QPushButton" name="pushButton_AddAddFriend">
           <property name="geometry">
            <rect>
             <x>370</x>

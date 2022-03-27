@@ -67,6 +67,8 @@ class MainMenuView : public QMainWindow
   void on_pushButton_26_clicked();
 
   void updateChatRoomMessagesListView();
+  void updateFriendsComboBoxView();
+  void updateRankingView();
 
   void on_lineEdit_SearchFriendUsername_textChanged(const QString &arg1);
 
@@ -83,6 +85,46 @@ class MainMenuView : public QMainWindow
   void on_pushButton_game_chat_send_clicked();
 
   void on_pushButton_game_quit_clicked();
+
+  void on_pushButton_QuitWelcome_clicked();
+
+  void on_pushButton_LoginWelcome_clicked();
+
+  void on_pushButton_RegisterWelcome_clicked();
+
+  void on_pushButton_PlayShortcutWelcome_clicked();
+
+  void on_pushButton_GrayTheme_clicked();
+
+  void on_pushButton_RedTheme_clicked();
+
+  void on_pushButton_WhiteTheme_clicked();
+
+  void on_pushButton_AddAddFriend_clicked();
+
+  void on_pushButton_BackHelp_clicked();
+
+  void on_pushButton_SendButtonChat_clicked();
+
+  void on_pushButton_BackChat_clicked();
+
+  void on_pushButton_BackRanking_clicked();
+
+  void on_pushButton_EnterLogin_clicked();
+
+  void on_pushButton_BackLogin_clicked();
+
+  void on_pushButton_BackRegister_clicked();
+
+  void on_pushButton_RankingMainMenu_clicked();
+
+  void on_pushButton_BackMainMenu_clicked();
+
+  void on_pushButton_HelpMainMenu_clicked();
+
+  void on_pushButton_FriendListMainMenu_clicked();
+
+  void on_pushButton_PlayMainMenu_clicked();
 
 private:
   Ui::MainMenuView *ui;
