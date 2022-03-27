@@ -11,7 +11,7 @@ class AbstractListMenuViewController : public AbstractMenuViewController {
 public:
   constexpr const static unsigned max_num_items_to_display = 3;
 
-  [[maybe_unused]] [[nodiscard]] constexpr virtual unsigned GetMaxNumItemsToDisplay() const {
+  [[nodiscard]] virtual unsigned GetMaxNumItemsToDisplay() const {
     return max_num_items_to_display;
   }
 

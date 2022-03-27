@@ -396,6 +396,7 @@ std::optional<ApiError> ApiWrapper::CreateGame(const std::string &room_name,
 
   return {};
 }
+
 optional<ApiError> ApiWrapper::PerformGameMove(const object_id_t &game_id, const std::string &move) {
   std::string url = api_url_;
   url += "me/game/" + std::to_string(game_id) + "/move";
@@ -416,4 +417,34 @@ optional<ApiError> ApiWrapper::PerformGameMove(const object_id_t &game_id, const
   }
 
   return {};
+}
+
+std::variant<Game, ApiError> ApiWrapper::GetGame(uint32_t game_id) {
+  std::string url = api_url_;
+
+  url += "me/game/" + std::to_string(game_id);
+
+  crow::json::rvalue json_res;
+
+  try {
+    json_res = Requests(url, {{login_, password_}}).GetJson();
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+
+  try {
+    if (!json_res["success"].b()) {
+      return ApiError{json_res["error"].s()};
+    }
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+
+  auto game = Game::InitGameFromJson(json_res["game"]);
+
+  if (!game.has_value()) {
+    return ApiError{"Unknown error occurred. Failed to parse game"};
+  }
+
+  return *game;
 }

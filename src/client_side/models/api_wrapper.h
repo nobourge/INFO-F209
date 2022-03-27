@@ -5,12 +5,14 @@
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_MODELS_API_WRAPPER_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_MODELS_API_WRAPPER_H_
 
+#include "requests.h"
+#include "user_client.h"
 #include "../../common/base64.h"
 #include "../../common/constants.h"
-#include "user_client.h"
-#include "requests.h"
+#include "../../common/models/Game.h"
 #include "../../common/models/user/message.h"
 #include <string>
+
 
 struct ApiError {
   std::string error_message;
@@ -56,6 +58,8 @@ public:
 
   std::variant<std::string, ApiError>
   GetGameReprWithGameId(object_id_t game_id);
+  std::variant<Game, ApiError> GetGame(object_id_t game_id);
+
 
 
   static std::optional<ApiWrapper> &GetShared();
