@@ -86,21 +86,7 @@ void MainMenuView::on_pushButton_12_clicked() {
 void MainMenuView::on_pushButton_13_clicked() {}
 
 void MainMenuView::on_pushButton_4_clicked() {
-  std::vector<UserClient> users_;
-  try {
-    users_ = ApiWrapper::GetUsersRanked(MAX_NUM_USERS_RANKING_DEFAULT);
-  } catch (const std::runtime_error &) {
-    users_.clear();
-  }
-  std::string rankings;
-  for (auto &user : users_) {
-    std::string label = user.GetUsername().GetValue();
-    label += " : ";
-    label += std::to_string(user.GetScore());
-    label += " pts";
-    rankings += label + "\n";
-  }
-  ui->textEdit_RankingDisplay->setText(QString::fromStdString(rankings));
+
   ui->stackedWidget->setCurrentIndex(4);
 }
 
@@ -285,6 +271,9 @@ void MainMenuView::on_pushButton_LoginWelcome_clicked()
     ui->lineEdit_PseudoLogin->clear();
     ui->lineEdit_PasswordLogin->clear();
     ui->stackedWidget->setCurrentIndex(1);
+    updateFriendsComboBoxView();
+    updateChatRoomMessagesListView();
+    updateRankingView();
 }
 
 
@@ -469,6 +458,7 @@ void MainMenuView::on_pushButton_BackChat_clicked()
 void MainMenuView::on_pushButton_BackRanking_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
+    updateRankingView();
 
 }
 
@@ -606,8 +596,22 @@ void MainMenuView::updateFriendsComboBoxView() {
     ui->comboBox_ChooseFriend->addItem(QString::fromStdString(user.GetUsername().GetValue()));
     friends.push_back(user.GetUsername().GetValue());
   }
-
-  ui->stackedWidget->setCurrentIndex(5);
-
 }
 
+void MainMenuView::updateRankingView() {
+  std::vector<UserClient> users_;
+  try {
+    users_ = ApiWrapper::GetUsersRanked(MAX_NUM_USERS_RANKING_DEFAULT);
+  } catch (const std::runtime_error &) {
+    users_.clear();
+  }
+  std::string rankings;
+  for (auto &user : users_) {
+    std::string label = user.GetUsername().GetValue();
+    label += " : ";
+    label += std::to_string(user.GetScore());
+    label += " pts";
+    rankings += label + "\n";
+  }
+  ui->textEdit_RankingDisplay->setText(QString::fromStdString(rankings));
+}
