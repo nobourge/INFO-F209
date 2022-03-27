@@ -35,24 +35,30 @@ public:
     QHBoxLayout *horizontalLayout;
     QStackedWidget *stackedWidget;
     QWidget *page_3;
-    QGridLayout *gridLayout_6;
-    QVBoxLayout *verticalLayout;
+    QGridLayout *gridLayout_5;
+    QHBoxLayout *horizontalLayout_6;
+    QSpacerItem *horizontalSpacer;
     QLabel *label_Welcome;
+    QSpacerItem *horizontalSpacer_7;
     QSpacerItem *verticalSpacer_2;
+    QSpacerItem *horizontalSpacer_6;
+    QVBoxLayout *verticalLayout;
     QPushButton *pushButton_LoginWelcome;
     QPushButton *pushButton_RegisterWelcome;
-    QPushButton *pushButton_QuitWelcome;
     QPushButton *pushButton_PlayShortcutWelcome;
+    QSpacerItem *horizontalSpacer_11;
     QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout_3;
+    QVBoxLayout *verticalLayout_3;
+    QSpacerItem *verticalSpacer_6;
+    QPushButton *pushButton_QuitWelcome;
+    QSpacerItem *horizontalSpacer_8;
     QVBoxLayout *verticalLayout_2;
     QSpacerItem *verticalSpacer_7;
     QLabel *label_Theme;
     QPushButton *pushButton_GrayTheme;
     QPushButton *pushButton_RedTheme;
     QPushButton *pushButton_WhiteTheme;
-    QSpacerItem *horizontalSpacer_7;
-    QSpacerItem *horizontalSpacer;
-    QSpacerItem *horizontalSpacer_8;
     QWidget *page_4;
     QPushButton *pushButton_EnterLogin;
     QLineEdit *lineEdit_PseudoLogin;
@@ -140,19 +146,36 @@ public:
         stackedWidget->setStyleSheet(QString::fromUtf8(""));
         page_3 = new QWidget();
         page_3->setObjectName(QString::fromUtf8("page_3"));
-        gridLayout_6 = new QGridLayout(page_3);
-        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        gridLayout_5 = new QGridLayout(page_3);
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer);
+
         label_Welcome = new QLabel(page_3);
         label_Welcome->setObjectName(QString::fromUtf8("label_Welcome"));
 
-        verticalLayout->addWidget(label_Welcome);
+        horizontalLayout_6->addWidget(label_Welcome);
 
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout->addItem(verticalSpacer_2);
+        horizontalLayout_6->addItem(horizontalSpacer_7);
 
+
+        gridLayout_5->addLayout(horizontalLayout_6, 0, 0, 1, 3);
+
+        verticalSpacer_2 = new QSpacerItem(94, 143, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_5->addItem(verticalSpacer_2, 1, 1, 1, 1);
+
+        horizontalSpacer_6 = new QSpacerItem(333, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_6, 2, 0, 1, 1);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         pushButton_LoginWelcome = new QPushButton(page_3);
         pushButton_LoginWelcome->setObjectName(QString::fromUtf8("pushButton_LoginWelcome"));
 
@@ -163,22 +186,41 @@ public:
 
         verticalLayout->addWidget(pushButton_RegisterWelcome);
 
-        pushButton_QuitWelcome = new QPushButton(page_3);
-        pushButton_QuitWelcome->setObjectName(QString::fromUtf8("pushButton_QuitWelcome"));
-
-        verticalLayout->addWidget(pushButton_QuitWelcome);
-
         pushButton_PlayShortcutWelcome = new QPushButton(page_3);
         pushButton_PlayShortcutWelcome->setObjectName(QString::fromUtf8("pushButton_PlayShortcutWelcome"));
 
         verticalLayout->addWidget(pushButton_PlayShortcutWelcome);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout->addItem(verticalSpacer);
+        gridLayout_5->addLayout(verticalLayout, 2, 1, 1, 1);
+
+        horizontalSpacer_11 = new QSpacerItem(332, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_11, 2, 2, 1, 1);
+
+        verticalSpacer = new QSpacerItem(94, 142, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_5->addItem(verticalSpacer, 3, 1, 1, 1);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_3->addItem(verticalSpacer_6);
+
+        pushButton_QuitWelcome = new QPushButton(page_3);
+        pushButton_QuitWelcome->setObjectName(QString::fromUtf8("pushButton_QuitWelcome"));
+
+        verticalLayout_3->addWidget(pushButton_QuitWelcome);
 
 
-        gridLayout_6->addLayout(verticalLayout, 0, 2, 2, 1);
+        horizontalLayout_3->addLayout(verticalLayout_3);
+
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_8);
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
@@ -210,19 +252,10 @@ public:
         verticalLayout_2->addWidget(pushButton_WhiteTheme);
 
 
-        gridLayout_6->addLayout(verticalLayout_2, 1, 0, 1, 1);
+        horizontalLayout_3->addLayout(verticalLayout_2);
 
-        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_6->addItem(horizontalSpacer_7, 0, 4, 1, 1);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_6->addItem(horizontalSpacer, 1, 1, 1, 1);
-
-        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_6->addItem(horizontalSpacer_8, 0, 0, 1, 2);
+        gridLayout_5->addLayout(horizontalLayout_3, 4, 0, 1, 3);
 
         stackedWidget->addWidget(page_3);
         page_4 = new QWidget();
@@ -910,7 +943,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(7);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -922,8 +955,8 @@ public:
         label_Welcome->setText(QCoreApplication::translate("MainMenuView", "Welcome", nullptr));
         pushButton_LoginWelcome->setText(QCoreApplication::translate("MainMenuView", "Login", nullptr));
         pushButton_RegisterWelcome->setText(QCoreApplication::translate("MainMenuView", "Register", nullptr));
-        pushButton_QuitWelcome->setText(QCoreApplication::translate("MainMenuView", "Quit", nullptr));
         pushButton_PlayShortcutWelcome->setText(QCoreApplication::translate("MainMenuView", "play shortcut", nullptr));
+        pushButton_QuitWelcome->setText(QCoreApplication::translate("MainMenuView", "Quit", nullptr));
         label_Theme->setText(QCoreApplication::translate("MainMenuView", "Theme", nullptr));
         pushButton_GrayTheme->setText(QCoreApplication::translate("MainMenuView", "Grey", nullptr));
         pushButton_RedTheme->setText(QCoreApplication::translate("MainMenuView", "Red", nullptr));
@@ -963,8 +996,8 @@ public:
         textEdit_DisplayFriendsAddFriend->setHtml(QCoreApplication::translate("MainMenuView", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
+"</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.AppleSystemUIFont'; font-size:13pt;\"><br /></p></body></html>", nullptr));
         textEdit_DisplayFriendsAddFriend->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Friends Usernames", nullptr));
         lineEdit_SearchFriendUsername->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Search friend username", nullptr));
         pushButton_AddAddFriend->setText(QCoreApplication::translate("MainMenuView", "Add", nullptr));

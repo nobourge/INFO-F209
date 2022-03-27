@@ -60,37 +60,37 @@ QT_MOC_LITERAL(610, 24), // "on_pushButton_25_clicked"
 QT_MOC_LITERAL(635, 24), // "on_pushButton_27_clicked"
 QT_MOC_LITERAL(660, 24), // "on_pushButton_53_clicked"
 QT_MOC_LITERAL(685, 24), // "on_pushButton_26_clicked"
-QT_MOC_LITERAL(710, 30), // "updateChatRoomMessagesListView"
-QT_MOC_LITERAL(741, 25), // "updateFriendsComboBoxView"
-QT_MOC_LITERAL(767, 17), // "updateRankingView"
-QT_MOC_LITERAL(785, 44), // "on_lineEdit_SearchFriendUsern..."
-QT_MOC_LITERAL(830, 35), // "on_pushButton_BackAddFriend_c..."
-QT_MOC_LITERAL(866, 31), // "on_pushButton_AddFriend_clicked"
-QT_MOC_LITERAL(898, 26), // "on_pushButton_Chat_clicked"
-QT_MOC_LITERAL(925, 38), // "on_pushButton_BackChooseFrien..."
-QT_MOC_LITERAL(964, 30), // "on_pushButton_Register_clicked"
-QT_MOC_LITERAL(995, 36), // "on_pushButton_game_chat_send_..."
-QT_MOC_LITERAL(1032, 31), // "on_pushButton_game_quit_clicked"
-QT_MOC_LITERAL(1064, 33), // "on_pushButton_QuitWelcome_cli..."
-QT_MOC_LITERAL(1098, 34), // "on_pushButton_LoginWelcome_cl..."
-QT_MOC_LITERAL(1133, 37), // "on_pushButton_RegisterWelcome..."
-QT_MOC_LITERAL(1171, 41), // "on_pushButton_PlayShortcutWel..."
-QT_MOC_LITERAL(1213, 31), // "on_pushButton_GrayTheme_clicked"
-QT_MOC_LITERAL(1245, 30), // "on_pushButton_RedTheme_clicked"
-QT_MOC_LITERAL(1276, 32), // "on_pushButton_WhiteTheme_clicked"
-QT_MOC_LITERAL(1309, 34), // "on_pushButton_AddAddFriend_cl..."
-QT_MOC_LITERAL(1344, 30), // "on_pushButton_BackHelp_clicked"
-QT_MOC_LITERAL(1375, 36), // "on_pushButton_SendButtonChat_..."
-QT_MOC_LITERAL(1412, 30), // "on_pushButton_BackChat_clicked"
-QT_MOC_LITERAL(1443, 33), // "on_pushButton_BackRanking_cli..."
-QT_MOC_LITERAL(1477, 32), // "on_pushButton_EnterLogin_clicked"
-QT_MOC_LITERAL(1510, 31), // "on_pushButton_BackLogin_clicked"
-QT_MOC_LITERAL(1542, 34), // "on_pushButton_BackRegister_cl..."
-QT_MOC_LITERAL(1577, 37), // "on_pushButton_RankingMainMenu..."
-QT_MOC_LITERAL(1615, 34), // "on_pushButton_BackMainMenu_cl..."
-QT_MOC_LITERAL(1650, 34), // "on_pushButton_HelpMainMenu_cl..."
-QT_MOC_LITERAL(1685, 40), // "on_pushButton_FriendListMainM..."
-QT_MOC_LITERAL(1726, 34) // "on_pushButton_PlayMainMenu_cl..."
+QT_MOC_LITERAL(710, 44), // "on_lineEdit_SearchFriendUsern..."
+QT_MOC_LITERAL(755, 35), // "on_pushButton_BackAddFriend_c..."
+QT_MOC_LITERAL(791, 31), // "on_pushButton_AddFriend_clicked"
+QT_MOC_LITERAL(823, 26), // "on_pushButton_Chat_clicked"
+QT_MOC_LITERAL(850, 38), // "on_pushButton_BackChooseFrien..."
+QT_MOC_LITERAL(889, 30), // "on_pushButton_Register_clicked"
+QT_MOC_LITERAL(920, 36), // "on_pushButton_game_chat_send_..."
+QT_MOC_LITERAL(957, 31), // "on_pushButton_game_quit_clicked"
+QT_MOC_LITERAL(989, 33), // "on_pushButton_QuitWelcome_cli..."
+QT_MOC_LITERAL(1023, 34), // "on_pushButton_LoginWelcome_cl..."
+QT_MOC_LITERAL(1058, 37), // "on_pushButton_RegisterWelcome..."
+QT_MOC_LITERAL(1096, 41), // "on_pushButton_PlayShortcutWel..."
+QT_MOC_LITERAL(1138, 31), // "on_pushButton_GrayTheme_clicked"
+QT_MOC_LITERAL(1170, 30), // "on_pushButton_RedTheme_clicked"
+QT_MOC_LITERAL(1201, 32), // "on_pushButton_WhiteTheme_clicked"
+QT_MOC_LITERAL(1234, 34), // "on_pushButton_AddAddFriend_cl..."
+QT_MOC_LITERAL(1269, 30), // "on_pushButton_BackHelp_clicked"
+QT_MOC_LITERAL(1300, 36), // "on_pushButton_SendButtonChat_..."
+QT_MOC_LITERAL(1337, 30), // "on_pushButton_BackChat_clicked"
+QT_MOC_LITERAL(1368, 33), // "on_pushButton_BackRanking_cli..."
+QT_MOC_LITERAL(1402, 32), // "on_pushButton_EnterLogin_clicked"
+QT_MOC_LITERAL(1435, 31), // "on_pushButton_BackLogin_clicked"
+QT_MOC_LITERAL(1467, 34), // "on_pushButton_BackRegister_cl..."
+QT_MOC_LITERAL(1502, 37), // "on_pushButton_RankingMainMenu..."
+QT_MOC_LITERAL(1540, 34), // "on_pushButton_BackMainMenu_cl..."
+QT_MOC_LITERAL(1575, 34), // "on_pushButton_HelpMainMenu_cl..."
+QT_MOC_LITERAL(1610, 40), // "on_pushButton_FriendListMainM..."
+QT_MOC_LITERAL(1651, 34), // "on_pushButton_PlayMainMenu_cl..."
+QT_MOC_LITERAL(1686, 30), // "updateChatRoomMessagesListView"
+QT_MOC_LITERAL(1717, 25), // "updateFriendsComboBoxView"
+QT_MOC_LITERAL(1743, 17) // "updateRankingView"
 
     },
     "MainMenuView\0on_pushButton_clicked\0\0"
@@ -119,8 +119,6 @@ QT_MOC_LITERAL(1726, 34) // "on_pushButton_PlayMainMenu_cl..."
     "on_pushButton_27_clicked\0"
     "on_pushButton_53_clicked\0"
     "on_pushButton_26_clicked\0"
-    "updateChatRoomMessagesListView\0"
-    "updateFriendsComboBoxView\0updateRankingView\0"
     "on_lineEdit_SearchFriendUsername_textChanged\0"
     "on_pushButton_BackAddFriend_clicked\0"
     "on_pushButton_AddFriend_clicked\0"
@@ -148,7 +146,9 @@ QT_MOC_LITERAL(1726, 34) // "on_pushButton_PlayMainMenu_cl..."
     "on_pushButton_BackMainMenu_clicked\0"
     "on_pushButton_HelpMainMenu_clicked\0"
     "on_pushButton_FriendListMainMenu_clicked\0"
-    "on_pushButton_PlayMainMenu_clicked"
+    "on_pushButton_PlayMainMenu_clicked\0"
+    "updateChatRoomMessagesListView\0"
+    "updateFriendsComboBoxView\0updateRankingView"
 };
 #undef QT_MOC_LITERAL
 
@@ -194,10 +194,10 @@ static const uint qt_meta_data_MainMenuView[] = {
       28,    0,  395,    2, 0x08,   27 /* Private */,
       29,    0,  396,    2, 0x08,   28 /* Private */,
       30,    0,  397,    2, 0x08,   29 /* Private */,
-      31,    0,  398,    2, 0x08,   30 /* Private */,
-      32,    0,  399,    2, 0x08,   31 /* Private */,
-      33,    0,  400,    2, 0x08,   32 /* Private */,
-      34,    1,  401,    2, 0x08,   33 /* Private */,
+      31,    1,  398,    2, 0x08,   30 /* Private */,
+      32,    0,  401,    2, 0x08,   32 /* Private */,
+      33,    0,  402,    2, 0x08,   33 /* Private */,
+      34,    0,  403,    2, 0x08,   34 /* Private */,
       35,    0,  404,    2, 0x08,   35 /* Private */,
       36,    0,  405,    2, 0x08,   36 /* Private */,
       37,    0,  406,    2, 0x08,   37 /* Private */,
@@ -255,10 +255,10 @@ static const uint qt_meta_data_MainMenuView[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   26,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -324,37 +324,37 @@ void MainMenuView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 25: _t->on_pushButton_27_clicked(); break;
         case 26: _t->on_pushButton_53_clicked(); break;
         case 27: _t->on_pushButton_26_clicked(); break;
-        case 28: _t->updateChatRoomMessagesListView(); break;
-        case 29: _t->updateFriendsComboBoxView(); break;
-        case 30: _t->updateRankingView(); break;
-        case 31: _t->on_lineEdit_SearchFriendUsername_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 32: _t->on_pushButton_BackAddFriend_clicked(); break;
-        case 33: _t->on_pushButton_AddFriend_clicked(); break;
-        case 34: _t->on_pushButton_Chat_clicked(); break;
-        case 35: _t->on_pushButton_BackChooseFriend_clicked(); break;
-        case 36: _t->on_pushButton_Register_clicked(); break;
-        case 37: _t->on_pushButton_game_chat_send_clicked(); break;
-        case 38: _t->on_pushButton_game_quit_clicked(); break;
-        case 39: _t->on_pushButton_QuitWelcome_clicked(); break;
-        case 40: _t->on_pushButton_LoginWelcome_clicked(); break;
-        case 41: _t->on_pushButton_RegisterWelcome_clicked(); break;
-        case 42: _t->on_pushButton_PlayShortcutWelcome_clicked(); break;
-        case 43: _t->on_pushButton_GrayTheme_clicked(); break;
-        case 44: _t->on_pushButton_RedTheme_clicked(); break;
-        case 45: _t->on_pushButton_WhiteTheme_clicked(); break;
-        case 46: _t->on_pushButton_AddAddFriend_clicked(); break;
-        case 47: _t->on_pushButton_BackHelp_clicked(); break;
-        case 48: _t->on_pushButton_SendButtonChat_clicked(); break;
-        case 49: _t->on_pushButton_BackChat_clicked(); break;
-        case 50: _t->on_pushButton_BackRanking_clicked(); break;
-        case 51: _t->on_pushButton_EnterLogin_clicked(); break;
-        case 52: _t->on_pushButton_BackLogin_clicked(); break;
-        case 53: _t->on_pushButton_BackRegister_clicked(); break;
-        case 54: _t->on_pushButton_RankingMainMenu_clicked(); break;
-        case 55: _t->on_pushButton_BackMainMenu_clicked(); break;
-        case 56: _t->on_pushButton_HelpMainMenu_clicked(); break;
-        case 57: _t->on_pushButton_FriendListMainMenu_clicked(); break;
-        case 58: _t->on_pushButton_PlayMainMenu_clicked(); break;
+        case 28: _t->on_lineEdit_SearchFriendUsername_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 29: _t->on_pushButton_BackAddFriend_clicked(); break;
+        case 30: _t->on_pushButton_AddFriend_clicked(); break;
+        case 31: _t->on_pushButton_Chat_clicked(); break;
+        case 32: _t->on_pushButton_BackChooseFriend_clicked(); break;
+        case 33: _t->on_pushButton_Register_clicked(); break;
+        case 34: _t->on_pushButton_game_chat_send_clicked(); break;
+        case 35: _t->on_pushButton_game_quit_clicked(); break;
+        case 36: _t->on_pushButton_QuitWelcome_clicked(); break;
+        case 37: _t->on_pushButton_LoginWelcome_clicked(); break;
+        case 38: _t->on_pushButton_RegisterWelcome_clicked(); break;
+        case 39: _t->on_pushButton_PlayShortcutWelcome_clicked(); break;
+        case 40: _t->on_pushButton_GrayTheme_clicked(); break;
+        case 41: _t->on_pushButton_RedTheme_clicked(); break;
+        case 42: _t->on_pushButton_WhiteTheme_clicked(); break;
+        case 43: _t->on_pushButton_AddAddFriend_clicked(); break;
+        case 44: _t->on_pushButton_BackHelp_clicked(); break;
+        case 45: _t->on_pushButton_SendButtonChat_clicked(); break;
+        case 46: _t->on_pushButton_BackChat_clicked(); break;
+        case 47: _t->on_pushButton_BackRanking_clicked(); break;
+        case 48: _t->on_pushButton_EnterLogin_clicked(); break;
+        case 49: _t->on_pushButton_BackLogin_clicked(); break;
+        case 50: _t->on_pushButton_BackRegister_clicked(); break;
+        case 51: _t->on_pushButton_RankingMainMenu_clicked(); break;
+        case 52: _t->on_pushButton_BackMainMenu_clicked(); break;
+        case 53: _t->on_pushButton_HelpMainMenu_clicked(); break;
+        case 54: _t->on_pushButton_FriendListMainMenu_clicked(); break;
+        case 55: _t->on_pushButton_PlayMainMenu_clicked(); break;
+        case 56: _t->updateChatRoomMessagesListView(); break;
+        case 57: _t->updateFriendsComboBoxView(); break;
+        case 58: _t->updateRankingView(); break;
         default: ;
         }
     }
@@ -368,7 +368,7 @@ const QMetaObject MainMenuView::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainMenuView_t
 , QtPrivate::TypeAndForceComplete<MainMenuView, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
