@@ -122,7 +122,7 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_FriendListMainMenu_clicked();
 
-  void on_pushButton_PlayMainMenu_clicked();
+  // void on_pushButton_PlayMainMenu_clicked();
   ///Update functions
   void updateChatRoomMessagesListView();
   void updateFriendsComboBoxView();

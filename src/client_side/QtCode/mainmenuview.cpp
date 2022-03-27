@@ -143,14 +143,7 @@ void MainMenuView::on_pushButton_25_clicked() {
 
 }
 
-///play shortcut
-void MainMenuView::on_pushButton_27_clicked() {
 
-
-}
-
-void MainMenuView::on_pushButton_26_clicked()
-{}
 void MainMenuView::on_lineEdit_SearchFriendUsername_textChanged(const QString &arg1) {
   auto user_fetch_result = ApiWrapper::GetAllUsers();
 
