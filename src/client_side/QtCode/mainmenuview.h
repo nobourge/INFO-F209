@@ -128,6 +128,7 @@ class MainMenuView : public QMainWindow
   void updateRankingView();
 ////
 
+
 private:
   Ui::MainMenuView *ui;
   std::vector<UserClient> friends_ = {};
