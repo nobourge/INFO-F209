@@ -59,7 +59,6 @@ class MainMenuView : public QMainWindow
   void on_lineEdit_7_textChanged(const QString &arg1);
 
   void on_pushButton_25_clicked();
-  void on_pushButton_27_clicked();
 
   void on_pushButton_53_clicked();
 

@@ -17,11 +17,8 @@ MainMenuView::MainMenuView(QWidget *parent)
   this->setStyleSheet("selection-color: green");
 
   ui->stackedWidget->setCurrentIndex(0);
-  // ui->stackedWidget->addWidget(new MainMenuView());
-  // QHBoxLayout* board_chat_layout = new QHBoxLayout();
-  // board_chat_layout->addWidget(new MainMenuView());
-  // ui->page_9->setLayout(board_chat_layout);
   ui->stackedWidget->addWidget(menuView);
+  cout<<ui->stackedWidget->count()<<endl;
 }
 
 MainMenuView::~MainMenuView()
@@ -274,91 +271,41 @@ void MainMenuView::on_pushButton_RegisterWelcome_clicked()
 
 void MainMenuView::on_pushButton_PlayShortcutWelcome_clicked()
 {
-    auto *mainLayout = new QHBoxLayout();
+  ui->stackedWidget->setCurrentIndex(10);
+    // auto *mainLayout = new QHBoxLayout();
 
-    auto *Layout_chat = new QVBoxLayout();
+    // auto *Layout_chat = new QVBoxLayout();
 
-    auto *queryLayout = new QHBoxLayout();
+    // auto *queryLayout = new QHBoxLayout();
 
-    auto *queryLabel = new QLabel(
-        QApplication::translate("quoridor", "New message:"));
-    auto *queryEdit = new QLineEdit();
-    auto *resultView = new QTableView();
+    // auto *queryLabel = new QLabel(
+    //     QApplication::translate("quoridor", "New message:"));
+    // auto *queryEdit = new QLineEdit();
+    // auto *resultView = new QTableView();
 
-    queryLayout->addWidget(queryLabel);
-    queryLayout->addWidget(queryEdit);
+    // queryLayout->addWidget(queryLabel);
+    // queryLayout->addWidget(queryEdit);
 
-    Layout_chat->addWidget(resultView);
-    Layout_chat->addLayout(queryLayout);
-
-
-
-    //QWidget canvas = Canvas();
-    QWidget canvas;
-    //canvas = Canvas::Canvas();
-
-    /*
-          self.hbox = QHBoxLayout()
-
-          self.canvas = Canvas(self.board, self.N, self.width,
-                               self.height,
-                               parent=self.central_widget)
-
-          self.canvas.mousePressEvent = self.handle_click_event
-
-          self.hbox.addWidget(self.canvas, alignment=Qt.AlignCenter)
-
-          self.load_board_button.clicked.connect(
-              self.load_board)
-          self.add_player_1button.clicked.connect(
-              self.add_player_1)
-          self.add_player_2button.clicked.connect(
-              self.add_player_2)
-          self.add_arrow_button.clicked.connect(
-              self.add_arrow)
-
-          self.main_hbox.addLayout(self.hbox)
-          */
-
-    auto *Layout_board = new QVBoxLayout();
-
-    auto *resultView2 = new QTableView();
-    /*
-    QWidget *frame;
-    //frame->setGeometry(x, y, width, height);
-    frame->setStyleSheet("background-image: url(:/img/board.jpg)");
-    */
-    Layout_board->addWidget(resultView2);
-
-    mainLayout->addLayout(Layout_chat, 1);
-
-    mainLayout->addLayout(Layout_board, 2);
-    ui->stackedWidget->setCurrentIndex(8);
-    this->showMaximized();
-
-    auto *board_scene = new BoardScene();
-    this->ui->graphicsView->setScene(board_scene);
+    // Layout_chat->addWidget(resultView);
+    // Layout_chat->addLayout(queryLayout);
 
 
 
-    /*
+    // QWidget canvas;
+  
+    // auto *Layout_board = new QVBoxLayout();
 
-    QSize size = qApp->screens()[0]->size();
-    ///this->ui->setFixedSize(size.width(),size.height());
+    // auto *resultView2 = new QTableView();
+    // Layout_board->addWidget(resultView2);
 
-    this->setFixedSize(size.width(),size.height());
+    // mainLayout->addLayout(Layout_chat, 1);
 
-    this->ui->page_9->setFixedSize(size.width(),size.height());
-    ///mainLayout->se
+    // mainLayout->addLayout(Layout_board, 2);
+    // ui->stackedWidget->setCurrentIndex(8);
+    // this->showMaximized();
 
-    //this->show();
-    //this->ui->page_9->showMaximized();
-
-    //window.showMaximized();
-    ui->page_9->setStyleSheet("background-color: darkRed;"
-                        "font: Bold;"
-    );
-     */
+    // auto *board_scene = new BoardScene();
+    // this->ui->graphicsView->setScene(board_scene);
 
 }
 
@@ -511,11 +458,6 @@ void MainMenuView::on_pushButton_FriendListMainMenu_clicked()
   updateFriendsComboBoxView();
   ui->stackedWidget->setCurrentIndex(5);
 
-}
-
-///play shortcut
-void MainMenuView::on_pushButton_27_clicked() {
-  ui->stackedWidget->setCurrentIndex(9);
 }
 
 void MainMenuView::on_pushButton_26_clicked()
