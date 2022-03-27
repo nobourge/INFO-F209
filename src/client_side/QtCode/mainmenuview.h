@@ -114,6 +114,7 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_BackLogin_clicked();
 
+
   void on_pushButton_BackRegister_clicked();
 
   void on_pushButton_RankingMainMenu_clicked();

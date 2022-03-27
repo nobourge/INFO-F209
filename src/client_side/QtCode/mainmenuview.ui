@@ -29,7 +29,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>6</number>
+         <number>7</number>
         </property>
         <widget class="QWidget" name="page_3">
          <layout class="QGridLayout" name="gridLayout_6">
@@ -3543,7 +3543,7 @@ border-image: null;
            </rect>
           </property>
           <property name="text">
-           <string>The Help</string>
+           <string>Help</string>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_BackHelp">

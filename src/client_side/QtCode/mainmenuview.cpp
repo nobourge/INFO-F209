@@ -168,6 +168,7 @@ void MainMenuView::on_pushButton_25_clicked() {
 ///play shortcut
 void MainMenuView::on_pushButton_27_clicked() {
 
+
 }
 
 void MainMenuView::on_pushButton_26_clicked()

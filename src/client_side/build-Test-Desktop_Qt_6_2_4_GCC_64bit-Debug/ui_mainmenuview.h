@@ -910,7 +910,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(6);
+        stackedWidget->setCurrentIndex(7);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -953,7 +953,7 @@ public:
         pushButton_AddFriend->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
         pushButton_SendButtonChat->setText(QCoreApplication::translate("MainMenuView", "Send", nullptr));
         pushButton_BackChat->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
-        label_Help->setText(QCoreApplication::translate("MainMenuView", "The Help", nullptr));
+        label_Help->setText(QCoreApplication::translate("MainMenuView", "Help", nullptr));
         pushButton_BackHelp->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         pushButton_game_chat_send->setText(QCoreApplication::translate("MainMenuView", "Send", nullptr));
         pushButton_game_quit->setText(QCoreApplication::translate("MainMenuView", "Quit Game", nullptr));
