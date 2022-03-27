@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "../models/user_client.h"
+#include "menu_board_view.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainMenuView; }
@@ -77,6 +78,6 @@ private:
   std::string game_chattext;
   //std::string Rankingtext="";
   std::string Rankingtext;
-
+  MenuBoardView *menuView = new MenuBoardView();
 };
 #endif // MAINMENUVIEW_H
