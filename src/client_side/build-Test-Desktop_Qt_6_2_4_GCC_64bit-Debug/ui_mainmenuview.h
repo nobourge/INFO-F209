@@ -102,17 +102,17 @@ public:
     QVBoxLayout *verticalLayout_9;
     QTextEdit *textEdit_7;
     QLineEdit *lineEdit_15;
-    QPushButton *pushButton_53;
+    QPushButton *pushButton_game_chat_send;
     QSpacerItem *horizontalSpacer_10;
     QHBoxLayout *horizontalLayout_2;
     QGraphicsView *graphicsView;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_5;
-    QPushButton *pushButton_20;
+    QPushButton *pushButton_game_quit;
     QSpacerItem *horizontalSpacer_9;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_2;
-    QLabel *label_41;
+    QLabel *label_Game;
     QSpacerItem *horizontalSpacer_3;
     QWidget *page_10;
     QPushButton *pushButton_BackAddFriend;
@@ -817,10 +817,10 @@ public:
 
         verticalLayout_9->addWidget(lineEdit_15);
 
-        pushButton_53 = new QPushButton(page_9);
-        pushButton_53->setObjectName(QString::fromUtf8("pushButton_53"));
+        pushButton_game_chat_send = new QPushButton(page_9);
+        pushButton_game_chat_send->setObjectName(QString::fromUtf8("pushButton_game_chat_send"));
 
-        verticalLayout_9->addWidget(pushButton_53);
+        verticalLayout_9->addWidget(pushButton_game_chat_send);
 
 
         gridLayout->addLayout(verticalLayout_9, 1, 0, 2, 1);
@@ -845,10 +845,10 @@ public:
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
-        pushButton_20 = new QPushButton(page_9);
-        pushButton_20->setObjectName(QString::fromUtf8("pushButton_20"));
+        pushButton_game_quit = new QPushButton(page_9);
+        pushButton_game_quit->setObjectName(QString::fromUtf8("pushButton_game_quit"));
 
-        horizontalLayout_5->addWidget(pushButton_20);
+        horizontalLayout_5->addWidget(pushButton_game_quit);
 
         horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -863,10 +863,10 @@ public:
 
         horizontalLayout_4->addItem(horizontalSpacer_2);
 
-        label_41 = new QLabel(page_9);
-        label_41->setObjectName(QString::fromUtf8("label_41"));
+        label_Game = new QLabel(page_9);
+        label_Game->setObjectName(QString::fromUtf8("label_Game"));
 
-        horizontalLayout_4->addWidget(label_41);
+        horizontalLayout_4->addWidget(label_Game);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -909,7 +909,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(8);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -954,9 +954,9 @@ public:
         pushButton_18->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_4->setText(QCoreApplication::translate("MainMenuView", "The Help", nullptr));
         pushButton_19->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
-        pushButton_53->setText(QCoreApplication::translate("MainMenuView", "Send", nullptr));
-        pushButton_20->setText(QCoreApplication::translate("MainMenuView", "Quit Game", nullptr));
-        label_41->setText(QCoreApplication::translate("MainMenuView", "Game", nullptr));
+        pushButton_game_chat_send->setText(QCoreApplication::translate("MainMenuView", "Send", nullptr));
+        pushButton_game_quit->setText(QCoreApplication::translate("MainMenuView", "Quit Game", nullptr));
+        label_Game->setText(QCoreApplication::translate("MainMenuView", "Game", nullptr));
         pushButton_BackAddFriend->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_AddFriend->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
         lineEdit_SearchFriendUsername->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Search friend username", nullptr));

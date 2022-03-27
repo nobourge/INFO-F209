@@ -80,6 +80,10 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_Register_clicked();
 
+  void on_pushButton_game_chat_send_clicked();
+
+  void on_pushButton_game_quit_clicked();
+
 private:
   Ui::MainMenuView *ui;
   std::vector<UserClient> friends_ = {};

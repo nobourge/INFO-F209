@@ -181,21 +181,6 @@ void MainMenuView::on_pushButton_17_clicked() {
 
 ///game message send
 void MainMenuView::on_pushButton_53_clicked() {
-/*
-  auto api_wrapper = ApiWrapper::GetShared();
-
-  if (api_wrapper.has_value()) {
-    auto message_res = api_wrapper->SendNewMessage(user_to_chat_with_, ui->lineEdit_6->text().toStdString(););
-    if (message_res.has_value()) {
-      error_message_ = message_res->error_message;
-    }
-  } else {
-    error_message_ = "Not signed in";
-  }
-*/
-  game_chattext = game_chattext + "\n" + ui->lineEdit_15->text().toStdString();
-  ui->textEdit_7->setText(QString::fromStdString(game_chattext));
-  ui->lineEdit_15->setText("");
 
 }
 
@@ -205,12 +190,7 @@ void MainMenuView::on_pushButton_19_clicked() {
 
 ///game back to main
 void MainMenuView::on_pushButton_20_clicked() {
-  //this->setFixedSize(901,599);
-  //this->setFixedSize(90,59);
-  //this->showMinimized();
-  //this->showNormal();
-
-  ui->stackedWidget->setCurrentIndex(3);
+  
 }
 
 ///theme grey
@@ -467,5 +447,37 @@ void MainMenuView::on_pushButton_Register_clicked()
           ui->stackedWidget->setCurrentIndex(3);
         }
       }
+}
+
+
+void MainMenuView::on_pushButton_game_chat_send_clicked()
+{
+    /*
+      auto api_wrapper = ApiWrapper::GetShared();
+
+      if (api_wrapper.has_value()) {
+        auto message_res = api_wrapper->SendNewMessage(user_to_chat_with_, ui->lineEdit_6->text().toStdString(););
+        if (message_res.has_value()) {
+          error_message_ = message_res->error_message;
+        }
+      } else {
+        error_message_ = "Not signed in";
+      }
+    */
+      game_chattext = game_chattext + "\n" + ui->lineEdit_15->text().toStdString();
+      ui->textEdit_7->setText(QString::fromStdString(game_chattext));
+      ui->lineEdit_15->setText("");
+
+}
+
+
+void MainMenuView::on_pushButton_game_quit_clicked()
+{
+    //this->setFixedSize(901,599);
+      //this->setFixedSize(90,59);
+      //this->showMinimized();
+      //this->showNormal();
+
+      ui->stackedWidget->setCurrentIndex(3);
 }
 

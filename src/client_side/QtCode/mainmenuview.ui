@@ -29,7 +29,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>8</number>
         </property>
         <widget class="QWidget" name="page_3">
          <layout class="QGridLayout" name="gridLayout_6">
@@ -3575,7 +3575,7 @@ border-image: null;
              <widget class="QLineEdit" name="lineEdit_15"/>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_53">
+             <widget class="QPushButton" name="pushButton_game_chat_send">
               <property name="text">
                <string>Send</string>
               </property>
@@ -3619,7 +3619,7 @@ border-image: null;
           <item row="3" column="0" colspan="2">
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <item>
-             <widget class="QPushButton" name="pushButton_20">
+             <widget class="QPushButton" name="pushButton_game_quit">
               <property name="text">
                <string>Quit Game</string>
               </property>
@@ -3656,7 +3656,7 @@ border-image: null;
              </spacer>
             </item>
             <item>
-             <widget class="QLabel" name="label_4">
+             <widget class="QLabel" name="label_Game">
               <property name="text">
                <string>Game</string>
               </property>
