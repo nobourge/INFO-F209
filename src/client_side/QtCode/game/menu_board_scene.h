@@ -6,13 +6,9 @@
 #include <QGraphicsScene>
 #include <QVector>
 #include <QGraphicsSceneMouseEvent>
-<<<<<<< HEAD
 #include <QPoint>
 #include <algorithm>
-=======
 #include "assets.h"
-
->>>>>>> refs/remotes/origin/main
 
 class MenuBoardScene : public QGraphicsScene {
     QVector<QVector<MenuCell*>> cells;
@@ -27,7 +23,7 @@ public:
         }
     }
 public slots:
-     
+
 };
 
 #endif
