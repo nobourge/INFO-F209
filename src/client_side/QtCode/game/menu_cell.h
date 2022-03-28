@@ -6,6 +6,7 @@
 #include <iostream>
 #include <QGraphicsSceneMouseEvent>
 #include <QPoint>
+#include "assets.h"
 
 using namespace std;
 class MenuCell : public QGraphicsPixmapItem {
@@ -13,7 +14,7 @@ class MenuCell : public QGraphicsPixmapItem {
     bool player=false;
     bool isPlat=false;
 public:
-    MenuCell(int x, int y,int row,int col,int size=20,bool isPlat=false,QPixmap pixmap=QPixmap("../QtCode/game/assets/cell.png"));
+    MenuCell(int x, int y,int row,int col,int size=20,bool isPlat=false,QPixmap pixmap=QPixmap(cell_png.c_str()));
     void setCellPixmap(QPixmap image, int size=32);
 
     QPoint getPosition(){return pos;}

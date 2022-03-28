@@ -18,7 +18,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(SOURCES menu_board_scene.cpp
             menu_board_view.cpp
             menu_cell.cpp
-            menu_wall_cell.cpp)
+            menu_wall_cell.cpp
+            assets.h)
 
 add_library(${PROJECT_NAME} ${SOURCES})
 

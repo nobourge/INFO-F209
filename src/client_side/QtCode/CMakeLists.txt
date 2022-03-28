@@ -20,7 +20,7 @@ set(SOURCES board_scene.cpp
             game.cpp
             main.cpp
             mainmenuview.ui
-            mainmenuview.cpp game/assets.cpp game/assets.h)
+            mainmenuview.cpp)
 
 add_library(${PROJECT_NAME} ${SOURCES})
 
