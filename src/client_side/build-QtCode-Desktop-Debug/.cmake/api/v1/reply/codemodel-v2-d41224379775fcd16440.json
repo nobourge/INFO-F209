@@ -1,0 +1,136 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "game",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "game",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "menus_lib",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "game_menu_lib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "game_menu_lib::@0c53ff3c4131f9152fd3",
+					"jsonFile" : "target-game_menu_lib-Debug-97c3336b03fd51c95e28.json",
+					"name" : "game_menu_lib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "game_menu_lib_autogen::@0c53ff3c4131f9152fd3",
+					"jsonFile" : "target-game_menu_lib_autogen-Debug-1326210f69d3141e2448.json",
+					"name" : "game_menu_lib_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "game_menu_lib_autogen_timestamp_deps::@0c53ff3c4131f9152fd3",
+					"jsonFile" : "target-game_menu_lib_autogen_timestamp_deps-Debug-78308cfaf0bc86d2bb79.json",
+					"name" : "game_menu_lib_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "menus_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-menus_lib-Debug-e0055d74a24c20ffc25e.json",
+					"name" : "menus_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "menus_lib_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-menus_lib_autogen-Debug-b69b1be48156d5de36b7.json",
+					"name" : "menus_lib_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "menus_lib_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-menus_lib_autogen_timestamp_deps-Debug-9b5b0b72936275780db2.json",
+					"name" : "menus_lib_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ayboulai/Documents/truc/INFO-F209/src/client_side/build-QtCode-Desktop-Debug",
+		"source" : "/home/ayboulai/Documents/truc/INFO-F209/src/client_side/QtCode"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 1
+	}
+}
