@@ -6,6 +6,8 @@
 #include <QGraphicsScene>
 #include <QVector>
 #include <QGraphicsSceneMouseEvent>
+#include "assets.h"
+
 
 class MenuBoardScene : public QGraphicsScene {
     QVector<QVector<MenuCell*>> cells;
