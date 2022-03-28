@@ -16,6 +16,7 @@ class MenuBoardView : public QGraphicsView {
     MenuCell* firstWall=nullptr;
 public:
     MenuBoardView();
+    MenuBoardView(QVector<QPoint> pawns_, QVector<QPoint> walls_);
     void playMove(MenuCell*);
     bool verifyMove(QPoint,QPoint);
     void placeWall(MenuCell*, MenuCell*);

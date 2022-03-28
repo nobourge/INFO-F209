@@ -8,6 +8,12 @@ MenuBoardView::MenuBoardView() : QGraphicsView{new MenuBoardScene()} {
     newItem->setCellPawn(true);
 } // using super class constructor
 
+MenuBoardView::MenuBoardView(QVector<QPoint> pawns_, QVector<QPoint> walls_) : QGraphicsView{new MenuBoardScene(pawns_, walls_)} {
+    QGraphicsItem *item=scene()->itemAt({0,0},QTransform());
+    MenuCell* newItem =static_cast<MenuCell*>(item);
+    newItem->setCellPawn(true);
+} // using super class constructor
+
 void MenuBoardView::mousePressEvent(QMouseEvent *event) //Mouse click event
 {
     qDebug() << "Custom view clicked.";

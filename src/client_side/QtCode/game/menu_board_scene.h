@@ -6,11 +6,14 @@
 #include <QGraphicsScene>
 #include <QVector>
 #include <QGraphicsSceneMouseEvent>
+#include <QPoint>
+#include <algorithm>
 
 class MenuBoardScene : public QGraphicsScene {
     QVector<QVector<MenuCell*>> cells;
 public:
     MenuBoardScene();
+    MenuBoardScene(QVector<QPoint> pawns_, QVector<QPoint> walls_);
     ~MenuBoardScene(){
         for(int i=0;i<cells.size();i++){
             for(int j=0;j<cells.size();j++){

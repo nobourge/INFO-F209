@@ -14,7 +14,7 @@ class MenuCell : public QGraphicsPixmapItem {
     bool player=false;
     bool isPlat=false;
 public:
-    MenuCell(int x, int y,int row,int col,int size=20,bool isPlat=false,QPixmap pixmap=QPixmap(cell_png.c_str()));
+    MenuCell(int x, int y,int row,int col,int size=20,bool isPlat=false, bool player=false,QPixmap pixmap=QPixmap(cell_png.c_str()));
     void setCellPixmap(QPixmap image, int size=32);
 
     QPoint getPosition(){return pos;}

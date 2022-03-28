@@ -9,7 +9,7 @@
 class MenuWallCell : public MenuCell {
     bool hasWall;
 public:
-    MenuWallCell(int x, int y,int row,int col,int size=20, QPixmap pixmap=QPixmap(no_wall_png.c_str()));
+    MenuWallCell(int x, int y, int row, int col, int size=20, bool hasWall=false, QPixmap pixmap=QPixmap(no_wall_png.c_str()));
     void setWall(bool isHorizontal);
     void unsetWall();
     

@@ -1,6 +1,8 @@
 #include "menu_wall_cell.h"
 
-MenuWallCell::MenuWallCell(int x, int y,int row,int col,int size, QPixmap pixmap) : MenuCell{x, y,row,col,size,false, pixmap} {}
+MenuWallCell::MenuWallCell(int x, int y, int row, int col, int size, bool hasWall, QPixmap pixmap) : MenuCell{x, y,row,col,size,false, false, pixmap}, hasWall{hasWall} {
+    if (hasWall) setWall(getPosition().x() % 2 == 0);
+}
 
 void MenuWallCell::setWall(bool isHorizontal) {
     if (isHorizontal) setCellPixmap(QPixmap(wallHorizontal_png.c_str()));
