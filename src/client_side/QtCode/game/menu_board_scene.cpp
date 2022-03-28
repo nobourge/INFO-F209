@@ -1,5 +1,4 @@
 #include "menu_board_scene.h"
-#include "assets.h"
 
 using namespace std;
 
@@ -9,7 +8,13 @@ MenuBoardScene::MenuBoardScene() {
             if (col % 2 == 0 && row % 2 == 0) this->addItem(new MenuCell(32*row, 32*col,row,col,32,true));
             else this->addItem(new MenuWallCell(32*row, 32*col,row,col,32));
         }
+<<<<<<< HEAD
         this->addItem(new MenuCell(32*0, 32*0,0,0,32,true, true, QPixmap(pawn_png.c_str())));
+=======
+        this->addItem(new MenuCell(32*0, 32*0,0,0,32,true,QPixmap(pawn_png.c_str())));
+        //this->addItem(new MenuCell(32*0, 32*0,0,0,32,true,QPixmap("assets/pawn.png")));
+
+>>>>>>> refs/remotes/origin/main
     }
 
 }

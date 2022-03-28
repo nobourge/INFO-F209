@@ -1,9 +1,20 @@
 #include "menu_cell.h"
 
 using namespace std;
+<<<<<<< HEAD
 MenuCell::MenuCell(int x, int y,int row,int col,int size,bool isPlat, bool player, QPixmap pixmap): player{player}, pos{row, col}, isPlat(isPlat) {
     if (player) setCellPixmap(QPixmap(pawn_png.c_str()), size);
     else setCellPixmap(pixmap, size);
+=======
+MenuCell::MenuCell(int x,
+                   int y,
+                   int row,
+                   int col,
+                   int size,
+                   bool isPlat,
+                   QPixmap Pixmapcell_png): pos{row, col},isPlat(isPlat) {
+    setCellPixmap(Pixmapcell_png, size);
+>>>>>>> refs/remotes/origin/main
     setOffset(x, y);
 }
 

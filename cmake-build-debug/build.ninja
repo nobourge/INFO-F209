@@ -823,14 +823,6 @@ build src/client_side/QtCode/CMakeFiles/menus_lib.dir/mainmenuview.cpp.o: CXX_CO
   OBJECT_DIR = src/client_side/QtCode/CMakeFiles/menus_lib.dir
   OBJECT_FILE_DIR = src/client_side/QtCode/CMakeFiles/menus_lib.dir
 
-build src/client_side/QtCode/CMakeFiles/menus_lib.dir/game/assets.cpp.o: CXX_COMPILER__menus_lib_Debug /home/noe/Github/INFO-F209/src/client_side/QtCode/game/assets.cpp || cmake_object_order_depends_target_menus_lib
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = src/client_side/QtCode/CMakeFiles/menus_lib.dir/game/assets.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
-  INCLUDES = -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/QtCode -I/home/noe/Github/INFO-F209/src/client_side/QtCode -I/home/noe/Github/INFO-F209/cmake-build-debug/src/client_side/QtCode/menus_lib_autogen/include -I/home/noe/Github/INFO-F209/src/client_side/QtCode/game -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/noe/Qt/6.2.4/gcc_64/include -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/noe/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/noe/Qt/6.2.4/gcc_64/include/QtGui
-  OBJECT_DIR = src/client_side/QtCode/CMakeFiles/menus_lib.dir
-  OBJECT_FILE_DIR = src/client_side/QtCode/CMakeFiles/menus_lib.dir/game
-
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target menus_lib
@@ -839,7 +831,7 @@ build src/client_side/QtCode/CMakeFiles/menus_lib.dir/game/assets.cpp.o: CXX_COM
 #############################################
 # Link the static library src/client_side/QtCode/libmenus_lib.a
 
-build src/client_side/QtCode/libmenus_lib.a: CXX_STATIC_LIBRARY_LINKER__menus_lib_Debug src/client_side/QtCode/CMakeFiles/menus_lib.dir/menus_lib_autogen/mocs_compilation.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/board_scene.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/canvas.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/game.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/main.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/mainmenuview.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/game/assets.cpp.o || src/client_side/QtCode/game/libgame_menu_lib.a src/client_side/QtCode/menus_lib_autogen src/client_side/QtCode/menus_lib_autogen_timestamp_deps /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4 /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4
+build src/client_side/QtCode/libmenus_lib.a: CXX_STATIC_LIBRARY_LINKER__menus_lib_Debug src/client_side/QtCode/CMakeFiles/menus_lib.dir/menus_lib_autogen/mocs_compilation.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/board_scene.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/canvas.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/game.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/main.cpp.o src/client_side/QtCode/CMakeFiles/menus_lib.dir/mainmenuview.cpp.o || src/client_side/QtCode/game/libgame_menu_lib.a src/client_side/QtCode/menus_lib_autogen src/client_side/QtCode/menus_lib_autogen_timestamp_deps /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4 /home/noe/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = src/client_side/QtCode/CMakeFiles/menus_lib.dir
   POST_BUILD = :
