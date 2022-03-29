@@ -38,7 +38,7 @@ set(SOURCES
         view_controllers/view_controller_menu_new_game.cpp
         view_controllers/view_controller_ranking.cpp
         view_controllers/view_controller_welcome.cpp
-        
+
         views/menu_views/abstract_menu_view.cpp
         views/menu_views/chat_room_menu_view.cpp
         views/menu_views/create_account_menu_view.cpp
@@ -47,13 +47,13 @@ set(SOURCES
         views/menu_views/game_view.cpp
         views/menu_views/help_menu_view.cpp
         views/menu_views/home_menu_view.cpp
-        views/menu_views/join_game_menu_view.cpp 
+        views/menu_views/join_game_menu_view.cpp
         views/menu_views/join_or_create_game_menu_view.cpp
         views/menu_views/login_menu_view.cpp
         views/menu_views/new_game_menu_view.cpp
         views/menu_views/ranking_menu_view.cpp
         views/menu_views/start_menu_view.cpp
-        
+
         views/menu_views/views/abstract_view.cpp
         views/menu_views/views/button.cpp
         views/menu_views/views/first_responder.cpp
@@ -76,7 +76,7 @@ set(SOURCES
         ../common/models/position.cpp
         ../common/models/translator.cpp
 
-       )
+        )
 
 
 #if(UNIX)
@@ -90,9 +90,12 @@ add_subdirectory(QtCode)
 
 target_link_directories(${PROJECT_NAME} PUBLIC QtCode/)
 target_link_libraries(${PROJECT_NAME} menus_lib)
-target_link_libraries(${PROJECT_NAME} ncurses curl pthread Qt6::Widgets uuid)
 target_include_directories(${PROJECT_NAME} PUBLIC ${SQLite3_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} ${SQLite3_LIBRARIES} Qt6::Core)
-
+if (APPLE)
+    target_link_libraries(${PROJECT_NAME} ncurses curl pthread Qt6::Widgets)
+else ()
+    target_link_libraries(${PROJECT_NAME} ncurses curl pthread Qt6::Widgets uuid)
+endif ()
 
 
