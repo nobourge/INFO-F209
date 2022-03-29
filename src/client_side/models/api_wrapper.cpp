@@ -6,6 +6,7 @@
 #include "requests.h"
 #include <stdexcept>
 
+#
 std::vector<UserClient> ApiWrapper::GetUsersRanked(unsigned int max_num_users) {
   std::string url = api_url_;
   url += "users/ranking";

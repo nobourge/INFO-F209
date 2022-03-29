@@ -29,7 +29,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>7</number>
+         <number>10</number>
         </property>
         <widget class="QWidget" name="page_3">
          <layout class="QGridLayout" name="gridLayout_5">
@@ -4049,7 +4049,7 @@ border-image: null;
             <item>
              <widget class="QLabel" name="label_Help">
               <property name="text">
-               <string>Help</string>
+               <string>Pour plus de précisions : https://www.gigamic.com/files/catalog/products/rules/quoridor-classic-fr.pdf</string>
               </property>
              </widget>
             </item>
@@ -4397,6 +4397,124 @@ p, li { white-space: pre-wrap; }
            </layout>
           </item>
          </layout>
+        </widget>
+        <widget class="QWidget" name="page_11">
+         <widget class="QComboBox" name="comboBox">
+          <property name="geometry">
+           <rect>
+            <x>330</x>
+            <y>130</y>
+            <width>86</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton">
+          <property name="geometry">
+           <rect>
+            <x>330</x>
+            <y>210</y>
+            <width>89</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Play Game</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_ToInviteFriend">
+          <property name="geometry">
+           <rect>
+            <x>330</x>
+            <y>270</y>
+            <width>89</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Invite Friend</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_BackToMenuFromJoin">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>490</y>
+            <width>89</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Back</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="page_12">
+         <widget class="QComboBox" name="comboBox_InviteBox">
+          <property name="geometry">
+           <rect>
+            <x>330</x>
+            <y>220</y>
+            <width>86</width>
+            <height>25</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_InviteToGame">
+          <property name="geometry">
+           <rect>
+            <x>300</x>
+            <y>280</y>
+            <width>151</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Invite to game</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_BackToJoinMenu">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>490</y>
+            <width>89</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Back</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>140</y>
+            <width>113</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>Name of Game</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_2">
+          <property name="geometry">
+           <rect>
+            <x>330</x>
+            <y>190</y>
+            <width>271</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Invite a friend</string>
+          </property>
+         </widget>
         </widget>
        </widget>
       </item>

@@ -62,7 +62,7 @@ add_executable(QuoridorServer
 
 target_include_directories(QuoridorServer PUBLIC ${Boost_INCLUDE_DIRS})
 target_include_directories(QuoridorServer PUBLIC ${SQLite3_INCLUDE_DIRS})
-target_link_libraries(QuoridorServer ${Boost_LIBRARIES} OpenSSL::SSL ${SQLite3_LIBRARIES})
+target_link_libraries(QuoridorServer ${Boost_LIBRARIES} OpenSSL::SSL ${SQLite3_LIBRARIES} uuid)
 
 #[[
 

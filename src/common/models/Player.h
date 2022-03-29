@@ -8,6 +8,7 @@
 #include "translator.h"
 #include <iostream>
 #include <optional>
+#include <uuid/uuid.h>
 
 class Player {
   int n_walls_ = 10;
