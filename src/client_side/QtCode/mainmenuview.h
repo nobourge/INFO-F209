@@ -139,6 +139,6 @@ private:
   std::string game_chattext;
   //std::string Rankingtext="";
   std::string Rankingtext;
-  MenuBoardView *menuView = new MenuBoardView();
+  MenuBoardView *menuView = new MenuBoardView(0, {QPoint{2,0}}, {QPoint{0, 1}});
 };
 #endif // MAINMENUVIEW_H
