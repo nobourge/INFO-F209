@@ -18,3 +18,4 @@ example.db
 
 
 src/server_side/build/*
+*.db
