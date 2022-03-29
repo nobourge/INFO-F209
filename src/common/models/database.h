@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 class Board;
+class Game;
 
 class DataBase {
   sqlite3 *db_;
@@ -22,7 +23,6 @@ class DataBase {
   char *messageError;
   static int friendsId;
   static int ranking_id_;
-  static int board_id;
 
   std::mutex accessing_db_;
 
@@ -48,12 +48,11 @@ public:
   std::vector<object_id_t> GetAllGamesWhereUserIsAdmin(object_id_t user);
   std::vector<object_id_t> GetAllGamesForUser(object_id_t user);
   std::vector<object_id_t> GetAllParticipantsInGame(object_id_t game);
-  object_id_t CreateGame(object_id_t current_user_id,
-                         const std::string &game_name, const Board &board);
+  uint32_t CreateGame(object_id_t admin_user_id, const std::string &game_name,
+                      Game &game);
+  void SaveGame(object_id_t game_id, Game game);
   void InviteUserToGame(object_id_t game_id, object_id_t userid);
   std::optional<uint32_t> GetAdminOfGame(object_id_t game_id);
-
-  object_id_t GetNextBoardId();
 
   void RunSQL(const std::string &query);
 

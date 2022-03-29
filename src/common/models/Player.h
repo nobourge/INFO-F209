@@ -8,25 +8,26 @@
 #include "translator.h"
 #include <iostream>
 #include <optional>
+#include <uuid/uuid.h>
 
 class Player {
-  int nbWalls = 10;
-  Position playerPos;
-  DIRECTION dr;
-  int score = 0;
-
-public:
-  void SetUser(const optional<uint32_t> &user);
+  int n_walls_ = 10;
+  Position position_;
+  DIRECTION direction_;
+  int score_ = 0;
+  uuid_t uuid_;
 
 private:
-  std::optional<object_id_t> user_;
+  std::optional<object_id_t> user_id_;
 
 public:
-  Player(std::optional<object_id_t> user_id) : user_(user_id) {}
+  const uuid_t &GetUuid() const;
+  Player(std::optional<object_id_t> user_id);
   Player(Position, DIRECTION, int = 10);
   // direction of first player is always NORTH, second SOUTH, third WEST,
   // fourth EAST
-
+  void SetUser(const optional<uint32_t> &user);
+  object_id_t GetUniqueGameId();
   const optional<uint32_t> &GetUserId() const;
   bool isTurnOver();
   virtual bool hasWon();
@@ -40,40 +41,9 @@ public:
   int getScore();
   DIRECTION getGoal() const;
 
-  crow::json::wvalue Serialize() {
-    crow::json::wvalue output;
+  crow::json::wvalue Serialize();
 
-    output["number_of_walls"] = nbWalls;
-    output["direction"] = static_cast<int>(dr);
-    output["score"] = score;
-    output["position"] = std::move(*playerPos.Serialize());
-
-    if (user_.has_value()) {
-      output["user"] = *user_;
-    }
-
-    return output;
-  }
-
-  static std::optional<Player> FromJson(const crow::json::rvalue &json) {
-    Player player{};
-    try {
-      player.nbWalls = json["number_of_walls"].i();
-
-      auto pos = Position::FromJson(json["position"]);
-      if (!pos.has_value()) {
-        return {};
-      }
-      player.playerPos = *pos;
-
-      player.dr = static_cast<DIRECTION>(json["direction"].i());
-      player.score = json["score"].i();
-
-    } catch(...) {
-      return {};
-    }
-    return player;
-  }
+  static std::optional<Player> FromJson(const crow::json::rvalue &json);
 
   void DecNrOfWalls();
   int GetNrOfWalls() const;
@@ -81,7 +51,7 @@ public:
   virtual bool IsAI() { return false; };
 
 private:
-  Player() : playerPos(), user_(0) {};
+  Player() : position_(), user_id_(0) {};
 };
 
 #endif

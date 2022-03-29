@@ -139,12 +139,12 @@ protected:
       return output;
     });
 
-    API_ROUTE(GetApp(), "/api/v1/users/except/me")
+    API_ROUTE(GetApp(), "/api/v1/me/all-users-except-me")
         ([](const crow::request &request) {
           VALIDATE_CREDENTIALS(requests);
 
           crow::json::wvalue output;
-          output["usersexceptme"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
+          output["users"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
           return output;
         });
 
@@ -329,8 +329,9 @@ protected:
 
       crow::json::wvalue output;
       auto move_ret = game->PlayMove(move);
-
       API_GUARD(!move_ret.has_value(), *move_ret)
+
+      DataBase::GetInstance()->SaveGame(game_index, *game);
 
       output["success"] = true;
 

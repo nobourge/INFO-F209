@@ -90,7 +90,7 @@ add_subdirectory(QtCode)
 
 target_link_directories(${PROJECT_NAME} PUBLIC QtCode/)
 target_link_libraries(${PROJECT_NAME} menus_lib)
-target_link_libraries(${PROJECT_NAME} ncurses curl pthread Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} ncurses curl pthread Qt6::Widgets uuid)
 target_include_directories(${PROJECT_NAME} PUBLIC ${SQLite3_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} ${SQLite3_LIBRARIES} Qt6::Core)
 

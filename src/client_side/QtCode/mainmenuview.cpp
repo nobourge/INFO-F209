@@ -2,6 +2,7 @@
 #include "game.h"
 #include "board_scene.h"
 #include "../../../src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
+#include <QComboBox>
 #include <QStringList>
 #include <QPlainTextEdit>
 #include <variant>
@@ -11,12 +12,18 @@
 MainMenuView::MainMenuView(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainMenuView) {
   ui->setupUi(this);
-  ui->horizontalLayout_2->removeWidget(ui->horizontalLayout_2->itemAt(0)->widget());
+
 
   this->setStyleSheet("selection-color: green");
 
   ui->stackedWidget->setCurrentIndex(0);
   ui->stackedWidget->addWidget(menuView);
+  //hyperlien
+  ui->label_Help->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
+  ui->label_Help->setOpenExternalLinks(true);
+  ui->label_Help->setTextFormat(Qt::RichText);
+  ui->label_Help->setText("<a href=\"https://www.gigamic.com/files/catalog/products/rules/quoridor-classic-fr.pdf\"> rules");
+
 }
 
 MainMenuView::~MainMenuView()
@@ -37,14 +44,13 @@ MainMenuView::~MainMenuView()
 
 ///play : from main to game
 void MainMenuView::on_pushButton_clicked() {
-  //ui->horizontalLayout_2->addWidget(new MenuBoardView(0, {QPoint{2,0}}, {QPoint{0, 1}}));
   ui->stackedWidget->setCurrentIndex(8);
 }
 
 ///from home_menu back to login
 void MainMenuView::on_pushButton_5_clicked() {
 
-  ui->stackedWidget->setCurrentIndex(3);
+  ui->stackedWidget->setCurrentIndex(1);
 }
 
 ///from welcome to login
@@ -59,7 +65,6 @@ void MainMenuView::on_pushButton_6_clicked() {
 
 ///Quit
 void MainMenuView::on_pushButton_8_clicked() {
-    ui->stackedWidget->setCurrentIndex(10);
 }
 
 ///back : from login to welcome
@@ -90,7 +95,7 @@ void MainMenuView::on_pushButton_15_clicked() {
 }
 
 void MainMenuView::on_pushButton_2_clicked() {
-  updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
+  updateFriendsComboBoxView();
 }
 
 void MainMenuView::on_pushButton_18_clicked() {}
@@ -125,7 +130,7 @@ void MainMenuView::on_pushButton_23_clicked() {
 }
 
 void MainMenuView::on_pushButton_3_clicked() {
-  ui->stackedWidget->setCurrentIndex(3);
+  ui->stackedWidget->setCurrentIndex(7);
 }
 
 void MainMenuView::on_pushButton_24_clicked() {
@@ -184,7 +189,7 @@ void MainMenuView::on_pushButton_Chat_clicked()
 
 void MainMenuView::on_pushButton_BackChooseFriend_clicked()
 {
-    updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
+    updateFriendsComboBoxView();
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -254,7 +259,7 @@ void MainMenuView::on_pushButton_LoginWelcome_clicked()
     ui->lineEdit_PseudoLogin->clear();
     ui->lineEdit_PasswordLogin->clear();
     ui->stackedWidget->setCurrentIndex(1);
-    updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
+    updateFriendsComboBoxView();
     updateChatRoomMessagesListView();
     updateRankingView();
 }
@@ -456,7 +461,7 @@ void MainMenuView::on_pushButton_RankingMainMenu_clicked()
 
 void MainMenuView::on_pushButton_FriendListMainMenu_clicked()
 {
-  updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
+  updateFriendsComboBoxView();
   ui->stackedWidget->setCurrentIndex(5);
 
 }
@@ -515,9 +520,8 @@ void MainMenuView::updateChatRoomMessagesListView() {
 
 
 
-void MainMenuView::updateFriendsComboBoxView(QComboBox* combobox) {
-  //ui->comboBox_ChooseFriend->clear();
-   combobox->clear();
+void MainMenuView::updateFriendsComboBoxView() {
+  ui->comboBox_ChooseFriend->clear();
 
   std::vector<string> friends;
   auto current_user = ApiWrapper::GetShared()->GetCurrentUser();
@@ -529,7 +533,7 @@ void MainMenuView::updateFriendsComboBoxView(QComboBox* combobox) {
   }
 
   for (auto &user : friends_) {
-    combobox->addItem(QString::fromStdString(user.GetUsername().GetValue()));
+    ui->comboBox_ChooseFriend->addItem(QString::fromStdString(user.GetUsername().GetValue()));
     friends.push_back(user.GetUsername().GetValue());
   }
 }
@@ -551,34 +555,3 @@ void MainMenuView::updateRankingView() {
   }
   ui->textEdit_RankingDisplay->setText(QString::fromStdString(rankings));
 }
-
-void MainMenuView::on_pushButton_PlayMainMenu_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(10);
-}
-
-
-void MainMenuView::on_pushButton_BackToMenuFromJoin_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(3);
-}
-
-
-void MainMenuView::on_pushButton_ToInviteFriend_clicked()
-{
-    updateFriendsComboBoxView(ui->comboBox_InviteBox);
-    ui->stackedWidget->setCurrentIndex(11);
-}
-
-
-void MainMenuView::on_pushButton_InviteToGame_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(10);
-}
-
-
-void MainMenuView::on_pushButton_BackToJoinMenu_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(10);
-}
-
