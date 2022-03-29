@@ -3,14 +3,16 @@ board.cpp
 TODO do the description
 */
 #include "board.h"
+#include "../../client_side/models/user_client.h"
+#include "../utils.h"
 #include <iostream>
 #include <utility>
 
 ///
 /// \param pawns_
 /// \param wallsPosition
-Board::Board(const std::vector<std::shared_ptr<Player>>& pawns_,
-             const std::vector<Position>& wallsPosition)
+Board::Board(const std::vector<std::shared_ptr<Player>> &pawns_,
+             const std::vector<Position> &wallsPosition)
     : pawns_{pawns_} {
 
   // setting up the board by trusting the positions to be possible
@@ -24,11 +26,11 @@ Board::Board(const std::vector<std::shared_ptr<Player>>& pawns_,
     }
   }
 
-  auto lambda = [](const Position& position, std::shared_ptr<Player> pawn,
+  auto lambda = [](const Position &position, std::shared_ptr<Player> pawn,
                    array<array<Cell, kBoardSize>, kBoardSize> &cells) {
     cells[position.row][position.col].setPawn(std::move(pawn));
   };
-  for (const std::shared_ptr<Player>& pawn : pawns_)
+  for (const std::shared_ptr<Player> &pawn : pawns_)
     lambda(pawn->getPlayerPos(), pawn, cells_);
 
   // for (Position pos : pawns_) {
@@ -39,36 +41,36 @@ Board::Board(const std::vector<std::shared_ptr<Player>>& pawns_,
   for (Position pos : wallsPosition) {
     walls_[pos.row][pos.col] = true;
     if (pos.row % 2 != 0) {
-      cells_[   pos.row / 2   ][   pos.col / 2   ].setWall(SOUTH);
-      cells_[ pos.row / 2 + 1 ][   pos.col / 2   ].setWall(NORTH);
+      cells_[pos.row / 2][pos.col / 2].setWall(SOUTH);
+      cells_[pos.row / 2 + 1][pos.col / 2].setWall(NORTH);
     } else {
-      cells_[   pos.row / 2   ][   pos.col / 2   ].setWall(EAST);
-      cells_[   pos.row / 2   ][ pos.col / 2 + 1 ].setWall(WEST);
+      cells_[pos.row / 2][pos.col / 2].setWall(EAST);
+      cells_[pos.row / 2][pos.col / 2 + 1].setWall(WEST);
     }
   }
 }
 
-//void Board::SaveToDB(object_id_t board_id) const {
-//  if (pawns_.size() > 2) {
-//    DataBase::GetInstance()->InsertBoard(
-//        4, GetWallsSerialization(),
-//        GetPositionSerialization(pawns_[0]->getPlayerPos()),
-//        pawns_[0]->GetNrOfWalls(),
-//        GetPositionSerialization(pawns_[1]->getPlayerPos()),
-//        pawns_[1]->GetNrOfWalls(),
-//        GetPositionSerialization(pawns_[2]->getPlayerPos()),
-//        pawns_[2]->GetNrOfWalls(),
-//        GetPositionSerialization(pawns_[3]->getPlayerPos()),
-//        pawns_[3]->GetNrOfWalls(), board_id);
-//  } else {
-//    DataBase::GetInstance()->InsertBoard(
-//        2, GetWallsSerialization(),
-//        GetPositionSerialization(pawns_[0]->getPlayerPos()),
-//        pawns_[0]->GetNrOfWalls(),
-//        GetPositionSerialization(pawns_[1]->getPlayerPos()),
-//        pawns_[1]->GetNrOfWalls(), board_id);
-//  }
-//}
+// void Board::SaveToDB(object_id_t board_id) const {
+//   if (pawns_.size() > 2) {
+//     DataBase::GetInstance()->InsertBoard(
+//         4, GetWallsSerialization(),
+//         GetPositionSerialization(pawns_[0]->getPlayerPos()),
+//         pawns_[0]->GetNrOfWalls(),
+//         GetPositionSerialization(pawns_[1]->getPlayerPos()),
+//         pawns_[1]->GetNrOfWalls(),
+//         GetPositionSerialization(pawns_[2]->getPlayerPos()),
+//         pawns_[2]->GetNrOfWalls(),
+//         GetPositionSerialization(pawns_[3]->getPlayerPos()),
+//         pawns_[3]->GetNrOfWalls(), board_id);
+//   } else {
+//     DataBase::GetInstance()->InsertBoard(
+//         2, GetWallsSerialization(),
+//         GetPositionSerialization(pawns_[0]->getPlayerPos()),
+//         pawns_[0]->GetNrOfWalls(),
+//         GetPositionSerialization(pawns_[1]->getPlayerPos()),
+//         pawns_[1]->GetNrOfWalls(), board_id);
+//   }
+// }
 
 std::string Board::GetWallsSerialization() const {
   std::string serializedString;
@@ -81,7 +83,7 @@ std::string Board::GetWallsSerialization() const {
   return serializedString;
 }
 
-std::string Board::GetPositionSerialization(const Position& position) {
+std::string Board::GetPositionSerialization(const Position &position) {
   return std::to_string(position.col) + "," + std::to_string(position.row);
 }
 
@@ -353,17 +355,17 @@ void Board::PlaceWall(Position case1, Position case2, DIRECTION dir) {
   if (!IsWallPossible(case1, case2, dir))
     return;
   if (dir == SOUTH) {
-    walls_[case1.row * 2 + 1][  case1.col * 2  ] = true;
-    walls_[case2.row * 2 + 1][  case2.col * 2  ] = true;
+    walls_[case1.row * 2 + 1][case1.col * 2] = true;
+    walls_[case2.row * 2 + 1][case2.col * 2] = true;
   } else if (dir == NORTH) {
-    walls_[case1.row * 2 - 1][  case1.col * 2  ] = true;
-    walls_[case2.row * 2 - 1][  case2.col * 2  ] = true;
+    walls_[case1.row * 2 - 1][case1.col * 2] = true;
+    walls_[case2.row * 2 - 1][case2.col * 2] = true;
   } else if (dir == EAST) {
-    walls_[  case1.row * 2  ][case1.col * 2 + 1] = true;
-    walls_[  case2.row * 2  ][case2.col * 2 + 1] = true;
+    walls_[case1.row * 2][case1.col * 2 + 1] = true;
+    walls_[case2.row * 2][case2.col * 2 + 1] = true;
   } else {
-    walls_[  case1.row * 2  ][case1.col * 2 - 1] = true;
-    walls_[  case2.row * 2  ][case2.col * 2 - 1] = true;
+    walls_[case1.row * 2][case1.col * 2 - 1] = true;
+    walls_[case2.row * 2][case2.col * 2 - 1] = true;
   }
 }
 
@@ -427,7 +429,9 @@ Board::GetWalls() {
   return walls_;
 }
 
-std::optional<Board> Board::FromJson(const crow::json::rvalue &json) {
+optional<Board>
+Board::FromJson(const crow::json::rvalue &json,
+                const unordered_map<string, shared_ptr<Player>> &game_players) {
 
   Board board{{}, {}};
 
@@ -439,7 +443,7 @@ std::optional<Board> Board::FromJson(const crow::json::rvalue &json) {
     }
     for (int i = 0; i < json["cells"].size(); i++) {
       for (int j = 0; j < json["cells"][i].size(); j++) {
-        auto cell = Cell::FromJson(json["cells"][i][j]);
+        auto cell = Cell::FromJson(json["cells"][i][j], game_players);
         if (!cell.has_value()) {
           return {};
         }
@@ -452,7 +456,9 @@ std::optional<Board> Board::FromJson(const crow::json::rvalue &json) {
       if (!pawn.has_value()) {
         return {};
       }
-      board.pawns_[i] = std::make_shared<Player>(*pawn);
+      board.pawns_[i] = game_players.empty()
+                            ? std::make_shared<Player>(*pawn)
+                            : game_players.at(uuidToString(pawn->GetUuid()));
     }
   } catch (...) {
     return {};

@@ -16,7 +16,7 @@ public:
   bool SaveToDB();
 
   static std::optional<UserServer>
-  InitFromDbByIdWithoutFriendList(const object_id_t id);
+  InitFromDbByIdWithoutFriendList(object_id_t id);
 
   static std::optional<UserServer>
   InitFromDB(const Username &username,
@@ -47,21 +47,21 @@ public:
 
   std::vector<UserServer> GetFriendsWithoutLoadingTheirFriends();
 
-  std::optional<object_id_t>
-  CreateNewGameAndSaveToDb(const std::vector<UserServer> &invitees,
-                           const std::string &room_name) {
-    // it is possible to have at most 3 invitees. If there are only two, an AI
-    // player will be added
-    if (invitees.size() <= 3) {
-      auto game = Game(room_name);
-      auto game_id = DataBase::GetInstance()->CreateGame(GetId(), room_name,
-                                                         <#initializer #>);
-      for (auto &invitee : invitees)
-        DataBase::GetInstance()->InviteUserToGame(game_id, invitee.GetId());
-      return game_id;
-    } else
-      return {};
-  }
+//  std::optional<object_id_t>
+//  CreateNewGameAndSaveToDb(const std::vector<UserServer> &invitees,
+//                           const std::string &room_name) {
+//    // it is possible to have at most 3 invitees. If there are only two, an AI
+//    // player will be added
+//    if (invitees.size() <= 3) {
+//      auto game = Game(room_name);
+//      auto game_id = DataBase::GetInstance()->CreateGame(GetId(), room_name,
+//                                                         <#initializer #>);
+//      for (auto &invitee : invitees)
+//        DataBase::GetInstance()->InviteUserToGame(game_id, invitee.GetId());
+//      return game_id;
+//    } else
+//      return {};
+//  }
 
 private:
   static std::unique_ptr<std::vector<UserServer>>

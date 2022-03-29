@@ -41,7 +41,7 @@ bool JoinGameMenuViewController::ShouldDisplayList() const {
 }
 
 void JoinGameMenuViewController::FetchGames() {
-  auto res = ApiWrapper::GetShared()->GetGamesVector();
+  std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGamesVector();
   if (holds_alternative<ApiError>(res)) {
     error_message_ = std::get<ApiError>(res).error_message;
     games_ = {};

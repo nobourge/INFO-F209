@@ -18,6 +18,8 @@
 #include <string>
 #include <vector>
 
+class UserClient;
+
 class Board {
 public:
   Board(const std::vector<std::shared_ptr<Player>>&, const std::vector<Position>&);
@@ -56,7 +58,9 @@ public:
   DIRECTION GetOpposite(DIRECTION);
   Position GetOppositeCell(Position, DIRECTION);
 
-  static std::optional<Board> FromJson(const crow::json::rvalue &json);
+  static optional<Board>
+  FromJson(const crow::json::rvalue &json,
+           const unordered_map<string, shared_ptr<Player>> &game_players);
 
   explicit operator std::string() const;
 

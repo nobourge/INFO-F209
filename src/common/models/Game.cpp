@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "../utils.h"
 #include <iostream>
 #include <memory>
 #include <utility>
@@ -461,15 +462,29 @@ void Game::SaveToDB(std::string game_name) {
 std::optional<Game> Game::InitGameFromJson(const crow::json::rvalue &json) {
   Game game;
 
-  std::unordered_map<uuid_t, std::shared_ptr<Player>> all_players;
+  std::unordered_map<std::string, std::shared_ptr<Player>> all_players;
 
   try {
     game.game_name_ = static_cast<std::string>(json["name"]);
 
+    game.p_board_ = nullptr;
     try {
-      auto board = json["board"];
-    } catch (const std::runtime_error &err) {
-      game.p_board_ = nullptr;
+      auto board = Board::FromJson(json["board"], all_players);
+      if (board.has_value()) {
+        game.p_board_ = new Board(*board);
+      }
+    } catch (...) {}
+
+    for (const auto &player_json : json["players_"]) {
+      auto optional_player = Player::FromJson(player_json);
+
+      if (optional_player.has_value()) {
+        auto player = std::make_shared<Player>(*optional_player);
+        all_players.at(uuidToString(player->GetUuid())) = player;
+        game.players_.push_back(player);
+      } else {
+        game.players_.push_back(nullptr);
+      }
     }
 
     try {
@@ -477,27 +492,14 @@ std::optional<Game> Game::InitGameFromJson(const crow::json::rvalue &json) {
       if (!admin.has_value()) {
         return {};
       }
-
-      game.admin_player_ = std::make_shared<Player>(*admin);
+      game.admin_player_ = all_players[uuidToString(admin->GetUuid())];
     } catch (const std::runtime_error &err) {
       game.admin_player_ = nullptr;
     }
 
-    for (int i = 0; i < json["players_"].size(); i++) {
-      auto player = std::make_shared<Player>(*Player::FromJson(json["players_"][i]));
-
-      all_players.at(player->GetUuid()) = player;
-
-      if (player.has_value()) {
-        game.players_.push_back(player);
-      } else {
-        game.players_.push_back(nullptr);
-      }
-    }
-
     auto current_player = Player::FromJson(json["current_player"]);
     if (current_player.has_value()) {
-      game.current_player_ = std::make_shared<Player>(*current_player);
+      game.current_player_ = all_players[uuidToString(current_player->GetUuid())];
     } else {
       game.current_player_ = nullptr;
     }
