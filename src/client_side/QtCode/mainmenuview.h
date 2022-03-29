@@ -140,6 +140,8 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_BackToJoinMenu_clicked();
 
+  void on_lineEditNameOfGame_cursorPositionChanged(int arg1, int arg2);
+
 private:
   Ui::MainMenuView *ui;
   std::vector<UserClient> friends_ = {};

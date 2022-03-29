@@ -578,7 +578,13 @@ void MainMenuView::on_pushButton_ToInviteFriend_clicked()
 
 void MainMenuView::on_pushButton_InviteToGame_clicked()
 {
+    if (ui->lineEdit->text().toStdString() != "" && ui->comboBox_InviteBox->currentText().toStdString() != ""){
+    auto err = ApiWrapper::GetShared()->CreateGame(
+      ui->lineEdit->text().toStdString(),
+        ui->comboBox_InviteBox->currentText().toStdString());
     ui->stackedWidget->setCurrentIndex(10);
+    }
+
 }
 
 
@@ -586,3 +592,9 @@ void MainMenuView::on_pushButton_BackToJoinMenu_clicked()
 {
     ui->stackedWidget->setCurrentIndex(10);
 }
+
+void MainMenuView::on_lineEditNameOfGame_cursorPositionChanged(int arg1, int arg2)
+{
+
+}
+
