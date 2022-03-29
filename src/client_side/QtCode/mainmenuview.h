@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "../models/user_client.h"
 #include "menu_board_view.h"
+#include <QComboBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainMenuView; }
@@ -124,10 +125,20 @@ class MainMenuView : public QMainWindow
   // void on_pushButton_PlayMainMenu_clicked();
   ///Update functions
   void updateChatRoomMessagesListView();
-  void updateFriendsComboBoxView();
+  void updateFriendsComboBoxView(QComboBox* combobox);
   void updateRankingView();
 ////
 
+
+  void on_pushButton_PlayMainMenu_clicked();
+
+  void on_pushButton_BackToMenuFromJoin_clicked();
+
+  void on_pushButton_ToInviteFriend_clicked();
+
+  void on_pushButton_InviteToGame_clicked();
+
+  void on_pushButton_BackToJoinMenu_clicked();
 
 private:
   Ui::MainMenuView *ui;
@@ -139,6 +150,6 @@ private:
   std::string game_chattext;
   //std::string Rankingtext="";
   std::string Rankingtext;
-  MenuBoardView *menuView = new MenuBoardView();
+  MenuBoardView *menuView = new MenuBoardView(0);
 };
 #endif // MAINMENUVIEW_H
