@@ -14,5 +14,8 @@ CMakeCache.txt
 
 Makefile
 
+example.db
+
 
 src/server_side/build/*
+*.db
