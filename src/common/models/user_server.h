@@ -54,7 +54,8 @@ public:
     // player will be added
     if (invitees.size() <= 3) {
       auto game = Game(room_name);
-      auto game_id = DataBase::GetInstance()->CreateGame(GetId(), room_name, *game.GetBoard());
+      auto game_id = DataBase::GetInstance()->CreateGame(GetId(), room_name,
+                                                         <#initializer #>);
       for (auto &invitee : invitees)
         DataBase::GetInstance()->InviteUserToGame(game_id, invitee.GetId());
       return game_id;

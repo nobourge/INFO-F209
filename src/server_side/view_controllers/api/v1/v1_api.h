@@ -329,8 +329,9 @@ protected:
 
       crow::json::wvalue output;
       auto move_ret = game->PlayMove(move);
-
       API_GUARD(!move_ret.has_value(), *move_ret)
+
+      DataBase::GetInstance()->SaveGame(game_index, *game);
 
       output["success"] = true;
 

@@ -17,8 +17,11 @@
 #define LOCALHOST                               "0.0.0.0"
 
 
-// DB
+// UUID
+#define UUID_LEN                                36
 
+
+// DB
 #define object_id_t                             uint32_t
 
 // username

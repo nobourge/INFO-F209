@@ -1,8 +1,9 @@
+#include "Game.h"
 #include <iostream>
 #include <memory>
 #include <utility>
-
-#include "Game.h"
+#include <unordered_map>
+#include <uuid/uuid.h>
 
 using namespace std;
 
@@ -460,6 +461,8 @@ void Game::SaveToDB(std::string game_name) {
 std::optional<Game> Game::InitGameFromJson(const crow::json::rvalue &json) {
   Game game;
 
+  std::unordered_map<uuid_t, std::shared_ptr<Player>> all_players;
+
   try {
     game.game_name_ = static_cast<std::string>(json["name"]);
 
@@ -481,10 +484,12 @@ std::optional<Game> Game::InitGameFromJson(const crow::json::rvalue &json) {
     }
 
     for (int i = 0; i < json["players_"].size(); i++) {
-      auto player = Player::FromJson(json["players_"][i]);
+      auto player = std::make_shared<Player>(*Player::FromJson(json["players_"][i]));
+
+      all_players.at(player->GetUuid()) = player;
 
       if (player.has_value()) {
-        game.players_.push_back(std::make_shared<Player>(*player));
+        game.players_.push_back(player);
       } else {
         game.players_.push_back(nullptr);
       }
