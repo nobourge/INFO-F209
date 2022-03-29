@@ -18,7 +18,6 @@ MainMenuView::MainMenuView(QWidget *parent)
 
   ui->stackedWidget->setCurrentIndex(0);
   ui->stackedWidget->addWidget(menuView);
-  cout<<ui->stackedWidget->count()<<endl;
 }
 
 MainMenuView::~MainMenuView()
@@ -35,6 +34,7 @@ MainMenuView::~MainMenuView()
 // 6 Chat Room
 // 7 Help
 // 8 Game
+// 9 game temporary shortcut
 
 ///play : from main to game
 void MainMenuView::on_pushButton_clicked() {

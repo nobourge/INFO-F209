@@ -2,7 +2,9 @@
 #include <iostream>
 using namespace std;
 
-MenuBoardView::MenuBoardView() : QGraphicsView{new MenuBoardScene()} {
+MenuBoardView::MenuBoardView(int game_id, QVector<QPoint> pawns_,
+                             QVector<QPoint> walls_)
+    : game_id{game_id}, QGraphicsView{new MenuBoardScene(pawns_, walls_)} {
   QGraphicsItem *item = scene()->itemAt({0, 0}, QTransform());
   MenuCell *newItem = static_cast<MenuCell *>(item);
   if (newItem != nullptr) {
@@ -10,16 +12,12 @@ MenuBoardView::MenuBoardView() : QGraphicsView{new MenuBoardScene()} {
   }
 } // using super class constructor
 
-MenuBoardView::MenuBoardView(QVector<QPoint> pawns_, QVector<QPoint> walls_)
-    : QGraphicsView{new MenuBoardScene(pawns_, walls_)} {
-  QGraphicsItem *item = scene()->itemAt({0, 0}, QTransform());
-  MenuCell *newItem = static_cast<MenuCell *>(item);
-  newItem->setCellPawn(true);
-} // using super class constructor
-
 void MenuBoardView::mousePressEvent(QMouseEvent *event) // Mouse click event
 {
   qDebug() << "Custom view clicked.";
+  if (event->position().x() > 17 * 32 || event->position().x() < 0 ||
+      event->position().y() > 17 * 32 || event->position().y() < 0)
+    return; // change magic number to const later
   MenuCell *newItem = static_cast<MenuCell *>(
       scene()->itemAt(mapToScene(event->pos()), QTransform()));
   if (newItem->isCellPawn()) {
@@ -53,7 +51,7 @@ void MenuBoardView::placeWall(MenuCell *first, MenuCell *second) {
   static_cast<MenuWallCell *>(second)->setWall(direction);
 }
 
-bool MenuBoardView::verifyWall(QPoint, QPoint) { return true; }
+bool MenuBoardView::verifyWall(QPoint firstWall, QPoint secondWall) {return true;}
 
 void MenuBoardView::playMove(MenuCell *item) {
   ancientCell->setCellPixmap(QPixmap(cell_png.c_str()));

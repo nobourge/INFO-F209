@@ -8,15 +8,14 @@
 #include <iostream>
 #include <QPoint>
 
-
 class MenuBoardView : public QGraphicsView {
     bool playerSelected=false;
     bool wallSelected=false;
     MenuCell* ancientCell=nullptr;
     MenuCell* firstWall=nullptr;
+    int game_id;
 public:
-    MenuBoardView();
-    MenuBoardView(QVector<QPoint> pawns_, QVector<QPoint> walls_);
+    MenuBoardView(int game_id, QVector<QPoint> pawns_={}, QVector<QPoint> walls_={});
     void playMove(MenuCell*);
     bool verifyMove(QPoint,QPoint);
     void placeWall(MenuCell*, MenuCell*);
