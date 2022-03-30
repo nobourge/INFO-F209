@@ -70,10 +70,10 @@ public:
   crow::json::wvalue Serialize();
 
 private:
-  std::vector<std::shared_ptr<Player>> pawns_;
-  std::array<std::array<Cell, kBoardSize>, kBoardSize> cells_;
+  std::vector<std::shared_ptr<Player>> pawns_ = {};
+  std::array<std::array<Cell, kBoardSize>, kBoardSize> cells_ = {};
   std::array<std::array<bool, kBoardSize * 2 - 1>, kBoardSize * 2 - 1>
-      walls_; // same problem as in cell.h no need
+      walls_ = {}; // same problem as in cell.h no need
   // for a class
 };
 

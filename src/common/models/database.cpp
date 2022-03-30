@@ -78,7 +78,7 @@ void DataBase::CreateTables() {
          "ID                      INTEGER   PRIMARY KEY ,"
          "ROOM_NAME               TEXT      NOT NULL    ,"
          "ADMIN_ID                INT       NOT NULL    ,"
-         "BOARD_JSON              TEXT      NOT NULL    )";
+         "GAME_JSON              TEXT      NOT NULL    )";
 
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
@@ -273,62 +273,27 @@ void DataBase::HandleSQLErr(int error_code) {
   }
 }
 
-// void DataBase::InsertBoard(int nrOfPawns, const std::string &walls,
-//                            std::string firstPlayerPawnPosition,
-//                            int firstPlayerWallsLeft,
-//                            const std::string &secondPlayerPawnPosition,
-//                            int secondPlayerWallsLeft,
-//                            const std::string &thirdPlayerPawnPosition,
-//                            int thirdPlayerWallsLeft,
-//                            const std::string &fourthPlayerPawnPosition,
-//                            int fourthPlayerWallsLeft, int lastPlayerToMove) {
-//   auto next_id = GetNextBoardId();
-//   LOCK_DB;
-//   std::string statement =
-//       "INSERT INTO BOARD VALUES (" + std::to_string(next_id) + "," +
-//       std::to_string(nrOfPawns) + ",\"" + walls + "\",\"" +
-//       firstPlayerPawnPosition + "\"," + std::to_string(firstPlayerWallsLeft)
-//       +
-//       ",\"" + secondPlayerPawnPosition + "\"," +
-//       std::to_string(secondPlayerWallsLeft) + ",\"" + thirdPlayerPawnPosition
-//       +
-//       "\"," + std::to_string(thirdPlayerWallsLeft) + ",\"" +
-//       fourthPlayerPawnPosition + "\"," +
-//       std::to_string(fourthPlayerWallsLeft) +
-//       "," + std::to_string(lastPlayerToMove) + ")";
-//
-//   sqlite3_exec(db_, statement.c_str(), nullptr, nullptr, &messageError);
-// }
-
-// void DataBase::InsertBoard(int nrOfPawns, const std::string &walls,
-//                            const std::string &firstPlayerPawnPosition,
-//                            int firstPlayerWallsLeft,
-//                            const std::string &secondPlayerPawnPosition,
-//                            int secondPlayerWallsLeft, int lastPlayerToMove) {
-//   auto next_id = GetNextBoardId();
-//   LOCK_DB;
-//   std::string statement =
-//       "INSERT INTO BOARD VALUES (" + std::to_string(next_id) + "," +
-//       std::to_string(nrOfPawns) + ",\"" + walls + "\",\"" +
-//       firstPlayerPawnPosition + "\"," + std::to_string(firstPlayerWallsLeft)
-//       +
-//       ",\"" + secondPlayerPawnPosition + "\"," +
-//       std::to_string(secondPlayerWallsLeft) + R"(,"0", 0, "0", 0, )" +
-//       std::to_string(lastPlayerToMove) + ")";
-//
-//   sqlite3_exec(db_, statement.c_str(), nullptr, nullptr, &messageError);
-// }
-
 uint32_t DataBase::CreateGame(object_id_t admin_user_id,
                               const std::string &game_name, Game &game) {
-  //  board.SaveToDB();
   accessing_db_.lock();
-  RunSQL("INSERT INTO GAMES (ROOM_NAME, ADMIN_ID, BOARD_JSON) VALUES (\"" +
-         game_name + "\" , " + std::to_string(admin_user_id) + ", \"" +
-         game.GetGameJson().dump() + "\")");
+  std::string sql_query =
+      "INSERT INTO GAMES (ROOM_NAME, ADMIN_ID, GAME_JSON) VALUES('" +
+      game_name + "' , " + std::to_string(admin_user_id) + ", '" +
+      game.GetGameJson().dump() + "')";
+
+  last_sqlite3_exit_code_ =
+      sqlite3_exec(db_, sql_query.c_str(), nullptr, nullptr, &messageError);
+
   accessing_db_.unlock();
-  return stoul(
+
+  auto game_id = stoul(
       GetSelect("SELECT ID FROM GAMES ORDER BY ID DESC LIMIT 1").at(0).at(0));
+
+  for (const auto &player : game.GetPlayers()) {
+    if (player->GetUserId().has_value())
+      InviteUserToGame(game_id, *player->GetUserId());
+  }
+  return game_id;
 }
 
 void DataBase::RunSQL(const string &query) {
@@ -336,23 +301,23 @@ void DataBase::RunSQL(const string &query) {
       sqlite3_exec(db_, query.c_str(), nullptr, nullptr, &messageError));
 }
 
-std::vector<object_id_t>
+std::vector<std::tuple<uint32_t, std::string>>
 DataBase::GetAllGamesWhereUserIsAdmin(object_id_t user) {
-  std::vector<object_id_t> output;
-  auto res = GetSelect("SELECT ID FROM GAMES WHERE ADMIN_ID = " +
+  std::vector<std::tuple<object_id_t, std::string>> output;
+  auto res = GetSelect("SELECT ID, ROOM_NAME FROM GAMES WHERE ADMIN_ID = " +
                        std::to_string(user));
   output.reserve(res.size());
   for (auto &row : res) {
-    output.push_back(stoul(row.at(0)));
+    output.emplace_back(stoul(row.at(0)), row.at(1));
   }
   return output;
 }
 
 void DataBase::InviteUserToGame(object_id_t game_id, object_id_t userid) {
 
-  if (GetAdminOfGame(game_id) == userid) {
-    return;
-  }
+//  if (GetAdminOfGame(game_id) == userid) {
+//    return;
+//  }
 
   auto existing_invitation_for_this_game = GetSelect(
       "SELECT GAME_ID FROM GAME_PARTICIPANTS WHERE GAME_ID=" +
@@ -367,14 +332,15 @@ void DataBase::InviteUserToGame(object_id_t game_id, object_id_t userid) {
          std::to_string(game_id) + ", " + std::to_string(userid) + " )");
 }
 
-std::vector<object_id_t> DataBase::GetAllGamesForUser(object_id_t user) {
-  std::vector<object_id_t> output = GetAllGamesWhereUserIsAdmin(user);
-  auto res =
-      GetSelect("SELECT GAME_ID FROM GAME_PARTICIPANTS WHERE USER_ID = " +
-                std::to_string(user));
+std::vector<std::tuple<uint32_t, std::string>>
+DataBase::GetAllGamesForUser(object_id_t user) {
+  std::vector<std::tuple<object_id_t, std::string>> output;
+  auto res = GetSelect("SELECT ID, ROOM_NAME FROM GAMES WHERE ID IN (SELECT "
+                       "GAME_ID FROM GAME_PARTICIPANTS WHERE USER_ID = " +
+                       std::to_string(user) + " )");
   output.reserve(res.size());
   for (auto &row : res) {
-    output.push_back(stoul(row.at(0)));
+    output.emplace_back(stoul(row.at(0)), row.at(1));
   }
   return output;
 }
@@ -407,10 +373,17 @@ std::optional<object_id_t> DataBase::GetAdminOfGame(object_id_t game_id) {
   }
 }
 
-
 void DataBase::SaveGame(uint32_t game_id, Game game) {
   GetSelect("UPDATE GAMES\n"
-            "SET BOARD_JSON = \"" +
+            "SET GAME_JSON = \"" +
             game.GetGameJson().dump() +
             "\" WHERE ID = " + std::to_string(game_id) + ";");
+}
+std::optional<Game> DataBase::GetGame(uint32_t game_id) {
+  auto q_res = GetSelect("SELECT GAME_JSON FROM GAMES WHERE ID = " +
+                         std::to_string(game_id));
+  if (q_res.empty()) {
+    return {};
+  }
+  return Game::InitGameFromJson(crow::json::load(q_res[0][0]));
 }

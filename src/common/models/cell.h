@@ -38,53 +38,11 @@ public:
   Position getPos() const;
   void setPos(const Position &);
 
-  crow::json::wvalue Serialize() {
-    crow::json::wvalue output;
-
-    for (int i = 0; i < walls_.size(); i++) {
-      output["walls"][i] = walls_.at(i);
-    }
-
-    if (pawn_) {
-      output["pawn"] = pawn_->Serialize();
-    }
-
-    output["position"] = std::move(*pos_.Serialize());
-
-    return output;
-  }
+  crow::json::wvalue Serialize();
 
   static optional<Cell>
   FromJson(const crow::json::rvalue &json,
-           const unordered_map<string, shared_ptr<Player>> &game_players) {
-    Cell cell;
-
-    try {
-      for (int i = 0; i < json["walls"].size(); i++) {
-        cell.walls_[i] = json["walls"][i].b();
-      }
-      auto pos = Position::FromJson(json["position"]);
-      if (!pos.has_value()) {
-        return {};
-      }
-
-      cell.pos_ = *pos;
-
-      auto pawn = Player::FromJson(json["pawn"]);
-
-      if (!pawn.has_value()) {
-        return {};
-      }
-
-      cell.pawn_ = game_players.empty()
-                       ? std::make_shared<Player>(*pawn)
-                       : game_players.at(uuidToString(pawn->GetUuid()));
-
-    } catch (...) {
-      return {};
-    }
-    return cell;
-  }
+           const unordered_map<string, shared_ptr<Player>> &game_players);
 
   bool isNeighbour(const Cell &) const;
   bool isNeighbour(const Position &) const;

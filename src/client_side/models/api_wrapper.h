@@ -50,7 +50,8 @@ public:
 
 
   // game
-  std::variant<std::vector<std::string>, ApiError> GetGamesVector();
+  std::variant<std::vector<std::tuple<uint32_t, std::string>>, ApiError>
+  GetGameRoomNames();
   optional<ApiError> CreateGame(const std::string &room_name,
                                 const std::string &friend_username);
 

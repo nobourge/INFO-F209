@@ -319,7 +319,8 @@ ApiWrapper::GetConversationWithUser(const UserClient &other_user) {
   return messages;
 }
 
-std::variant<std::vector<std::string>, ApiError> ApiWrapper::GetGamesVector() {
+std::variant<std::vector<std::tuple<uint32_t, std::string>>, ApiError>
+ApiWrapper::GetGameRoomNames() {
   std::string error_message = "An unknown error occurred";
   std::string url = api_url_;
 
@@ -341,10 +342,10 @@ std::variant<std::vector<std::string>, ApiError> ApiWrapper::GetGamesVector() {
     return ApiError{err.what()};
   }
 
-  std::vector<std::string> games;
+  std::vector<std::tuple<object_id_t, std::string>> games;
 
   for (const auto &game_id_json : json_res["games"]) {
-    games.push_back(game_id_json["name"].s());
+    games.emplace_back(game_id_json["id"].i(), game_id_json["name"].s());
   }
 
   return games;

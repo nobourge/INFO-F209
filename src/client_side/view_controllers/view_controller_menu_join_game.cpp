@@ -17,10 +17,10 @@ JoinGameMenuViewController::GetViewAtIndex(unsigned int i) const {
 
 void JoinGameMenuViewController::ReloadViews() {
   game_views_ = {};
-  for (int i = 0; i < games_.size(); i++) {
+  for (auto & game : games_) {
     game_views_.push_back(std::make_shared<MenuButtonItem>(
-        GetMenuView().get(), games_[i],
-        std::make_shared<GameViewController>(i), GetMenuView().get()));
+        GetMenuView().get(), get<1>(game),
+        std::make_shared<GameViewController>(get<0>(game)), GetMenuView().get()));
   }
 }
 
@@ -41,13 +41,13 @@ bool JoinGameMenuViewController::ShouldDisplayList() const {
 }
 
 void JoinGameMenuViewController::FetchGames() {
-  std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGamesVector();
+  auto res = ApiWrapper::GetShared()->GetGameRoomNames();
   if (holds_alternative<ApiError>(res)) {
     error_message_ = std::get<ApiError>(res).error_message;
     games_ = {};
   } else {
     error_message_ = {};
-    games_ = std::move(std::get<std::vector<std::string>>(res));
+    games_ = std::move(std::get<std::vector<std::tuple<object_id_t, std::string>>>(res));
   }
 }
 

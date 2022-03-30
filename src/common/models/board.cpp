@@ -14,7 +14,6 @@ TODO do the description
 Board::Board(const std::vector<std::shared_ptr<Player>> &pawns_,
              const std::vector<Position> &wallsPosition)
     : pawns_{pawns_} {
-
   // setting up the board by trusting the positions to be possible
 
   for (int row = 0; row < kBoardSize * 2 - 1;
@@ -456,6 +455,10 @@ Board::FromJson(const crow::json::rvalue &json,
       if (!pawn.has_value()) {
         return {};
       }
+      if (board.pawns_.size() <= i) {
+        board.pawns_.emplace_back();
+      }
+
       board.pawns_[i] = game_players.empty()
                             ? std::make_shared<Player>(*pawn)
                             : game_players.at(uuidToString(pawn->GetUuid()));
@@ -476,9 +479,9 @@ crow::json::wvalue Board::Serialize() {
     }
   }
 
-  for (int i = 0; i < walls_.size(); i++) {
-    for (int j = 0; j < walls_.at(i).size(); j++) {
-      output["cells"][i][j] = walls_.at(i).at(j);
+  for (int i = 0; i < cells_.size(); i++) {
+    for (int j = 0; j < cells_.at(i).size(); j++) {
+      output["cells"][i][j] = cells_.at(i).at(j).Serialize();
     }
   }
 

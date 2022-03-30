@@ -129,8 +129,6 @@ protected:
     BaseQuoridorApi::SetupRoutes();
 
     // this is a temporary solution... we hadn't the time to save game to db
-    static unordered_map<object_id_t, std::vector<std::shared_ptr<Game>>>
-        users_games_map_;
 
     API_ROUTE(GetApp(), "/api/v1/users")
     ([]() {
@@ -140,13 +138,14 @@ protected:
     });
 
     API_ROUTE(GetApp(), "/api/v1/me/all-users-except-me")
-        ([](const crow::request &request) {
-          VALIDATE_CREDENTIALS(requests);
+    ([](const crow::request &request) {
+      VALIDATE_CREDENTIALS(requests);
 
-          crow::json::wvalue output;
-          output["users"] = SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
-          return output;
-        });
+      crow::json::wvalue output;
+      output["users"] =
+          SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
+      return output;
+    });
 
     API_ROUTE(GetApp(), "/api/v1/users/ranking")
     ([](const crow::request &request) {
@@ -173,19 +172,6 @@ protected:
               SerializeUsersVector(UserServer::GetRankingFromDB(*num_users));
         }
       }
-
-      return output;
-    });
-
-    API_ROUTE(GetApp(), "/api/v1/me/users_except_me")
-    ([](const crow::request &request) {
-      VALIDATE_CREDENTIALS(requests);
-
-      crow::json::wvalue output;
-
-      output["success"] = true;
-      output["users"] =
-          SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
 
       return output;
     });
@@ -236,12 +222,14 @@ protected:
       crow::json::wvalue output;
       output["success"] = true;
 
-      if (!users_games_map_.contains(user.GetId())) {
+      auto games = DataBase::GetInstance()->GetAllGamesForUser(user.GetId());
+
+      if (games.empty()) {
         output["games"] = std::vector<std::string>();
       } else {
-        auto games = users_games_map_[user.GetId()];
         for (int i = 0; i < games.size(); i++) {
-          output["games"][i] = games[i]->GetGameJson();
+          output["games"][i]["id"] = std::get<0>(games[i]);
+          output["games"][i]["name"] = std::get<1>(games[i]);
         }
       }
 
@@ -252,15 +240,11 @@ protected:
     ([](const crow::request &request, object_id_t game_index) {
       VALIDATE_CREDENTIALS(request);
 
-      API_GUARD(users_games_map_.contains(user.GetId()), "Inexistant game");
-      API_GUARD(users_games_map_[user.GetId()].size() > game_index,
-                "Inexistant game");
-
-      auto game = users_games_map_[user.GetId()][game_index];
+      auto game = DataBase::GetInstance()->GetGame(game_index);
+      API_GUARD(game.has_value(), "Inexistant game");
 
       crow::json::wvalue output;
       output["success"] = true;
-
       output["game"] = game->GetGameJson();
 
       return output;
@@ -270,11 +254,8 @@ protected:
     ([](const crow::request &request, object_id_t game_index) {
       VALIDATE_CREDENTIALS(request);
 
-      API_GUARD(users_games_map_.contains(user.GetId()), "Inexistant game");
-      API_GUARD(users_games_map_[user.GetId()].size() > game_index,
-                "Inexistant game");
-
-      auto game = users_games_map_[user.GetId()][game_index];
+      auto game = DataBase::GetInstance()->GetGame(game_index);
+      API_GUARD(game.has_value(), "Inexistant game");
 
       crow::json::wvalue output;
       output["success"] = true;
@@ -287,11 +268,8 @@ protected:
     ([](const crow::request &request, object_id_t game_index) {
       VALIDATE_CREDENTIALS(request);
 
-      API_GUARD(users_games_map_.contains(user.GetId()), "Inexistant game");
-      API_GUARD(users_games_map_[user.GetId()].size() > game_index,
-                "Inexistant game");
-
-      auto game = users_games_map_[user.GetId()][game_index];
+      auto game = DataBase::GetInstance()->GetGame(game_index);
+      API_GUARD(game.has_value(), "Inexistant game");
 
       crow::json::wvalue output;
 
@@ -309,11 +287,8 @@ protected:
     ([](const crow::request &request, object_id_t game_index) {
       VALIDATE_CREDENTIALS(request);
 
-      API_GUARD(users_games_map_.contains(user.GetId()), "Inexistant game");
-      API_GUARD(users_games_map_[user.GetId()].size() > game_index,
-                "Inexistant game");
-
-      auto game = users_games_map_[user.GetId()][game_index];
+      auto game = DataBase::GetInstance()->GetGame(game_index);
+      API_GUARD(game.has_value(), "Inexistant game");
 
       auto action_unparsed = request.url_params.get("move_value");
 
@@ -380,25 +355,17 @@ protected:
         API_GUARD(false, err.what());
       }
 
-      for (int i = 0; i < participants.size(); i++){
-        if (i > 0) {
-            // starts with 1 to avoid double adding the admin (creator) of the
-            // room
-            users_games_map_[participants[i].GetId()].push_back(game);
-          }
-          game->GetPlayers().at(i)->SetUser(participants[i].GetId());
-        }
-      users_games_map_[user.GetId()].push_back(game);
+      for (int i = 0; i < participants.size(); i++) {
+        game->GetPlayers().at(i)->SetUser(participants[i].GetId());
+      }
+
+      game->SetAdminPlayer(game->GetPlayers().at(0));
+
+      DataBase::GetInstance()->CreateGame(user.GetId(), room_name, *game);
 
       RETURN_SUCCESS_JSON;
     });
 
-    //    API_ROUTE(GetApp(), "/api/v1/me/games/<uint>")
-    //    ([](const crow::request &request, unsigned int game_id) {
-    //      VALIDATE_CREDENTIALS(requests);
-    //
-    //      return *(user.Serialize());
-    //    });
 
     API_ROUTE(GetApp(), "/api/v1/new_user")
     ([](const crow::request &request) {
