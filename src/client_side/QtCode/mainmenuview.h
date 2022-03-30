@@ -131,7 +131,6 @@ class MainMenuView : public QMainWindow
   void updateChatRoomMessagesListView();
   void updateFriendsComboBoxView(QComboBox* combobox);
   void updateRankingView();
-  void updateChatRoom();
 ////
 
 
