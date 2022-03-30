@@ -1,6 +1,4 @@
 #include "mainmenuview.h"
-#include "game.h"
-#include "board_scene.h"
 #include "../../../src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
 #include <QStringList>
 #include <QPlainTextEdit>

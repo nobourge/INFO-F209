@@ -209,16 +209,40 @@ public:
     QPushButton *pushButton_BackAddFriend;
     QSpacerItem *horizontalSpacer_23;
     QWidget *page_11;
+    QGridLayout *gridLayout_6;
+    QHBoxLayout *horizontalLayout_7;
+    QSpacerItem *horizontalSpacer_12;
+    QLabel *label_title_Settings;
+    QSpacerItem *horizontalSpacer_13;
+    QSpacerItem *verticalSpacer_8;
+    QSpacerItem *horizontalSpacer_14;
+    QVBoxLayout *verticalLayout_5;
     QComboBox *comboBox;
     QPushButton *pushButton;
     QPushButton *pushButton_ToInviteFriend;
+    QSpacerItem *horizontalSpacer_15;
+    QSpacerItem *verticalSpacer_9;
+    QHBoxLayout *horizontalLayout_25;
     QPushButton *pushButton_BackToMenuFromJoin;
+    QSpacerItem *horizontalSpacer_55;
     QWidget *page_12;
-    QComboBox *comboBox_InviteBox;
-    QPushButton *pushButton_InviteToGame;
-    QPushButton *pushButton_BackToJoinMenu;
+    QGridLayout *gridLayout_7;
+    QHBoxLayout *horizontalLayout_8;
+    QSpacerItem *horizontalSpacer_16;
+    QLabel *label_3;
+    QSpacerItem *horizontalSpacer_17;
+    QSpacerItem *verticalSpacer_10;
+    QSpacerItem *horizontalSpacer_18;
+    QVBoxLayout *verticalLayout_6;
     QLineEdit *lineEdit;
     QLabel *label_2;
+    QComboBox *comboBox_InviteBox;
+    QPushButton *pushButton_InviteToGame;
+    QSpacerItem *horizontalSpacer_19;
+    QSpacerItem *verticalSpacer_11;
+    QHBoxLayout *horizontalLayout_26;
+    QPushButton *pushButton_BackToJoinMenu;
+    QSpacerItem *horizontalSpacer_56;
 
     void setupUi(QMainWindow *MainMenuView)
     {
@@ -1426,36 +1450,154 @@ public:
         stackedWidget->addWidget(page_10);
         page_11 = new QWidget();
         page_11->setObjectName(QString::fromUtf8("page_11"));
+        gridLayout_6 = new QGridLayout(page_11);
+        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_7->addItem(horizontalSpacer_12);
+
+        label_title_Settings = new QLabel(page_11);
+        label_title_Settings->setObjectName(QString::fromUtf8("label_title_Settings"));
+
+        horizontalLayout_7->addWidget(label_title_Settings);
+
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_7->addItem(horizontalSpacer_13);
+
+
+        gridLayout_6->addLayout(horizontalLayout_7, 0, 0, 1, 3);
+
+        verticalSpacer_8 = new QSpacerItem(20, 209, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_6->addItem(verticalSpacer_8, 1, 1, 1, 1);
+
+        horizontalSpacer_14 = new QSpacerItem(335, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_14, 2, 0, 1, 1);
+
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         comboBox = new QComboBox(page_11);
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(330, 130, 86, 25));
+
+        verticalLayout_5->addWidget(comboBox);
+
         pushButton = new QPushButton(page_11);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(330, 210, 89, 25));
+
+        verticalLayout_5->addWidget(pushButton);
+
         pushButton_ToInviteFriend = new QPushButton(page_11);
         pushButton_ToInviteFriend->setObjectName(QString::fromUtf8("pushButton_ToInviteFriend"));
-        pushButton_ToInviteFriend->setGeometry(QRect(330, 270, 89, 25));
+
+        verticalLayout_5->addWidget(pushButton_ToInviteFriend);
+
+
+        gridLayout_6->addLayout(verticalLayout_5, 2, 1, 1, 1);
+
+        horizontalSpacer_15 = new QSpacerItem(334, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_15, 2, 2, 1, 1);
+
+        verticalSpacer_9 = new QSpacerItem(20, 209, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_6->addItem(verticalSpacer_9, 3, 1, 1, 1);
+
+        horizontalLayout_25 = new QHBoxLayout();
+        horizontalLayout_25->setObjectName(QString::fromUtf8("horizontalLayout_25"));
         pushButton_BackToMenuFromJoin = new QPushButton(page_11);
         pushButton_BackToMenuFromJoin->setObjectName(QString::fromUtf8("pushButton_BackToMenuFromJoin"));
-        pushButton_BackToMenuFromJoin->setGeometry(QRect(10, 490, 89, 25));
+
+        horizontalLayout_25->addWidget(pushButton_BackToMenuFromJoin);
+
+        horizontalSpacer_55 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_25->addItem(horizontalSpacer_55);
+
+
+        gridLayout_6->addLayout(horizontalLayout_25, 4, 0, 1, 3);
+
         stackedWidget->addWidget(page_11);
         page_12 = new QWidget();
         page_12->setObjectName(QString::fromUtf8("page_12"));
-        comboBox_InviteBox = new QComboBox(page_12);
-        comboBox_InviteBox->setObjectName(QString::fromUtf8("comboBox_InviteBox"));
-        comboBox_InviteBox->setGeometry(QRect(330, 220, 86, 25));
-        pushButton_InviteToGame = new QPushButton(page_12);
-        pushButton_InviteToGame->setObjectName(QString::fromUtf8("pushButton_InviteToGame"));
-        pushButton_InviteToGame->setGeometry(QRect(300, 280, 151, 25));
-        pushButton_BackToJoinMenu = new QPushButton(page_12);
-        pushButton_BackToJoinMenu->setObjectName(QString::fromUtf8("pushButton_BackToJoinMenu"));
-        pushButton_BackToJoinMenu->setGeometry(QRect(10, 490, 89, 25));
+        gridLayout_7 = new QGridLayout(page_12);
+        gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_8->addItem(horizontalSpacer_16);
+
+        label_3 = new QLabel(page_12);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        horizontalLayout_8->addWidget(label_3);
+
+        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_8->addItem(horizontalSpacer_17);
+
+
+        gridLayout_7->addLayout(horizontalLayout_8, 0, 0, 1, 3);
+
+        verticalSpacer_10 = new QSpacerItem(20, 198, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_7->addItem(verticalSpacer_10, 1, 1, 1, 1);
+
+        horizontalSpacer_18 = new QSpacerItem(254, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_7->addItem(horizontalSpacer_18, 2, 0, 1, 1);
+
+        verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         lineEdit = new QLineEdit(page_12);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(320, 140, 113, 25));
+
+        verticalLayout_6->addWidget(lineEdit);
+
         label_2 = new QLabel(page_12);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(330, 190, 271, 17));
+
+        verticalLayout_6->addWidget(label_2);
+
+        comboBox_InviteBox = new QComboBox(page_12);
+        comboBox_InviteBox->setObjectName(QString::fromUtf8("comboBox_InviteBox"));
+
+        verticalLayout_6->addWidget(comboBox_InviteBox);
+
+        pushButton_InviteToGame = new QPushButton(page_12);
+        pushButton_InviteToGame->setObjectName(QString::fromUtf8("pushButton_InviteToGame"));
+
+        verticalLayout_6->addWidget(pushButton_InviteToGame);
+
+
+        gridLayout_7->addLayout(verticalLayout_6, 2, 1, 1, 1);
+
+        horizontalSpacer_19 = new QSpacerItem(254, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_7->addItem(horizontalSpacer_19, 2, 2, 1, 1);
+
+        verticalSpacer_11 = new QSpacerItem(20, 197, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_7->addItem(verticalSpacer_11, 3, 1, 1, 1);
+
+        horizontalLayout_26 = new QHBoxLayout();
+        horizontalLayout_26->setObjectName(QString::fromUtf8("horizontalLayout_26"));
+        pushButton_BackToJoinMenu = new QPushButton(page_12);
+        pushButton_BackToJoinMenu->setObjectName(QString::fromUtf8("pushButton_BackToJoinMenu"));
+
+        horizontalLayout_26->addWidget(pushButton_BackToJoinMenu);
+
+        horizontalSpacer_56 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_26->addItem(horizontalSpacer_56);
+
+
+        gridLayout_7->addLayout(horizontalLayout_26, 4, 0, 1, 3);
+
         stackedWidget->addWidget(page_12);
 
         horizontalLayout->addWidget(stackedWidget);
@@ -1467,7 +1609,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(11);
+        stackedWidget->setCurrentIndex(10);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -1531,14 +1673,16 @@ public:
         lineEdit_SearchFriendUsername->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Search friend username", nullptr));
         pushButton_AddAddFriend->setText(QCoreApplication::translate("MainMenuView", "Add", nullptr));
         pushButton_BackAddFriend->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
+        label_title_Settings->setText(QCoreApplication::translate("MainMenuView", "Settings", nullptr));
         pushButton->setText(QCoreApplication::translate("MainMenuView", "Play Game", nullptr));
         pushButton_ToInviteFriend->setText(QCoreApplication::translate("MainMenuView", "Invite Friend", nullptr));
         pushButton_BackToMenuFromJoin->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
-        pushButton_InviteToGame->setText(QCoreApplication::translate("MainMenuView", "Invite to game", nullptr));
-        pushButton_BackToJoinMenu->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
+        label_3->setText(QCoreApplication::translate("MainMenuView", "Invite a friend", nullptr));
         lineEdit->setText(QString());
         lineEdit->setPlaceholderText(QCoreApplication::translate("MainMenuView", "Name of Game", nullptr));
         label_2->setText(QCoreApplication::translate("MainMenuView", "Invite a friend", nullptr));
+        pushButton_InviteToGame->setText(QCoreApplication::translate("MainMenuView", "Invite to game", nullptr));
+        pushButton_BackToJoinMenu->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
     } // retranslateUi
 
 };

@@ -79,9 +79,13 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_Register_clicked();
 
+
+
   void on_pushButton_game_chat_send_clicked();
 
   void on_pushButton_game_quit_clicked();
+
+
 
   void on_pushButton_QuitWelcome_clicked();
 
@@ -147,10 +151,8 @@ private:
   std::vector<UserClient> friends_ = {};
 
   std::optional<UserClient> selected_friend_ = {};
-  //std::string chattext="";
   std::string chattext;
   std::string game_chattext;
-  //std::string Rankingtext="";
   std::string Rankingtext;
   MenuBoardView *menuView = new MenuBoardView(0);
 };
