@@ -1,6 +1,6 @@
 #include "Player.h"
-#include "position.h"
 #include "../utils.h"
+#include "position.h"
 #include <iostream>
 #include <utility>
 #include <uuid/uuid.h>
@@ -181,8 +181,11 @@ std::optional<Player> Player::FromJson(const crow::json::rvalue &json) {
 
     player.direction_ = static_cast<DIRECTION>(json["direction"].i());
     player.score_ = json["score"].i();
-    uuid_parse(json["uuid"].s().begin(), player.uuid_);
 
+    if (json.has("user")) {
+      player.user_id_ = json["user"].i();
+    }
+    uuid_parse(json["uuid"].s().begin(), player.uuid_);
 
   } catch (...) {
     return {};
