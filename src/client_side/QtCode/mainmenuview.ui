@@ -3915,9 +3915,9 @@ border-image: null;
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="label10">
               <property name="text">
-               <string>TextLabel</string>
+               <string>your message : </string>
               </property>
              </widget>
             </item>

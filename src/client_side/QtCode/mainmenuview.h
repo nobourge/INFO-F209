@@ -131,6 +131,7 @@ class MainMenuView : public QMainWindow
   void updateChatRoomMessagesListView();
   void updateFriendsComboBoxView(QComboBox* combobox);
   void updateRankingView();
+  void updateChatRoom();
 ////
 
 
@@ -157,4 +158,10 @@ private:
   MenuBoardView *menuView = new MenuBoardView(0);
   std::vector<std::string> games_ = {};
 };
+
+
+
+
+
+
 #endif // MAINMENUVIEW_H

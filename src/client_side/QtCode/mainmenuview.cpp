@@ -165,7 +165,7 @@ void MainMenuView::on_lineEdit_SearchFriendUsername_textChanged(const QString &a
 
 void MainMenuView::on_pushButton_BackAddFriend_clicked()
 {
-
+    updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
     ui->stackedWidget->setCurrentIndex(5);
 
 }
@@ -179,9 +179,13 @@ void MainMenuView::on_pushButton_AddFriend_clicked()
 
 void MainMenuView::on_pushButton_Chat_clicked()
 {
+  if(friends_.size() > 0 ){
     selected_friend_ = friends_[ui->comboBox_ChooseFriend->currentIndex()];
     updateChatRoomMessagesListView();
+    //MyThread *thread::QThread::create(updateChatRoom);
+    //thread->start();
     ui->stackedWidget->setCurrentIndex(6);
+  }
 }
 
 
@@ -476,6 +480,14 @@ void MainMenuView::on_pushButton_26_clicked()
 /////Functions
 
 
+void MainMenuView::updateChatRoom(){
+  while (true){
+    updateChatRoomMessagesListView();
+  }
+}
+
+
+
 void MainMenuView::updateChatRoomMessagesListView() {
   ui->textEdit_Conversation->clear();
   if (!selected_friend_.has_value()) {
@@ -508,7 +520,7 @@ void MainMenuView::updateChatRoomMessagesListView() {
     for (const auto &mess : messages) {
       std::cout << mess.GetContent() << std::endl;
       bool is_this_user_sender = mess.GetSenderId() == curr_user.GetId();
-      std::string mess_bubble = is_this_user_sender ? "Me: " : "Friend: ";
+      std::string mess_bubble = is_this_user_sender ? "Me: " : selected_friend_->GetUsername().GetValue() + ": ";
       mess_bubble += mess.GetContent();
       ui->textEdit_Conversation->append(QString::fromStdString(mess_bubble));
     }
@@ -557,8 +569,9 @@ void MainMenuView::updateRankingView() {
 
 void MainMenuView::on_pushButton_PlayMainMenu_clicked()
 {
+  /*
     ui->stackedWidget->setCurrentIndex(10);
-    std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGamesVector();
+    std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGameRoomNames();
      if (holds_alternative<ApiError>(res)) {
        games_ = {};
      } else {
@@ -567,6 +580,7 @@ void MainMenuView::on_pushButton_PlayMainMenu_clicked()
            ui->comboBox->addItem(QString::fromStdString(game));
        }
      }
+     */
 }
 
 
@@ -585,13 +599,14 @@ void MainMenuView::on_pushButton_ToInviteFriend_clicked()
 
 void MainMenuView::on_pushButton_InviteToGame_clicked()
 {
+  /*
     if (ui->lineEdit->text().toStdString() != "" && ui->comboBox_InviteBox->currentText().toStdString() != ""){
     auto err = ApiWrapper::GetShared()->CreateGame(
       ui->lineEdit->text().toStdString(),
         ui->comboBox_InviteBox->currentText().toStdString());
     ui->stackedWidget->setCurrentIndex(10);
     }
-    std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGamesVector();
+    std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGameRoomNames();
      if (holds_alternative<ApiError>(res)) {
        games_ = {};
      } else {
@@ -600,6 +615,7 @@ void MainMenuView::on_pushButton_InviteToGame_clicked()
            ui->comboBox->addItem(QString::fromStdString(game));
        }
      }
+  */
 }
 
 
