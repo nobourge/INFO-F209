@@ -21,6 +21,9 @@ set(SOURCES menu_board_scene.cpp
             menu_wall_cell.cpp
             assets.h)
 
+
+            
 add_library(${PROJECT_NAME} ${SOURCES})
 
+target_link_directories(${PROJECT_NAME} PUBLIC ../../common/models/)
 target_link_libraries(${PROJECT_NAME} Qt${QT_VERSION_MAJOR}::Widgets)
