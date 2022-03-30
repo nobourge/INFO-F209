@@ -29,7 +29,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>10</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="page_3">
          <layout class="QGridLayout" name="gridLayout_5">
@@ -328,7 +328,7 @@
             <item>
              <widget class="QLineEdit" name="lineEdit_PasswordLogin">
               <property name="echoMode">
-               <enum>QLineEdit::PasswordEchoOnEdit</enum>
+               <enum>QLineEdit::Password</enum>
               </property>
               <property name="placeholderText">
                <string>Mot de passe</string>
@@ -479,6 +479,9 @@
             </item>
             <item>
              <widget class="QLineEdit" name="lineEdit_PasswordRegistration">
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
               <property name="placeholderText">
                <string>Mot de passe</string>
               </property>
@@ -486,6 +489,9 @@
             </item>
             <item>
              <widget class="QLineEdit" name="lineEdit_PasswordVerificationRegistration">
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
               <property name="placeholderText">
                <string>Confirmer</string>
               </property>

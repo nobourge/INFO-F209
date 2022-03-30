@@ -418,7 +418,7 @@ public:
 
         lineEdit_PasswordLogin = new QLineEdit(page_4);
         lineEdit_PasswordLogin->setObjectName(QString::fromUtf8("lineEdit_PasswordLogin"));
-        lineEdit_PasswordLogin->setEchoMode(QLineEdit::PasswordEchoOnEdit);
+        lineEdit_PasswordLogin->setEchoMode(QLineEdit::Password);
 
         verticalLayout_15->addWidget(lineEdit_PasswordLogin);
 
@@ -497,11 +497,13 @@ public:
 
         lineEdit_PasswordRegistration = new QLineEdit(page_5);
         lineEdit_PasswordRegistration->setObjectName(QString::fromUtf8("lineEdit_PasswordRegistration"));
+        lineEdit_PasswordRegistration->setEchoMode(QLineEdit::Password);
 
         verticalLayout_14->addWidget(lineEdit_PasswordRegistration);
 
         lineEdit_PasswordVerificationRegistration = new QLineEdit(page_5);
         lineEdit_PasswordVerificationRegistration->setObjectName(QString::fromUtf8("lineEdit_PasswordVerificationRegistration"));
+        lineEdit_PasswordVerificationRegistration->setEchoMode(QLineEdit::Password);
 
         verticalLayout_14->addWidget(lineEdit_PasswordVerificationRegistration);
 
@@ -1609,7 +1611,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(10);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);

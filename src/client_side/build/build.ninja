@@ -585,22 +585,6 @@ build QtCode/CMakeFiles/menus_lib.dir/board_scene.cpp.o: CXX_COMPILER__menus_lib
   OBJECT_DIR = QtCode/CMakeFiles/menus_lib.dir
   OBJECT_FILE_DIR = QtCode/CMakeFiles/menus_lib.dir
 
-build QtCode/CMakeFiles/menus_lib.dir/canvas.cpp.o: CXX_COMPILER__menus_lib_Debug /home/guest/Bureau/projet$ annee/INFO-F209/src/client_side/QtCode/canvas.cpp || cmake_object_order_depends_target_menus_lib
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = QtCode/CMakeFiles/menus_lib.dir/canvas.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
-  INCLUDES = -I"/home/guest/Bureau/projet annee/INFO-F209/src/client_side/build/QtCode" -I"/home/guest/Bureau/projet annee/INFO-F209/src/client_side/QtCode" -I"/home/guest/Bureau/projet annee/INFO-F209/src/client_side/build/QtCode/menus_lib_autogen/include" -I"/home/guest/Bureau/projet annee/INFO-F209/src/client_side/QtCode/game" -isystem /home/guest/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/guest/Qt/6.2.4/gcc_64/include -isystem /home/guest/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/guest/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/guest/Qt/6.2.4/gcc_64/include/QtGui
-  OBJECT_DIR = QtCode/CMakeFiles/menus_lib.dir
-  OBJECT_FILE_DIR = QtCode/CMakeFiles/menus_lib.dir
-
-build QtCode/CMakeFiles/menus_lib.dir/game.cpp.o: CXX_COMPILER__menus_lib_Debug /home/guest/Bureau/projet$ annee/INFO-F209/src/client_side/QtCode/game.cpp || cmake_object_order_depends_target_menus_lib
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = QtCode/CMakeFiles/menus_lib.dir/game.cpp.o.d
-  FLAGS = -g -fPIC -pthread -std=gnu++17
-  INCLUDES = -I"/home/guest/Bureau/projet annee/INFO-F209/src/client_side/build/QtCode" -I"/home/guest/Bureau/projet annee/INFO-F209/src/client_side/QtCode" -I"/home/guest/Bureau/projet annee/INFO-F209/src/client_side/build/QtCode/menus_lib_autogen/include" -I"/home/guest/Bureau/projet annee/INFO-F209/src/client_side/QtCode/game" -isystem /home/guest/Qt/6.2.4/gcc_64/include/QtWidgets -isystem /home/guest/Qt/6.2.4/gcc_64/include -isystem /home/guest/Qt/6.2.4/gcc_64/include/QtCore -isystem /home/guest/Qt/6.2.4/gcc_64/mkspecs/linux-g++ -isystem /home/guest/Qt/6.2.4/gcc_64/include/QtGui
-  OBJECT_DIR = QtCode/CMakeFiles/menus_lib.dir
-  OBJECT_FILE_DIR = QtCode/CMakeFiles/menus_lib.dir
-
 build QtCode/CMakeFiles/menus_lib.dir/main.cpp.o: CXX_COMPILER__menus_lib_Debug /home/guest/Bureau/projet$ annee/INFO-F209/src/client_side/QtCode/main.cpp || cmake_object_order_depends_target_menus_lib
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = QtCode/CMakeFiles/menus_lib.dir/main.cpp.o.d
@@ -625,7 +609,7 @@ build QtCode/CMakeFiles/menus_lib.dir/mainmenuview.cpp.o: CXX_COMPILER__menus_li
 #############################################
 # Link the static library QtCode/libmenus_lib.a
 
-build QtCode/libmenus_lib.a: CXX_STATIC_LIBRARY_LINKER__menus_lib_Debug QtCode/CMakeFiles/menus_lib.dir/menus_lib_autogen/mocs_compilation.cpp.o QtCode/CMakeFiles/menus_lib.dir/board_scene.cpp.o QtCode/CMakeFiles/menus_lib.dir/canvas.cpp.o QtCode/CMakeFiles/menus_lib.dir/game.cpp.o QtCode/CMakeFiles/menus_lib.dir/main.cpp.o QtCode/CMakeFiles/menus_lib.dir/mainmenuview.cpp.o || QtCode/game/libgame_menu_lib.a QtCode/menus_lib_autogen QtCode/menus_lib_autogen_timestamp_deps /home/guest/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /home/guest/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4 /home/guest/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4
+build QtCode/libmenus_lib.a: CXX_STATIC_LIBRARY_LINKER__menus_lib_Debug QtCode/CMakeFiles/menus_lib.dir/menus_lib_autogen/mocs_compilation.cpp.o QtCode/CMakeFiles/menus_lib.dir/board_scene.cpp.o QtCode/CMakeFiles/menus_lib.dir/main.cpp.o QtCode/CMakeFiles/menus_lib.dir/mainmenuview.cpp.o || QtCode/game/libgame_menu_lib.a QtCode/menus_lib_autogen QtCode/menus_lib_autogen_timestamp_deps /home/guest/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /home/guest/Qt/6.2.4/gcc_64/lib/libQt6Gui.so.6.2.4 /home/guest/Qt/6.2.4/gcc_64/lib/libQt6Core.so.6.2.4
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = QtCode/CMakeFiles/menus_lib.dir
   POST_BUILD = :
@@ -659,7 +643,7 @@ build QtCode/menus_lib_autogen/timestamp QtCode/menus_lib_autogen/mocs_compilati
 #############################################
 # Phony custom command for QtCode/CMakeFiles/menus_lib_autogen_timestamp_deps
 
-build QtCode/CMakeFiles/menus_lib_autogen_timestamp_deps | ${cmake_ninja_workdir}QtCode/CMakeFiles/menus_lib_autogen_timestamp_deps: phony /home/guest/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 QtCode/game/libgame_menu_lib.a /home/guest/Qt/6.2.4/gcc_64/./libexec/moc /home/guest/Qt/6.2.4/gcc_64/./libexec/uic || QtCode/game/game_menu_lib_autogen QtCode/game/game_menu_lib_autogen_timestamp_deps QtCode/game/libgame_menu_lib.a
+build QtCode/CMakeFiles/menus_lib_autogen_timestamp_deps | ${cmake_ninja_workdir}QtCode/CMakeFiles/menus_lib_autogen_timestamp_deps: phony QtCode/game/libgame_menu_lib.a /home/guest/Qt/6.2.4/gcc_64/lib/libQt6Widgets.so.6.2.4 /home/guest/Qt/6.2.4/gcc_64/./libexec/moc /home/guest/Qt/6.2.4/gcc_64/./libexec/uic || QtCode/game/game_menu_lib_autogen QtCode/game/game_menu_lib_autogen_timestamp_deps QtCode/game/libgame_menu_lib.a
 
 
 #############################################

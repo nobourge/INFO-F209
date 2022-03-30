@@ -155,5 +155,6 @@ private:
   std::string game_chattext;
   std::string Rankingtext;
   MenuBoardView *menuView = new MenuBoardView(0);
+  std::vector<std::string> games_ = {};
 };
 #endif // MAINMENUVIEW_H
