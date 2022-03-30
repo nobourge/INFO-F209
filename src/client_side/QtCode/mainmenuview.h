@@ -128,8 +128,7 @@ class MainMenuView : public QMainWindow
 
   // void on_pushButton_PlayMainMenu_clicked();
   ///Update functions
-  void updateChatRoom();
-  //void updateChatRoomMessagesListView();
+  void updateChatRoomMessagesListView();
   void updateChatRoomMessagesListView(const string& room);
 
   void updateFriendsComboBoxView(QComboBox* combobox);
@@ -159,7 +158,7 @@ private:
   std::string game_chattext;
   std::string Rankingtext;
   MenuBoardView *menuView = new MenuBoardView(0);
-  std::vector<std::string> games_ = {};
+  std::vector<std::tuple<uint32_t, std::string>> games_ = {};
 };
 
 

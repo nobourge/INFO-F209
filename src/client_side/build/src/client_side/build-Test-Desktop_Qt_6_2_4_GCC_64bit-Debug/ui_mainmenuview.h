@@ -144,12 +144,13 @@ public:
     QGridLayout *gridLayout_12;
     QHBoxLayout *horizontalLayout_17;
     QSpacerItem *horizontalSpacer_35;
+    QLabel *label_title_Chat;
     QSpacerItem *horizontalSpacer_34;
     QSpacerItem *verticalSpacer_19;
     QSpacerItem *horizontalSpacer_36;
     QVBoxLayout *verticalLayout_12;
     QTextEdit *textEdit_Conversation;
-    QLabel *label;
+    QLabel *label10;
     QLineEdit *lineEdit_InputNewMessage;
     QPushButton *pushButton_SendButtonChat;
     QPushButton *pushButton_BackChat;
@@ -1161,6 +1162,11 @@ public:
 
         horizontalLayout_17->addItem(horizontalSpacer_35);
 
+        label_title_Chat = new QLabel(page_7);
+        label_title_Chat->setObjectName(QString::fromUtf8("label_title_Chat"));
+
+        horizontalLayout_17->addWidget(label_title_Chat);
+
         horizontalSpacer_34 = new QSpacerItem(155, 75, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_17->addItem(horizontalSpacer_34);
@@ -1184,10 +1190,10 @@ public:
 
         verticalLayout_12->addWidget(textEdit_Conversation);
 
-        label = new QLabel(page_7);
-        label->setObjectName(QString::fromUtf8("label"));
+        label10 = new QLabel(page_7);
+        label10->setObjectName(QString::fromUtf8("label10"));
 
-        verticalLayout_12->addWidget(label);
+        verticalLayout_12->addWidget(label10);
 
         lineEdit_InputNewMessage = new QLineEdit(page_7);
         lineEdit_InputNewMessage->setObjectName(QString::fromUtf8("lineEdit_InputNewMessage"));
@@ -1611,7 +1617,7 @@ public:
 
         retranslateUi(MainMenuView);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(8);
 
 
         QMetaObject::connectSlotsByName(MainMenuView);
@@ -1654,7 +1660,8 @@ public:
         pushButton_AddFriend->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
         pushButton_Chat->setText(QCoreApplication::translate("MainMenuView", "Chat", nullptr));
         pushButton_BackChooseFriend->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
-        label->setText(QCoreApplication::translate("MainMenuView", "message:", nullptr));
+        label_title_Chat->setText(QCoreApplication::translate("MainMenuView", "Chatroom", nullptr));
+        label10->setText(QCoreApplication::translate("MainMenuView", "your message : ", nullptr));
         pushButton_SendButtonChat->setText(QCoreApplication::translate("MainMenuView", "Send", nullptr));
         pushButton_BackChat->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_title_Help->setText(QCoreApplication::translate("MainMenuView", "Help", nullptr));

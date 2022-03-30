@@ -40,7 +40,7 @@ MainMenuView::~MainMenuView()
 
 ///play : from main to game
 void MainMenuView::on_pushButton_clicked() {
-  //ui->horizontalLayout_2->addWidget(new MenuBoardView(0, {QPoint{2,0}}, {QPoint{0, 1}}));
+  ui->horizontalLayout_2->addWidget(new MenuBoardView(std::get<0>(games_[ ui->comboBox->currentIndex()]), {QPoint{2,0}}, {QPoint{0, 1}}));
   ui->stackedWidget->setCurrentIndex(8);
 }
 
@@ -226,9 +226,20 @@ void MainMenuView::on_pushButton_game_chat_send_clicked()
         error_message_ = "Not signed in";
       }
     */
-      game_chattext = game_chattext + "\n" + ui->lineEdit_15->text().toStdString();
-      ui->textEdit_7->setText(QString::fromStdString(game_chattext));
-      ui->lineEdit_15->setText("");
+    if (!selected_friend_.has_value()) {
+      cout<<"no friend selected";
+      // TODO: Afficher message erreur que l'utilisateru pas selectionne
+      return;
+    }
+
+    auto message_res = ApiWrapper::GetShared()->SendNewMessage(*selected_friend_, ui->lineEdit_15->text().toStdString());
+
+    if (message_res.has_value()) {
+      // TODO: erreur: message_res->error_message
+      return;
+    }
+
+    updateChatRoomMessagesListView("game");
 
 }
 
@@ -398,6 +409,23 @@ void MainMenuView::on_pushButton_BackRanking_clicked()
 
 }
 
+void MainMenuView::updateChatRoom(){
+  auto conv_req_res = ApiWrapper::GetShared()->GetConversationWithUser(*selected_friend_);
+  auto curr_user_req_res = ApiWrapper::GetShared()->GetCurrentUser();
+
+  auto curr_user = std::get<UserClient>(curr_user_req_res);
+
+  while (true){
+    auto messages = std::get<std::vector<Message>>(conv_req_res);
+    for (const auto &mess : messages) {
+      //std::cout << mess.GetContent() << std::endl;
+      bool is_this_user_sender = mess.GetSenderId() == curr_user.GetId();
+      std::string mess_bubble = is_this_user_sender ? "Me: " : curr_user.GetUsername().GetValue() + ": ";
+      mess_bubble += mess.GetContent();
+      ui->textEdit_Conversation->append(QString::fromStdString(mess_bubble));
+    }
+  }
+}
 
 void MainMenuView::on_pushButton_EnterLogin_clicked()
 {
@@ -512,6 +540,68 @@ void MainMenuView::updateChatRoomMessagesListView() {
     }
   }
 }
+
+
+void MainMenuView::updateChatRoomMessagesListView(const std::string& room) {
+  if(room=="chat"){
+    ui->textEdit_Conversation->clear();
+  }
+  else if(room=="game"){
+    //ui->textEdit_7->clear();
+    ui->lineEdit_15->setText("");
+  }
+
+  if (!selected_friend_.has_value()) {
+    // TODO: Afficher message d'erreur (l'ami n'a pas ete selectionne)
+    std::cout << "No friend selected" << std::endl;
+    return;
+  }
+  // TODO: Effacer message erreur
+
+  std::cout << selected_friend_->GetUsername().GetValue() + " friend selected" << std::endl;
+
+
+  auto conv_req_res = ApiWrapper::GetShared()->GetConversationWithUser(*selected_friend_);
+  auto curr_user_req_res = ApiWrapper::GetShared()->GetCurrentUser();
+
+  if (std::holds_alternative<LoginError>(curr_user_req_res)) {
+    // TODO:: Afficher errur login
+    std::cout << std::get<LoginError>(curr_user_req_res).error_message << std::endl;
+    return;
+  }
+
+  auto curr_user = std::get<UserClient>(curr_user_req_res);
+
+  if (std::holds_alternative<ApiError>(conv_req_res)) {
+    // TODO: Afficher l'erreur
+    auto err = std::get<ApiError>(conv_req_res);
+    // ui->label_error->setText(QString::fromStdString(err.error_message));
+    std::cout << err.error_message << std::endl;
+    return;
+  } else {
+    std::cout << "Messages for " << curr_user.GetUsername().GetValue() << " and " << selected_friend_->GetUsername().GetValue() << std::endl;
+    auto messages = std::get<std::vector<Message>>(conv_req_res);
+    for (const auto &mess : messages) {
+      std::cout << mess.GetContent() << std::endl;
+      bool is_this_user_sender = mess.GetSenderId() == curr_user.GetId();
+      //std::string mess_bubble = is_this_user_sender ? "Me: " : "Friend: ";
+      std::string mess_bubble = is_this_user_sender ? "Me: " : selected_friend_->GetUsername().GetValue()+ ": ";
+      mess_bubble += mess.GetContent();
+
+      if(room=="chat"){
+        ui->textEdit_Conversation->append(QString::fromStdString(mess_bubble));
+      }
+      else if(room=="game"){
+        //ui->lineEdit_15->append(QString::fromStdString(mess_bubble));
+        ui->textEdit_7->append(QString::fromStdString(mess_bubble));
+      }
+    }
+  }
+}
+
+
+
+
 void MainMenuView::updateFriendsComboBoxView(QComboBox* combobox) {
   //ui->comboBox_ChooseFriend->clear();
    combobox->clear();
@@ -556,13 +646,13 @@ void MainMenuView::updateRankingView() {
 void MainMenuView::on_pushButton_PlayMainMenu_clicked()
 {
     ui->stackedWidget->setCurrentIndex(10);
-    std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGamesVector();
+    std::variant<std::vector<std::tuple<uint32_t, std::string>>, ApiError> res = ApiWrapper::GetShared()->GetGameRoomNames();
      if (holds_alternative<ApiError>(res)) {
        games_ = {};
      } else {
-       games_ = std::move(std::get<std::vector<std::string>>(res));
-       for(std::string game: games_){
-           ui->comboBox->addItem(QString::fromStdString(game));
+       games_ = std::move(std::get<std::vector<std::tuple<uint32_t, std::string>>>(res));
+       for(auto& game: games_){
+           ui->comboBox->addItem(QString::fromStdString(std::get<1>(game)));
        }
      }
 }
@@ -589,13 +679,13 @@ void MainMenuView::on_pushButton_InviteToGame_clicked()
         ui->comboBox_InviteBox->currentText().toStdString());
     ui->stackedWidget->setCurrentIndex(10);
     }
-    std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGamesVector();
+    std::variant<std::vector<std::tuple<uint32_t, std::string>>, ApiError> res = ApiWrapper::GetShared()->GetGameRoomNames();
      if (holds_alternative<ApiError>(res)) {
        games_ = {};
      } else {
-       games_ = std::move(std::get<std::vector<std::string>>(res));
-       for(std::string game: games_){
-           ui->comboBox->addItem(QString::fromStdString(game));
+       games_ = std::move(std::get<std::vector<std::tuple<uint32_t, std::string>>>(res));
+       for(auto& game: games_){
+           ui->comboBox->addItem(QString::fromStdString(std::get<1>(game)));
        }
      }
 }
