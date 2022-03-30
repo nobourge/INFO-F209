@@ -369,7 +369,7 @@ void MainMenuView::on_pushButton_BackHelp_clicked()
 void MainMenuView::on_pushButton_SendButtonChat_clicked()
 {
     if (!selected_friend_.has_value()) {
-      // TODO: Afficher message erreur que l'utilisateru pas selectionne
+      // TODO: Afficher message erreur que l'utilisateur pas selectionne
       return;
     }
 
@@ -475,6 +475,24 @@ void MainMenuView::on_pushButton_26_clicked()
 
 /////Functions
 
+void MainMenuView::updateChatRoom(){
+  auto conv_req_res = ApiWrapper::GetShared()->GetConversationWithUser(*selected_friend_);
+  auto curr_user_req_res = ApiWrapper::GetShared()->GetCurrentUser();
+
+  auto curr_user = std::get<UserClient>(curr_user_req_res);
+
+  while (true){
+    auto messages = std::get<std::vector<Message>>(conv_req_res);
+    for (const auto &mess : messages) {
+      //std::cout << mess.GetContent() << std::endl;
+      bool is_this_user_sender = mess.GetSenderId() == curr_user.GetId();
+      std::string mess_bubble = is_this_user_sender ? "Me: " : curr_user.GetUsername().GetValue() + ": ";
+      mess_bubble += mess.GetContent();
+      ui->textEdit_Conversation->append(QString::fromStdString(mess_bubble));
+    }
+  }
+}
+
 
 void MainMenuView::updateChatRoomMessagesListView() {
   ui->textEdit_Conversation->clear();
@@ -503,12 +521,12 @@ void MainMenuView::updateChatRoomMessagesListView() {
     std::cout << err.error_message << std::endl;
     return;
   } else {
-    std::cout << "Messages for " << curr_user.GetUsername().GetValue() << " and " << selected_friend_->GetUsername().GetValue() << std::endl;
+    //std::cout << "Messages for " << curr_user.GetUsername().GetValue() << " and " << selected_friend_->GetUsername().GetValue() << std::endl;
     auto messages = std::get<std::vector<Message>>(conv_req_res);
     for (const auto &mess : messages) {
-      std::cout << mess.GetContent() << std::endl;
+      //std::cout << mess.GetContent() << std::endl;
       bool is_this_user_sender = mess.GetSenderId() == curr_user.GetId();
-      std::string mess_bubble = is_this_user_sender ? "Me: " : "Friend: ";
+      std::string mess_bubble = is_this_user_sender ? "Me: " : curr_user.GetUsername().GetValue() + ": ";
       mess_bubble += mess.GetContent();
       ui->textEdit_Conversation->append(QString::fromStdString(mess_bubble));
     }
