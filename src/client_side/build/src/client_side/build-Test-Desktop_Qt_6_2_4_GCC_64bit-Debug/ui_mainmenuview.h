@@ -1654,7 +1654,7 @@ public:
         pushButton_AddFriend->setText(QCoreApplication::translate("MainMenuView", "Add Friend", nullptr));
         pushButton_Chat->setText(QCoreApplication::translate("MainMenuView", "Chat", nullptr));
         pushButton_BackChooseFriend->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
-        label->setText(QCoreApplication::translate("MainMenuView", "TextLabel", nullptr));
+        label->setText(QCoreApplication::translate("MainMenuView", "message:", nullptr));
         pushButton_SendButtonChat->setText(QCoreApplication::translate("MainMenuView", "Send", nullptr));
         pushButton_BackChat->setText(QCoreApplication::translate("MainMenuView", "Back", nullptr));
         label_title_Help->setText(QCoreApplication::translate("MainMenuView", "Help", nullptr));

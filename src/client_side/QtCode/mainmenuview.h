@@ -128,7 +128,10 @@ class MainMenuView : public QMainWindow
 
   // void on_pushButton_PlayMainMenu_clicked();
   ///Update functions
-  void updateChatRoomMessagesListView();
+  void updateChatRoom();
+  //void updateChatRoomMessagesListView();
+  void updateChatRoomMessagesListView(const string& room);
+
   void updateFriendsComboBoxView(QComboBox* combobox);
   void updateRankingView();
   void updateChatRoom();

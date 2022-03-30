@@ -29,7 +29,7 @@
          <string notr="true"/>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>8</number>
         </property>
         <widget class="QWidget" name="page_3">
          <layout class="QGridLayout" name="gridLayout_5">
@@ -3863,6 +3863,13 @@ border-image: null;
                </size>
               </property>
              </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_title_Chat">
+              <property name="text">
+               <string>Chatroom</string>
+              </property>
+             </widget>
             </item>
             <item>
              <spacer name="horizontalSpacer_34">
