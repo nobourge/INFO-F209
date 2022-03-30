@@ -32,7 +32,6 @@ Game::Game(const std::vector<std::pair<Position, int>> &playersPair,
   game_on_ = true;
   p_board_ = std::make_unique<Board>(Board(players_, walls));
 
-  // cout<<board->GetBoardString()<<std::endl;
   // code for local testing on terminal
   // std::vector<std::string> test{"M->F", "M->F", "M->F", "M->F->L",
   // "W->a1->a2->S", "W->a2->a3->S"}; for (std::string move : test){
@@ -110,11 +109,6 @@ void Game::SwitchCurrentPlayer() {
     current_player_in_vector = players_.begin();
   }
   current_player_ = *current_player_in_vector;
-
-  // current_player_=next player from the vector
-  cout << endl;
-  cout << p_board_->GetBoardString() << std::endl;
-  cout << endl;
 }
 
 ///
