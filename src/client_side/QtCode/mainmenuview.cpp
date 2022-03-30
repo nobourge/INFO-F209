@@ -40,7 +40,60 @@ MainMenuView::~MainMenuView()
 
 ///play : from main to game
 void MainMenuView::on_pushButton_clicked() {
-  ui->horizontalLayout_2->addWidget(new MenuBoardView(std::get<0>(games_[ ui->comboBox->currentIndex()]), {QPoint{2,0}}, {QPoint{0, 1}}));
+  object_id_t game_id = std::get<0>(games_[ ui->comboBox->currentIndex()]);
+  auto game_or_err = ApiWrapper::GetShared()->GetGame(game_id);
+  if (std::holds_alternative<ApiError>(game_or_err)){
+      //todo
+  }
+  else{
+      auto game = std::get<Game>(game_or_err);
+      auto current_user_or_error = ApiWrapper::GetShared()->GetCurrentUser();
+      if (std::holds_alternative<LoginError>(current_user_or_error)){
+          //todo
+      }
+      else{
+          auto user = std::get<UserClient>(current_user_or_error);
+          auto other_player_id_iter = std::find_if(game.GetPlayers().begin(), game.GetPlayers().end(), [&](auto &p) {
+              return user.GetId() != p->GetUserId();
+            });
+          if (other_player_id_iter == game.GetPlayers().end()){
+              //Todo gérer Ia
+          }
+
+          else{
+              //On a trouvé un autre joueur !
+              std::optional<object_id_t> other_player_id = (*other_player_id_iter)->GetUserId();
+              if (!other_player_id.has_value()){
+                  //Erreur inconnu
+                  return;
+              }
+              auto all_users_or_error = ApiWrapper::GetShared()->GetAllUsers();
+              if (std::holds_alternative<ApiError>(all_users_or_error)){
+                  //todo
+                  return;
+              }
+
+              auto all_users = std::get<std::vector<UserClient>>(all_users_or_error);
+
+
+
+              auto other_user_iter = std::find_if(all_users.begin(), all_users.end(), [&](auto &user) {
+                return user.GetId() == other_player_id;
+              });
+
+              if (other_user_iter == all_users.end()){
+                //todo erreur
+                  return;
+              }
+              selected_friend_ = *(other_user_iter);
+          }
+
+
+
+      }
+
+  }
+  ui->horizontalLayout_2->addWidget(new MenuBoardView(game_id, {QPoint{2,0}}, {QPoint{0, 1}}));
   ui->stackedWidget->setCurrentIndex(8);
 }
 

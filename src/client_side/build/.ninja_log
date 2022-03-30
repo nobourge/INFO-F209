@@ -84,3 +84,10 @@
 2468	25132	1648658919029984798	QtCode/CMakeFiles/menus_lib.dir/mainmenuview.cpp.o	11193a99e5e437f6
 25132	25323	1648658919217993224	QtCode/libmenus_lib.a	f85ede5fd456f049
 25323	28754	1648658922646147189	ClientSide	9bd8c9d337746ce6
+16	68	1648661942870799749	QtCode/menus_lib_autogen/timestamp	3a04bd605dbe7f4e
+16	68	1648661942870799749	QtCode/menus_lib_autogen/mocs_compilation.cpp	3a04bd605dbe7f4e
+16	68	1648661942870799749	/home/guest/Bureau/projet annee/INFO-F209/src/client_side/build/QtCode/menus_lib_autogen/timestamp	3a04bd605dbe7f4e
+16	68	1648661942870799749	/home/guest/Bureau/projet annee/INFO-F209/src/client_side/build/QtCode/menus_lib_autogen/mocs_compilation.cpp	3a04bd605dbe7f4e
+73	16195	1648661958991135421	QtCode/CMakeFiles/menus_lib.dir/mainmenuview.cpp.o	11193a99e5e437f6
+16196	16370	1648661959163139012	QtCode/libmenus_lib.a	f85ede5fd456f049
+16370	19108	1648661961899196143	ClientSide	9bd8c9d337746ce6
