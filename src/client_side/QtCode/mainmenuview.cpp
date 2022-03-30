@@ -1,6 +1,4 @@
 #include "mainmenuview.h"
-#include "game.h"
-#include "board_scene.h"
 #include "../../../src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
 #include <QStringList>
 #include <QPlainTextEdit>
@@ -560,6 +558,15 @@ void MainMenuView::updateRankingView() {
 void MainMenuView::on_pushButton_PlayMainMenu_clicked()
 {
     ui->stackedWidget->setCurrentIndex(10);
+    std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGamesVector();
+     if (holds_alternative<ApiError>(res)) {
+       games_ = {};
+     } else {
+       games_ = std::move(std::get<std::vector<std::string>>(res));
+       for(std::string game: games_){
+           ui->comboBox->addItem(QString::fromStdString(game));
+       }
+     }
 }
 
 
@@ -578,11 +585,32 @@ void MainMenuView::on_pushButton_ToInviteFriend_clicked()
 
 void MainMenuView::on_pushButton_InviteToGame_clicked()
 {
+    if (ui->lineEdit->text().toStdString() != "" && ui->comboBox_InviteBox->currentText().toStdString() != ""){
+    auto err = ApiWrapper::GetShared()->CreateGame(
+      ui->lineEdit->text().toStdString(),
+        ui->comboBox_InviteBox->currentText().toStdString());
     ui->stackedWidget->setCurrentIndex(10);
+    }
+    std::variant<std::vector<std::string>, ApiError> res = ApiWrapper::GetShared()->GetGamesVector();
+     if (holds_alternative<ApiError>(res)) {
+       games_ = {};
+     } else {
+       games_ = std::move(std::get<std::vector<std::string>>(res));
+       for(std::string game: games_){
+           ui->comboBox->addItem(QString::fromStdString(game));
+       }
+     }
 }
 
 
 void MainMenuView::on_pushButton_BackToJoinMenu_clicked()
 {
     ui->stackedWidget->setCurrentIndex(10);
+
 }
+
+void MainMenuView::on_lineEditNameOfGame_cursorPositionChanged(int arg1, int arg2)
+{
+
+}
+
