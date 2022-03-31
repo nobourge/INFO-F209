@@ -1,5 +1,5 @@
 #include "mainmenuview.h"
-#include "../../../src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
+#include "../../../src/client_side/build/src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
 #include <QStringList>
 #include <QPlainTextEdit>
 #include <variant>
@@ -218,7 +218,7 @@ void MainMenuView::on_lineEdit_SearchFriendUsername_textChanged(const QString &a
 
 void MainMenuView::on_pushButton_BackAddFriend_clicked()
 {
-
+  updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
     ui->stackedWidget->setCurrentIndex(5);
 
 }
@@ -426,6 +426,7 @@ void MainMenuView::on_pushButton_AddAddFriend_clicked()
 
 void MainMenuView::on_pushButton_BackHelp_clicked()
 {
+
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -457,8 +458,8 @@ void MainMenuView::on_pushButton_BackChat_clicked()
 
 void MainMenuView::on_pushButton_BackRanking_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
-    updateRankingView();
+  updateRankingView();
+  ui->stackedWidget->setCurrentIndex(3);
 
 }
 
@@ -486,7 +487,7 @@ void MainMenuView::on_pushButton_EnterLogin_clicked()
 
     if (holds_alternative<LoginError>(login_res)) {
       //  //Mettre ici le message d'erreur
-      ui->label_LoginDone->setText("Error");
+      ui->label_LoginDone->setText(QString::fromStdString(std::get<LoginError>(login_res).error_message));
     } else {
       ApiWrapper::GetShared() = std::get<ApiWrapper>(login_res);
       ui->stackedWidget->setCurrentIndex(3);
@@ -532,6 +533,7 @@ void MainMenuView::on_pushButton_HelpMainMenu_clicked()
 
 void MainMenuView::on_pushButton_RankingMainMenu_clicked()
 {
+  updateRankingView();
   ui->stackedWidget->setCurrentIndex(4);
 
 }
