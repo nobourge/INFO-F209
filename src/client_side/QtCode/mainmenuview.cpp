@@ -21,7 +21,7 @@ MainMenuView::MainMenuView(QWidget *parent)
   ui->label_Help->setTextFormat(Qt::RichText);
   ui->label_Help->setText("<a "
                           "href=\"https://www.gigamic.com/files/catalog/"
-                          "products/rules/quoridor-classic-fr.pdf\"> rules");
+                          "products/rules/quoridor-classic-fr.pdf\">rules</a>");
 
   InitMessageFetcherThread();
 }
@@ -698,6 +698,7 @@ void MainMenuView::UpdateMessageViews(const std::vector<Message> &messages,
     ui->textEdit_7->append(QString::fromStdString(mess_bubble));
   }
 }
+
 void MainMenuView::InitMessageFetcherThread() {
   auto fetcher = new MessageFetcher();
   fetcher->moveToThread(&message_fetcher_thread_);
@@ -709,6 +710,7 @@ void MainMenuView::InitMessageFetcherThread() {
           &MainMenuView::UpdateMessageViews);
   message_fetcher_thread_.start();
 }
+
 void MainMenuView::StartFetchingMessages() {
   if (!selected_friend_.has_value()) {
     return;
