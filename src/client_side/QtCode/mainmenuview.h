@@ -168,7 +168,6 @@ private:
   bool should_fetch_messages_ = false;
   QThread message_fetcher_thread_;
 
-  MenuBoardView *menuView = new MenuBoardView(0);
   std::vector<std::tuple<uint32_t, std::string>> games_ = {};
 };
 

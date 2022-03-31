@@ -14,7 +14,6 @@ MainMenuView::MainMenuView(QWidget *parent)
   this->setStyleSheet("selection-color: green");
 
   ui->stackedWidget->setCurrentIndex(0);
-  ui->stackedWidget->addWidget(menuView);
   // hyperlien
   ui->label_Help->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
   ui->label_Help->setOpenExternalLinks(true);
@@ -274,6 +273,9 @@ void MainMenuView::on_pushButton_game_chat_send_clicked() {
 
 void MainMenuView::on_pushButton_game_quit_clicked() {
   StopFetchingMessages();
+  cout << "this is a test" << endl;
+  ui->horizontalLayout_2->itemAt(0)->widget()->deleteLater();
+  // ui->horizontalLayout_2->removeWidget(ui->horizontalLayout_2->itemAt(0)->widget());
   ui->stackedWidget->setCurrentIndex(3);
 }
 

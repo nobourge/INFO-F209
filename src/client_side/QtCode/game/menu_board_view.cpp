@@ -42,10 +42,9 @@ void MenuBoardView::mousePressEvent(QMouseEvent *event) // Mouse click event
     firstWall = newItem;
     return;
   }
-  if (playerSelected && newItem->getPlat() &&
-      verifyMove(ancientCell->getPosition(), newItem->getPosition())) {
+  if (playerSelected && newItem->getPlat()) {
     playerSelected = false;
-    playMove(newItem);
+    if (verifyMove(ancientCell->getPosition(), newItem->getPosition())) playMove(newItem);
   } else if (firstWall != nullptr) {
     cout << "placing a wall !" << endl;
 
@@ -87,13 +86,26 @@ void MenuBoardView::placeWall(MenuCell *first, MenuCell *second, MenuCell *third
   static_cast<MenuWallCell *>(first)->setWall(direction);
   static_cast<MenuWallCell *>(second)->setWall(direction);
   static_cast<MenuWallCell *>(third)->setWall(direction);
+
+  cout << get<string>(ApiWrapper::GetShared()->GetGameReprWithGameId(static_cast<int>(game_id))) << endl;
 }
 
 bool MenuBoardView::verifyWall(QPoint firstWall, QPoint secondWall) {
-  cout<<Translator::Get().PositionToWallMove({firstWall.x(), firstWall.y()}, {secondWall.x(), secondWall.y()})<<endl;
   if (firstWall - secondWall != QPoint{0,2} && firstWall - secondWall != QPoint{2,0}
       && firstWall - secondWall != QPoint{0,-2} && firstWall - secondWall != QPoint{-2,0}
-      || (firstWall.x() % 2 != 0 && firstWall.y() % 2!= 0) || (firstWall.x() % 2 != 0 && firstWall.y() % 2!= 0) ) return false;
+      || (firstWall.x() % 2 != 0 && firstWall.y() % 2!= 0) || (firstWall.x() % 2 != 0 && firstWall.y() % 2!= 0)) return false;
+  
+  string move = Translator::Get().PositionToWallMove({firstWall.x(), firstWall.y()}, {secondWall.x(), secondWall.y()});
+  cout << move << endl;
+  optional<ApiError> voidOrGood = ApiWrapper::GetShared()->PerformGameMove(static_cast<uint32_t>(game_id), move);
+  if (voidOrGood.has_value()) {
+    // bad move
+    cout << voidOrGood.value().error_message << endl;
+    return false;
+  }else {
+    cout<<Translator::Get().PositionToWallMove({firstWall.x(), firstWall.y()}, {secondWall.x(), secondWall.y()})<<endl;
+  }
+
   return true;
 }
 
@@ -103,38 +115,45 @@ void MenuBoardView::playMove(MenuCell *item) {
   ancientCell->setCellPawn(false);
   item->setCellPixmap(QPixmap(pawn_png.c_str()));
   item->setCellPawn(true);
+
+  cout << get<string>(ApiWrapper::GetShared()->GetGameReprWithGameId(static_cast<int>(game_id))) << endl;
+
+}
+
+bool MenuBoardView::SendMoveToServer(DIRECTION moveDirection, DIRECTION winningDirection) {
+  string move = Translator::Get().PositionToPawnMove(moveDirection, winningDirection);
+  cout << move << endl;
+  optional<ApiError> voidOrGood = ApiWrapper::GetShared()->PerformGameMove(static_cast<uint32_t>(game_id), move);
+  if (voidOrGood.has_value()) {
+    // bad move or api
+    return false;
+  } else {
+    // good move
+    return true;
+  }
 }
 
 bool MenuBoardView::verifyMove(QPoint pos1, QPoint pos2) {
-  Position currentPlayerPos = get<Game>(ApiWrapper::GetShared()->GetGame(static_cast<uint32_t>(game_id))).GetCurrentPlayer()->getPlayerPos();
-  cout<<currentPlayerPos.row<<" "<<currentPlayerPos.col<<endl;
-  cout<<pos1.y()/2<<" "<<pos1.x()/2<<endl;
-
-  if (currentPlayerPos.row != pos1.y()/2 || currentPlayerPos.col != pos1.x()/2) return false;
+  Game game = get<Game>(ApiWrapper::GetShared()->GetGame(static_cast<uint32_t>(game_id)));
+  shared_ptr<Player> currentPlayer = game.GetCurrentPlayer();
+  UserClient current_user = get<UserClient>(ApiWrapper::GetShared()->GetCurrentUser());
+  if (currentPlayer->getPlayerPos().row != pos1.y()/2 || currentPlayer->getPlayerPos().col != pos1.x()/2 || currentPlayer->GetUserId() != current_user.GetId() ) return false;
+  
   if (pos1.y() == pos2.y() && pos2.x() - pos1.x() == 2) {
     // right
-    cout<<"first"<<endl;
-    
-    cout<<Translator::Get().PositionToPawnMove(EAST, get<Game>(ApiWrapper::GetShared()->GetGame(static_cast<uint32_t>(game_id))).GetCurrentPlayer()->getGoal() )<<endl;
-    return true;
+    return SendMoveToServer(EAST, currentPlayer->getGoal());
   }
   if (pos1.y() == pos2.y() && pos1.x() - pos2.x() == 2) {
     // left
-    cout<<"second"<<endl;
-    cout<<Translator::Get().PositionToPawnMove(WEST, get<Game>(ApiWrapper::GetShared()->GetGame(static_cast<uint32_t>(game_id))).GetCurrentPlayer()->getGoal() )<<endl;
-    return true;
+    return SendMoveToServer(WEST, currentPlayer->getGoal());
   }
   if (pos1.x() == pos2.x() && pos2.y() - pos1.y() == 2) {
     // down 
-    cout<<"third"<<endl;
-    cout<<Translator::Get().PositionToPawnMove(SOUTH, get<Game>(ApiWrapper::GetShared()->GetGame(static_cast<uint32_t>(game_id))).GetCurrentPlayer()->getGoal() )<<endl;
-    return true;
+    return SendMoveToServer(SOUTH, currentPlayer->getGoal());;
   }
   if (pos1.x() == pos2.x() && pos1.y() - pos2.y() == 2) {
     // up
-    cout<<"fourth"<<endl;
-    cout<<Translator::Get().PositionToPawnMove(NORTH, get<Game>(ApiWrapper::GetShared()->GetGame(static_cast<uint32_t>(game_id))).GetCurrentPlayer()->getGoal() )<<endl;
-    return true;
+    return SendMoveToServer(NORTH, currentPlayer->getGoal());;
   }
   return false;
 }

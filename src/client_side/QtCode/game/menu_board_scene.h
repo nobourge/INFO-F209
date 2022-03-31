@@ -14,7 +14,7 @@
 class MenuBoardScene : public QGraphicsScene {
     QVector<QVector<MenuCell*>> cells;
     QPoint PairToPoint(pair<int, int> pair);
-    QVector<QPoint> VectorToQVector(vector<pair<int, int>> vec);
+    QVector<QPoint> VectorToQVector(vector<pair<int, int>> vec);    
 public:
     MenuBoardScene();
     MenuBoardScene(QVector<QPoint> pawns_, QVector<QPoint> walls_);
