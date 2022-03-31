@@ -245,36 +245,6 @@ void MainMenuView::on_pushButton_Register_clicked() {
   }
 }
 
-void MainMenuView::on_pushButton_game_chat_send_clicked() {
-  /*
-    auto api_wrapper = ApiWrapper::GetShared();
-
-    if (api_wrapper.has_value()) {
-      auto message_res = api_wrapper->SendNewMessage(user_to_chat_with_,
-    ui->lineEdit_InputNewMessage->text().toStdString();); if
-    (message_res.has_value()) { error_message_ = message_res->error_message;
-      }
-    } else {
-      error_message_ = "Not signed in";
-    }
-  */
-  if (!selected_friend_.has_value()) {
-    cout << "no friend selected";
-    // TODO: Afficher message erreur que l'utilisateru pas selectionne
-    return;
-  }
-
-  auto message_res = ApiWrapper::GetShared()->SendNewMessage(
-      *selected_friend_, ui->lineEdit_15->text().toStdString());
-
-  if (message_res.has_value()) {
-    // TODO: erreur: message_res->error_message
-    return;
-  }
-  ui->lineEdit_15->setText("");
-
-}
-
 void MainMenuView::on_pushButton_game_quit_clicked() {
   StopFetchingMessages();
   ui->stackedWidget->setCurrentIndex(3);
@@ -349,20 +319,41 @@ void MainMenuView::on_pushButton_BackHelp_clicked() {
 }
 
 void MainMenuView::on_pushButton_SendButtonChat_clicked() {
+  send_message(ui->lineEdit_InputNewMessage->text().toStdString());
+  ui->lineEdit_InputNewMessage->setText("");
+}
+
+void MainMenuView::on_pushButton_game_chat_send_clicked() {
+  send_message(ui->lineEdit_15->text().toStdString());
+  ui->lineEdit_15->setText("");
+}
+
+
+void MainMenuView::send_message(string message){
   if (!selected_friend_.has_value()) {
-    // TODO: Afficher message erreur que l'utilisateru pas selectionne
+// TODO: Afficher message erreur que l'utilisateru pas selectionne
     return;
   }
 
   auto message_res = ApiWrapper::GetShared()->SendNewMessage(
-      *selected_friend_, ui->lineEdit_InputNewMessage->text().toStdString());
+      *selected_friend_, message);
 
   if (message_res.has_value()) {
-    // TODO: erreur: message_res->error_message
+// TODO: erreur: message_res->error_message
     return;
   }
+}
 
+void MainMenuView::on_lineEdit_InputNewMessage_returnPressed()
+{
+  send_message(ui->lineEdit_InputNewMessage->text().toStdString());
   ui->lineEdit_InputNewMessage->setText("");
+}
+
+void MainMenuView::on_lineEdit_15_returnPressed()
+{
+  send_message(ui->lineEdit_15->text().toStdString());
+  ui->lineEdit_15->setText("");
 }
 
 void MainMenuView::on_pushButton_BackChat_clicked() {

@@ -170,6 +170,10 @@ private:
 
   MenuBoardView *menuView = new MenuBoardView(0);
   std::vector<std::tuple<uint32_t, std::string>> games_ = {};
+  void on_lineEdit_InputNewMessage_returnPressed();
+  void send_message(string message);
+  void on_lineEdit_15_returnPressed();
+  void on_lineEdit_15_returnPressed();
 };
 
 #endif // MAINMENUVIEW_H
