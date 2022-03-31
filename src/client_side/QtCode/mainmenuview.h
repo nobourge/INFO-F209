@@ -173,7 +173,6 @@ private:
   void on_lineEdit_InputNewMessage_returnPressed();
   void send_message(string message);
   void on_lineEdit_15_returnPressed();
-  void on_lineEdit_15_returnPressed();
 };
 
 #endif // MAINMENUVIEW_H
