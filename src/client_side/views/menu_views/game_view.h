@@ -6,13 +6,15 @@
 #define INFO_F209_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_GAME_VIEW_H_
 #include "abstract_menu_view.h"
 
-class GameView :public AbstractMenuView{
- public:
+class GameView : public AbstractMenuView {
+public:
   GameView();
+
 protected:
-  int GetVerticalGutterSize() const override;
- private:
-  constexpr static const char menu_name_[] = "Chat Room Menu";
+  [[nodiscard]] int GetVerticalGutterSize() const override;
+
+private:
+  constexpr static const char menu_name_[] = "Quoridor Game Menu";
 };
 
-#endif //INFO_F209_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_GAME_VIEW_H_
+#endif // INFO_F209_SRC_CLIENT_SIDE_VIEWS_MENU_VIEWS_VIEWS_GAME_VIEW_H_

@@ -4,6 +4,8 @@
 
 #include "cell.h"
 
+#include <utility>
+
 Cell::Cell() : pawn_{nullptr} { walls_.fill(false); }
 
 ///
@@ -34,13 +36,12 @@ bool Cell::isPawn() const {
 ///
 
 void Cell::removePawn() {
-  std::cout << "removed" << std::endl;
   pawn_ = nullptr;
 }
 
 ///
 /// \param pawn
-void Cell::setPawn(std::shared_ptr<Player> pawn) { pawn_ = pawn; }
+void Cell::setPawn(std::shared_ptr<Player> pawn) { pawn_ = std::move(pawn); }
 
 ///
 /// \return
