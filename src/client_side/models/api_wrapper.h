@@ -18,10 +18,7 @@ struct ApiError {
   std::string error_message;
 };
 
-typedef bool IsAdmin;
-
-struct LoginError: ApiError {
-};
+typedef ApiError LoginError;
 
 class ApiWrapper {
 public:

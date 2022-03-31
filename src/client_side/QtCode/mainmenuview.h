@@ -1,24 +1,27 @@
 #ifndef MAINMENUVIEW_H
 #define MAINMENUVIEW_H
 
-#include <QMainWindow>
 #include "../models/user_client.h"
 #include "menu_board_view.h"
+#include "message_fetcher.h"
 #include <QComboBox>
+#include <QMainWindow>
+#include <QtCore/qthread.h>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainMenuView; }
+namespace Ui {
+class MainMenuView;
+}
 QT_END_NAMESPACE
 
-class MainMenuView : public QMainWindow
-{
- Q_OBJECT
+class MainMenuView : public QMainWindow {
+  Q_OBJECT
 
- public:
+public:
   MainMenuView(QWidget *parent = nullptr);
   ~MainMenuView();
 
- private slots:
+private slots:
 
   void on_pushButton_clicked();
   void on_pushButton_5_clicked();
@@ -63,8 +66,6 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_53_clicked();
 
-
-
   void on_pushButton_26_clicked();
 
   void on_lineEdit_SearchFriendUsername_textChanged(const QString &arg1);
@@ -79,13 +80,9 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_Register_clicked();
 
-
-
   void on_pushButton_game_chat_send_clicked();
 
   void on_pushButton_game_quit_clicked();
-
-
 
   void on_pushButton_QuitWelcome_clicked();
 
@@ -115,7 +112,6 @@ class MainMenuView : public QMainWindow
 
   void on_pushButton_BackLogin_clicked();
 
-
   void on_pushButton_BackRegister_clicked();
 
   void on_pushButton_RankingMainMenu_clicked();
@@ -127,15 +123,14 @@ class MainMenuView : public QMainWindow
   void on_pushButton_FriendListMainMenu_clicked();
 
   // void on_pushButton_PlayMainMenu_clicked();
-  ///Update functions
+  /// Update functions
   void updateChatRoomMessagesListView();
-  void updateChatRoomMessagesListView(const string& room);
+  void updateChatRoomMessagesListView(const string &room);
 
-  void updateFriendsComboBoxView(QComboBox* combobox);
+  void updateFriendsComboBoxView(QComboBox *combobox);
   void updateRankingView();
   void updateChatRoom();
-////
-
+  ////
 
   void on_pushButton_PlayMainMenu_clicked();
 
@@ -149,21 +144,32 @@ class MainMenuView : public QMainWindow
 
   void on_lineEditNameOfGame_cursorPositionChanged(int arg1, int arg2);
 
+public slots:
+  void UpdateMessageViews(const std::vector<Message> &messages,
+                          const UserClient &other_user);
+
+signals:
+  void
+  __StartFetchingMessages(const UserClient &other_user,
+                          const std::function<bool()> should_continue_fetching);
+
 private:
+  void StartFetchingMessages();
+
+  void StopFetchingMessages() { should_fetch_messages_ = false; }
+
+  void InitMessageFetcherThread();
+
   Ui::MainMenuView *ui;
   std::vector<UserClient> friends_ = {};
 
   std::optional<UserClient> selected_friend_ = {};
   std::string chattext;
-  std::string game_chattext;
-  std::string Rankingtext;
+  bool should_fetch_messages_ = false;
+  QThread message_fetcher_thread_;
+
   MenuBoardView *menuView = new MenuBoardView(0);
   std::vector<std::tuple<uint32_t, std::string>> games_ = {};
 };
-
-
-
-
-
 
 #endif // MAINMENUVIEW_H

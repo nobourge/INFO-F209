@@ -22,9 +22,17 @@ MainMenuView::MainMenuView(QWidget *parent)
   ui->label_Help->setText("<a "
                           "href=\"https://www.gigamic.com/files/catalog/"
                           "products/rules/quoridor-classic-fr.pdf\"> rules");
+
+  InitMessageFetcherThread();
 }
 
-MainMenuView::~MainMenuView() { delete ui; }
+MainMenuView::~MainMenuView() {
+  StopFetchingMessages();
+  message_fetcher_thread_.quit();
+
+  delete ui;
+  message_fetcher_thread_.wait();
+}
 
 // 0 choose login
 // 1 login
@@ -39,6 +47,8 @@ MainMenuView::~MainMenuView() { delete ui; }
 
 /// play : from main to game
 void MainMenuView::on_pushButton_clicked() {
+
+  // get the username of opponent user
   object_id_t game_id = std::get<0>(games_[ui->comboBox->currentIndex()]);
   auto game_or_err = ApiWrapper::GetShared()->GetGame(game_id);
   if (std::holds_alternative<ApiError>(game_or_err)) {
@@ -82,12 +92,16 @@ void MainMenuView::on_pushButton_clicked() {
           // todo erreur
           return;
         }
-        selected_friend_ = *(other_user_iter);
+        selected_friend_ = std::move(*(other_user_iter));
+        StartFetchingMessages();
       }
     }
   }
+
+
   ui->horizontalLayout_2->addWidget(
       new MenuBoardView(game_id, {QPoint{2, 0}}, {QPoint{0, 1}}));
+
   ui->stackedWidget->setCurrentIndex(8);
 }
 
@@ -177,7 +191,8 @@ void MainMenuView::on_pushButton_BackAddFriend_clicked() {
 }
 
 void MainMenuView::on_pushButton_AddFriend_clicked() {
-  auto user_fetch_result = ApiWrapper::GetShared()->GetAllUsersExceptCurrentUser();
+  auto user_fetch_result =
+      ApiWrapper::GetShared()->GetAllUsersExceptCurrentUser();
   auto current_user = ApiWrapper::GetShared()->GetCurrentUser();
 
   std::vector<UserClient> users_;
@@ -192,14 +207,15 @@ void MainMenuView::on_pushButton_AddFriend_clicked() {
   for (auto &user : users_) {
     friends_usernames += user.GetUsername().GetValue() + "\n";
   }
-  ui->textEdit_DisplayFriendsAddFriend->setText(QString::fromStdString(friends_usernames));
+  ui->textEdit_DisplayFriendsAddFriend->setText(
+      QString::fromStdString(friends_usernames));
 
   ui->stackedWidget->setCurrentIndex(9);
 }
 
 void MainMenuView::on_pushButton_Chat_clicked() {
   selected_friend_ = friends_[ui->comboBox_ChooseFriend->currentIndex()];
-  updateChatRoomMessagesListView();
+  StartFetchingMessages();
   ui->stackedWidget->setCurrentIndex(6);
 }
 
@@ -254,8 +270,6 @@ void MainMenuView::on_pushButton_game_chat_send_clicked() {
     // TODO: erreur: message_res->error_message
     return;
   }
-
-  updateChatRoomMessagesListView("game");
 }
 
 void MainMenuView::on_pushButton_game_quit_clicked() {
@@ -275,7 +289,7 @@ void MainMenuView::on_pushButton_LoginWelcome_clicked() {
   ui->lineEdit_PasswordLogin->clear();
   ui->stackedWidget->setCurrentIndex(1);
   updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
-  updateChatRoomMessagesListView();
+//  updateChatRoomMessagesListView();
   updateRankingView();
 }
 
@@ -381,11 +395,11 @@ void MainMenuView::on_pushButton_SendButtonChat_clicked() {
     return;
   }
 
-  updateChatRoomMessagesListView();
   ui->lineEdit_InputNewMessage->setText("");
 }
 
 void MainMenuView::on_pushButton_BackChat_clicked() {
+  StopFetchingMessages();
   ui->stackedWidget->setCurrentIndex(5);
 }
 
@@ -672,3 +686,38 @@ void MainMenuView::on_pushButton_BackToJoinMenu_clicked() {
 
 void MainMenuView::on_lineEditNameOfGame_cursorPositionChanged(int arg1,
                                                                int arg2) {}
+void MainMenuView::UpdateMessageViews(const std::vector<Message> &messages,
+                                      const UserClient &other_user) {
+  ui->textEdit_Conversation->setText("");
+  ui->textEdit_7->setText("");
+  for (const auto &mess : messages) {
+    std::cout << mess.GetContent() << std::endl;
+    bool is_this_user_sender = mess.GetSenderId() != other_user.GetId();
+    std::string mess_bubble = is_this_user_sender
+                                  ? "Me: "
+                                  : other_user.GetUsername().GetValue() + ": ";
+    mess_bubble += mess.GetContent();
+
+    ui->textEdit_Conversation->append(QString::fromStdString(mess_bubble));
+    ui->textEdit_7->append(QString::fromStdString(mess_bubble));
+  }
+}
+void MainMenuView::InitMessageFetcherThread() {
+  auto fetcher = new MessageFetcher();
+  fetcher->moveToThread(&message_fetcher_thread_);
+  connect(&message_fetcher_thread_, &QThread::finished, fetcher,
+          &QObject::deleteLater);
+  connect(this, &MainMenuView::__StartFetchingMessages, fetcher,
+          &MessageFetcher::StartFetching);
+  connect(fetcher, &MessageFetcher::messagesFetched, this,
+          &MainMenuView::UpdateMessageViews);
+  message_fetcher_thread_.start();
+}
+void MainMenuView::StartFetchingMessages() {
+  if (!selected_friend_.has_value()) {
+    return;
+  }
+  should_fetch_messages_ = true;
+  __StartFetchingMessages(*selected_friend_,
+                          [&]() { return should_fetch_messages_; });
+}

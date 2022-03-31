@@ -20,7 +20,9 @@ set(SOURCES board_scene.cpp
             mainmenuview.ui
             mainmenuview.cpp
             mainmenuview.h
-            )
+            message_fetcher.cpp
+            message_fetcher.h
+        )
 
 add_library(${PROJECT_NAME} ${SOURCES})
 
