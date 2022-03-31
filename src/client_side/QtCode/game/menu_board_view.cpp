@@ -58,11 +58,12 @@ void MenuBoardView::mousePressEvent(QMouseEvent *event) // Mouse click event
     int direction_y = firstPos.y() - secondPos.y();
 
     if (direction_x < 0 || direction_y < 0) {
-      thirdPos = firstPos + QPoint{abs((firstPos - secondPos).x()/2), abs((firstPos - secondPos).y()/2)};
+      thirdPos = firstPos + QPoint{abs(static_cast<int>((firstPos - secondPos).x()/2)), abs(static_cast<int>((firstPos - secondPos).y()/2))};
     }else {
-      thirdPos = secondPos + QPoint{abs((firstPos - secondPos).x()/2), abs((firstPos - secondPos).y()/2)};
+      thirdPos = secondPos + QPoint{abs(static_cast<int>((firstPos - secondPos).x()/2)), abs(static_cast<int>((firstPos - secondPos).y()/2))};
     }
     
+    //chose
     
     cout << firstPos.x() << " " << firstPos.y() << endl;
     cout << secondPos.x() << " " <<  secondPos.y() << endl;
