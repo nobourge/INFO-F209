@@ -348,10 +348,20 @@ void MainMenuView::send_message(string message){
 
 void MainMenuView::on_lineEdit_InputNewMessage_returnPressed()
 {
+    this->setStyleSheet("background-color: white;");
+
   send_message(ui->lineEdit_InputNewMessage->text().toStdString());
   ui->lineEdit_InputNewMessage->setText("");
 }
 
+//void lineEdit_InputNewMessage::keyPressEvent(QKeyEvent *event)
+void MainMenuView::keyPressEvent(QKeyEvent *event)
+{
+  if(event->key() == Qt::Key_Enter)
+  {
+    this->setStyleSheet("background-color: white;");
+  }
+}
 void MainMenuView::on_lineEdit_15_returnPressed()
 {
   send_message(ui->lineEdit_15->text().toStdString());
