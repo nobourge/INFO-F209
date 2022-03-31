@@ -326,6 +326,8 @@ std::optional<Error> Game::PlayMove(std::string move) {
       return "Invalid wall direction";
     }
 
+    if (second_input == third_input) return "Cannot stack walls on the same cell";
+
     pair<Position, Position> wall{Translator::Get().translateMove(second_input),
                                   Translator::Get().translateMove(third_input)};
 
