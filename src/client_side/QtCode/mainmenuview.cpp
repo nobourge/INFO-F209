@@ -231,7 +231,7 @@ void MainMenuView::on_pushButton_Register_clicked() {
 
   if (password !=
       ui->lineEdit_PasswordVerificationRegistration->text().toStdString()) {
-    ui->label_RegistrationDone->setText("Password missmatch");
+    ui->label_RegistrationDone->setText("Password mismatch");
   } else {
     // passwords match
     auto api_wrapper = ApiWrapper::CreateAccount(username, password);
