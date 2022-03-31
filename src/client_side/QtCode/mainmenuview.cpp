@@ -9,7 +9,7 @@
 MainMenuView::MainMenuView(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainMenuView) {
   ui->setupUi(this);
-  ui->horizontalLayout_2->removeWidget(ui->horizontalLayout_2->itemAt(0)->widget());
+  // ui->horizontalLayout_2->removeWidget(ui->horizontalLayout_2->itemAt(0)->widget());
 
   this->setStyleSheet("selection-color: green");
 

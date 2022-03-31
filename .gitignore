@@ -16,6 +16,6 @@ Makefile
 
 example.db
 
-
 src/server_side/build/*
+src/client_side/build/*
 *.db

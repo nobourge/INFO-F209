@@ -69,6 +69,10 @@ public:
 
   crow::json::wvalue Serialize();
 
+  std::vector<std::pair<int, int>> GetAllPlayersPos();
+  
+  std::vector<std::pair<int, int>> GetAllWallsPos();
+
 private:
   std::vector<std::shared_ptr<Player>> pawns_ = {};
   std::array<std::array<Cell, kBoardSize>, kBoardSize> cells_ = {};

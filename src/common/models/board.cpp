@@ -490,3 +490,25 @@ crow::json::wvalue Board::Serialize() {
   }
   return output;
 }
+
+std::vector<std::pair<int, int>> Board::GetAllPlayersPos() {
+  auto lambda = [](std::shared_ptr<Player> player) {
+    return std::pair<int, int>(player->getPlayerPos().col*2, player->getPlayerPos().row*2);
+  };
+
+  std::vector<std::pair<int, int>> allPlayersPos;
+  for (auto pawn: pawns_) {
+    allPlayersPos.push_back(lambda(pawn));
+  }
+  return allPlayersPos;
+}
+
+std::vector<std::pair<int, int>> Board::GetAllWallsPos() {
+  std::vector<std::pair<int, int>> allWallsPos;
+  for (int row=0; row<kBoardSize*2-1; row++) {
+    for (int col=0; col<kBoardSize*2-1; col++) {
+      if (walls_[row][col]) allWallsPos.push_back({col, row});
+    }
+  }
+  return allWallsPos;
+}

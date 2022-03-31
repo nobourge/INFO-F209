@@ -11,6 +11,7 @@
 using namespace std;
 class MenuCell : public QGraphicsPixmapItem {
     QPoint pos;
+    QPoint position;
     bool player=false;
     bool isPlat=false;
 public:
@@ -24,6 +25,8 @@ public:
     virtual bool isCellWall(){return false;}
     
     virtual void setCellPawn(bool newPlayer){player=newPlayer;}
+
+    QPoint getAbsolutePosition(){return position;}
 public slots:
      void mousePressEvent(QGraphicsSceneMouseEvent *event);
      

@@ -2,16 +2,7 @@
 
 using namespace std;
 
-MenuBoardScene::MenuBoardScene() {
-    for (int row = 0; row < 17; row++) {    // change magic number later
-        for (int col = 0; col <17; col++) { // same as above
-            if (col % 2 == 0 && row % 2 == 0) this->addItem(new MenuCell(32*row, 32*col,row,col,32,true));
-            else this->addItem(new MenuWallCell(32*row, 32*col,row,col,32));
-        }
-        this->addItem(new MenuCell(32*0, 32*0,0,0,32,true, true, QPixmap(pawn_png.c_str())));
-    }
-
-}
+MenuBoardScene::MenuBoardScene() {}
 
 MenuBoardScene::MenuBoardScene(QVector<QPoint> pawns_, QVector<QPoint> walls_) {
     for (int row = 0; row < 17; row++) {    // change magic number later
@@ -25,4 +16,18 @@ MenuBoardScene::MenuBoardScene(QVector<QPoint> pawns_, QVector<QPoint> walls_) {
             }
         }
     }
+}
+
+MenuBoardScene::MenuBoardScene(vector<pair<int, int>> pawns_, vector<pair<int, int>> walls_) : MenuBoardScene{VectorToQVector(pawns_), VectorToQVector(walls_)} {}
+
+QPoint MenuBoardScene::PairToPoint(pair<int, int> pair ) {
+    return {pair.first, pair.second};
+}
+
+QVector<QPoint> MenuBoardScene::VectorToQVector(vector<pair<int,int>> vec) {
+    QVector<QPoint> temp_vec;
+    for (auto pair: vec) {
+        temp_vec.push_back(PairToPoint(pair));
+    }
+    return temp_vec;
 }

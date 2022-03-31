@@ -13,12 +13,15 @@ class MenuBoardView : public QGraphicsView {
     bool wallSelected=false;
     MenuCell* ancientCell=nullptr;
     MenuCell* firstWall=nullptr;
+    MenuCell* thirdWall=nullptr;
     int game_id;
+    QPointF firstPos;
+    QPointF secondPos;
 public:
     MenuBoardView(int game_id, QVector<QPoint> pawns_={}, QVector<QPoint> walls_={});
     void playMove(MenuCell*);
     bool verifyMove(QPoint,QPoint);
-    void placeWall(MenuCell*, MenuCell*);
+    void placeWall(MenuCell*, MenuCell*, MenuCell*);
     bool verifyWall(QPoint, QPoint);
 public slots:
     void mousePressEvent(QMouseEvent *event);

@@ -654,15 +654,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -732,24 +723,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -845,15 +818,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -923,24 +887,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -1036,15 +982,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="96">
@@ -1114,24 +1051,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -1248,15 +1167,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -1326,24 +1236,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -1439,15 +1331,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -1517,24 +1400,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -1630,15 +1495,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="96">
@@ -1708,24 +1564,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -1836,15 +1674,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -1914,24 +1743,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -2027,15 +1838,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -2105,24 +1907,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -2218,15 +2002,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="96">
@@ -2296,24 +2071,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -2427,15 +2184,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -2505,24 +2253,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -2618,15 +2348,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -2696,24 +2417,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -2809,15 +2512,6 @@
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="96">
@@ -2887,24 +2581,6 @@
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -3023,15 +2699,6 @@ border-image: null;
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -3101,24 +2768,6 @@ border-image: null;
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -3214,15 +2863,6 @@ border-image: null;
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="255">
@@ -3292,24 +2932,6 @@ border-image: null;
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -3405,15 +3027,6 @@ border-image: null;
                    </color>
                   </brush>
                  </colorrole>
-                 <colorrole role="Mid">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>160</red>
-                    <green>160</green>
-                    <blue>160</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
                  <colorrole role="Text">
                   <brush brushstyle="SolidPattern">
                    <color alpha="96">
@@ -3483,24 +3096,6 @@ border-image: null;
                     <red>240</red>
                     <green>240</green>
                     <blue>240</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="Link">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>0</red>
-                    <green>122</green>
-                    <blue>244</blue>
-                   </color>
-                  </brush>
-                 </colorrole>
-                 <colorrole role="LinkVisited">
-                  <brush brushstyle="SolidPattern">
-                   <color alpha="255">
-                    <red>165</red>
-                    <green>122</green>
-                    <blue>255</blue>
                    </color>
                   </brush>
                  </colorrole>
@@ -4157,11 +3752,7 @@ border-image: null;
            </spacer>
           </item>
           <item row="2" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QGraphicsView" name="graphicsView"/>
-            </item>
-           </layout>
+           <layout class="QHBoxLayout" name="horizontalLayout_2"/>
           </item>
           <item row="2" column="2">
            <spacer name="verticalSpacer_3">
@@ -4332,7 +3923,7 @@ border-image: null;
                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Cantarell'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.AppleSystemUIFont'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="textInteractionFlags">
