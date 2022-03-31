@@ -262,9 +262,7 @@ bool Board::HasPathToEnd(std::vector<Position> path, const DIRECTION goal) {
 bool Board::IsWallPossible(const Position firstCell, const Position secondCell,
                            const DIRECTION direction) {
 
-  if (GetCellAtPosition(firstCell).checkDirection(direction) ||
-      GetCellAtPosition(secondCell).checkDirection(direction))
-    return false;
+  // if (GetCellAtPosition(firstCell).checkDirection(direction) || GetCellAtPosition(secondCell).checkDirection(direction)) {std::cout << "here" << std::endl; return false;}
 
   Position firstOpposite = GetOppositeCell(firstCell, direction);
   Position secondOpposite = GetOppositeCell(secondCell, direction);

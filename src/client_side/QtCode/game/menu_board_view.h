@@ -17,6 +17,10 @@ class MenuBoardView : public QGraphicsView {
     int game_id;
     QPointF firstPos;
     QPointF secondPos;
+
+    bool SendMoveToServer(DIRECTION moveDirection, DIRECTION winningDirection);
+    
+
 public:
     MenuBoardView(int game_id, QVector<QPoint> pawns_={}, QVector<QPoint> walls_={});
     void playMove(MenuCell*);

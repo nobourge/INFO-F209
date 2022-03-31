@@ -14,7 +14,6 @@ MainMenuView::MainMenuView(QWidget *parent)
   this->setStyleSheet("selection-color: green");
 
   ui->stackedWidget->setCurrentIndex(0);
-  ui->stackedWidget->addWidget(menuView);
   // hyperlien
   ui->label_Help->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
   ui->label_Help->setOpenExternalLinks(true);
@@ -247,6 +246,9 @@ void MainMenuView::on_pushButton_Register_clicked() {
 
 void MainMenuView::on_pushButton_game_quit_clicked() {
   StopFetchingMessages();
+  cout << "this is a test" << endl;
+  ui->horizontalLayout_2->itemAt(0)->widget()->deleteLater();
+  // ui->horizontalLayout_2->removeWidget(ui->horizontalLayout_2->itemAt(0)->widget());
   ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -346,10 +348,20 @@ void MainMenuView::send_message(string message){
 
 void MainMenuView::on_lineEdit_InputNewMessage_returnPressed()
 {
+    this->setStyleSheet("background-color: white;");
+
   send_message(ui->lineEdit_InputNewMessage->text().toStdString());
   ui->lineEdit_InputNewMessage->setText("");
 }
 
+//void lineEdit_InputNewMessage::keyPressEvent(QKeyEvent *event)
+void MainMenuView::keyPressEvent(QKeyEvent *event)
+{
+  if(event->key() == Qt::Key_Enter)
+  {
+    this->setStyleSheet("background-color: white;");
+  }
+}
 void MainMenuView::on_lineEdit_15_returnPressed()
 {
   send_message(ui->lineEdit_15->text().toStdString());
