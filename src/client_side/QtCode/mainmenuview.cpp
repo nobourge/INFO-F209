@@ -552,6 +552,7 @@ void MainMenuView::on_pushButton_26_clicked()
 {
   ui->stackedWidget->setCurrentIndex(8);
 
+
 }
 
 
@@ -659,6 +660,7 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string& room) {
 
 void MainMenuView::updateFriendsComboBoxView(QComboBox* combobox) {
   //ui->comboBox_ChooseFriend->clear();
+
    combobox->clear();
    std::vector<string> friends;
    auto current_user = ApiWrapper::GetShared()->GetCurrentUser();
