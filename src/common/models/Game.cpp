@@ -352,23 +352,23 @@ crow::json::wvalue Game::GetGameJson() {
   output["name"] = game_name_;
 
   if (p_board_ != nullptr) {
-    output["board"] = p_board_->Serialize();
+    output["board"] = std::move(p_board_->Serialize());
   }
 
   if (admin_player_ != nullptr) {
-    output["admin"] = admin_player_->Serialize();
+    output["admin"] = std::move(admin_player_->Serialize());
   }
 
   for (int i = 0; i < players_.size(); i++) {
     if (players_.at(i) != nullptr) {
-      output["players_"][i] = players_.at(i)->Serialize();
+      output["players_"][i] = std::move(players_.at(i)->Serialize());
     } else {
       output["players_"][i] = nullptr;
     }
   }
 
   if (current_player_ != nullptr) {
-    output["current_player"] = current_player_->Serialize();
+    output["current_player"] = std::move(current_player_->Serialize());
   }
 
   output["game_on"] = game_on_;
