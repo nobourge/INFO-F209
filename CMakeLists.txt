@@ -55,8 +55,11 @@ add_executable(QuoridorServer
 
         src/server_side/view_controllers/api/base_quoridor_api.cpp
         src/server_side/view_controllers/api/v1/v1_api.cpp
-        src/common/models/user_server.cpp src/common/models/user_server.h
-        src/client_side/QtCode/mainmenuview.h
+        src/common/models/user_server.cpp
+        src/common/models/user_server.h
+        src/server_side/views/views.cpp
+        src/server_side/views/views.h
+        src/server_side/utils.h
         )
 
 

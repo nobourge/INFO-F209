@@ -469,24 +469,26 @@ Board::FromJson(const crow::json::rvalue &json,
 }
 
 crow::json::wvalue Board::Serialize() {
-  crow::json::wvalue output;
+  auto output = std::make_unique<crow::json::wvalue>();
 
   for (int i = 0; i < walls_.size(); i++) {
     for (int j = 0; j < walls_.at(i).size(); j++) {
-      output["walls"][i][j] = walls_.at(i).at(j);
+      (*output)["walls"][i][j] = walls_.at(i).at(j);
     }
   }
 
   for (int i = 0; i < cells_.size(); i++) {
     for (int j = 0; j < cells_.at(i).size(); j++) {
-      output["cells"][i][j] = cells_.at(i).at(j).Serialize();
+      (*output)["cells"][i][j] = nullptr;
+      auto a = std::move(cells_.at(i).at(j).Serialize());
+      (*output)["cells"][i][j] = std::move(a);
     }
   }
 
   for (int i = 0; i < pawns_.size(); i++) {
-    output["pawns"][i] = pawns_.at(i)->Serialize();
+    (*output)["pawns"][i] = pawns_.at(i)->Serialize();
   }
-  return output;
+  return *output;
 }
 
 std::vector<std::pair<int, int>> Board::GetAllPlayersPos() {

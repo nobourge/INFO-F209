@@ -120,6 +120,7 @@ private:
   void on_lineEdit_InputNewMessage_returnPressed();
   void send_message(string message);
   void on_lineEdit_15_returnPressed();
+  void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // MAINMENUVIEW_H

@@ -55,10 +55,10 @@ Position Position::operator+(const DIRECTION direction) {
 
 ///
 /// \return
-std::unique_ptr<crow::json::wvalue> Position::Serialize() {
-  std::unique_ptr<crow::json::wvalue> output = std::make_unique<crow::json::wvalue>();
-  (*output)["x"] = col;
-  (*output)["y"] = row;
+crow::json::wvalue Position::Serialize() {
+  crow::json::wvalue output = crow::json::wvalue();
+  output["x"] = col;
+  output["y"] = row;
   return output;
 }
 

@@ -11,7 +11,7 @@
 #include "Game.h"
 #include "database.h"
 
-class UserServer : public User, public Serializable<User> {
+class UserServer : public User, public Serializable {
 public:
   bool SaveToDB();
 
@@ -34,7 +34,7 @@ public:
   static std::unique_ptr<std::vector<UserServer>>
   GetRankingFromDB(int max_num_users);
 
-  std::unique_ptr<crow::json::wvalue> Serialize() override;
+  crow::json::wvalue Serialize() override;
   UserServer(const Username &username, uint32_t score);
 
   void AddFriendAndSaveToDb(const UserServer &user);

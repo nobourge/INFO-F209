@@ -154,7 +154,7 @@ crow::json::wvalue Player::Serialize() {
   output["number_of_walls"] = n_walls_;
   output["direction"] = static_cast<int>(direction_);
   output["score"] = score_;
-  output["position"] = std::move(*position_.Serialize());
+  output["position"] = position_.Serialize();
 
   if (user_id_.has_value()) {
     output["user"] = *user_id_;

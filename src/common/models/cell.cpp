@@ -92,7 +92,7 @@ crow::json::wvalue Cell::Serialize() {
     output["pawn"] = pawn_->Serialize();
   }
 
-  output["position"] = std::move(*pos_.Serialize());
+  output["position"] = pos_.Serialize();
 
   return output;
 }
