@@ -273,11 +273,7 @@ void MainMenuView::on_pushButton_game_chat_send_clicked() {
 }
 
 void MainMenuView::on_pushButton_game_quit_clicked() {
-  // this->setFixedSize(901,599);
-  // this->setFixedSize(90,59);
-  // this->showMinimized();
-  // this->showNormal();
-
+  StopFetchingMessages();
   ui->stackedWidget->setCurrentIndex(3);
 }
 
