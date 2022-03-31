@@ -103,6 +103,7 @@ void MainMenuView::on_pushButton_clicked() {
       new MenuBoardView(game_id, {QPoint{2, 0}}, {QPoint{0, 1}}));
 
   ui->stackedWidget->setCurrentIndex(8);
+  this->showMaximized();
 }
 
 /// from home_menu back to login
@@ -244,34 +245,6 @@ void MainMenuView::on_pushButton_Register_clicked() {
   }
 }
 
-void MainMenuView::on_pushButton_game_chat_send_clicked() {
-  /*
-    auto api_wrapper = ApiWrapper::GetShared();
-
-    if (api_wrapper.has_value()) {
-      auto message_res = api_wrapper->SendNewMessage(user_to_chat_with_,
-    ui->lineEdit_InputNewMessage->text().toStdString();); if
-    (message_res.has_value()) { error_message_ = message_res->error_message;
-      }
-    } else {
-      error_message_ = "Not signed in";
-    }
-  */
-  if (!selected_friend_.has_value()) {
-    cout << "no friend selected";
-    // TODO: Afficher message erreur que l'utilisateru pas selectionne
-    return;
-  }
-
-  auto message_res = ApiWrapper::GetShared()->SendNewMessage(
-      *selected_friend_, ui->lineEdit_15->text().toStdString());
-
-  if (message_res.has_value()) {
-    // TODO: erreur: message_res->error_message
-    return;
-  }
-}
-
 void MainMenuView::on_pushButton_game_quit_clicked() {
   StopFetchingMessages();
   ui->stackedWidget->setCurrentIndex(3);
@@ -299,38 +272,6 @@ void MainMenuView::on_pushButton_RegisterWelcome_clicked() {
 
 void MainMenuView::on_pushButton_PlayShortcutWelcome_clicked() {
   ui->stackedWidget->setCurrentIndex(10);
-  // auto *mainLayout = new QHBoxLayout();
-
-  // auto *Layout_chat = new QVBoxLayout();
-
-  // auto *queryLayout = new QHBoxLayout();
-
-  // auto *queryLabel = new QLabel(
-  //     QApplication::translate("quoridor", "New message:"));
-  // auto *queryEdit = new QLineEdit();
-  // auto *resultView = new QTableView();
-
-  // queryLayout->addWidget(queryLabel);
-  // queryLayout->addWidget(queryEdit);
-
-  // Layout_chat->addWidget(resultView);
-  // Layout_chat->addLayout(queryLayout);
-
-  // QWidget canvas;
-
-  // auto *Layout_board = new QVBoxLayout();
-
-  // auto *resultView2 = new QTableView();
-  // Layout_board->addWidget(resultView2);
-
-  // mainLayout->addLayout(Layout_chat, 1);
-
-  // mainLayout->addLayout(Layout_board, 2);
-  // ui->stackedWidget->setCurrentIndex(8);
-  // this->showMaximized();
-
-  // auto *board_scene = new BoardScene();
-  // this->ui->graphicsView->setScene(board_scene);
 }
 
 void MainMenuView::on_pushButton_GrayTheme_clicked() {
@@ -378,20 +319,41 @@ void MainMenuView::on_pushButton_BackHelp_clicked() {
 }
 
 void MainMenuView::on_pushButton_SendButtonChat_clicked() {
+  send_message(ui->lineEdit_InputNewMessage->text().toStdString());
+  ui->lineEdit_InputNewMessage->setText("");
+}
+
+void MainMenuView::on_pushButton_game_chat_send_clicked() {
+  send_message(ui->lineEdit_15->text().toStdString());
+  ui->lineEdit_15->setText("");
+}
+
+
+void MainMenuView::send_message(string message){
   if (!selected_friend_.has_value()) {
-    // TODO: Afficher message erreur que l'utilisateru pas selectionne
+// TODO: Afficher message erreur que l'utilisateru pas selectionne
     return;
   }
 
   auto message_res = ApiWrapper::GetShared()->SendNewMessage(
-      *selected_friend_, ui->lineEdit_InputNewMessage->text().toStdString());
+      *selected_friend_, message);
 
   if (message_res.has_value()) {
-    // TODO: erreur: message_res->error_message
+// TODO: erreur: message_res->error_message
     return;
   }
+}
 
+void MainMenuView::on_lineEdit_InputNewMessage_returnPressed()
+{
+  send_message(ui->lineEdit_InputNewMessage->text().toStdString());
   ui->lineEdit_InputNewMessage->setText("");
+}
+
+void MainMenuView::on_lineEdit_15_returnPressed()
+{
+  send_message(ui->lineEdit_15->text().toStdString());
+  ui->lineEdit_15->setText("");
 }
 
 void MainMenuView::on_pushButton_BackChat_clicked() {
