@@ -200,7 +200,7 @@ std::variant<std::vector<UserClient>, ApiError> ApiWrapper::GetAllUsersExceptCur
   crow::json::rvalue request_result_json;
 
   try {
-    request_result_json = Requests(url).GetJson();
+    request_result_json = Requests(url, {{login_, password_}}).GetJson();
   } catch (const std::runtime_error &) {
     return ret;
   }

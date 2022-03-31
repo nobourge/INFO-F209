@@ -375,9 +375,9 @@ std::optional<object_id_t> DataBase::GetAdminOfGame(object_id_t game_id) {
 
 void DataBase::SaveGame(uint32_t game_id, Game game) {
   GetSelect("UPDATE GAMES\n"
-            "SET GAME_JSON = \"" +
+            "SET GAME_JSON = '" +
             game.GetGameJson().dump() +
-            "\" WHERE ID = " + std::to_string(game_id) + ";");
+            "' WHERE ID = " + std::to_string(game_id) + ";");
 }
 std::optional<Game> DataBase::GetGame(uint32_t game_id) {
   auto q_res = GetSelect("SELECT GAME_JSON FROM GAMES WHERE ID = " +

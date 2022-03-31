@@ -1,5 +1,5 @@
 #include "mainmenuview.h"
-#include "../../../src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
+#include "../../../src/client_side/build/src/client_side/build-Test-Desktop_Qt_6_2_4_GCC_64bit-Debug/ui_mainmenuview.h"
 #include <QStringList>
 #include <QPlainTextEdit>
 #include <variant>
@@ -199,9 +199,11 @@ void MainMenuView::on_pushButton_25_clicked() {
 
 
 void MainMenuView::on_lineEdit_SearchFriendUsername_textChanged(const QString &arg1) {
-  auto user_fetch_result = ApiWrapper::GetAllUsers();
+  auto user_fetch_result = ApiWrapper::GetShared()->GetAllUsersExceptCurrentUser();
+  auto current_user = ApiWrapper::GetShared()->GetCurrentUser();
 
   std::vector<UserClient> users_;
+  std::vector<string> friends;
 
   if (std::holds_alternative<ApiError>(user_fetch_result)) {
     users_ = {};
@@ -218,7 +220,7 @@ void MainMenuView::on_lineEdit_SearchFriendUsername_textChanged(const QString &a
 
 void MainMenuView::on_pushButton_BackAddFriend_clicked()
 {
-
+  updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
     ui->stackedWidget->setCurrentIndex(5);
 
 }
@@ -403,8 +405,10 @@ void MainMenuView::on_pushButton_WhiteTheme_clicked()
 
 void MainMenuView::on_pushButton_AddAddFriend_clicked()
 {
-    auto user_to_add_username_str =
-        ui->lineEdit_SearchFriendUsername->text().toStdString(); //username written by the user_to_add_username_str
+  auto user_to_add_username_str =
+      ui->lineEdit_SearchFriendUsername->text().toStdString(); //username written by the user_to_add_username_str
+
+
 
     std::unique_ptr<UserClient> user_to_add;
 
@@ -426,6 +430,7 @@ void MainMenuView::on_pushButton_AddAddFriend_clicked()
 
 void MainMenuView::on_pushButton_BackHelp_clicked()
 {
+
     ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -457,8 +462,8 @@ void MainMenuView::on_pushButton_BackChat_clicked()
 
 void MainMenuView::on_pushButton_BackRanking_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
-    updateRankingView();
+  updateRankingView();
+  ui->stackedWidget->setCurrentIndex(3);
 
 }
 
@@ -486,7 +491,7 @@ void MainMenuView::on_pushButton_EnterLogin_clicked()
 
     if (holds_alternative<LoginError>(login_res)) {
       //  //Mettre ici le message d'erreur
-      ui->label_LoginDone->setText("Error");
+      ui->label_LoginDone->setText(QString::fromStdString(std::get<LoginError>(login_res).error_message));
     } else {
       ApiWrapper::GetShared() = std::get<ApiWrapper>(login_res);
       ui->stackedWidget->setCurrentIndex(3);
@@ -532,6 +537,7 @@ void MainMenuView::on_pushButton_HelpMainMenu_clicked()
 
 void MainMenuView::on_pushButton_RankingMainMenu_clicked()
 {
+  updateRankingView();
   ui->stackedWidget->setCurrentIndex(4);
 
 }
@@ -549,7 +555,6 @@ void MainMenuView::on_pushButton_26_clicked()
 //TODO ne fonctionne pas
 {
   ui->stackedWidget->setCurrentIndex(8);
-
 }
 
 
@@ -657,6 +662,7 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string& room) {
 
 void MainMenuView::updateFriendsComboBoxView(QComboBox* combobox) {
   //ui->comboBox_ChooseFriend->clear();
+
    combobox->clear();
    std::vector<string> friends;
    auto current_user = ApiWrapper::GetShared()->GetCurrentUser();

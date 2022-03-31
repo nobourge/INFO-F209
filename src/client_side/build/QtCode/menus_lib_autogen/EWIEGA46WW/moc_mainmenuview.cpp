@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainmenuview.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.4)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -13,7 +13,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mainmenuview.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.2.4. It"
+#error "This file was generated using the moc from 6.2.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -347,11 +347,11 @@ void MainMenuView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 20: _t->on_pushButton_23_clicked(); break;
         case 21: _t->on_pushButton_24_clicked(); break;
         case 22: _t->on_pushButton_3_clicked(); break;
-        case 23: _t->on_lineEdit_7_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 23: _t->on_lineEdit_7_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 24: _t->on_pushButton_25_clicked(); break;
         case 25: _t->on_pushButton_53_clicked(); break;
         case 26: _t->on_pushButton_26_clicked(); break;
-        case 27: _t->on_lineEdit_SearchFriendUsername_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 27: _t->on_lineEdit_SearchFriendUsername_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 28: _t->on_pushButton_BackAddFriend_clicked(); break;
         case 29: _t->on_pushButton_AddFriend_clicked(); break;
         case 30: _t->on_pushButton_Chat_clicked(); break;
@@ -379,8 +379,8 @@ void MainMenuView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 52: _t->on_pushButton_HelpMainMenu_clicked(); break;
         case 53: _t->on_pushButton_FriendListMainMenu_clicked(); break;
         case 54: _t->updateChatRoomMessagesListView(); break;
-        case 55: _t->updateChatRoomMessagesListView((*reinterpret_cast< std::add_pointer_t<string>>(_a[1]))); break;
-        case 56: _t->updateFriendsComboBoxView((*reinterpret_cast< std::add_pointer_t<QComboBox*>>(_a[1]))); break;
+        case 55: _t->updateChatRoomMessagesListView((*reinterpret_cast< const string(*)>(_a[1]))); break;
+        case 56: _t->updateFriendsComboBoxView((*reinterpret_cast< QComboBox*(*)>(_a[1]))); break;
         case 57: _t->updateRankingView(); break;
         case 58: _t->updateChatRoom(); break;
         case 59: _t->on_pushButton_PlayMainMenu_clicked(); break;
@@ -388,7 +388,7 @@ void MainMenuView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 61: _t->on_pushButton_ToInviteFriend_clicked(); break;
         case 62: _t->on_pushButton_InviteToGame_clicked(); break;
         case 63: _t->on_pushButton_BackToJoinMenu_clicked(); break;
-        case 64: _t->on_lineEditNameOfGame_cursorPositionChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 64: _t->on_lineEditNameOfGame_cursorPositionChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {

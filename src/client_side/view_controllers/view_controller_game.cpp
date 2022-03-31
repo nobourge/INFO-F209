@@ -70,7 +70,6 @@ void GameViewController::FetchBoardReprAndUpdateSubviews() {
 
   error_message_ = {};
   board_repr_lines_ = {};
-  non_disruptive_error_message_ = {};
 
   if (holds_alternative<std::string>(optional_game)) {
 

@@ -138,14 +138,21 @@ protected:
     });
 
     API_ROUTE(GetApp(), "/api/v1/me/all-users-except-me")
-    ([](const crow::request &request) {
-      VALIDATE_CREDENTIALS(requests);
+        ([](const crow::request &request) {
+          VALIDATE_CREDENTIALS(requests);
 
-      crow::json::wvalue output;
-      output["users"] =
-          SerializeUsersVector(user.GetAllObjectsFromDBExceptCurrentUser());
-      return output;
-    });
+          auto users = UserServer::GetAllObjectsFromDB();
+
+          users->erase(std::remove_if(users->begin(), users->end(), [&](UserServer const& u) {
+            return u.GetId() == user.GetId();
+          }), users->end());
+
+          crow::json::wvalue output;
+          output["users"] =
+              SerializeUsersVector(std::move(users));
+          return output;
+        });
+
 
     API_ROUTE(GetApp(), "/api/v1/users/ranking")
     ([](const crow::request &request) {
