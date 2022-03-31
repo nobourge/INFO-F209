@@ -34,11 +34,11 @@ public:
 
   // general purpose
   static std::variant<std::vector<UserClient>, ApiError> GetAllUsers();
-  static std::variant<std::vector<UserClient>, ApiError> GetAllUsersExceptCurrentUser();
   static std::vector<UserClient> GetUsersRanked(unsigned max_num_users);
 
 
   // account
+  std::variant<std::vector<UserClient>, ApiError> GetAllUsersExceptCurrentUser();
   static std::variant<ApiWrapper, LoginError> Login(const std::string &login, const std::string &password);
   static std::variant<ApiWrapper, ApiError> CreateAccount(const std::string &login, const std::string &password);
 

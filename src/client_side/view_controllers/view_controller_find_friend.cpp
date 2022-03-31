@@ -24,8 +24,7 @@ void FindFriendViewController::FetchUsers() {
 }
 
 void FindFriendViewController::FetchUsersExceptCurrentUser() {
-  //auto user_fetch_result = ApiWrapper::GetAllUsers();
-  auto user_fetch_result = ApiWrapper::GetAllUsersExceptCurrentUser();
+  auto user_fetch_result = ApiWrapper::GetShared()->GetAllUsersExceptCurrentUser();
 
   if (std::holds_alternative<ApiError>(user_fetch_result)) {
     error_message_ = std::get<ApiError>(user_fetch_result).error_message;

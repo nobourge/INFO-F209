@@ -199,9 +199,11 @@ void MainMenuView::on_pushButton_25_clicked() {
 
 
 void MainMenuView::on_lineEdit_SearchFriendUsername_textChanged(const QString &arg1) {
-  auto user_fetch_result = ApiWrapper::GetAllUsers();
+  auto user_fetch_result = ApiWrapper::GetShared()->GetAllUsersExceptCurrentUser();
+  auto current_user = ApiWrapper::GetShared()->GetCurrentUser();
 
   std::vector<UserClient> users_;
+  std::vector<string> friends;
 
   if (std::holds_alternative<ApiError>(user_fetch_result)) {
     users_ = {};
@@ -403,8 +405,10 @@ void MainMenuView::on_pushButton_WhiteTheme_clicked()
 
 void MainMenuView::on_pushButton_AddAddFriend_clicked()
 {
-    auto user_to_add_username_str =
-        ui->lineEdit_SearchFriendUsername->text().toStdString(); //username written by the user_to_add_username_str
+  auto user_to_add_username_str =
+      ui->lineEdit_SearchFriendUsername->text().toStdString(); //username written by the user_to_add_username_str
+
+
 
     std::unique_ptr<UserClient> user_to_add;
 
@@ -551,8 +555,6 @@ void MainMenuView::on_pushButton_26_clicked()
 //TODO ne fonctionne pas
 {
   ui->stackedWidget->setCurrentIndex(8);
-
-
 }
 
 
