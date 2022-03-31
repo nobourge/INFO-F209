@@ -33,17 +33,6 @@ MainMenuView::~MainMenuView() {
   message_fetcher_thread_.wait();
 }
 
-// 0 choose login
-// 1 login
-// 2 register
-// 3 Main
-// 4 Ranking
-// 5 FriendList
-// 6 Chat Room
-// 7 Help
-// 8 Game
-// 9 game temporary shortcut
-
 /// play : from main to game
 void MainMenuView::on_pushButton_clicked() {
 
@@ -463,7 +452,6 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string &room) {
   if (std::holds_alternative<ApiError>(conv_req_res)) {
     // TODO: Afficher l'erreur
     auto err = std::get<ApiError>(conv_req_res);
-    // ui->label_error->setText(QString::fromStdString(err.error_message));
     std::cout << err.error_message << std::endl;
     return;
   } else {
@@ -474,7 +462,6 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string &room) {
     for (const auto &mess : messages) {
       std::cout << mess.GetContent() << std::endl;
       bool is_this_user_sender = mess.GetSenderId() == curr_user.GetId();
-      // std::string mess_bubble = is_this_user_sender ? "Me: " : "Friend: ";
       std::string mess_bubble =
           is_this_user_sender
               ? "Me: "
@@ -484,7 +471,6 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string &room) {
       if (room == "chat") {
         ui->textEdit_Conversation->append(QString::fromStdString(mess_bubble));
       } else if (room == "game") {
-        // ui->lineEdit_15->append(QString::fromStdString(mess_bubble));
         ui->textEdit_7->append(QString::fromStdString(mess_bubble));
       }
     }
@@ -492,7 +478,6 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string &room) {
 }
 
 void MainMenuView::updateFriendsComboBoxView(QComboBox *combobox) {
-  // ui->comboBox_ChooseFriend->clear();
 
   combobox->clear();
   std::vector<string> friends;

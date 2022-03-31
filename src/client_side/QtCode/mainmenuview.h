@@ -103,15 +103,13 @@ signals:
                           const std::function<bool()> should_continue_fetching);
 
 private:
+  Ui::MainMenuView *ui;
+
   void StartFetchingMessages();
-
   void StopFetchingMessages() { should_fetch_messages_ = false; }
-
   void InitMessageFetcherThread();
 
-  Ui::MainMenuView *ui;
   std::vector<UserClient> friends_ = {};
-
   std::optional<UserClient> selected_friend_ = {};
   bool should_fetch_messages_ = false;
   QThread message_fetcher_thread_;
