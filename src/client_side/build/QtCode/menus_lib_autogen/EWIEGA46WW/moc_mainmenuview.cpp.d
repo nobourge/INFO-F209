@@ -98,6 +98,7 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/optional \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/random \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
@@ -126,6 +127,13 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/version \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/wchar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/wctype.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/curl.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/curlver.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/easy.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/multi.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/system.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/curl/urlapi.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/fcntl.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/gethostuuid.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/OSAtomic.h \
@@ -142,6 +150,7 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/endian.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/memory.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/net/if.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/net/if_var.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/net/net_kev.h \
@@ -156,6 +165,7 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/sched.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/signal.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sqlite3.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_endian.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_posix_availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_attr_t.h \
@@ -263,6 +273,7 @@
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/termios.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/uuid/uuid.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xlocale.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/xlocale/_time.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stdarg.h \
@@ -271,13 +282,29 @@
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/client_side/QtCode/game/menu_board_view.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/client_side/QtCode/game/menu_cell.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/client_side/QtCode/game/menu_wall_cell.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/client_side/QtCode/message_fetcher.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/client_side/models/api_wrapper.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/client_side/models/requests.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/client_side/models/user_client.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/base64.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/constants.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/Game.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/Player.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/board.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/cell.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/common.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/database.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/ia.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/input.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/position.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/serializable.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/translator.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/user/abstract_validator.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/user/message.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/user/password.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/user/user.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/models/user/username.h \
+  /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/common/utils.h \
   /Users/ismaelsecundar/Desktop/Bureau-MacBook_Air_de_Ismael/info_2021/INFOF209-Projet\ d'année\ 2/INFO-F209/src/includes/crow_all.hpp \
   /opt/homebrew/Cellar/boost/1.78.0_1/include/boost/algorithm/string.hpp \
   /opt/homebrew/Cellar/boost/1.78.0_1/include/boost/algorithm/string/case_conv.hpp \
@@ -1538,6 +1565,7 @@
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/QRect \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/QSize \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/QSizeF \
+  /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/QTimer \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/QVector \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qabstractitemmodel.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qalgorithms.h \
@@ -1547,6 +1575,7 @@
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qarraydatapointer.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qatomic.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qbasicatomic.h \
+  /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qbasictimer.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qbindingstorage.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qbytearray.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qbytearrayalgorithms.h \
@@ -1562,7 +1591,9 @@
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qcontiguouscache.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qcoreevent.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qdatastream.h \
+  /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qdeadlinetimer.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qdebug.h \
+  /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qelapsedtimer.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qflags.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qglobal.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qglobalstatic.h \
@@ -1616,6 +1647,8 @@
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qtaggedpointer.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qtcore-config.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qtextstream.h \
+  /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qthread.h \
+  /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qtimer.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qtmetamacros.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qtypeinfo.h \
   /opt/homebrew/Cellar/qt/6.2.3_1/lib/QtCore.framework/Versions/A/Headers/qurl.h \

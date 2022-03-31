@@ -97,89 +97,11 @@ void MainMenuView::on_pushButton_clicked() {
     }
   }
 
-
   ui->horizontalLayout_2->addWidget(
       new MenuBoardView(game_id, {QPoint{2, 0}}, {QPoint{0, 1}}));
 
   ui->stackedWidget->setCurrentIndex(8);
   this->showMaximized();
-}
-
-/// from home_menu back to login
-void MainMenuView::on_pushButton_5_clicked() {
-
-  ui->stackedWidget->setCurrentIndex(3);
-}
-
-/// from welcome to login
-void MainMenuView::on_pushButton_9_clicked() {}
-
-/// from welcome to register
-void MainMenuView::on_pushButton_6_clicked() {}
-
-/// Quit
-void MainMenuView::on_pushButton_8_clicked() {
-  ui->stackedWidget->setCurrentIndex(10);
-}
-
-/// back : from login to welcome
-void MainMenuView::on_pushButton_11_clicked() {
-  // this->setStyleSheet("background-color: blue");}
-}
-void MainMenuView::on_pushButton_10_clicked() {}
-
-void MainMenuView::on_pushButton_12_clicked() {
-  // we only need
-}
-
-void MainMenuView::on_pushButton_13_clicked() {}
-
-void MainMenuView::on_pushButton_4_clicked() {
-
-  ui->stackedWidget->setCurrentIndex(4);
-}
-
-void MainMenuView::on_pushButton_14_clicked() {}
-
-void MainMenuView::on_pushButton_16_clicked() {}
-
-void MainMenuView::on_pushButton_15_clicked() {}
-
-void MainMenuView::on_pushButton_2_clicked() {
-  updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
-}
-
-void MainMenuView::on_pushButton_18_clicked() {}
-
-/// message send
-void MainMenuView::on_pushButton_17_clicked() {}
-
-/// game message send
-void MainMenuView::on_pushButton_53_clicked() {}
-
-void MainMenuView::on_pushButton_19_clicked() {}
-
-/// game back to main
-void MainMenuView::on_pushButton_20_clicked() {}
-
-/// theme grey
-void MainMenuView::on_pushButton_21_clicked() {}
-
-/// theme red
-void MainMenuView::on_pushButton_22_clicked() {}
-
-void MainMenuView::on_pushButton_23_clicked() {}
-
-void MainMenuView::on_pushButton_3_clicked() {
-  ui->stackedWidget->setCurrentIndex(3);
-}
-
-void MainMenuView::on_pushButton_24_clicked() {}
-
-void MainMenuView::on_lineEdit_7_textChanged(const QString &arg1) {}
-
-void MainMenuView::on_pushButton_25_clicked() {
-  ui->stackedWidget->setCurrentIndex(5);
 }
 
 void MainMenuView::on_lineEdit_SearchFriendUsername_textChanged(
@@ -246,7 +168,7 @@ void MainMenuView::on_pushButton_Register_clicked() {
 
 void MainMenuView::on_pushButton_game_quit_clicked() {
   StopFetchingMessages();
-  cout << "this is a test" << endl;
+//  cout << "this is a test" << endl;
   ui->horizontalLayout_2->itemAt(0)->widget()->deleteLater();
   // ui->horizontalLayout_2->removeWidget(ui->horizontalLayout_2->itemAt(0)->widget());
   ui->stackedWidget->setCurrentIndex(3);
@@ -260,7 +182,6 @@ void MainMenuView::on_pushButton_LoginWelcome_clicked() {
   ui->lineEdit_PasswordLogin->clear();
   ui->stackedWidget->setCurrentIndex(1);
   updateFriendsComboBoxView(ui->comboBox_ChooseFriend);
-//  updateChatRoomMessagesListView();
   updateRankingView();
 }
 
@@ -301,18 +222,28 @@ void MainMenuView::on_pushButton_AddAddFriend_clicked() {
     user_to_add =
         std::make_unique<UserClient>(Username{user_to_add_username_str});
   } catch (const std::exception &err) {
+    ui->label_FriendAdded->setStyleSheet("QLabel{color: rgb(193, 33, 5);}");
     ui->label_FriendAdded->setText(err.what());
+    ui->label_FriendAdded->show();
+    QTimer::singleShot(3000, ui->label_FriendAdded, &QLabel::hide);
     return;
   }
   std::vector<UserClient> users_;
 
   auto err = ApiWrapper::GetShared()->AddFriend(*user_to_add);
 
-  if (err.has_value())
+  if (err.has_value()){
+    ui->label_FriendAdded->setStyleSheet("QLabel{color: rgb(193, 33, 5);}");
     ui->label_FriendAdded->setText(QString::fromStdString(err->error_message));
-  else
-    ui->label_FriendAdded->setText(
-        QString::fromStdString("Friend added successfully"));
+    ui->label_FriendAdded->show();
+    QTimer::singleShot(3000, ui->label_FriendAdded, &QLabel::hide);
+  }
+  else{
+    ui->label_FriendAdded->setStyleSheet("QLabel{color: rgb(97, 216, 54);}");
+    ui->label_FriendAdded->setText(QString::fromStdString("Friend added successfully !"));
+    ui->label_FriendAdded->show();
+    QTimer::singleShot(3000, ui->label_FriendAdded, &QLabel::hide);
+  }
 }
 
 void MainMenuView::on_pushButton_BackHelp_clicked() {
@@ -395,9 +326,11 @@ void MainMenuView::on_pushButton_EnterLogin_clicked() {
                         ui->lineEdit_PasswordLogin->text().toStdString());
 
   if (holds_alternative<LoginError>(login_res)) {
-    //  //Mettre ici le message d'erreur
+
     ui->label_LoginDone->setText(
         QString::fromStdString(std::get<LoginError>(login_res).error_message));
+    ui->label_LoginDone->show();
+    QTimer::singleShot(3000, ui->label_LoginDone, &QWidget::hide);
   } else {
     ApiWrapper::GetShared() = std::get<ApiWrapper>(login_res);
     ui->stackedWidget->setCurrentIndex(3);
@@ -439,11 +372,6 @@ void MainMenuView::on_pushButton_FriendListMainMenu_clicked() {
   ui->stackedWidget->setCurrentIndex(5);
 }
 
-void MainMenuView::on_pushButton_26_clicked()
-// TODO ne fonctionne pas
-{
-  ui->stackedWidget->setCurrentIndex(8);
-}
 
 /////Functions
 void MainMenuView::updateChatRoomMessagesListView() {
@@ -496,7 +424,6 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string &room) {
   if (room == "chat") {
     ui->textEdit_Conversation->clear();
   } else if (room == "game") {
-    // ui->textEdit_7->clear();
     ui->lineEdit_15->setText("");
   }
 
