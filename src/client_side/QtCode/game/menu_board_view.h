@@ -7,28 +7,30 @@
 #include <QMouseEvent>
 #include <iostream>
 #include <QPoint>
+#include "board_fetcher.h"
 
 class MenuBoardView : public QGraphicsView {
+    Q_OBJECT
+    
     bool playerSelected=false;
     bool wallSelected=false;
     MenuCell* ancientCell=nullptr;
     MenuCell* firstWall=nullptr;
-    MenuCell* thirdWall=nullptr;
     int game_id;
-    QPointF firstPos;
-    QPointF secondPos;
 
     bool SendMoveToServer(DIRECTION moveDirection, DIRECTION winningDirection) const;
     
-
+    void drawScene();
 public:
+    BoardFetcher *boardFetcher;
     MenuBoardView(int game_id, QVector<QPoint> pawns_={}, QVector<QPoint> walls_={});
     void playMove(MenuCell*);
     bool verifyMove(QPoint,QPoint);
-    void placeWall(MenuCell*, MenuCell*, MenuCell*) const;
+    void placeWall(MenuCell*, MenuCell*) const;
     bool verifyWall(QPoint, QPoint) const;
 public slots:
     void mousePressEvent(QMouseEvent *event);
+    void redrawScene();
 };
 
 #endif

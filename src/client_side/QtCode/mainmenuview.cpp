@@ -87,7 +87,7 @@ void MainMenuView::on_pushButton_clicked() {
   }
 
   ui->horizontalLayout_2->addWidget(
-      new MenuBoardView(game_id, {QPoint{2, 0}}, {QPoint{0, 1}}));
+      new MenuBoardView(game_id));
 
   ui->stackedWidget->setCurrentIndex(8);
   this->showMaximized();

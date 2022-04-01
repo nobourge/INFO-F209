@@ -1,7 +1,6 @@
 #include "menu_board_view.h"
 
 #include <utility>
-// #include <iostream>
 using namespace std;
 
 MenuBoardView::MenuBoardView(int game_id, QVector<QPoint> pawns_,
@@ -18,19 +17,30 @@ MenuBoardView::MenuBoardView(int game_id, QVector<QPoint> pawns_,
   }
   setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
   // api something
+  boardFetcher = new BoardFetcher(this, game_id);
+  connect(boardFetcher, SIGNAL(updated()), this, SLOT(redrawScene()));
+  drawScene();
+  boardFetcher->start();
+  
+}
+
+void MenuBoardView::drawScene() {
   auto game_or_error =
       ApiWrapper::GetShared()->GetGame(static_cast<uint32_t>(game_id));
   if (holds_alternative<ApiError>(game_or_error)) {
     // shouldn't happen as it's checked before arriving here
   } else {
     auto game = get<Game>(game_or_error);
+    cout << "here" << endl;
+    cout << game.GetBoard()->GetBoardString() << endl;
     this->setScene(new MenuBoardScene(game.GetBoard()->GetAllPlayersPos(),
                                       game.GetBoard()->GetAllWallsPos()));
   }
-} // using super class constructor
+}
 
 void MenuBoardView::mousePressEvent(QMouseEvent *event) // Mouse click event
 {
+  // redrawScene();
   if (mapToScene(event->pos()).x() > 17 * 32 ||
       mapToScene(event->pos()).x() < 0 ||
       mapToScene(event->pos()).y() > 17 * 32 ||
@@ -52,35 +62,12 @@ void MenuBoardView::mousePressEvent(QMouseEvent *event) // Mouse click event
     if (verifyMove(ancientCell->getPosition(), newItem->getPosition()))
       playMove(newItem);
   } else if (firstWall != nullptr) {
-    firstPos = firstWall->getAbsolutePosition();
-    secondPos = newItem->getAbsolutePosition();
-
-    QPointF thirdPos;
-
-    double direction_x = firstPos.x() - secondPos.x();
-    double direction_y = firstPos.y() - secondPos.y();
-
-    if (direction_x < 0 || direction_y < 0) {
-      thirdPos = firstPos +
-                 QPoint{abs(static_cast<int>((firstPos - secondPos).x() / 2)),
-                        abs(static_cast<int>((firstPos - secondPos).y() / 2))};
-    } else {
-      thirdPos = secondPos +
-                 QPoint{abs(static_cast<int>((firstPos - secondPos).x() / 2)),
-                        abs(static_cast<int>((firstPos - secondPos).y() / 2))};
-    }
-
-    thirdWall =
-        dynamic_cast<MenuCell *>(scene()->itemAt(thirdPos, QTransform()));
-
-    placeWall(firstWall, newItem, thirdWall);
+    placeWall(firstWall, newItem);
     firstWall = nullptr;
-    thirdWall = nullptr;
   }
 }
 
-void MenuBoardView::placeWall(MenuCell *first, MenuCell *second,
-                              MenuCell *third) const {
+void MenuBoardView::placeWall(MenuCell *first, MenuCell *second) const {
   if (!verifyWall(first->getPosition(), second->getPosition()))
     return;
   int dx = first->getPosition().x() - second->getPosition().x();
@@ -89,7 +76,6 @@ void MenuBoardView::placeWall(MenuCell *first, MenuCell *second,
 
   dynamic_cast<MenuWallCell *>(first)->setWall(direction);
   dynamic_cast<MenuWallCell *>(second)->setWall(direction);
-  dynamic_cast<MenuWallCell *>(third)->setWall(direction);
 }
 
 bool MenuBoardView::verifyWall(QPoint firstWall, QPoint secondWall) const {
@@ -111,7 +97,6 @@ bool MenuBoardView::verifyWall(QPoint firstWall, QPoint secondWall) const {
     // bad move
     return false;
   }
-
   return true;
 }
 
@@ -167,4 +152,10 @@ bool MenuBoardView::verifyMove(QPoint pos1, QPoint pos2) {
     ;
   }
   return false;
+}
+
+void MenuBoardView::redrawScene() {
+  cout << "inside that thinh" <<endl; 
+  this->scene()->deleteLater();
+  this->drawScene();
 }
