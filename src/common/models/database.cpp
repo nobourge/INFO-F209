@@ -74,49 +74,52 @@ void DataBase::CreateTables() {
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   // Create second table GAMES
-  sql_ = "CREATE TABLE IF NOT EXISTS GAMES("
-         "ID                      INTEGER   PRIMARY KEY ,"
-         "ROOM_NAME               TEXT      NOT NULL    ,"
-         "ADMIN_ID                INT       NOT NULL    ,"
-         "GAME_JSON              TEXT      NOT NULL    )";
+  sql_ = "create table GAMES"
+         "(ID        INTEGER primary key,"
+         "ROOM_NAME TEXT not null,"
+         "ADMIN_ID  INT  not null constraint GAMES_USER__fk references USER "
+         "(\"\") on delete cascade,"
+         "GAME_JSON TEXT not null);";
 
-  last_sqlite3_exit_code_ =
-      sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
-
-  // Create third table RANKING
-  sql_ = "CREATE TABLE IF NOT EXISTS  RANKING             ( "
-         "ID                          INTEGER PRIMARY KEY,  "
-         "FIRST_PLACE                 INT     NOT NULL,     "
-         "SECOND_PLACE                INT     NOT NULL,     "
-         "THIRD_PLACE                 INT     NOT NULL,     "
-         "FOURTH_PLACE                INT     NOT NULL    ) ";
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   // Create fourth table FRIENDS
-  sql_ = "CREATE TABLE IF NOT EXISTS FRIENDS("
-         "ID INTEGER PRIMARY KEY, "
-         "MY_USER_ID INT NOT NULL, "
-         "MY_FRIEND_ID INT NOT NULL, "
-         "PORT        INT NOT NULL)";
+  sql_ = "create table FRIENDS"
+         "("
+         " ID               INTEGER primary key,"
+         " MY_USER_ID       INT not null"
+         "          constraint FRIENDS_USER__fk references USER (\"\")"
+         "          on delete cascade,"
+         " MY_FRIEND_ID     INT not null"
+         "          constraint FRIENDS_USER__fk_2 references USER (\"\")"
+         "          on delete cascade,"
+         "PORT              INT not null"
+         ");";
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   // Create fifth table CONVERSATIONS
-  sql_ = "CREATE TABLE IF NOT EXISTS CONVERSATIONS("
-         "ID INTEGER PRIMARY KEY, "
-         "SENDER_ID     INT NOT NULL, "
-         "RECEIVER_ID   INT NOT NULL, "
-         "TIMESTAMP     INT NOT NULL, "
-         "CONTENT       TEXT NOT NULL)";
+  sql_ = "create table CONVERSATIONS"
+         "(ID          INTEGER primary key,"
+         "SENDER_ID   INT  not null constraint CONVERSATIONS_USER__fk "
+         "references USER (\"\") on delete cascade,"
+         "RECEIVER_ID INT  not null constraint CONVERSATIONS_USER__fk_2 "
+         "references USER (\"\") on delete cascade,"
+         "TIMESTAMP   INT  not null,"
+         "CONTENT     TEXT not null);";
+
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   // Create fifth table GAME_PARTICIPANTS
-  sql_ = "CREATE TABLE IF NOT EXISTS GAME_PARTICIPANTS("
-         "ID          INTEGER PRIMARY KEY, "
-         "GAME_ID     INT     NOT NULL, "
-         "USER_ID     INT     NOT NULL)";
+  sql_ = "create table GAME_PARTICIPANTS"
+         "(ID      INTEGER primary key,"
+         "GAME_ID INT not null constraint GAME_PARTICIPANTS_GAMES__fk"
+         "    references GAMES (\"\") on delete cascade,"
+         "USER_ID INT not null constraint GAME_PARTICIPANTS_USER__fk"
+         "    references USER (\"\") on delete cascade"
+         ");";
 
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
@@ -203,34 +206,6 @@ std::unordered_set<uint32_t> DataBase::SearchFriends(object_id_t user_id) {
   return friends;
 }
 
-void DataBase::InsertRanking(int firstPlaceId, int secondPlaceId,
-                             int thirdPlaceId, int fourthPlaceId) {
-  LOCK_DB;
-
-  string query = "SELECT * FROM RANKING;";
-  sqlite3_exec(db_, query.c_str(), callback, nullptr, nullptr);
-
-  // Only 2 players_ played this match.
-  if (thirdPlaceId == 0 && fourthPlaceId == 0) {
-    sql_ =
-        ("INSERT INTO RANKING VALUES(" + to_string(ranking_id_) + "," +
-         to_string(firstPlaceId) + "," + to_string(secondPlaceId) + ",0,0);");
-    ranking_id_++;
-    last_sqlite3_exit_code_ =
-        sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
-  } else {
-    sql_ = ("INSERT INTO RANKING VALUES(" + to_string(ranking_id_) + "," +
-            to_string(firstPlaceId) + "," + to_string(secondPlaceId) + "," +
-            to_string(thirdPlaceId) + "," + to_string(fourthPlaceId) + ");");
-    ranking_id_++;
-    last_sqlite3_exit_code_ =
-        sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
-  }
-
-  VerifyTable("Insert values into the ranking");
-  HandleSQLErr(last_sqlite3_exit_code_);
-}
-
 void DataBase::UpdateUser(uint32_t score, uint32_t id) {
   LOCK_DB;
 
@@ -315,9 +290,9 @@ DataBase::GetAllGamesWhereUserIsAdmin(object_id_t user) {
 
 void DataBase::InviteUserToGame(object_id_t game_id, object_id_t userid) {
 
-//  if (GetAdminOfGame(game_id) == userid) {
-//    return;
-//  }
+  //  if (GetAdminOfGame(game_id) == userid) {
+  //    return;
+  //  }
 
   auto existing_invitation_for_this_game = GetSelect(
       "SELECT GAME_ID FROM GAME_PARTICIPANTS WHERE GAME_ID=" +
