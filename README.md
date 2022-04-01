@@ -7,7 +7,7 @@ The following packages must be downloaded for the project to work the intended w
 ### sqlite3
 A database library for C++
 
-**Debian**
+**Ubuntu**
 ```
 $ sudo apt-get install sqlite3
 $ sudo apt-get install libsqlite3-dev
@@ -17,7 +17,7 @@ $ sudo apt-get install libsqlite3-dev
 ### boost
 An all-purpose networking library for C++
 
-**Debian**
+**Ubuntu**
 ```
 & sudo apt-get install libboost-all-dev
 ```
@@ -25,7 +25,7 @@ An all-purpose networking library for C++
 
 ### OpenSSL
 
-**Debian**
+**Ubuntu**
 ```
 & sudo apt-get install libssl-dev
 ```
@@ -36,19 +36,19 @@ An all-purpose networking library for C++
 ### crow
 A web service framework library for C++
 
-**Debian**  
+**Ubuntu**  
 Manual download only  
 >Download [link](https://github.com/CrowCpp/Crow) for manual download
 
 #### Dependencies
-1. openssl
-1. boost
+* openssl
+* boost
 
 
 ### curl
 command line tool and library for transferring data with URLs
 
-**Debian**  
+**Ubuntu**  
 ```
 $ sudo apt-get install curl
 $ sudo apt-get install libcurl-dev
@@ -57,11 +57,17 @@ $ sudo apt-get install libcurl-dev
 ### ncurses
 A simple text-based user interface library for C/C++
 
-**Debian**
+**Ubuntu**
 ```
 $ sudo apt-get install libncurses5-dev libncursesw5-dev
 ```
+### uuid
+Unique identifier library  
 
+**Ubuntu**
+```
+$ sudo apt-get install uuid uuid-dev
+```
 ## Build
 ```
 $ cmake -S . -B bin/
