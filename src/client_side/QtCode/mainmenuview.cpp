@@ -37,15 +37,19 @@ MainMenuView::~MainMenuView() {
 void MainMenuView::on_pushButton_clicked() {
 
   // get the username of opponent user
+    if (ui->comboBox->currentText()==""){
+        ui->label->setText(QString::fromStdString("No Game Selected"));
+        return;
+    }
   object_id_t game_id = std::get<0>(games_[ui->comboBox->currentIndex()]);
   auto game_or_err = ApiWrapper::GetShared()->GetGame(game_id);
   if (std::holds_alternative<ApiError>(game_or_err)) {
-    // todo
+    ui->label->setText(QString::fromStdString(get<ApiError>(game_or_err).error_message));
   } else {
     auto game = std::get<Game>(game_or_err);
     auto current_user_or_error = ApiWrapper::GetShared()->GetCurrentUser();
     if (std::holds_alternative<LoginError>(current_user_or_error)) {
-      // todo
+      ui->label->setText(QString::fromStdString(get<ApiError>(current_user_or_error).error_message));
     } else {
       auto user = std::get<UserClient>(current_user_or_error);
       auto other_player_id_iter =
@@ -65,7 +69,7 @@ void MainMenuView::on_pushButton_clicked() {
         }
         auto all_users_or_error = ApiWrapper::GetShared()->GetAllUsers();
         if (std::holds_alternative<ApiError>(all_users_or_error)) {
-          // todo
+          ui->label->setText(QString::fromStdString(get<ApiError>(all_users_or_error).error_message));
           return;
         }
 
