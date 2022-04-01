@@ -34,6 +34,7 @@ else ()
 endif ()
 
 
+set(EXECUTABLE_OUTPUT_PATH ../)
 add_executable(QuoridorServer
         src/server_side/main.cpp
         src/common/models/board.cpp
@@ -63,6 +64,10 @@ add_executable(QuoridorServer
         )
 
 
+add_subdirectory(src/common/models)
+        
+target_include_directories(QuoridorServer PUBLIC quoridor_lib)
+target_link_libraries(QuoridorServer quoridor_lib)
 target_include_directories(QuoridorServer PUBLIC ${Boost_INCLUDE_DIRS})
 target_include_directories(QuoridorServer PUBLIC ${SQLite3_INCLUDE_DIRS})
 
