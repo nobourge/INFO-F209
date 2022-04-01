@@ -163,6 +163,9 @@ crow::json::wvalue SubmitGameMoveView(UserServer &user,
   auto move_ret = game->PlayMove(move);
   API_GUARD(!move_ret.has_value(), *move_ret)
 
+  // in incrémente le score pour chaque move
+  DataBase::GetInstance()->UpdateUser(user.GetScore() + 1, user.GetId());
+
   DataBase::GetInstance()->SaveGame(game_id, *game);
 
   output["success"] = true;
