@@ -4,14 +4,11 @@ cmake_minimum_required(VERSION 3.5)
 
 project(ClientSide)
 
-set(SOURCES
-        main.cpp
-
-        models/api_wrapper.cpp
-        models/requests.cpp
-        models/user_client.cpp
-
-        )
+set(SOURCES main.cpp
+            models/api_wrapper.cpp
+            models/requests.cpp
+            models/user_client.cpp
+            )
 
 
 #if(UNIX)
@@ -19,10 +16,11 @@ set(CMAKE_PREFIX_PATH "~/Qt/6.2.4/gcc_64/lib/cmake")
 #endif ()
 find_package(Qt6 CONFIG REQUIRED COMPONENTS Widgets)
 
+set(EXECUTABLE_OUTPUT_PATH "../../..")
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 add_subdirectory(QtCode)
-add_subdirectory(../common/models ${CMAKE_CURRENT_BINARY_DIR}/quoridor_game_lib)
+# add_subdirectory(../common/models ${CMAKE_CURRENT_BINARY_DIR}/quoridor_game_lib)
 
 target_link_directories(${PROJECT_NAME} PUBLIC QtCode/)
 target_link_directories(${PROJECT_NAME} PUBLIC ../common/models/)

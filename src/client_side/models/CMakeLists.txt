@@ -4,14 +4,11 @@ cmake_minimum_required(VERSION 3.5)
 
 project(ClientSide)
 
-set(SOURCES
-        main.cpp
-
-        models/api_wrapper.cpp
-        models/requests.cpp
-        models/user_client.cpp
-
-        )
+set(SOURCES main.cpp
+            models/api_wrapper.cpp
+            models/requests.cpp
+            models/user_client.cpp
+            )
 
 
 #if(UNIX)

@@ -20,8 +20,8 @@ set(SOURCES menu_board_scene.cpp
             menu_cell.cpp
             menu_wall_cell.cpp
             board_fetcher.cpp
-            assets.h)
-
+            assets.h
+            )
 
             
 add_library(${PROJECT_NAME} ${SOURCES})
