@@ -9,7 +9,6 @@ MenuBoardScene::MenuBoardScene(QVector<QPoint> pawns_, QVector<QPoint> walls_) {
         for (int col = 0; col <17; col++) { // same as above
             if (col % 2 == 0 && row % 2 == 0) {
                 if (find(pawns_.begin(), pawns_.end(), QPoint{row, col}) != pawns_.end()) {
-                    cout << indexOfPawn << endl;
                     this->addItem(new MenuCell(32*row, 32*col,row,col,32,true, true, pawnPixMap[indexOfPawn]));
                     indexOfPawn++;
                 } else this->addItem(new MenuCell(32*row, 32*col,row,col,32,true)); 

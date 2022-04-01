@@ -30,8 +30,6 @@ void MenuBoardView::drawScene() {
     // shouldn't happen as it's checked before arriving here
   } else {
     auto game = get<Game>(game_or_error);
-    cout << "here" << endl;
-    cout << game.GetBoard()->GetBoardString() << endl;
     this->setScene(new MenuBoardScene(game.GetBoard()->GetAllPlayersPos(),
                                       game.GetBoard()->GetAllWallsPos()));
   }
@@ -51,6 +49,13 @@ void MenuBoardView::mousePressEvent(QMouseEvent *event) // Mouse click event
   if (newItem->isCellPawn()) {
     playerSelected = true;
     ancientCell = newItem;
+    auto game = ApiWrapper::GetShared()->GetGame(static_cast<uint32_t>(game_id));
+    if (holds_alternative<ApiError>(game)) {
+      // error handling
+    } else {
+      Position pos = get<Game>(game).GetCurrentPlayer()->getPlayerPos();
+      if ( newItem->getPosition().x()/2 == pos.col && newItem->getPosition().y()/2 == pos.row) newItem->setCellPixmap(QPixmap(transparentPawn_png.c_str()));
+    }
     return;
   } else if (newItem->isCellWall() && firstWall == nullptr) {
     firstWall = newItem;
@@ -75,6 +80,7 @@ void MenuBoardView::placeWall(MenuCell *first, MenuCell *second) const {
 
   dynamic_cast<MenuWallCell *>(first)->setWall(direction);
   dynamic_cast<MenuWallCell *>(second)->setWall(direction);
+  outputBoardToTerminal();
 }
 
 bool MenuBoardView::verifyWall(QPoint firstWall, QPoint secondWall) const {
@@ -104,6 +110,7 @@ void MenuBoardView::playMove(MenuCell *item) {
   ancientCell->setCellPawn(false);
   item->setCellPixmap(QPixmap(pawn_png.c_str()));
   item->setCellPawn(true);
+  outputBoardToTerminal();
 }
 
 bool MenuBoardView::SendMoveToServer(DIRECTION moveDirection,
@@ -154,7 +161,6 @@ bool MenuBoardView::verifyMove(QPoint pos1, QPoint pos2) {
 }
 
 void MenuBoardView::redrawScene() {
-  cout << "inside that thinh" <<endl; 
   this->scene()->deleteLater();
   this->drawScene();
 }
@@ -162,4 +168,14 @@ MenuBoardView::~MenuBoardView() {
   *should_continue_fetching_ = false;
   boardFetcher->quit();
   boardFetcher->wait();
+}
+
+void MenuBoardView::outputBoardToTerminal() const {
+    auto game = ApiWrapper::GetShared()->GetGame(static_cast<uint32_t>(game_id));
+    if (holds_alternative<ApiError>(game)) {
+      // error 
+    }else {
+      cout << get<Game>(game).GetBoard()->GetBoardString() << endl;
+    }
+
 }

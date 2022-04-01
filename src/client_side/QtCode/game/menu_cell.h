@@ -14,6 +14,7 @@ class MenuCell : public QGraphicsPixmapItem {
     QPoint position;
     bool player=false;
     bool isPlat=false;
+    QPixmap pixmap;
 public:
     MenuCell(int x, int y,int row,int col,int size=20,bool isPlat=false, bool player=false,QPixmap pixmap=QPixmap(cell_png.c_str()));
     void setCellPixmap(QPixmap image, int size=32);
@@ -27,6 +28,8 @@ public:
     virtual void setCellPawn(bool newPlayer){player=newPlayer;}
 
     QPoint getAbsolutePosition(){return position;}
+
+    void setTransparentPawn();
 public slots:
      void mousePressEvent(QGraphicsSceneMouseEvent *event);
      

@@ -17,5 +17,6 @@ const std::string pawn_png = "src/client_side/QtCode/game/assets/pawn.png";
 const std::string red_pawn_png = "src/client_side/QtCode/game/assets/pawn_red.png";
 const std::string wallHorizontal_png = "src/client_side/QtCode/game/assets/wallHorizontal.png";
 const std::string wallVertical_png = "src/client_side/QtCode/game/assets/wallVertical.png";
-
+const std::string transparentPawn_png = "src/client_side/QtCode/game/assets/transparent_pawn.png";
+    
 #endif //QUORIDOR_SRC_CLIENT_SIDE_QTCODE_ASSETS_H_

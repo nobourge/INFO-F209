@@ -22,6 +22,9 @@ class MenuBoardView : public QGraphicsView {
     bool SendMoveToServer(DIRECTION moveDirection, DIRECTION winningDirection) const;
     
     void drawScene();
+
+    void outputBoardToTerminal() const;
+    
 public:
     BoardFetcher *boardFetcher;
     MenuBoardView(int game_id, QVector<QPoint> pawns_={}, QVector<QPoint> walls_={});
