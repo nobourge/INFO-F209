@@ -2,8 +2,7 @@
 
 using namespace std;
 MenuCell::MenuCell(int x, int y,int row,int col,int size,bool isPlat, bool player, QPixmap pixmap): player{player}, pos{row, col}, isPlat(isPlat), position{x, y} {
-    if (player) setCellPixmap(QPixmap(pawn_png.c_str()), size);
-    else setCellPixmap(pixmap, size);
+    setCellPixmap(pixmap);
     setOffset(x, y);
 }
 
