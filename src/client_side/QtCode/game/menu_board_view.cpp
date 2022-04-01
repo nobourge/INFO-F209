@@ -7,7 +7,7 @@ MenuBoardView::MenuBoardView(int game_id, QVector<QPoint> pawns_,
                              QVector<QPoint> walls_)
     : game_id{game_id}, QGraphicsView{new MenuBoardScene(std::move(pawns_),
                                                          std::move(walls_))} {
-
+  should_continue_fetching_ = std::make_shared<bool>(true);
   QGraphicsItem *item = scene()->itemAt({0, 0}, QTransform());
 
   MenuCell *newItem = dynamic_cast<MenuCell *>(item);
@@ -17,11 +17,10 @@ MenuBoardView::MenuBoardView(int game_id, QVector<QPoint> pawns_,
   }
   setBackgroundBrush(QBrush(Qt::black, Qt::SolidPattern));
   // api something
-  boardFetcher = new BoardFetcher(this, game_id);
+  boardFetcher = new BoardFetcher(this, game_id, should_continue_fetching_);
   connect(boardFetcher, SIGNAL(updated()), this, SLOT(redrawScene()));
   drawScene();
   boardFetcher->start();
-  
 }
 
 void MenuBoardView::drawScene() {
@@ -158,4 +157,9 @@ void MenuBoardView::redrawScene() {
   cout << "inside that thinh" <<endl; 
   this->scene()->deleteLater();
   this->drawScene();
+}
+MenuBoardView::~MenuBoardView() {
+  *should_continue_fetching_ = false;
+  boardFetcher->quit();
+  boardFetcher->wait();
 }

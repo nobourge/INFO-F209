@@ -8,9 +8,9 @@ class BoardFetcher : public QThread {
     int game_id;
     bool oneMoreTime;
 public:
-    BoardFetcher(QObject* parent, int game_id);
+    BoardFetcher(QObject* parent, int game_id, std::weak_ptr<bool> should_continue_fetching);
     void run();
-    bool inGame;
+    std::weak_ptr<bool> should_continue_fetching_;
 signals:
     void updated();
 };

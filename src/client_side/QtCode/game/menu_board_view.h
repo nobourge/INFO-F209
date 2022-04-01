@@ -17,6 +17,7 @@ class MenuBoardView : public QGraphicsView {
     MenuCell* ancientCell=nullptr;
     MenuCell* firstWall=nullptr;
     int game_id;
+    std::shared_ptr<bool> should_continue_fetching_;
 
     bool SendMoveToServer(DIRECTION moveDirection, DIRECTION winningDirection) const;
     
@@ -28,7 +29,8 @@ public:
     bool verifyMove(QPoint,QPoint);
     void placeWall(MenuCell*, MenuCell*) const;
     bool verifyWall(QPoint, QPoint) const;
-public slots:
+    virtual ~MenuBoardView();
+  public slots:
     void mousePressEvent(QMouseEvent *event);
     void redrawScene();
 };
