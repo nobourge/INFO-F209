@@ -53,6 +53,9 @@ public:
   [[nodiscard]] const vector<std::shared_ptr<Player>> &GetPlayers() const;
   void SetAdminPlayer(const shared_ptr<Player> &admin_player);
 
+  const vector<std::pair<std::shared_ptr<Player>, std::string>> &
+  GetMoveHistory() const;
+
 private:
   std::optional<object_id_t> game_id_;
   std::string game_name_;

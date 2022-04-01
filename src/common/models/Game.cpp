@@ -466,3 +466,8 @@ const vector<std::shared_ptr<Player>> &Game::GetPlayers() const {
 void Game::SetAdminPlayer(const shared_ptr<Player> &admin_player) {
   admin_player_ = admin_player;
 }
+
+const vector<std::pair<std::shared_ptr<Player>, std::string>> &
+Game::GetMoveHistory() const {
+  return move_history_;
+}
