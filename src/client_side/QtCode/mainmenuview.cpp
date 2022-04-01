@@ -500,6 +500,7 @@ void MainMenuView::on_pushButton_PlayMainMenu_clicked() {
   ui->stackedWidget->setCurrentIndex(10);
   std::variant<std::vector<std::tuple<uint32_t, std::string>>, ApiError> res =
       ApiWrapper::GetShared()->GetGameRoomNames();
+  ui->comboBox->clear();
   if (holds_alternative<ApiError>(res)) {
     games_ = {};
   } else {
@@ -530,6 +531,7 @@ void MainMenuView::on_pushButton_InviteToGame_clicked() {
   }
   std::variant<std::vector<std::tuple<uint32_t, std::string>>, ApiError> res =
       ApiWrapper::GetShared()->GetGameRoomNames();
+  ui->comboBox->clear();
   if (holds_alternative<ApiError>(res)) {
     games_ = {};
   } else {
