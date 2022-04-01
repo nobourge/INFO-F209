@@ -338,6 +338,8 @@ std::optional<Error> Game::PlayMove(std::string move) {
       current_player_->DecNrOfWalls();
       move_history_.emplace_back(current_player_, move);
       SwitchCurrentPlayer();
+    }else {
+      return "invalid input";
     }
 
   } else {
