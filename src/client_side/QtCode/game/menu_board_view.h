@@ -18,15 +18,15 @@ class MenuBoardView : public QGraphicsView {
     QPointF firstPos;
     QPointF secondPos;
 
-    bool SendMoveToServer(DIRECTION moveDirection, DIRECTION winningDirection);
+    bool SendMoveToServer(DIRECTION moveDirection, DIRECTION winningDirection) const;
     
 
 public:
     MenuBoardView(int game_id, QVector<QPoint> pawns_={}, QVector<QPoint> walls_={});
     void playMove(MenuCell*);
     bool verifyMove(QPoint,QPoint);
-    void placeWall(MenuCell*, MenuCell*, MenuCell*);
-    bool verifyWall(QPoint, QPoint);
+    void placeWall(MenuCell*, MenuCell*, MenuCell*) const;
+    bool verifyWall(QPoint, QPoint) const;
 public slots:
     void mousePressEvent(QMouseEvent *event);
 };

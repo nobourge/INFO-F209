@@ -118,8 +118,6 @@ DIRECTION Translator::GetOppositeDirection(DIRECTION direction) {
 
 std::string Translator::PositionToPawnMove(DIRECTION movementDirection, DIRECTION winningDirection) {
 	std::string playerMovementDirection;
-	std::cout<<static_cast<int>(winningDirection)<<std::endl;
-	std::cout<<static_cast<int>(movementDirection)<<std::endl;
 	if (movementDirection == winningDirection) playerMovementDirection = "F";
 	else if (movementDirection == GetOppositeDirection(winningDirection)) playerMovementDirection = "B";
 	else if (movementDirection == EAST && winningDirection == SOUTH) playerMovementDirection = "L";

@@ -36,7 +36,6 @@ Game::Game(const std::vector<std::pair<Position, int>> &playersPair,
   // std::vector<std::string> test{"M->F", "M->F", "M->F", "M->F->L",
   // "W->a1->a2->S", "W->a2->a3->S"}; for (std::string move : test){
   //   PlayMove(move);
-  //   cout<<board->GetBoardString()<<std::endl;
   // }
   // end of testing code
 }
@@ -145,7 +144,6 @@ void Game::PlayIaMove() {
   if (choice == "Movement") {
     while (!on) {
       Position coup = current_player_->playIAMove();
-      cout << coup.row << " " << coup.col << " move" << endl;
       if (p_board_->IsMovePossible(current_player_->getPlayerPos(), coup)) {
         p_board_->Movement(current_player_->getPlayerPos(), coup);
         current_player_->setPlayerPosition(coup);
@@ -165,8 +163,8 @@ void Game::PlayIaMove() {
     // game_mode_;
     p_board_->RandomWallPlacement();
   }
-  SwitchCurrentPlayer();
 }
+
 
 ///
 /// \return
@@ -244,6 +242,7 @@ std::optional<Error> Game::PlayMove(std::string move) {
         p_board_->Movement(current_player_->getPlayerPos(), playerMove);
         current_player_->setPlayerPosition(playerMove);
         current_player_->increaseScore();
+        move_history_.emplace_back(current_player_, move);
         SwitchCurrentPlayer();
       } else {
         return "Move is not possible";
@@ -288,6 +287,7 @@ std::optional<Error> Game::PlayMove(std::string move) {
                              playerMove + second_direction);
           current_player_->setPlayerPosition(playerMove + second_direction);
           current_player_->increaseScore();
+          move_history_.emplace_back(current_player_, move);
           SwitchCurrentPlayer();
         } else
           return "Wrong hop direction";
@@ -336,12 +336,15 @@ std::optional<Error> Game::PlayMove(std::string move) {
       p_board_->PlaceWall(wall.first, wall.second, wallDirection);
       current_player_->increaseScore();
       current_player_->DecNrOfWalls();
+      move_history_.emplace_back(current_player_, move);
       SwitchCurrentPlayer();
     }
 
   } else {
     return "Invalid input";
   }
+
+
   return {};
 }
 
@@ -371,6 +374,11 @@ crow::json::wvalue Game::GetGameJson() {
 
   if (current_player_ != nullptr) {
     output["current_player"] = std::move(current_player_->Serialize());
+  }
+
+  for (int i = 0; i < move_history_.size(); i++) {
+    output["move_history"][i]["player"] = move_history_[i].first->Serialize();
+    output["move_history"][i]["move"] = move_history_[i].second;
   }
 
   output["game_on"] = game_on_;
@@ -426,6 +434,21 @@ std::optional<Game> Game::InitGameFromJson(const crow::json::rvalue &json) {
       game.current_player_ = all_players[uuidToString(current_player->GetUuid())];
     } else {
       game.current_player_ = nullptr;
+    }
+
+    if (json.has("move_history")){
+      for (const auto &move_json : json["move_history"]) {
+        auto player_deserialized = Player::FromJson(move_json["player"]);
+        if (!player_deserialized.has_value())
+          return {};
+
+        std::pair<std::shared_ptr<Player>, std::string> move = {
+            all_players[uuidToString(player_deserialized->GetUuid())],
+            move_json["move"].s()
+        };
+
+        game.move_history_.push_back(move);
+      }
     }
 
     game.game_on_ = json["game_on"].b();

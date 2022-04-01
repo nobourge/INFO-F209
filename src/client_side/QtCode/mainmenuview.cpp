@@ -246,9 +246,7 @@ void MainMenuView::on_pushButton_Register_clicked() {
 
 void MainMenuView::on_pushButton_game_quit_clicked() {
   StopFetchingMessages();
-  cout << "this is a test" << endl;
   ui->horizontalLayout_2->itemAt(0)->widget()->deleteLater();
-  // ui->horizontalLayout_2->removeWidget(ui->horizontalLayout_2->itemAt(0)->widget());
   ui->stackedWidget->setCurrentIndex(3);
 }
 
@@ -388,7 +386,6 @@ void MainMenuView::updateChatRoom() {
   while (true) {
     auto messages = std::get<std::vector<Message>>(conv_req_res);
     for (const auto &mess : messages) {
-      // std::cout << mess.GetContent() << std::endl;
       bool is_this_user_sender = mess.GetSenderId() == curr_user.GetId();
       std::string mess_bubble = is_this_user_sender
                                     ? "Me: "
@@ -460,7 +457,6 @@ void MainMenuView::updateChatRoomMessagesListView() {
   ui->textEdit_Conversation->clear();
   if (!selected_friend_.has_value()) {
     // TODO: Afficher message d'erreur (l'ami n'a pas ete selectionne)
-    std::cout << "No friend selected" << std::endl;
     return;
   }
   // TODO: Effacer message erreur
@@ -471,8 +467,6 @@ void MainMenuView::updateChatRoomMessagesListView() {
 
   if (std::holds_alternative<LoginError>(curr_user_req_res)) {
     // TODO:: Afficher errur login
-    std::cout << std::get<LoginError>(curr_user_req_res).error_message
-              << std::endl;
     return;
   }
 
@@ -482,15 +476,10 @@ void MainMenuView::updateChatRoomMessagesListView() {
     // TODO: Afficher l'erreur
     auto err = std::get<ApiError>(conv_req_res);
     // ui->label_error->setText(QString::fromStdString(err.error_message));
-    std::cout << err.error_message << std::endl;
     return;
   } else {
-    std::cout << "Messages for " << curr_user.GetUsername().GetValue()
-              << " and " << selected_friend_->GetUsername().GetValue()
-              << std::endl;
     auto messages = std::get<std::vector<Message>>(conv_req_res);
     for (const auto &mess : messages) {
-      std::cout << mess.GetContent() << std::endl;
       bool is_this_user_sender = mess.GetSenderId() == curr_user.GetId();
       std::string mess_bubble =
           is_this_user_sender
@@ -512,13 +501,9 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string &room) {
 
   if (!selected_friend_.has_value()) {
     // TODO: Afficher message d'erreur (l'ami n'a pas ete selectionne)
-    std::cout << "No friend selected" << std::endl;
     return;
   }
   // TODO: Effacer message erreur
-
-  std::cout << selected_friend_->GetUsername().GetValue() + " friend selected"
-            << std::endl;
 
   auto conv_req_res =
       ApiWrapper::GetShared()->GetConversationWithUser(*selected_friend_);
@@ -526,8 +511,6 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string &room) {
 
   if (std::holds_alternative<LoginError>(curr_user_req_res)) {
     // TODO:: Afficher errur login
-    std::cout << std::get<LoginError>(curr_user_req_res).error_message
-              << std::endl;
     return;
   }
 
@@ -536,16 +519,11 @@ void MainMenuView::updateChatRoomMessagesListView(const std::string &room) {
   if (std::holds_alternative<ApiError>(conv_req_res)) {
     // TODO: Afficher l'erreur
     auto err = std::get<ApiError>(conv_req_res);
-    // ui->label_error->setText(QString::fromStdString(err.error_message));
     std::cout << err.error_message << std::endl;
     return;
   } else {
-    std::cout << "Messages for " << curr_user.GetUsername().GetValue()
-              << " and " << selected_friend_->GetUsername().GetValue()
-              << std::endl;
     auto messages = std::get<std::vector<Message>>(conv_req_res);
     for (const auto &mess : messages) {
-      std::cout << mess.GetContent() << std::endl;
       bool is_this_user_sender = mess.GetSenderId() == curr_user.GetId();
       // std::string mess_bubble = is_this_user_sender ? "Me: " : "Friend: ";
       std::string mess_bubble =
@@ -661,7 +639,6 @@ void MainMenuView::UpdateMessageViews(const std::vector<Message> &messages,
   ui->textEdit_Conversation->setText("");
   ui->textEdit_7->setText("");
   for (const auto &mess : messages) {
-    std::cout << mess.GetContent() << std::endl;
     bool is_this_user_sender = mess.GetSenderId() != other_user.GetId();
     std::string mess_bubble = is_this_user_sender
                                   ? "Me: "

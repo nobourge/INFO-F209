@@ -22,6 +22,7 @@ public:
         admin_player_(o.admin_player_),
         players_(o.players_),
         current_player_(o.current_player_),
+        move_history_(o.move_history_),
         game_on_(o.game_on_),
         ia_player_(o.ia_player_),
         game_mode_(o.game_mode_)
@@ -59,6 +60,7 @@ private:
   std::shared_ptr<Player> admin_player_;
   std::vector<std::shared_ptr<Player>> players_;
   std::shared_ptr<Player> current_player_;
+  std::vector<std::pair<std::shared_ptr<Player>, std::string>> move_history_ = {};
   bool game_on_;
   bool ia_player_ = false;
   GameMode game_mode_ = Normal;
