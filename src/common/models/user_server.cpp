@@ -107,24 +107,24 @@ bool UserServer::SaveToDB() {
   }
 }
 
-std::unique_ptr<crow::json::wvalue> UserServer::Serialize() {
-  auto json_output = std::make_unique<crow::json::wvalue>();
+crow::json::wvalue UserServer::Serialize() {
+  crow::json::wvalue json_output;
 
-  (*json_output)["id"] = GetId();
-  (*json_output)["username"] = GetUsername().GetValue();
-  (*json_output)["created_timestamp"] = GetCreationTimestamp();
-  (*json_output)["score"] = GetScore();
+  json_output["id"] = GetId();
+  json_output["username"] = GetUsername().GetValue();
+  json_output["created_timestamp"] = GetCreationTimestamp();
+  json_output["score"] = GetScore();
 
   crow::json::wvalue friends_json;
 
   {
     auto friends = GetFriendsWithoutLoadingTheirFriends();
     for (int i = 0; i < friends.size(); i++) {
-      friends_json[i] = std::move(*friends[i].Serialize());
+      friends_json[i] = friends[i].Serialize();
     }
   }
 
-  (*json_output)["friends"] = std::move(friends_json);
+  json_output["friends"] = std::move(friends_json);
   return json_output;
 }
 

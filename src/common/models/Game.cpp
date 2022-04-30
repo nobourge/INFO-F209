@@ -1,13 +1,15 @@
+#include "Game.h"
+#include "../utils.h"
 #include <iostream>
 #include <memory>
 #include <utility>
-
-#include "Game.h"
+#include <unordered_map>
+#include <uuid/uuid.h>
 
 using namespace std;
 
 Game::Game() {
-  p_board_ = new Board{{}, {}};
+  p_board_ = std::make_unique<Board>(std::vector<std::shared_ptr<Player>>{}, std::vector<Position>{});
   game_on_ = true;
 }
 
@@ -28,14 +30,12 @@ Game::Game(const std::vector<std::pair<Position, int>> &playersPair,
   current_player_ = players_[0];
 
   game_on_ = true;
-  p_board_ = new Board(players_, walls);
+  p_board_ = std::make_unique<Board>(Board(players_, walls));
 
-  // cout<<board->GetBoardString()<<std::endl;
   // code for local testing on terminal
   // std::vector<std::string> test{"M->F", "M->F", "M->F", "M->F->L",
   // "W->a1->a2->S", "W->a2->a3->S"}; for (std::string move : test){
   //   PlayMove(move);
-  //   cout<<board->GetBoardString()<<std::endl;
   // }
   // end of testing code
 }
@@ -54,7 +54,7 @@ Game::Game(std::string gameName, int nrOfPlayers) : game_name_(gameName) {
 
   game_on_ = true;
   current_player_ = players_[0];
-  p_board_ = new Board(players_, {});
+  p_board_ = std::make_unique<Board>(players_, std::vector<Position>{});
 }
 
 // Game() // ia game constructor
@@ -68,76 +68,6 @@ Game::Game(std::string gameName, int nrOfPlayers) : game_name_(gameName) {
 Game Game::StartNewGame(std::string gameName, int nrOfPlayers) {
   auto game = Game(gameName, nrOfPlayers);
   return Game(gameName, nrOfPlayers);
-}
-
-std::optional<Game> Game::InitFromDB(object_id_t game_id) {
-  //  std::string board_query = "SELECT * FROM BOARD WHERE BOARD.ID=(SELECT "
-  //                            "GAMES.BOARD_ID FROM GAMES WHERE GAMES.ID=" +
-  //                            std::to_string(game_id) + ")";
-  //  std::string games_query =
-  //      "SELECT * FROM GAMES WHERE GAMES.ID=" + std::to_string(game_id);
-  //
-  //  std::vector<std::vector<std::string>> board_records =
-  //      DataBase::GetInstance()->GetSelect(board_query);
-  //
-  //  std::vector<std::vector<std::string>> games_records =
-  //      DataBase::GetInstance()->GetSelect(games_query);
-  //
-  //  if (board_records.empty() or games_records.empty()) {
-  //    return {};
-  //  }
-  //
-  //  std::vector<std::string> board_record = board_records[0];
-  //  std::vector<std::string> game_record = games_records[0];
-  //
-  //  Game game;
-  //
-  //  if (std::stoi(board_record[1]) > 2) { // if number of players is > 2
-  //    game = {{std::pair<Position, int>(
-  //                 Board::GetPositionFromPositionSerialization(board_record[3]),
-  //                 std::stoi(board_record[4])),
-  //             std::pair<Position, int>(
-  //                 Board::GetPositionFromPositionSerialization(board_record[5]),
-  //                 std::stoi(board_record[6])),
-  //             std::pair<Position, int>(
-  //                 Board::GetPositionFromPositionSerialization(board_record[7]),
-  //                 std::stoi(board_record[8])),
-  //             std::pair<Position, int>(
-  //                 Board::GetPositionFromPositionSerialization(board_record[9]),
-  //                 std::stoi(board_record[10]))},
-  //            std::stoi(board_record[11]),
-  //            Board::GetWallFromWallSerialization(board_record[2])};
-  //  } else {
-  //    game = {{std::pair<Position, int>(
-  //                 Board::GetPositionFromPositionSerialization(board_record[3]),
-  //                 std::stoi(board_record[4])),
-  //             std::pair<Position, int>(
-  //                 Board::GetPositionFromPositionSerialization(board_record[5]),
-  //                 std::stoi(board_record[6]))},
-  //            std::stoi(board_record[11]),
-  //            Board::GetWallFromWallSerialization(board_record[2])};
-  //  }
-  //
-  //  auto player_ids =
-  //  DataBase::GetInstance()->GetAllParticipantsInGame(game_id);
-  //
-  //  for (int i = 0; i < player_ids.size(); i++) {
-  //    game.players_[i]->SetUser(player_ids[i]);
-  //  }
-  //
-  //  auto admin_id = std::stoul(game_record[2]);
-  //
-  //  game.game_name_ = game_record[1];
-  //  auto admin = std::find_if(game.players_.begin(), game.players_.end(),
-  //                            [&](const std::shared_ptr<Player> &player) {
-  //                              return player->GetUserId() == admin_id;
-  //                            });
-  //  if (admin != game.players_.end()) {
-  //    game.admin_player_ = *admin;
-  //  }
-
-  //  return game;
-  return Game();
 }
 
 ///
@@ -178,11 +108,6 @@ void Game::SwitchCurrentPlayer() {
     current_player_in_vector = players_.begin();
   }
   current_player_ = *current_player_in_vector;
-
-  // current_player_=next player from the vector
-  cout << endl;
-  cout << p_board_->GetBoardString() << std::endl;
-  cout << endl;
 }
 
 ///
@@ -219,7 +144,6 @@ void Game::PlayIaMove() {
   if (choice == "Movement") {
     while (!on) {
       Position coup = current_player_->playIAMove();
-      cout << coup.row << " " << coup.col << " move" << endl;
       if (p_board_->IsMovePossible(current_player_->getPlayerPos(), coup)) {
         p_board_->Movement(current_player_->getPlayerPos(), coup);
         current_player_->setPlayerPosition(coup);
@@ -239,8 +163,8 @@ void Game::PlayIaMove() {
     // game_mode_;
     p_board_->RandomWallPlacement();
   }
-  SwitchCurrentPlayer();
 }
+
 
 ///
 /// \return
@@ -318,6 +242,7 @@ std::optional<Error> Game::PlayMove(std::string move) {
         p_board_->Movement(current_player_->getPlayerPos(), playerMove);
         current_player_->setPlayerPosition(playerMove);
         current_player_->increaseScore();
+        move_history_.emplace_back(current_player_, move);
         SwitchCurrentPlayer();
       } else {
         return "Move is not possible";
@@ -362,6 +287,7 @@ std::optional<Error> Game::PlayMove(std::string move) {
                              playerMove + second_direction);
           current_player_->setPlayerPosition(playerMove + second_direction);
           current_player_->increaseScore();
+          move_history_.emplace_back(current_player_, move);
           SwitchCurrentPlayer();
         } else
           return "Wrong hop direction";
@@ -400,6 +326,8 @@ std::optional<Error> Game::PlayMove(std::string move) {
       return "Invalid wall direction";
     }
 
+    if (second_input == third_input) return "Cannot stack walls on the same cell";
+
     pair<Position, Position> wall{Translator::Get().translateMove(second_input),
                                   Translator::Get().translateMove(third_input)};
 
@@ -408,12 +336,17 @@ std::optional<Error> Game::PlayMove(std::string move) {
       p_board_->PlaceWall(wall.first, wall.second, wallDirection);
       current_player_->increaseScore();
       current_player_->DecNrOfWalls();
+      move_history_.emplace_back(current_player_, move);
       SwitchCurrentPlayer();
+    }else {
+      return "invalid input";
     }
 
   } else {
     return "Invalid input";
   }
+
+
   return {};
 }
 
@@ -426,75 +359,98 @@ crow::json::wvalue Game::GetGameJson() {
   output["name"] = game_name_;
 
   if (p_board_ != nullptr) {
-    output["board"] = p_board_->Serialize();
+    output["board"] = std::move(p_board_->Serialize());
   }
 
   if (admin_player_ != nullptr) {
-    output["admin"] = admin_player_->Serialize();
+    output["admin"] = std::move(admin_player_->Serialize());
   }
 
   for (int i = 0; i < players_.size(); i++) {
     if (players_.at(i) != nullptr) {
-      output["players_"][i] = players_.at(i)->Serialize();
+      output["players_"][i] = std::move(players_.at(i)->Serialize());
     } else {
       output["players_"][i] = nullptr;
     }
   }
 
   if (current_player_ != nullptr) {
-    output["current_player"] = current_player_->Serialize();
+    output["current_player"] = std::move(current_player_->Serialize());
+  }
+
+  for (int i = 0; i < move_history_.size(); i++) {
+    output["move_history"][i]["player"] = move_history_[i].first->Serialize();
+    output["move_history"][i]["move"] = move_history_[i].second;
   }
 
   output["game_on"] = game_on_;
 
   output["game_mode"] = game_mode_;
 
+  output["id"] = game_id_.has_value() ? *game_id_ : 0;
+
   return output;
-}
-
-void Game::SaveToDB(std::string game_name) {
-
-  //    DataBase::GetInstance()->GetSelect()
 }
 
 std::optional<Game> Game::InitGameFromJson(const crow::json::rvalue &json) {
   Game game;
 
+  std::unordered_map<std::string, std::shared_ptr<Player>> all_players;
+
   try {
+    game.game_id_ = json["id"].i();
     game.game_name_ = static_cast<std::string>(json["name"]);
 
-    try {
-      auto board = json["board"];
-    } catch (const std::runtime_error &err) {
-      game.p_board_ = nullptr;
+    for (const auto &player_json : json["players_"]) {
+      auto optional_player = Player::FromJson(player_json);
+
+      if (optional_player.has_value()) {
+        auto player = std::make_shared<Player>(*optional_player);
+        all_players.insert_or_assign(uuidToString(player->GetUuid()), player);
+        game.players_.push_back(player);
+      } else {
+        game.players_.push_back(nullptr);
+      }
     }
+
+    game.p_board_ = nullptr;
+    try {
+      auto board = Board::FromJson(json["board"], all_players);
+      if (board.has_value()) {
+        game.p_board_ = std::make_unique<Board>(*board);
+      }
+    } catch (...) {}
 
     try {
       auto admin = Player::FromJson(json["admin"]);
       if (!admin.has_value()) {
         return {};
       }
-
-      game.admin_player_ = std::make_shared<Player>(*admin);
+      game.admin_player_ = all_players[uuidToString(admin->GetUuid())];
     } catch (const std::runtime_error &err) {
       game.admin_player_ = nullptr;
     }
 
-    for (int i = 0; i < json["players_"].size(); i++) {
-      auto player = Player::FromJson(json["players_"][i]);
-
-      if (player.has_value()) {
-        game.players_.push_back(std::make_shared<Player>(*player));
-      } else {
-        game.players_.push_back(nullptr);
-      }
-    }
-
     auto current_player = Player::FromJson(json["current_player"]);
     if (current_player.has_value()) {
-      game.current_player_ = std::make_shared<Player>(*current_player);
+      game.current_player_ = all_players[uuidToString(current_player->GetUuid())];
     } else {
       game.current_player_ = nullptr;
+    }
+
+    if (json.has("move_history")){
+      for (const auto &move_json : json["move_history"]) {
+        auto player_deserialized = Player::FromJson(move_json["player"]);
+        if (!player_deserialized.has_value())
+          return {};
+
+        std::pair<std::shared_ptr<Player>, std::string> move = {
+            all_players[uuidToString(player_deserialized->GetUuid())],
+            move_json["move"].s()
+        };
+
+        game.move_history_.push_back(move);
+      }
     }
 
     game.game_on_ = json["game_on"].b();
@@ -508,10 +464,12 @@ std::optional<Game> Game::InitGameFromJson(const crow::json::rvalue &json) {
 const vector<std::shared_ptr<Player>> &Game::GetPlayers() const {
   return players_;
 }
-//
-// const optional<uint32_t> &Game::GetGameId() const { return game_id_; }
-// void Game::SetGameId(const optional<uint32_t> &game_id) { game_id_ = game_id;
-// }
-//
-// const string &Game::GetGameName() const { return game_name_; }
-// void Game::SetGameName(const string &game_name) { game_name_ = game_name; }
+
+void Game::SetAdminPlayer(const shared_ptr<Player> &admin_player) {
+  admin_player_ = admin_player;
+}
+
+const vector<std::pair<std::shared_ptr<Player>, std::string>> &
+Game::GetMoveHistory() const {
+  return move_history_;
+}

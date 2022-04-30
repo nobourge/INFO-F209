@@ -4,14 +4,14 @@
 
 #include "message.h"
 
-std::unique_ptr<crow::json::wvalue> Message::Serialize() {
-  auto output = std::make_unique<crow::json::wvalue>();
+crow::json::wvalue Message::Serialize() {
+  crow::json::wvalue output;
 
-  (*output)["id"] = message_id;
-  (*output)["sender_id"] = sender_id;
-  (*output)["receiver_id"] = receiver_id;
-  (*output)["timestamp"] = timestamp_;
-  (*output)["content"] = content_;
+  output["id"] = message_id;
+  output["sender_id"] = sender_id;
+  output["receiver_id"] = receiver_id;
+  output["timestamp"] = timestamp_;
+  output["content"] = content_;
 
   return output;
 }

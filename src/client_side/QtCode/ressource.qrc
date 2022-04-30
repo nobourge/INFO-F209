@@ -1,5 +1,10 @@
 <RCC>
     <qresource prefix="/img">
         <file>Main.jpg</file>
+        <file>cell.png</file>
+        <file>noWall.png</file>
+        <file>pawn.png</file>
+        <file>wallHorizontal.png</file>
+        <file>wallVertical.png</file>
     </qresource>
 </RCC>

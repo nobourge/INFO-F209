@@ -5,21 +5,20 @@
 #ifndef QUORIDOR_SRC_CLIENT_SIDE_MODELS_API_WRAPPER_H_
 #define QUORIDOR_SRC_CLIENT_SIDE_MODELS_API_WRAPPER_H_
 
+#include "requests.h"
+#include "user_client.h"
 #include "../../common/base64.h"
 #include "../../common/constants.h"
-#include "user_client.h"
-#include "requests.h"
+#include "../../common/models/Game.h"
 #include "../../common/models/user/message.h"
 #include <string>
+
 
 struct ApiError {
   std::string error_message;
 };
 
-typedef bool IsAdmin;
-
-struct LoginError: ApiError {
-};
+typedef ApiError LoginError;
 
 class ApiWrapper {
 public:
@@ -36,6 +35,7 @@ public:
 
 
   // account
+  std::variant<std::vector<UserClient>, ApiError> GetAllUsersExceptCurrentUser();
   static std::variant<ApiWrapper, LoginError> Login(const std::string &login, const std::string &password);
   static std::variant<ApiWrapper, ApiError> CreateAccount(const std::string &login, const std::string &password);
 
@@ -47,7 +47,8 @@ public:
 
 
   // game
-  std::variant<std::vector<std::string>, ApiError> GetGamesVector();
+  std::variant<std::vector<std::tuple<uint32_t, std::string>>, ApiError>
+  GetGameRoomNames();
   optional<ApiError> CreateGame(const std::string &room_name,
                                 const std::string &friend_username);
 
@@ -55,6 +56,8 @@ public:
 
   std::variant<std::string, ApiError>
   GetGameReprWithGameId(object_id_t game_id);
+  std::variant<Game, ApiError> GetGame(object_id_t game_id);
+
 
 
   static std::optional<ApiWrapper> &GetShared();

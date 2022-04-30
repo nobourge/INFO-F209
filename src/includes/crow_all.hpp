@@ -7980,7 +7980,7 @@ namespace crow
     };
 
     /*
-    App<CookieParser, AnotherJarMW> app;
+    Game<CookieParser, AnotherJarMW> app;
     A B C
     A::context
         int aa;
@@ -7994,7 +7994,7 @@ namespace crow
     C::handle
         context.aaa
 
-    App::context : private CookieParser::contetx, ... 
+    Game::context : private CookieParser::contetx, ...
     {
         jar
 
@@ -10589,7 +10589,7 @@ namespace crow
     ///The main server application
 
     ///
-    /// Use `SimpleApp` or `App<Middleware1, Middleware2, etc...>`
+    /// Use `SimpleApp` or `Game<Middleware1, Middleware2, etc...>`
     template <typename ... Middlewares>
     class Crow
     {
@@ -10890,7 +10890,7 @@ namespace crow
         template <typename T>
         typename T::context& get_context(const request& req)
         {
-            static_assert(black_magic::contains<T, Middlewares...>::value, "App doesn't have the specified middleware type.");
+            static_assert(black_magic::contains<T, Middlewares...>::value, "Game doesn't have the specified middleware type.");
             auto& ctx = *reinterpret_cast<context_t*>(req.middleware_context);
             return ctx.template get<T>();
         }

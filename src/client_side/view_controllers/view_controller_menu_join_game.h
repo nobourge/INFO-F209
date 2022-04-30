@@ -18,13 +18,11 @@ public:
   [[nodiscard]] bool ShouldDisplayList() const override;
   [[nodiscard]] vector<std::shared_ptr<AbstractView>> GetHeaderViews() const override;
 
-
-
 protected:
   void FetchGames();
   void ReloadViews();
   std::vector<std::shared_ptr<MenuButtonItem>> game_views_;
-  std::vector<std::string> games_;
+  std::vector<std::tuple<object_id_t, std::string>> games_;
   std::optional<std::string> error_message_;
   void MenuViewWillAppear() override;
 };

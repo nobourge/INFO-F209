@@ -11,9 +11,9 @@
 #include "user.h"
 #include <string>
 
-class Message : public Serializable<Message> {
+class Message : public Serializable {
 public:
-  std::unique_ptr<crow::json::wvalue> Serialize() override;
+  crow::json::wvalue Serialize() override;
 
   static std::optional<Message> FromJson(const crow::json::rvalue &json);
 

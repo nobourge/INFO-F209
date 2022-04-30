@@ -7,9 +7,8 @@
 
 #include "../../includes/crow_all.hpp"
 
-template<typename T>
 struct Serializable {
-  virtual std::unique_ptr<crow::json::wvalue> Serialize() = 0;
+  virtual crow::json::wvalue Serialize() = 0;
 };
 
 #endif //QUORIDOR_SRC_SERVER_SIDE_MODELS_SERIALIZABLE_H_

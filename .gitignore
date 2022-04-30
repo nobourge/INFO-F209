@@ -3,6 +3,10 @@ bin/
 **/.vscode/
 .idea/
 
+
+./cmake-build-debug/LastTest.log
+./cmake-build-debug/build.ninja
+
 cmake-build-*
 CMakeFiles/
 cmake_install.cmake
@@ -10,5 +14,8 @@ CMakeCache.txt
 
 Makefile
 
+example.db
 
 src/server_side/build/*
+src/client_side/build/*
+*.db

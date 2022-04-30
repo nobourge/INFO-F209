@@ -7,14 +7,15 @@
 #include <QApplication>
 #include "thread"
 
+
 int Qt_thread(int argc, char *argv[]){
-  QApplication a(argc, argv);
-  MainMenuView w;
-  w.show();
-  return a.exec();
 }
 int main(int argc, char *argv[]) {
-  std::thread t=std::thread(Qt_thread,argc, argv);
+//  std::thread t=std::thread(Qt_thread,argc, argv);
+ QApplication q_application(argc, argv);
+ MainMenuView w;
+ w.show();
+ return q_application.exec();
   std::stack<std::shared_ptr<AbstractViewController>> view_controllers{};
   view_controllers.push(std::make_shared<StartViewController>());
   while (!view_controllers.empty()) {

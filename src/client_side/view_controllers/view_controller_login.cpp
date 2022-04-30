@@ -22,15 +22,20 @@ void LoginMenuViewController::PresentController(
     MenuButtonItem &sender) {
   if (&sender == login_button_.get()) {
     auto login_res = ApiWrapper::Login(username_field_->GetUserEnteredText(), password_field_->GetUserEnteredText());
+
     if (holds_alternative<LoginError>(login_res)) {
       error_message_ = std::get<LoginError>(login_res).error_message;
       ReloadSubviews();
-    } else {
+    }
+
+    else {
       error_message_ = {};
       ApiWrapper::GetShared() = std::get<ApiWrapper>(login_res);
       AbstractMenuViewController::PresentViewController(destination);
     }
-  } else {
+  }
+
+  else {
     AbstractMenuViewController::PresentViewController(destination);
   }
 }

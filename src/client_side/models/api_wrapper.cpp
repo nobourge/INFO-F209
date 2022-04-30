@@ -6,6 +6,7 @@
 #include "requests.h"
 #include <stdexcept>
 
+#
 std::vector<UserClient> ApiWrapper::GetUsersRanked(unsigned int max_num_users) {
   std::string url = api_url_;
   url += "users/ranking";
@@ -189,6 +190,35 @@ std::variant<std::vector<UserClient>, ApiError> ApiWrapper::GetAllUsers() {
   }
 }
 
+std::variant<std::vector<UserClient>, ApiError> ApiWrapper::GetAllUsersExceptCurrentUser() {
+  std::string url = api_url_;
+  url += "me/all-users-except-me";
+
+  std::variant<std::vector<UserClient>, ApiError> ret =
+      LoginError{"A network error occurred"};
+
+  crow::json::rvalue request_result_json;
+
+  try {
+    request_result_json = Requests(url, {{login_, password_}}).GetJson();
+  } catch (const std::runtime_error &) {
+    return ret;
+  }
+
+  try {
+    crow::json::rvalue users_json = request_result_json["users"];
+
+    auto users = std::vector<UserClient>();
+    users.reserve(users.size());
+    for (auto &user_json : users_json) {
+      users.emplace_back(user_json);
+    }
+    return users;
+  } catch (const std::runtime_error &) {
+    return ApiError{"Unknown error occurred"};
+  }
+}
+
 std::optional<ApiError> ApiWrapper::AddFriend(const UserClient &user) {
   auto user_requests_result = GetCurrentUser();
   if (holds_alternative<LoginError>(user_requests_result)) {
@@ -289,7 +319,8 @@ ApiWrapper::GetConversationWithUser(const UserClient &other_user) {
   return messages;
 }
 
-std::variant<std::vector<std::string>, ApiError> ApiWrapper::GetGamesVector() {
+std::variant<std::vector<std::tuple<uint32_t, std::string>>, ApiError>
+ApiWrapper::GetGameRoomNames() {
   std::string error_message = "An unknown error occurred";
   std::string url = api_url_;
 
@@ -311,10 +342,10 @@ std::variant<std::vector<std::string>, ApiError> ApiWrapper::GetGamesVector() {
     return ApiError{err.what()};
   }
 
-  std::vector<std::string> games;
+  std::vector<std::tuple<object_id_t, std::string>> games;
 
   for (const auto &game_id_json : json_res["games"]) {
-    games.push_back(game_id_json["name"].s());
+    games.emplace_back(game_id_json["id"].i(), game_id_json["name"].s());
   }
 
   return games;
@@ -367,6 +398,7 @@ std::optional<ApiError> ApiWrapper::CreateGame(const std::string &room_name,
 
   return {};
 }
+
 optional<ApiError> ApiWrapper::PerformGameMove(const object_id_t &game_id, const std::string &move) {
   std::string url = api_url_;
   url += "me/game/" + std::to_string(game_id) + "/move";
@@ -387,4 +419,34 @@ optional<ApiError> ApiWrapper::PerformGameMove(const object_id_t &game_id, const
   }
 
   return {};
+}
+
+std::variant<Game, ApiError> ApiWrapper::GetGame(uint32_t game_id) {
+  std::string url = api_url_;
+
+  url += "me/game/" + std::to_string(game_id);
+
+  crow::json::rvalue json_res;
+
+  try {
+    json_res = Requests(url, {{login_, password_}}).GetJson();
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+
+  try {
+    if (!json_res["success"].b()) {
+      return ApiError{json_res["error"].s()};
+    }
+  } catch (const std::exception &err) {
+    return ApiError{err.what()};
+  }
+
+  auto game = Game::InitGameFromJson(json_res["game"]);
+
+  if (!game.has_value()) {
+    return ApiError{"Unknown error occurred. Failed to parse game"};
+  }
+
+  return *game;
 }

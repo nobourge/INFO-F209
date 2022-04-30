@@ -6,6 +6,7 @@
 #include "../models/api_wrapper.h"
 #include "../views/menu_views/find_new_friend_menu_view.h"
 
+
 FindFriendViewController::FindFriendViewController()
     : AbstractSearchableListMenuViewController(
           std::make_shared<FindNewFriendMenuView>()) {}
@@ -22,7 +23,17 @@ void FindFriendViewController::FetchUsers() {
   }
 }
 
+void FindFriendViewController::FetchUsersExceptCurrentUser() {
+  auto user_fetch_result = ApiWrapper::GetShared()->GetAllUsersExceptCurrentUser();
 
+  if (std::holds_alternative<ApiError>(user_fetch_result)) {
+    error_message_ = std::get<ApiError>(user_fetch_result).error_message;
+    users_ = {};
+  } else {
+    error_message_ = {};
+    users_ = std::move(std::get<std::vector<UserClient>>(user_fetch_result));
+  }
+}
 
 void FindFriendViewController::AddFriend(const UserClient &user) {
   auto this_user_fetch_result =

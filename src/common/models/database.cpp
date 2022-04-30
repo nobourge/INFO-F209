@@ -1,4 +1,5 @@
 #include "database.h"
+#include "../../common/models/Game.h"
 #include "board.h"
 
 int DataBase::friendsId = 0;
@@ -42,12 +43,12 @@ DataBase::GetSelect(const std::string &statement) {
 void DataBase::CreateTables() {
   // Create first table USER
   LOCK_DB;
-  sql_ = "CREATE TABLE IF NOT EXISTS USER("
-         "ID INTEGER PRIMARY KEY, "
-         "PSEUDO         TEXT    NOT NULL, "
-         "PASSWORD       TEXT    NOT NULL, "
-         "TIMESTAMP      TEXT    NOT NULL, "
-         "SCORE          INT     NOT NULL)";
+  sql_ = "CREATE TABLE IF NOT EXISTS USER(    "
+         "ID             INTEGER PRIMARY KEY, "
+         "PSEUDO         TEXT    NOT NULL,    "
+         "PASSWORD       TEXT    NOT NULL,    "
+         "TIMESTAMP      TEXT    NOT NULL,    "
+         "SCORE          INT     NOT NULL)    ";
 
   //  ReloadFile("example.db");
 
@@ -55,67 +56,70 @@ void DataBase::CreateTables() {
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
   // Create second table BOARD
-  sql_ = "CREATE TABLE IF NOT EXISTS BOARD("
-         "ID                      INTEGER   PRIMARY KEY , "
-         "PAWNS                   INT       NOT NULL    , "
-         "WALLS                   TEXT      NOT NULL    , "
-         "PLAYER1_PAWN            TEXT      NOT NULL    , "
-         "PLAYER1_WALLS_LEFT      INT       NOT NULL    , "
-         "PLAYER2_PAWN            TEXT      NOT NULL    , "
-         "PLAYER2_WALLS_LEFT      INT       NOT NULL    , "
-         "PLAYER3_PAWN            TEXT      NOT NULL    , "
-         "PLAYER3_WALLS_LEFT      INT       NOT NULL    , "
-         "PLAYER4_PAWN            TEXT      NOT NULL    , "
-         "PLAYER4_WALLS_LEFT      INT       NOT NULL    , "
-         "LAST_TO_MOVE            INT       NOT NULL    ) ";
+  //  sql_ = "CREATE TABLE IF NOT EXISTS BOARD("
+  //         "ID                      INTEGER   PRIMARY KEY , "
+  //         "PAWNS                   INT       NOT NULL    , "
+  //         "WALLS                   TEXT      NOT NULL    , "
+  //         "PLAYER1_PAWN            TEXT      NOT NULL    , "
+  //         "PLAYER1_WALLS_LEFT      INT       NOT NULL    , "
+  //         "PLAYER2_PAWN            TEXT      NOT NULL    , "
+  //         "PLAYER2_WALLS_LEFT      INT       NOT NULL    , "
+  //         "PLAYER3_PAWN            TEXT      NOT NULL    , "
+  //         "PLAYER3_WALLS_LEFT      INT       NOT NULL    , "
+  //         "PLAYER4_PAWN            TEXT      NOT NULL    , "
+  //         "PLAYER4_WALLS_LEFT      INT       NOT NULL    , "
+  //         "LAST_TO_MOVE            INT       NOT NULL    ) ";
 
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   // Create second table GAMES
-  sql_ = "CREATE TABLE IF NOT EXISTS GAMES("
-         "ID                      INTEGER   PRIMARY KEY , "
-         "ROOM_NAME               TEXT       NOT NULL    , "
-         "ADMIN_ID                INT       NOT NULL    , "
-         "BOARD_ID                INT       NOT NULL    )";
+  sql_ = "create table GAMES"
+         "(ID        INTEGER primary key,"
+         "ROOM_NAME TEXT not null,"
+         "ADMIN_ID  INT  not null constraint GAMES_USER__fk references USER "
+         "(\"\") on delete cascade,"
+         "GAME_JSON TEXT not null);";
 
-  last_sqlite3_exit_code_ =
-      sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
-
-  // Create third table RANKING
-  sql_ = "CREATE TABLE IF NOT EXISTS RANKING("
-         "ID                    INTEGER PRIMARY KEY, "
-         "FIRST_PLACE           INT     NOT NULL, "
-         "SECOND_PLACE          INT     NOT NULL, "
-         "THIRD_PLACE           INT     NOT NULL, "
-         "FOURTH_PLACE          INT     NOT NULL)";
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   // Create fourth table FRIENDS
-  sql_ = "CREATE TABLE IF NOT EXISTS FRIENDS("
-         "ID INTEGER PRIMARY KEY, "
-         "MY_USER_ID INT NOT NULL, "
-         "MY_FRIEND_ID INT NOT NULL, "
-         "PORT        INT NOT NULL)";
+  sql_ = "create table FRIENDS"
+         "("
+         " ID               INTEGER primary key,"
+         " MY_USER_ID       INT not null"
+         "          constraint FRIENDS_USER__fk references USER (\"\")"
+         "          on delete cascade,"
+         " MY_FRIEND_ID     INT not null"
+         "          constraint FRIENDS_USER__fk_2 references USER (\"\")"
+         "          on delete cascade,"
+         "PORT              INT not null"
+         ");";
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   // Create fifth table CONVERSATIONS
-  sql_ = "CREATE TABLE IF NOT EXISTS CONVERSATIONS("
-         "ID INTEGER PRIMARY KEY, "
-         "SENDER_ID     INT NOT NULL, "
-         "RECEIVER_ID   INT NOT NULL, "
-         "TIMESTAMP     INT NOT NULL, "
-         "CONTENT       TEXT NOT NULL)";
+  sql_ = "create table CONVERSATIONS"
+         "(ID          INTEGER primary key,"
+         "SENDER_ID   INT  not null constraint CONVERSATIONS_USER__fk "
+         "references USER (\"\") on delete cascade,"
+         "RECEIVER_ID INT  not null constraint CONVERSATIONS_USER__fk_2 "
+         "references USER (\"\") on delete cascade,"
+         "TIMESTAMP   INT  not null,"
+         "CONTENT     TEXT not null);";
+
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
 
   // Create fifth table GAME_PARTICIPANTS
-  sql_ = "CREATE TABLE IF NOT EXISTS GAME_PARTICIPANTS("
-         "ID          INTEGER PRIMARY KEY, "
-         "GAME_ID     INT     NOT NULL, "
-         "USER_ID     INT     NOT NULL)";
+  sql_ = "create table GAME_PARTICIPANTS"
+         "(ID      INTEGER primary key,"
+         "GAME_ID INT not null constraint GAME_PARTICIPANTS_GAMES__fk"
+         "    references GAMES (\"\") on delete cascade,"
+         "USER_ID INT not null constraint GAME_PARTICIPANTS_USER__fk"
+         "    references USER (\"\") on delete cascade"
+         ");";
 
   last_sqlite3_exit_code_ =
       sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
@@ -202,34 +206,6 @@ std::unordered_set<uint32_t> DataBase::SearchFriends(object_id_t user_id) {
   return friends;
 }
 
-void DataBase::InsertRanking(int firstPlaceId, int secondPlaceId,
-                             int thirdPlaceId, int fourthPlaceId) {
-  LOCK_DB;
-
-  string query = "SELECT * FROM RANKING;";
-  sqlite3_exec(db_, query.c_str(), callback, nullptr, nullptr);
-
-  // Only 2 players_ played this match.
-  if (thirdPlaceId == 0 && fourthPlaceId == 0) {
-    sql_ =
-        ("INSERT INTO RANKING VALUES(" + to_string(ranking_id_) + "," +
-         to_string(firstPlaceId) + "," + to_string(secondPlaceId) + ",0,0);");
-    ranking_id_++;
-    last_sqlite3_exit_code_ =
-        sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
-  } else {
-    sql_ = ("INSERT INTO RANKING VALUES(" + to_string(ranking_id_) + "," +
-            to_string(firstPlaceId) + "," + to_string(secondPlaceId) + "," +
-            to_string(thirdPlaceId) + "," + to_string(fourthPlaceId) + ");");
-    ranking_id_++;
-    last_sqlite3_exit_code_ =
-        sqlite3_exec(db_, sql_.c_str(), nullptr, nullptr, &messageError);
-  }
-
-  VerifyTable("Insert values into the ranking");
-  HandleSQLErr(last_sqlite3_exit_code_);
-}
-
 void DataBase::UpdateUser(uint32_t score, uint32_t id) {
   LOCK_DB;
 
@@ -272,58 +248,27 @@ void DataBase::HandleSQLErr(int error_code) {
   }
 }
 
-void DataBase::InsertBoard(int nrOfPawns, const std::string &walls,
-                           std::string firstPlayerPawnPosition,
-                           int firstPlayerWallsLeft,
-                           const std::string &secondPlayerPawnPosition,
-                           int secondPlayerWallsLeft,
-                           const std::string &thirdPlayerPawnPosition,
-                           int thirdPlayerWallsLeft,
-                           const std::string &fourthPlayerPawnPosition,
-                           int fourthPlayerWallsLeft, int lastPlayerToMove) {
-  auto next_id = GetNextBoardId();
-  LOCK_DB;
-  std::string statement =
-      "INSERT INTO BOARD VALUES (" + std::to_string(next_id) + "," +
-      std::to_string(nrOfPawns) + ",\"" + walls + "\",\"" +
-      firstPlayerPawnPosition + "\"," + std::to_string(firstPlayerWallsLeft) +
-      ",\"" + secondPlayerPawnPosition + "\"," +
-      std::to_string(secondPlayerWallsLeft) + ",\"" + thirdPlayerPawnPosition +
-      "\"," + std::to_string(thirdPlayerWallsLeft) + ",\"" +
-      fourthPlayerPawnPosition + "\"," + std::to_string(fourthPlayerWallsLeft) +
-      "," + std::to_string(lastPlayerToMove) + ")";
-
-  sqlite3_exec(db_, statement.c_str(), nullptr, nullptr, &messageError);
-}
-
-void DataBase::InsertBoard(int nrOfPawns, const std::string &walls,
-                           const std::string &firstPlayerPawnPosition,
-                           int firstPlayerWallsLeft,
-                           const std::string &secondPlayerPawnPosition,
-                           int secondPlayerWallsLeft, int lastPlayerToMove) {
-  auto next_id = GetNextBoardId();
-  LOCK_DB;
-  std::string statement =
-      "INSERT INTO BOARD VALUES (" + std::to_string(next_id) + "," +
-      std::to_string(nrOfPawns) + ",\"" + walls + "\",\"" +
-      firstPlayerPawnPosition + "\"," + std::to_string(firstPlayerWallsLeft) +
-      ",\"" + secondPlayerPawnPosition + "\"," +
-      std::to_string(secondPlayerWallsLeft) + R"(,"0", 0, "0", 0, )" +
-      std::to_string(lastPlayerToMove) + ")";
-
-  sqlite3_exec(db_, statement.c_str(), nullptr, nullptr, &messageError);
-}
-
-uint32_t DataBase::CreateGame(object_id_t current_user_id,
-                              const std::string &game_name,
-                              const Board &board) {
-//  board.SaveToDB();
+uint32_t DataBase::CreateGame(object_id_t admin_user_id,
+                              const std::string &game_name, Game &game) {
   accessing_db_.lock();
-  RunSQL("INSERT INTO GAMES (ROOM_NAME, ADMIN_ID, BOARD_ID) VALUES (" +
-         game_name + ", " + std::to_string(current_user_id) + ")");
+  std::string sql_query =
+      "INSERT INTO GAMES (ROOM_NAME, ADMIN_ID, GAME_JSON) VALUES('" +
+      game_name + "' , " + std::to_string(admin_user_id) + ", '" +
+      game.GetGameJson().dump() + "')";
+
+  last_sqlite3_exit_code_ =
+      sqlite3_exec(db_, sql_query.c_str(), nullptr, nullptr, &messageError);
+
   accessing_db_.unlock();
-  return stoul(
+
+  auto game_id = stoul(
       GetSelect("SELECT ID FROM GAMES ORDER BY ID DESC LIMIT 1").at(0).at(0));
+
+  for (const auto &player : game.GetPlayers()) {
+    if (player->GetUserId().has_value())
+      InviteUserToGame(game_id, *player->GetUserId());
+  }
+  return game_id;
 }
 
 void DataBase::RunSQL(const string &query) {
@@ -331,23 +276,23 @@ void DataBase::RunSQL(const string &query) {
       sqlite3_exec(db_, query.c_str(), nullptr, nullptr, &messageError));
 }
 
-std::vector<object_id_t>
+std::vector<std::tuple<uint32_t, std::string>>
 DataBase::GetAllGamesWhereUserIsAdmin(object_id_t user) {
-  std::vector<object_id_t> output;
-  auto res = GetSelect("SELECT ID FROM GAMES WHERE ADMIN_ID = " +
+  std::vector<std::tuple<object_id_t, std::string>> output;
+  auto res = GetSelect("SELECT ID, ROOM_NAME FROM GAMES WHERE ADMIN_ID = " +
                        std::to_string(user));
   output.reserve(res.size());
   for (auto &row : res) {
-    output.push_back(stoul(row.at(0)));
+    output.emplace_back(stoul(row.at(0)), row.at(1));
   }
   return output;
 }
 
 void DataBase::InviteUserToGame(object_id_t game_id, object_id_t userid) {
 
-  if (GetAdminOfGame(game_id) == userid) {
-    return;
-  }
+  //  if (GetAdminOfGame(game_id) == userid) {
+  //    return;
+  //  }
 
   auto existing_invitation_for_this_game = GetSelect(
       "SELECT GAME_ID FROM GAME_PARTICIPANTS WHERE GAME_ID=" +
@@ -362,14 +307,15 @@ void DataBase::InviteUserToGame(object_id_t game_id, object_id_t userid) {
          std::to_string(game_id) + ", " + std::to_string(userid) + " )");
 }
 
-std::vector<object_id_t> DataBase::GetAllGamesForUser(object_id_t user) {
-  std::vector<object_id_t> output = GetAllGamesWhereUserIsAdmin(user);
-  auto res =
-      GetSelect("SELECT GAME_ID FROM GAME_PARTICIPANTS WHERE USER_ID = " +
-                std::to_string(user));
+std::vector<std::tuple<uint32_t, std::string>>
+DataBase::GetAllGamesForUser(object_id_t user) {
+  std::vector<std::tuple<object_id_t, std::string>> output;
+  auto res = GetSelect("SELECT ID, ROOM_NAME FROM GAMES WHERE ID IN (SELECT "
+                       "GAME_ID FROM GAME_PARTICIPANTS WHERE USER_ID = " +
+                       std::to_string(user) + " )");
   output.reserve(res.size());
   for (auto &row : res) {
-    output.push_back(stoul(row.at(0)));
+    output.emplace_back(stoul(row.at(0)), row.at(1));
   }
   return output;
 }
@@ -402,8 +348,17 @@ std::optional<object_id_t> DataBase::GetAdminOfGame(object_id_t game_id) {
   }
 }
 
-object_id_t DataBase::GetNextBoardId() {
-  return stoul(GetSelect("SELECT ID FROM BOARD ORDER BY ID DESC LIMIT 1")
-                   .at(0)
-                   .at(0)) + 1;
+void DataBase::SaveGame(uint32_t game_id, Game game) {
+  GetSelect("UPDATE GAMES\n"
+            "SET GAME_JSON = '" +
+            game.GetGameJson().dump() +
+            "' WHERE ID = " + std::to_string(game_id) + ";");
+}
+std::optional<Game> DataBase::GetGame(uint32_t game_id) {
+  auto q_res = GetSelect("SELECT GAME_JSON FROM GAMES WHERE ID = " +
+                         std::to_string(game_id));
+  if (q_res.empty()) {
+    return {};
+  }
+  return Game::InitGameFromJson(crow::json::load(q_res[0][0]));
 }
