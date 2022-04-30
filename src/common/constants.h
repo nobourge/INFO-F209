@@ -12,7 +12,7 @@
 #define __STR_VALUE(arg)      #arg
 #define __SURROUND_WITH_BRACKETS(name)          __STR_VALUE(name)
 
-#define SERVER_PORT                             560
+#define SERVER_PORT                             18080
 #define SERVER_PORT_S __SURROUND_WITH_BRACKETS(SERVER_PORT)
 #define LOCALHOST                               "0.0.0.0"
 
