@@ -15,6 +15,8 @@ class MainMenuView;
 }
 QT_END_NAMESPACE
 
+
+
 class MainMenuView : public QMainWindow {
   Q_OBJECT
 
@@ -120,5 +122,8 @@ private:
   void on_lineEdit_15_returnPressed();
   void keyPressEvent(QKeyEvent *event);
 };
+
+//
+
 
 #endif // MAINMENUVIEW_H
