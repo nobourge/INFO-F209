@@ -1,5 +1,5 @@
 [requires]
-sqlite3/3.34
+sqlite3/3.34.0
 #uuid
 boost/1.73.0
 #openssl/3.0.1
