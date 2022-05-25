@@ -1,6 +1,7 @@
 [requires]
+sqlite3/3.34
 #uuid
-#boost/1.73.0
+boost/1.73.0
 #openssl/3.0.1
 crow/0.1
 libcurl/7.80.0
